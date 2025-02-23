@@ -1,0 +1,7 @@
+{
+  "author": "Tdahuyou",
+  "repoName": "react",
+  "logo": "",
+  "key_words": ["TNotes react", "Tdahuyou react notes"],
+  "ignore_dirs": [".git", ".tnotes", ".vscode", "0000", "assets", "md-imgs", "node_modules"]
+}
