@@ -1,0 +1,17 @@
+/* #region - 💻 了解 react-tooltip 的基本使用 */
+.wrapper {
+    display: flex;
+}
+
+.box {
+    margin: 1rem;
+    width: 10rem;
+    height: 10rem;
+    border: 1px solid #888;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* #endregion - 💻 了解 react-tooltip 的基本使用 */
+
