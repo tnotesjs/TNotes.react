@@ -10,8 +10,10 @@
 import { ref } from 'vue'
 import { NOTE_DIR_KEY } from '../constants.js'
 
-
-const path = ref(localStorage.getItem(NOTE_DIR_KEY) || '')
+const path = ref('')
+if (typeof window !== 'undefined') {
+  path.value = localStorage.getItem(NOTE_DIR_KEY)
+}
 
 const savePath = () => {
   localStorage.setItem(NOTE_DIR_KEY, path.value)

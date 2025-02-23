@@ -100,8 +100,10 @@ const vpData = useData()
 const vscodeNoteDir = ref('');
 
 const updateVscodeNoteDir = (relativePath) => {
-    const noteDir = localStorage.getItem(NOTE_DIR_KEY);
-    vscodeNoteDir.value = noteDir ? `vscode://file/${noteDir}/${relativePath}` : '';
+    if (typeof window !== 'undefined') {
+        const noteDir = localStorage.getItem(NOTE_DIR_KEY);
+        vscodeNoteDir.value = noteDir ? `vscode://file/${noteDir}/${relativePath}` : '';
+    }
 };
 
 onMounted(() => { updateVscodeNoteDir(); initSwiper(); });
