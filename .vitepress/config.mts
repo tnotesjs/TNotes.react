@@ -22,6 +22,7 @@ const favicon = 'https://tdahuyou.github.io/notes/favicon.ico'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   appearance: 'dark',
+  base: '/' + repoName + '/',
   cleanUrls: true,
   description: repoName,
   head: head(),
