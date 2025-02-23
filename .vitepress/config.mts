@@ -14,7 +14,7 @@ import socialLinks from './socialLinks.json'
 const slugger = new GithubSlugger()
 
 const author = 'Tdahuyou'
-const repoName = 'react'
+const repoName = 'TNotes.react'
 const github_page_url = 'https://' + author.toLowerCase() + '.github.io/'+ repoName + '/'
 const keywords = ["TNotes react", "Tdahuyou react notes"]
 const favicon = 'https://tdahuyou.github.io/notes/favicon.ico'
@@ -23,7 +23,7 @@ const favicon = 'https://tdahuyou.github.io/notes/favicon.ico'
 export default defineConfig({
   appearance: 'dark',
   cleanUrls: true,
-  description: 'TNotes ' + repoName,
+  description: repoName,
   head: head(),
   ignoreDeadLinks: true,
   lang: 'zh-Hans',
@@ -38,7 +38,7 @@ export default defineConfig({
   },
   // https://vitepress.dev/reference/default-theme-config
   themeConfig: themeConfig(),
-  title: 'TNotes ' + repoName,
+  title: repoName,
 })
 
 function head() {
