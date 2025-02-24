@@ -3,15 +3,9 @@
 layout: home
 
 hero:
-  name: "react 笔记"
-  # text: "react notes"
-  # tagline: My great project tagline
-  actions:
-    - theme: brand
-      text: TNotes
-      link: https://tdahuyou.github.io/notes
-    - theme: alt
-      text: TOC
-      link: /TOC
+  name: "react notes"
+  image:
+    src: https://tdahuyou.github.io/notes/cover-image-2.png
+    alt: TNotes logo
 ---
 

@@ -1,19 +1,11 @@
 [
   {
-    "text": "👀 TOC",
-    "link": "/TOC"
-  },
-  {
-    "text": "⚙️ Settings",
-    "link": "/Settings"
-  },
-  {
     "text": "1. 认识 react",
     "collapsed": true,
     "items": [
       {
         "text": "✅ 0032. react 是什么",
-        "link": "/0032. react 是什么/README"
+        "link": "/notes/0032. react 是什么/README"
       }
     ]
   },
@@ -23,11 +15,11 @@
     "items": [
       {
         "text": "✅ 0040. 了解 react 官方文档的基本结构",
-        "link": "/0040. 了解 react 官方文档的基本结构/README"
+        "link": "/notes/0040. 了解 react 官方文档的基本结构/README"
       },
       {
         "text": "✅ 0039. react github 仓库链接",
-        "link": "/0039. react github 仓库链接/README"
+        "link": "/notes/0039. react github 仓库链接/README"
       }
     ]
   },
@@ -37,15 +29,15 @@
     "items": [
       {
         "text": "✅ 0034. 开发 react 项目之前推荐安装的 vscode 插件 - eslint",
-        "link": "/0034. 开发 react 项目之前推荐安装的 vscode 插件 - eslint/README"
+        "link": "/notes/0034. 开发 react 项目之前推荐安装的 vscode 插件 - eslint/README"
       },
       {
         "text": "✅ 0035. 在 vscode 中，让 Emmet 语法支持 JSX",
-        "link": "/0035. 在 vscode 中，让 Emmet 语法支持 JSX/README"
+        "link": "/notes/0035. 在 vscode 中，让 Emmet 语法支持 JSX/README"
       },
       {
         "text": "✅ 0008. npm create vite 使用 vite 快速初始化一个 react 工程",
-        "link": "/0008. npm create vite 使用 vite 快速初始化一个 react 工程/README"
+        "link": "/notes/0008. npm create vite 使用 vite 快速初始化一个 react 工程/README"
       }
     ]
   },
@@ -55,11 +47,11 @@
     "items": [
       {
         "text": "✅ 0042. 第一个 react v16 程序 - 通过 CDN 引入 react、react-dom 在页面上渲染出 Hello World",
-        "link": "/0042. 第一个 react v16 程序 - 通过 CDN 引入 react、react-dom 在页面上渲染出 Hello World/README"
+        "link": "/notes/0042. 第一个 react v16 程序 - 通过 CDN 引入 react、react-dom 在页面上渲染出 Hello World/README"
       },
       {
         "text": "✅ 0001. 第一个 react v19 程序 - 通过 CDN 引入 react、react-dom 在页面上渲染出 Hello World",
-        "link": "/0001. 第一个 react v19 程序 - 通过 CDN 引入 react、react-dom 在页面上渲染出 Hello World/README"
+        "link": "/notes/0001. 第一个 react v19 程序 - 通过 CDN 引入 react、react-dom 在页面上渲染出 Hello World/README"
       }
     ]
   },
@@ -69,11 +61,11 @@
     "items": [
       {
         "text": "✅ 0043. ReactDOM.render",
-        "link": "/0043. ReactDOM.render/README"
+        "link": "/notes/0043. ReactDOM.render/README"
       },
       {
         "text": "✅ 0041. 在 react v19 中，移除了 UMD，推荐使用 ESM",
-        "link": "/0041. 在 react v19 中，移除了 UMD，推荐使用 ESM/README"
+        "link": "/notes/0041. 在 react v19 中，移除了 UMD，推荐使用 ESM/README"
       }
     ]
   },
@@ -83,51 +75,51 @@
     "items": [
       {
         "text": "✅ 0013. JSX 概述",
-        "link": "/0013. JSX 概述/README"
+        "link": "/notes/0013. JSX 概述/README"
       },
       {
         "text": "✅ 0048. HTML Tag vs. React Element vs. JSX Element",
-        "link": "/0048. HTML Tag vs. React Element vs. JSX Element/README"
+        "link": "/notes/0048. HTML Tag vs. React Element vs. JSX Element/README"
       },
       {
         "text": "✅ 0044. react element 是只读的",
-        "link": "/0044. react element 是只读的/README"
+        "link": "/notes/0044. react element 是只读的/README"
       },
       {
         "text": "✅ 0045. jsx 必须单根",
-        "link": "/0045. jsx 必须单根/README"
+        "link": "/notes/0045. jsx 必须单根/README"
       },
       {
         "text": "✅ 0003. html to jsx 在线转换",
-        "link": "/0003. html to jsx 在线转换/README"
+        "link": "/notes/0003. html to jsx 在线转换/README"
       },
       {
         "text": "✅ 0015. 在 JSX 中使用注释",
-        "link": "/0015. 在 JSX 中使用注释/README"
+        "link": "/notes/0015. 在 JSX 中使用注释/README"
       },
       {
         "text": "✅ 0009. 在 JSX 中使用 JS 表达式",
-        "link": "/0009. 在 JSX 中使用 JS 表达式/README"
+        "link": "/notes/0009. 在 JSX 中使用 JS 表达式/README"
       },
       {
         "text": "✅ 0017. 在 JSX 中书写内联样式 style",
-        "link": "/0017. 在 JSX 中书写内联样式 style/README"
+        "link": "/notes/0017. 在 JSX 中书写内联样式 style/README"
       },
       {
         "text": "✅ 0004. 使用 className 添加样式名",
-        "link": "/0004. 使用 className 添加样式名/README"
+        "link": "/notes/0004. 使用 className 添加样式名/README"
       },
       {
         "text": "✅ 0046. JSX 元素的正确使用及常见错误示例",
-        "link": "/0046. JSX 元素的正确使用及常见错误示例/README"
+        "link": "/notes/0046. JSX 元素的正确使用及常见错误示例/README"
       },
       {
         "text": "✅ 0010. 条件渲染",
-        "link": "/0010. 条件渲染/README"
+        "link": "/notes/0010. 条件渲染/README"
       },
       {
         "text": "✅ 0011. 列表渲染",
-        "link": "/0011. 列表渲染/README"
+        "link": "/notes/0011. 列表渲染/README"
       }
     ]
   },
@@ -137,7 +129,7 @@
     "items": [
       {
         "text": "✅ 0016. dangerouslySetInnerHTML",
-        "link": "/0016. dangerouslySetInnerHTML/README"
+        "link": "/notes/0016. dangerouslySetInnerHTML/README"
       }
     ]
   },
@@ -147,23 +139,23 @@
     "items": [
       {
         "text": "✅ 0021. 组件的基本组成",
-        "link": "/0021. 组件的基本组成/README"
+        "link": "/notes/0021. 组件的基本组成/README"
       },
       {
         "text": "✅ 0002. react 组件名的命名规则",
-        "link": "/0002. react 组件名的命名规则/README"
+        "link": "/notes/0002. react 组件名的命名规则/README"
       },
       {
         "text": "✅ 0022. 函数组件概述",
-        "link": "/0022. 函数组件概述/README"
+        "link": "/notes/0022. 函数组件概述/README"
       },
       {
         "text": "✅ 0023. 类组件概述",
-        "link": "/0023. 类组件概述/README"
+        "link": "/notes/0023. 类组件概述/README"
       },
       {
         "text": "⏰ 0024. 单向数据流是什么",
-        "link": "/0024. 单向数据流是什么/README"
+        "link": "/notes/0024. 单向数据流是什么/README"
       }
     ]
   },
@@ -173,7 +165,7 @@
     "items": [
       {
         "text": "✅ 0049. React 组件调用方式对比：JSX 渲染 vs 直接函数调用",
-        "link": "/0049. React 组件调用方式对比：JSX 渲染 vs 直接函数调用/README"
+        "link": "/notes/0049. React 组件调用方式对比：JSX 渲染 vs 直接函数调用/README"
       }
     ]
   },
@@ -183,19 +175,19 @@
     "items": [
       {
         "text": "✅ 0019. 组件属性的传递和接收",
-        "link": "/0019. 组件属性的传递和接收/README"
+        "link": "/notes/0019. 组件属性的传递和接收/README"
       },
       {
         "text": "✅ 0005. 通过 props 和 children 来传递元素内容",
-        "link": "/0005. 通过 props 和 children 来传递元素内容/README"
+        "link": "/notes/0005. 通过 props 和 children 来传递元素内容/README"
       },
       {
         "text": "✅ 0025. 布尔属性",
-        "link": "/0025. 布尔属性/README"
+        "link": "/notes/0025. 布尔属性/README"
       },
       {
         "text": "⏰ 0020. 组件属性的校验",
-        "link": "/0020. 组件属性的校验/README"
+        "link": "/notes/0020. 组件属性的校验/README"
       }
     ]
   },
@@ -206,7 +198,7 @@
     "items": [
       {
         "text": "⏰ 0027. 生命周期",
-        "link": "/0027. 生命周期/README"
+        "link": "/notes/0027. 生命周期/README"
       }
     ]
   },
@@ -214,10 +206,10 @@
     "text": "13. ref",
     "collapsed": true,
     "items": [
-      { "text": "⏰ 0007. ref", "link": "/0007. ref/README" },
+      { "text": "⏰ 0007. ref", "link": "/notes/0007. ref/README" },
       {
         "text": "✅ 0018. demo-图片定时切换",
-        "link": "/0018. demo-图片定时切换/README"
+        "link": "/notes/0018. demo-图片定时切换/README"
       }
     ]
   },
@@ -229,7 +221,7 @@
     "items": [
       {
         "text": "✅ 0014. React.Fragment",
-        "link": "/0014. React.Fragment/README"
+        "link": "/notes/0014. React.Fragment/README"
       }
     ]
   },
@@ -239,23 +231,23 @@
     "items": [
       {
         "text": "✅ 0047. redux 是什么",
-        "link": "/0047. redux 是什么/README"
+        "link": "/notes/0047. redux 是什么/README"
       },
       {
         "text": "⏰ 0028. redux 的基本使用",
-        "link": "/0028. redux 的基本使用/README"
+        "link": "/notes/0028. redux 的基本使用/README"
       },
       {
         "text": "⏰ 0029. 为什么说前端的 mvc 已死",
-        "link": "/0029. 为什么说前端的 mvc 已死/README"
+        "link": "/notes/0029. 为什么说前端的 mvc 已死/README"
       },
       {
         "text": "⏰ 0030. redux 中的 action",
-        "link": "/0030. redux 中的 action/README"
+        "link": "/notes/0030. redux 中的 action/README"
       },
       {
         "text": "⏰ 0031. 在 redux 中，store、reducer、action 三者之间的关系",
-        "link": "/0031. 在 redux 中，store、reducer、action 三者之间的关系/README"
+        "link": "/notes/0031. 在 redux 中，store、reducer、action 三者之间的关系/README"
       }
     ]
   },
@@ -265,19 +257,19 @@
     "items": [
       {
         "text": "✅ 0006. react-modal",
-        "link": "/0006. react-modal/README"
+        "link": "/notes/0006. react-modal/README"
       },
       {
         "text": "✅ 0012. react-monaco-editor",
-        "link": "/0012. react-monaco-editor/README"
+        "link": "/notes/0012. react-monaco-editor/README"
       },
       {
         "text": "⏰ 0033. react-tooltip",
-        "link": "/0033. react-tooltip/README"
+        "link": "/notes/0033. react-tooltip/README"
       },
       {
         "text": "⏰ 0038. react-intl",
-        "link": "/0038. react-intl/README"
+        "link": "/notes/0038. react-intl/README"
       }
     ]
   },
@@ -287,11 +279,11 @@
     "items": [
       {
         "text": "✅ 0008. npm create vite 使用 vite 快速初始化一个 react 工程",
-        "link": "/0008. npm create vite 使用 vite 快速初始化一个 react 工程/README"
+        "link": "/notes/0008. npm create vite 使用 vite 快速初始化一个 react 工程/README"
       },
       {
         "text": "⏰ 0036. 快速搭建一个基于 vite、antd 的 react 项目",
-        "link": "/0036. 快速搭建一个基于 vite、antd 的 react 项目/README"
+        "link": "/notes/0036. 快速搭建一个基于 vite、antd 的 react 项目/README"
       }
     ]
   },
@@ -301,7 +293,7 @@
     "items": [
       {
         "text": "⏰ 0037. 学习 antd Message 组件的使用",
-        "link": "/0037. 学习 antd Message 组件的使用/README"
+        "link": "/notes/0037. 学习 antd Message 组件的使用/README"
       }
     ]
   },
@@ -309,58 +301,58 @@
     "text": "21. empty",
     "collapsed": true,
     "items": [
-      { "text": "⏰ 0026. xxx", "link": "/0026. xxx/README" },
-      { "text": "⏰ 0050. xxx", "link": "/0050. xxx/README" },
-      { "text": "⏰ 0051. xxx", "link": "/0051. xxx/README" },
-      { "text": "⏰ 0052. xxx", "link": "/0052. xxx/README" },
-      { "text": "⏰ 0053. xxx", "link": "/0053. xxx/README" },
-      { "text": "⏰ 0054. xxx", "link": "/0054. xxx/README" },
-      { "text": "⏰ 0055. xxx", "link": "/0055. xxx/README" },
-      { "text": "⏰ 0056. xxx", "link": "/0056. xxx/README" },
-      { "text": "⏰ 0057. xxx", "link": "/0057. xxx/README" },
-      { "text": "⏰ 0058. xxx", "link": "/0058. xxx/README" },
-      { "text": "⏰ 0059. xxx", "link": "/0059. xxx/README" },
-      { "text": "⏰ 0060. xxx", "link": "/0060. xxx/README" },
-      { "text": "⏰ 0061. xxx", "link": "/0061. xxx/README" },
-      { "text": "⏰ 0062. xxx", "link": "/0062. xxx/README" },
-      { "text": "⏰ 0063. xxx", "link": "/0063. xxx/README" },
-      { "text": "⏰ 0064. xxx", "link": "/0064. xxx/README" },
-      { "text": "⏰ 0065. xxx", "link": "/0065. xxx/README" },
-      { "text": "⏰ 0066. xxx", "link": "/0066. xxx/README" },
-      { "text": "⏰ 0067. xxx", "link": "/0067. xxx/README" },
-      { "text": "⏰ 0068. xxx", "link": "/0068. xxx/README" },
-      { "text": "⏰ 0069. xxx", "link": "/0069. xxx/README" },
-      { "text": "⏰ 0070. xxx", "link": "/0070. xxx/README" },
-      { "text": "⏰ 0071. xxx", "link": "/0071. xxx/README" },
-      { "text": "⏰ 0072. xxx", "link": "/0072. xxx/README" },
-      { "text": "⏰ 0073. xxx", "link": "/0073. xxx/README" },
-      { "text": "⏰ 0074. xxx", "link": "/0074. xxx/README" },
-      { "text": "⏰ 0075. xxx", "link": "/0075. xxx/README" },
-      { "text": "⏰ 0076. xxx", "link": "/0076. xxx/README" },
-      { "text": "⏰ 0077. xxx", "link": "/0077. xxx/README" },
-      { "text": "⏰ 0078. xxx", "link": "/0078. xxx/README" },
-      { "text": "⏰ 0079. xxx", "link": "/0079. xxx/README" },
-      { "text": "⏰ 0080. xxx", "link": "/0080. xxx/README" },
-      { "text": "⏰ 0081. xxx", "link": "/0081. xxx/README" },
-      { "text": "⏰ 0082. xxx", "link": "/0082. xxx/README" },
-      { "text": "⏰ 0083. xxx", "link": "/0083. xxx/README" },
-      { "text": "⏰ 0084. xxx", "link": "/0084. xxx/README" },
-      { "text": "⏰ 0085. xxx", "link": "/0085. xxx/README" },
-      { "text": "⏰ 0086. xxx", "link": "/0086. xxx/README" },
-      { "text": "⏰ 0087. xxx", "link": "/0087. xxx/README" },
-      { "text": "⏰ 0088. xxx", "link": "/0088. xxx/README" },
-      { "text": "⏰ 0089. xxx", "link": "/0089. xxx/README" },
-      { "text": "⏰ 0090. xxx", "link": "/0090. xxx/README" },
-      { "text": "⏰ 0091. xxx", "link": "/0091. xxx/README" },
-      { "text": "⏰ 0092. xxx", "link": "/0092. xxx/README" },
-      { "text": "⏰ 0093. xxx", "link": "/0093. xxx/README" },
-      { "text": "⏰ 0094. xxx", "link": "/0094. xxx/README" },
-      { "text": "⏰ 0095. xxx", "link": "/0095. xxx/README" },
-      { "text": "⏰ 0096. xxx", "link": "/0096. xxx/README" },
-      { "text": "⏰ 0097. xxx", "link": "/0097. xxx/README" },
-      { "text": "⏰ 0098. xxx", "link": "/0098. xxx/README" },
-      { "text": "⏰ 0099. xxx", "link": "/0099. xxx/README" },
-      { "text": "⏰ 0100. xxx", "link": "/0100. xxx/README" }
+      { "text": "⏰ 0026. xxx", "link": "/notes/0026. xxx/README" },
+      { "text": "⏰ 0050. xxx", "link": "/notes/0050. xxx/README" },
+      { "text": "⏰ 0051. xxx", "link": "/notes/0051. xxx/README" },
+      { "text": "⏰ 0052. xxx", "link": "/notes/0052. xxx/README" },
+      { "text": "⏰ 0053. xxx", "link": "/notes/0053. xxx/README" },
+      { "text": "⏰ 0054. xxx", "link": "/notes/0054. xxx/README" },
+      { "text": "⏰ 0055. xxx", "link": "/notes/0055. xxx/README" },
+      { "text": "⏰ 0056. xxx", "link": "/notes/0056. xxx/README" },
+      { "text": "⏰ 0057. xxx", "link": "/notes/0057. xxx/README" },
+      { "text": "⏰ 0058. xxx", "link": "/notes/0058. xxx/README" },
+      { "text": "⏰ 0059. xxx", "link": "/notes/0059. xxx/README" },
+      { "text": "⏰ 0060. xxx", "link": "/notes/0060. xxx/README" },
+      { "text": "⏰ 0061. xxx", "link": "/notes/0061. xxx/README" },
+      { "text": "⏰ 0062. xxx", "link": "/notes/0062. xxx/README" },
+      { "text": "⏰ 0063. xxx", "link": "/notes/0063. xxx/README" },
+      { "text": "⏰ 0064. xxx", "link": "/notes/0064. xxx/README" },
+      { "text": "⏰ 0065. xxx", "link": "/notes/0065. xxx/README" },
+      { "text": "⏰ 0066. xxx", "link": "/notes/0066. xxx/README" },
+      { "text": "⏰ 0067. xxx", "link": "/notes/0067. xxx/README" },
+      { "text": "⏰ 0068. xxx", "link": "/notes/0068. xxx/README" },
+      { "text": "⏰ 0069. xxx", "link": "/notes/0069. xxx/README" },
+      { "text": "⏰ 0070. xxx", "link": "/notes/0070. xxx/README" },
+      { "text": "⏰ 0071. xxx", "link": "/notes/0071. xxx/README" },
+      { "text": "⏰ 0072. xxx", "link": "/notes/0072. xxx/README" },
+      { "text": "⏰ 0073. xxx", "link": "/notes/0073. xxx/README" },
+      { "text": "⏰ 0074. xxx", "link": "/notes/0074. xxx/README" },
+      { "text": "⏰ 0075. xxx", "link": "/notes/0075. xxx/README" },
+      { "text": "⏰ 0076. xxx", "link": "/notes/0076. xxx/README" },
+      { "text": "⏰ 0077. xxx", "link": "/notes/0077. xxx/README" },
+      { "text": "⏰ 0078. xxx", "link": "/notes/0078. xxx/README" },
+      { "text": "⏰ 0079. xxx", "link": "/notes/0079. xxx/README" },
+      { "text": "⏰ 0080. xxx", "link": "/notes/0080. xxx/README" },
+      { "text": "⏰ 0081. xxx", "link": "/notes/0081. xxx/README" },
+      { "text": "⏰ 0082. xxx", "link": "/notes/0082. xxx/README" },
+      { "text": "⏰ 0083. xxx", "link": "/notes/0083. xxx/README" },
+      { "text": "⏰ 0084. xxx", "link": "/notes/0084. xxx/README" },
+      { "text": "⏰ 0085. xxx", "link": "/notes/0085. xxx/README" },
+      { "text": "⏰ 0086. xxx", "link": "/notes/0086. xxx/README" },
+      { "text": "⏰ 0087. xxx", "link": "/notes/0087. xxx/README" },
+      { "text": "⏰ 0088. xxx", "link": "/notes/0088. xxx/README" },
+      { "text": "⏰ 0089. xxx", "link": "/notes/0089. xxx/README" },
+      { "text": "⏰ 0090. xxx", "link": "/notes/0090. xxx/README" },
+      { "text": "⏰ 0091. xxx", "link": "/notes/0091. xxx/README" },
+      { "text": "⏰ 0092. xxx", "link": "/notes/0092. xxx/README" },
+      { "text": "⏰ 0093. xxx", "link": "/notes/0093. xxx/README" },
+      { "text": "⏰ 0094. xxx", "link": "/notes/0094. xxx/README" },
+      { "text": "⏰ 0095. xxx", "link": "/notes/0095. xxx/README" },
+      { "text": "⏰ 0096. xxx", "link": "/notes/0096. xxx/README" },
+      { "text": "⏰ 0097. xxx", "link": "/notes/0097. xxx/README" },
+      { "text": "⏰ 0098. xxx", "link": "/notes/0098. xxx/README" },
+      { "text": "⏰ 0099. xxx", "link": "/notes/0099. xxx/README" },
+      { "text": "⏰ 0100. xxx", "link": "/notes/0100. xxx/README" }
     ]
   }
 ]

@@ -1,4 +1,5 @@
 import { runCommand } from './run_command.js'
+import { ROOT_DIR } from '../constants.js';
 
 /**
  * 同步本地和远程 Git 仓库
@@ -9,7 +10,7 @@ import { runCommand } from './run_command.js'
  * 
  * @param {string} dir - 本地仓库目录路径
  */
-export async function syncRepo(dir) {
+export async function syncRepo(dir = ROOT_DIR) {
   try {
     // 确保是 Git 仓库
     const isGitRepo = await runCommand("git rev-parse --is-inside-work-tree", dir).catch(() => false);

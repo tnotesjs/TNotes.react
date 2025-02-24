@@ -1,14 +1,12 @@
 {
   "scripts": {
-    "test": "            echo \"Error: no test specified\" && exit 1",
-    "docs:dev": "        vitepress dev",
-    "docs:build": "      vitepress build",
-    "docs:preview": "    vitepress preview",
-    "distribute": "      node ./node_modules/tnotes   --distributeREADME    --repoName=react",
-    "docs:publish": "    node ./node_modules/tnotes/scripts/docs-publish.js",
-    "merge": "           node ./node_modules/tnotes   --mergeREADME         --repoName=react",
-    "sync": "            node ./node_modules/tnotes   --syncREADME          --repoName=react",
-    "update": "          node ./node_modules/tnotes   --updateREADME        --repoName=react"
+    "tnotes:dev": "         vitepress dev",
+    "tnotes:build": "       vitepress build",
+    "tnotes:preview": "     vitepress preview",
+    "tnotes:distribute": "  node ./.tnotes/core --distribute",
+    "tnotes:merge": "       node ./.tnotes/core --merge",
+    "tnotes:sync": "        node ./.tnotes/core --sync",
+    "tnotes:update": "      node ./.tnotes/core --update"
   },
   "devDependencies": {
     "markdown-it-task-lists": "^2.1.1",

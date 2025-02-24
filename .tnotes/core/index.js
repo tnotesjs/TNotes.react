@@ -1,36 +1,22 @@
-import path from 'path'
 import minimist from 'minimist'
-
-import { repoName, ignore_dirs } from '../config/.tnotes.json'
 
 import ReadmeUpdater from './updateREADME.js'
 import { mergeReadme, distributeReadme } from './notes-merge-distribute.js'
-import { syncRepo } from './utils'
+import { syncRepo, getTnotesConfig } from './utils/index.js'
 import { __dirname, ROOT_DIR } from './constants.js'
-import fs from 'fs'
 
-const notesmeta = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, '.notesmeta.json'), 'utf-8')
-)
+const { ignore_dirs } = getTnotesConfig();
 
 ;(async () => {
   const args = minimist(process.argv)
 
-  if (args.updateREADME || args.update) {
+  if (args.update) {
     const updater = new ReadmeUpdater()
     updater.updateReadme()
-    await syncRepo(ROOT_DIR)
+    await syncRepo()
   }
 
-  if (args.syncREADME || args.sync) {
-    await syncRepo(ROOT_DIR)
-  }
-
-  if (args.mergeREADME || args.merge) {
-    mergeReadme(ROOT_DIR, ignore_dirs)
-  }
-
-  if (args.distributeREADME || args.distribute) {
-    distributeReadme(ROOT_DIR)
-  }
+  if (args.sync) await syncRepo()
+  if (args.merge) mergeReadme(ROOT_DIR, ignore_dirs)
+  if (args.distribute) distributeReadme(ROOT_DIR)
 })()

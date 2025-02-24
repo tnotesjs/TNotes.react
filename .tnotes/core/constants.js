@@ -1,6 +1,8 @@
 import { fileURLToPath } from 'url'
 import path from 'path'
-import { repoName } from '../config/.tnotes.json'
+import { getTnotesConfig } from './utils/index.js'
+
+const { repoName } = getTnotesConfig()
 
 export const __dirname = path.dirname(fileURLToPath(import.meta.url))
 

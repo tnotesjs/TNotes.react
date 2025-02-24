@@ -1,7 +1,7 @@
 /**
  * 存储本地笔记文件夹所在位置的 key
  */
-export const NOTE_DIR_KEY = 'NOTE_DIR_KEY'
+export const NOTES_DIR_KEY = 'NOTES_DIR_KEY'
 
 /**
  * VitePress HOME README 文件名

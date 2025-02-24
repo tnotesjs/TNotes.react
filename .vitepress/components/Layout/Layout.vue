@@ -15,13 +15,6 @@
                             <img :src="icon__vscode" alt="open in vscode">
                         </a>
                     </div>
-                    <div class="copy-box" v-show="isHomeReadme">
-                        <span class="tip" v-show="isCopied">Copied!</span>
-                        <button class="copy-raw-file" @click="copyRawFile" title="Copy raw file">
-                            <!-- <img class="icon" src="./icon__clipboard.svg" alt="icon__clipboard"> -->
-                            <img class="icon" :src="m2mm" alt="icon__clipboard">
-                        </button>
-                    </div>
                     <div class="github-box" v-show="isHomeReadme">
                         <a :href="`https://github.com/Tdahuyou/${vpData.page.value.title.toLowerCase()}/blob/main/README.md`"
                             :aria-label="`Tdahuyou github - ${vpData.page.value.title.toLowerCase()} 笔记仓库链接`"
@@ -29,6 +22,13 @@
                             rel="noopener">
                             <img :src="icon__github" alt="github icon">
                         </a>
+                    </div>
+                    <div class="copy-box" v-show="isHomeReadme">
+                        <span class="tip" v-show="isCopied">Copied!</span>
+                        <button class="copy-raw-file" @click="copyRawFile" title="Copy raw file">
+                            <!-- <img class="icon" src="./icon__clipboard.svg" alt="icon__clipboard"> -->
+                            <img class="icon" :src="m2mm" alt="icon__clipboard">
+                        </button>
                     </div>
                 </div>
                 <div class="right-area" v-show="isHomeReadme">
@@ -85,12 +85,12 @@ import { data as homeReadmeData } from './homeReadme.data'
 import { ref, computed, onMounted, onBeforeUnmount, watch } from 'vue'
 import { formatDate, scrollToTop } from '../utils.js'
 
-import { NOTE_DIR_KEY, TOC_MD } from '../constants.js'
+import { NOTES_DIR_KEY, TOC_MD } from '../constants.js'
 
-import icon__vscode from "../../assets/icon__vscode.svg"
-import icon__totop from "../../assets/icon__totop.svg"
-import m2mm from "../../assets/m2mm.png"
-import icon__github from "../../assets/icon__github.svg"
+import icon__vscode from "../../../assets/icon__vscode.svg"
+import icon__totop from "../../../assets/icon__totop.svg"
+import m2mm from "../../../assets/m2mm.png"
+import icon__github from "../../../assets/icon__github.svg"
 
 const { Layout } = DefaultTheme
 const vpData = useData()
@@ -101,7 +101,7 @@ const vscodeNoteDir = ref('');
 
 const updateVscodeNoteDir = (relativePath) => {
     if (typeof window !== 'undefined') {
-        const noteDir = localStorage.getItem(NOTE_DIR_KEY);
+        const noteDir = localStorage.getItem(NOTES_DIR_KEY);
         vscodeNoteDir.value = noteDir ? `vscode://file/${noteDir}/${relativePath}` : '';
     }
 };
@@ -188,7 +188,7 @@ onBeforeUnmount(destroySwiper)
 // --------------------------------------------------------------
 </script>
 
-<style>
+<style scoped>
 .doc-before-container {
     display: flex;
     margin-bottom: 1rem;
