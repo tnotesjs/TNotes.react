@@ -1,12 +1,12 @@
 {
   "scripts": {
-    "tnotes:dev": "         vitepress dev",
-    "tnotes:build": "       vitepress build",
-    "tnotes:preview": "     vitepress preview",
-    "tnotes:distribute": "  node ./.tnotes/core --distribute",
-    "tnotes:merge": "       node ./.tnotes/core --merge",
-    "tnotes:sync": "        node ./.tnotes/core --sync",
-    "tnotes:update": "      node ./.tnotes/core --update"
+    "tn:dev": "         vitepress dev",
+    "tn:build": "       vitepress build",
+    "tn:preview": "     vitepress preview",
+    "tn:distribute": "  node ./.tnotes/core --distribute",
+    "tn:merge": "       node ./.tnotes/core --merge",
+    "tn:sync": "        node ./.tnotes/core --sync",
+    "tn:update": "      node ./.tnotes/core --update"
   },
   "devDependencies": {
     "markdown-it-task-lists": "^2.1.1",

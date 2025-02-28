@@ -9,18 +9,15 @@ import markdownItTaskLists from 'markdown-it-task-lists'
 import mila from 'markdown-it-link-attributes'
 import markdownItContainer from 'markdown-it-container'
 
-import {
-  author,
-  repoName,
-  keywords
-} from '../.tnotes.json'
+import { author, repoName, keywords } from '../.tnotes.json'
 
 import sidebar from './sidebar.json'
 import socialLinks from './socialLinks.json'
 
 const slugger = new GithubSlugger()
 
-const github_page_url = 'https://' + author.toLowerCase() + '.github.io/'+ repoName + '/'
+const github_page_url =
+  'https://' + author.toLowerCase() + '.github.io/' + repoName + '/'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -56,7 +53,7 @@ function head() {
     ],
     ['meta', { name: 'author', content: author }],
     ['link', { rel: 'canonical', href: github_page_url }],
-    ['link', { rel: 'icon', href: github_page_url + 'assets/favicon.ico' }],
+    ['link', { rel: 'icon', href: github_page_url + 'favicon.ico' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
   ]
 
@@ -134,17 +131,26 @@ function themeConfig() {
     },
     nav: [
       {
-        "text": "🏠 TNOtes",
-        "link": "https://tdahuyou.github.io/notes"
+        text: 'Menus',
+        items: [
+          {
+            text: '🏠 Home',
+            link: '/',
+          },
+          {
+            text: '📒 TNotes',
+            link: 'https://tdahuyou.github.io/notes',
+          },
+          {
+            text: '👀 TOC',
+            link: '/TOC',
+          },
+          {
+            text: '⚙️ Settings',
+            link: '/Settings',
+          },
+        ],
       },
-      {
-        "text": "👀 TOC",
-        "link": "/TOC"
-      },
-      {
-        "text": "⚙️ Settings",
-        "link": "/Settings"
-      }
     ],
     search: { provider: 'local' },
     sidebar,

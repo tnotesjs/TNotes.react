@@ -1,11 +1,20 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
 hero:
   name: "react notes"
   image:
-    src: https://tdahuyou.github.io/notes/cover-image-2.png
+    src: /logo.png
     alt: TNotes logo
+  actions:
+    - theme: brand
+      text: 📒 TNotes
+      link: https://tdahuyou.github.io/notes
+    - theme: alt
+      text: 👀 TOC
+      link: /TOC
+    - theme: alt
+      text: ⚙️ Settings
+      link: /Settings
 ---
 

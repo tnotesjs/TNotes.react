@@ -87,10 +87,10 @@ import { formatDate, scrollToTop } from '../utils.js'
 
 import { NOTES_DIR_KEY, TOC_MD } from '../constants.js'
 
-import icon__vscode from "../../../assets/icon__vscode.svg"
-import icon__totop from "../../../assets/icon__totop.svg"
-import m2mm from "../../../assets/m2mm.png"
-import icon__github from "../../../assets/icon__github.svg"
+import icon__vscode from "/icon__vscode.svg"
+import icon__totop from "/icon__totop.svg"
+import m2mm from "/m2mm.png"
+import icon__github from "/icon__github.svg"
 
 const { Layout } = DefaultTheme
 const vpData = useData()
