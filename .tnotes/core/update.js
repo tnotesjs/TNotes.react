@@ -21,7 +21,7 @@ import {
   NOTES_TOC_END_TAG,
   NOTES_TOC_START_TAG,
   REPO_BOLB_URL,
-  REPO_URL,
+  REPO_NOTES_URL,
   repoName,
   ROOT_README_PATH,
   VP_DIR,
@@ -42,7 +42,7 @@ class ReadmeUpdater {
     this.notesDir = NOTES_DIR
     this.repoBolbUrl = REPO_BOLB_URL 
     this.repoName = repoName
-    this.repoUrl = REPO_URL
+    this.repoNotesUrl = REPO_NOTES_URL
     this.rootReadmePath = ROOT_README_PATH
     this.tocEndTag = NOTES_TOC_END_TAG
     this.tocStartTag = NOTES_TOC_START_TAG
@@ -141,7 +141,7 @@ class ReadmeUpdater {
       const notesPath = path.resolve(this.notesDir, notesDirName, "README.md")
       const notesConfigPath = path.resolve(this.notesDir, notesDirName, ".tnotes.json")
 
-      const notesTitle = `# [${notesDirName}](${this.repoUrl}/${encodeURIComponent(notesDirName)})`
+      const notesTitle = `# [${notesDirName}](${this.repoNotesUrl}/${encodeURIComponent(notesDirName)})`
 
       if (fs.existsSync(notesConfigPath)) {
         const notesConfig = JSON.parse(fs.readFileSync(notesConfigPath, "utf8"))
@@ -188,7 +188,7 @@ class ReadmeUpdater {
               return match;
             } else if (/^#.?/.test(p2)) {
               // anchor
-              return `[${p1}](${this.repoUrl}/${encodeURIComponent(
+              return `[${p1}](${this.repoNotesUrl}/${encodeURIComponent(
                 notesDirName
               )}/README.md${p2})`;
             } else {
@@ -196,7 +196,7 @@ class ReadmeUpdater {
               const isImage = match.startsWith("![");
               const prefix = isImage ? "![" : "[";
               const suffix = isImage ? "]" : "]";
-              const baseUrl = isImage ? this.repoBolbUrl : this.repoUrl;
+              const baseUrl = isImage ? this.repoBolbUrl : this.repoNotesUrl;
               return `${prefix}${p1}${suffix}(${baseUrl}/${encodeURIComponent(
                 notesDirName
               )}/${encodeURIComponent(p2)})`;
@@ -214,7 +214,7 @@ class ReadmeUpdater {
 
       // 以 notes ID 作为 key，初始化 notes map，value 为笔记头部信息。
       this.notesInfo.topInfoMap[notesID] = `[${notesDirName}](${
-        this.repoUrl
+        this.repoNotesUrl
       }/${encodeURIComponent(
         notesDirName
       )}/README.md) <!-- [locale](./${encodeURIComponent(
@@ -470,7 +470,7 @@ class ReadmeUpdater {
        * - github 上的首页 README.md 中记录的路径是 github 的路径格式。
        * - vitepress 需要的 TOC.md 中的笔记链接需要改为基于 github pages 的路径格式。
        */
-      const lines = lines_.map(line => line.replaceAll(this.repoUrl, this.githubPageUrl).replaceAll('README.md', 'README'))
+      const lines = lines_.map(line => line.replaceAll(this.repoNotesUrl, this.githubPageUrl).replaceAll('README.md', 'README'))
 
       let tocStartIdx = lines_.indexOf(this.tocStartTag);
       tocStartIdx = tocStartIdx === -1 ? lines_.indexOf(this.tocStartTag + '\r') : tocStartIdx;

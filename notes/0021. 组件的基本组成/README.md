@@ -1,4 +1,4 @@
-# [0021. 组件的基本组成](https://github.com/Tdahuyou/TNotes.react/tree/main/0021.%20%E7%BB%84%E4%BB%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90)
+# [0021. 组件的基本组成](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0021.%20%E7%BB%84%E4%BB%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90)
 
 <!-- region:toc -->
 - [1. 📒 组件的 3 大基本组成结构](#1--组件的-3-大基本组成结构)

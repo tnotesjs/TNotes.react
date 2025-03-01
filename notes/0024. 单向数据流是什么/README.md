@@ -1,4 +1,4 @@
-# [0024. 单向数据流是什么](https://github.com/Tdahuyou/TNotes.react/tree/main/0024.%20%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81%E6%98%AF%E4%BB%80%E4%B9%88)
+# [0024. 单向数据流是什么](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0024.%20%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81%E6%98%AF%E4%BB%80%E4%B9%88)
 
 <!-- region:toc -->
 - [1. 🤖 什么是单向数据流](#1--什么是单向数据流)

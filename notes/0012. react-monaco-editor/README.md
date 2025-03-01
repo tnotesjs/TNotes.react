@@ -1,4 +1,4 @@
-# [0012. react-monaco-editor](https://github.com/Tdahuyou/TNotes.react/tree/main/0012.%20react-monaco-editor)
+# [0012. react-monaco-editor](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0012.%20react-monaco-editor)
 
 <!-- region:toc -->
 - [1. 🔗 monaco-react 官方文档](#1--monaco-react-官方文档)

@@ -1,4 +1,4 @@
-# [0043. ReactDOM.render](https://github.com/Tdahuyou/TNotes.react/tree/main/0043.%20ReactDOM.render)
+# [0043. ReactDOM.render](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0043.%20ReactDOM.render)
 
 <!-- region:toc -->
 - [1. ⚠️ 兼容性问题 - 从 v18 开始，不再支持 ReactDOM.render 这个 API](#1-️-兼容性问题---从-v18-开始不再支持-reactdomrender-这个-api)

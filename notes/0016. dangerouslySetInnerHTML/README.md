@@ -1,4 +1,4 @@
-# [0016. dangerouslySetInnerHTML](https://github.com/Tdahuyou/TNotes.react/tree/main/0016.%20dangerouslySetInnerHTML)
+# [0016. dangerouslySetInnerHTML](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0016.%20dangerouslySetInnerHTML)
 
 <!-- region:toc -->
 - [1. 📒 dangerouslySetInnerHTML 简介](#1--dangerouslysetinnerhtml-简介)

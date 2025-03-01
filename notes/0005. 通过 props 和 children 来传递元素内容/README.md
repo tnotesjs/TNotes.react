@@ -1,4 +1,4 @@
-# [0005. 通过 props 和 children 来传递元素内容](https://github.com/Tdahuyou/TNotes.react/tree/main/0005.%20%E9%80%9A%E8%BF%87%20props%20%E5%92%8C%20children%20%E6%9D%A5%E4%BC%A0%E9%80%92%E5%85%83%E7%B4%A0%E5%86%85%E5%AE%B9)
+# [0005. 通过 props 和 children 来传递元素内容](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0005.%20%E9%80%9A%E8%BF%87%20props%20%E5%92%8C%20children%20%E6%9D%A5%E4%BC%A0%E9%80%92%E5%85%83%E7%B4%A0%E5%86%85%E5%AE%B9)
 
 <!-- region:toc -->
 - [1. 📒 react 组件中的 props.children 相当于 vue 组件中的 slot 插槽](#1--react-组件中的-propschildren-相当于-vue-组件中的-slot-插槽)

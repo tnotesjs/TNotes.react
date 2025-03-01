@@ -1,4 +1,4 @@
-# [0033. react-tooltip](https://github.com/Tdahuyou/TNotes.react/tree/main/0033.%20react-tooltip)
+# [0033. react-tooltip](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0033.%20react-tooltip)
 
 <!-- region:toc -->
 - [1. 🔗 links](#1--links)

@@ -1,4 +1,4 @@
-# [0004. 在 JSX 中需要使用 className 给元素添加 class](https://github.com/Tdahuyou/TNotes.react/tree/main/0004.%20%E5%9C%A8%20JSX%20%E4%B8%AD%E9%9C%80%E8%A6%81%E4%BD%BF%E7%94%A8%20className%20%E7%BB%99%E5%85%83%E7%B4%A0%E6%B7%BB%E5%8A%A0%20class)
+# [0004. 在 JSX 中需要使用 className 给元素添加 class](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0004.%20%E5%9C%A8%20JSX%20%E4%B8%AD%E9%9C%80%E8%A6%81%E4%BD%BF%E7%94%A8%20className%20%E7%BB%99%E5%85%83%E7%B4%A0%E6%B7%BB%E5%8A%A0%20class)
 
 <!-- region:toc -->
 - [1. 🔍 查看 react 官方对“添加样式”的说明](#1--查看-react-官方对添加样式的说明)

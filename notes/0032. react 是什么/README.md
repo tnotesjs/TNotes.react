@@ -1,4 +1,4 @@
-# [0032. react 是什么](https://github.com/Tdahuyou/TNotes.react/tree/main/0032.%20react%20%E6%98%AF%E4%BB%80%E4%B9%88)
+# [0032. react 是什么](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0032.%20react%20%E6%98%AF%E4%BB%80%E4%B9%88)
 
 <!-- region:toc -->
 - [1. 🔗 参考链接](#1--参考链接)

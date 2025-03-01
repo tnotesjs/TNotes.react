@@ -1,4 +1,4 @@
-# [0038. react-intl](https://github.com/Tdahuyou/TNotes.react/tree/main/0038.%20react-intl)
+# [0038. react-intl](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0038.%20react-intl)
 
 <!-- region:toc -->
 - [1. 🔗 react-intl 相关资料](#1--react-intl-相关资料)

@@ -1,4 +1,4 @@
-# [0010. 条件渲染](https://github.com/Tdahuyou/TNotes.react/tree/main/0010.%20%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93)
+# [0010. 条件渲染](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0010.%20%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93)
 
 <!-- region:toc -->
 - [1. 🔍 查看 react 官方文档关于 Conditional rendering 条件渲染的说明](#1--查看-react-官方文档关于-conditional-rendering-条件渲染的说明)

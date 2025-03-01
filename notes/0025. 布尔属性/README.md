@@ -1,4 +1,4 @@
-# [0025. 布尔属性](https://github.com/Tdahuyou/TNotes.react/tree/main/0025.%20%E5%B8%83%E5%B0%94%E5%B1%9E%E6%80%A7)
+# [0025. 布尔属性](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0025.%20%E5%B8%83%E5%B0%94%E5%B1%9E%E6%80%A7)
 
 <!-- region:toc -->
 - [1. 📒 布尔属性概述](#1--布尔属性概述)

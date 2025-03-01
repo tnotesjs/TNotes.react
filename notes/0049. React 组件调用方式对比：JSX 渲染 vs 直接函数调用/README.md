@@ -1,4 +1,4 @@
-# [0049. React 组件调用方式对比：JSX 渲染 vs 直接函数调用](https://github.com/Tdahuyou/TNotes.react/tree/main/0049.%20React%20%E7%BB%84%E4%BB%B6%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F%E5%AF%B9%E6%AF%94%EF%BC%9AJSX%20%E6%B8%B2%E6%9F%93%20vs%20%E7%9B%B4%E6%8E%A5%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8)
+# [0049. React 组件调用方式对比：JSX 渲染 vs 直接函数调用](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0049.%20React%20%E7%BB%84%E4%BB%B6%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F%E5%AF%B9%E6%AF%94%EF%BC%9AJSX%20%E6%B8%B2%E6%9F%93%20vs%20%E7%9B%B4%E6%8E%A5%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8)
 
 <!-- region:toc -->
 - [1. 💻 demos.1 - JSX 渲染 vs 直接函数调用](#1--demos1---jsx-渲染-vs-直接函数调用)
