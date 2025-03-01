@@ -41,6 +41,7 @@ export const REPO_URL = `https://github.com/${author}/${repoName}/tree/main`
 export const REPO_NOTES_URL = `https://github.com/${author}/${repoName}/tree/main/notes`
 export const REPO_BOLB_URL = `https://raw.githubusercontent.com/${author}/${repoName}/main` // !主要为了渲染存储在 github 上的图片资源。
 export const GITHUB_PAGE_URL = `https://tdahuyou.github.io/${repoName}`
+export const GITHUB_PAGE_NOTES_URL = `https://tdahuyou.github.io/${repoName}/notes`
 
 /**
  * 新增笔记 README.md 模板

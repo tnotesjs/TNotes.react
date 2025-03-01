@@ -14,7 +14,7 @@ import {
   author,
   BILIBILI_VIDEO_BASE_URL,
   EOL,
-  GITHUB_PAGE_URL,
+  GITHUB_PAGE_NOTES_URL,
   ignore_dirs,
   NEW_NOTES_README_MD_TEMPLATE,
   NEW_NOTES_TNOTES_JSON_TEMPLATE,
@@ -39,7 +39,7 @@ class ReadmeUpdater {
   constructor() {
     this.author = author
     this.EOL = EOL
-    this.githubPageUrl = GITHUB_PAGE_URL
+    this.githubPageNotesUrl = GITHUB_PAGE_NOTES_URL
     this.ignoreDirs = ignore_dirs || []
     this.newNotesReadmeMdTemplate = NEW_NOTES_README_MD_TEMPLATE
     this.notesDir = NOTES_DIR
@@ -474,7 +474,7 @@ class ReadmeUpdater {
        * - github 上的首页 README.md 中记录的路径是 github 的路径格式。
        * - vitepress 需要的 TOC.md 中的笔记链接需要改为基于 github pages 的路径格式。
        */
-      const lines = lines_.map(line => line.replaceAll(this.repoNotesUrl, this.githubPageUrl).replaceAll('README.md', 'README'))
+      const lines = lines_.map(line => line.replaceAll(this.repoNotesUrl, this.githubPageNotesUrl).replaceAll('README.md', 'README'))
 
       let tocStartIdx = lines_.indexOf(this.tocStartTag);
       tocStartIdx = tocStartIdx === -1 ? lines_.indexOf(this.tocStartTag + '\r') : tocStartIdx;
