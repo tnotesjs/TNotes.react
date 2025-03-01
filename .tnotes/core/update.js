@@ -17,6 +17,7 @@ import {
   GITHUB_PAGE_URL,
   ignore_dirs,
   NEW_NOTES_README_MD_TEMPLATE,
+  NEW_NOTES_TNOTES_JSON_TEMPLATE,
   NOTES_DIR,
   NOTES_TOC_END_TAG,
   NOTES_TOC_START_TAG,
@@ -24,10 +25,11 @@ import {
   REPO_NOTES_URL,
   repoName,
   ROOT_README_PATH,
+  socialLinks,
   VP_DIR,
   VP_SIDEBAR_PATH,
+  VP_SOCIAL_LINKS_PATH,
   VP_TOC_PATH,
-  NEW_NOTES_TNOTES_JSON_TEMPLATE,
 } from './constants.js'
 import { genHierarchicalSidebar } from './utils/index.js'
 
@@ -39,17 +41,19 @@ class ReadmeUpdater {
     this.EOL = EOL
     this.githubPageUrl = GITHUB_PAGE_URL
     this.ignoreDirs = ignore_dirs || []
+    this.newNotesReadmeMdTemplate = NEW_NOTES_README_MD_TEMPLATE
     this.notesDir = NOTES_DIR
     this.repoBolbUrl = REPO_BOLB_URL 
     this.repoName = repoName
     this.repoNotesUrl = REPO_NOTES_URL
     this.rootReadmePath = ROOT_README_PATH
+    this.socialLinks = socialLinks
     this.tocEndTag = NOTES_TOC_END_TAG
     this.tocStartTag = NOTES_TOC_START_TAG
     this.vpDir = VP_DIR
     this.vpSidebarPath = VP_SIDEBAR_PATH
     this.vpTocPath = VP_TOC_PATH
-    this.newNotesReadmeMdTemplate = NEW_NOTES_README_MD_TEMPLATE
+    this.vpSocialLinksPath = VP_SOCIAL_LINKS_PATH
 
     this.notesInfo = {
       /**
@@ -518,9 +522,14 @@ class ReadmeUpdater {
         JSON.stringify(genHierarchicalSidebar(itemList, this.homeReadme.titles, this.homeReadme.titlesNotesCount))
       );
     };
+
+    const updateFile_SOCIAL_LINKS_JSON = () => {
+      fs.writeFileSync(this.vpSocialLinksPath, JSON.stringify(this.socialLinks))
+    };
     
     updateFile_TOC_MD();
     updateFile_SIDEBAT_JSON();
+    updateFile_SOCIAL_LINKS_JSON();
   }
 
   updateReadme() {
