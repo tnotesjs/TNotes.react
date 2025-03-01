@@ -153,9 +153,31 @@ function themeConfig() {
       },
     ],
     search: { provider: 'local' },
-    sidebar: {
+    sidebar: [
+      {
+        text: 'Menus',
+        collapsed: true,
+        items: [
+          {
+            text: '🏠 Home',
+            link: '/',
+          },
+          {
+            text: '📒 TNotes',
+            link: 'https://tdahuyou.github.io/notes',
+          },
+          {
+            text: '👀 TOC',
+            link: '/TOC',
+          },
+          {
+            text: '⚙️ Settings',
+            link: '/Settings',
+          },
+        ],
+      },
       ...sidebar,
-    },
+    ],
     socialLinks,
   }
 
