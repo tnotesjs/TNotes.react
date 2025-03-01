@@ -146,11 +146,11 @@ class ReadmeUpdater {
       if (fs.existsSync(notesConfigPath)) {
         const notesConfig = JSON.parse(fs.readFileSync(notesConfigPath, "utf8"))
         this.notesInfo.configMap[notesID] = notesConfig
+        notesConfig.done && this.notesInfo.doneIds.add(notesID)
       } else {
         fs.writeFileSync(notesConfigPath, NEW_NOTES_TNOTES_JSON_TEMPLATE, "utf8")
         const notesConfig = JSON.parse(NEW_NOTES_TNOTES_JSON_TEMPLATE)
         this.notesInfo.configMap[notesID] = notesConfig
-        notesConfig.done && this.notesInfo.doneIds.add(notesID)
       }
 
       if (!fs.existsSync(notesPath)) {
@@ -217,7 +217,7 @@ class ReadmeUpdater {
         this.repoNotesUrl
       }/${encodeURIComponent(
         notesDirName
-      )}/README.md) <!-- [locale](./${encodeURIComponent(
+      )}/README.md) <!-- [locale](./notes/${encodeURIComponent(
         notesDirName
       )}/README.md) -->${topInfoLines.join(this.EOL)}${this.EOL}`;
     }

@@ -153,7 +153,9 @@ function themeConfig() {
       },
     ],
     search: { provider: 'local' },
-    sidebar,
+    sidebar: {
+      ...sidebar,
+    },
     socialLinks,
   }
 
