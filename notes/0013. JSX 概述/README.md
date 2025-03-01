@@ -1,9 +1,6 @@
 # [0013. JSX 概述](https://github.com/Tdahuyou/TNotes.react/tree/main/0013.%20JSX%20%E6%A6%82%E8%BF%B0)
 
 <!-- region:toc -->
-
-
-- 
 - [1. 📒 JSX 概述](#1--jsx-概述)
 - [2. 💻 demos.1 - 一个简单的 React 组件示例](#2--demos1---一个简单的-react-组件示例)
 <!-- endregion:toc -->

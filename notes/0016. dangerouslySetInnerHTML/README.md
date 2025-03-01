@@ -1,9 +1,6 @@
 # [0016. dangerouslySetInnerHTML](https://github.com/Tdahuyou/TNotes.react/tree/main/0016.%20dangerouslySetInnerHTML)
 
 <!-- region:toc -->
-
-
-- 
 - [1. 📒 dangerouslySetInnerHTML 简介](#1--dangerouslysetinnerhtml-简介)
 - [2. 💻 demos.1 - dangerouslySetInnerHTML 的基本使用](#2--demos1---dangerouslysetinnerhtml-的基本使用)
 - [3. 📒 DOMPurify 简介](#3--dompurify-简介)

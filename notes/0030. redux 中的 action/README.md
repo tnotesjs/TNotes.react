@@ -1,9 +1,6 @@
 # [0030. redux 中的 action](https://github.com/Tdahuyou/TNotes.react/tree/main/0030.%20redux%20%E4%B8%AD%E7%9A%84%20action)
 
 <!-- region:toc -->
-
-
-- 
 - [1. 🔗 links](#1--links)
 - [2. 💻 脱离 react 单独使用 redux 来管理状态数据](#2--脱离-react-单独使用-redux-来管理状态数据)
 - [3. 📒 action 是什么？有什么用？](#3--action-是什么有什么用)

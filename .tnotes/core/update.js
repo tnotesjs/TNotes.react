@@ -381,7 +381,7 @@ class ReadmeUpdater {
     // let BilibiliOutsidePlayerCompStr = '';
     if (!isHome) {
       const notesConfig = this.notesInfo.configMap[id];
-      if (notesConfig) {
+      if (notesConfig && notesConfig.bilibili.length > 0) {
         bilibiliUrl = notesConfig.bilibili.map((bvid, i) => `[bilibili.${this.repoName}.${id}.${i + 1}](${BILIBILI_VIDEO_BASE_URL + bvid})`).join('、');
         bilibiliUrl = `- ${bilibiliUrl}`;
         // BilibiliOutsidePlayerCompStr = notesConfig.bilibili.map((bvid, i) => `<BilibiliOutsidePlayer id="${bvid}" />`).join(this.EOL);

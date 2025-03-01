@@ -1,9 +1,6 @@
 # [0043. ReactDOM.render](https://github.com/Tdahuyou/TNotes.react/tree/main/0043.%20ReactDOM.render)
 
 <!-- region:toc -->
-
-
-- 
 - [1. ⚠️ 兼容性问题 - 从 v18 开始，不再支持 ReactDOM.render 这个 API](#1-️-兼容性问题---从-v18-开始不再支持-reactdomrender-这个-api)
 - [2. 📒 ReactDOM.render 的基本语法](#2--reactdomrender-的基本语法)
 - [3. 📒 ReactDOM.render 的作用 - 渲染 react 组件到 DOM 中](#3--reactdomrender-的作用---渲染-react-组件到-dom-中)

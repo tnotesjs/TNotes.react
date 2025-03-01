@@ -1,9 +1,6 @@
 # [0019. 组件属性的传递和接收](https://github.com/Tdahuyou/TNotes.react/tree/main/0019.%20%E7%BB%84%E4%BB%B6%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BC%A0%E9%80%92%E5%92%8C%E6%8E%A5%E6%94%B6)
 
 <!-- region:toc -->
-
-
-- 
 - [1. 📒 props 传递概述](#1--props-传递概述)
 - [2. 💻 demos.1 - 组件属性的传递和接收](#2--demos1---组件属性的传递和接收)
 - [3. 💻 demos.2 - 不同数据类型的属性传递](#3--demos2---不同数据类型的属性传递)

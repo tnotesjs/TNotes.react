@@ -1,9 +1,6 @@
 # [0006. react-modal](https://github.com/Tdahuyou/TNotes.react/tree/main/0006.%20react-modal)
 
 <!-- region:toc -->
-
-
-- 
 - [1. 🔗 react-modal 相关链接](#1--react-modal-相关链接)
 - [2. 📒 react-modal 概述](#2--react-modal-概述)
 - [3. 💻 demos.1 - 认识 contentLabel 属性](#3--demos1---认识-contentlabel-属性)

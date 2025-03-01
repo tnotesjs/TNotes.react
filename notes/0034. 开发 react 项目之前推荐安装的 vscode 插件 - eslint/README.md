@@ -1,9 +1,6 @@
 # [0034. 开发 react 项目之前推荐安装的 vscode 插件 - eslint](https://github.com/Tdahuyou/TNotes.react/tree/main/0034.%20%E5%BC%80%E5%8F%91%20react%20%E9%A1%B9%E7%9B%AE%E4%B9%8B%E5%89%8D%E6%8E%A8%E8%8D%90%E5%AE%89%E8%A3%85%E7%9A%84%20vscode%20%E6%8F%92%E4%BB%B6%20-%20eslint)
 
 <!-- region:toc -->
-
-
-- 
 - [1. 📒 eslint 概述](#1--eslint-概述)
 - [2. 📒 安装 ESLint 插件](#2--安装-eslint-插件)
 - [3. 📒 配置 ESLint 基本流程](#3--配置-eslint-基本流程)

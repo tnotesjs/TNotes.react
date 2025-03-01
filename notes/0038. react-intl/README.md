@@ -1,9 +1,6 @@
 # [0038. react-intl](https://github.com/Tdahuyou/TNotes.react/tree/main/0038.%20react-intl)
 
 <!-- region:toc -->
-
-
-- 
 - [1. 🔗 react-intl 相关资料](#1--react-intl-相关资料)
 - [2. 🔗 ICU 相关资料](#2--icu-相关资料)
 - [3. 📒 react-intl 简介](#3--react-intl-简介)
