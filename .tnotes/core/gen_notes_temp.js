@@ -16,8 +16,10 @@ import fs from 'fs'
 import path from 'path'
 import {
   __dirname,
+  author,
   NEW_NOTES_README_MD_TEMPLATE,
   NEW_NOTES_TNOTES_JSON_TEMPLATE,
+  repoName,
 } from './constants.js'
 
 /**
@@ -32,10 +34,11 @@ const END_NUM = 10
 
 for (let id = START_NUM; id <= END_NUM; id++) {
   const dirName = `${id.toString().padStart(4, '0')}. xxx`
+  const noteTitle = `# [${dirName}](https://github.com/${author}/${repoName}/tree/main/${encodeURIComponent(dirName)})`;
   fs.mkdirSync(path.resolve(__dirname, dirName))
   fs.writeFileSync(
     path.resolve(__dirname, dirName, 'README.md'),
-    NEW_NOTES_README_MD_TEMPLATE
+    noteTitle + NEW_NOTES_README_MD_TEMPLATE
   )
   fs.writeFileSync(
     path.resolve(__dirname, dirName, '.tnotes.json'),

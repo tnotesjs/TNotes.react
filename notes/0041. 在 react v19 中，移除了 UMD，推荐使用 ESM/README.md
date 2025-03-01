@@ -1,6 +1,9 @@
-# [0041. 在 react v19 中，移除了 UMD，推荐使用 ESM](https://github.com/Tdahuyou/react/tree/main/0041.%20%E5%9C%A8%20react%20v19%20%E4%B8%AD%EF%BC%8C%E7%A7%BB%E9%99%A4%E4%BA%86%20UMD%EF%BC%8C%E6%8E%A8%E8%8D%90%E4%BD%BF%E7%94%A8%20ESM)
+# [0041. 在 react v19 中，移除了 UMD，推荐使用 ESM](https://github.com/Tdahuyou/TNotes.react/tree/main/0041.%20%E5%9C%A8%20react%20v19%20%E4%B8%AD%EF%BC%8C%E7%A7%BB%E9%99%A4%E4%BA%86%20UMD%EF%BC%8C%E6%8E%A8%E8%8D%90%E4%BD%BF%E7%94%A8%20ESM)
 
 <!-- region:toc -->
+
+
+- 
 - [1. 🔗 links](#1--links)
 - [2. 🤔 什么是 UMD？](#2--什么是-umd)
 - [3. 🤔 为什么移除 UMD？](#3--为什么移除-umd)

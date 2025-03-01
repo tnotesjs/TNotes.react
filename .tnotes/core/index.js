@@ -1,6 +1,6 @@
 import minimist from 'minimist'
 
-import ReadmeUpdater from './updateREADME.js'
+import ReadmeUpdater from './update.js'
 import { mergeNotes, distributeNotes } from './merge_distribute.js'
 import { syncRepo } from './utils/index.js'
 import { __dirname } from './constants.js'

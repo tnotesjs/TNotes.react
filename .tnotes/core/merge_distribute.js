@@ -1,9 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-import { EOL, MERGED_README_PATH, SEPERATOR, NOTES_DIR } from './constants.js'
-import { getTnotesConfig } from './utils/index.js'
-const { ignore_dirs } = getTnotesConfig()
+import { EOL, MERGED_README_PATH, SEPERATOR, NOTES_DIR, ignore_dirs } from './constants.js'
 
 function mergeNotes() {
   /**

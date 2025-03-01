@@ -1,6 +1,9 @@
-# [0008. npm create vite 使用 vite 快速初始化一个 react 工程](https://github.com/Tdahuyou/react/tree/main/0008.%20npm%20create%20vite%20%E4%BD%BF%E7%94%A8%20vite%20%E5%BF%AB%E9%80%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E4%B8%AA%20react%20%E5%B7%A5%E7%A8%8B)
+# [0008. npm create vite 使用 vite 快速初始化一个 react 工程](https://github.com/Tdahuyou/TNotes.react/tree/main/0008.%20npm%20create%20vite%20%E4%BD%BF%E7%94%A8%20vite%20%E5%BF%AB%E9%80%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E4%B8%AA%20react%20%E5%B7%A5%E7%A8%8B)
 
 <!-- region:toc -->
+
+
+- 
 - [1. 🔍 查阅 vite 官网，了解 npm create vite 相关详情](#1--查阅-vite-官网了解-npm-create-vite-相关详情)
 - [2. 📒 使用 pnpm 的实际操作流程](#2--使用-pnpm-的实际操作流程)
 - [3. 💻 demos.1 - 使用 vite 创建 react 工程并启动](#3--demos1---使用-vite-创建-react-工程并启动)

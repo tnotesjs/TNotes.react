@@ -2,12 +2,28 @@ import { fileURLToPath } from 'url'
 import path from 'path'
 import { getTnotesConfig } from './utils/index.js'
 
-const { repoName } = getTnotesConfig()
+const {
+  author,
+  ignore_dirs,
+  repoName,
+} = getTnotesConfig()
+
+export {
+  author,
+  ignore_dirs,
+  repoName,
+}
+
+export const BILIBILI_VIDEO_BASE_URL = "https://www.bilibili.com/video/"
 
 export const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export const ROOT_DIR = path.resolve(__dirname, '..', '..')
+export const ROOT_README_PATH = path.resolve(ROOT_DIR, 'README.md')
 export const NOTES_DIR = path.resolve(ROOT_DIR, 'notes')
+export const VP_DIR = path.resolve(ROOT_DIR, '.vitepress')
+export const VP_TOC_PATH = path.resolve(ROOT_DIR, 'TOC.md')
+export const VP_SIDEBAR_PATH = path.resolve(VP_DIR, 'sidebar.json')
 export const ROOT_PKG_PATH = path.resolve(__dirname, '..', '..', 'package.json')
 
 export const EOL = '\n'
@@ -15,10 +31,17 @@ export const MERGED_README_FILENAME = 'MERGED_README.md'
 export const MERGED_README_PATH = path.resolve(ROOT_DIR, MERGED_README_FILENAME)
 export const SEPERATOR = `<!-- !======> SEPERATOR <====== -->`
 
+export const NOTES_TOC_START_TAG = '<!-- region:toc -->'
+export const NOTES_TOC_END_TAG = '<!-- endregion:toc -->'
+
+export const REPO_URL = `https://github.com/${author}/${repoName}/tree/main`
+export const REPO_BOLB_URL = `https://raw.githubusercontent.com/${author}/${repoName}/main` // !主要为了渲染存储在 github 上的图片资源。
+export const GITHUB_PAGE_URL = `https://tdahuyou.github.io/${repoName}`
+
 /**
  * 新增笔记 README.md 模板
  */
-export const NEW_NOTES_README_MD_TEMPLATE = `# xxx
+export const NEW_NOTES_README_MD_TEMPLATE = `
 
 <!-- region:toc -->
 <!-- endregion:toc -->
