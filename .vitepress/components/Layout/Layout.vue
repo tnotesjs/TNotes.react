@@ -1,7 +1,7 @@
 <template>
     <Layout>
         <template #doc-top>
-            <!-- <pre>vscodeNoteDir: {{ vscodeNoteDir }}</pre> -->
+            <!-- <pre>vscodesNoteDir: {{ vscodeNotesDir }}</pre> -->
             <!-- <pre>vpData.page.value: {{ vpData.page.value }}</pre> -->
             <!-- <button @click="copyRawFile" title="Copy raw file">raw</button> -->
             <!-- <pre>{{ homeReadmeData }}</pre> -->
@@ -10,8 +10,8 @@
         <template #doc-before>
             <div class="doc-before-container">
                 <div class="left-area">
-                    <div class="vscode-box" v-show="vscodeNoteDir">
-                        <a :href="vscodeNoteDir" aria-label="open in vscode" title="open in vscode" target="_blank">
+                    <div class="vscode-box" v-show="vscodeNotesDir">
+                        <a :href="vscodeNotesDir" aria-label="open in vscode" title="open in vscode" target="_blank">
                             <img :src="icon__vscode" alt="open in vscode">
                         </a>
                     </div>
@@ -97,12 +97,12 @@ const vpData = useData()
 // console.log('notesData:', notesData)
 // console.log('vpData:', vpData)
 
-const vscodeNoteDir = ref('');
+const vscodeNotesDir = ref('');
 
 const updateVscodeNoteDir = (relativePath) => {
     if (typeof window !== 'undefined') {
-        const noteDir = localStorage.getItem(NOTES_DIR_KEY);
-        vscodeNoteDir.value = noteDir ? `vscode://file/${noteDir}/${relativePath}` : '';
+        const notesDir = localStorage.getItem(NOTES_DIR_KEY);
+        vscodeNotesDir.value = notesDir ? `vscode://file/${notesDir}/${relativePath}` : '';
     }
 };
 

@@ -1,7 +1,9 @@
+import { repoName } from '../../.tnotes.json'
+
 /**
  * 存储本地笔记文件夹所在位置的 key
  */
-export const NOTES_DIR_KEY = 'NOTES_DIR_KEY'
+export const NOTES_DIR_KEY = 'NOTES_DIR_KEY__' + repoName
 
 /**
  * VitePress HOME README 文件名
@@ -9,3 +11,9 @@ export const NOTES_DIR_KEY = 'NOTES_DIR_KEY'
  */
 export const TOC = 'TOC'
 export const TOC_MD = TOC + '.md'
+
+/**
+ * 英语单词仓库基地址
+ * https://github.com/Tdahuyou/en-words/blob/main/{word}.md
+ */
+export const EN_WORDS_REPO_BASE_URL = 'https://github.com/Tdahuyou/TNotes.en-words/blob/main/'
