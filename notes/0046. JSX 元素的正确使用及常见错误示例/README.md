@@ -173,4 +173,3 @@ createRoot(document.getElementById('root')).render(
 
 - jsx 元素包括 div、span、button、img 等等，可以将它们视为 react 中特殊的内置组件，也就是传统的 html 标签。除了特殊的内置组件外，jsx 元素也包括自定义的组件。
 - jsx 元素的写法是非常灵活的，不过常见的主流写法并不多，需要重点掌握的是 1️⃣、4️⃣ 中的常见写法，3️⃣ 中的写法偶尔会见到，几乎不会见到有人采用 2️⃣ 这种写法。
-

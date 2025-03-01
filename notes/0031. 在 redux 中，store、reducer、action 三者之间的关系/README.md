@@ -45,6 +45,3 @@ stateDiagram-v2
 		store   -->  reducer: 	store 会把旧状态和 action 传递给 reducer 处理。
 		reducer -->  newState: 	reducer 根据旧状态和 action 返回一个新的状态。
 ```
-
-
-

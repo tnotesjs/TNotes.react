@@ -174,7 +174,3 @@ const listItems = numbers.map((number) =>
 
 - Hooks 允许你在不编写类的情况下使用 state 和其他 React 特性。
 - 常见的 hooks 包括 `useState`, `useEffect`, `useContext`, `useReducer` 等。
-
-
-
-

@@ -131,7 +131,3 @@ class Welcome extends Component {
 ```
 
 :::
-
-
-
-

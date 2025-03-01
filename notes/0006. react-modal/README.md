@@ -193,5 +193,3 @@ createRoot(document.getElementById('root')).render(
 ```
 
 - ![](assets/2024-12-17-18-02-48.png)
-
-

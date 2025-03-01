@@ -7,10 +7,12 @@ const { repoName } = getTnotesConfig()
 export const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export const ROOT_DIR = path.resolve(__dirname, '..', '..')
+export const NOTES_DIR = path.resolve(ROOT_DIR, 'notes')
 export const ROOT_PKG_PATH = path.resolve(__dirname, '..', '..', 'package.json')
 
 export const EOL = '\n'
 export const MERGED_README_FILENAME = 'MERGED_README.md'
+export const MERGED_README_PATH = path.resolve(ROOT_DIR, MERGED_README_FILENAME)
 export const SEPERATOR = `<!-- !======> SEPERATOR <====== -->`
 
 /**

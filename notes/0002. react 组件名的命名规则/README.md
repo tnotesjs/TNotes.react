@@ -51,5 +51,3 @@ createRoot(document.getElementById('root')).render(
 
 - `<h1>` 是 html 的标签，在使用的时候必须以小写开头，如果使用大写的 `<H1>` 会报错。
 - `<MyButton>` 是自定义的组件，在使用的时候必须以大写开头，如果使用小写开头 `<myButton>` 会警告。
-
-

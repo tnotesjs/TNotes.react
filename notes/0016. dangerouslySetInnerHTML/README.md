@@ -110,6 +110,3 @@ export default MyComponent;
   - ![](assets/2025-01-21-17-21-27.png)
   - ![](assets/2025-01-21-17-20-53.png)
   - 恶意脚本 `<script>alert("XSS attack!");</script>` 被 `DOMPurify` 移除了，从而防止了 XSS 攻击。
-
-
-

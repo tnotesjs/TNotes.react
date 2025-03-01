@@ -60,6 +60,3 @@ function Button({ onClick, children }) {
 在这个例子中，`Counter` 组件拥有状态 `count` 并且定义了一个方法 `incrementCount` 来更新这个状态。`Button` 是一个纯函数组件，它接收 `onClick` 作为 `prop` 并在其点击时调用该函数。这就是单向数据流的一个典型示例，数据从 `Counter` 流向 `Button`，而事件处理逻辑则通过回调函数从 `Button` 流回到 `Counter`。
 
 单向数据流简化了复杂应用的状态管理，提高了代码的可维护性和可测试性。这也是为什么许多现代前端框架和库，如 React 和 Vue.js，都采用了这种设计模式的原因。
-
-
-

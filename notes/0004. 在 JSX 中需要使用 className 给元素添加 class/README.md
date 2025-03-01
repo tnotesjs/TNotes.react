@@ -234,4 +234,3 @@ createRoot(document.getElementById('root')).render(
 - 打印的警告信息：
   - ![](assets/2025-02-18-13-33-50.png)
 - 由于 2 也能正常渲染，这也就说明 `createElement` 是能够识别 `class` 这种写法的，并非是 `babel` 在编译 `jsx` 的过程中，帮我们将 `class` 转为了 `className`。
-

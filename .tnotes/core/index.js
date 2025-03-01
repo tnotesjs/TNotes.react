@@ -1,11 +1,9 @@
 import minimist from 'minimist'
 
 import ReadmeUpdater from './updateREADME.js'
-import { mergeReadme, distributeReadme } from './notes-merge-distribute.js'
-import { syncRepo, getTnotesConfig } from './utils/index.js'
-import { __dirname, ROOT_DIR } from './constants.js'
-
-const { ignore_dirs } = getTnotesConfig();
+import { mergeNotes, distributeNotes } from './merge_distribute.js'
+import { syncRepo } from './utils/index.js'
+import { __dirname } from './constants.js'
 
 ;(async () => {
   const args = minimist(process.argv)
@@ -17,6 +15,6 @@ const { ignore_dirs } = getTnotesConfig();
   }
 
   if (args.sync) await syncRepo()
-  if (args.merge) mergeReadme(ROOT_DIR, ignore_dirs)
-  if (args.distribute) distributeReadme(ROOT_DIR)
+  if (args.merge) mergeNotes()
+  if (args.distribute) distributeNotes()
 })()
