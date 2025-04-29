@@ -1,7 +1,9 @@
 {
   "author": "Tdahuyou",
   "repoName": "TNotes.react",
-  "keywords": ["TNotes.react"],
+  "keywords": [
+    "TNotes.react"
+  ],
   "ignore_dirs": [
     ".vscode",
     "0000",
@@ -50,5 +52,6 @@
       "link": "https://github.com/Tdahuyou/TNotes.template",
       "icon": "github"
     }
-  ]
+  ],
+  "id": "cbc2bb93-0de6-4620-acbb-50940784afc8"
 }
