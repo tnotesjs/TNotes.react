@@ -1,9 +1,11 @@
 # [0010. 条件渲染](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0010.%20%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93)
 
 <!-- region:toc -->
+
 - [1. 🔍 查看 react 官方文档关于 Conditional rendering 条件渲染的说明](#1--查看-react-官方文档关于-conditional-rendering-条件渲染的说明)
 - [2. 💻 demos.1 - 条件渲染示例](#2--demos1---条件渲染示例)
 - [3. 📒 对比 vue 中的 v-if 和 v-show](#3--对比-vue-中的-v-if-和-v-show)
+
 <!-- endregion:toc -->
 - 类似于 vue 中的 v-show、v-if，不过在 react 中，条件渲染是通过纯 js 结合 jsx 语法来实现的，更加的灵活。
 - React 中没有类似 vue 中的 v-if、v-else、v-show 的条件渲染指令，React 中的条件渲染是通过在 JSX 使用原始的 JavaScript 条件逻辑来决定要渲染什么内容的，写起来更加原生，更加直观、更加灵活。

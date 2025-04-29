@@ -1,6 +1,7 @@
 # [0012. react-monaco-editor](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0012.%20react-monaco-editor)
 
 <!-- region:toc -->
+
 - [1. 🔗 monaco-react 官方文档](#1--monaco-react-官方文档)
 - [2. 🔍 Monaco Editor API](#2--monaco-editor-api)
 - [3. 📒 monaco-react 概述](#3--monaco-react-概述)
@@ -17,6 +18,7 @@
   - [10.4. 4️⃣ 离线方案 - use monaco-editor as an npm package](#104-4️⃣-离线方案---use-monaco-editor-as-an-npm-package)
 - [11. 🤖 monaco 名称的由来](#11--monaco-名称的由来)
 - [12. 🔗 links](#12--links)
+
 <!-- endregion:toc -->
 
 ## 1. 🔗 monaco-react 官方文档

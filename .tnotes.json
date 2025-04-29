@@ -1,9 +1,7 @@
 {
   "author": "Tdahuyou",
   "repoName": "TNotes.react",
-  "keywords": [
-    "TNotes.react"
-  ],
+  "keywords": ["TNotes.react"],
   "ignore_dirs": [
     ".vscode",
     "0000",
@@ -14,6 +12,7 @@
     "assets"
   ],
   "port": 9372,
+  "rootDocsSrcDir": "../_/docs/src",
   "menuItems": [
     {
       "text": "🏠 Home",

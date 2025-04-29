@@ -1,11 +1,13 @@
 # [0028. redux 的基本使用](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0028.%20redux%20%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8)
 
 <!-- region:toc -->
+
 - [1. 📒 本节会用到的一些依赖](#1--本节会用到的一些依赖)
 - [2. 💻 demos.1 - 脱离 react 单独使用 redux 来管理状态数据](#2--demos1---脱离-react-单独使用-redux-来管理状态数据)
 - [3. 💻 demos.2 - redux 的基本使用 - createStore 版](#3--demos2---redux-的基本使用---createstore-版)
 - [4. 💻 demos.2 - redux 的基本使用 - @reduxjs/toolkit 版](#4--demos2---redux-的基本使用---reduxjstoolkit-版)
 - [5. 💻 demos.2 - redux 的基本使用 - @reduxjs/toolkit 版（模块化）](#5--demos2---redux-的基本使用---reduxjstoolkit-版模块化)
+
 <!-- endregion:toc -->
 
 ## 1. 📒 本节会用到的一些依赖

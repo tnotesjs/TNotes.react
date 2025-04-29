@@ -1,11 +1,13 @@
 # [0023. 类组件概述](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0023.%20%E7%B1%BB%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0)
 
 <!-- region:toc -->
+
 - [1. 📒 类组件是什么](#1--类组件是什么)
 - [2. 📒 类组件的基本形式](#2--类组件的基本形式)
 - [3. 📒 类组件的状态（State）](#3--类组件的状态state)
 - [4. 📒 类组件的生命周期方法](#4--类组件的生命周期方法)
 - [5. 📒 给类组件设置默认的 Props](#5--给类组件设置默认的-props)
+
 <!-- endregion:toc -->
 - 随着 React Hooks 的引入，许多原本只能在类组件中完成的任务现在也可以在函数组件中实现，这使得函数组件成为了新的标准。话虽如此，了解类组件仍然是蛮重要的，因为它们在很多现有的 React 旧项目中仍然广泛使用，咱们在看一些开源项目（比如目前 2025 年 1 月 21 日的 [scratch-gui](https://github.com/scratchfoundation/scratch-gui)）的时候，你依旧会看到不少的类组件的使用。
 

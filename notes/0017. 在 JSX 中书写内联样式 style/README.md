@@ -1,10 +1,12 @@
 # [0017. 在 JSX 中书写内联样式 style](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0017.%20%E5%9C%A8%20JSX%20%E4%B8%AD%E4%B9%A6%E5%86%99%E5%86%85%E8%81%94%E6%A0%B7%E5%BC%8F%20style)
 
 <!-- region:toc -->
+
 - [1. 📒 在 JSX 中书写内联样式 style](#1--在-jsx-中书写内联样式-style)
 - [2. 💻 demos.1 - ❌ 错误写法 - 在 JSX 中的 style 写成字符串形式](#2--demos1----错误写法---在-jsx-中的-style-写成字符串形式)
 - [3. 💻 demos.2 - ✅ 正确写法 - 采用对象的形式来写，属性名使用小驼峰的形式](#3--demos2----正确写法---采用对象的形式来写属性名使用小驼峰的形式)
 - [4. 💻 demos.3 - 动态样式](#4--demos3---动态样式)
+
 <!-- endregion:toc -->
 - 本文介绍了在 JSX 中书写内联样式 style 的一些注意事项。
 

@@ -1,6 +1,7 @@
 # [0043. ReactDOM.render](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0043.%20ReactDOM.render)
 
 <!-- region:toc -->
+
 - [1. ⚠️ 兼容性问题 - 从 v18 开始，不再支持 ReactDOM.render 这个 API](#1-️-兼容性问题---从-v18-开始不再支持-reactdomrender-这个-api)
 - [2. 📒 ReactDOM.render 的基本语法](#2--reactdomrender-的基本语法)
 - [3. 📒 ReactDOM.render 的作用 - 渲染 react 组件到 DOM 中](#3--reactdomrender-的作用---渲染-react-组件到-dom-中)
@@ -8,6 +9,7 @@
 - [5. 📒 ReactDOM.render 的替代品：ReactDOM.createRoot](#5--reactdomrender-的替代品reactdomcreateroot)
 - [6. 💻 demos.2 - ReactDOM.createRoot 的基本使用示例](#6--demos2---reactdomcreateroot-的基本使用示例)
 - [7. 🤔 为什么弃用 ReactDOM.render？](#7--为什么弃用-reactdomrender)
+
 <!-- endregion:toc -->
 - **`ReactDOM.render` 是 React 17 及之前版本的核心 API**，用于将 React 元素渲染到 DOM 中。
 - **在 React 18 中，它被废弃，推荐使用 `ReactDOM.createRoot`**，以支持更现代化的并发渲染特性。

@@ -1,6 +1,7 @@
 # [0038. react-intl](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0038.%20react-intl)
 
 <!-- region:toc -->
+
 - [1. 🔗 react-intl 相关资料](#1--react-intl-相关资料)
 - [2. 🔗 ICU 相关资料](#2--icu-相关资料)
 - [3. 📒 react-intl 简介](#3--react-intl-简介)
@@ -12,6 +13,7 @@
 - [9. 💻 demos.4 - useIntl、injectIntl - 使用 defineMessages 定义消息](#9--demos4---useintlinjectintl---使用-definemessages-定义消息)
 - [10. 💻 demos.5 - 通过 intl 对象来获取国际化消息数据](#10--demos5---通过-intl-对象来获取国际化消息数据)
 - [11. 💻 demos.2 - IntlShape 在 .ts 中的应用](#11--demos2---intlshape-在-ts-中的应用)
+
 <!-- endregion:toc -->
 - React-Intl 是一个强大的工具，可帮助开发人员轻松管理和本地化他们的 React 应用程序。
 

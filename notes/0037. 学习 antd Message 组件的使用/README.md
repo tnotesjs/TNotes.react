@@ -1,10 +1,12 @@
 # [0037. 学习 antd Message 组件的使用](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0037.%20%E5%AD%A6%E4%B9%A0%20antd%20Message%20%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8)
 
 <!-- region:toc -->
+
 - [1. 🔗 Message 全局提示](#1--message-全局提示)
 - [2. 💻 demos.1 - 了解 Message 的基本使用](#2--demos1---了解-message-的基本使用)
 - [3. 💻 demos.2 - 理解 contextHolder 的作用](#3--demos2---理解-contextholder-的作用)
 - [4. 🔗 来自官方文档的回复：为什么 message 不能获取 context、redux 的内容和 ConfigProvider 的 locale/prefixCls/theme 等配置？](#4--来自官方文档的回复为什么-message-不能获取-contextredux-的内容和-configprovider-的-localeprefixclstheme-等配置)
+
 <!-- endregion:toc -->
 
 ## 1. 🔗 Message 全局提示

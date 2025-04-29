@@ -1,11 +1,13 @@
 # [0041. 在 react v19 中，移除了 UMD，推荐使用 ESM](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0041.%20%E5%9C%A8%20react%20v19%20%E4%B8%AD%EF%BC%8C%E7%A7%BB%E9%99%A4%E4%BA%86%20UMD%EF%BC%8C%E6%8E%A8%E8%8D%90%E4%BD%BF%E7%94%A8%20ESM)
 
 <!-- region:toc -->
+
 - [1. 🔗 links](#1--links)
 - [2. 🤔 什么是 UMD？](#2--什么是-umd)
 - [3. 🤔 为什么移除 UMD？](#3--为什么移除-umd)
 - [4. 📒 React 19 中的相关的变化及影响](#4--react-19-中的相关的变化及影响)
 - [5. 📒 替代方案：使用 ESM](#5--替代方案使用-esm)
+
 <!-- endregion:toc -->
 - React 19 不再支持 UMD 构建，推动开发者使用更现代的 ESM 模块加载方式。
 - 这种变化有助于减少复杂性，提高性能，并与现代 JavaScript 开发实践保持一致。如果您的项目仍在使用 UMD，需要尽快切换到 ESM。
