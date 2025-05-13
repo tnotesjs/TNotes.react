@@ -1,7 +1,9 @@
 {
   "author": "Tdahuyou",
   "repoName": "TNotes.react",
-  "keywords": ["TNotes.react"],
+  "keywords": [
+    "TNotes.react"
+  ],
   "ignore_dirs": [
     ".vscode",
     "0000",
