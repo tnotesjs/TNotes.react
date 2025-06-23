@@ -1,85 +1,69 @@
 # react
 
 
-## 1. 认识 react
+## 1. 初始 react
 
+- [x] [0101. react roadmap](https://tdahuyou.github.io/TNotes.react/notes/0101.%20react%20roadmap/README)
+  - [📂 TNotes.yuque](https://www.yuque.com/tdahuyou/tnotes.yuque/)
+    - [TNotes.yuque.react.0101](https://www.yuque.com/tdahuyou/tnotes.yuque/react.0101)
+  - [1. 📝 概述](https://tdahuyou.github.io/TNotes.react/notes/0101.%20react%20roadmap/README#1--概述)
 - [x] [0032. react 是什么](https://tdahuyou.github.io/TNotes.react/notes/0032.%20react%20%E6%98%AF%E4%BB%80%E4%B9%88/README)
-  - [1. 🔗 参考链接](https://tdahuyou.github.io/TNotes.react/notes/0032.%20react%20%E6%98%AF%E4%BB%80%E4%B9%88/README#1--参考链接)
-  - [2. 📒 react 概述](https://tdahuyou.github.io/TNotes.react/notes/0032.%20react%20%E6%98%AF%E4%BB%80%E4%B9%88/README#2--react-概述)
-  - [3. 📒 react 的特点](https://tdahuyou.github.io/TNotes.react/notes/0032.%20react%20%E6%98%AF%E4%BB%80%E4%B9%88/README#3--react-的特点)
-    - [3.1. 轻量](https://tdahuyou.github.io/TNotes.react/notes/0032.%20react%20%E6%98%AF%E4%BB%80%E4%B9%88/README#31-轻量)
-    - [3.2. 原生](https://tdahuyou.github.io/TNotes.react/notes/0032.%20react%20%E6%98%AF%E4%BB%80%E4%B9%88/README#32-原生)
-    - [3.3. 灵活](https://tdahuyou.github.io/TNotes.react/notes/0032.%20react%20%E6%98%AF%E4%BB%80%E4%B9%88/README#33-灵活)
-    - [3.4. 单向数据流](https://tdahuyou.github.io/TNotes.react/notes/0032.%20react%20%E6%98%AF%E4%BB%80%E4%B9%88/README#34-单向数据流)
-  - [4. 📒 库 vs. 框架](https://tdahuyou.github.io/TNotes.react/notes/0032.%20react%20%E6%98%AF%E4%BB%80%E4%B9%88/README#4--库-vs-框架)
-  - 了解 react 是什么
-  - 了解 react 都有哪些特点
-  - 了解 vue、react 之间的一些差异
-  - 理解为什么强调 react 是一个库，而非框架
-
-## 2. 官方资料
-
+  - [1. 📝 概述](https://tdahuyou.github.io/TNotes.react/notes/0032.%20react%20%E6%98%AF%E4%BB%80%E4%B9%88/README#1--概述)
+  - [2. 🤔 react 是什么](https://tdahuyou.github.io/TNotes.react/notes/0032.%20react%20%E6%98%AF%E4%BB%80%E4%B9%88/README#2--react-是什么)
+  - [3. 📒 react 的特点 - 轻量](https://tdahuyou.github.io/TNotes.react/notes/0032.%20react%20%E6%98%AF%E4%BB%80%E4%B9%88/README#3--react-的特点---轻量)
+  - [4. 📒 react 的特点 - 原生](https://tdahuyou.github.io/TNotes.react/notes/0032.%20react%20%E6%98%AF%E4%BB%80%E4%B9%88/README#4--react-的特点---原生)
+  - [5. 📒 react 的特点 - 灵活](https://tdahuyou.github.io/TNotes.react/notes/0032.%20react%20%E6%98%AF%E4%BB%80%E4%B9%88/README#5--react-的特点---灵活)
+  - [6. 📒 react 的特点 - 单向数据流](https://tdahuyou.github.io/TNotes.react/notes/0032.%20react%20%E6%98%AF%E4%BB%80%E4%B9%88/README#6--react-的特点---单向数据流)
+  - [7. 📒 库 vs. 框架](https://tdahuyou.github.io/TNotes.react/notes/0032.%20react%20%E6%98%AF%E4%BB%80%E4%B9%88/README#7--库-vs-框架)
+  - [8. 🔗 参考链接](https://tdahuyou.github.io/TNotes.react/notes/0032.%20react%20%E6%98%AF%E4%BB%80%E4%B9%88/README#8--参考链接)
 - [x] [0040. 了解 react 官方文档的基本结构](https://tdahuyou.github.io/TNotes.react/notes/0040.%20%E4%BA%86%E8%A7%A3%20react%20%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84/README)
-  - [1. 📒 react 官方文档结构简介](https://tdahuyou.github.io/TNotes.react/notes/0040.%20%E4%BA%86%E8%A7%A3%20react%20%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84/README#1--react-官方文档结构简介)
-  - https://react.dev/
-    - react 官网链接
-  - 本节对 react 官网的结构做了一个简单的介绍。
-  - 熟悉 react 官方文档的大体结构是非常有必要的，在学习 react 的过程中，会经常查阅官方文档。
-- [x] [0039. react github 仓库链接](https://tdahuyou.github.io/TNotes.react/notes/0039.%20react%20github%20%E4%BB%93%E5%BA%93%E9%93%BE%E6%8E%A5/README)
-  - https://github.com/facebook/react
+  - [1. 📝 概述](https://tdahuyou.github.io/TNotes.react/notes/0040.%20%E4%BA%86%E8%A7%A3%20react%20%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84/README#1--概述)
+  - [2. 📒 react 官方文档结构简介](https://tdahuyou.github.io/TNotes.react/notes/0040.%20%E4%BA%86%E8%A7%A3%20react%20%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84/README#2--react-官方文档结构简介)
+- [x] [0039. react 源码仓库](https://tdahuyou.github.io/TNotes.react/notes/0039.%20react%20%E6%BA%90%E7%A0%81%E4%BB%93%E5%BA%93/README)
+  - [1. 📝 概述](https://tdahuyou.github.io/TNotes.react/notes/0039.%20react%20%E6%BA%90%E7%A0%81%E4%BB%93%E5%BA%93/README#1--概述)
 
-## 3. 准备工作
-
+## 2. 环境准备
 
 - [x] [0034. 开发 react 项目之前推荐安装的 vscode 插件 - eslint](https://tdahuyou.github.io/TNotes.react/notes/0034.%20%E5%BC%80%E5%8F%91%20react%20%E9%A1%B9%E7%9B%AE%E4%B9%8B%E5%89%8D%E6%8E%A8%E8%8D%90%E5%AE%89%E8%A3%85%E7%9A%84%20vscode%20%E6%8F%92%E4%BB%B6%20-%20eslint/README)
-  - [1. 📒 eslint 概述](https://tdahuyou.github.io/TNotes.react/notes/0034.%20%E5%BC%80%E5%8F%91%20react%20%E9%A1%B9%E7%9B%AE%E4%B9%8B%E5%89%8D%E6%8E%A8%E8%8D%90%E5%AE%89%E8%A3%85%E7%9A%84%20vscode%20%E6%8F%92%E4%BB%B6%20-%20eslint/README#1--eslint-概述)
-  - [2. 📒 安装 ESLint 插件](https://tdahuyou.github.io/TNotes.react/notes/0034.%20%E5%BC%80%E5%8F%91%20react%20%E9%A1%B9%E7%9B%AE%E4%B9%8B%E5%89%8D%E6%8E%A8%E8%8D%90%E5%AE%89%E8%A3%85%E7%9A%84%20vscode%20%E6%8F%92%E4%BB%B6%20-%20eslint/README#2--安装-eslint-插件)
-  - [3. 📒 配置 ESLint 基本流程](https://tdahuyou.github.io/TNotes.react/notes/0034.%20%E5%BC%80%E5%8F%91%20react%20%E9%A1%B9%E7%9B%AE%E4%B9%8B%E5%89%8D%E6%8E%A8%E8%8D%90%E5%AE%89%E8%A3%85%E7%9A%84%20vscode%20%E6%8F%92%E4%BB%B6%20-%20eslint/README#3--配置-eslint-基本流程)
-  - [4. 💻 demos.1 - 约束只能使用单引号，不能使用双引号](https://tdahuyou.github.io/TNotes.react/notes/0034.%20%E5%BC%80%E5%8F%91%20react%20%E9%A1%B9%E7%9B%AE%E4%B9%8B%E5%89%8D%E6%8E%A8%E8%8D%90%E5%AE%89%E8%A3%85%E7%9A%84%20vscode%20%E6%8F%92%E4%BB%B6%20-%20eslint/README#4--demos1---约束只能使用单引号不能使用双引号)
-  - [5. 📒 注意事项](https://tdahuyou.github.io/TNotes.react/notes/0034.%20%E5%BC%80%E5%8F%91%20react%20%E9%A1%B9%E7%9B%AE%E4%B9%8B%E5%89%8D%E6%8E%A8%E8%8D%90%E5%AE%89%E8%A3%85%E7%9A%84%20vscode%20%E6%8F%92%E4%BB%B6%20-%20eslint/README#5--注意事项)
-  - vscode 中的 eslint 插件有什么用
-  - 如何引入并使用 eslint
+  - [1. 📝 概述](https://tdahuyou.github.io/TNotes.react/notes/0034.%20%E5%BC%80%E5%8F%91%20react%20%E9%A1%B9%E7%9B%AE%E4%B9%8B%E5%89%8D%E6%8E%A8%E8%8D%90%E5%AE%89%E8%A3%85%E7%9A%84%20vscode%20%E6%8F%92%E4%BB%B6%20-%20eslint/README#1--概述)
+  - [2. 📒 eslint 概述](https://tdahuyou.github.io/TNotes.react/notes/0034.%20%E5%BC%80%E5%8F%91%20react%20%E9%A1%B9%E7%9B%AE%E4%B9%8B%E5%89%8D%E6%8E%A8%E8%8D%90%E5%AE%89%E8%A3%85%E7%9A%84%20vscode%20%E6%8F%92%E4%BB%B6%20-%20eslint/README#2--eslint-概述)
+  - [3. 📒 安装 ESLint 插件](https://tdahuyou.github.io/TNotes.react/notes/0034.%20%E5%BC%80%E5%8F%91%20react%20%E9%A1%B9%E7%9B%AE%E4%B9%8B%E5%89%8D%E6%8E%A8%E8%8D%90%E5%AE%89%E8%A3%85%E7%9A%84%20vscode%20%E6%8F%92%E4%BB%B6%20-%20eslint/README#3--安装-eslint-插件)
+  - [4. 📒 配置 ESLint 基本流程](https://tdahuyou.github.io/TNotes.react/notes/0034.%20%E5%BC%80%E5%8F%91%20react%20%E9%A1%B9%E7%9B%AE%E4%B9%8B%E5%89%8D%E6%8E%A8%E8%8D%90%E5%AE%89%E8%A3%85%E7%9A%84%20vscode%20%E6%8F%92%E4%BB%B6%20-%20eslint/README#4--配置-eslint-基本流程)
+  - [5. 💻 demos.1 - 约束只能使用单引号，不能使用双引号](https://tdahuyou.github.io/TNotes.react/notes/0034.%20%E5%BC%80%E5%8F%91%20react%20%E9%A1%B9%E7%9B%AE%E4%B9%8B%E5%89%8D%E6%8E%A8%E8%8D%90%E5%AE%89%E8%A3%85%E7%9A%84%20vscode%20%E6%8F%92%E4%BB%B6%20-%20eslint/README#5--demos1---约束只能使用单引号不能使用双引号)
+  - [6. 📒 注意事项](https://tdahuyou.github.io/TNotes.react/notes/0034.%20%E5%BC%80%E5%8F%91%20react%20%E9%A1%B9%E7%9B%AE%E4%B9%8B%E5%89%8D%E6%8E%A8%E8%8D%90%E5%AE%89%E8%A3%85%E7%9A%84%20vscode%20%E6%8F%92%E4%BB%B6%20-%20eslint/README#6--注意事项)
 - [x] [0035. 在 vscode 中，让 Emmet 语法支持 JSX](https://tdahuyou.github.io/TNotes.react/notes/0035.%20%E5%9C%A8%20vscode%20%E4%B8%AD%EF%BC%8C%E8%AE%A9%20Emmet%20%E8%AF%AD%E6%B3%95%E6%94%AF%E6%8C%81%20JSX/README)
-  - [1. 🔗 参考资料](https://tdahuyou.github.io/TNotes.react/notes/0035.%20%E5%9C%A8%20vscode%20%E4%B8%AD%EF%BC%8C%E8%AE%A9%20Emmet%20%E8%AF%AD%E6%B3%95%E6%94%AF%E6%8C%81%20JSX/README#1--参考资料)
-  - [2. 📒 具体配置流程](https://tdahuyou.github.io/TNotes.react/notes/0035.%20%E5%9C%A8%20vscode%20%E4%B8%AD%EF%BC%8C%E8%AE%A9%20Emmet%20%E8%AF%AD%E6%B3%95%E6%94%AF%E6%8C%81%20JSX/README#2--具体配置流程)
-    - [2.1. 做法 1：通过设置面板来配置](https://tdahuyou.github.io/TNotes.react/notes/0035.%20%E5%9C%A8%20vscode%20%E4%B8%AD%EF%BC%8C%E8%AE%A9%20Emmet%20%E8%AF%AD%E6%B3%95%E6%94%AF%E6%8C%81%20JSX/README#21-做法-1通过设置面板来配置)
-    - [2.2. 做法 2：通过配置文件 `.vscode/settings.json` 来配置](https://tdahuyou.github.io/TNotes.react/notes/0035.%20%E5%9C%A8%20vscode%20%E4%B8%AD%EF%BC%8C%E8%AE%A9%20Emmet%20%E8%AF%AD%E6%B3%95%E6%94%AF%E6%8C%81%20JSX/README#22-做法-2通过配置文件-vscodesettingsjson-来配置)
+  - [1. 📝 概述](https://tdahuyou.github.io/TNotes.react/notes/0035.%20%E5%9C%A8%20vscode%20%E4%B8%AD%EF%BC%8C%E8%AE%A9%20Emmet%20%E8%AF%AD%E6%B3%95%E6%94%AF%E6%8C%81%20JSX/README#1--概述)
+  - [2. 💻 具体配置流程](https://tdahuyou.github.io/TNotes.react/notes/0035.%20%E5%9C%A8%20vscode%20%E4%B8%AD%EF%BC%8C%E8%AE%A9%20Emmet%20%E8%AF%AD%E6%B3%95%E6%94%AF%E6%8C%81%20JSX/README#2--具体配置流程)
+    - [2.1. 【做法 1】通过设置面板来配置](https://tdahuyou.github.io/TNotes.react/notes/0035.%20%E5%9C%A8%20vscode%20%E4%B8%AD%EF%BC%8C%E8%AE%A9%20Emmet%20%E8%AF%AD%E6%B3%95%E6%94%AF%E6%8C%81%20JSX/README#21-做法-1通过设置面板来配置)
+    - [2.2. 【做法 2】通过配置文件 `.vscode/settings.json` 来配置](https://tdahuyou.github.io/TNotes.react/notes/0035.%20%E5%9C%A8%20vscode%20%E4%B8%AD%EF%BC%8C%E8%AE%A9%20Emmet%20%E8%AF%AD%E6%B3%95%E6%94%AF%E6%8C%81%20JSX/README#22-做法-2通过配置文件-vscodesettingsjson-来配置)
   - [3. 💻 demos.1 - 在 vscode 中，让 Emmet 语法支持 JSX](https://tdahuyou.github.io/TNotes.react/notes/0035.%20%E5%9C%A8%20vscode%20%E4%B8%AD%EF%BC%8C%E8%AE%A9%20Emmet%20%E8%AF%AD%E6%B3%95%E6%94%AF%E6%8C%81%20JSX/README#3--demos1---在-vscode-中让-emmet-语法支持-jsx)
-  - 介绍如何配置 VSCode，让 Emmet 语法支持 JSX。
-  - JSX 是在 React 中用于描述页面结构的 JS 扩展语法。
+  - [4. 🔗 参考资料](https://tdahuyou.github.io/TNotes.react/notes/0035.%20%E5%9C%A8%20vscode%20%E4%B8%AD%EF%BC%8C%E8%AE%A9%20Emmet%20%E8%AF%AD%E6%B3%95%E6%94%AF%E6%8C%81%20JSX/README#4--参考资料)
 - [x] [0008. npm create vite 使用 vite 快速初始化一个 react 工程](https://tdahuyou.github.io/TNotes.react/notes/0008.%20npm%20create%20vite%20%E4%BD%BF%E7%94%A8%20vite%20%E5%BF%AB%E9%80%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E4%B8%AA%20react%20%E5%B7%A5%E7%A8%8B/README)
-  - [1. 🔍 查阅 vite 官网，了解 npm create vite 相关详情](https://tdahuyou.github.io/TNotes.react/notes/0008.%20npm%20create%20vite%20%E4%BD%BF%E7%94%A8%20vite%20%E5%BF%AB%E9%80%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E4%B8%AA%20react%20%E5%B7%A5%E7%A8%8B/README#1--查阅-vite-官网了解-npm-create-vite-相关详情)
+  - [1. 📝 概述](https://tdahuyou.github.io/TNotes.react/notes/0008.%20npm%20create%20vite%20%E4%BD%BF%E7%94%A8%20vite%20%E5%BF%AB%E9%80%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E4%B8%AA%20react%20%E5%B7%A5%E7%A8%8B/README#1--概述)
   - [2. 📒 使用 pnpm 的实际操作流程](https://tdahuyou.github.io/TNotes.react/notes/0008.%20npm%20create%20vite%20%E4%BD%BF%E7%94%A8%20vite%20%E5%BF%AB%E9%80%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E4%B8%AA%20react%20%E5%B7%A5%E7%A8%8B/README#2--使用-pnpm-的实际操作流程)
   - [3. 💻 demos.1 - 使用 vite 创建 react 工程并启动](https://tdahuyou.github.io/TNotes.react/notes/0008.%20npm%20create%20vite%20%E4%BD%BF%E7%94%A8%20vite%20%E5%BF%AB%E9%80%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E4%B8%AA%20react%20%E5%B7%A5%E7%A8%8B/README#3--demos1---使用-vite-创建-react-工程并启动)
-  - `npm create vite@latest my-react-app -- --template react` 这是 vite 官方提供的命令，用于创建一个 react 项目。
-    - 如果不清楚这条命令的含义，可以参考一下本节中记录的 AI 对此的解释。
-  - 上面这条命令太长了，不好记，其实只需要记住：`npm create vite` 即可，其他项目参数（比如项目名称、模板等）根据命令提示自行配置。
+  - [4. 🔗 参考资料](https://tdahuyou.github.io/TNotes.react/notes/0008.%20npm%20create%20vite%20%E4%BD%BF%E7%94%A8%20vite%20%E5%BF%AB%E9%80%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E4%B8%AA%20react%20%E5%B7%A5%E7%A8%8B/README#4--参考资料)
 
-## 4. 第一个 react 应用
-
+## 3. 第一个 react 应用
 
 - [x] [0042. 第一个 react v16 程序 - 通过 CDN 引入 react、react-dom 在页面上渲染出 Hello World](https://tdahuyou.github.io/TNotes.react/notes/0042.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%20react%20v16%20%E7%A8%8B%E5%BA%8F%20-%20%E9%80%9A%E8%BF%87%20CDN%20%E5%BC%95%E5%85%A5%20react%E3%80%81react-dom%20%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%B8%B2%E6%9F%93%E5%87%BA%20Hello%20World/README)
-  - [1. 🔗 相关链接](https://tdahuyou.github.io/TNotes.react/notes/0042.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%20react%20v16%20%E7%A8%8B%E5%BA%8F%20-%20%E9%80%9A%E8%BF%87%20CDN%20%E5%BC%95%E5%85%A5%20react%E3%80%81react-dom%20%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%B8%B2%E6%9F%93%E5%87%BA%20Hello%20World/README#1--相关链接)
-  - [2. 📒 通过 CDN 的方式引入相关依赖](https://tdahuyou.github.io/TNotes.react/notes/0042.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%20react%20v16%20%E7%A8%8B%E5%BA%8F%20-%20%E9%80%9A%E8%BF%87%20CDN%20%E5%BC%95%E5%85%A5%20react%E3%80%81react-dom%20%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%B8%B2%E6%9F%93%E5%87%BA%20Hello%20World/README#2--通过-cdn-的方式引入相关依赖)
-  - [3. 📒 API 简介 - `React.createElement`](https://tdahuyou.github.io/TNotes.react/notes/0042.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%20react%20v16%20%E7%A8%8B%E5%BA%8F%20-%20%E9%80%9A%E8%BF%87%20CDN%20%E5%BC%95%E5%85%A5%20react%E3%80%81react-dom%20%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%B8%B2%E6%9F%93%E5%87%BA%20Hello%20World/README#3--api-简介---reactcreateelement)
-  - [4. 📒 API 简介 - `React.render`](https://tdahuyou.github.io/TNotes.react/notes/0042.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%20react%20v16%20%E7%A8%8B%E5%BA%8F%20-%20%E9%80%9A%E8%BF%87%20CDN%20%E5%BC%95%E5%85%A5%20react%E3%80%81react-dom%20%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%B8%B2%E6%9F%93%E5%87%BA%20Hello%20World/README#4--api-简介---reactrender)
-  - [5. 💻 demos.1 - 在页面上渲染出 Hello World](https://tdahuyou.github.io/TNotes.react/notes/0042.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%20react%20v16%20%E7%A8%8B%E5%BA%8F%20-%20%E9%80%9A%E8%BF%87%20CDN%20%E5%BC%95%E5%85%A5%20react%E3%80%81react-dom%20%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%B8%B2%E6%9F%93%E5%87%BA%20Hello%20World/README#5--demos1---在页面上渲染出-hello-world)
-  - [6. 💻 demos.2 - 初步认识 React.createElement 和 JSX](https://tdahuyou.github.io/TNotes.react/notes/0042.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%20react%20v16%20%E7%A8%8B%E5%BA%8F%20-%20%E9%80%9A%E8%BF%87%20CDN%20%E5%BC%95%E5%85%A5%20react%E3%80%81react-dom%20%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%B8%B2%E6%9F%93%E5%87%BA%20Hello%20World/README#6--demos2---初步认识-reactcreateelement-和-jsx)
-  - [7. 🤔 `React.createElement` 跟 `document.createElement` 是一样的吗？](https://tdahuyou.github.io/TNotes.react/notes/0042.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%20react%20v16%20%E7%A8%8B%E5%BA%8F%20-%20%E9%80%9A%E8%BF%87%20CDN%20%E5%BC%95%E5%85%A5%20react%E3%80%81react-dom%20%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%B8%B2%E6%9F%93%E5%87%BA%20Hello%20World/README#7--reactcreateelement-跟-documentcreateelement-是一样的吗)
-  - [8. 🤔 `react` 核心库和 `react-dom` 库之间的关系是？](https://tdahuyou.github.io/TNotes.react/notes/0042.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%20react%20v16%20%E7%A8%8B%E5%BA%8F%20-%20%E9%80%9A%E8%BF%87%20CDN%20%E5%BC%95%E5%85%A5%20react%E3%80%81react-dom%20%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%B8%B2%E6%9F%93%E5%87%BA%20Hello%20World/README#8--react-核心库和-react-dom-库之间的关系是)
-  - [9. 🤔 为什么一旦使用了 `JSX` 语法，就必须要引入 `react` 核心库？](https://tdahuyou.github.io/TNotes.react/notes/0042.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%20react%20v16%20%E7%A8%8B%E5%BA%8F%20-%20%E9%80%9A%E8%BF%87%20CDN%20%E5%BC%95%E5%85%A5%20react%E3%80%81react-dom%20%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%B8%B2%E6%9F%93%E5%87%BA%20Hello%20World/README#9--为什么一旦使用了-jsx-语法就必须要引入-react-核心库)
-  - [10. 🤔 通过脚手架（比如 vite、umi、create-react-app）来搭建工程 vs. 通过（.html）页面的方式来直接引入 react 相关的库](https://tdahuyou.github.io/TNotes.react/notes/0042.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%20react%20v16%20%E7%A8%8B%E5%BA%8F%20-%20%E9%80%9A%E8%BF%87%20CDN%20%E5%BC%95%E5%85%A5%20react%E3%80%81react-dom%20%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%B8%B2%E6%9F%93%E5%87%BA%20Hello%20World/README#10--通过脚手架比如-viteumicreate-react-app来搭建工程-vs-通过html页面的方式来直接引入-react-相关的库)
-  - 知识点
-    - React.createElement 的基本使用
-    - React Element 是不可变的
-    - ReactDOM.render 的基本使用
-    - JSX 其实就是 React.createElement 的简写，是一个语法糖。
-  - 本节不使用任何脚手架工具，通过 CDN 引入 react、react-dom，直接在（.html）页面上使用 react，实现一个 demo - 在页面上渲染出 Hello World。并借此 demo 来熟悉 React.createElement 和 ReactDOM.render 的基本用法。
+  - [1. 📝 概述](https://tdahuyou.github.io/TNotes.react/notes/0042.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%20react%20v16%20%E7%A8%8B%E5%BA%8F%20-%20%E9%80%9A%E8%BF%87%20CDN%20%E5%BC%95%E5%85%A5%20react%E3%80%81react-dom%20%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%B8%B2%E6%9F%93%E5%87%BA%20Hello%20World/README#1--概述)
+  - [2. 💻 通过 CDN 的方式引入相关依赖](https://tdahuyou.github.io/TNotes.react/notes/0042.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%20react%20v16%20%E7%A8%8B%E5%BA%8F%20-%20%E9%80%9A%E8%BF%87%20CDN%20%E5%BC%95%E5%85%A5%20react%E3%80%81react-dom%20%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%B8%B2%E6%9F%93%E5%87%BA%20Hello%20World/README#2--通过-cdn-的方式引入相关依赖)
+  - [3. ⚙️ 核心 API](https://tdahuyou.github.io/TNotes.react/notes/0042.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%20react%20v16%20%E7%A8%8B%E5%BA%8F%20-%20%E9%80%9A%E8%BF%87%20CDN%20%E5%BC%95%E5%85%A5%20react%E3%80%81react-dom%20%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%B8%B2%E6%9F%93%E5%87%BA%20Hello%20World/README#3-️-核心-api)
+    - [3.1. ⚙️ `React.createElement`](https://tdahuyou.github.io/TNotes.react/notes/0042.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%20react%20v16%20%E7%A8%8B%E5%BA%8F%20-%20%E9%80%9A%E8%BF%87%20CDN%20%E5%BC%95%E5%85%A5%20react%E3%80%81react-dom%20%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%B8%B2%E6%9F%93%E5%87%BA%20Hello%20World/README#31-️-reactcreateelement)
+    - [3.2. ⚙️ `React.render`](https://tdahuyou.github.io/TNotes.react/notes/0042.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%20react%20v16%20%E7%A8%8B%E5%BA%8F%20-%20%E9%80%9A%E8%BF%87%20CDN%20%E5%BC%95%E5%85%A5%20react%E3%80%81react-dom%20%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%B8%B2%E6%9F%93%E5%87%BA%20Hello%20World/README#32-️-reactrender)
+  - [4. 💻 demos.1 - 在页面上渲染出 Hello World](https://tdahuyou.github.io/TNotes.react/notes/0042.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%20react%20v16%20%E7%A8%8B%E5%BA%8F%20-%20%E9%80%9A%E8%BF%87%20CDN%20%E5%BC%95%E5%85%A5%20react%E3%80%81react-dom%20%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%B8%B2%E6%9F%93%E5%87%BA%20Hello%20World/README#4--demos1---在页面上渲染出-hello-world)
+  - [5. 💻 demos.2 - 初步认识 React.createElement 和 JSX](https://tdahuyou.github.io/TNotes.react/notes/0042.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%20react%20v16%20%E7%A8%8B%E5%BA%8F%20-%20%E9%80%9A%E8%BF%87%20CDN%20%E5%BC%95%E5%85%A5%20react%E3%80%81react-dom%20%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%B8%B2%E6%9F%93%E5%87%BA%20Hello%20World/README#5--demos2---初步认识-reactcreateelement-和-jsx)
+  - [6. 🤔 `React.createElement` 跟 `document.createElement` 是一样的吗？](https://tdahuyou.github.io/TNotes.react/notes/0042.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%20react%20v16%20%E7%A8%8B%E5%BA%8F%20-%20%E9%80%9A%E8%BF%87%20CDN%20%E5%BC%95%E5%85%A5%20react%E3%80%81react-dom%20%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%B8%B2%E6%9F%93%E5%87%BA%20Hello%20World/README#6--reactcreateelement-跟-documentcreateelement-是一样的吗)
+  - [7. 🤔 `react` 核心库和 `react-dom` 库之间的关系是？](https://tdahuyou.github.io/TNotes.react/notes/0042.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%20react%20v16%20%E7%A8%8B%E5%BA%8F%20-%20%E9%80%9A%E8%BF%87%20CDN%20%E5%BC%95%E5%85%A5%20react%E3%80%81react-dom%20%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%B8%B2%E6%9F%93%E5%87%BA%20Hello%20World/README#7--react-核心库和-react-dom-库之间的关系是)
+  - [8. 🤔 为什么一旦使用了 `JSX` 语法，就必须要引入 `react` 核心库？](https://tdahuyou.github.io/TNotes.react/notes/0042.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%20react%20v16%20%E7%A8%8B%E5%BA%8F%20-%20%E9%80%9A%E8%BF%87%20CDN%20%E5%BC%95%E5%85%A5%20react%E3%80%81react-dom%20%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%B8%B2%E6%9F%93%E5%87%BA%20Hello%20World/README#8--为什么一旦使用了-jsx-语法就必须要引入-react-核心库)
+  - [9. 🤔 通过脚手架（比如 vite、umi、create-react-app）来搭建工程 vs. 通过（.html）页面的方式来直接引入 react 相关的库](https://tdahuyou.github.io/TNotes.react/notes/0042.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%20react%20v16%20%E7%A8%8B%E5%BA%8F%20-%20%E9%80%9A%E8%BF%87%20CDN%20%E5%BC%95%E5%85%A5%20react%E3%80%81react-dom%20%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%B8%B2%E6%9F%93%E5%87%BA%20Hello%20World/README#9--通过脚手架比如-viteumicreate-react-app来搭建工程-vs-通过html页面的方式来直接引入-react-相关的库)
+  - [10. 🔗 参考资料](https://tdahuyou.github.io/TNotes.react/notes/0042.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%20react%20v16%20%E7%A8%8B%E5%BA%8F%20-%20%E9%80%9A%E8%BF%87%20CDN%20%E5%BC%95%E5%85%A5%20react%E3%80%81react-dom%20%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%B8%B2%E6%9F%93%E5%87%BA%20Hello%20World/README#10--参考资料)
 - [x] [0001. 第一个 react v19 程序 - 通过 CDN 引入 react、react-dom 在页面上渲染出 Hello World](https://tdahuyou.github.io/TNotes.react/notes/0001.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%20react%20v19%20%E7%A8%8B%E5%BA%8F%20-%20%E9%80%9A%E8%BF%87%20CDN%20%E5%BC%95%E5%85%A5%20react%E3%80%81react-dom%20%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%B8%B2%E6%9F%93%E5%87%BA%20Hello%20World/README)
   - [1. 💻 demos.1 - Hello World](https://tdahuyou.github.io/TNotes.react/notes/0001.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%20react%20v19%20%E7%A8%8B%E5%BA%8F%20-%20%E9%80%9A%E8%BF%87%20CDN%20%E5%BC%95%E5%85%A5%20react%E3%80%81react-dom%20%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%B8%B2%E6%9F%93%E5%87%BA%20Hello%20World/README#1--demos1---hello-world)
   - 通过 esm 的方式引入 react、react-dom，并使用 ReactDOM.createRoot() 方法将 react 元素渲染到页面上。
 
-## 5. 需要注意的一些和版本相关的问题
+## 4. 需要注意的一些和版本相关的问题
 
 - [x] [0043. ReactDOM.render](https://tdahuyou.github.io/TNotes.react/notes/0043.%20ReactDOM.render/README)
   - [1. ⚠️ 兼容性问题 - 从 v18 开始，不再支持 ReactDOM.render 这个 API](https://tdahuyou.github.io/TNotes.react/notes/0043.%20ReactDOM.render/README#1-️-兼容性问题---从-v18-开始不再支持-reactdomrender-这个-api)
@@ -101,7 +85,7 @@
   - React 19 不再支持 UMD 构建，推动开发者使用更现代的 ESM 模块加载方式。
   - 这种变化有助于减少复杂性，提高性能，并与现代 JavaScript 开发实践保持一致。如果您的项目仍在使用 UMD，需要尽快切换到 ESM。
 
-## 6. JSX
+## 5. JSX
 
 - [x] [0013. JSX 概述](https://tdahuyou.github.io/TNotes.react/notes/0013.%20JSX%20%E6%A6%82%E8%BF%B0/README)
   - [1. 📒 JSX 概述](https://tdahuyou.github.io/TNotes.react/notes/0013.%20JSX%20%E6%A6%82%E8%BF%B0/README#1--jsx-概述)
@@ -168,7 +152,7 @@
   - [5. 🔍 查看官方文档对于列表渲染时为什么要给元素加 `key` 的说明](https://tdahuyou.github.io/TNotes.react/notes/0011.%20%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93/README#5--查看官方文档对于列表渲染时为什么要给元素加-key-的说明)
   - [6. 💼 面试题：你知道为什么列表渲染需要添加 `key` 吗？](https://tdahuyou.github.io/TNotes.react/notes/0011.%20%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93/README#6--面试题你知道为什么列表渲染需要添加-key-吗)
 
-## 7. dangerouslySetInnerHTML
+## 6. dangerouslySetInnerHTML
 
 - [x] [0016. dangerouslySetInnerHTML](https://tdahuyou.github.io/TNotes.react/notes/0016.%20dangerouslySetInnerHTML/README)
   - [1. 📒 dangerouslySetInnerHTML 简介](https://tdahuyou.github.io/TNotes.react/notes/0016.%20dangerouslySetInnerHTML/README#1--dangerouslysetinnerhtml-简介)
@@ -178,7 +162,7 @@
   - 在 JSX 中，使用 dangerouslySetInnerHTML 可以在组件中直接插入 html 标签。
   - 可以使用 DOMPurify 库对插入的 html 字符串进行清理和转义，以防止 XSS 攻击。
 
-## 8. 组件基础知识
+## 7. 组件基础知识
 
 - [x] [0021. 组件的基本组成](https://tdahuyou.github.io/TNotes.react/notes/0021.%20%E7%BB%84%E4%BB%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90/README)
   - [1. 📒 组件的 3 大基本组成结构](https://tdahuyou.github.io/TNotes.react/notes/0021.%20%E7%BB%84%E4%BB%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90/README#1--组件的-3-大基本组成结构)
@@ -217,12 +201,12 @@
     - [1.2. React 中的单向数据流](https://tdahuyou.github.io/TNotes.react/notes/0024.%20%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81%E6%98%AF%E4%BB%80%E4%B9%88/README#12-react-中的单向数据流)
   - ⏰ pending
 
-## 9. 组件调用
+## 8. 组件调用
 
 - [x] [0049. React 组件调用方式对比：JSX 渲染 vs 直接函数调用](https://tdahuyou.github.io/TNotes.react/notes/0049.%20React%20%E7%BB%84%E4%BB%B6%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F%E5%AF%B9%E6%AF%94%EF%BC%9AJSX%20%E6%B8%B2%E6%9F%93%20vs%20%E7%9B%B4%E6%8E%A5%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/README)
   - [1. 💻 demos.1 - JSX 渲染 vs 直接函数调用](https://tdahuyou.github.io/TNotes.react/notes/0049.%20React%20%E7%BB%84%E4%BB%B6%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F%E5%AF%B9%E6%AF%94%EF%BC%9AJSX%20%E6%B8%B2%E6%9F%93%20vs%20%E7%9B%B4%E6%8E%A5%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/README#1--demos1---jsx-渲染-vs-直接函数调用)
 
-## 10. 组件属性
+## 9. 组件属性
 
 - [x] [0019. 组件属性的传递和接收](https://tdahuyou.github.io/TNotes.react/notes/0019.%20%E7%BB%84%E4%BB%B6%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BC%A0%E9%80%92%E5%92%8C%E6%8E%A5%E6%94%B6/README)
   - [1. 📒 props 传递概述](https://tdahuyou.github.io/TNotes.react/notes/0019.%20%E7%BB%84%E4%BB%B6%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BC%A0%E9%80%92%E5%92%8C%E6%8E%A5%E6%94%B6/README#1--props-传递概述)
@@ -246,9 +230,9 @@
   - [5. 💻 demo](https://tdahuyou.github.io/TNotes.react/notes/0020.%20%E7%BB%84%E4%BB%B6%E5%B1%9E%E6%80%A7%E7%9A%84%E6%A0%A1%E9%AA%8C/README#5--demo)
   - [6. 🤖 AI](https://tdahuyou.github.io/TNotes.react/notes/0020.%20%E7%BB%84%E4%BB%B6%E5%B1%9E%E6%80%A7%E7%9A%84%E6%A0%A1%E9%AA%8C/README#6--ai)
 
-## 11. 组件状态
+## 10. 组件状态
 
-## 12. 组件生命周期
+## 11. 组件生命周期
 
 - [ ] [0027. 生命周期](https://tdahuyou.github.io/TNotes.react/notes/0027.%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/README)
   - [1. ⏰ TODO：待完善](https://tdahuyou.github.io/TNotes.react/notes/0027.%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/README#1--todo待完善)
@@ -258,7 +242,7 @@
   - [5. 💻 demo](https://tdahuyou.github.io/TNotes.react/notes/0027.%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/README#5--demo)
   - [6. 🤖 AI](https://tdahuyou.github.io/TNotes.react/notes/0027.%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/README#6--ai)
 
-## 13. ref
+## 12. ref
 
 - [x] [0007. ref](https://tdahuyou.github.io/TNotes.react/notes/0007.%20ref/README)
   - [1. ⏰](https://tdahuyou.github.io/TNotes.react/notes/0007.%20ref/README#1-)
@@ -266,11 +250,11 @@
   - [1. 💻 demos.1 - 图片自动轮播](https://tdahuyou.github.io/TNotes.react/notes/0018.%20%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E8%87%AA%E5%8A%A8%E8%BD%AE%E6%92%AD%E7%9A%84%E6%95%88%E6%9E%9C/README#1--demos1---图片自动轮播)
   - [2. 💻 demos.2 - 来看一个常见的由于定时器混乱错误引发的 bug](https://tdahuyou.github.io/TNotes.react/notes/0018.%20%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E8%87%AA%E5%8A%A8%E8%BD%AE%E6%92%AD%E7%9A%84%E6%95%88%E6%9E%9C/README#2--demos2---来看一个常见的由于定时器混乱错误引发的-bug)
 
-## 14. hooks
+## 13. hooks
 
-## 15. hoc
+## 14. hoc
 
-## 16. 内置组件
+## 15. 内置组件
 
 - [x] [0014. React.Fragment](https://tdahuyou.github.io/TNotes.react/notes/0014.%20React.Fragment/README)
   - [1. 🔗 查看 react 官方文档对内置组件 `React.Fragment` 的描述](https://tdahuyou.github.io/TNotes.react/notes/0014.%20React.Fragment/README#1--查看-react-官方文档对内置组件-reactfragment-的描述)
@@ -278,7 +262,7 @@
   - [3. 💻 demos.1 - React.Fragment 并不会生成真实 DOM](https://tdahuyou.github.io/TNotes.react/notes/0014.%20React.Fragment/README#3--demos1---reactfragment-并不会生成真实-dom)
   - [4. 💻 demos.2 - 使用 React.Fragment 渲染列表项](https://tdahuyou.github.io/TNotes.react/notes/0014.%20React.Fragment/README#4--demos2---使用-reactfragment-渲染列表项)
 
-## 17. redux
+## 16. redux
 
 - [x] [0047. redux 是什么](https://tdahuyou.github.io/TNotes.react/notes/0047.%20redux%20%E6%98%AF%E4%BB%80%E4%B9%88/README)
   - [1. 🔗 redux 官方文档和 github 仓库](https://tdahuyou.github.io/TNotes.react/notes/0047.%20redux%20%E6%98%AF%E4%BB%80%E4%B9%88/README#1--redux-官方文档和-github-仓库)
@@ -331,7 +315,7 @@
   - [3. 📒 action](https://tdahuyou.github.io/TNotes.react/notes/0031.%20%E5%9C%A8%20redux%20%E4%B8%AD%EF%BC%8Cstore%E3%80%81reducer%E3%80%81action%20%E4%B8%89%E8%80%85%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/README#3--action)
   - 了解 redux 中的 3 个核心组成部分 store、reducer、action，并清楚它们之间的关系。
 
-## 18. 第三方库
+## 17. 第三方库
 
 - [x] [0006. react-modal](https://tdahuyou.github.io/TNotes.react/notes/0006.%20react-modal/README)
   - [1. 🔗 react-modal 相关链接](https://tdahuyou.github.io/TNotes.react/notes/0006.%20react-modal/README#1--react-modal-相关链接)
@@ -377,21 +361,19 @@
   - [11. 💻 demos.2 - IntlShape 在 .ts 中的应用](https://tdahuyou.github.io/TNotes.react/notes/0038.%20react-intl/README#11--demos2---intlshape-在-ts-中的应用)
   - React-Intl 是一个强大的工具，可帮助开发人员轻松管理和本地化他们的 React 应用程序。
 
-## 19. 工程化
+## 18. 工程化
 
 - [x] [0008. npm create vite 使用 vite 快速初始化一个 react 工程](https://tdahuyou.github.io/TNotes.react/notes/0008.%20npm%20create%20vite%20%E4%BD%BF%E7%94%A8%20vite%20%E5%BF%AB%E9%80%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E4%B8%AA%20react%20%E5%B7%A5%E7%A8%8B/README)
-  - [1. 🔍 查阅 vite 官网，了解 npm create vite 相关详情](https://tdahuyou.github.io/TNotes.react/notes/0008.%20npm%20create%20vite%20%E4%BD%BF%E7%94%A8%20vite%20%E5%BF%AB%E9%80%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E4%B8%AA%20react%20%E5%B7%A5%E7%A8%8B/README#1--查阅-vite-官网了解-npm-create-vite-相关详情)
+  - [1. 📝 概述](https://tdahuyou.github.io/TNotes.react/notes/0008.%20npm%20create%20vite%20%E4%BD%BF%E7%94%A8%20vite%20%E5%BF%AB%E9%80%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E4%B8%AA%20react%20%E5%B7%A5%E7%A8%8B/README#1--概述)
   - [2. 📒 使用 pnpm 的实际操作流程](https://tdahuyou.github.io/TNotes.react/notes/0008.%20npm%20create%20vite%20%E4%BD%BF%E7%94%A8%20vite%20%E5%BF%AB%E9%80%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E4%B8%AA%20react%20%E5%B7%A5%E7%A8%8B/README#2--使用-pnpm-的实际操作流程)
   - [3. 💻 demos.1 - 使用 vite 创建 react 工程并启动](https://tdahuyou.github.io/TNotes.react/notes/0008.%20npm%20create%20vite%20%E4%BD%BF%E7%94%A8%20vite%20%E5%BF%AB%E9%80%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E4%B8%AA%20react%20%E5%B7%A5%E7%A8%8B/README#3--demos1---使用-vite-创建-react-工程并启动)
-  - `npm create vite@latest my-react-app -- --template react` 这是 vite 官方提供的命令，用于创建一个 react 项目。
-    - 如果不清楚这条命令的含义，可以参考一下本节中记录的 AI 对此的解释。
-  - 上面这条命令太长了，不好记，其实只需要记住：`npm create vite` 即可，其他项目参数（比如项目名称、模板等）根据命令提示自行配置。
+  - [4. 🔗 参考资料](https://tdahuyou.github.io/TNotes.react/notes/0008.%20npm%20create%20vite%20%E4%BD%BF%E7%94%A8%20vite%20%E5%BF%AB%E9%80%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E4%B8%AA%20react%20%E5%B7%A5%E7%A8%8B/README#4--参考资料)
 - [ ] [0036. 快速搭建一个基于 vite、antd 的 react 项目](https://tdahuyou.github.io/TNotes.react/notes/0036.%20%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8E%20vite%E3%80%81antd%20%E7%9A%84%20react%20%E9%A1%B9%E7%9B%AE/README)
   - [1. 🔗 antd 官方文档 - 在 vite 中使用 antd](https://tdahuyou.github.io/TNotes.react/notes/0036.%20%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8E%20vite%E3%80%81antd%20%E7%9A%84%20react%20%E9%A1%B9%E7%9B%AE/README#1--antd-官方文档---在-vite-中使用-antd)
   - [2. 📒 使用 pnpm 实现安装和初始化的流程](https://tdahuyou.github.io/TNotes.react/notes/0036.%20%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8E%20vite%E3%80%81antd%20%E7%9A%84%20react%20%E9%A1%B9%E7%9B%AE/README#2--使用-pnpm-实现安装和初始化的流程)
   - [3. 💻 demos.1 - 测试按钮组件的使用](https://tdahuyou.github.io/TNotes.react/notes/0036.%20%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8E%20vite%E3%80%81antd%20%E7%9A%84%20react%20%E9%A1%B9%E7%9B%AE/README#3--demos1---测试按钮组件的使用)
 
-## 20. UI 组件库
+## 19. UI 组件库
 
 - [ ] [0037. 学习 antd Message 组件的使用](https://tdahuyou.github.io/TNotes.react/notes/0037.%20%E5%AD%A6%E4%B9%A0%20antd%20Message%20%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/README)
   - [1. 🔗 Message 全局提示](https://tdahuyou.github.io/TNotes.react/notes/0037.%20%E5%AD%A6%E4%B9%A0%20antd%20Message%20%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/README#1--message-全局提示)
@@ -399,8 +381,7 @@
   - [3. 💻 demos.2 - 理解 contextHolder 的作用](https://tdahuyou.github.io/TNotes.react/notes/0037.%20%E5%AD%A6%E4%B9%A0%20antd%20Message%20%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/README#3--demos2---理解-contextholder-的作用)
   - [4. 🔗 来自官方文档的回复：为什么 message 不能获取 context、redux 的内容和 ConfigProvider 的 locale/prefixCls/theme 等配置？](https://tdahuyou.github.io/TNotes.react/notes/0037.%20%E5%AD%A6%E4%B9%A0%20antd%20Message%20%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/README#4--来自官方文档的回复为什么-message-不能获取-contextredux-的内容和-configprovider-的-localeprefixclstheme-等配置)
 
-## 21. empty
-
+## 20. empty
 
 - [ ] [0026. xxx](https://tdahuyou.github.io/TNotes.react/notes/0026.%20xxx/README)
 

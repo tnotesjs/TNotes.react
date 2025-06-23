@@ -2,31 +2,26 @@
 
 <!-- region:toc -->
 
-- [1. 🔗 参考链接](#1--参考链接)
-- [2. 📒 react 概述](#2--react-概述)
-- [3. 📒 react 的特点](#3--react-的特点)
-  - [3.1. 轻量](#31-轻量)
-  - [3.2. 原生](#32-原生)
-  - [3.3. 灵活](#33-灵活)
-  - [3.4. 单向数据流](#34-单向数据流)
-- [4. 📒 库 vs. 框架](#4--库-vs-框架)
+- [1. 📝 概述](#1--概述)
+- [2. 🤔 react 是什么](#2--react-是什么)
+- [3. 📒 react 的特点 - 轻量](#3--react-的特点---轻量)
+- [4. 📒 react 的特点 - 原生](#4--react-的特点---原生)
+- [5. 📒 react 的特点 - 灵活](#5--react-的特点---灵活)
+- [6. 📒 react 的特点 - 单向数据流](#6--react-的特点---单向数据流)
+- [7. 📒 库 vs. 框架](#7--库-vs-框架)
+- [8. 🔗 参考链接](#8--参考链接)
 
 <!-- endregion:toc -->
-- 了解 react 是什么
-- 了解 react 都有哪些特点
-- 了解 vue、react 之间的一些差异
-- 理解为什么强调 react 是一个库，而非框架
 
-## 1. 🔗 参考链接
+## 1. 📝 概述
 
-- https://react.dev/
-  - react 官网。
-- https://github.com/facebook/react
-  - react github 仓库。
-- https://cn.vuejs.org/
-  - vue 官网。
+- 知识点：
+  - 了解 react 是什么
+  - 了解 react 都有哪些特点
+  - 了解 vue、react 之间的一些差异
+  - 理解为什么强调 react 是一个库，而非框架
 
-## 2. 📒 react 概述
+## 2. 🤔 react 是什么
 
 - React 是由 **Facebook** 研发的、用于 **解决 UI 复杂度** 的开源 **JavaScript 库**，目前由 React 联合社区维护。
 - React **不是框架**，只是为了解决 UI 复杂度而诞生的一个库。
@@ -34,22 +29,25 @@
 - 官方定义：
   - The library for web and native user interfaces
   - 用于构建 Web 和原生交互界面的库
-  - 截图：
-    - ![](assets/2024-11-04-22-18-58.png)
-    - ![](assets/2024-11-04-22-16-33.png)
 
-## 3. 📒 react 的特点
+::: swiper
 
-### 3.1. 轻量
+![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-23-21-29-52.png)
+
+![图 1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-23-21-30-01.png)
+
+:::
+
+## 3. 📒 react 的特点 - 轻量
 
 - React 的开发版（也就是 development 版本）所有源码（包含注释）仅 **3k 行左右**。
-  - ![](assets/2024-11-04-23-06-03.png)
+  - ![图 2](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-23-21-35-36.png)
 - React 的运行版（也就是 production 版本）所有源码体积仅 **7KB** 左右。
-  - ![](assets/2024-11-04-23-04-35.png)
+  - ![图 3](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-23-21-35-52.png)
 - 上述截图的内容，你可以使用 vite 来快速搭建一个 react 工程，然后到 node_modules 中查看。
-  - 你可以使用 `pnpm create vite` 命令来快速创建一个 react 工程，目前（2024 年 11 月 4 日 23:07:41）创建的 react 的最新版本是 `"version": "18.3.1"`。若你想要验证上述描述是否准确，可以自行创建一个工程来瞅一瞅。
+  - 你可以使用 `pnpm create vite` 命令来快速创建一个 react 工程，目前 `2024 年 11 月 4 日 23:07:41` 创建的 react 的最新版本是 `"version": "18.3.1"`。若你想要验证上述描述是否准确，可以自行创建一个工程来瞅一瞅。
 
-### 3.2. 原生
+## 4. 📒 react 的特点 - 原生
 
 - **原生**
   - 所有的 React 的代码几乎都是用原生 JS 书写而成的，不依赖其他任何库。
@@ -58,12 +56,13 @@
 - **对比 vue**
   - vue 一开始对宿主环境是有依赖的，在 vue 源码拆分出 vue-core 之前，它内部依赖了浏览器宿主环境下的 window、document，因为它在核心库中带有直接操作 DOM 的逻辑。但后来对架构做了调整，拆分出一个 vue-core 即 vue 的核心库，使其更加模块化，并减少对特定环境的依赖。现在 vue-core 里面是没有依赖具体的环境的，这使得 Vue 也能够在不同环境中使用，类似于 React 的设计理念，因此，vue 也可以被轻松的移植到浏览器、桌面应用、移动端。
   - Vue 的核心拆分和对宿主环境依赖的减少始于 Vue 2.x 版本。具体来说，Vue 2.5 版本引入了 vue-runtime 和 vue-core 的概念，将核心功能和运行时逻辑进行分离。这一变化使得 Vue 更加模块化，方便在不同的环境中使用。
-  - ![](assets/2024-11-05-07-32-51.png)
-    - 使用 pnpm i vue@2.4 下载一个 vue@2.4 版
-    - 找到 node_modules/vue/dist/vue.runtime.common.js 文件（这是导入 vue 的入口文件）
-    - 搜索 document 或者 window 看看，你会发现这里边对浏览器提供的 DOM API、BOM API 是有所依赖的。
+  - ![图 4](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-23-21-36-17.png)
+  - 🤔 如何验证上述描述？
+    - 使用 `pnpm i vue@2.4` 下载一个 vue@2.4 版
+    - 找到 `node_modules/vue/dist/vue.runtime.common.js` 文件（这是导入 vue 的入口文件）
+    - 搜索 `document` 或者 `window` 看看，你会发现这里边对浏览器提供的 DOM API、BOM API 是有所依赖的。
 
-### 3.3. 灵活
+## 5. 📒 react 的特点 - 灵活
 
 - **易扩展**
   - React 对代码的封装程度较低，也没有过多的使用魔法，所以 React 中的很多功能都可以扩展。
@@ -74,17 +73,17 @@
 - **组件化**
   - 这也是其他大多数框架所具备的特点。
 
-### 3.4. 单向数据流
+## 6. 📒 react 的特点 - 单向数据流
 
 - 所有的数据自顶而下的流动。
 - 这种模式使得状态数据的变化变得更为可控，管理起来也会更为简单。
 - 这也是其他大多数框架所具备的特点。
 
-## 4. 📒 库 vs. 框架
+## 7. 📒 库 vs. 框架
 
 - **🤔 思考：为什么官方特别强调 react 是一个库，而非框架呢？**
 - 作为对比，我们可以先看看 vue 官方对 vue 的定义：
-  - ![](assets/2024-11-04-22-22-42.png)
+  - ![图 5](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-23-21-38-41.png)
   - 可以看到，官方明确表示，vue 是一个渐进式 JavaScript **框架**。
 - 再来看看“库”和“框架”的定义：
   - **库** 是一组预先编写的代码，用于解决特定的问题或提供特定的功能。库通常提供一组函数、类或对象，开发者可以在自己的代码中调用这些函数或对象。
@@ -102,5 +101,11 @@
     - **vue**
       - **除了一些痛点问题之外，我还在想办法尽可能帮你解决更多的问题**，让你写起来更便捷。比如，我们会事先明确好一些语法规则，你需要按照我们指定的规则来走，这意味着我的侵入性会更高一些，虽然这可能牺牲了一部分的灵活性，但在某些程度上确实能够让你写更少的代码就能解决很多常见问题。
 
+## 8. 🔗 参考链接
 
-<Discussions id="react.0032" />
+- https://react.dev/
+  - react 官网。
+- https://github.com/facebook/react
+  - react github 仓库。
+- https://cn.vuejs.org/
+  - vue 官网。

@@ -2,17 +2,21 @@
 
 <!-- region:toc -->
 
-- [1. 📒 eslint 概述](#1--eslint-概述)
-- [2. 📒 安装 ESLint 插件](#2--安装-eslint-插件)
-- [3. 📒 配置 ESLint 基本流程](#3--配置-eslint-基本流程)
-- [4. 💻 demos.1 - 约束只能使用单引号，不能使用双引号](#4--demos1---约束只能使用单引号不能使用双引号)
-- [5. 📒 注意事项](#5--注意事项)
+- [1. 📝 概述](#1--概述)
+- [2. 📒 eslint 概述](#2--eslint-概述)
+- [3. 📒 安装 ESLint 插件](#3--安装-eslint-插件)
+- [4. 📒 配置 ESLint 基本流程](#4--配置-eslint-基本流程)
+- [5. 💻 demos.1 - 约束只能使用单引号，不能使用双引号](#5--demos1---约束只能使用单引号不能使用双引号)
+- [6. 📒 注意事项](#6--注意事项)
 
 <!-- endregion:toc -->
+
+## 1. 📝 概述
+
 - vscode 中的 eslint 插件有什么用
 - 如何引入并使用 eslint
 
-## 1. 📒 eslint 概述
+## 2. 📒 eslint 概述
 
 - `ESLint` 是一个用于识别和报告 JavaScript 代码中模式问题的工具，它可以帮助开发人员遵循一致的编码风格和避免错误。
 - 在 VS Code 中安装 `ESLint` 插件可以让你在编写代码时即时获得 linting 反馈，从而提高代码质量和开发效率。
@@ -31,14 +35,14 @@
     - 你可以按照笔记中提到的流程，把 eslint 安装好，然后全都使用默认的检测规则来编写代码，写一段时间后，就会发现 eslint 的作用，也能帮你了解到哪些写法可能是会存在隐患的，为什么 eslint 会提示你。
   - 个人选择是基本不用……
 
-## 2. 📒 安装 ESLint 插件
+## 3. 📒 安装 ESLint 插件
 
-1. 打开 VS Code。
-2. 转到左侧活动栏中的“扩展”图标（或者使用快捷键 `Ctrl+Shift+X`）。
-3. 在搜索框中输入 "ESLint" 并完成安装。
-   1. ![](assets/2024-11-06-19-31-29.png)
+- 打开 VS Code。
+- 转到左侧活动栏中的“扩展”图标（或者使用快捷键 `Ctrl+Shift+X`）。
+- 在搜索框中输入 "ESLint" 并完成安装。
+- ![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-23-21-44-38.png)
 
-## 3. 📒 配置 ESLint 基本流程
+## 4. 📒 配置 ESLint 基本流程
 
 安装完插件后，你需要确保项目中已经配置了 ESLint。如果还没有配置，可以通过以下步骤来设置：
 
@@ -86,7 +90,7 @@ $ npx eslint --init
 - **修复问题**：很多情况下，ESLint 插件提供了快速修复选项，允许你一键修正某些类型的错误或警告。
 - **自定义规则**：你可以在 `.eslintrc` 文件中调整 ESLint 规则，以适应团队的具体需求或编码标准。
 
-## 4. 💻 demos.1 - 约束只能使用单引号，不能使用双引号
+## 5. 💻 demos.1 - 约束只能使用单引号，不能使用双引号
 
 ::: code-group
 
@@ -95,18 +99,17 @@ $ npx eslint --init
  * eslint.config.mjs
  * 这是通过上述流程生成的默认的 eslint 的配置文件内容
  */
-import globals from "globals";
-import pluginJs from "@eslint/js";
-import pluginReact from "eslint-plugin-react";
-
+import globals from 'globals'
+import pluginJs from '@eslint/js'
+import pluginReact from 'eslint-plugin-react'
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  {files: ["**/*.{js,mjs,cjs,jsx}"]},
-  {languageOptions: { globals: globals.browser }},
+  { files: ['**/*.{js,mjs,cjs,jsx}'] },
+  { languageOptions: { globals: globals.browser } },
   pluginJs.configs.recommended,
   pluginReact.configs.flat.recommended,
-];
+]
 ```
 
 ```js [eslint.config.mjs]
@@ -139,17 +142,17 @@ export default [
 ```js
 // src/index.jsx
 const foo = '123'
-const bar = "123"
+const bar = '123'
 
 const myComp = () => {
-    return <>eslint test</>
+  return <>eslint test</>
 }
 ```
 
 - 报错截图：
-- ![](assets/2024-11-06-19-46-26.png)
+- ![图 1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-23-21-45-06.png)
 
-## 5. 📒 注意事项
+## 6. 📒 注意事项
 
 - **性能影响**：虽然 ESLint 对于提高代码质量非常有用，但大量的 lint 规则可能会对编辑器的响应速度产生一定影响。如果遇到性能问题，可以尝试减少规则数量或禁用一些不常用的规则。
 - **与其他插件的兼容性**：确保 ESLint 插件与其他你正在使用的 VS Code 插件（如 Prettier）之间没有冲突。通常，可以通过适当的配置解决这些问题。

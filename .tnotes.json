@@ -19,9 +19,9 @@
     "icon": {
       "src": "https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/assets/icon--react.svg"
     },
-    "title": "React 笔记",
-    "completed_notes_count": 37,
-    "details": "待搬运语雀上的笔记。",
+    "title": "react",
+    "completed_notes_count": 38,
+    "details": "React 笔记",
     "link": "https://tdahuyou.github.io/TNotes.react/"
   },
   "menuItems": [
