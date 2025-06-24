@@ -7,7 +7,7 @@
   - [2.1. 【做法 1】通过设置面板来配置](#21-做法-1通过设置面板来配置)
   - [2.2. 【做法 2】通过配置文件 `.vscode/settings.json` 来配置](#22-做法-2通过配置文件-vscodesettingsjson-来配置)
 - [3. 💻 demos.1 - 在 vscode 中，让 Emmet 语法支持 JSX](#3--demos1---在-vscode-中让-emmet-语法支持-jsx)
-- [4. 🔗 参考资料](#4--参考资料)
+- [4. 🔗 References](#4--references)
 
 <!-- endregion:toc -->
 
@@ -48,7 +48,7 @@
 - 输入：`.foo`
   - 按下回车，将会快速生成：`<div className="foo"></div>`
 
-## 4. 🔗 参考资料
+## 4. 🔗 References
 
 - https://eshwaren.medium.com/enable-emmet-support-for-jsx-in-visual-studio-code-react-f1f5dfe8809c
   - Medium - Enable Emmet support for JSX in Visual Studio Code | React

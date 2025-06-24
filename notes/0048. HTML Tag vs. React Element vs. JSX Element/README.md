@@ -2,27 +2,32 @@
 
 <!-- region:toc -->
 
-- [1. 📒 三者的关系与区别](#1--三者的关系与区别)
-- [2. 📒 React 中的 HTML Tag](#2--react-中的-html-tag)
-- [3. 📒 JSX Element](#3--jsx-element)
-- [4. 📒 React Element](#4--react-element)
-- [5. 🤔 为什么要写这篇笔记？](#5--为什么要写这篇笔记)
+- [1. 📝 概述](#1--概述)
+- [2. 📒 三者的关系与区别](#2--三者的关系与区别)
+- [3. 📒 React 中的 HTML Tag](#3--react-中的-html-tag)
+- [4. 📒 JSX Element](#4--jsx-element)
+- [5. 📒 React Element](#5--react-element)
+- [6. 🤔 为什么要写这篇笔记？](#6--为什么要写这篇笔记)
 
 <!-- endregion:toc -->
 
-## 1. 📒 三者的关系与区别
+## 1. 📝 概述
 
-| **术语**           | **React 中的 HTML Tag 和 JSX Element**   | **React Element**                                                       |
-| ------------------ | ---------------------------------------- | ----------------------------------------------------------------------- |
-| **本质**           | React Element 语法糖                     | 描述 UI 的 JavaScript 对象                                              |
-| **用途**           | 降低 React Element 的书写成本            | React 内部使用，描述 UI 的结构                                          |
-| **需要编译**       | ✅                                       | ❌                                                                      |
-| **示例**           | `<div className="container">Hello</div>` | `{ type: 'div', props: { className: 'container', children: 'Hello' } }` |
+- 理解 React 中的 HTML Tag、JSX Element 和 React Element 三者之间的关系与区别。
+
+## 2. 📒 三者的关系与区别
+
+| **术语** | **React 中的 HTML Tag 和 JSX Element** | **React Element** |
+| --- | --- | --- |
+| **本质** | React Element 语法糖 | 描述 UI 的 JavaScript 对象 |
+| **用途** | 降低 React Element 的书写成本 | React 内部使用，描述 UI 的结构 |
+| **需要编译** | ✅ | ❌ |
+| **示例** | `<div className="container">Hello</div>` | `{ type: 'div', props: { className: 'container', children: 'Hello' } }` |
 
 - **React 中的 HTML Tag 和 JSX Element** 是一种语法糖，帮助开发者更方便地编写 React Element，最终会被编译为 `React.createElement` 调用。
 - **React Element** 是 React 内部的数据结构，用于描述 UI 的状态和结构。
 
-## 2. 📒 React 中的 HTML Tag
+## 3. 📒 React 中的 HTML Tag
 
 - **在 React 中，JSX 中的 HTML Tag 是一种语法糖，用于更直观地描述 UI 结构，最终会被转换为 React Element。**
 - **注意：**
@@ -54,7 +59,7 @@ const element = React.createElement(
 )
 ```
 
-## 3. 📒 JSX Element
+## 4. 📒 JSX Element
 
 - JSX Element 是一种语法糖，它的作用是让开发者更容易地编写 React Element。
 - **定义：**
@@ -78,7 +83,7 @@ const jsxElement = React.createElement(
 )
 ```
 
-## 4. 📒 React Element
+## 5. 📒 React Element
 
 - **React Element 是 React 内部使用的数据结构，用于描述 UI 的结构和状态。**
 - **定义：**
@@ -109,8 +114,7 @@ const reactElement = React.createElement(
 }
 ```
 
-
-## 5. 🤔 为什么要写这篇笔记？
+## 6. 🤔 为什么要写这篇笔记？
 
 - 在学习过程中，被一些概念搞得晕头转向，感觉它们好像是一个东西，但是有些时候又存在冲突，比如：
   - `React Component`
@@ -120,7 +124,7 @@ const reactElement = React.createElement(
   - ……
 - 🌰 举一个描述互相冲突的示例：
   - 先来看看官方原话：
-    - ![](assets/2025-02-15-05-49-02.png)
+    - ![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-09-50-15.png)
     - https://react.dev/learn
     - `React component names must always start with a capital letter, while HTML tags must be lowercase.`
     - **1️⃣ React 组件命名必须以大写字母开头，而 HTML 标签则必须以小写字母开头。**
