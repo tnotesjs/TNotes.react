@@ -6,14 +6,13 @@
 - [2. 💻 demos.1 - react 组件名的命名规则](#2--demos1---react-组件名的命名规则)
 
 <!-- endregion:toc -->
-- **React component names must always start with a capital letter, while HTML tags must be lowercase.**
 
 ## 1. 🔍 查看 react 官方对组件名的命名规则的描述
 
 - https://react.dev/learn
 - 官方原话：
-- Notice that `<MyButton />` starts with a capital letter. That’s how you know it’s a React component. **React component names must always start with a capital letter, while HTML tags must be lowercase.**
-  - ![](assets/2024-09-24-11-24-37.png)
+  - **React component names must always start with a capital letter, while HTML tags must be lowercase.**
+  - ![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-21-44-59.png)
 
 ## 2. 💻 demos.1 - react 组件名的命名规则
 
