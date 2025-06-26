@@ -7,7 +7,6 @@
 - [3. 📒 类组件的基本形式](#3--类组件的基本形式)
 - [4. 📒 类组件的状态（State）](#4--类组件的状态state)
 - [5. 📒 类组件的生命周期方法](#5--类组件的生命周期方法)
-- [6. 💻 给类组件设置默认的 Props](#6--给类组件设置默认的-props)
 
 <!-- endregion:toc -->
 
@@ -110,30 +109,3 @@ class Example extends Component {
 - 在这个例子中，`Example` 组件在挂载后模拟了一个数据获取的过程，并在数据更新时记录一条消息。同时，当组件即将卸载时，它也会记录一条消息。
 - 在使用相关生命周期 API 的时候，需要注意的是你当前所使用的 React 版本，在不同的 React 版本中，生命周期 API 会有所差异。
 - 具体的版本变更，可以查阅 [react 官方的 CHANGELOG](https://github.com/facebook/react/blob/main/CHANGELOG.md) 描述。
-
-## 6. 💻 给类组件设置默认的 Props
-
-::: code-group
-
-```jsx [使用参数默认值]
-class Welcome extends Component {
-  render() {
-    const { name = 'Guest' } = this.props
-    return <h1>Hello, {name}</h1>
-  }
-}
-```
-
-```jsx [defaultProps]
-class Welcome extends Component {
-  static defaultProps = {
-    name: 'Guest',
-  }
-
-  render() {
-    return <h1>Hello, {this.props.name}</h1>
-  }
-}
-```
-
-:::

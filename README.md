@@ -221,20 +221,18 @@
   - [1. 📝 概述](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0022.%20%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0/README.md#1--概述)
   - [2. 📒 函数组件](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0022.%20%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0/README.md#2--函数组件)
   - [3. 💻 使用 ES6 的箭头函数来定义函数组件](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0022.%20%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0/README.md#3--使用-es6-的箭头函数来定义函数组件)
-  - [4. 💻 为函数组件设置默认的 props 值](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0022.%20%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0/README.md#4--为函数组件设置默认的-props-值)
-  - [5. 💻 在函数组件中使用 Hooks](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0022.%20%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0/README.md#5--在函数组件中使用-hooks)
+  - [4. 💻 在函数组件中使用 Hooks](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0022.%20%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0/README.md#4--在函数组件中使用-hooks)
 - [x] [0023. 类组件概述](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0023.%20%E7%B1%BB%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0/README.md)
   - [1. 📝 概述](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0023.%20%E7%B1%BB%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0/README.md#1--概述)
   - [2. 📒 类组件](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0023.%20%E7%B1%BB%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0/README.md#2--类组件)
   - [3. 📒 类组件的基本形式](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0023.%20%E7%B1%BB%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0/README.md#3--类组件的基本形式)
   - [4. 📒 类组件的状态（State）](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0023.%20%E7%B1%BB%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0/README.md#4--类组件的状态state)
   - [5. 📒 类组件的生命周期方法](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0023.%20%E7%B1%BB%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0/README.md#5--类组件的生命周期方法)
-  - [6. 💻 给类组件设置默认的 Props](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0023.%20%E7%B1%BB%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0/README.md#6--给类组件设置默认的-props)
-- [ ] [0024. 单向数据流是什么](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0024.%20%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81%E6%98%AF%E4%BB%80%E4%B9%88/README.md)
-  - [1. 🤖 什么是单向数据流](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0024.%20%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81%E6%98%AF%E4%BB%80%E4%B9%88/README.md#1--什么是单向数据流)
-    - [1.1. 单向数据流的优点](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0024.%20%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81%E6%98%AF%E4%BB%80%E4%B9%88/README.md#11-单向数据流的优点)
-    - [1.2. React 中的单向数据流](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0024.%20%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81%E6%98%AF%E4%BB%80%E4%B9%88/README.md#12-react-中的单向数据流)
-  - ⏰ pending
+- [x] [0024. 单向数据流是什么](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0024.%20%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81%E6%98%AF%E4%BB%80%E4%B9%88/README.md)
+  - [1. 📝 概述](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0024.%20%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81%E6%98%AF%E4%BB%80%E4%B9%88/README.md#1--概述)
+  - [2. 📒 单向数据流](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0024.%20%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81%E6%98%AF%E4%BB%80%E4%B9%88/README.md#2--单向数据流)
+  - [3. 📒 React 中的单向数据流](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0024.%20%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81%E6%98%AF%E4%BB%80%E4%B9%88/README.md#3--react-中的单向数据流)
+  - [4. 💻 单向数据流](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0024.%20%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81%E6%98%AF%E4%BB%80%E4%B9%88/README.md#4--单向数据流)
 
 ## 7. 组件调用
 
@@ -243,6 +241,10 @@
 
 ## 8. 组件属性
 
+- [x] [0026. 属性默认值](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0026.%20%E5%B1%9E%E6%80%A7%E9%BB%98%E8%AE%A4%E5%80%BC/README.md)
+  - [1. 📝 概述](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0026.%20%E5%B1%9E%E6%80%A7%E9%BB%98%E8%AE%A4%E5%80%BC/README.md#1--概述)
+  - [2. 💻 函数组件设置属性默认值](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0026.%20%E5%B1%9E%E6%80%A7%E9%BB%98%E8%AE%A4%E5%80%BC/README.md#2--函数组件设置属性默认值)
+  - [3. 💻 给类组件设置属性默认值](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0026.%20%E5%B1%9E%E6%80%A7%E9%BB%98%E8%AE%A4%E5%80%BC/README.md#3--给类组件设置属性默认值)
 - [x] [0019. 组件属性的传递和接收](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0019.%20%E7%BB%84%E4%BB%B6%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BC%A0%E9%80%92%E5%92%8C%E6%8E%A5%E6%94%B6/README.md)
   - [1. 📒 props 传递概述](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0019.%20%E7%BB%84%E4%BB%B6%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BC%A0%E9%80%92%E5%92%8C%E6%8E%A5%E6%94%B6/README.md#1--props-传递概述)
   - [2. 💻 demos.1 - 组件属性的传递和接收](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0019.%20%E7%BB%84%E4%BB%B6%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BC%A0%E9%80%92%E5%92%8C%E6%8E%A5%E6%94%B6/README.md#2--demos1---组件属性的传递和接收)
@@ -412,8 +414,6 @@
   - [4. 🔗 来自官方文档的回复：为什么 message 不能获取 context、redux 的内容和 ConfigProvider 的 locale/prefixCls/theme 等配置？](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0037.%20%E5%AD%A6%E4%B9%A0%20antd%20Message%20%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/README.md#4--来自官方文档的回复为什么-message-不能获取-contextredux-的内容和-configprovider-的-localeprefixclstheme-等配置)
 
 ## 19. empty
-
-- [ ] [0026. xxx](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0026.%20xxx/README.md)
 
 - [ ] [0055. xxx](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0055.%20xxx/README.md)
 

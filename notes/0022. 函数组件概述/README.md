@@ -5,8 +5,7 @@
 - [1. 📝 概述](#1--概述)
 - [2. 📒 函数组件](#2--函数组件)
 - [3. 💻 使用 ES6 的箭头函数来定义函数组件](#3--使用-es6-的箭头函数来定义函数组件)
-- [4. 💻 为函数组件设置默认的 props 值](#4--为函数组件设置默认的-props-值)
-- [5. 💻 在函数组件中使用 Hooks](#5--在函数组件中使用-hooks)
+- [4. 💻 在函数组件中使用 Hooks](#4--在函数组件中使用-hooks)
 
 <!-- endregion:toc -->
 
@@ -14,7 +13,6 @@
 
 - 对 react 中的函数组件做了一个简单的说明。
 - 了解函数组件的基本写法。
-- 了解函数组件的默认属性的写法。
 - 知道在函数组件中可以使用 hooks。
 
 ## 2. 📒 函数组件
@@ -41,31 +39,7 @@ function Welcome(props) {
 const Welcome = (props) => <h1>Hello, {props.name}</h1>
 ```
 
-## 4. 💻 为函数组件设置默认的 props 值
-
-::: code-group
-
-```jsx [使用参数默认值]
-function Welcome(props) {
-  const { name = 'Guest' } = props
-  return <h1>Hello, {name}</h1>
-}
-```
-
-```jsx [使用 defaultProps]
-function Welcome(props) {
-  return <h1>Hello, {props.name}</h1>
-}
-
-Welcome.defaultProps = {
-  name: 'Guest',
-}
-// ⚠️ 这种方式在最新的 React 版本中已不推荐。 // [!code highlight]
-```
-
-:::
-
-## 5. 💻 在函数组件中使用 Hooks
+## 4. 💻 在函数组件中使用 Hooks
 
 - Hooks 是一组内置的 React 函数，允许你在函数组件中使用 state 和其他 React 特性。以下是一些常用的 Hooks：
   - **useState**：用来添加 state 到函数组件。
