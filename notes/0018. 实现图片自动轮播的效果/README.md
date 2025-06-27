@@ -105,9 +105,9 @@ function start() {
       // 在控制台执行这一部分代码，会发现打印的结果依旧是 true。
       const img1 = document.querySelector('#root img')
       setTimeout(() => {
-          const img2 = document.querySelector('#root img')
-          console.log('img1 === img2', img1 === img2)
-          // img1 === img2 true
+        const img2 = document.querySelector('#root img')
+        console.log('img1 === img2', img1 === img2)
+        // img1 === img2 true
       }, 3000)
       ```
   - **🤔 为什么这里要重点强调这一点呢？**

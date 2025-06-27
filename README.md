@@ -143,10 +143,13 @@
   - [1. 📝 概述](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0045.%20jsx%20%E5%BF%85%E9%A1%BB%E5%8D%95%E6%A0%B9/README.md#1--概述)
   - [2. 💻 demos.1 - jsx 必须单根](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0045.%20jsx%20%E5%BF%85%E9%A1%BB%E5%8D%95%E6%A0%B9/README.md#2--demos1---jsx-必须单根)
 - [x] [0014. React.Fragment](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0014.%20React.Fragment/README.md)
-  - [1. 🔗 查看 react 官方文档对内置组件 `React.Fragment` 的描述](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0014.%20React.Fragment/README.md#1--查看-react-官方文档对内置组件-reactfragment-的描述)
-  - [2. 📒 `<Fragment>` 概述](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0014.%20React.Fragment/README.md#2--fragment-概述)
-  - [3. 💻 demos.1 - React.Fragment 并不会生成真实 DOM](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0014.%20React.Fragment/README.md#3--demos1---reactfragment-并不会生成真实-dom)
-  - [4. 💻 demos.2 - 使用 React.Fragment 渲染列表项](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0014.%20React.Fragment/README.md#4--demos2---使用-reactfragment-渲染列表项)
+  - [1. 📝 概述](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0014.%20React.Fragment/README.md#1--概述)
+  - [2. 📒 `React.Fragment`](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0014.%20React.Fragment/README.md#2--reactfragment)
+  - [3. 🤔 为什么使用 `React.Fragment`？](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0014.%20React.Fragment/README.md#3--为什么使用-reactfragment)
+  - [4. ⚠️ 注意事项 - 列表渲染的 `key` 值问题](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0014.%20React.Fragment/README.md#4-️-注意事项---列表渲染的-key-值问题)
+  - [5. 💻 demos.1 - `React.Fragment` 并不会生成真实 DOM](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0014.%20React.Fragment/README.md#5--demos1---reactfragment-并不会生成真实-dom)
+  - [6. 💻 demos.2 - `React.Fragment` 在列表渲染中的应用](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0014.%20React.Fragment/README.md#6--demos2---reactfragment-在列表渲染中的应用)
+  - [7. 🔗 References](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0014.%20React.Fragment/README.md#7--references)
 - [x] [0003. html to jsx 在线转换](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0003.%20html%20to%20jsx%20%E5%9C%A8%E7%BA%BF%E8%BD%AC%E6%8D%A2/README.md)
   - [1. 📝 概述](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0003.%20html%20to%20jsx%20%E5%9C%A8%E7%BA%BF%E8%BD%AC%E6%8D%A2/README.md#1--概述)
   - [2. 📒 需求场景描述](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0003.%20html%20to%20jsx%20%E5%9C%A8%E7%BA%BF%E8%BD%AC%E6%8D%A2/README.md#2--需求场景描述)
@@ -264,13 +267,6 @@
   - [3. 📒 在 HTML 中常见的布尔属性](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0025.%20%E5%B8%83%E5%B0%94%E5%B1%9E%E6%80%A7/README.md#3--在-html-中常见的布尔属性)
   - [4. 💻 demos.1 - 布尔属性在 React 中的应用示例](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0025.%20%E5%B8%83%E5%B0%94%E5%B1%9E%E6%80%A7/README.md#4--demos1---布尔属性在-react-中的应用示例)
   - [5. ⌛️ 历史：布尔属性名称的由来](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0025.%20%E5%B8%83%E5%B0%94%E5%B1%9E%E6%80%A7/README.md#5-️-历史布尔属性名称的由来)
-- [ ] [0020. 组件属性的校验](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0020.%20%E7%BB%84%E4%BB%B6%E5%B1%9E%E6%80%A7%E7%9A%84%E6%A0%A1%E9%AA%8C/README.md)
-  - [1. ⏰ TODO](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0020.%20%E7%BB%84%E4%BB%B6%E5%B1%9E%E6%80%A7%E7%9A%84%E6%A0%A1%E9%AA%8C/README.md#1--todo)
-  - [2. 📝 Summary](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0020.%20%E7%BB%84%E4%BB%B6%E5%B1%9E%E6%80%A7%E7%9A%84%E6%A0%A1%E9%AA%8C/README.md#2--summary)
-  - [3. 🔗 links](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0020.%20%E7%BB%84%E4%BB%B6%E5%B1%9E%E6%80%A7%E7%9A%84%E6%A0%A1%E9%AA%8C/README.md#3--links)
-  - [4. 📒 notes](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0020.%20%E7%BB%84%E4%BB%B6%E5%B1%9E%E6%80%A7%E7%9A%84%E6%A0%A1%E9%AA%8C/README.md#4--notes)
-  - [5. 💻 demo](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0020.%20%E7%BB%84%E4%BB%B6%E5%B1%9E%E6%80%A7%E7%9A%84%E6%A0%A1%E9%AA%8C/README.md#5--demo)
-  - [6. 🤖 AI](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0020.%20%E7%BB%84%E4%BB%B6%E5%B1%9E%E6%80%A7%E7%9A%84%E6%A0%A1%E9%AA%8C/README.md#6--ai)
 
 ## 9. 组件状态
 
@@ -286,8 +282,7 @@
 
 ## 11. ref
 
-- [ ] [0007. ref](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0007.%20ref/README.md)
-  - [1. ⏰](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0007.%20ref/README.md#1-)
+
 - [x] [0018. 实现图片自动轮播的效果](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0018.%20%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E8%87%AA%E5%8A%A8%E8%BD%AE%E6%92%AD%E7%9A%84%E6%95%88%E6%9E%9C/README.md)
   - [1. 💻 demos.1 - 图片自动轮播](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0018.%20%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E8%87%AA%E5%8A%A8%E8%BD%AE%E6%92%AD%E7%9A%84%E6%95%88%E6%9E%9C/README.md#1--demos1---图片自动轮播)
   - [2. 💻 demos.2 - 来看一个常见的由于定时器混乱错误引发的 bug](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0018.%20%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E8%87%AA%E5%8A%A8%E8%BD%AE%E6%92%AD%E7%9A%84%E6%95%88%E6%9E%9C/README.md#2--demos2---来看一个常见的由于定时器混乱错误引发的-bug)
