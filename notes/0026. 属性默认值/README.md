@@ -11,19 +11,22 @@
 ## 1. 📝 概述
 
 - 了解函数组件和类组件如何设置属性默认值。
+- 常见的两种方案：
+  - **原生 JS 控制**：属性默认值本身不是啥复杂的逻辑，完全可以直接采用 JS 来控制，只要属性值为空，那么就赋值为我们指定的默认值即可。
+  - **defaultProps**：React 从框架层面出发，也给我们提供了一些其它形式的写法，比如 defaultProps。
 
 ## 2. 💻 函数组件设置属性默认值
 
 ::: code-group
 
-```jsx [使用参数默认值]
+```jsx [JS 控制]
 function Welcome(props) {
   const { name = 'Guest' } = props
   return <h1>Hello, {name}</h1>
 }
 ```
 
-```jsx [使用 defaultProps]
+```jsx [defaultProps]
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>
 }
@@ -31,7 +34,7 @@ function Welcome(props) {
 Welcome.defaultProps = {
   name: 'Guest',
 }
-// ⚠️ 这种方式在最新的 React 版本中已不推荐。 // [!code highlight]
+// ⚠️ 这种方式在最新的 React 版本中已不推荐。
 ```
 
 :::
@@ -40,7 +43,7 @@ Welcome.defaultProps = {
 
 ::: code-group
 
-```jsx [使用参数默认值]
+```jsx [JS 控制]
 class Welcome extends Component {
   render() {
     const { name = 'Guest' } = this.props

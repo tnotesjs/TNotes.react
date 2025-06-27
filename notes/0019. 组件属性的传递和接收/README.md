@@ -2,13 +2,13 @@
 
 <!-- region:toc -->
 
-- [1. 📒 props 传递概述](#1--props-传递概述)
+- [1. 📝 概述](#1--概述)
 - [2. 💻 demos.1 - 组件属性的传递和接收](#2--demos1---组件属性的传递和接收)
 - [3. 💻 demos.2 - 不同数据类型的属性传递](#3--demos2---不同数据类型的属性传递)
 
 <!-- endregion:toc -->
 
-## 1. 📒 props 传递概述
+## 1. 📝 概述
 
 - Props 是从父组件传递给子组件的数据。
 - 属性是只读的，意味着子组件不能修改接收到的 props。
@@ -50,7 +50,7 @@ createRoot(document.getElementById('root')).render(
 ```
 
 - 最终结果：
-  - ![](assets/2024-09-30-17-19-37.png)
+  - ![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-27-12-13-30.png)
 
 ## 3. 💻 demos.2 - 不同数据类型的属性传递
 
@@ -106,10 +106,10 @@ function ParentComponent() {
       【3】属性名通常都会使用小驼峰的形式来命名。
       【4】属性值的类型是非常灵活的，就如同函数的参数一样，可以传递任意类型的数据。
       【5】布尔属性的简写
-            如果传递的是布尔类型，并且要传递的值是 true，那么可以只写属性名，而不需要传递值。
-            1. <ChildComponent boolean={true} />
-            2. <ChildComponent boolean />
-            这两种写法是等效的。
+       如果传递的是布尔类型，并且要传递的值是 true，那么可以只写属性名，而不需要传递值。
+       1. <ChildComponent boolean={true} />
+       2. <ChildComponent boolean />
+       这两种写法是等效的。
       */}
     </div>
   )
@@ -123,7 +123,7 @@ createRoot(document.getElementById('root')).render(
 )
 ```
 
-```jsx {7,13-18,33-38} [类组件]
+```jsx {7,20-25,40-45} [类组件]
 import { StrictMode, Component } from 'react'
 import { createRoot } from 'react-dom/client'
 
@@ -131,8 +131,15 @@ class ChildComponent extends Component {
   render() {
     // 【1】在类组件中，父组件传递过来的属性，会自动注入到 this.props 中，可以通过 this.props 访问这些数据。
     const { number, string, boolean, object, jsx, func } = this.props
-    console.log('Received props:', { number, string, boolean, object, jsx, func })
-    
+    console.log('Received props:', {
+      number,
+      string,
+      boolean,
+      object,
+      jsx,
+      func,
+    })
+
     return (
       <div>
         <h3>Child Component</h3>
@@ -143,7 +150,7 @@ class ChildComponent extends Component {
         <p>JSX: {jsx}</p>
         <button onClick={func}>Click Me (Triggers Parent Function)</button>
       </div>
-    );
+    )
   }
 }
 
@@ -177,4 +184,4 @@ createRoot(document.getElementById('root')).render(
 
 :::
 
-- ![](assets/2025-02-18-14-45-53.png)
+- ![图 1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-27-12-14-32.png)
