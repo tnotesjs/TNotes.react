@@ -2,12 +2,19 @@
 
 <!-- region:toc -->
 
-- [1. 📒 布尔属性概述](#1--布尔属性概述)
-- [2. 💻 demos.1 - 布尔属性在 React 中的应用示例](#2--demos1---布尔属性在-react-中的应用示例)
+- [1. 📝 概述](#1--概述)
+- [2. 📒 布尔属性](#2--布尔属性)
+- [3. 📒 在 HTML 中常见的布尔属性](#3--在-html-中常见的布尔属性)
+- [4. 💻 demos.1 - 布尔属性在 React 中的应用示例](#4--demos1---布尔属性在-react-中的应用示例)
+- [5. ⌛️ 历史：布尔属性名称的由来](#5-️-历史布尔属性名称的由来)
 
 <!-- endregion:toc -->
 
-## 1. 📒 布尔属性概述
+## 1. 📝 概述
+
+- 知道什么是布尔属性。
+
+## 2. 📒 布尔属性
 
 - **🤔 什么是布尔属性？**
   - 在 HTML 中，布尔属性（Boolean attributes）是一种特殊的属性类型，它们的存在与否决定了属性的值是 `true` 还是 `false`。
@@ -17,28 +24,23 @@
   - **不需要指定值**：当布尔属性出现在元素上时，它默认为 `true`。
   - **忽略属性值**：即使你给布尔属性指定了任何值（如 `checked="false"`），浏览器仍然会将其视为 `true`。
   - **只有存在或不存在两种状态**：布尔属性要么存在并表示 `true`，要么不存在并表示 `false`。
-- **在 HTML 中常见的布尔属性示例**
-  - `disabled`：用于表单控件（如 `<input>` 或 `<button>`），用来禁用控件，使其不可交互。
-  - `readonly`：用于输入框（如 `<input type="text">` 或 `<textarea>`），防止用户修改内容。
-  - `checked`：用于复选框（`<input type="checkbox">`）和单选按钮（`<input type="radio">`），表示是否被选中。
-  - `selected`：用于下拉列表中的选项（`<option>`），表示该项是否被预先选择。
-  - `required`：用于表单字段（如 `<input>`、`<textarea>` 和 `<select>`），表示该字段必须填写才能提交表单。
-  - `open`：用于某些元素（如 `<details>`），表示该元素是否展开显示。
-- **⌛️ 历史：布尔属性名称的由来**
-  - 布尔属性的名称来源于数学和计算机科学中的布尔逻辑，这是以 19 世纪英国数学家乔治·布尔（George Boole）的名字命名的。布尔逻辑是一种代数系统，用于处理逻辑命题，它只有两个值：真（`true`）和假（`false`）。在编程中，布尔类型（boolean type）就是基于这种逻辑，用来表示二元状态的数据类型。
-  - 在 HTML 中，布尔属性的存在与否直接反映了这种二元状态。当一个布尔属性出现在元素上时，它的存在即代表了 `true` 的状态；而如果该属性没有出现在元素上，则意味着它的值为 `false`。这样的设计简化了标记语言的语法，并且使得这些属性的语义更加清晰明了。
-  - **示例**
-    - `<input type="checkbox" checked>` 中的 `checked` 属性就是一个布尔属性。
-    - 它的存在表明这个复选框默认是被选中的，而不需要额外指定 `checked="true"` 或者 `checked="checked"` 这样的值。
-    - 同样地，如果去掉了 `checked` 属性，那么复选框就默认为未选中状态。
-  - 这种设计符合布尔逻辑的基本原则，即一种属性要么具有某种特性（`true`），要么不具有（`false`），没有中间状态。因此，这些属性被称为“布尔属性”。
-  - 它们在 Web 开发中提供了一种简洁的方式来表达特定的状态或行为，特别是在表单控件和其他交互元素中。
 
-## 2. 💻 demos.1 - 布尔属性在 React 中的应用示例
+## 3. 📒 在 HTML 中常见的布尔属性
+
+| 布尔属性 | 描述 |
+| --- | --- |
+| `disabled` | 用于表单控件（如 `<input>` 或 `<button>`），用来禁用控件，使其不可交互。 |
+| `readonly` | 用于输入框（如 `<input type="text">` 或 `<textarea>`），防止用户修改内容。 |
+| `checked` | 用于复选框（`<input type="checkbox">`）和单选按钮（`<input type="radio">`），表示是否被选中。 |
+| `selected` | 用于下拉列表中的选项（`<option>`），表示该项是否被预先选择。 |
+| `required` | 用于表单字段（如 `<input>`、`<textarea>` 和 `<select>`），表示该字段必须填写才能提交表单。 |
+| `open` | 用于某些元素（如 `<details>`），表示该元素是否展开显示。 |
+
+## 4. 💻 demos.1 - 布尔属性在 React 中的应用示例
 
 ::: code-group
 
-```jsx {11-13} [1️⃣ 简写]
+```jsx {11-14} [1️⃣ 简写]
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
@@ -49,10 +51,11 @@ function App(props) {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App boolProp />{/* 这是一种布尔属性的简写形式，相当于 boolProp={true} */}
+    <App boolProp />
+    {/* 这是一种布尔属性的简写形式，相当于 boolProp={true} */}
     <App boolProp={true} />
     <App boolProp={false} />
-  </StrictMode>,
+  </StrictMode>
 )
 /* 
 如果在调用某个组件时，需要传递一个布尔属性，并且值为 true，可以简写属性名，不需要写属性值。
@@ -145,25 +148,40 @@ createRoot(document.getElementById('root')).render(
 Panel 是一个可展开/折叠的面板组件。
 布尔属性 isOpen 用来控制内容的显示或隐藏。
 
-自定义的布尔属性在命名上，通常会采用 is、has、can…… 等词汇开头，表示“是否xxx？”、“有xxx？”、“能xxx？”……。
+自定义的布尔属性在命名上，通常会采用 is、has、can…… 等词汇开头
+表示“是否xxx？”、“有xxx？”、“能xxx？”……
 表示一个开关状态，两者选其一。
 
 ⚠️ 注意事项：
-  1. <Panel isOpen={isOpen}>...</Panel>
-  2. <Panel isOpen>...</Panel>
-
-  上述这两种写法是不一样的。
-  写法 2 等价于 <Panel isOpen={true}>...</Panel>
-  意味着 isOpen 属性被设置为 true。
+1. <Panel isOpen={isOpen}>...</Panel>
+2. <Panel isOpen>...</Panel>
+上述这两种写法是不一样的。
+写法 2 等价于 <Panel isOpen={true}>...</Panel>
+意味着 isOpen 属性被设置为 true。
 */
 ```
 
 :::
 
 - **最终渲染结果：**
-- 1️⃣
-  - ![](assets/2024-09-30-17-48-54.png)
-- 2️⃣
-  - ![](assets/2025-02-18-14-14-54.png)
-- 3️⃣
-  - ![](assets/1.gif)
+
+::: swiper
+
+![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-27-21-47-52.png)
+
+![图 1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-27-21-47-58.png)
+
+![](assets/1.gif)
+
+:::
+
+## 5. ⌛️ 历史：布尔属性名称的由来
+
+- 布尔属性的名称来源于数学和计算机科学中的布尔逻辑，这是以 19 世纪英国数学家乔治·布尔（George Boole）的名字命名的。布尔逻辑是一种代数系统，用于处理逻辑命题，它只有两个值：真（`true`）和假（`false`）。在编程中，布尔类型（boolean type）就是基于这种逻辑，用来表示二元状态的数据类型。
+- 在 HTML 中，布尔属性的存在与否直接反映了这种二元状态。当一个布尔属性出现在元素上时，它的存在即代表了 `true` 的状态；而如果该属性没有出现在元素上，则意味着它的值为 `false`。这样的设计简化了标记语言的语法，并且使得这些属性的语义更加清晰明了。
+- **示例**
+  - `<input type="checkbox" checked>` 中的 `checked` 属性就是一个布尔属性。
+  - 它的存在表明这个复选框默认是被选中的，而不需要额外指定 `checked="true"` 或者 `checked="checked"` 这样的值。
+  - 同样地，如果去掉了 `checked` 属性，那么复选框就默认为未选中状态。
+- 这种设计符合布尔逻辑的基本原则，即一种属性要么具有某种特性（`true`），要么不具有（`false`），没有中间状态。因此，这些属性被称为“布尔属性”。
+- 它们在 Web 开发中提供了一种简洁的方式来表达特定的状态或行为，特别是在表单控件和其他交互元素中。
