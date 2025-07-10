@@ -273,19 +273,16 @@
 ## 10. 组件生命周期
 
 - [ ] [0027. 生命周期](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0027.%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/README.md)
-  - [1. ⏰ TODO：待完善](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0027.%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/README.md#1--todo待完善)
-  - [2. 📝 Summary](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0027.%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/README.md#2--summary)
-  - [3. 🔗 links](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0027.%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/README.md#3--links)
-  - [4. 📒 notes](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0027.%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/README.md#4--notes)
-  - [5. 💻 demo](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0027.%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/README.md#5--demo)
-  - [6. 🤖 AI](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0027.%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/README.md#6--ai)
+  - [1. 📝 概述](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0027.%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/README.md#1--概述)
 
 ## 11. ref
 
 
 - [x] [0018. 实现图片自动轮播的效果](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0018.%20%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E8%87%AA%E5%8A%A8%E8%BD%AE%E6%92%AD%E7%9A%84%E6%95%88%E6%9E%9C/README.md)
-  - [1. 💻 demos.1 - 图片自动轮播](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0018.%20%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E8%87%AA%E5%8A%A8%E8%BD%AE%E6%92%AD%E7%9A%84%E6%95%88%E6%9E%9C/README.md#1--demos1---图片自动轮播)
-  - [2. 💻 demos.2 - 来看一个常见的由于定时器混乱错误引发的 bug](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0018.%20%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E8%87%AA%E5%8A%A8%E8%BD%AE%E6%92%AD%E7%9A%84%E6%95%88%E6%9E%9C/README.md#2--demos2---来看一个常见的由于定时器混乱错误引发的-bug)
+  - [1. 📝 概述](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0018.%20%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E8%87%AA%E5%8A%A8%E8%BD%AE%E6%92%AD%E7%9A%84%E6%95%88%E6%9E%9C/README.md#1--概述)
+  - [2. 💻 demos.1 - 图片自动轮播（）](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0018.%20%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E8%87%AA%E5%8A%A8%E8%BD%AE%E6%92%AD%E7%9A%84%E6%95%88%E6%9E%9C/README.md#2--demos1---图片自动轮播)
+  - [3. 💻 demos.2 - 图片自动轮播](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0018.%20%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E8%87%AA%E5%8A%A8%E8%BD%AE%E6%92%AD%E7%9A%84%E6%95%88%E6%9E%9C/README.md#3--demos2---图片自动轮播)
+  - [4. 🔗 References](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0018.%20%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E8%87%AA%E5%8A%A8%E8%BD%AE%E6%92%AD%E7%9A%84%E6%95%88%E6%9E%9C/README.md#4--references)
 
 ## 12. hooks
 
@@ -293,15 +290,15 @@
 
 ## 14. redux
 
-- [x] [0047. redux 是什么](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0047.%20redux%20%E6%98%AF%E4%BB%80%E4%B9%88/README.md)
-  - [1. 🔗 redux 官方文档和 github 仓库](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0047.%20redux%20%E6%98%AF%E4%BB%80%E4%B9%88/README.md#1--redux-官方文档和-github-仓库)
-  - [2. 🔗 redux 作者 - Dan Abramov、Andrew Clark](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0047.%20redux%20%E6%98%AF%E4%BB%80%E4%B9%88/README.md#2--redux-作者---dan-abramovandrew-clark)
-  - [3. 📒 redux 概述](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0047.%20redux%20%E6%98%AF%E4%BB%80%E4%B9%88/README.md#3--redux-概述)
-  - [4. 📒 官方对 redux 的介绍](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0047.%20redux%20%E6%98%AF%E4%BB%80%E4%B9%88/README.md#4--官方对-redux-的介绍)
-  - [5. 📒 redux 核心概念](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0047.%20redux%20%E6%98%AF%E4%BB%80%E4%B9%88/README.md#5--redux-核心概念)
-  - [6. 🤔 为什么 Reducer 必须是纯函数（Pure Functions）？](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0047.%20redux%20%E6%98%AF%E4%BB%80%E4%B9%88/README.md#6--为什么-reducer-必须是纯函数pure-functions)
-  - [7. 🤔 Action 创建函数（Action Creators）是什么？](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0047.%20redux%20%E6%98%AF%E4%BB%80%E4%B9%88/README.md#7--action-创建函数action-creators是什么)
-  - [8. 📒 redux 常用工具及生态系统](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0047.%20redux%20%E6%98%AF%E4%BB%80%E4%B9%88/README.md#8--redux-常用工具及生态系统)
+- [ ] [0047. redux 是什么](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0047.%20redux%20%E6%98%AF%E4%BB%80%E4%B9%88/README.md)
+  - [1. 📝 概述](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0047.%20redux%20%E6%98%AF%E4%BB%80%E4%B9%88/README.md#1--概述)
+  - [2. 📒 redux 概述](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0047.%20redux%20%E6%98%AF%E4%BB%80%E4%B9%88/README.md#2--redux-概述)
+  - [3. 📒 官方对 redux 的介绍](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0047.%20redux%20%E6%98%AF%E4%BB%80%E4%B9%88/README.md#3--官方对-redux-的介绍)
+  - [4. 📒 redux 核心概念](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0047.%20redux%20%E6%98%AF%E4%BB%80%E4%B9%88/README.md#4--redux-核心概念)
+  - [5. 🤔 为什么 Reducer 必须是纯函数（Pure Functions）？](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0047.%20redux%20%E6%98%AF%E4%BB%80%E4%B9%88/README.md#5--为什么-reducer-必须是纯函数pure-functions)
+  - [6. 🤔 Action 创建函数（Action Creators）是什么？](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0047.%20redux%20%E6%98%AF%E4%BB%80%E4%B9%88/README.md#6--action-创建函数action-creators是什么)
+  - [7. 📒 redux 常用工具及生态系统](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0047.%20redux%20%E6%98%AF%E4%BB%80%E4%B9%88/README.md#7--redux-常用工具及生态系统)
+  - [8. 🔗 References](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0047.%20redux%20%E6%98%AF%E4%BB%80%E4%B9%88/README.md#8--references)
 - [ ] [0028. redux 的基本使用](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0028.%20redux%20%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/README.md)
   - [1. 📒 本节会用到的一些依赖](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0028.%20redux%20%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/README.md#1--本节会用到的一些依赖)
   - [2. 💻 demos.1 - 脱离 react 单独使用 redux 来管理状态数据](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0028.%20redux%20%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/README.md#2--demos1---脱离-react-单独使用-redux-来管理状态数据)
