@@ -14,15 +14,18 @@
     "assets"
   ],
   "port": 9372,
-  "rootDocsSrcDir": "../_/docs/src",
-  "home.features.item": {
+  "rootSidebarDir": "../_/sidebars",
+  "root_item": {
     "icon": {
       "src": "https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/assets/icon--react.svg"
     },
     "title": "react",
     "completed_notes_count": 44,
     "details": "React 笔记",
-    "link": "https://tdahuyou.github.io/TNotes.react/"
+    "link": "https://tdahuyou.github.io/TNotes.react/",
+    "created_at": 1740305655000,
+    "updated_at": 1753580659000,
+    "days_since_birth": 9372
   },
   "menuItems": [
     {
