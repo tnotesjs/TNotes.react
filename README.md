@@ -277,7 +277,6 @@
 
 ## 11. ref
 
-
 - [x] [0018. 实现图片自动轮播的效果](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0018.%20%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E8%87%AA%E5%8A%A8%E8%BD%AE%E6%92%AD%E7%9A%84%E6%95%88%E6%9E%9C/README.md)
   - [1. 📝 概述](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0018.%20%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E8%87%AA%E5%8A%A8%E8%BD%AE%E6%92%AD%E7%9A%84%E6%95%88%E6%9E%9C/README.md#1--概述)
   - [2. 💻 demos.1 - 图片自动轮播（）](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0018.%20%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E8%87%AA%E5%8A%A8%E8%BD%AE%E6%92%AD%E7%9A%84%E6%95%88%E6%9E%9C/README.md#2--demos1---图片自动轮播)
