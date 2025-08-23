@@ -47,16 +47,24 @@ const action = {
   type: 'increase',
 }
 
-console.log('打印 window.store.getState() 获取仓库当前状态 =>', window.store.getState())
+console.log(
+  '打印 window.store.getState() 获取仓库当前状态 =>',
+  window.store.getState()
+)
 
-console.log('执行 window.store.dispatch({ type: "increase" }) => 向仓库分发 action，改变仓库状态。')
+console.log(
+  '执行 window.store.dispatch({ type: "increase" }) => 向仓库分发 action，改变仓库状态。'
+)
 window.store.dispatch(action)
 
-console.log('打印 window.store.getState() 获取仓库当前状态 =>', window.store.getState())
+console.log(
+  '打印 window.store.getState() 获取仓库当前状态 =>',
+  window.store.getState()
+)
 ```
 
 - 最终输出结果：
-  - ![](assets/2024-10-28-22-30-43.png)
+  - ![](./assets/2024-10-28-22-30-43.png)
 
 ## 3. 💻 demos.2 - redux 的基本使用 - createStore 版
 
@@ -117,11 +125,11 @@ import { Provider, useSelector, useDispatch } from 'react-redux'
 function counterReducer(state, action) {
   switch (action.type) {
     case 'increase':
-      return state + 1;
+      return state + 1
     case 'decrease':
-      return state - 1;
+      return state - 1
     default:
-      return state;
+      return state
   }
 }
 
@@ -139,8 +147,8 @@ const decreaseAction = { type: 'decrease' }
 // console.log(store.getState()) // 得到仓库中当前的数据
 
 function Counter() {
-  const count = useSelector(state => state);
-  const dispatch = useDispatch();
+  const count = useSelector((state) => state)
+  const dispatch = useDispatch()
 
   return (
     <>
@@ -148,7 +156,7 @@ function Counter() {
       <span>{count}</span>
       <button onClick={() => dispatch(increaseAction)}>+</button>
     </>
-  );
+  )
 }
 
 // 根组件
@@ -157,7 +165,7 @@ function App() {
     <Provider store={store}>
       <Counter />
     </Provider>
-  );
+  )
 }
 
 export default App
@@ -166,8 +174,8 @@ export default App
 ## 4. 💻 demos.2 - redux 的基本使用 - @reduxjs/toolkit 版
 
 - 当你在程序中引入 createStore 的时候，会提示这玩意儿已经被废弃了。
-  - ![](assets/2024-10-27-18-14-35.png)
-- createStore 方法已经被标记为过时（deprecated），Redux 社区推荐使用新的方法来创建 store。就目前（2024年10月27日）来看，官方推荐使用 configureStore 方法，这是来自 @reduxjs/toolkit 包的一部分。
+  - ![](./assets/2024-10-27-18-14-35.png)
+- createStore 方法已经被标记为过时（deprecated），Redux 社区推荐使用新的方法来创建 store。就目前（2024 年 10 月 27 日）来看，官方推荐使用 configureStore 方法，这是来自 @reduxjs/toolkit 包的一部分。
 
 ```jsx
 /**
@@ -234,7 +242,7 @@ export default App
 
 - 这个示例介绍在实际开发中，常见的规划模块（也就是 store、reducer 这些逻辑一般封装在啥位置）的一种做法。
 - 最终效果
-  - ![](assets/2024-10-27-18-47-30.png)
+  - ![](./assets/2024-10-27-18-47-30.png)
 
 ```jsx
 /**

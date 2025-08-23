@@ -75,7 +75,7 @@ createRoot(document.getElementById('root')).render(
 )
 ```
 
-- ![](assets/1.gif)
+- ![](./assets/1.gif)
 
 ## 4. 📒 对比 vue 中的 v-if 和 v-show
 

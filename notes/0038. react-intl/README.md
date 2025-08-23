@@ -15,6 +15,7 @@
 - [11. 💻 demos.2 - IntlShape 在 .ts 中的应用](#11--demos2---intlshape-在-ts-中的应用)
 
 <!-- endregion:toc -->
+
 - React-Intl 是一个强大的工具，可帮助开发人员轻松管理和本地化他们的 React 应用程序。
 
 ## 1. 🔗 react-intl 相关资料
@@ -70,7 +71,7 @@
 - **IntlShape**、**intlShape**
   - 定义了 `intl` 对象的形状（shape），通常用于类型检查或 prop 类型验证，确保传递给组件的 `intl` 对象符合预期结构。
   - `MyComponent.propTypes = { intl: intlShape.isRequired };`
-  - `intlShape` 是一个相对早期（比如 v2.x）的 API，在当前（2025年1月3日13:27:11）的最新版 `"react-intl": "^7.1.0"` 中，这玩意儿已经被移除了。如果是 ts 项目，可以导入 `IntlShape` 类型。
+  - `intlShape` 是一个相对早期（比如 v2.x）的 API，在当前（2025 年 1 月 3 日 13:27:11）的最新版 `"react-intl": "^7.1.0"` 中，这玩意儿已经被移除了。如果是 ts 项目，可以导入 `IntlShape` 类型。
     - ⚠️ 注意：`intlShape` 已经被废弃，和目前很多库的版本不兼容，使用它会有不少坑。
 
 ## 5. 🤔 ICU (International Components for Unicode) 是什么？有什么用？
@@ -114,14 +115,13 @@ System.out.println(result);
 - **总结**
   - ICU 是现代软件开发中不可或缺的国际化工具，它的功能涵盖文本处理、格式化、排序和多语言支持，为开发者解决了语言和地区适配的复杂问题。在需要支持全球化用户的项目中，ICU 是最佳选择之一。
 
-
 ## 6. 💻 demos.1 - react-intl 基本使用
 
 ```js
-import { StrictMode, useState, useEffect } from 'react';
-import { createRoot } from 'react-dom/client';
+import { StrictMode, useState, useEffect } from 'react'
+import { createRoot } from 'react-dom/client'
 
-import { IntlProvider, FormattedMessage, FormattedNumber } from 'react-intl';
+import { IntlProvider, FormattedMessage, FormattedNumber } from 'react-intl'
 
 // 系统需要支持哪些语言
 const LOCALE_TYPE = {
@@ -133,58 +133,77 @@ const LOCALE_TYPE = {
 // 在 key 的命名上，可以根据页面来对文本做分组，以便管理和查阅。
 const messages = {
   [LOCALE_TYPE.ZH_CN]: {
-    "page1.xxx.xxx.currentTime": "当前时间：今天是 {ts, date, ::yyyy年M月d日 hh:mm:ss}",
-    "page2.xxx.xxx.currency": "人民币：",
+    'page1.xxx.xxx.currentTime':
+      '当前时间：今天是 {ts, date, ::yyyy年M月d日 hh:mm:ss}',
+    'page2.xxx.xxx.currency': '人民币：',
   },
   [LOCALE_TYPE.EN]: {
-    "page1.xxx.xxx.currentTime": "Current Time: Today is {ts, date, ::MMMM d, yyyy hh:mm:ss}",
-    "page2.xxx.xxx.currency": "USD: ",
-  }
+    'page1.xxx.xxx.currentTime':
+      'Current Time: Today is {ts, date, ::MMMM d, yyyy hh:mm:ss}',
+    'page2.xxx.xxx.currency': 'USD: ',
+  },
 }
 
-const getCurrencyCode = (locale) => locale === LOCALE_TYPE.ZH_CN ? "CNY" : "USD";
+const getCurrencyCode = (locale) =>
+  locale === LOCALE_TYPE.ZH_CN ? 'CNY' : 'USD'
 
 function App() {
-  const [locale, setLocale] = useState(LOCALE_TYPE.ZH_CN);
-  const [currentDate, setCurrentDate] = useState(new Date());
+  const [locale, setLocale] = useState(LOCALE_TYPE.ZH_CN)
+  const [currentDate, setCurrentDate] = useState(new Date())
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentDate(new Date());
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
+      setCurrentDate(new Date())
+    }, 1000)
+    return () => clearInterval(timer)
+  }, [])
 
   return (
-    <IntlProvider messages={messages[locale]} locale={locale} defaultLocale={LOCALE_TYPE.EN}>
+    <IntlProvider
+      messages={messages[locale]}
+      locale={locale}
+      defaultLocale={LOCALE_TYPE.EN}
+    >
       <div>
         <select value={locale} onChange={(e) => setLocale(e.target.value)}>
           <option value={LOCALE_TYPE.ZH_CN}>中文</option>
           <option value={LOCALE_TYPE.EN}>English</option>
         </select>
         <p>
-          <FormattedMessage id="page1.xxx.xxx.currentTime" values={{ ts: currentDate }} description="页面 1 中的 xxx 的 xxx 的系统当前时间" />
+          <FormattedMessage
+            id="page1.xxx.xxx.currentTime"
+            values={{ ts: currentDate }}
+            description="页面 1 中的 xxx 的 xxx 的系统当前时间"
+          />
           <br />
-          <FormattedMessage id="page2.xxx.xxx.currency" description="页面 2 中的 xxx 的 xxx 的金额标签" />
-          <FormattedNumber value={19} style="currency" currency={getCurrencyCode(locale)} description="页面 2 中的 xxx 的 xxx 的金额" />
+          <FormattedMessage
+            id="page2.xxx.xxx.currency"
+            description="页面 2 中的 xxx 的 xxx 的金额标签"
+          />
+          <FormattedNumber
+            value={19}
+            style="currency"
+            currency={getCurrencyCode(locale)}
+            description="页面 2 中的 xxx 的 xxx 的金额"
+          />
         </p>
       </div>
     </IntlProvider>
-  );
+  )
 }
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
-  </StrictMode>,
-);
+  </StrictMode>
+)
 ```
 
 - 最终渲染结果：
   - 中文：
-    - ![](assets/2025-01-02-15-45-37.png)
+    - ![](./assets/2025-01-02-15-45-37.png)
   - 英文：
-    - ![](assets/2025-01-02-15-45-44.png)
+    - ![](./assets/2025-01-02-15-45-44.png)
 - IntlProvider - 用于提供消息数据。
   - messages
     - messages 属性绑定系统消息数据，以供 `<Formatted*>` 组件通过 id 来访问这些数据。
@@ -204,13 +223,13 @@ createRoot(document.getElementById('root')).render(
     - 用于标识使用什么字符串来占位。
   - FormattedMessage 的 values
     - 用于给消息中的占位符变量传递数据。
-    - 比如 {ts, date, ::yyyy年M月d日 hh:mm:ss}，这里的 ts 就是占位符。
+    - 比如 {ts, date, ::yyyy 年 M 月 d 日 hh:mm:ss}，这里的 ts 就是占位符。
     - date 是 ICU 的一个格式化类型，它表示一个日期。（除了 date，还有 number、time 等等）
       - docs：https://formatjs.github.io/docs/core-concepts/icu-syntax/
     - 最后一部分 `::yyyy年M月d日 hh:mm:ss` 用于指定日期的格式。
       - 格式的书写模式，可以查阅 ICU 文档。
       - Format Pattern: https://unicode-org.github.io/icu/userguide/format_parse/datetime/
-      - ![](assets/2025-01-23-16-42-46.png)
+      - ![](./assets/2025-01-23-16-42-46.png)
     - 上述这种结构 `{key, type, format}` 是通用的，其中 key 是必填的，其他的都是根据需求可选的。
   - `Formatted*` 有很多，比如这里的 FormattedNumber
     - docs：https://formatjs.github.io/docs/intl/
@@ -224,10 +243,9 @@ createRoot(document.getElementById('root')).render(
 ```js
 const locale = 'xxx'
 if (!Intl.NumberFormat.supportedLocalesOf(locale).length) {
-    console.log(locale, '不支持')
+  console.log(locale, '不支持')
 }
 // 🔗 MDN Intl => doc: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl
-
 
 // locale 不是一个随意的字符串，如果传入非法值是会报错的，比如
 Intl.NumberFormat.supportedLocalesOf('Tdahuyou&We')
@@ -256,10 +274,10 @@ Intl.NumberFormat.supportedLocalesOf('zh-250102') // => ['zh-250102']
 ## 8. 💻 demos.3 - 特殊的 locale 值
 
 ```js
-import { StrictMode, useState } from 'react';
-import { createRoot } from 'react-dom/client';
+import { StrictMode, useState } from 'react'
+import { createRoot } from 'react-dom/client'
 
-import { IntlProvider, FormattedMessage, FormattedDate } from 'react-intl';
+import { IntlProvider, FormattedMessage, FormattedDate } from 'react-intl'
 
 const LOCALE_TYPE = {
   ZH_CN: 'zh-250102',
@@ -268,44 +286,56 @@ const LOCALE_TYPE = {
 
 const messages = {
   [LOCALE_TYPE.ZH_CN]: {
-    "currentTime": "今天是 {date}",
+    currentTime: '今天是 {date}',
   },
   [LOCALE_TYPE.EN]: {
-    "currentTime": "Today is {date}",
-  }
+    currentTime: 'Today is {date}',
+  },
 }
 
 function App() {
-  const [_locale, setL] = useState(LOCALE_TYPE.ZH_CN);
+  const [_locale, setL] = useState(LOCALE_TYPE.ZH_CN)
 
   return (
-    <IntlProvider messages={messages[_locale]} locale={_locale} defaultLocale={LOCALE_TYPE.EN}>
+    <IntlProvider
+      messages={messages[_locale]}
+      locale={_locale}
+      defaultLocale={LOCALE_TYPE.EN}
+    >
       <div>
         <select value={_locale} onChange={(e) => setL(e.target.value)}>
           <option value={LOCALE_TYPE.ZH_CN}>中文</option>
           <option value={LOCALE_TYPE.EN}>English</option>
         </select>
         <p>
-          <FormattedMessage id="currentTime" values={{ date: <FormattedDate value={new Date()} /> }} />
+          <FormattedMessage
+            id="currentTime"
+            values={{ date: <FormattedDate value={new Date()} /> }}
+          />
         </p>
       </div>
     </IntlProvider>
-  );
+  )
 }
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
-  </StrictMode>,
-);
+  </StrictMode>
+)
 ```
 
 ## 9. 💻 demos.4 - useIntl、injectIntl - 使用 defineMessages 定义消息
 
 ```js
-import React, { StrictMode, useState, useEffect } from 'react';
-import { createRoot } from 'react-dom/client';
-import { IntlProvider, FormattedMessage, defineMessages, useIntl } from 'react-intl';
+import React, { StrictMode, useState, useEffect } from 'react'
+import { createRoot } from 'react-dom/client'
+import {
+  IntlProvider,
+  FormattedMessage,
+  defineMessages,
+  useIntl,
+} from 'react-intl'
 
 // 推荐
 const msg = defineMessages({
@@ -319,7 +349,7 @@ const msg = defineMessages({
     defaultMessage: 'Goodbye, {name}!',
     description: '告别用户的消息',
   },
-});
+})
 
 // 不推荐
 const msg2 = {
@@ -333,10 +363,10 @@ const msg2 = {
     defaultMessage: 'Goodbye, {name}!',
     description: '告别用户的消息',
   },
-};
+}
 
 function Greeting({ name }) {
-  const intl = useIntl();
+  const intl = useIntl()
   return (
     <>
       {/* 在组件中使用 */}
@@ -366,7 +396,7 @@ function Greeting({ name }) {
         {intl.formatMessage(msg2.goodbye, { name })}
       </div>
     </>
-  );
+  )
 }
 
 // -------------------------------------------------------------------------
@@ -394,7 +424,6 @@ function Greeting({ name }) {
 // #endregion Q&A
 // -------------------------------------------------------------------------
 
-
 // 包含了所有的翻译信息的模块
 const localeMessages = {
   en: {
@@ -405,11 +434,11 @@ const localeMessages = {
     'app.welcome': '欢迎，{name}！',
     'app.goodbye': '再见，{name}！',
   },
-};
+}
 
 function App() {
-  const [locale, setLocale] = useState('en'); // 可以根据需要动态设置
-  const messages = localeMessages[locale];
+  const [locale, setLocale] = useState('en') // 可以根据需要动态设置
+  const messages = localeMessages[locale]
 
   return (
     <IntlProvider locale={locale} messages={messages}>
@@ -421,18 +450,18 @@ function App() {
         <Greeting name="Tdahuyou" />
       </div>
     </IntlProvider>
-  );
+  )
 }
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
-  </StrictMode>,
-);
+  </StrictMode>
+)
 ```
 
-- ![](assets/2025-01-03-10-56-42.png)
-- ![](assets/2025-01-03-10-56-52.png)
+- ![](./assets/2025-01-03-10-56-42.png)
+- ![](./assets/2025-01-03-10-56-52.png)
 
 ## 10. 💻 demos.5 - 通过 intl 对象来获取国际化消息数据
 
@@ -515,15 +544,21 @@ createRoot(document.getElementById('root')).render(
 )
 ```
 
-- ![](assets/2025-01-03-10-56-42.png)
-- ![](assets/2025-01-03-10-56-52.png)
+- ![](./assets/2025-01-03-10-56-42.png)
+- ![](./assets/2025-01-03-10-56-52.png)
 
 ## 11. 💻 demos.2 - IntlShape 在 .ts 中的应用
 
 ```tsx
-import { StrictMode, useState } from 'react';
-import { createRoot } from 'react-dom/client';
-import { IntlProvider, defineMessages, useIntl, injectIntl, IntlShape } from 'react-intl';
+import { StrictMode, useState } from 'react'
+import { createRoot } from 'react-dom/client'
+import {
+  IntlProvider,
+  defineMessages,
+  useIntl,
+  injectIntl,
+  IntlShape,
+} from 'react-intl'
 
 const msg = defineMessages({
   welcome: {
@@ -536,15 +571,15 @@ const msg = defineMessages({
     defaultMessage: 'Goodbye, {name}!',
     description: '告别用户的消息',
   },
-});
+})
 
 interface GreetingProps {
-  name: string;
-  intl: IntlShape;
+  name: string
+  intl: IntlShape
 }
 
 function Greeting({ name, intl }: GreetingProps) {
-  const intl2: IntlShape = useIntl();
+  const intl2: IntlShape = useIntl()
 
   // 通过 injectIntl 和 useIntl() 获取到的 intl 是同一个对象。
   // console.log(intl === intl2); // true
@@ -563,7 +598,7 @@ function Greeting({ name, intl }: GreetingProps) {
         {intl.formatMessage(msg.goodbye, { name })}
       </div>
     </>
-  );
+  )
 }
 
 const localeMessages = {
@@ -575,35 +610,38 @@ const localeMessages = {
     'app.welcome': '欢迎，{name}！',
     'app.goodbye': '再见，{name}！',
   },
-};
+}
 
-type Locale = keyof typeof localeMessages;
+type Locale = keyof typeof localeMessages
 
 function App() {
-  const [locale, setLocale] = useState<Locale>('en');
-  const messages = localeMessages[locale];
+  const [locale, setLocale] = useState<Locale>('en')
+  const messages = localeMessages[locale]
 
-  const GreetingContainer = injectIntl(Greeting); // 注入 intl 对象
+  const GreetingContainer = injectIntl(Greeting) // 注入 intl 对象
 
   return (
     <IntlProvider locale={locale} messages={messages}>
       <div>
-        <select value={locale} onChange={(e) => setLocale(e.target.value as Locale)}>
+        <select
+          value={locale}
+          onChange={(e) => setLocale(e.target.value as Locale)}
+        >
           <option value="en">English</option>
           <option value="zh">中文</option>
         </select>
         <GreetingContainer name="Tdahuyou" />
       </div>
     </IntlProvider>
-  );
+  )
 }
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
-  </StrictMode>,
-);
+  </StrictMode>
+)
 ```
 
-- ![](assets/2025-01-03-10-56-42.png)
-- ![](assets/2025-01-03-10-56-52.png)
+- ![](./assets/2025-01-03-10-56-42.png)
+- ![](./assets/2025-01-03-10-56-52.png)

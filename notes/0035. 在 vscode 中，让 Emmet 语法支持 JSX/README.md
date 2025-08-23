@@ -40,7 +40,7 @@
 
 ## 3. 💻 demos.1 - 在 vscode 中，让 Emmet 语法支持 JSX
 
-- ![](assets/1.gif)
+- ![](./assets/1.gif)
 - 输入：`div>span`
   - ![图 1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-23-21-52-57.png)
   - 按下回车，将会快速生成：`<div><span></span></div>`

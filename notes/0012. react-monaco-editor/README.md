@@ -66,7 +66,7 @@
   - n. 摩纳哥（欧洲西南部国家）
   - 英 `/ ˈmɒnəkəʊ /`
   - 美 `/ ˈmɑːnəkoʊ /`
-  - ![](assets/2024-09-25-10-23-31.png)
+  - ![](./assets/2024-09-25-10-23-31.png)
 
 ## 4. 💻 demos.1 - 安装并引入 Editor 组件
 
@@ -97,7 +97,7 @@ createRoot(document.getElementById('root')).render(
 )
 ```
 
-![](assets/2024-09-25-09-31-27.png)
+![](./assets/2024-09-25-09-31-27.png)
 
 ## 5. 💻 demos.2 - 4 个钩子 onChange、onMount、beforeMount、onValidate
 
@@ -165,7 +165,7 @@ createRoot(document.getElementById('root')).render(
 ```
 
 - 输出日志：
-  - ![](assets/2024-09-25-09-44-15.png)
+  - ![](./assets/2024-09-25-09-44-15.png)
   - 可以通过这些钩子触发时被注入的参数获取到 editor 编辑器实例、monaco 实例等数据。
 
 ## 6. 💻 demos.3 - 获取编辑器的当前值
@@ -223,7 +223,7 @@ createRoot(document.getElementById('root')).render(
 )
 ```
 
-![](assets/2024-09-25-09-49-00.png)
+![](./assets/2024-09-25-09-49-00.png)
 
 ## 7. 💻 demos.4 - 只读模式
 
@@ -262,7 +262,7 @@ createRoot(document.getElementById('root')).render(
 // options 配置字段 API 文档 👉 https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor.IStandaloneEditorConstructionOptions.html
 ```
 
-![](assets/2024-09-25-10-11-41.png)
+![](./assets/2024-09-25-10-11-41.png)
 
 ## 8. 💻 demos.5 - 动态设置编辑器中的内容
 
@@ -315,13 +315,16 @@ createRoot(document.getElementById('root')).render(
   - `editorRef.current.getValue()` 方法获取到当前值。
   - `editorRef.current.setValue(newValue)` 方法修改编辑器的内容。
 - 最终效果：
-  - ![](assets/2024-09-25-10-17-30.png)
+  - ![](./assets/2024-09-25-10-17-30.png)
 - 有关 editor 实例身上的 API：
+
   - 🔍 Monaco Editor API
     - 可以查阅微软的官方文档：Monaco Editor API
     - https://microsoft.github.io/monaco-editor/docs.html
   - 🔍 类型声明文件
+
     - 可以直接在本地查阅对应的类型声明文件。
+
     ```ts{22,30}
     // node_modules\@monaco-editor\react\dist\index.d.ts
     type OnMount = (editor: editor.IStandaloneCodeEditor, monaco: Monaco) => void;
@@ -357,13 +360,13 @@ createRoot(document.getElementById('root')).render(
         // ...
     }
     ```
-  - `getValue/setValue` 语义化已经很明确了，对于其它不清楚含义的，再通过喜欢的方式查询对应的 API 即可。
 
+  - `getValue/setValue` 语义化已经很明确了，对于其它不清楚含义的，再通过喜欢的方式查询对应的 API 即可。
 
 ## 9. 💻 demos.6 - 实战练习 - 模仿 matatastudio 的代码预览效果封装一个代码预览组件
 
 - 可以在 https://vinci.matatastudio.com/ 中查看参考的代码预览效果示例：
-  - ![](assets/2024-09-25-11-31-27.png)
+  - ![](./assets/2024-09-25-11-31-27.png)
 - 需要注意的一些细节：
   - 1️⃣ 展开和收起需要有动画过渡效果
   - 2️⃣ 预览区域是只读的
@@ -506,7 +509,7 @@ export default MyEditor
 :::
 
 - 最终效果：
-  - ![](assets/2025-02-13-14-46-37.png)
+  - ![](./assets/2025-02-13-14-46-37.png)
 
 ## 10. 📒 实现代码预览功能 - 业务背景 + 遇到的坑 + 解决方案
 
@@ -515,9 +518,9 @@ export default MyEditor
 - 问题：monaco-react 中依赖的在线 CDN 资源下载缓慢，导致程序打开后首次加载时间过长，甚至打开后报错。
   - 网络问题导致编辑器无法正常工作的问题。
   - 现象：页面上看到的效果如下图所示，会一直提示在 loading 中。
-    - ![](assets/2024-10-08-10-36-19.png)
+    - ![](./assets/2024-10-08-10-36-19.png)
   - 原因分析：依赖于 CDN 上的 monaco-editor 相关的核心模块下载失败。
-    - ![](assets/2024-10-08-10-38-02.png)
+    - ![](./assets/2024-10-08-10-38-02.png)
     - 在 `node_modules\@monaco-editor\loader\lib\es\config\index.js` 文件中引用到了这个模块。
 
 ```js
@@ -535,7 +538,7 @@ export default config
 
 - 确保电脑网络环境正常，可以尝试在浏览器地址栏中输入 https://cdn.jsdelivr.net/npm/monaco-editor@0.43.0/min/vs/loader.js 看看能否拿到文件内容。
 - 如果你本地开了代理，并且网络环境还算 ok，那么应该可以轻松拿到这个文件内容。但是大部分用户设备上很可能不具备此条件。
-- ![](assets/2024-10-08-10-44-04.png)
+- ![](./assets/2024-10-08-10-44-04.png)
 
 ### 10.2. 2️⃣ 在线方案 - 下载资源丢到自己的 CDN 上
 
@@ -569,7 +572,7 @@ loader.config({
 - 使用这种做法需要注意 Web Worker 资源的跨域加载问题。
   - Web Worker 不能使用 importScripts 方式加载跨域文件。
   - Web Worker 需要服务器支持跨域资源共享 (CORS)，否则 importScripts 会报错。
-  - ![](assets/2025-02-13-14-02-14.png)
+  - ![](./assets/2025-02-13-14-02-14.png)
   - 补充：
     - 从当前业务角度（实现预览功能）来看，虽然这里有报错，但是预览功能基本是正常工作的。
     - 不过接下来迭代的时候，若要加入其它更多功能，可能就会有问题了。
@@ -618,7 +621,7 @@ loader.config({
     - `loader.config({ paths: { vs: '/monaco'} })`
   - 测试是否配置成功：
     - 打开 chrome 的 network 调试面板，查看这些资源的 URL，如果是通过本地请求到的话，那么就意味着成功了。
-    - ![](assets/2024-10-28-16-06-48.png)
+    - ![](./assets/2024-10-28-16-06-48.png)
 
 - 这种实测可行，不过有一定的额外工作要做，主要是根据工程所使用的构建工具修改相应的配置。
 
@@ -626,7 +629,7 @@ loader.config({
 
 - 除了上述法子外，官方还介绍了另一种更简洁的方式来处理该问题。
 - 在 monaco-react 的 github 仓库中，搜索 **use monaco-editor as an npm package**
-- ![](assets/2024-10-29-22-44-11.png)
+- ![](./assets/2024-10-29-22-44-11.png)
 - 若使用这种方案，官方还强调，需要根据你的项目所使用的构建工具进一步配置一下。比如：
   - 基于 webpack 的项目，你可能需要安装插件 [monaco-editor-webpack-plugin](https://www.npmjs.com/package/monaco-editor-webpack-plugin) 并做一些简单的配置；
   - 基于 vite 的项目，官方也提供了配置示例作为参考；
@@ -646,7 +649,7 @@ loader.config({ monaco })
 ::: details **🔍 在 scratch-gui 中引入 monaco-editor 编辑器实现代码预览功能的一些踩坑经历**
 
 - 如果是要在 scratch-gui 中加，还需要在默认的 webpack.config.js 中加上这部分配置。
-  - ![](assets/2024-10-29-22-47-44.png)
+  - ![](./assets/2024-10-29-22-47-44.png)
 - 否则会报错：提示 codicon.ttf 这玩意儿解析失败。
 
   ```shell
@@ -673,14 +676,13 @@ loader.config({ monaco })
   - 手动处理方式：
     - 找到 `node_modules\monaco-editor\min\vs\editor\editor.main.css` 这个 css 文件
     - 将其丢到 static 中，和站标 favicon.ico 目录相同。
-      - ![](assets/2024-10-29-22-49-00.png)
+      - ![](./assets/2024-10-29-22-49-00.png)
     - 然后在页面模板 `scratch-gui\src\playground\index.ejs` 中加上这个 css 的引用。
-      - ![](assets/2024-10-29-22-49-06.png)
+      - ![](./assets/2024-10-29-22-49-06.png)
   - 自动处理方式：
     - 自行修改构建配置选项，完成对这个 css 模块的解析。
     - 需要注意的是别对已有的构建逻辑造成影响，如果你还不熟悉项目的整体架构，随意修改可能会导致一些其它各种各样的问题。
-  - 目前采用的方案是手动引入的方式。
-    :::
+  - 目前采用的方案是手动引入的方式。 :::
 
 ## 11. 🤖 monaco 名称的由来
 

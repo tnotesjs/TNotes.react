@@ -85,7 +85,7 @@ import 'react-tooltip/dist/react-tooltip.css'
 
 ## 6. 📒 关于 css 引入的一些注意事项
 
-- ![](assets/2024-11-01-14-30-54.png)
+- ![](./assets/2024-11-01-14-30-54.png)
   - from: https://react-tooltip.com/docs/getting-started#set-the-default-styling
 
 ## 7. 💻 了解 react-tooltip 的基本使用
@@ -149,4 +149,4 @@ function App() {
 export default App
 ```
 
-![](assets/2024-11-01-14-59-08.png)
+![](./assets/2024-11-01-14-59-08.png)

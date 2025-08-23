@@ -76,7 +76,7 @@ createRoot(document.getElementById('root')).render(
 
 - `Modal.setAppElement('#root')` 设置了应用的根元素，这对于确保模态框的正确渲染和可访问性非常重要。
 - 在这个的示例中 `contentLabel="Example modal dialog"` 为模态框提供了一个描述性的标签，告诉屏幕阅读器这是一个“示例模态对话框”。
-  - ![](assets/2025-02-13-15-06-11.png)
+  - ![1](./assets/2025-02-13-15-06-11.png)
   - 当模态框打开时，屏幕阅读器会读取这个描述性的标签，帮助视障用户理解模态框的作用。
 
 ## 4. 💻 demos.2 - 封装一个简单的 dialog 组件
@@ -194,4 +194,4 @@ createRoot(document.getElementById('root')).render(
 )
 ```
 
-- ![](assets/2024-12-17-18-02-48.png)
+- ![](./assets/2024-12-17-18-02-48.png)

@@ -171,7 +171,7 @@ Panel 是一个可展开/折叠的面板组件。
 
 ![2](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-27-21-47-58.png)
 
-![3](assets/1.gif)
+![3](./assets/1.gif)
 
 :::
 

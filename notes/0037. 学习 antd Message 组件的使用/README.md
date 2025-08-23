@@ -16,13 +16,13 @@
 ## 2. 💻 demos.1 - 了解 Message 的基本使用
 
 ```jsx
-import React from 'react';
-import { Button, message } from 'antd';
+import React from 'react'
+import { Button, message } from 'antd'
 const App = () => {
-  const [messageApi, contextHolder] = message.useMessage();
+  const [messageApi, contextHolder] = message.useMessage()
   const info = () => {
-    messageApi.info('Hello, Ant Design!');
-  };
+    messageApi.info('Hello, Ant Design!')
+  }
   return (
     <>
       {contextHolder}
@@ -30,33 +30,33 @@ const App = () => {
         Display normal message
       </Button>
     </>
-  );
-};
-export default App;
+  )
+}
+export default App
 ```
 
-- ![](assets/2024-12-02-16-03-07.png)
+- ![](./assets/2024-12-02-16-03-07.png)
 
 ## 3. 💻 demos.2 - 理解 contextHolder 的作用
 
 ```jsx
 // 写法1：不用 {contextHolder}
-import React from 'react';
-import { message, ConfigProvider, Button } from 'antd';
+import React from 'react'
+import { message, ConfigProvider, Button } from 'antd'
 
 const App = () => {
   const showMessage = () => {
-    message.success('This is a success message');
-  };
+    message.success('This is a success message')
+  }
 
   return (
     <ConfigProvider theme={{ token: { colorSuccess: '#008c8c' } }}>
       <Button onClick={showMessage}>Show Message</Button>
     </ConfigProvider>
-  );
-};
+  )
+}
 
-export default App;
+export default App
 
 // 写法2：使用 {contextHolder}
 // import React from 'react';
@@ -80,10 +80,10 @@ export default App;
 // export default App;
 ```
 
-- 写法1：不用 `{contextHolder}`，最终渲染的消息颜色还是使用默认值，我们在 `ConfigProvider` 中配置的颜色不生效。
-- 写法2：使用 `{contextHolder}`，此时 `ConfigProvider` 中的配置才生效。
-- ![](assets/2024-12-02-16-28-03.png)
+- 写法 1：不用 `{contextHolder}`，最终渲染的消息颜色还是使用默认值，我们在 `ConfigProvider` 中配置的颜色不生效。
+- 写法 2：使用 `{contextHolder}`，此时 `ConfigProvider` 中的配置才生效。
+- ![](./assets/2024-12-02-16-28-03.png)
 
 ## 4. 🔗 来自官方文档的回复：为什么 message 不能获取 context、redux 的内容和 ConfigProvider 的 locale/prefixCls/theme 等配置？
 
-- ![](assets/2024-12-02-16-31-49.png)
+- ![](./assets/2024-12-02-16-31-49.png)

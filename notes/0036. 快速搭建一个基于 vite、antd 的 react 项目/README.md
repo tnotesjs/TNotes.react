@@ -29,17 +29,17 @@ pnpm install antd --save
 - 修改 `src/App.js`，引入 antd 的按钮组件。
 
 ```js
-import React from 'react';
-import { Button } from 'antd';
+import React from 'react'
+import { Button } from 'antd'
 
 const App = () => (
   <div className="App">
     <Button type="primary">Button</Button>
   </div>
-);
+)
 
-export default App;
+export default App
 ```
 
 - 如果你能看到页面上已经有了 antd 的蓝色按钮组件，接下来就可以继续选用其他组件开发应用了。
-- ![](assets/2024-12-02-15-34-25.png)
+- ![](./assets/2024-12-02-15-34-25.png)
