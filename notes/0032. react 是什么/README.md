@@ -32,9 +32,9 @@
 
 ::: swiper
 
-![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-23-21-29-52.png)
+![1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-23-21-29-52.png)
 
-![图 1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-23-21-30-01.png)
+![2](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-23-21-30-01.png)
 
 :::
 

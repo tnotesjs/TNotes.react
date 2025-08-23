@@ -170,10 +170,10 @@ createRoot(document.getElementById('root')).render(
 
 ::: swiper
 
-![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-27-20-15-01.png)
+![1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-27-20-15-01.png)
 
-![图 1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-27-20-15-08.png)
+![2](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-27-20-15-08.png)
 
-![图 2](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-27-20-15-16.png)
+![3](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-27-20-15-16.png)
 
 :::
