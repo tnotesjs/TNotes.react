@@ -1,5 +1,5 @@
 {
-  "author": "Tdahuyou",
+  "author": "tnotesjs",
   "repoName": "TNotes.react",
   "keywords": ["TNotes.react"],
   "ignore_dirs": [
@@ -20,7 +20,7 @@
     "title": "react",
     "completed_notes_count": 44,
     "details": "React 笔记",
-    "link": "https://tdahuyou.github.io/TNotes.react/",
+    "link": "https://tnotesjs.github.io/TNotes.react/",
     "created_at": 1740305655000,
     "updated_at": 1757163551830,
     "days_since_birth": 9372
@@ -36,7 +36,7 @@
     },
     {
       "text": "📒 TNotes",
-      "link": "https://tdahuyou.github.io/notes"
+      "link": "https://tnotesjs.github.io/notes"
     },
     {
       "text": "📂 TNotes.yuque",
