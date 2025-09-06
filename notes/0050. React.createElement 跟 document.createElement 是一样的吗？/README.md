@@ -1,4 +1,4 @@
-# [0050. React.createElement 跟 document.createElement 是一样的吗？](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0050.%20React.createElement%20%E8%B7%9F%20document.createElement%20%E6%98%AF%E4%B8%80%E6%A0%B7%E7%9A%84%E5%90%97%EF%BC%9F)
+# [0050. React.createElement 跟 document.createElement 是一样的吗？](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0050.%20React.createElement%20%E8%B7%9F%20document.createElement%20%E6%98%AF%E4%B8%80%E6%A0%B7%E7%9A%84%E5%90%97%EF%BC%9F)
 
 <!-- region:toc -->
 

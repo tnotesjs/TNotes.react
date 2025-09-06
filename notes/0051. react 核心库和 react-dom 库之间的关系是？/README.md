@@ -1,4 +1,4 @@
-# [0051. react 核心库和 react-dom 库之间的关系是？](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0051.%20react%20%E6%A0%B8%E5%BF%83%E5%BA%93%E5%92%8C%20react-dom%20%E5%BA%93%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%E6%98%AF%EF%BC%9F)
+# [0051. react 核心库和 react-dom 库之间的关系是？](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0051.%20react%20%E6%A0%B8%E5%BF%83%E5%BA%93%E5%92%8C%20react-dom%20%E5%BA%93%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%E6%98%AF%EF%BC%9F)
 
 <!-- region:toc -->
 

@@ -1,4 +1,4 @@
-# [0004. 使用 className 给元素添加 class](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0004.%20%E4%BD%BF%E7%94%A8%20className%20%E7%BB%99%E5%85%83%E7%B4%A0%E6%B7%BB%E5%8A%A0%20class)
+# [0004. 使用 className 给元素添加 class](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0004.%20%E4%BD%BF%E7%94%A8%20className%20%E7%BB%99%E5%85%83%E7%B4%A0%E6%B7%BB%E5%8A%A0%20class)
 
 <!-- region:toc -->
 

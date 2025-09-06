@@ -1,4 +1,4 @@
-# [0043. ReactDOM.render](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0043.%20ReactDOM.render)
+# [0043. ReactDOM.render](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0043.%20ReactDOM.render)
 
 <!-- region:toc -->
 

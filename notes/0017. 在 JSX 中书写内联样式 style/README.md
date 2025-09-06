@@ -1,4 +1,4 @@
-# [0017. 在 JSX 中书写内联样式 style](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0017.%20%E5%9C%A8%20JSX%20%E4%B8%AD%E4%B9%A6%E5%86%99%E5%86%85%E8%81%94%E6%A0%B7%E5%BC%8F%20style)
+# [0017. 在 JSX 中书写内联样式 style](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0017.%20%E5%9C%A8%20JSX%20%E4%B8%AD%E4%B9%A6%E5%86%99%E5%86%85%E8%81%94%E6%A0%B7%E5%BC%8F%20style)
 
 <!-- region:toc -->
 

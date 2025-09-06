@@ -1,4 +1,4 @@
-# [0096. xxx](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0096.%20xxx)
+# [0096. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0096.%20xxx)
 
 <!-- region:toc -->
 

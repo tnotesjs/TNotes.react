@@ -1,4 +1,4 @@
-# [0022. 函数组件概述](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0022.%20%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0)
+# [0022. 函数组件概述](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0022.%20%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0)
 
 <!-- region:toc -->
 

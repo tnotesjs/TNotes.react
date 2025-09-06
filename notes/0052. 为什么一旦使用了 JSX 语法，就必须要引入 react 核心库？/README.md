@@ -1,4 +1,4 @@
-# [0052. 为什么一旦使用了 JSX 语法，就必须要引入 react 核心库？](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0052.%20%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%80%E6%97%A6%E4%BD%BF%E7%94%A8%E4%BA%86%20JSX%20%E8%AF%AD%E6%B3%95%EF%BC%8C%E5%B0%B1%E5%BF%85%E9%A1%BB%E8%A6%81%E5%BC%95%E5%85%A5%20react%20%E6%A0%B8%E5%BF%83%E5%BA%93%EF%BC%9F)
+# [0052. 为什么一旦使用了 JSX 语法，就必须要引入 react 核心库？](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0052.%20%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%80%E6%97%A6%E4%BD%BF%E7%94%A8%E4%BA%86%20JSX%20%E8%AF%AD%E6%B3%95%EF%BC%8C%E5%B0%B1%E5%BF%85%E9%A1%BB%E8%A6%81%E5%BC%95%E5%85%A5%20react%20%E6%A0%B8%E5%BF%83%E5%BA%93%EF%BC%9F)
 
 <!-- region:toc -->
 

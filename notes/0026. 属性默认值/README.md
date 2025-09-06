@@ -1,4 +1,4 @@
-# [0026. 属性默认值](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0026.%20%E5%B1%9E%E6%80%A7%E9%BB%98%E8%AE%A4%E5%80%BC)
+# [0026. 属性默认值](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0026.%20%E5%B1%9E%E6%80%A7%E9%BB%98%E8%AE%A4%E5%80%BC)
 
 <!-- region:toc -->
 

@@ -1,4 +1,4 @@
-# [0028. redux 的基本使用](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0028.%20redux%20%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8)
+# [0028. redux 的基本使用](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0028.%20redux%20%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8)
 
 <!-- region:toc -->
 

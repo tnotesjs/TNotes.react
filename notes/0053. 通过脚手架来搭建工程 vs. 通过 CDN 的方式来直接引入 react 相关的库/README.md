@@ -1,4 +1,4 @@
-# [0053. 通过脚手架来搭建工程 vs. 通过 CDN 的方式来直接引入 react 相关的库](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0053.%20%E9%80%9A%E8%BF%87%E8%84%9A%E6%89%8B%E6%9E%B6%E6%9D%A5%E6%90%AD%E5%BB%BA%E5%B7%A5%E7%A8%8B%20vs.%20%E9%80%9A%E8%BF%87%20CDN%20%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9D%A5%E7%9B%B4%E6%8E%A5%E5%BC%95%E5%85%A5%20react%20%E7%9B%B8%E5%85%B3%E7%9A%84%E5%BA%93)
+# [0053. 通过脚手架来搭建工程 vs. 通过 CDN 的方式来直接引入 react 相关的库](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0053.%20%E9%80%9A%E8%BF%87%E8%84%9A%E6%89%8B%E6%9E%B6%E6%9D%A5%E6%90%AD%E5%BB%BA%E5%B7%A5%E7%A8%8B%20vs.%20%E9%80%9A%E8%BF%87%20CDN%20%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9D%A5%E7%9B%B4%E6%8E%A5%E5%BC%95%E5%85%A5%20react%20%E7%9B%B8%E5%85%B3%E7%9A%84%E5%BA%93)
 
 <!-- region:toc -->
 

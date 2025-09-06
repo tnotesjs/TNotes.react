@@ -1,4 +1,4 @@
-# [0031. 在 redux 中，store、reducer、action 三者之间的关系](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0031.%20%E5%9C%A8%20redux%20%E4%B8%AD%EF%BC%8Cstore%E3%80%81reducer%E3%80%81action%20%E4%B8%89%E8%80%85%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB)
+# [0031. 在 redux 中，store、reducer、action 三者之间的关系](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0031.%20%E5%9C%A8%20redux%20%E4%B8%AD%EF%BC%8Cstore%E3%80%81reducer%E3%80%81action%20%E4%B8%89%E8%80%85%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB)
 
 <!-- region:toc -->
 

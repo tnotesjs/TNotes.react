@@ -1,4 +1,4 @@
-# [0041. 不再支持 UMD，推荐使用 ESM](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0041.%20%E4%B8%8D%E5%86%8D%E6%94%AF%E6%8C%81%20UMD%EF%BC%8C%E6%8E%A8%E8%8D%90%E4%BD%BF%E7%94%A8%20ESM)
+# [0041. 不再支持 UMD，推荐使用 ESM](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0041.%20%E4%B8%8D%E5%86%8D%E6%94%AF%E6%8C%81%20UMD%EF%BC%8C%E6%8E%A8%E8%8D%90%E4%BD%BF%E7%94%A8%20ESM)
 
 <!-- region:toc -->
 

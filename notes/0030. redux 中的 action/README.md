@@ -1,4 +1,4 @@
-# [0030. redux 中的 action](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0030.%20redux%20%E4%B8%AD%E7%9A%84%20action)
+# [0030. redux 中的 action](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0030.%20redux%20%E4%B8%AD%E7%9A%84%20action)
 
 <!-- region:toc -->
 

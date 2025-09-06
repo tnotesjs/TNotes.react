@@ -1,4 +1,4 @@
-# [0037. 学习 antd Message 组件的使用](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0037.%20%E5%AD%A6%E4%B9%A0%20antd%20Message%20%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8)
+# [0037. 学习 antd Message 组件的使用](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0037.%20%E5%AD%A6%E4%B9%A0%20antd%20Message%20%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8)
 
 <!-- region:toc -->
 

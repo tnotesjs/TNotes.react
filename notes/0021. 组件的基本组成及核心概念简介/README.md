@@ -1,4 +1,4 @@
-# [0021. 组件的基本组成及核心概念简介](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0021.%20%E7%BB%84%E4%BB%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90%E5%8F%8A%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%E7%AE%80%E4%BB%8B)
+# [0021. 组件的基本组成及核心概念简介](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0021.%20%E7%BB%84%E4%BB%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90%E5%8F%8A%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%E7%AE%80%E4%BB%8B)
 
 <!-- region:toc -->
 

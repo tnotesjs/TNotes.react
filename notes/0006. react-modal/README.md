@@ -1,4 +1,4 @@
-# [0006. react-modal](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0006.%20react-modal)
+# [0006. react-modal](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0006.%20react-modal)
 
 <!-- region:toc -->
 

@@ -1,4 +1,4 @@
-# [0100. 并发渲染（Concurrent Rendering）](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0100.%20%E5%B9%B6%E5%8F%91%E6%B8%B2%E6%9F%93%EF%BC%88Concurrent%20Rendering%EF%BC%89)
+# [0100. 并发渲染（Concurrent Rendering）](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0100.%20%E5%B9%B6%E5%8F%91%E6%B8%B2%E6%9F%93%EF%BC%88Concurrent%20Rendering%EF%BC%89)
 
 <!-- region:toc -->
 

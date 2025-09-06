@@ -1,4 +1,4 @@
-# [0042. Hello World（v16）](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0042.%20Hello%20World%EF%BC%88v16%EF%BC%89)
+# [0042. Hello World（v16）](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0042.%20Hello%20World%EF%BC%88v16%EF%BC%89)
 
 <!-- region:toc -->
 

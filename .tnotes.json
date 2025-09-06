@@ -1,7 +1,9 @@
 {
   "author": "tnotesjs",
   "repoName": "TNotes.react",
-  "keywords": ["TNotes.react"],
+  "keywords": [
+    "TNotes.react"
+  ],
   "ignore_dirs": [
     ".vscode",
     "0000",
@@ -22,7 +24,7 @@
     "details": "React 笔记",
     "link": "https://tnotesjs.github.io/TNotes.react/",
     "created_at": 1740305655000,
-    "updated_at": 1757163551830,
+    "updated_at": 1757172135451,
     "days_since_birth": 9372
   },
   "menuItems": [

@@ -1,4 +1,4 @@
-# [0023. 类组件概述](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0023.%20%E7%B1%BB%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0)
+# [0023. 类组件概述](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0023.%20%E7%B1%BB%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0)
 
 <!-- region:toc -->
 

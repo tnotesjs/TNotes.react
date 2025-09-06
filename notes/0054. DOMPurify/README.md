@@ -1,4 +1,4 @@
-# [0054. DOMPurify](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0054.%20DOMPurify)
+# [0054. DOMPurify](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0054.%20DOMPurify)
 
 <!-- region:toc -->
 

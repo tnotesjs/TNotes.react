@@ -1,4 +1,4 @@
-# [0010. 条件渲染](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0010.%20%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93)
+# [0010. 条件渲染](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0010.%20%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93)
 
 <!-- region:toc -->
 

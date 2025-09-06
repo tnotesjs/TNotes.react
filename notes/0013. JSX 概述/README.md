@@ -1,4 +1,4 @@
-# [0013. JSX 概述](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0013.%20JSX%20%E6%A6%82%E8%BF%B0)
+# [0013. JSX 概述](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0013.%20JSX%20%E6%A6%82%E8%BF%B0)
 
 <!-- region:toc -->
 

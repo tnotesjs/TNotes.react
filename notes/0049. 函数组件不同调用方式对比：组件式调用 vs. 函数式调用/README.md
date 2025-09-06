@@ -1,4 +1,4 @@
-# [0049. 函数组件不同调用方式对比：组件式调用 vs. 函数式调用](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0049.%20%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E4%B8%8D%E5%90%8C%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F%E5%AF%B9%E6%AF%94%EF%BC%9A%E7%BB%84%E4%BB%B6%E5%BC%8F%E8%B0%83%E7%94%A8%20vs.%20%E5%87%BD%E6%95%B0%E5%BC%8F%E8%B0%83%E7%94%A8)
+# [0049. 函数组件不同调用方式对比：组件式调用 vs. 函数式调用](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0049.%20%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E4%B8%8D%E5%90%8C%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F%E5%AF%B9%E6%AF%94%EF%BC%9A%E7%BB%84%E4%BB%B6%E5%BC%8F%E8%B0%83%E7%94%A8%20vs.%20%E5%87%BD%E6%95%B0%E5%BC%8F%E8%B0%83%E7%94%A8)
 
 <!-- region:toc -->
 

@@ -1,4 +1,4 @@
-# [0047. redux 是什么](https://github.com/Tdahuyou/TNotes.react/tree/main/notes/0047.%20redux%20%E6%98%AF%E4%BB%80%E4%B9%88)
+# [0047. redux 是什么](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0047.%20redux%20%E6%98%AF%E4%BB%80%E4%B9%88)
 
 <!-- region:toc -->
 
