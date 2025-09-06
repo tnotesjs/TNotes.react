@@ -49,9 +49,9 @@ createRoot(document.getElementById('root')).render(
 ```
 
 - 最终渲染结果：
-  - ![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-16-34-16.png)
+  - ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-16-34-16.png)
 - 这种写法最终生成的真实 DOM 结构如下：
-  - ![图 1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-16-34-26.png)
+  - ![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-16-34-26.png)
   - 此时 htmlContent 会被视作普通的 html 字符串（普通文本），而不是作为 HTML 内容（真实 DOM）被解析。
 
 ```jsx
@@ -68,6 +68,6 @@ createRoot(document.getElementById('root')).render(
 ```
 
 - 最终渲染结果：
-  - ![图 2](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-16-34-35.png)
+  - ![图 2](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-16-34-35.png)
 - 这种写法最终生成的真实 DOM 结构如下：
-  - ![图 3](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-16-34-45.png)
+  - ![图 3](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-16-34-45.png)

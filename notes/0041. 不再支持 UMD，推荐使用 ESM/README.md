@@ -31,7 +31,7 @@
 
 ## 4. 📒 React 19 中的相关的变化及影响
 
-- ![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-13-58-59.png)
+- ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-13-58-59.png)
 - 从 **React 19** 开始，官方将 **不再提供 UMD 构建**。
 - 这是为了简化 React 的测试和发布流程，同时反映了现代 Web 开发的趋势（逐渐远离 UMD，转向 ESM）。
 - **对于使用旧版 UMD 的项目**：
@@ -63,7 +63,7 @@ https://esm.sh/
 - https://zh-hans.react.dev/blog/2024/04/25/react-19-upgrade-guide#umd-builds-removed
   - react blog
   - UMD builds removed
-  - ![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-13-58-59.png)
+  - ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-13-58-59.png)
   - **React 19** 中的一项重要变化：**UMD 构建将被移除**。
 - https://juejin.cn/post/6844903927104667662
   - 掘金文章《可能是最详细的 UMD 模块入门指南》

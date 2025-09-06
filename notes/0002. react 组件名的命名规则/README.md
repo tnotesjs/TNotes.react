@@ -12,7 +12,7 @@
 - https://react.dev/learn
 - 官方原话：
   - **React component names must always start with a capital letter, while HTML tags must be lowercase.**
-  - ![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-21-44-59.png)
+  - ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-21-44-59.png)
 
 ## 2. 💻 demos.1 - react 组件名的命名规则
 

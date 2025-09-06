@@ -24,7 +24,7 @@
 2. 搜索 `emmet.includeLanguages`
 3. 加上 `"javascript": "javascriptreact"` 键值对
 
-![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-23-21-50-59.png)
+![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-23-21-50-59.png)
 
 ### 2.2. 【做法 2】通过配置文件 `.vscode/settings.json` 来配置
 
@@ -42,9 +42,9 @@
 
 - ![](./assets/1.gif)
 - 输入：`div>span`
-  - ![图 1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-23-21-52-57.png)
+  - ![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-23-21-52-57.png)
   - 按下回车，将会快速生成：`<div><span></span></div>`
-  - ![图 2](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-23-21-53-18.png)
+  - ![图 2](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-23-21-53-18.png)
 - 输入：`.foo`
   - 按下回车，将会快速生成：`<div className="foo"></div>`
 

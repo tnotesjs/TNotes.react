@@ -124,7 +124,7 @@ const reactElement = React.createElement(
   - ……
 - 🌰 举一个描述互相冲突的示例：
   - 先来看看官方原话：
-    - ![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-09-50-15.png)
+    - ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-09-50-15.png)
     - https://react.dev/learn
     - `React component names must always start with a capital letter, while HTML tags must be lowercase.`
     - **1️⃣ React 组件命名必须以大写字母开头，而 HTML 标签则必须以小写字母开头。**

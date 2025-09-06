@@ -66,7 +66,7 @@
 <<< ./demos/1/1.html {11-28}
 
 - 最终渲染结果如下图所示：
-- ![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-23-22-23-15.png)
+- ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-23-22-23-15.png)
 
 ## 5. 💻 demos.2 - 初步认识 React.createElement 和 JSX
 
@@ -81,7 +81,7 @@
 - `<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>` 需要引入 Babel 来编译 JSX。
 - `<script type='text/babel'>` 需要让浏览器知道这部分的 JS 是需要交给 Babel 编译处理的脚本。
 - 两者的最终渲染结果都是一样的，如下图所示：
-- ![图 1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-23-22-27-46.png)
+- ![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-23-22-27-46.png)
 
 ## 6. 🔗 References
 

@@ -36,11 +36,11 @@ createRoot(document.getElementById('root')).render(
 :::
 
 - 相同点：页面上最终的渲染结果是一样的。
-  - ![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-27-07-49-25.png)
+  - ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-27-07-49-25.png)
 - 控制台输出结果：
-  - ![图 1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-27-07-49-33.png)
+  - ![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-27-07-49-33.png)
 - React DevTools 仅能识别到 `<MyFuncComp a="1" b={2} c />` 组件。
-  - ![图 2](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-27-07-49-42.png)
+  - ![图 2](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-27-07-49-42.png)
 
 ::: code-group
 

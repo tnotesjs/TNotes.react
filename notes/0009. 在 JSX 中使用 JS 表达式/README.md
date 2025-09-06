@@ -129,12 +129,12 @@ createRoot(document.getElementById('root')).render(
 :::
 
 - 最终渲染效果如下：
-  - ![图 1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-14-49-42.png)
+  - ![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-14-49-42.png)
 
 ::: details 🔍 扩展 - Hedy Lamarr 是谁？
 
 - 本节笔记中提到的 Hedy Lamarr 来自于 react 官方文档。由于不认识这个人，就简单搜了一下，总之是个了不起的人就对了。
-- ![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-14-49-20.png)
+- ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-14-49-20.png)
 - https://www.douban.com/personage/27246464/
   - 豆瓣 - 海蒂·拉玛 Hedy Lamarr
 - https://en.wikipedia.org/wiki/Hedy_Lamarr
@@ -188,8 +188,8 @@ createRoot(document.getElementById('root')).render(
 ```
 
 - 最终渲染结果如下：
-  - ![图 2](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-14-56-06.png)
-  - ![图 3](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-14-56-15.png)
+  - ![图 2](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-14-56-06.png)
+  - ![图 3](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-14-56-15.png)
 - 在 JSX 的大括号中插入 `null`、`undefined`、`false`、`ture`、`""`、`[]`、`注释` 这些值是不会显示的。
 - 如果要显示的话则不应该丢到大括号中，应该直接书写，将其事做普通的字符串来显示。
 - ⚠️ 注意
@@ -258,8 +258,8 @@ createRoot(document.getElementById('root')).render(
 :::
 
 - 最终渲染结果如下：
-  - ![图 4](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-14-57-32.png)
-  - ![图 5](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-14-57-41.png)
+  - ![图 4](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-14-57-32.png)
+  - ![图 5](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-14-57-41.png)
 - 在 JSX 的大括号内使用 JavaScript 对象
   - ❌ 普通对象
     - 普通对象不可以作为子元素。

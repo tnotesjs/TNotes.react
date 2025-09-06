@@ -41,7 +41,7 @@ root.render(<App />)
 - 这在并发场景下显得不够灵活，也无法支持上述特性。
 - Before React 18, rendering was a single, uninterrupted, synchronous transaction and once rendering started, it couldn’t be interrupted.
   - 在 React 18 之前，渲染是单一、不可中断的同步事务，一旦开始便无法中止。
-  - ![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-13-46-02.png)
+  - ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-13-46-02.png)
 
 ## 3. 📒 after v18 - `ReactDOM.createRoot` 的优势
 
@@ -51,7 +51,7 @@ root.render(<App />)
   - 更好的错误边界和渲染控制
 - Concurrency is a foundational update to React’s rendering mechanism. Concurrency allows React to interrupt rendering.
   - 并发机制是对 React 渲染架构的基础性升级，它使渲染过程具备可中断能力。
-  - ![图 1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-13-47-17.png)
+  - ![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-13-47-17.png)
 
 ## 4. 🔗 References
 

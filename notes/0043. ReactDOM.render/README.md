@@ -23,7 +23,7 @@
 - 在 React 17 及以前的版本中，`ReactDOM.render` 是一个常用的 API，但随着 React 18 的推出，`ReactDOM.render` 被替代为 `ReactDOM.createRoot`，并逐渐被废弃。
 - 🔍 查看官方文档对此的描述
   - https://react.dev/blog/2022/03/08/react-18-upgrade-guide#updates-to-client-rendering-apis
-  - ![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-13-19-16.png)
+  - ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-13-19-16.png)
 
 ```js
 // Before v18
@@ -71,7 +71,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 <<< ./demos/1/1.html {10-33}
 
 - 最终渲染结果如下图所示：
-  - ![图 1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-13-19-27.png)
+  - ![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-13-19-27.png)
 
 ## 5. ⚙️ `ReactDOM.createRoot`
 
@@ -95,7 +95,7 @@ root.render(<App />)
 <<< ./demos/2/1.html {10-24}
 
 - 最终渲染结果和 demos.1 是完全一样的。
-  - ![图 1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-13-19-27.png)
+  - ![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-13-19-27.png)
 
 ## 7. 🤔 为什么弃用 `ReactDOM.render`？
 

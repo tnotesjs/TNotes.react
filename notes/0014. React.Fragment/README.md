@@ -69,7 +69,7 @@ createRoot(document.getElementById('root')).render(
 )
 ```
 
-![图 1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-27-22-06-46.png)
+![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-27-22-06-46.png)
 
 ## 6. 💻 demos.2 - `React.Fragment` 在列表渲染中的应用
 
@@ -171,7 +171,7 @@ createRoot(document.getElementById('root')).render(
   1. 可以使用 `<React.Fragment>` 标签来包裹需要渲染的所有根元素。
   2. 在列表渲染时如果没有指定 key 的话会存在问题，Fragment 考虑到了这一点，当我们循环渲染列表时，不能使用简写形式，应该写为 `<React.Fragment key={...}></React.Fragment>`。
 - 最终渲染结果：
-  - ![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-27-22-06-30.png)
+  - ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-27-22-06-30.png)
 
 ## 7. 🔗 References
 

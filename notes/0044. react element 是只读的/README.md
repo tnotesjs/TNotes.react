@@ -74,11 +74,11 @@ createRoot(document.getElementById('root')).render(
 :::
 
 - 最终渲染结果：
-  - ![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-09-58-39.png)
+  - ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-09-58-39.png)
 - `imgEle.props.src = '...'` ❌
   - 当执行到这条语句的时候，我们可能是想要替换图片的 src，换成其他的图片，但是这种写法是错误的。
   - 如果执行到这条语句，则会抛出错误提示：`Uncaught TypeError: Cannot assign to read only property 'src' of object '#<Object>'`，提醒我们不能给只读的属性赋值。
-  - ![图 1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-09-58-47.png)
+  - ![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-09-58-47.png)
 - 再来看一个计数器的示例：
 
 ::: code-group
@@ -124,13 +124,13 @@ setInterval(() => {
 :::
 
 - `counter` 结构：
-  - ![图 4](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-10-04-05.png)
+  - ![图 4](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-10-04-05.png)
   - 在错误做法中，试图修改 `counter.props.children` 来改变计数器的值，这会导致错误，因为 react element 是只读的。
 - 正确做法最终渲染结果：
-  - ![图 2](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-09-59-01.png)
+  - ![图 2](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-09-59-01.png)
 - 虽然上述提到的正确做法可以让计数器 demo 正常工作，但是，上述写法其实还是存在一些问题的。
   - 每次重新 `render`，都会打印这条消息。
-    - ![图 3](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-09-59-15.png)
+    - ![图 3](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-09-59-15.png)
   - 在程序的运行过程中，出现的这条警告信息表明你正在尝试在一个已经被 `createRoot` 初始化的容器上调用 `createRoot`。React 不允许对同一个容器多次调用 `createRoot`，而是应该保留对根实例的引用，并在需要更新时调用其 `render` 方法。
 - 修改建议：
   - 创建一次根实例并保存引用：将 `createRoot` 的调用移出定时器外部，并保存返回的根实例。

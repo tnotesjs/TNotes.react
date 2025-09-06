@@ -167,9 +167,9 @@ Panel 是一个可展开/折叠的面板组件。
 
 ::: swiper
 
-![1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-27-21-47-52.png)
+![1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-27-21-47-52.png)
 
-![2](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-27-21-47-58.png)
+![2](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-27-21-47-58.png)
 
 ![3](./assets/1.gif)
 

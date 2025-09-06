@@ -80,12 +80,12 @@ createRoot(document.getElementById('root')).render(
   - 如果直接写 class 的话，在本节的 demo 中测试结果是可以正常渲染出来的。
   - 但是需要知道这种写法其实是错误的，eslint 和 react 内部都会抛出错误提示。
 - 最终渲染结果：
-  - ![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-15-10-20.png)
+  - ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-15-10-20.png)
 - 报错：
   - react 报错：
-    - ![图 1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-15-11-29.png)
+    - ![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-15-11-29.png)
   - eslint 报错：
-    - ![图 2](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-15-11-45.png)
+    - ![图 2](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-15-11-45.png)
   - 这些错误提示都是在提醒我们，直接使用 class 的写法在 react 的 jsx 中给元素添加样式的行为是不正确的。
 
 ## 3. 💻 demos.2 - 在 JSX 中也可以使用 class 添加样式
@@ -99,9 +99,9 @@ createRoot(document.getElementById('root')).render(
 :::
 
 - 最终渲染结果：
-  - ![图 3](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-15-15-05.png)
+  - ![图 3](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-15-15-05.png)
 - 打印的警告信息：
-  - ![图 4](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-15-15-15.png)
+  - ![图 4](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-15-15-15.png)
 - 由于 2 也能正常渲染，这也就说明 `createElement` 是能够识别 `class` 这种写法的，并非是 `babel` 在编译 `jsx` 的过程中，帮我们将 `class` 转为了 `className`。
 
 ## 4. 🤔 为什么不能直接使用 `class` 来添加样式，而是使用 `className` 呢？
@@ -131,4 +131,4 @@ createRoot(document.getElementById('root')).render(
 
 - https://zh-hans.react.dev/learn#adding-styles
   - 查看 react 官方对“添加样式”的说明
-  - ![图 5](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-15-16-14.png)
+  - ![图 5](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-15-16-14.png)

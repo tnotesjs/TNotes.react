@@ -92,18 +92,18 @@ function start() {
 - ✅ 正确做法：相当于每次都渲染一个新的 `img`。
 - ❌ 错误做法：
   - 如果你这么做了，将会喜提以下报错：
-  - ![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-07-01-22-45-23.png)
+  - ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-07-01-22-45-23.png)
   - 原因分析：
   - `const img = <img src={srcs[index]} alt="" />` 通过这种 jsx 语法创建的 react 元素，在编译的时候，会被转换为由 React.createElement 函数去调用，而这玩意儿返回的对象，是不可变的。
   - 下面是来自官方的原话：
-  - ![图 1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-07-01-22-45-35.png)
+  - ![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-07-01-22-45-35.png)
   - https://react.dev/reference/react/createElement#caveats
 - **🤔 既然 react 元素不可变，那么如何更新页面呢？每次都要重新创建一个元素对象，然后 render？效率会不会太低了？**
   - 效率并不低，react 在内部会对 render 做优化。
   - **在重新渲染的时候，并非将整个 dom 删了，然后再重新创建，而是尽可能地复用已有的结构，仅改变必要的内容，实现重新渲染。**
   - **🤔 如何验证这一点？**
   - 可以打开浏览器调试工具，在图片切换的时候，查看 dom 的变化，闪烁的部分就是更新的部分，会发现在每次切换图片的时候，之后 img 的 src 发生了变化。由此可见，并非每次渲染，都是将之前的工作全部推翻重来，而是尽可能地复用之前工作的成果，仅更新必要的部分，以实现性能优化。这可以说是大部分前端框架的基操了。
-  - ![图 2](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-07-01-22-46-33.png)
+  - ![图 2](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-07-01-22-46-33.png)
   - 或者，你也可以在任意两个时刻，收集一下 `#root img`，然后比较它们是否是同一个 DOM 对象。
 
 ```js
@@ -249,7 +249,7 @@ createRoot(document.getElementById('root')).render(
   - `let timer = null` 被定义为一个普通的变量，而不是 React 的状态或引用（如 useRef）。
   - 出现 bug 的根本原因是每次 clear 的 timer 和启动的 timer 不一致。可以在每次启动计时器的时候，将 timer 在控制台打印出来看看。
   - 在 React 函数组件中，每次状态更新（如 index 改变）都会导致组件函数重新执行。
-  - ![图 3](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-07-02-21-04-31.png)
+  - ![图 3](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-07-02-21-04-31.png)
   - step1：首次渲染
     - `timer = null`
     - `start()` 设置定时器：`timer = id1`

@@ -50,7 +50,7 @@ export default MyComponent
 - 使用 `purify` 函数对 `unsafeHtmlContent` 进行净化，得到 `safeHtmlContent`。
 - 使用 `dangerouslySetInnerHTML` 将净化后的内容插入到 `<div>` 中。
 - 最终运行结果：
-  - ![图 4](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-16-35-31.png)
-  - ![图 5](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-16-35-43.png)
-  - ![图 6](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-16-35-58.png)
+  - ![图 4](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-16-35-31.png)
+  - ![图 5](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-16-35-43.png)
+  - ![图 6](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-16-35-58.png)
   - 恶意脚本 `<script>alert("XSS attack!");</script>` 被 `DOMPurify` 移除了，从而防止了 XSS 攻击。

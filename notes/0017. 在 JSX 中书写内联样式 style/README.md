@@ -40,7 +40,7 @@ createRoot(document.getElementById('root')).render(
 ```
 
 - 直接将 JSX 中的 style 写成字符串形式插入会报错：
-  - ![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-14-59-05.png)
+  - ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-14-59-05.png)
 
 ## 4. 💻 demos.2 - ✅ 正确写法 - 采用对象的形式来写，属性名使用小驼峰的形式
 
@@ -71,7 +71,7 @@ createRoot(document.getElementById('root')).render(
 ```
 
 - 最终渲染结果如下：
-  - ![图 1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-14-59-50.png)
+  - ![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-14-59-50.png)
 
 ## 5. 💻 demos.3 - 动态样式
 

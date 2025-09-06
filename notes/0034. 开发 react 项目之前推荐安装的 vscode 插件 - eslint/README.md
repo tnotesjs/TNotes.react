@@ -40,7 +40,7 @@
 - 打开 VS Code。
 - 转到左侧活动栏中的“扩展”图标（或者使用快捷键 `Ctrl+Shift+X`）。
 - 在搜索框中输入 "ESLint" 并完成安装。
-- ![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-23-21-44-38.png)
+- ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-23-21-44-38.png)
 
 ## 4. 📒 配置 ESLint 基本流程
 
@@ -150,7 +150,7 @@ const myComp = () => {
 ```
 
 - 报错截图：
-- ![图 1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-23-21-45-06.png)
+- ![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-23-21-45-06.png)
 
 ## 6. 📒 注意事项
 

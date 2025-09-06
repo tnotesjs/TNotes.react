@@ -23,7 +23,7 @@
 
 - https://transform.tools/html-to-jsx
   - html 转 jsx 在线转换器。
-  - ![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-14-15-48.png)
+  - ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-14-15-48.png)
 - https://github.com/ritz078/transform
   - transform GitHub 仓库。
 

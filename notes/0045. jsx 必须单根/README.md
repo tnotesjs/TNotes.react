@@ -159,18 +159,18 @@ root.render(<StrictMode>{divContainer}</StrictMode>)
 :::
 
 - ❌ 错误写法
-  - ![图 3](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-14-12-45.png)
-  - ![图 2](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-14-12-33.png)
+  - ![图 3](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-14-12-45.png)
+  - ![图 2](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-14-12-33.png)
 - ✅ 解 1
   - 虽然上述提到的解决办法能够正常在页面上渲染出 3 个 div，但是却破坏的元素的结构，多出的这一层 div 很可能并非我们想要的。
-  - ![图 1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-14-12-10.png)
+  - ![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-14-12-10.png)
 - ✅ 解 2
   - 其实就是将 `解1` 中的 jsx 的写法改为 `createElement` 式的写法，它们是等效的。
   - 知道 jsx 是语法糖，掌握好 jsx 的写法即可，实际开发中很少会采用 `createElement` 式的写法来描述 UI。
 - ✅ 解 3
   - 采用 `Fragment`。
   - 使用 `Fragment` 渲染出来的结构如下：
-  - ![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-24-14-11-36.png)
+  - ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-14-11-36.png)
   - 会发现这种写法并不会破坏元素结构，这往往是我们开发时更常用的。
 - ✅ 解 4
   - 是解法 3 的简写形式。

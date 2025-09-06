@@ -62,7 +62,7 @@ $ bun create vite my-react-app --template react
 ```
 
 - 实际上拉取的是 https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react 这个位置的模板。
-  - ![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-23-21-55-27.png)
+  - ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-23-21-55-27.png)
 - 启动用 vite 创建的 react 工程：
 
 ```bash
@@ -73,7 +73,7 @@ $ pnpm run dev
 ```
 
 - 成功启动后，使用浏览器打开链接，将看到如下默认页面。
-  - ![图 1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-06-23-21-56-18.png)
+  - ![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-23-21-56-18.png)
 
 ## 4. 🔗 References
 

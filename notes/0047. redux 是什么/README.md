@@ -27,7 +27,7 @@
 
 ## 3. 📒 官方对 redux 的介绍
 
-- ![图 0](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-07-10-17-14-49.png)
+- ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-07-10-17-14-49.png)
 - https://redux.js.org/introduction/getting-started
 - 其中前 3 句比较重要，介绍了 redux 是什么，以及 redux 的核心特点，后 3 句主要是推荐我们去用 TRK。
 - 1️⃣ Redux is a JS library for predictable and maintainable global state management.
@@ -56,7 +56,7 @@
 
 ---
 
-- ![图 1](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-07-10-17-15-07.png)
+- ![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-07-10-17-15-07.png)
 - https://redux.js.org/
 - **可预测 (Predictable)**
   - Redux helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.
@@ -183,7 +183,7 @@ function counterReducer(state = 0, action) {
   - Redux 是由 Dan Abramov 与 Andrew Clark 于 2015 年创建的。
   - Dan Abramov
     - https://github.com/gaearon
-    - ![图 2](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-07-10-17-15-43.png)
+    - ![图 2](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-07-10-17-15-43.png)
   - Andrew Clark
     - https://github.com/acdlite
-    - ![图 3](https://cdn.jsdelivr.net/gh/Tdahuyou/imgs@main/2025-07-10-17-15-51.png)
+    - ![图 3](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-07-10-17-15-51.png)
