@@ -24,7 +24,7 @@
     "details": "React 笔记",
     "link": "https://tnotesjs.github.io/TNotes.react/",
     "created_at": 1740305655000,
-    "updated_at": 1757172135451,
+    "updated_at": 1757554116480,
     "days_since_birth": 9372
   },
   "menuItems": [
@@ -38,7 +38,7 @@
     },
     {
       "text": "📒 TNotes",
-      "link": "https://tnotesjs.github.io/notes"
+      "link": "https://tnotesjs.github.io/TNotes"
     },
     {
       "text": "📂 TNotes.yuque",
