@@ -4,6 +4,7 @@
 
 - [1. 🫧 评价](#1--评价)
 - [2. 💻 demos.1 - react element 是只读的](#2--demos1---react-element-是只读的)
+- [3. 🆚 对比 demos.1 中的两种正确做法](#3--对比-demos1-中的两种正确做法)
 
 <!-- endregion:toc -->
 
@@ -15,61 +16,9 @@
 
 ::: code-group
 
-```jsx [渲染头像]
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+<<< ./demos/1/assets/1.jsx [渲染头像]
 
-const githubAvatar = 'https://avatars.githubusercontent.com/u/125541114?v=4'
-
-const imgEle = (
-  <img
-    src={githubAvatar}
-    style={{
-      width: '100px',
-      height: '100px',
-      borderRadius: '20%',
-      boxShadow: '1rem 1rem 1rem #ddd',
-    }}
-    alt="github 头像"
-  />
-)
-
-createRoot(document.getElementById('root')).render(
-  <StrictMode>{imgEle}</StrictMode>
-)
-```
-
-```jsx [❌ 尝试修改 element.src 替换图片]
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-
-const githubAvatar = 'https://avatars.githubusercontent.com/u/125541114?v=4'
-
-const imgEle = (
-  <img
-    src={githubAvatar}
-    style={{
-      width: '100px',
-      height: '100px',
-      borderRadius: '20%',
-      boxShadow: '1rem 1rem 1rem #ddd',
-    }}
-    alt="github 头像"
-  />
-)
-
-// 不要尝试修改 react element 对象身上的任何属性，否则会报错，你可以将这个对象视作是只读的。
-console.log('before set alt - imgEle.props =>', imgEle.props)
-
-imgEle.props.src = '...' // [!code error]
-// ❌ 报错：Uncaught TypeError: Cannot assign to read only property 'alt' of object '#<Object>'
-
-console.log('after set alt - imgEle.props =>', imgEle.props) // 不会执行，因为前一行就报错了。
-
-createRoot(document.getElementById('root')).render(
-  <StrictMode>{imgEle}</StrictMode>
-)
-```
+<<< ./demos/1/assets/2.jsx [❌ 尝试修改 element.src 替换图片]
 
 :::
 
@@ -83,49 +32,20 @@ createRoot(document.getElementById('root')).render(
 
 ::: code-group
 
-```jsx [❌ 错误做法]
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-
-// 实现一个计数器
-let num = 0
-
-setInterval(() => {
-  // ❌ 错误做法：直接修改 react element —— counter 的属性值。
-  const counter = <span>{num}</span>
-  console.log(counter)
-
-  counter.props.children++ // [!code error]
-  // ❌ 报错：Uncaught TypeError: Cannot assign to read only property 'children' of object '#<Object>'
-
-  createRoot(document.getElementById('root')).render(
-    <StrictMode>计数器：{counter}</StrictMode>
-  )
-}, 1000)
-```
-
-```jsx [✅ 正确做法]
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-
-// 实现一个计数器
-let num = 0
-
-setInterval(() => {
-  // ✅ 正确做法：可以在更新 num 的值之后，重新创建一个新的 react element —— counter，然后渲染新的 counter。
-  num++
-  const counter = <span>{num}</span>
-  createRoot(document.getElementById('root')).render(
-    <StrictMode>计数器：{counter}</StrictMode>
-  )
-}, 1000)
-```
+<<< ./demos/1/assets/3.jsx [❌ 错误做法]
 
 :::
 
 - `counter` 结构：
   - ![图 4](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-10-04-05.png)
   - 在错误做法中，试图修改 `counter.props.children` 来改变计数器的值，这会导致错误，因为 react element 是只读的。
+
+::: code-group
+
+<<< ./demos/1/assets/4.jsx [✅ 正确做法-1]
+
+:::
+
 - 正确做法最终渲染结果：
   - ![图 2](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-09-59-01.png)
 - 虽然上述提到的正确做法可以让计数器 demo 正常工作，但是，上述写法其实还是存在一些问题的。
@@ -139,35 +59,7 @@ setInterval(() => {
 
 ::: code-group
 
-```jsx [✅ 正确写法 2]
-import React, { useState, useEffect } from 'react'
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-
-function Counter() {
-  const [num, setNum] = useState(0)
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setNum((prevNum) => prevNum + 1)
-    }, 1000)
-
-    return () => clearInterval(intervalId) // 清除定时器以避免内存泄漏
-  }, [])
-
-  return (
-    <>
-      计数器：<span>{num}</span>
-    </>
-  )
-}
-
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <Counter />
-  </StrictMode>
-)
-```
+<<< ./demos/1/assets/5.jsx [✅ 正确做法-2]
 
 :::
 
@@ -176,3 +68,20 @@ createRoot(document.getElementById('root')).render(
   - 副作用处理：使用 `useEffect` 来设置和清除定时器，确保组件卸载时清理定时器。
   - 单次初始化：只调用一次 `createRoot` 并保存其引用，避免重复初始化。
 - 这样可以避免警告，并且代码更加符合 React 的最佳实践。
+
+## 3. 🆚 对比 demos.1 中的两种正确做法
+
+- 如果你习惯命令式编程，又不熟悉 react 特性，很可能会写出类似 1 这样的程序，虽说也能跑不假，但是这么做在实际项目中是非常不推荐的。
+- 下面是从不同维度对两种写法进行的对比：
+
+| 维度 | 1 | 2 |
+| --- | --- | --- |
+| 写法类型 | 纯 JS + React API 手动渲染 | React 组件式写法 |
+| 范式 | 命令式（反模式） | 声明式（更符合 React 思想） |
+| 是否使用 React 状态机制 | ❌ 否 | ✅ 是 |
+| 是否触发 React diff | ❌ 否 | ✅ 是 |
+| 状态存储 | 由外部变量 `num` 保存 | 使用 React 状态 `useState` 保存 |
+| 渲染机制 | 每次 `setInterval` 都重新创建 root 并强制渲染整个 DOM 树 | React 根据状态变化触发内部 diff 和更新 |
+| 是否复用 React Fiber 树 | ❌ 否，每次重建 Fiber 树 | ✅ 是，React 内部会 diff、复用节点 |
+| 性能 | 很差，每秒销毁并重建 DOM | 高效，仅更新变化部分 |
+| 是否有副作用清理机制 | ❌ 无清理，会不断叠加 root | ✅ 有 `useEffect` 清理逻辑 |
