@@ -1,18 +1,19 @@
-# [0013. JSX 概述](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0013.%20JSX%20%E6%A6%82%E8%BF%B0)
+# [0013. 初始 JSX](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0013.%20%E5%88%9D%E5%A7%8B%20JSX)
 
 <!-- region:toc -->
 
 - [1. 🫧 评价](#1--评价)
 - [2. 🤔 JSX 是什么？](#2--jsx-是什么)
-- [3. 📒 JSX 必须单根](#3--jsx-必须单根)
-- [4. 📒 声明式](#4--声明式)
-- [5. 💻 demos.1 - 一个简单的 React 组件示例](#5--demos1---一个简单的-react-组件示例)
+- [3. 🤔 JSX 必须单根吗？](#3--jsx-必须单根吗)
+- [4. 🤔 为什么 jsx 必须单根？](#4--为什么-jsx-必须单根)
+- [5. 🤔 JSX 如何描述模板？（语法层面）](#5--jsx-如何描述模板语法层面)
+- [6. 💻 demos.1 - 一个简单的 React 组件示例](#6--demos1---一个简单的-react-组件示例)
 
 <!-- endregion:toc -->
 
 ## 1. 🫧 评价
 
-- 这篇笔记简单介绍了 JSX 的一些基础知识点，有关 JSX 的更多细节，会在其他笔记中介绍。
+- 这篇笔记简单介绍了 JSX 的一些基础知识点，先对 JSX 是什么有个初步认识即可，有关 JSX 的更多细节，会在其他笔记中介绍。
 
 ## 2. 🤔 JSX 是什么？
 
@@ -20,40 +21,42 @@
 - JSX 是由 Facebook 起草的 JS 扩展语法，是一种将 HTML 和 JavaScript 混合使用的扩展语法。
 - 虽然 JSX 看起来很像 HTML，但实际上它是 JavaScript 的一部分，并且最终会被编译成纯 JavaScript 代码。
 - JSX 允许开发者在 JavaScript 代码中直接编写类似 HTML 的结构，这样可以更直观地将 UI 与逻辑结合起来。
-- **JSX 的本质**
+- JSX 的本质
   - 从数据类型层面来看，JSX 本质上是一个 JS 对象。
   - JSX 会被 babel 编译，最终会被转换为 `React.createElement` 函数调用，是一个 React Element 对象。
 
-## 3. 📒 JSX 必须单根
+## 3. 🤔 JSX 必须单根吗？
 
 - 每个 JSX 表达式，有且仅有一个根节点。
 - 如果有多个根，可以使用 `<React.Fragment></React.Fragment>` 来包裹这些根节点。
 - `<React.Fragment></React.Fragment>` 可以简写为 `<></>`。
-- **🤔 为什么 jsx 必须单根？**
-  - jsx 表达式 -> 等效的 `React.createElement` 函数调用。
-  - 调用 `React.createElement` 必须有一个根，如果有多个根，没法调，都不知道咋传参。
-  - jsx 表达式会被 babel 编译，转为等效的 `React.createElement` 写法。如果 jsx 有多个根节点，那显然是没法转的，因为 `React.createElement` 这个 API 创建的是一棵树，在创建这棵树的时候传入的第一个参数 type 表示的是根节点的类型。
 
-## 4. 📒 声明式
+## 4. 🤔 为什么 jsx 必须单根？
 
-- **声明式**
+- jsx 表达式 -> 等效的 `React.createElement` 函数调用。
+- 调用 `React.createElement` 必须有一个根，如果有多个根，没法调，都不知道咋传参。
+- jsx 表达式会被 babel 编译，转为等效的 `React.createElement` 写法。如果 jsx 有多个根节点，那显然是没法转的，因为 `React.createElement` 这个 API 创建的是一棵树，在创建这棵树的时候传入的第一个参数 type 表示的是根节点的类型。
+
+## 5. 🤔 JSX 如何描述模板？（语法层面）
+
+- 声明式
   - JSX 是声明式的，这意味着你可以描述你的应用应该显示什么，而不是如何进行 DOM 操作来改变应用的状态。
   - 这使得代码更容易理解和维护。
   - 我们学习 JSX 更多学习的也就是 JSX 的声明式语法，如何使用 JSX 来描述 UI。
-- **嵌入表达式**
+- 嵌入表达式
   - 你可以在 JSX 中使用大括号 `{}` 来嵌入任何有效的 JavaScript 表达式。
   - 例如，变量、函数调用或计算结果都可以被嵌入到 JSX 中。
-- **属性及事件**
+- 属性及事件
   - JSX 属性和 HTML 属性非常相似，但有一些不同之处。
     - `class` 在 HTML 中对应 `className` 在 JSX 中，因为 `class` 是 JavaScript 的保留字。
   - JSX 中的事件处理函数是以驼峰命名法（camelCase）来写的，比如 `onClick` 而不是 `onclick`，这些事件处理函数接收一个事件对象作为参数。
-- **必须要有结束标记**
+- 必须要有结束标记
   - 每个 JSX 元素必须有结束标记（XML 规范）。
   - 对于没有内容的元素，如 `<img>` 或 `<input>`，JSX 支持自闭合标签，比如 `<img src={imageSrc} />`。
-- **注释**
+- 注释
   - 在 JSX 中添加注释需要使用花括号 `{/* ... */}`。
 
-## 5. 💻 demos.1 - 一个简单的 React 组件示例
+## 6. 💻 demos.1 - 一个简单的 React 组件示例
 
 ::: code-group
 
