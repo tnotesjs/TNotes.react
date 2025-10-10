@@ -2,13 +2,13 @@
 
 <!-- region:toc -->
 
-- [1. 📝 概述](#1--概述)
+- [1. 🫧 评价](#1--评价)
 - [2. 📒 dangerouslySetInnerHTML 简介](#2--dangerouslysetinnerhtml-简介)
 - [3. 💻 demos.1 - dangerouslySetInnerHTML 的基本使用](#3--demos1---dangerouslysetinnerhtml-的基本使用)
 
 <!-- endregion:toc -->
 
-## 1. 📝 概述
+## 1. 🫧 评价
 
 - 在 JSX 中，使用 `dangerouslySetInnerHTML` 可以在组件中直接插入 html 标签。
 

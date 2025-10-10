@@ -2,7 +2,7 @@
 
 <!-- region:toc -->
 
-- [1. 📝 概述](#1--概述)
+- [1. 🫧 评价](#1--评价)
 - [2. 💻 demos.1 - 添加样式](#2--demos1---添加样式)
 - [3. 💻 demos.2 - 在 JSX 中也可以使用 class 添加样式](#3--demos2---在-jsx-中也可以使用-class-添加样式)
 - [4. 🤔 为什么不能直接使用 `class` 来添加样式，而是使用 `className` 呢？](#4--为什么不能直接使用-class-来添加样式而是使用-classname-呢)
@@ -11,7 +11,7 @@
 
 <!-- endregion:toc -->
 
-## 1. 📝 概述
+## 1. 🫧 评价
 
 - 在 React 中，我们通过使用 JSX 语法来定义组件模板，在组件模板中，我们可以使用 className 来指定一个 CSS 的 class。
   - ✅ `<img className="avatar" />`

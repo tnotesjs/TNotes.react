@@ -2,13 +2,13 @@
 
 <!-- region:toc -->
 
-- [1. 📝 概述](#1--概述)
+- [1. 🫧 评价](#1--评价)
 - [2. 📒 DOMPurify 简介](#2--dompurify-简介)
 - [3. 💻 demos.1 - 使用 DOMPurify 净化 html 字符串](#3--demos1---使用-dompurify-净化-html-字符串)
 
 <!-- endregion:toc -->
 
-## 1. 📝 概述
+## 1. 🫧 评价
 
 - 可以使用 `DOMPurify` 库对插入的 html 字符串进行清理和转义，以防止 XSS 攻击。
 - 在 react 中，可以结合 `dangerouslySetInnerHTML` 来处理 XSS 攻击问题。
