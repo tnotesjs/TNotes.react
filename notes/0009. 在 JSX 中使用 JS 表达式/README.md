@@ -2,20 +2,29 @@
 
 <!-- region:toc -->
 
-- [1. 🫧 评价](#1--评价)
-- [2. 📒 在 JSX 中使用 JS 表达式](#2--在-jsx-中使用-js-表达式)
-- [3. 💻 demos.1 - 官方示例 - 渲染头像](#3--demos1---官方示例---渲染头像)
-- [4. 💻 demos.2 - 在表达式中无法渲染的一些特殊值](#4--demos2---在表达式中无法渲染的一些特殊值)
-- [5. 💻 demos.3 - 无法渲染普通对象，可以渲染 react 元素对象](#5--demos3---无法渲染普通对象可以渲染-react-元素对象)
-- [6. 🔗 引用](#6--引用)
+- [1. 🎯 本节内容](#1--本节内容)
+- [2. 🫧 评价](#2--评价)
+- [3. 🤔 如何在 JSX 中使用 JS 表达式？](#3--如何在-jsx-中使用-js-表达式)
+- [4. 💻 demos.1 - 官方示例 - 渲染头像](#4--demos1---官方示例---渲染头像)
+- [5. 💻 demos.2 - 在表达式中无法渲染的一些特殊值](#5--demos2---在表达式中无法渲染的一些特殊值)
+- [6. 💻 demos.3 - 无法渲染普通对象，可以渲染 react 元素对象](#6--demos3---无法渲染普通对象可以渲染-react-元素对象)
+- [7. 🔗 引用](#7--引用)
 
 <!-- endregion:toc -->
 
-## 1. 🫧 评价
+## 1. 🎯 本节内容
 
-- 介绍如何在 jsx 中使用 js 表达式。
+- 在 JSX 中使用 JS 表达式
 
-## 2. 📒 在 JSX 中使用 JS 表达式
+## 2. 🫧 评价
+
+- 快速把 demos 过一遍即可。
+- 需要注意的是：
+  - 有些特殊值（比如 null、undefined、false、true、空字符串、注释、空数组）无法渲染
+  - 有些特殊值（比如 对象）渲染会报错
+- 官方文档 -> [在 JSX 中通过大括号使用 JavaScript][1] 也是在介绍「在 JSX 中使用 JS 表达式」，可以读一读，并且结尾有几个简单的练习题，可以刷一下练练手。
+
+## 3. 🤔 如何在 JSX 中使用 JS 表达式？
 
 - JSX 让你可以在 Jaavascript 中嵌入 HTML 语法，而大括号可以让你在 JSX 中 “回到” JavaScript 中，这样你就可以从你的代码中嵌入一些变量并展示给用户。
 - 嵌入表达式意味着将表达式的返回值作为 JSX 内容的一部分插入到 JSX 中。
@@ -31,7 +40,7 @@ return (
 );
 ```
 
-- 你还可以将 JSX 属性 “转义到 JavaScript”，但你必须使用 **大括号** 而非引号。
+- 你还可以将 JSX 属性 “转义到 JavaScript”，但你必须使用 大括号 而非引号。
 - 注意：
   - react 中元素的属性名应该使用小驼峰命名法。
   - 需要注意一些特殊属性名（和 js 关键字冲突的一些值）的写法，比如：
@@ -79,52 +88,13 @@ export default function Profile() {
 }
 ```
 
-## 3. 💻 demos.1 - 官方示例 - 渲染头像
+## 4. 💻 demos.1 - 官方示例 - 渲染头像
 
 ::: code-group
 
-```jsx{16,19-24} [main.jsx]
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './Profile.css'
+<<< ./demos/1/assets/1.jsx {16,19-24} [main.jsx]
 
-// 由于可以在 jsx 中插入表达式，因此我们可以将非常灵活地处理 JSX 中的一些动态值。
-// 可以将相关值存储在变量中，然后在 JSX 中通过表达式将其嵌入进去。
-const user = {
-  name: 'Hedy Lamarr',
-  imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
-  imageSize: 90,
-}
-
-export default function Profile() {
-  return (
-    <>
-      <h1>{user.name}</h1>
-      <img
-        className="avatar"
-        src={user.imageUrl}
-        alt={'Photo of ' + user.name}
-        style={{
-          width: user.imageSize,
-          height: user.imageSize,
-        }}
-      />
-    </>
-  )
-}
-
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <Profile />
-  </StrictMode>
-)
-```
-
-```css [Profile.css]
-.avatar {
-  border-radius: 50%;
-}
-```
+<<< ./demos/1/assets/1.css [Profile.css]
 
 :::
 
@@ -147,45 +117,9 @@ createRoot(document.getElementById('root')).render(
 
 :::
 
-## 4. 💻 demos.2 - 在表达式中无法渲染的一些特殊值
+## 5. 💻 demos.2 - 在表达式中无法渲染的一些特殊值
 
-```jsx{16-22}
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-
-// 表达式的值如果是以下这些特殊值，则不会渲染。
-const x1 = null
-const x2 = undefined
-const x3 = false
-const x4 = true
-const x5 = ''
-const x6 = <>{/* 注释内容 */}</>
-const x7 = []
-
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    {/* 下面这些特殊值不会渲染到页面上 */}
-    <div>x1: {x1}</div>
-    <div>x2: {x2}</div>
-    <div>x3: {x3}</div>
-    <div>x4: {x4}</div>
-    <div>x5: {x5}</div>
-    <div>x6: {x6}</div>
-    <div>x7: {x7}</div>
-
-    <hr />
-
-    {/* 如果要在页面上展示这些特殊值，可以直接书写对应的字符串形式。 */}
-    <div>x1: null</div>
-    <div>x2: undefined</div>
-    <div>x3: false</div>
-    <div>x4: true</div>
-    <div>x5: ''</div>
-    <div>x6: {"<>{/* 注释内容 */}</>"}</div>
-    <div>x7: []</div>
-  </StrictMode>
-)
-```
+<<< ./demos/2/assets/1.jsx {16-22}
 
 - 最终渲染结果如下：
   - ![图 2](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-14-56-06.png)
@@ -194,66 +128,17 @@ createRoot(document.getElementById('root')).render(
 - 如果要显示的话则不应该丢到大括号中，应该直接书写，将其事做普通的字符串来显示。
 - ⚠️ 注意
   - 上述罗列的这些值不一定全面，可能还有其它特殊值也是不会显示的。
-  - 需要掌握的是：**当你发现有些特殊值在页面上没有渲染出来，如果你想要在页面中展示这些不会渲染的特殊值（比如 `null`、`undefined`、……），可以采用字符串的形式来书写**。
+  - 需要掌握的是：当你发现有些特殊值在页面上没有渲染出来，如果你想要在页面中展示这些不会渲染的特殊值（比如 `null`、`undefined`、……），可以采用字符串的形式来书写。
     - `{null}`、`{undefined}` 在页面上不会被渲染。
     - `{'null'}`、`{'undefined'}` 在页面上可以被渲染。或者直接作为元素内容插入，而非 jsx 表达式插入，比如该 demo 中的写法。
 
-## 5. 💻 demos.3 - 无法渲染普通对象，可以渲染 react 元素对象
+## 6. 💻 demos.3 - 无法渲染普通对象，可以渲染 react 元素对象
 
 ::: code-group
 
-```jsx{11} [❌ 无法渲染普通对象]
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+<<< ./demos/3/assets/1.jsx {11} [❌ 无法渲染普通对象]
 
-const userInfo = {
-  name: 'Tdahuyou',
-  age: 25,
-}
-
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    {userInfo}
-    {/*
-      ❌ 这种写法会报错
-      Objects are not valid as a React child (found: object with keys {name, age}).
-    */}
-  </StrictMode>
-)
-```
-
-```jsx{12-15} [✅ 可以渲染 react 元素对象]
-import { StrictMode, createElement } from 'react'
-import { createRoot } from 'react-dom/client'
-
-const userInfo = {
-  name: 'Tdahuyou',
-  age: 25,
-}
-
-// 创建 react element 对象
-
-// 写法 1：jsx 式写法：【更常见】
-const userInfoContainer = <div>
-  <p>name: {userInfo.name}</p>
-  <p>age: {userInfo.age}</p>
-</div>
-
-// 写法 2：createElement 式写法：【更写法 1 是等效的】
-// const userInfoContainer = createElement('div', null,
-//   createElement('p', null, `name: ${userInfo.name}`),
-//   createElement('p', null, `age: ${userInfo.age}`),
-// )
-
-console.log(typeof userInfoContainer) // => object
-
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    {/* ✅ 可以渲染 react 元素对象 */}
-    {userInfoContainer}
-  </StrictMode>
-)
-```
+<<< ./demos/3/assets/2.jsx {13-16} [✅ 可以渲染 react 元素对象]
 
 :::
 
@@ -266,16 +151,13 @@ createRoot(document.getElementById('root')).render(
     - 在 JSX 的大括号中插入普通对象（比如 `{ foo: 123, bar: 'abc' }`）是无法渲染的，会报错。
   - ✅ React 元素对象是 ok 的。
 
-## 6. 🔗 引用
+## 7. 🔗 引用
 
-- https://zh-hans.react.dev/learn/javascript-in-jsx-with-curly-braces
-  - 官方文档 - 在 JSX 中通过大括号使用 JavaScript
+- [官方文档 - 在 JSX 中通过大括号使用 JavaScript][1]
   - 这篇文档介绍了以下这些点：
   - 如何使用引号传递字符串
   - 在 JSX 的大括号内引用 JavaScript 变量
   - 在 JSX 的大括号内调用 JavaScript 函数
   - 在 JSX 的大括号内使用 JavaScript 对象
 
-<!--
-⏰ 文章还没仔细读过，找时间仔细看看，能整合到笔记中的内容，到时候搬运进来。
- -->
+[1]: https://zh-hans.react.dev/learn/javascript-in-jsx-with-curly-braces
