@@ -6,7 +6,7 @@
 - [2. 📒 React 中的条件渲染](#2--react-中的条件渲染)
 - [3. 💻 demos.1 - 条件渲染示例](#3--demos1---条件渲染示例)
 - [4. 📒 对比 vue 中的 v-if 和 v-show](#4--对比-vue-中的-v-if-和-v-show)
-- [5. 🔗 References](#5--references)
+- [5. 🔗 引用](#5--引用)
 
 <!-- endregion:toc -->
 
@@ -85,7 +85,7 @@ createRoot(document.getElementById('root')).render(
   - v-if、v-show 是用来做条件渲染用的，当条件满足时才会渲染对应的内容。
 - 在 react 中，并不存在类似的概念，由于 react 中的组件模板（html 标签）是通过 JSX 语法，直接跟 js 写在一起的，并不像 vue 那样，将 template 和 script 分离，所以在 react 中，对于条件渲染的处理逻辑会更加灵活，走 js 那套就行，无论是使用 if 语句还是三目运算符还是逻辑短路的写法，都是 ok 的。
 
-## 5. 🔗 References
+## 5. 🔗 引用
 
 - https://zh-hans.react.dev/learn#conditional-rendering
   - 查看 react 官方文档关于 Conditional rendering 条件渲染的说明

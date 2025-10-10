@@ -9,7 +9,7 @@
 - [5. 🤔 为什么 Reducer 必须是纯函数（Pure Functions）？](#5--为什么-reducer-必须是纯函数pure-functions)
 - [6. 🤔 Action 创建函数（Action Creators）是什么？](#6--action-创建函数action-creators是什么)
 - [7. 📒 redux 常用工具及生态系统](#7--redux-常用工具及生态系统)
-- [8. 🔗 References](#8--references)
+- [8. 🔗 引用](#8--引用)
 
 <!-- endregion:toc -->
 
@@ -174,7 +174,7 @@ function counterReducer(state = 0, action) {
 - [Thunk](https://github.com/reduxjs/redux-thunk) 和 [Saga](https://github.com/redux-saga/redux-saga)
   - 处理异步操作的中间件，使得处理异步逻辑更加简洁和可测试。
 
-## 8. 🔗 References
+## 8. 🔗 引用
 
 - 🔗 redux 官方文档和 github 仓库
   - https://redux.js.org/

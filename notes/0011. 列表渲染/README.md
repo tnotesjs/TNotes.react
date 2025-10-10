@@ -8,7 +8,7 @@
 - [4. 💻 demos.2 - 列表中的 react 元素必须加 key](#4--demos2---列表中的-react-元素必须加-key)
 - [5. 🔍 查看官方文档对于列表渲染时为什么要给元素加 `key` 的说明](#5--查看官方文档对于列表渲染时为什么要给元素加-key-的说明)
 - [6. 💼 面试题：你知道为什么列表渲染需要添加 `key` 吗？](#6--面试题你知道为什么列表渲染需要添加-key-吗)
-- [7. 🔗 References](#7--references)
+- [7. 🔗 引用](#7--引用)
 
 <!-- endregion:toc -->
 
@@ -163,7 +163,7 @@ createRoot(document.getElementById('root')).render(
 - **优化性能**：当数据发生变化时，React 会利用 `key` 来决定是否可以重用现有的元素，而不是重新创建新的元素。这有助于减少不必要的 DOM 操作，提升应用性能。
 - **避免状态混淆**：如果列表项的状态（例如输入框的内容）需要保持跨渲染的一致性，那么正确的 `key` 将确保这些状态不会被错误地分配给其他元素。
 
-## 7. 🔗 References
+## 7. 🔗 引用
 
 - https://zh-hans.react.dev/learn#rendering-lists
   - react - quick start - Rendering lists 列表渲染

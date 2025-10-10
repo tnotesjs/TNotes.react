@@ -7,7 +7,7 @@
 - [3. 🤔 为什么移除 UMD？](#3--为什么移除-umd)
 - [4. 📒 React 19 中的相关的变化及影响](#4--react-19-中的相关的变化及影响)
 - [5. 📒 替代方案：使用 ESM](#5--替代方案使用-esm)
-- [6. 🔗 References](#6--references)
+- [6. 🔗 引用](#6--引用)
 
 <!-- endregion:toc -->
 
@@ -58,7 +58,7 @@ https://esm.sh/
 -->
 ```
 
-## 6. 🔗 References
+## 6. 🔗 引用
 
 - https://zh-hans.react.dev/blog/2024/04/25/react-19-upgrade-guide#umd-builds-removed
   - react blog

@@ -5,7 +5,7 @@
 - [1. 🫧 评价](#1--评价)
 - [2. 📒 before v18 - `ReactDOM.render` 的局限性](#2--before-v18---reactdomrender-的局限性)
 - [3. 📒 after v18 - `ReactDOM.createRoot` 的优势](#3--after-v18---reactdomcreateroot-的优势)
-- [4. 🔗 References](#4--references)
+- [4. 🔗 引用](#4--引用)
 
 <!-- endregion:toc -->
 
@@ -53,7 +53,7 @@ root.render(<App />)
   - 并发机制是对 React 渲染架构的基础性升级，它使渲染过程具备可中断能力。
   - ![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-13-47-17.png)
 
-## 4. 🔗 References
+## 4. 🔗 引用
 
 - https://react.dev/blog/2022/03/08/react-18-upgrade-guide#updates-to-client-rendering-apis
 - https://react.dev/reference/react/Suspense

@@ -6,7 +6,7 @@
 - [2. 📒 JSX 中注释的写法](#2--jsx-中注释的写法)
 - [3. 💻 demos.1 - `//` - 错误的注释格式](#3--demos1------错误的注释格式)
 - [4. 💻 demos.2 - 可以使用 jsx-eslint 检查错误的注释格式 `//`](#4--demos2---可以使用-jsx-eslint-检查错误的注释格式-)
-- [5. 🔗 References](#5--references)
+- [5. 🔗 引用](#5--引用)
 
 <!-- endregion:toc -->
 
@@ -43,8 +43,10 @@
   - ![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-14-21-34.png)
 - 可以这么理解，当你在 JSX 中出现 `// <p>description</p>` 这种写法时，并且开启了 `react/jsx-no-comment-textnodes` 检查，那么 eslint 会认为你希望注释掉这一行代码，但是你缺使用了错误的格式 `//`，JSX 中注释只能使用 `{/* */}` 这种写法，因此 eslint 会检查到错误，并爆红提醒你。
 
-## 5. 🔗 References
+## 5. 🔗 引用
 
-- https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-comment-textnodes.md
+- [react/jsx-no-comment-textnodes][1]
   - jsx-eslint - GitHub - Disallow comments from being inserted as text nodes (react/jsx-no-comment-textnodes)
   - jsx eslint 注释格式检测 - 禁止将注释作为文本节点插入 `react/jsx-no-comment-textnodes`
+
+[1]: https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-comment-textnodes.md

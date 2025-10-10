@@ -7,7 +7,7 @@
 - [3. 💻 demos.2 - 在 JSX 中也可以使用 class 添加样式](#3--demos2---在-jsx-中也可以使用-class-添加样式)
 - [4. 🤔 为什么不能直接使用 `class` 来添加样式，而是使用 `className` 呢？](#4--为什么不能直接使用-class-来添加样式而是使用-classname-呢)
 - [5. **🤔 如果在添加样式的时候，不小心写成了 `class`，样式还能正常添加吗？**](#5--如果在添加样式的时候不小心写成了-class样式还能正常添加吗)
-- [6. 🔗 References](#6--references)
+- [6. 🔗 引用](#6--引用)
 
 <!-- endregion:toc -->
 
@@ -127,7 +127,7 @@ createRoot(document.getElementById('root')).render(
 - 可以。
 - **但是，根据官方文档以及最佳实践，你应该始终使用 className 来指定元素的 CSS 类**。这样可以确保代码的一致性和未来的兼容性，并避免潜在的错误或混淆。
 
-## 6. 🔗 References
+## 6. 🔗 引用
 
 - https://zh-hans.react.dev/learn#adding-styles
   - 查看 react 官方对“添加样式”的说明
