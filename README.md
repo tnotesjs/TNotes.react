@@ -7,21 +7,21 @@
   - [2. 初始 react](#2-初始-react)
   - [3. 环境准备](#3-环境准备)
   - [4. 第一个 react 应用](#4-第一个-react-应用)
-  - [5. 需要注意的一些版本问题](#5-需要注意的一些版本问题)
-  - [6. JSX](#6-jsx)
-  - [7. 组件基础知识](#7-组件基础知识)
-  - [8. 组件调用](#8-组件调用)
-  - [9. 组件属性](#9-组件属性)
-  - [10. 组件状态](#10-组件状态)
-  - [11. 组件生命周期](#11-组件生命周期)
-  - [12. ref](#12-ref)
-  - [13. hooks](#13-hooks)
-  - [14. hoc](#14-hoc)
-  - [15. redux](#15-redux)
-  - [16. 第三方库](#16-第三方库)
-  - [17. 工程化](#17-工程化)
-  - [18. UI 组件库](#18-ui-组件库)
-  - [19. empty](#19-empty)
+  - [5. JSX](#5-jsx)
+  - [6. 组件基础知识](#6-组件基础知识)
+  - [7. 组件调用](#7-组件调用)
+  - [8. 组件属性](#8-组件属性)
+  - [9. 组件状态](#9-组件状态)
+  - [10. 组件生命周期](#10-组件生命周期)
+  - [11. ref](#11-ref)
+  - [12. hooks](#12-hooks)
+  - [13. hoc](#13-hoc)
+  - [14. redux](#14-redux)
+  - [15. 第三方库](#15-第三方库)
+  - [16. 工程化](#16-工程化)
+  - [17. UI 组件库](#17-ui-组件库)
+  - [18. 需要注意的一些版本问题](#18-需要注意的一些版本问题)
+  - [19. 空](#19-空)
 
 <!-- endregion:toc -->
 
@@ -46,13 +46,7 @@
 - [x] [0042. Hello World（v16）](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0042.%20Hello%20World%EF%BC%88v16%EF%BC%89/README.md)
 - [x] [0001. Hello World（v19）](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0001.%20Hello%20World%EF%BC%88v19%EF%BC%89/README.md)
 
-## 5. 需要注意的一些版本问题
-
-- [x] [0043. ReactDOM.render](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0043.%20ReactDOM.render/README.md)
-- [x] [0100. 并发渲染（Concurrent Rendering）](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0100.%20%E5%B9%B6%E5%8F%91%E6%B8%B2%E6%9F%93%EF%BC%88Concurrent%20Rendering%EF%BC%89/README.md)
-- [x] [0041. 不再支持 UMD，推荐使用 ESM](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0041.%20%E4%B8%8D%E5%86%8D%E6%94%AF%E6%8C%81%20UMD%EF%BC%8C%E6%8E%A8%E8%8D%90%E4%BD%BF%E7%94%A8%20ESM/README.md)
-
-## 6. JSX
+## 5. JSX
 
 - [x] [0013. JSX 概述](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0013.%20JSX%20%E6%A6%82%E8%BF%B0/README.md)
 - [x] [0048. HTML Tag vs. React Element vs. JSX Element](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0048.%20HTML%20Tag%20vs.%20React%20Element%20vs.%20JSX%20Element/README.md)
@@ -70,7 +64,7 @@
 - [x] [0016. dangerouslySetInnerHTML](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0016.%20dangerouslySetInnerHTML/README.md)
 - [x] [0054. DOMPurify](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0054.%20DOMPurify/README.md)
 
-## 7. 组件基础知识
+## 6. 组件基础知识
 
 - [x] [0021. 组件的基本组成及核心概念简介](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0021.%20%E7%BB%84%E4%BB%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90%E5%8F%8A%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%E7%AE%80%E4%BB%8B/README.md)
 - [x] [0002. react 组件名的命名规则](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0002.%20react%20%E7%BB%84%E4%BB%B6%E5%90%8D%E7%9A%84%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99/README.md)
@@ -78,32 +72,32 @@
 - [x] [0023. 类组件概述](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0023.%20%E7%B1%BB%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0/README.md)
 - [x] [0024. 单向数据流是什么](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0024.%20%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81%E6%98%AF%E4%BB%80%E4%B9%88/README.md)
 
-## 8. 组件调用
+## 7. 组件调用
 
 - [x] [0049. 函数组件不同调用方式对比：组件式调用 vs. 函数式调用](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0049.%20%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E4%B8%8D%E5%90%8C%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F%E5%AF%B9%E6%AF%94%EF%BC%9A%E7%BB%84%E4%BB%B6%E5%BC%8F%E8%B0%83%E7%94%A8%20vs.%20%E5%87%BD%E6%95%B0%E5%BC%8F%E8%B0%83%E7%94%A8/README.md)
 
-## 9. 组件属性
+## 8. 组件属性
 
 - [x] [0026. 属性默认值](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0026.%20%E5%B1%9E%E6%80%A7%E9%BB%98%E8%AE%A4%E5%80%BC/README.md)
 - [x] [0019. 组件属性的传递和接收](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0019.%20%E7%BB%84%E4%BB%B6%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BC%A0%E9%80%92%E5%92%8C%E6%8E%A5%E6%94%B6/README.md)
 - [x] [0005. 通过 props 和 children 来传递元素内容](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0005.%20%E9%80%9A%E8%BF%87%20props%20%E5%92%8C%20children%20%E6%9D%A5%E4%BC%A0%E9%80%92%E5%85%83%E7%B4%A0%E5%86%85%E5%AE%B9/README.md)
 - [x] [0025. 布尔属性](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0025.%20%E5%B8%83%E5%B0%94%E5%B1%9E%E6%80%A7/README.md)
 
-## 10. 组件状态
+## 9. 组件状态
 
-## 11. 组件生命周期
+## 10. 组件生命周期
 
 - [ ] [0027. 生命周期](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0027.%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/README.md)
 
-## 12. ref
+## 11. ref
 
 - [x] [0018. 实现图片自动轮播的效果](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0018.%20%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E8%87%AA%E5%8A%A8%E8%BD%AE%E6%92%AD%E7%9A%84%E6%95%88%E6%9E%9C/README.md)
 
-## 13. hooks
+## 12. hooks
 
-## 14. hoc
+## 13. hoc
 
-## 15. redux
+## 14. redux
 
 - [ ] [0047. redux 是什么](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0047.%20redux%20%E6%98%AF%E4%BB%80%E4%B9%88/README.md)
 - [ ] [0028. redux 的基本使用](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0028.%20redux%20%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/README.md)
@@ -111,22 +105,28 @@
 - [ ] [0030. redux 中的 action](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0030.%20redux%20%E4%B8%AD%E7%9A%84%20action/README.md)
 - [ ] [0031. 在 redux 中，store、reducer、action 三者之间的关系](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0031.%20%E5%9C%A8%20redux%20%E4%B8%AD%EF%BC%8Cstore%E3%80%81reducer%E3%80%81action%20%E4%B8%89%E8%80%85%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/README.md)
 
-## 16. 第三方库
+## 15. 第三方库
 
 - [x] [0006. react-modal](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0006.%20react-modal/README.md)
 - [x] [0012. react-monaco-editor](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0012.%20react-monaco-editor/README.md)
 - [ ] [0033. react-tooltip](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0033.%20react-tooltip/README.md)
 - [ ] [0038. react-intl](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0038.%20react-intl/README.md)
 
-## 17. 工程化
+## 16. 工程化
 
 - [ ] [0036. 快速搭建一个基于 vite、antd 的 react 项目](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0036.%20%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8E%20vite%E3%80%81antd%20%E7%9A%84%20react%20%E9%A1%B9%E7%9B%AE/README.md)
 
-## 18. UI 组件库
+## 17. UI 组件库
 
 - [ ] [0037. 学习 antd Message 组件的使用](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0037.%20%E5%AD%A6%E4%B9%A0%20antd%20Message%20%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/README.md)
 
-## 19. empty
+## 18. 需要注意的一些版本问题
+
+- [x] [0043. ReactDOM.render](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0043.%20ReactDOM.render/README.md)
+- [x] [0100. 并发渲染（Concurrent Rendering）](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0100.%20%E5%B9%B6%E5%8F%91%E6%B8%B2%E6%9F%93%EF%BC%88Concurrent%20Rendering%EF%BC%89/README.md)
+- [x] [0041. 不再支持 UMD，推荐使用 ESM](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0041.%20%E4%B8%8D%E5%86%8D%E6%94%AF%E6%8C%81%20UMD%EF%BC%8C%E6%8E%A8%E8%8D%90%E4%BD%BF%E7%94%A8%20ESM/README.md)
+
+## 19. 空
 
 - [ ] [0056. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0056.%20xxx/README.md)
 - [ ] [0057. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0057.%20xxx/README.md)
