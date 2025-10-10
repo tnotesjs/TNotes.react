@@ -1,6 +1,10 @@
 const myComp = () => {
-    return <>
-        <div><span></span></div>
-        <div className="foo"></div>
+  return (
+    <>
+      <div>
+        <span></span>
+      </div>
+      <div className="foo"></div>
     </>
+  )
 }
