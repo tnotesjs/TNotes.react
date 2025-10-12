@@ -33,7 +33,8 @@
 
 ## 3. 环境准备
 
-- [x] [0034. 开发 react 项目之前推荐安装的 vscode 插件 - eslint](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0034.%20%E5%BC%80%E5%8F%91%20react%20%E9%A1%B9%E7%9B%AE%E4%B9%8B%E5%89%8D%E6%8E%A8%E8%8D%90%E5%AE%89%E8%A3%85%E7%9A%84%20vscode%20%E6%8F%92%E4%BB%B6%20-%20eslint/README.md)
+- [x] [0064. 环境准备](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0064.%20%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/README.md)
+- [x] [0034. 安装 eslint](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0034.%20%E5%AE%89%E8%A3%85%20eslint/README.md)
 - [x] [0035. 在 vscode 中，让 Emmet 语法支持 JSX](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0035.%20%E5%9C%A8%20vscode%20%E4%B8%AD%EF%BC%8C%E8%AE%A9%20Emmet%20%E8%AF%AD%E6%B3%95%E6%94%AF%E6%8C%81%20JSX/README.md)
 - [x] [0008. 使用 vite 快速初始化一个 react 工程](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0008.%20%E4%BD%BF%E7%94%A8%20vite%20%E5%BF%AB%E9%80%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E4%B8%AA%20react%20%E5%B7%A5%E7%A8%8B/README.md)
 
@@ -121,7 +122,6 @@
 
 ## 15. 空
 
-- [ ] [0064. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0064.%20xxx/README.md)
 - [ ] [0065. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0065.%20xxx/README.md)
 - [ ] [0066. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0066.%20xxx/README.md)
 - [ ] [0067. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0067.%20xxx/README.md)
