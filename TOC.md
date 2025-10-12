@@ -36,7 +36,7 @@
 - [x] [0009. 在 JSX 中使用 JS 表达式](https://tnotesjs.github.io/TNotes.react/notes/0009.%20%E5%9C%A8%20JSX%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20JS%20%E8%A1%A8%E8%BE%BE%E5%BC%8F/README)
 - [x] [0017. 在 JSX 中书写内联样式 style](https://tnotesjs.github.io/TNotes.react/notes/0017.%20%E5%9C%A8%20JSX%20%E4%B8%AD%E4%B9%A6%E5%86%99%E5%86%85%E8%81%94%E6%A0%B7%E5%BC%8F%20style/README)
 - [x] [0004. 使用 className 给元素添加 class](https://tnotesjs.github.io/TNotes.react/notes/0004.%20%E4%BD%BF%E7%94%A8%20className%20%E7%BB%99%E5%85%83%E7%B4%A0%E6%B7%BB%E5%8A%A0%20class/README)
-- [x] [0046. JSX 元素的正确使用及常见错误示例](https://tnotesjs.github.io/TNotes.react/notes/0046.%20JSX%20%E5%85%83%E7%B4%A0%E7%9A%84%E6%AD%A3%E7%A1%AE%E4%BD%BF%E7%94%A8%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E7%A4%BA%E4%BE%8B/README)
+- [x] [0046. JSX 元素的正确使用及常见错误示例【扩展】](https://tnotesjs.github.io/TNotes.react/notes/0046.%20JSX%20%E5%85%83%E7%B4%A0%E7%9A%84%E6%AD%A3%E7%A1%AE%E4%BD%BF%E7%94%A8%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E7%A4%BA%E4%BE%8B%E3%80%90%E6%89%A9%E5%B1%95%E3%80%91/README)
 - [x] [0010. 条件渲染](https://tnotesjs.github.io/TNotes.react/notes/0010.%20%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93/README)
 - [x] [0011. 列表渲染](https://tnotesjs.github.io/TNotes.react/notes/0011.%20%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93/README)
 - [x] [0016. dangerouslySetInnerHTML](https://tnotesjs.github.io/TNotes.react/notes/0016.%20dangerouslySetInnerHTML/README)
