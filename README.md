@@ -66,10 +66,11 @@
 
 ## 6. 组件
 
-- [x] [0021. 组件的基本组成及核心概念简介](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0021.%20%E7%BB%84%E4%BB%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90%E5%8F%8A%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%E7%AE%80%E4%BB%8B/README.md)
+- [ ] [0065. 组件](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0065.%20%E7%BB%84%E4%BB%B6/README.md)
+- [x] [0021. 组件的基本组成及核心概念](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0021.%20%E7%BB%84%E4%BB%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90%E5%8F%8A%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/README.md)
 - [x] [0002. react 组件名的命名规则](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0002.%20react%20%E7%BB%84%E4%BB%B6%E5%90%8D%E7%9A%84%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99/README.md)
-- [x] [0022. 函数组件概述](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0022.%20%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0/README.md)
-- [x] [0023. 类组件概述](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0023.%20%E7%B1%BB%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0/README.md)
+- [x] [0022. 认识函数组件和 Hooks](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0022.%20%E8%AE%A4%E8%AF%86%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E5%92%8C%20Hooks/README.md)
+- [x] [0023. 认识类组件](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0023.%20%E8%AE%A4%E8%AF%86%E7%B1%BB%E7%BB%84%E4%BB%B6/README.md)
 - [x] [0024. 单向数据流是什么](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0024.%20%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81%E6%98%AF%E4%BB%80%E4%B9%88/README.md)
 - [x] [0049. 函数组件不同调用方式对比：组件式调用 vs. 函数式调用](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0049.%20%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E4%B8%8D%E5%90%8C%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F%E5%AF%B9%E6%AF%94%EF%BC%9A%E7%BB%84%E4%BB%B6%E5%BC%8F%E8%B0%83%E7%94%A8%20vs.%20%E5%87%BD%E6%95%B0%E5%BC%8F%E8%B0%83%E7%94%A8/README.md)
 - [x] [0026. 属性默认值](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0026.%20%E5%B1%9E%E6%80%A7%E9%BB%98%E8%AE%A4%E5%80%BC/README.md)
@@ -122,7 +123,6 @@
 
 ## 15. 空
 
-- [ ] [0065. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0065.%20xxx/README.md)
 - [ ] [0066. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0066.%20xxx/README.md)
 - [ ] [0067. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0067.%20xxx/README.md)
 - [ ] [0068. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0068.%20xxx/README.md)
