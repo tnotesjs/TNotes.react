@@ -20,14 +20,11 @@
 
 ## 3. 🤔 `DOMPurify` 是什么？
 
-- DOMPurify
-  - [npm][1]
-  - [GitHub][2]
 - DOMPurify 是一个用于防止 XSS (跨站脚本攻击) 的 JavaScript 库。
 - 它通过清理不安全的 HTML 内容，确保只有安全的 HTML 元素和属性被保留，从而防止潜在的恶意脚本执行。
 - 特点：
   - 速度很快
-  - 可自行配置清理规则
+  - 可配置清理规则
 
 ## 4. 💻 demos.1 - 使用 DOMPurify 净化 html 字符串
 

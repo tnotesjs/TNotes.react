@@ -35,8 +35,8 @@
 
 - [x] [0064. 环境准备](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0064.%20%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/README.md)
 - [x] [0034. 安装 eslint](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0034.%20%E5%AE%89%E8%A3%85%20eslint/README.md)
-- [x] [0035. 在 vscode 中，让 Emmet 语法支持 JSX](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0035.%20%E5%9C%A8%20vscode%20%E4%B8%AD%EF%BC%8C%E8%AE%A9%20Emmet%20%E8%AF%AD%E6%B3%95%E6%94%AF%E6%8C%81%20JSX/README.md)
-- [x] [0008. 使用 vite 快速初始化一个 react 工程](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0008.%20%E4%BD%BF%E7%94%A8%20vite%20%E5%BF%AB%E9%80%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E4%B8%AA%20react%20%E5%B7%A5%E7%A8%8B/README.md)
+- [x] [0035. Emmet 语法支持](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0035.%20Emmet%20%E8%AF%AD%E6%B3%95%E6%94%AF%E6%8C%81/README.md)
+- [x] [0008. react 工程初始化（vite）](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0008.%20react%20%E5%B7%A5%E7%A8%8B%E5%88%9D%E5%A7%8B%E5%8C%96%EF%BC%88vite%EF%BC%89/README.md)
 
 ## 4. 第一个 react 应用
 
@@ -66,7 +66,7 @@
 
 ## 6. 组件
 
-- [ ] [0065. 组件](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0065.%20%E7%BB%84%E4%BB%B6/README.md)
+- [x] [0065. 组件](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0065.%20%E7%BB%84%E4%BB%B6/README.md)
 - [x] [0021. 组件的基本组成及核心概念](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0021.%20%E7%BB%84%E4%BB%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90%E5%8F%8A%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/README.md)
 - [x] [0002. react 组件名的命名规则](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0002.%20react%20%E7%BB%84%E4%BB%B6%E5%90%8D%E7%9A%84%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99/README.md)
 - [x] [0022. 认识函数组件和 Hooks](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0022.%20%E8%AE%A4%E8%AF%86%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E5%92%8C%20Hooks/README.md)

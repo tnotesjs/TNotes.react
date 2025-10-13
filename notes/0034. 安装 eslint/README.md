@@ -63,8 +63,8 @@
 ## 8. 🤔 如何完成 eslint 配置的初始化？
 
 - 安装完插件后，你需要确保项目中已经配置了 ESLint。如果还没有配置，可以通过以下步骤来设置：
-- 1️⃣ **安装 ESLint CLI 工具**：打开终端，运行 `npm install eslint --save-dev` 命令以安装 ESLint 到你的项目中。
-- 2️⃣ **初始化 ESLint**：在项目根目录下运行 `npx eslint --init`，根据提示选择合适的配置选项来生成 `.eslintrc` 文件。这个文件定义了 ESLint 的规则和配置。
+- 1️⃣ 安装 ESLint CLI 工具：打开终端，运行 `npm install eslint --save-dev` 命令以安装 ESLint 到你的项目中。
+- 2️⃣ 初始化 ESLint：在项目根目录下运行 `npx eslint --init`，根据提示选择合适的配置选项来生成 `.eslintrc` 文件。这个文件定义了 ESLint 的规则和配置。
 
 ```bash
 $ npx eslint --init
@@ -102,14 +102,14 @@ $ npx eslint --init
 # Done in 5s
 ```
 
-- 3️⃣ **配置 VS Code**：确保你的工作区或用户设置中启用了 ESLint 插件。你可以在 VS Code 的设置中搜索 `eslint`，并检查是否启用了如 `ESLint: Enable` 等相关选项。
+- 3️⃣ 配置 VS Code：确保你的工作区或用户设置中启用了 ESLint 插件。你可以在 VS Code 的设置中搜索 `eslint`，并检查是否启用了如 `ESLint: Enable` 等相关选项。
 - ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-10-10-10-17-57.png)
 
 ---
 
-- **实时 linting**：一旦配置好，ESLint 插件会在你编辑文件时自动运行，标记出任何不符合配置规则的问题。
-- **修复问题**：很多情况下，ESLint 插件提供了快速修复选项，允许你一键修正某些类型的错误或警告。
-- **自定义规则**：你可以在 `.eslintrc` 文件中调整 ESLint 规则，以适应团队的具体需求或编码标准。
+- 实时 linting：一旦配置好，ESLint 插件会在你编辑文件时自动运行，标记出任何不符合配置规则的问题。
+- 修复问题：很多情况下，ESLint 插件提供了快速修复选项，允许你一键修正某些类型的错误或警告。
+- 自定义规则：你可以在 `.eslintrc` 文件中调整 ESLint 规则，以适应团队的具体需求或编码标准。
 
 ## 9. 🤔 eslint 具体都有哪些配置？具体作用是什么？
 
@@ -120,7 +120,7 @@ $ npx eslint --init
 ::: code-group
 
 ```js [eslint.config.mjs 默认初始内容]
-/**
+/
  * eslint.config.mjs
  * 这是通过上述流程生成的默认的 eslint 的配置文件内容
  */
@@ -128,9 +128,9 @@ import globals from 'globals'
 import pluginJs from '@eslint/js'
 import pluginReact from 'eslint-plugin-react'
 
-/** @type {import('eslint').Linter.Config[]} */
+/ @type {import('eslint').Linter.Config[]} */
 export default [
-  { files: ['**/*.{js,mjs,cjs,jsx}'] },
+  { files: ['/*.{js,mjs,cjs,jsx}'] },
   { languageOptions: { globals: globals.browser } },
   pluginJs.configs.recommended,
   pluginReact.configs.flat.recommended,
@@ -153,10 +153,10 @@ export default [
 
 ## 11. 🤔 使用 eslint 还有哪些需要注意的点？
 
-- **性能影响**
+- 性能影响
   - 虽然 ESLint 对于提高代码质量非常有用，但大量的 lint 规则可能会对编辑器的响应速度产生一定影响。
   - 如果遇到性能问题，可以尝试减少规则数量或禁用一些不常用的规则。
-- **与其他插件的兼容性**
+- 与其他插件的兼容性
   - 确保 ESLint 插件与其他你正在使用的 VS Code 插件（如 Prettier）之间没有冲突。（eslint 和 prettier 都支持对代码进行格式化，如果两者同时启用，并且格式化规则不一致，则会产生冲突。）
   - 通常，可以通过适当的配置解决这些冲突问题。
 

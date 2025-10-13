@@ -25,13 +25,13 @@
 
 ::: code-group
 
-<<< ./demos/1/assets/1.jsx {4} [1✨]
+<<< ./demos/1/assets/1.jsx {4} [1（推荐）]
 
 <<< ./demos/1/assets/2.jsx {4} [2]
 
 <<< ./demos/1/assets/3.jsx {4} [3]
 
-<<< ./demos/1/assets/4.jsx {4-7} [4️✨]
+<<< ./demos/1/assets/4.jsx {4-7} [4️（推荐）]
 
 <<< ./demos/1/assets/5.jsx {4-7} [5️]
 
