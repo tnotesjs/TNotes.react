@@ -73,10 +73,10 @@
 - [x] [0023. 认识类组件](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0023.%20%E8%AE%A4%E8%AF%86%E7%B1%BB%E7%BB%84%E4%BB%B6/README.md)
 - [x] [0024. 单向数据流是什么](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0024.%20%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81%E6%98%AF%E4%BB%80%E4%B9%88/README.md)
 - [x] [0049. 函数组件不同调用方式](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0049.%20%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E4%B8%8D%E5%90%8C%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F/README.md)
-- [x] [0026. 属性默认值](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0026.%20%E5%B1%9E%E6%80%A7%E9%BB%98%E8%AE%A4%E5%80%BC/README.md)
 - [x] [0019. 组件属性的传递和接收](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0019.%20%E7%BB%84%E4%BB%B6%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BC%A0%E9%80%92%E5%92%8C%E6%8E%A5%E6%94%B6/README.md)
-- [x] [0005. 通过 props 和 children 来传递元素内容](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0005.%20%E9%80%9A%E8%BF%87%20props%20%E5%92%8C%20children%20%E6%9D%A5%E4%BC%A0%E9%80%92%E5%85%83%E7%B4%A0%E5%86%85%E5%AE%B9/README.md)
 - [x] [0025. 布尔属性](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0025.%20%E5%B8%83%E5%B0%94%E5%B1%9E%E6%80%A7/README.md)
+- [x] [0026. 属性默认值](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0026.%20%E5%B1%9E%E6%80%A7%E9%BB%98%E8%AE%A4%E5%80%BC/README.md)
+- [x] [0005. 通过 props 和 children 来传递元素内容](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0005.%20%E9%80%9A%E8%BF%87%20props%20%E5%92%8C%20children%20%E6%9D%A5%E4%BC%A0%E9%80%92%E5%85%83%E7%B4%A0%E5%86%85%E5%AE%B9/README.md)
 - [ ] [0027. 生命周期](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0027.%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/README.md)
 
 ## 7. ref
