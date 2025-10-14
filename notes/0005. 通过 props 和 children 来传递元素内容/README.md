@@ -2,23 +2,36 @@
 
 <!-- region:toc -->
 
-- [1. 🫧 评价](#1--评价)
-- [2. 📒 传递“元素内容”](#2--传递元素内容)
-- [3. 💻 demos.1 - 传递元素内容的简单示例](#3--demos1---传递元素内容的简单示例)
+- [1. 🎯 本节内容](#1--本节内容)
+- [2. 🫧 评价](#2--评价)
+- [3. 🤔 `props.children` 是什么？](#3--propschildren-是什么)
+- [4. 🆚 对比 vue 组件中的 slot 插槽](#4--对比-vue-组件中的-slot-插槽)
+- [5. 🤔 “传递元素内容”是什么意思？](#5--传递元素内容是什么意思)
+- [6. 💻 demos.1 - 传递元素内容的简单示例](#6--demos1---传递元素内容的简单示例)
 
 <!-- endregion:toc -->
 
-## 1. 🫧 评价
+## 1. 🎯 本节内容
+
+- `props.children`
+
+## 2. 🫧 评价
+
+- `props.children` 可以用来传递元素内容。
+
+## 3. 🤔 `props.children` 是什么？
 
 - `props.children` 可以接收任何可渲染的 React 元素，并且可以通过检查其是否为空，来针对性地提供默认内容。
 - 除了 `children`，还可以使用其他 `props`（如 `content1` 和 `content2`）来传递特定的内容，并为这些 `props` 定义默认值。
-- 类比 vue 组件中的 slot 插槽
-  - 默认插槽：在 React 中，可以通过 `props.children` 传递默认插槽内容，类似于 Vue 中的默认插槽；
-  - 具名插槽：通过 `props.propName` 属性传递具名插槽内容，其中 `propName` 是我们自定义的属性名，类似于 Vue 中的具名插槽；
-  - react 组件中的 `props.children` - 相当于 vue 中的默认插槽
-  - react 组件中的 `props.xxx` - 相当于 vue 中的具名插槽
 
-## 2. 📒 传递“元素内容”
+## 4. 🆚 对比 vue 组件中的 slot 插槽
+
+- 默认插槽：在 React 中，可以通过 `props.children` 传递默认插槽内容，类似于 Vue 中的默认插槽；
+- 具名插槽：通过 `props.propName` 属性传递具名插槽内容，其中 `propName` 是我们自定义的属性名，类似于 Vue 中的具名插槽；
+- react 组件中的 `props.children` - 相当于 vue 中的默认插槽
+- react 组件中的 `props.xxx` - 相当于 vue 中的具名插槽
+
+## 5. 🤔 “传递元素内容”是什么意思？
 
 - 这里所说的“元素内容”，指的是 react 中的元素，也就是通过 `React.createElement` 创建的元素。
 - 使用 jsx 语法糖编写的 html 模板，其实也是通过 `React.createElement` 创建的元素。
@@ -42,7 +55,7 @@
 // 父组件在调用 Comp 时传递的内容 <h2>test1</h2> 和 <h2>test2</h2>
 ```
 
-## 3. 💻 demos.1 - 传递元素内容的简单示例
+## 6. 💻 demos.1 - 传递元素内容的简单示例
 
 ::: code-group
 

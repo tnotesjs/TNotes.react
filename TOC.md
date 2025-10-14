@@ -53,6 +53,7 @@
 - [x] [0023. 认识类组件](https://tnotesjs.github.io/TNotes.react/notes/0023.%20%E8%AE%A4%E8%AF%86%E7%B1%BB%E7%BB%84%E4%BB%B6/README)
 - [x] [0024. 单向数据流是什么](https://tnotesjs.github.io/TNotes.react/notes/0024.%20%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81%E6%98%AF%E4%BB%80%E4%B9%88/README)
 - [x] [0049. 函数组件不同调用方式](https://tnotesjs.github.io/TNotes.react/notes/0049.%20%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E4%B8%8D%E5%90%8C%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F/README)
+- [x] [0066. 初始属性](https://tnotesjs.github.io/TNotes.react/notes/0066.%20%E5%88%9D%E5%A7%8B%E5%B1%9E%E6%80%A7/README)
 - [x] [0019. 组件属性的传递和接收](https://tnotesjs.github.io/TNotes.react/notes/0019.%20%E7%BB%84%E4%BB%B6%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BC%A0%E9%80%92%E5%92%8C%E6%8E%A5%E6%94%B6/README)
 - [x] [0025. 布尔属性](https://tnotesjs.github.io/TNotes.react/notes/0025.%20%E5%B8%83%E5%B0%94%E5%B1%9E%E6%80%A7/README)
 - [x] [0026. 属性默认值](https://tnotesjs.github.io/TNotes.react/notes/0026.%20%E5%B1%9E%E6%80%A7%E9%BB%98%E8%AE%A4%E5%80%BC/README)
@@ -103,7 +104,6 @@
 
 ## 15. 空
 
-- [ ] [0066. xxx](https://tnotesjs.github.io/TNotes.react/notes/0066.%20xxx/README)
 - [ ] [0067. xxx](https://tnotesjs.github.io/TNotes.react/notes/0067.%20xxx/README)
 - [ ] [0068. xxx](https://tnotesjs.github.io/TNotes.react/notes/0068.%20xxx/README)
 - [ ] [0069. xxx](https://tnotesjs.github.io/TNotes.react/notes/0069.%20xxx/README)
