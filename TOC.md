@@ -13,21 +13,20 @@
 - [x] [0071. NPM 包管理工具](https://tnotesjs.github.io/TNotes.react/notes/0071.%20NPM%20%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/README)
 - [x] [0072. VSCode 安装与配置](https://tnotesjs.github.io/TNotes.react/notes/0072.%20VSCode%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README)
 - [x] [0074. Prettier 安装与配置](https://tnotesjs.github.io/TNotes.react/notes/0074.%20Prettier%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README)
-- [x] [0034. eslint 安装与配置](https://tnotesjs.github.io/TNotes.react/notes/0034.%20eslint%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README)
+- [x] [0034. ESLint 安装与配置](https://tnotesjs.github.io/TNotes.react/notes/0034.%20ESLint%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README)
 - [x] [0035. Emmet 语法支持](https://tnotesjs.github.io/TNotes.react/notes/0035.%20Emmet%20%E8%AF%AD%E6%B3%95%E6%94%AF%E6%8C%81/README)
 - [x] [0008. react 工程初始化（vite）](https://tnotesjs.github.io/TNotes.react/notes/0008.%20react%20%E5%B7%A5%E7%A8%8B%E5%88%9D%E5%A7%8B%E5%8C%96%EF%BC%88vite%EF%BC%89/README)
 
 ## 3. 初始 React
 
-- [x] [0032. react 是什么](https://tnotesjs.github.io/TNotes.react/notes/0032.%20react%20%E6%98%AF%E4%BB%80%E4%B9%88/README)
-- [x] [0055. 为什么说 React 更加原生【AI】](https://tnotesjs.github.io/TNotes.react/notes/0055.%20%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%B4%20React%20%E6%9B%B4%E5%8A%A0%E5%8E%9F%E7%94%9F%E3%80%90AI%E3%80%91/README)
-- [x] [0040. react 官方文档的基本结构](https://tnotesjs.github.io/TNotes.react/notes/0040.%20react%20%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84/README)
+- [x] [0032. React 简介](https://tnotesjs.github.io/TNotes.react/notes/0032.%20React%20%E7%AE%80%E4%BB%8B/README)
+- [x] [0040. React 官方文档导航](https://tnotesjs.github.io/TNotes.react/notes/0040.%20React%20%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E5%AF%BC%E8%88%AA/README)
 - [ ] [0067. React 发展历史](https://tnotesjs.github.io/TNotes.react/notes/0067.%20React%20%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2/README)
 - [ ] [0068. React 设计理念](https://tnotesjs.github.io/TNotes.react/notes/0068.%20React%20%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5/README)
 - [ ] [0069. React 与其他框架对比](https://tnotesjs.github.io/TNotes.react/notes/0069.%20React%20%E4%B8%8E%E5%85%B6%E4%BB%96%E6%A1%86%E6%9E%B6%E5%AF%B9%E6%AF%94/README)
-- [ ] [0075. React 官方文档导航](https://tnotesjs.github.io/TNotes.react/notes/0075.%20React%20%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E5%AF%BC%E8%88%AA/README)
 - [ ] [0076. React 核心 API 概览](https://tnotesjs.github.io/TNotes.react/notes/0076.%20React%20%E6%A0%B8%E5%BF%83%20API%20%E6%A6%82%E8%A7%88/README)
 - [ ] [0077. React 生态系统介绍](https://tnotesjs.github.io/TNotes.react/notes/0077.%20React%20%E7%94%9F%E6%80%81%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/README)
+- [x] [0055. 为什么说 React 更加原生【AI】](https://tnotesjs.github.io/TNotes.react/notes/0055.%20%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%B4%20React%20%E6%9B%B4%E5%8A%A0%E5%8E%9F%E7%94%9F%E3%80%90AI%E3%80%91/README)
 
 ## 4. 第一个 react 应用
 

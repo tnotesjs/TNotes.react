@@ -1,4 +1,4 @@
-# [0034. eslint 安装与配置](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0034.%20eslint%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE)
+# [0034. ESLint 安装与配置](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0034.%20ESLint%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE)
 
 <!-- region:toc -->
 
@@ -19,8 +19,7 @@
 
 ## 1. 🎯 本节内容
 
-- vscode 中的 eslint 插件有什么用
-- 如何引入并使用 eslint
+- eslint
 
 ## 2. 🫧 评价
 

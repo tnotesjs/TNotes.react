@@ -1,8 +1,8 @@
-# [0032. react 是什么](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0032.%20react%20%E6%98%AF%E4%BB%80%E4%B9%88)
+# [0032. React 简介](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0032.%20React%20%E7%AE%80%E4%BB%8B)
 
 <!-- region:toc -->
 
-- [1. 本节内容](#1-本节内容)
+- [1. 🎯 本节内容](#1--本节内容)
 - [2. 🤔 react 是什么？](#2--react-是什么)
 - [3. 🤔 react 官网链接是？](#3--react-官网链接是)
 - [4. 🤔 react 的 github 仓库链接是？](#4--react-的-github-仓库链接是)
@@ -16,7 +16,7 @@
 
 <!-- endregion:toc -->
 
-## 1. 本节内容
+## 1. 🎯 本节内容
 
 - 了解 react 是什么
 - 了解 react 都有哪些特点
