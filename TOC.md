@@ -12,7 +12,6 @@
 - [x] [0070. Node.js 安装与配置](https://tnotesjs.github.io/TNotes.react/notes/0070.%20Node.js%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README)
 - [x] [0071. NPM 包管理工具](https://tnotesjs.github.io/TNotes.react/notes/0071.%20NPM%20%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/README)
 - [x] [0072. VSCode 安装与配置](https://tnotesjs.github.io/TNotes.react/notes/0072.%20VSCode%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README)
-- [ ] [0073. 本地开发服务器](https://tnotesjs.github.io/TNotes.react/notes/0073.%20%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8/README)
 - [x] [0074. Prettier 安装与配置](https://tnotesjs.github.io/TNotes.react/notes/0074.%20Prettier%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README)
 - [x] [0034. eslint 安装与配置](https://tnotesjs.github.io/TNotes.react/notes/0034.%20eslint%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README)
 - [x] [0035. Emmet 语法支持](https://tnotesjs.github.io/TNotes.react/notes/0035.%20Emmet%20%E8%AF%AD%E6%B3%95%E6%94%AF%E6%8C%81/README)
