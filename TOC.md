@@ -197,7 +197,7 @@
 
 ## 24. React 的不同版本与重大变更
 
-- [ ] [0056. react releases](https://tnotesjs.github.io/TNotes.react/notes/0056.%20react%20releases/README)
+
 - [ ] [0057. react v16](https://tnotesjs.github.io/TNotes.react/notes/0057.%20react%20v16/README)
 - [ ] [0058. react v17](https://tnotesjs.github.io/TNotes.react/notes/0058.%20react%20v17/README)
 - [ ] [0059. react v18](https://tnotesjs.github.io/TNotes.react/notes/0059.%20react%20v18/README)
