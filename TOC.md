@@ -1,22 +1,22 @@
 # react
 
 
-## 1. 学习路线&学习资源
+## 1. 学习资料
 
 - [x] [0101. react roadmap](https://tnotesjs.github.io/TNotes.react/notes/0101.%20react%20roadmap/README)
 
-## 2. 初始 react
-
-- [x] [0032. react 是什么](https://tnotesjs.github.io/TNotes.react/notes/0032.%20react%20%E6%98%AF%E4%BB%80%E4%B9%88/README)
-- [x] [0055. 为什么说 React 更加原生【扩展】](https://tnotesjs.github.io/TNotes.react/notes/0055.%20%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%B4%20React%20%E6%9B%B4%E5%8A%A0%E5%8E%9F%E7%94%9F%E3%80%90%E6%89%A9%E5%B1%95%E3%80%91/README)
-- [x] [0040. react 官方文档的基本结构](https://tnotesjs.github.io/TNotes.react/notes/0040.%20react%20%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84/README)
-
-## 3. 环境准备
+## 2. 环境准备
 
 - [x] [0064. 环境准备](https://tnotesjs.github.io/TNotes.react/notes/0064.%20%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/README)
 - [x] [0034. 安装 eslint](https://tnotesjs.github.io/TNotes.react/notes/0034.%20%E5%AE%89%E8%A3%85%20eslint/README)
 - [x] [0035. Emmet 语法支持](https://tnotesjs.github.io/TNotes.react/notes/0035.%20Emmet%20%E8%AF%AD%E6%B3%95%E6%94%AF%E6%8C%81/README)
 - [x] [0008. react 工程初始化（vite）](https://tnotesjs.github.io/TNotes.react/notes/0008.%20react%20%E5%B7%A5%E7%A8%8B%E5%88%9D%E5%A7%8B%E5%8C%96%EF%BC%88vite%EF%BC%89/README)
+
+## 3. 初始 React
+
+- [x] [0032. react 是什么](https://tnotesjs.github.io/TNotes.react/notes/0032.%20react%20%E6%98%AF%E4%BB%80%E4%B9%88/README)
+- [x] [0055. 为什么说 React 更加原生【AI】](https://tnotesjs.github.io/TNotes.react/notes/0055.%20%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%B4%20React%20%E6%9B%B4%E5%8A%A0%E5%8E%9F%E7%94%9F%E3%80%90AI%E3%80%91/README)
+- [x] [0040. react 官方文档的基本结构](https://tnotesjs.github.io/TNotes.react/notes/0040.%20react%20%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84/README)
 
 ## 4. 第一个 react 应用
 
@@ -44,7 +44,7 @@
 - [x] [0016. dangerouslySetInnerHTML](https://tnotesjs.github.io/TNotes.react/notes/0016.%20dangerouslySetInnerHTML/README)
 - [x] [0054. DOMPurify](https://tnotesjs.github.io/TNotes.react/notes/0054.%20DOMPurify/README)
 
-## 6. 组件
+## 6. 组件基础
 
 - [x] [0065. 组件](https://tnotesjs.github.io/TNotes.react/notes/0065.%20%E7%BB%84%E4%BB%B6/README)
 - [x] [0021. 组件的基本组成及核心概念](https://tnotesjs.github.io/TNotes.react/notes/0021.%20%E7%BB%84%E4%BB%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90%E5%8F%8A%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/README)
@@ -52,23 +52,39 @@
 - [x] [0022. 认识函数组件和 Hooks](https://tnotesjs.github.io/TNotes.react/notes/0022.%20%E8%AE%A4%E8%AF%86%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E5%92%8C%20Hooks/README)
 - [x] [0023. 认识类组件](https://tnotesjs.github.io/TNotes.react/notes/0023.%20%E8%AE%A4%E8%AF%86%E7%B1%BB%E7%BB%84%E4%BB%B6/README)
 - [x] [0024. 单向数据流是什么](https://tnotesjs.github.io/TNotes.react/notes/0024.%20%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81%E6%98%AF%E4%BB%80%E4%B9%88/README)
+
+## 7. Props
+
 - [x] [0049. 函数组件不同调用方式](https://tnotesjs.github.io/TNotes.react/notes/0049.%20%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E4%B8%8D%E5%90%8C%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F/README)
 - [x] [0066. 初始属性](https://tnotesjs.github.io/TNotes.react/notes/0066.%20%E5%88%9D%E5%A7%8B%E5%B1%9E%E6%80%A7/README)
 - [x] [0019. 组件属性的传递和接收](https://tnotesjs.github.io/TNotes.react/notes/0019.%20%E7%BB%84%E4%BB%B6%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BC%A0%E9%80%92%E5%92%8C%E6%8E%A5%E6%94%B6/README)
 - [x] [0025. 布尔属性](https://tnotesjs.github.io/TNotes.react/notes/0025.%20%E5%B8%83%E5%B0%94%E5%B1%9E%E6%80%A7/README)
 - [x] [0026. 属性默认值](https://tnotesjs.github.io/TNotes.react/notes/0026.%20%E5%B1%9E%E6%80%A7%E9%BB%98%E8%AE%A4%E5%80%BC/README)
 - [x] [0005. 通过 props 和 children 来传递元素内容](https://tnotesjs.github.io/TNotes.react/notes/0005.%20%E9%80%9A%E8%BF%87%20props%20%E5%92%8C%20children%20%E6%9D%A5%E4%BC%A0%E9%80%92%E5%85%83%E7%B4%A0%E5%86%85%E5%AE%B9/README)
+
+## 8. State
+
+## 9. 组件通信
+
+## 10. 生命周期
+
 - [ ] [0027. 生命周期](https://tnotesjs.github.io/TNotes.react/notes/0027.%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/README)
 
-## 7. ref
+## 11. Hooks
+
+## 12. ref
 
 - [x] [0018. 实现图片自动轮播的效果](https://tnotesjs.github.io/TNotes.react/notes/0018.%20%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E8%87%AA%E5%8A%A8%E8%BD%AE%E6%92%AD%E7%9A%84%E6%95%88%E6%9E%9C/README)
 
-## 8. hooks
+## 13. 事件处理
 
-## 9. hoc
+## 14. 表单处理
 
-## 10. redux
+## 15. 高阶组件（HOC）
+
+## 16. Context
+
+## 17. Redux / 状态管理
 
 - [ ] [0047. redux 是什么](https://tnotesjs.github.io/TNotes.react/notes/0047.%20redux%20%E6%98%AF%E4%BB%80%E4%B9%88/README)
 - [ ] [0028. redux 的基本使用](https://tnotesjs.github.io/TNotes.react/notes/0028.%20redux%20%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/README)
@@ -76,22 +92,28 @@
 - [ ] [0030. redux 中的 action](https://tnotesjs.github.io/TNotes.react/notes/0030.%20redux%20%E4%B8%AD%E7%9A%84%20action/README)
 - [ ] [0031. 在 redux 中，store、reducer、action 三者之间的关系](https://tnotesjs.github.io/TNotes.react/notes/0031.%20%E5%9C%A8%20redux%20%E4%B8%AD%EF%BC%8Cstore%E3%80%81reducer%E3%80%81action%20%E4%B8%89%E8%80%85%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/README)
 
-## 11. 第三方库
+## 18. 路由（React Router）
+
+## 19. 第三方库集成
 
 - [x] [0006. react-modal](https://tnotesjs.github.io/TNotes.react/notes/0006.%20react-modal/README)
 - [x] [0012. react-monaco-editor](https://tnotesjs.github.io/TNotes.react/notes/0012.%20react-monaco-editor/README)
 - [ ] [0033. react-tooltip](https://tnotesjs.github.io/TNotes.react/notes/0033.%20react-tooltip/README)
 - [ ] [0038. react-intl](https://tnotesjs.github.io/TNotes.react/notes/0038.%20react-intl/README)
 
-## 12. 工程化
+## 20. 工程化与脚手架
 
 - [ ] [0036. 快速搭建一个基于 vite、antd 的 react 项目](https://tnotesjs.github.io/TNotes.react/notes/0036.%20%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8E%20vite%E3%80%81antd%20%E7%9A%84%20react%20%E9%A1%B9%E7%9B%AE/README)
 
-## 13. UI 组件库
+## 21. UI 组件库
 
 - [ ] [0037. 学习 antd Message 组件的使用](https://tnotesjs.github.io/TNotes.react/notes/0037.%20%E5%AD%A6%E4%B9%A0%20antd%20Message%20%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/README)
 
-## 14. react 的不同版本
+## 22. 测试与调试
+
+## 23. 性能优化
+
+## 24. React 的不同版本与重大变更
 
 - [ ] [0056. react releases](https://tnotesjs.github.io/TNotes.react/notes/0056.%20react%20releases/README)
 - [ ] [0057. react v16](https://tnotesjs.github.io/TNotes.react/notes/0057.%20react%20v16/README)
@@ -102,38 +124,38 @@
 - [x] [0100. 并发渲染（Concurrent Rendering）](https://tnotesjs.github.io/TNotes.react/notes/0100.%20%E5%B9%B6%E5%8F%91%E6%B8%B2%E6%9F%93%EF%BC%88Concurrent%20Rendering%EF%BC%89/README)
 - [x] [0041. 不再支持 UMD，推荐使用 ESM](https://tnotesjs.github.io/TNotes.react/notes/0041.%20%E4%B8%8D%E5%86%8D%E6%94%AF%E6%8C%81%20UMD%EF%BC%8C%E6%8E%A8%E8%8D%90%E4%BD%BF%E7%94%A8%20ESM/README)
 
-## 15. 空
+## 25. 空
 
-- [ ] [0067. xxx](https://tnotesjs.github.io/TNotes.react/notes/0067.%20xxx/README)
-- [ ] [0068. xxx](https://tnotesjs.github.io/TNotes.react/notes/0068.%20xxx/README)
-- [ ] [0069. xxx](https://tnotesjs.github.io/TNotes.react/notes/0069.%20xxx/README)
-- [ ] [0070. xxx](https://tnotesjs.github.io/TNotes.react/notes/0070.%20xxx/README)
-- [ ] [0071. xxx](https://tnotesjs.github.io/TNotes.react/notes/0071.%20xxx/README)
-- [ ] [0072. xxx](https://tnotesjs.github.io/TNotes.react/notes/0072.%20xxx/README)
-- [ ] [0073. xxx](https://tnotesjs.github.io/TNotes.react/notes/0073.%20xxx/README)
-- [ ] [0074. xxx](https://tnotesjs.github.io/TNotes.react/notes/0074.%20xxx/README)
-- [ ] [0075. xxx](https://tnotesjs.github.io/TNotes.react/notes/0075.%20xxx/README)
-- [ ] [0076. xxx](https://tnotesjs.github.io/TNotes.react/notes/0076.%20xxx/README)
-- [ ] [0077. xxx](https://tnotesjs.github.io/TNotes.react/notes/0077.%20xxx/README)
-- [ ] [0078. xxx](https://tnotesjs.github.io/TNotes.react/notes/0078.%20xxx/README)
-- [ ] [0079. xxx](https://tnotesjs.github.io/TNotes.react/notes/0079.%20xxx/README)
-- [ ] [0080. xxx](https://tnotesjs.github.io/TNotes.react/notes/0080.%20xxx/README)
-- [ ] [0081. xxx](https://tnotesjs.github.io/TNotes.react/notes/0081.%20xxx/README)
-- [ ] [0082. xxx](https://tnotesjs.github.io/TNotes.react/notes/0082.%20xxx/README)
-- [ ] [0083. xxx](https://tnotesjs.github.io/TNotes.react/notes/0083.%20xxx/README)
-- [ ] [0084. xxx](https://tnotesjs.github.io/TNotes.react/notes/0084.%20xxx/README)
-- [ ] [0085. xxx](https://tnotesjs.github.io/TNotes.react/notes/0085.%20xxx/README)
-- [ ] [0086. xxx](https://tnotesjs.github.io/TNotes.react/notes/0086.%20xxx/README)
-- [ ] [0087. xxx](https://tnotesjs.github.io/TNotes.react/notes/0087.%20xxx/README)
-- [ ] [0088. xxx](https://tnotesjs.github.io/TNotes.react/notes/0088.%20xxx/README)
-- [ ] [0089. xxx](https://tnotesjs.github.io/TNotes.react/notes/0089.%20xxx/README)
-- [ ] [0090. xxx](https://tnotesjs.github.io/TNotes.react/notes/0090.%20xxx/README)
-- [ ] [0091. xxx](https://tnotesjs.github.io/TNotes.react/notes/0091.%20xxx/README)
-- [ ] [0092. xxx](https://tnotesjs.github.io/TNotes.react/notes/0092.%20xxx/README)
-- [ ] [0093. xxx](https://tnotesjs.github.io/TNotes.react/notes/0093.%20xxx/README)
-- [ ] [0094. xxx](https://tnotesjs.github.io/TNotes.react/notes/0094.%20xxx/README)
-- [ ] [0095. xxx](https://tnotesjs.github.io/TNotes.react/notes/0095.%20xxx/README)
-- [ ] [0096. xxx](https://tnotesjs.github.io/TNotes.react/notes/0096.%20xxx/README)
-- [ ] [0097. xxx](https://tnotesjs.github.io/TNotes.react/notes/0097.%20xxx/README)
-- [ ] [0098. xxx](https://tnotesjs.github.io/TNotes.react/notes/0098.%20xxx/README)
-- [ ] [0099. xxx](https://tnotesjs.github.io/TNotes.react/notes/0099.%20xxx/README)
+- [ ] [0067. React 发展历史](https://tnotesjs.github.io/TNotes.react/notes/0067.%20React%20%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2/README)
+- [ ] [0068. React 设计理念](https://tnotesjs.github.io/TNotes.react/notes/0068.%20React%20%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5/README)
+- [ ] [0069. React 与其他框架对比](https://tnotesjs.github.io/TNotes.react/notes/0069.%20React%20%E4%B8%8E%E5%85%B6%E4%BB%96%E6%A1%86%E6%9E%B6%E5%AF%B9%E6%AF%94/README)
+- [ ] [0070. Node.js 安装与配置](https://tnotesjs.github.io/TNotes.react/notes/0070.%20Node.js%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README)
+- [ ] [0071. 包管理工具](https://tnotesjs.github.io/TNotes.react/notes/0071.%20%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/README)
+- [ ] [0072. 编辑器推荐与配置](https://tnotesjs.github.io/TNotes.react/notes/0072.%20%E7%BC%96%E8%BE%91%E5%99%A8%E6%8E%A8%E8%8D%90%E4%B8%8E%E9%85%8D%E7%BD%AE/README)
+- [ ] [0073. 本地开发服务器](https://tnotesjs.github.io/TNotes.react/notes/0073.%20%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8/README)
+- [ ] [0074. 代码格式化与规范](https://tnotesjs.github.io/TNotes.react/notes/0074.%20%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8E%E8%A7%84%E8%8C%83/README)
+- [ ] [0075. React 官方文档导航](https://tnotesjs.github.io/TNotes.react/notes/0075.%20React%20%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E5%AF%BC%E8%88%AA/README)
+- [ ] [0076. React 核心 API 概览](https://tnotesjs.github.io/TNotes.react/notes/0076.%20React%20%E6%A0%B8%E5%BF%83%20API%20%E6%A6%82%E8%A7%88/README)
+- [ ] [0077. React 生态系统介绍](https://tnotesjs.github.io/TNotes.react/notes/0077.%20React%20%E7%94%9F%E6%80%81%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/README)
+- [ ] [0078. 项目结构设计](https://tnotesjs.github.io/TNotes.react/notes/0078.%20%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/README)
+- [ ] [0079. 入口文件解析](https://tnotesjs.github.io/TNotes.react/notes/0079.%20%E5%85%A5%E5%8F%A3%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/README)
+- [ ] [0080. 渲染流程分析](https://tnotesjs.github.io/TNotes.react/notes/0080.%20%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B%E5%88%86%E6%9E%90/README)
+- [ ] [0081. props 类型校验](https://tnotesjs.github.io/TNotes.react/notes/0081.%20props%20%E7%B1%BB%E5%9E%8B%E6%A0%A1%E9%AA%8C/README)
+- [ ] [0082. state 初始化](https://tnotesjs.github.io/TNotes.react/notes/0082.%20state%20%E5%88%9D%E5%A7%8B%E5%8C%96/README)
+- [ ] [0083. state 更新机制](https://tnotesjs.github.io/TNotes.react/notes/0083.%20state%20%E6%9B%B4%E6%96%B0%E6%9C%BA%E5%88%B6/README)
+- [ ] [0084. 异步更新与批处理](https://tnotesjs.github.io/TNotes.react/notes/0084.%20%E5%BC%82%E6%AD%A5%E6%9B%B4%E6%96%B0%E4%B8%8E%E6%89%B9%E5%A4%84%E7%90%86/README)
+- [ ] [0085. useState、useReducer 对比](https://tnotesjs.github.io/TNotes.react/notes/0085.%20useState%E3%80%81useReducer%20%E5%AF%B9%E6%AF%94/README)
+- [ ] [0086. 父子组件通信](https://tnotesjs.github.io/TNotes.react/notes/0086.%20%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/README)
+- [ ] [0087. 兄弟组件通信](https://tnotesjs.github.io/TNotes.react/notes/0087.%20%E5%85%84%E5%BC%9F%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/README)
+- [ ] [0088. 跨层级通信](https://tnotesjs.github.io/TNotes.react/notes/0088.%20%E8%B7%A8%E5%B1%82%E7%BA%A7%E9%80%9A%E4%BF%A1/README)
+- [ ] [0089. 事件传递与回调](https://tnotesjs.github.io/TNotes.react/notes/0089.%20%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92%E4%B8%8E%E5%9B%9E%E8%B0%83/README)
+- [ ] [0090. 生命周期方法详解](https://tnotesjs.github.io/TNotes.react/notes/0090.%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/README)
+- [ ] [0091. 挂载、更新、卸载流程](https://tnotesjs.github.io/TNotes.react/notes/0091.%20%E6%8C%82%E8%BD%BD%E3%80%81%E6%9B%B4%E6%96%B0%E3%80%81%E5%8D%B8%E8%BD%BD%E6%B5%81%E7%A8%8B/README)
+- [ ] [0092. useEffect 与生命周期对比](https://tnotesjs.github.io/TNotes.react/notes/0092.%20useEffect%20%E4%B8%8E%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%AF%B9%E6%AF%94/README)
+- [ ] [0093. 常用 Hooks（useState、useEffect、useRef）](https://tnotesjs.github.io/TNotes.react/notes/0093.%20%E5%B8%B8%E7%94%A8%20Hooks%EF%BC%88useState%E3%80%81useEffect%E3%80%81useRef%EF%BC%89/README)
+- [ ] [0094. 自定义 Hooks](https://tnotesjs.github.io/TNotes.react/notes/0094.%20%E8%87%AA%E5%AE%9A%E4%B9%89%20Hooks/README)
+- [ ] [0095. Hooks 规则与陷阱](https://tnotesjs.github.io/TNotes.react/notes/0095.%20Hooks%20%E8%A7%84%E5%88%99%E4%B8%8E%E9%99%B7%E9%98%B1/README)
+- [ ] [0096. useMemo、useCallback 性能优化](https://tnotesjs.github.io/TNotes.react/notes/0096.%20useMemo%E3%80%81useCallback%20%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/README)
+- [ ] [0097. ref 基本用法](https://tnotesjs.github.io/TNotes.react/notes/0097.%20ref%20%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/README)
+- [ ] [0098. forwardRef 转发](https://tnotesjs.github.io/TNotes.react/notes/0098.%20forwardRef%20%E8%BD%AC%E5%8F%91/README)
+- [ ] [0099. ref 与 DOM 操作](https://tnotesjs.github.io/TNotes.react/notes/0099.%20ref%20%E4%B8%8E%20DOM%20%E6%93%8D%E4%BD%9C/README)
