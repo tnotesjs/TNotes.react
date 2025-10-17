@@ -39,7 +39,7 @@
 ## 2. 环境准备
 
 - [x] [0064. 环境准备](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0064.%20%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/README.md)
-- [ ] [0070. Node.js 安装与配置](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0070.%20Node.js%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README.md)
+- [x] [0070. Node.js 安装与配置](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0070.%20Node.js%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README.md)
 - [ ] [0071. 包管理工具](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0071.%20%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/README.md)
 - [ ] [0072. 编辑器推荐与配置](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0072.%20%E7%BC%96%E8%BE%91%E5%99%A8%E6%8E%A8%E8%8D%90%E4%B8%8E%E9%85%8D%E7%BD%AE/README.md)
 - [ ] [0073. 本地开发服务器](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0073.%20%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8/README.md)
