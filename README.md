@@ -40,11 +40,11 @@
 
 - [x] [0064. 环境准备](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0064.%20%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/README.md)
 - [x] [0070. Node.js 安装与配置](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0070.%20Node.js%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README.md)
-- [ ] [0071. 包管理工具](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0071.%20%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/README.md)
-- [ ] [0072. 编辑器推荐与配置](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0072.%20%E7%BC%96%E8%BE%91%E5%99%A8%E6%8E%A8%E8%8D%90%E4%B8%8E%E9%85%8D%E7%BD%AE/README.md)
+- [x] [0071. NPM 包管理工具](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0071.%20NPM%20%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/README.md)
+- [x] [0072. VSCode 安装与配置](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0072.%20VSCode%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README.md)
 - [ ] [0073. 本地开发服务器](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0073.%20%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8/README.md)
-- [ ] [0074. 代码格式化与规范](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0074.%20%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8E%E8%A7%84%E8%8C%83/README.md)
-- [x] [0034. 安装 eslint](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0034.%20%E5%AE%89%E8%A3%85%20eslint/README.md)
+- [ ] [0074. Prettier 安装与配置](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0074.%20Prettier%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README.md)
+- [x] [0034. eslint 安装与配置](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0034.%20eslint%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README.md)
 - [x] [0035. Emmet 语法支持](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0035.%20Emmet%20%E8%AF%AD%E6%B3%95%E6%94%AF%E6%8C%81/README.md)
 - [x] [0008. react 工程初始化（vite）](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0008.%20react%20%E5%B7%A5%E7%A8%8B%E5%88%9D%E5%A7%8B%E5%8C%96%EF%BC%88vite%EF%BC%89/README.md)
 
