@@ -34,6 +34,7 @@
 ## 1. 学习资料
 
 - [x] [0101. react roadmap](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0101.%20react%20roadmap/README.md)
+- [x] [0007. 菜鸟教程](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0007.%20%E8%8F%9C%E9%B8%9F%E6%95%99%E7%A8%8B/README.md)
 
 ## 2. 环境准备
 
@@ -260,4 +261,3 @@
 - [ ] [0154. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0154.%20xxx/README.md)
 - [ ] [0155. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0155.%20xxx/README.md)
 - [ ] [0156. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0156.%20xxx/README.md)
-- [ ] [0007. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0007.%20xxx/README.md)

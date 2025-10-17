@@ -4,7 +4,7 @@
 
 - [1. 🎯 本节内容](#1--本节内容)
 - [2. 🫧 评价](#2--评价)
-- [3. 🔍 TNotes.react 学习路线](#3--tnotesreact-学习路线)
+- [3. ⏰ TODO](#3--todo)
 - [4. 🔍 roadmap 上的 react 学习路线](#4--roadmap-上的-react-学习路线)
 - [5. 🔗 引用](#5--引用)
 
@@ -17,34 +17,11 @@
 ## 2. 🫧 评价
 
 - 该笔记记录了来自 roadmap 上的 react 学习路线，如果不知道从何学起的话，可以参考一下这个开源的 react 学习路线。
+- 如果你有自己的 React 学习路线，也可以到 roadmap 上自行编辑类似的学习路线。
 
-## 3. 🔍 TNotes.react 学习路线
+## 3. ⏰ TODO
 
-- 环境准备
-- 初始 React
-- JSX 与表达式
-- 第一个 React 应用
-- 组件基础
-- props & state
-- 组件通信
-- 生命周期
-- Hooks
-- ref
-- 条件渲染与列表渲染
-- 事件处理
-- 表单处理
-- 高阶组件（HOC）
-- Context
-- Redux / 状态管理
-- 路由（React Router）
-- 第三方库集成
-- 工程化与脚手架
-- UI 组件库
-- 测试与调试
-- 性能优化
-- React 的不同版本与新特性
-
-> 可结合 TNotes.react 的各笔记目录，按阶段逐步学习和查阅相关内容。
+- 完成 TNotes.react 知识库之后，去撸一个 TNotes 的 React 学习路线。
 
 ## 4. 🔍 roadmap 上的 react 学习路线
 
