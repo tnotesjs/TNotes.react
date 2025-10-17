@@ -13,7 +13,7 @@
 - [x] [0071. NPM 包管理工具](https://tnotesjs.github.io/TNotes.react/notes/0071.%20NPM%20%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/README)
 - [x] [0072. VSCode 安装与配置](https://tnotesjs.github.io/TNotes.react/notes/0072.%20VSCode%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README)
 - [x] [0074. Prettier 安装与配置](https://tnotesjs.github.io/TNotes.react/notes/0074.%20Prettier%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README)
-- [x] [0034. ESLint 安装与配置](https://tnotesjs.github.io/TNotes.react/notes/0034.%20ESLint%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README)
+- [x] [0034. eslint 安装与配置](https://tnotesjs.github.io/TNotes.react/notes/0034.%20eslint%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README)
 - [x] [0035. Emmet 语法支持](https://tnotesjs.github.io/TNotes.react/notes/0035.%20Emmet%20%E8%AF%AD%E6%B3%95%E6%94%AF%E6%8C%81/README)
 - [x] [0008. react 工程初始化（vite）](https://tnotesjs.github.io/TNotes.react/notes/0008.%20react%20%E5%B7%A5%E7%A8%8B%E5%88%9D%E5%A7%8B%E5%8C%96%EF%BC%88vite%EF%BC%89/README)
 
