@@ -51,7 +51,7 @@
 
 - [x] [0032. React 简介](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0032.%20React%20%E7%AE%80%E4%BB%8B/README.md)
 - [x] [0040. React 官方文档导航](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0040.%20React%20%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E5%AF%BC%E8%88%AA/README.md)
-- [ ] [0067. React 发展历史](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0067.%20React%20%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2/README.md)
+- [x] [0067. React 发展历史](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0067.%20React%20%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2/README.md)
 - [ ] [0068. React 设计理念](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0068.%20React%20%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5/README.md)
 - [ ] [0069. React 与其他框架对比](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0069.%20React%20%E4%B8%8E%E5%85%B6%E4%BB%96%E6%A1%86%E6%9E%B6%E5%AF%B9%E6%AF%94/README.md)
 - [ ] [0076. React 核心 API 概览](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0076.%20React%20%E6%A0%B8%E5%BF%83%20API%20%E6%A6%82%E8%A7%88/README.md)
@@ -92,10 +92,10 @@
 - [x] [0022. 认识函数组件和 Hooks](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0022.%20%E8%AE%A4%E8%AF%86%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E5%92%8C%20Hooks/README.md)
 - [x] [0023. 认识类组件](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0023.%20%E8%AE%A4%E8%AF%86%E7%B1%BB%E7%BB%84%E4%BB%B6/README.md)
 - [x] [0024. 单向数据流是什么](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0024.%20%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81%E6%98%AF%E4%BB%80%E4%B9%88/README.md)
+- [x] [0049. 函数组件不同调用方式](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0049.%20%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E4%B8%8D%E5%90%8C%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F/README.md)
 
 ## 7. Props
 
-- [x] [0049. 函数组件不同调用方式](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0049.%20%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E4%B8%8D%E5%90%8C%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F/README.md)
 - [x] [0066. 初始属性](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0066.%20%E5%88%9D%E5%A7%8B%E5%B1%9E%E6%80%A7/README.md)
 - [x] [0019. 组件属性的传递和接收](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0019.%20%E7%BB%84%E4%BB%B6%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BC%A0%E9%80%92%E5%92%8C%E6%8E%A5%E6%94%B6/README.md)
 - [x] [0025. 布尔属性](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0025.%20%E5%B8%83%E5%B0%94%E5%B1%9E%E6%80%A7/README.md)
@@ -226,7 +226,6 @@
 - [ ] [0138. 代码分割与懒加载](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0138.%20%E4%BB%A3%E7%A0%81%E5%88%86%E5%89%B2%E4%B8%8E%E6%87%92%E5%8A%A0%E8%BD%BD/README.md)
 
 ## 24. React 的不同版本与重大变更
-
 
 - [ ] [0057. react v16](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0057.%20react%20v16/README.md)
 - [ ] [0058. react v17](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0058.%20react%20v17/README.md)
