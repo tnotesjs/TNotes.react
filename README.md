@@ -48,15 +48,17 @@
 
 - [x] [0101. react roadmap](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0101.%20react%20roadmap/README.md)
 - [x] [0007. 菜鸟教程](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0007.%20%E8%8F%9C%E9%B8%9F%E6%95%99%E7%A8%8B/README.md)
-- [ ] [0143. React 官方文档（react.dev）](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0143.%20React%20%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%EF%BC%88react.dev%EF%BC%89/README.md)
-- [ ] [0144. React 中文社区与论坛](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0144.%20React%20%E4%B8%AD%E6%96%87%E7%A4%BE%E5%8C%BA%E4%B8%8E%E8%AE%BA%E5%9D%9B/README.md)
+- [x] [0040. React 官方文档](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0040.%20React%20%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3/README.md)
+- [x] [0144. React 中文社区与论坛](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0144.%20React%20%E4%B8%AD%E6%96%87%E7%A4%BE%E5%8C%BA%E4%B8%8E%E8%AE%BA%E5%9D%9B/README.md)
 
-## 2. 环境准备reload
+## 2. 环境准备
 
 - [x] [0064. 环境准备](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0064.%20%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/README.md)
 - [x] [0070. Node.js 安装与配置](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0070.%20Node.js%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README.md)
-- [x] [0071. NPM 包管理工具](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0071.%20NPM%20%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/README.md)
-- [ ] [0145. Yarn 或 PNPM 包管理工具](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0145.%20Yarn%20%E6%88%96%20PNPM%20%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/README.md)
+- [x] [0071. NPM 包管理器](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0071.%20NPM%20%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/README.md)
+- [ ] [0143. YARN 包管理器](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0143.%20YARN%20%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/README.md)
+- [ ] [0365. PNPM 包管理器](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0365.%20PNPM%20%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/README.md)
+- [ ] [0145. NPM vs. Yarn vs. PNPM](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0145.%20NPM%20vs.%20Yarn%20vs.%20PNPM/README.md)
 - [x] [0072. VSCode 安装与配置](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0072.%20VSCode%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README.md)
 - [x] [0074. Prettier 安装与配置](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0074.%20Prettier%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README.md)
 - [x] [0034. eslint 安装与配置](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0034.%20eslint%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README.md)
@@ -67,7 +69,6 @@
 ## 3. 初识 React
 
 - [x] [0032. React 简介](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0032.%20React%20%E7%AE%80%E4%BB%8B/README.md)
-- [x] [0040. React 官方文档导航](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0040.%20React%20%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E5%AF%BC%E8%88%AA/README.md)
 - [x] [0067. React 发展历史](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0067.%20React%20%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2/README.md)
 - [ ] [0068. React 设计理念](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0068.%20React%20%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5/README.md)
 - [ ] [0069. React 与其他框架对比](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0069.%20React%20%E4%B8%8E%E5%85%B6%E4%BB%96%E6%A1%86%E6%9E%B6%E5%AF%B9%E6%AF%94/README.md)
@@ -518,7 +519,6 @@
 
 ## 38. ⏰ pending
 
-- [ ] [0365. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0365.%20xxx/README.md)
 - [ ] [0366. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0366.%20xxx/README.md)
 - [ ] [0367. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0367.%20xxx/README.md)
 - [ ] [0368. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0368.%20xxx/README.md)
@@ -554,11 +554,7 @@
 - [ ] [0398. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0398.%20xxx/README.md)
 - [ ] [0399. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0399.%20xxx/README.md)
 - [ ] [0400. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0400.%20xxx/README.md)
-
-
-
-## ⏰ pending
-
 - [ ] [0056. 占位笔记](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0056.%20%E5%8D%A0%E4%BD%8D%E7%AC%94%E8%AE%B0/README.md)
 - [ ] [0073. 占位笔记](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0073.%20%E5%8D%A0%E4%BD%8D%E7%AC%94%E8%AE%B0/README.md)
 - [ ] [0075. 占位笔记](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0075.%20%E5%8D%A0%E4%BD%8D%E7%AC%94%E8%AE%B0/README.md)
+- [ ] [0401. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0401.%20xxx/README.md)
