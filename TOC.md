@@ -17,7 +17,7 @@
 - [x] [0074. Prettier 安装与配置](https://tnotesjs.github.io/TNotes.react/notes/0074.%20Prettier%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README)
 - [x] [0034. eslint 安装与配置](https://tnotesjs.github.io/TNotes.react/notes/0034.%20eslint%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README)
 - [x] [0035. Emmet 语法支持](https://tnotesjs.github.io/TNotes.react/notes/0035.%20Emmet%20%E8%AF%AD%E6%B3%95%E6%94%AF%E6%8C%81/README)
-- [ ] [0146. Git 版本控制基础](https://tnotesjs.github.io/TNotes.react/notes/0146.%20Git%20%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%9F%BA%E7%A1%80/README)
+- [x] [0146. Git 版本控制基础](https://tnotesjs.github.io/TNotes.react/notes/0146.%20Git%20%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%9F%BA%E7%A1%80/README)
 - [x] [0008. react 工程初始化（vite）](https://tnotesjs.github.io/TNotes.react/notes/0008.%20react%20%E5%B7%A5%E7%A8%8B%E5%88%9D%E5%A7%8B%E5%8C%96%EF%BC%88vite%EF%BC%89/README)
 
 ## 3. 初识 React

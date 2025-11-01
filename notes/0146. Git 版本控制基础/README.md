@@ -8,14 +8,16 @@
 - [4. 🤔 Git 的基本工作流程是什么？](#4--git-的基本工作流程是什么)
 - [5. 🤔 如何初始化一个 Git 仓库？](#5--如何初始化一个-git-仓库)
 - [6. 🤔 如何暂存和提交代码？](#6--如何暂存和提交代码)
-- [7. 🤔 如何查看提交历史？](#7--如何查看提交历史)
-- [8. 🤔 如何创建和切换分支？](#8--如何创建和切换分支)
-- [9. 🤔 如何合并分支？](#9--如何合并分支)
-- [10. 🤔 如何连接远程仓库？](#10--如何连接远程仓库)
-- [11. 🤔 如何推送和拉取代码？](#11--如何推送和拉取代码)
-- [12. 💻 .gitignore 文件的作用是什么？](#12--gitignore-文件的作用是什么)
-- [13. 💻 demos.1 - React 项目的完整 Git 工作流](#13--demos1---react-项目的完整-git-工作流)
-- [14. 🔗 引用](#14--引用)
+- [7. 🤔 其他常见的 git 命令操作都有哪些？](#7--其他常见的-git-命令操作都有哪些)
+  - [7.1. 查看提交历史](#71-查看提交历史)
+  - [7.2. 创建和切换分支](#72-创建和切换分支)
+  - [7.3. 合并分支](#73-合并分支)
+  - [7.4. 连接远程仓库](#74-连接远程仓库)
+  - [7.5. 推送和拉取代码](#75-推送和拉取代码)
+- [8. 🤔 .gitignore 文件的作用是什么？](#8--gitignore-文件的作用是什么)
+- [9. 💻 React 项目的完整 Git 工作流示例](#9--react-项目的完整-git-工作流示例)
+- [10. 💻 项目开发过程中的一些常见工作场景](#10--项目开发过程中的一些常见工作场景)
+- [11. 🔗 引用](#11--引用)
 
 <!-- endregion:toc -->
 
@@ -36,6 +38,8 @@
 - 在实际开发中，分支策略（如 Git Flow）能够让多人协作更加顺畅
 - 养成频繁提交、编写清晰提交信息的习惯，能够帮助团队追踪问题和代码变更
 - 对于 React 项目，务必正确配置 `.gitignore`，避免将 `node_modules` 等目录提交到仓库
+
+在 tnotesjs 组织中有一个 TNotes.git-notes 知识库，这里边儿会纪录有关 Git 的更多详细说明。
 
 ## 3. 🤔 为什么 React 项目需要版本控制？
 
@@ -124,7 +128,11 @@ git commit -am "fix: 修复按钮点击 bug"
 - `test: 测试相关`
 - `chore: 构建或辅助工具变动`
 
-## 7. 🤔 如何查看提交历史？
+如果团队开发规范明确了具体的 commit message 规范要求，按照团队开发规范要求来走即可。
+
+## 7. 🤔 其他常见的 git 命令操作都有哪些？
+
+### 7.1. 查看提交历史
 
 ```bash
 # 查看完整提交历史
@@ -143,7 +151,7 @@ git log --oneline --graph --all
 git log src/App.jsx
 ```
 
-## 8. 🤔 如何创建和切换分支？
+### 7.2. 创建和切换分支
 
 ```bash
 # 查看所有分支
@@ -171,7 +179,7 @@ git switch -c feature-login
 - `bugfix/问题描述` - 修复分支
 - `hotfix/紧急修复` - 紧急修复分支
 
-## 9. 🤔 如何合并分支？
+### 7.3. 合并分支
 
 ```bash
 # 切换到目标分支（如 main）
@@ -191,7 +199,7 @@ git branch -d feature-login
 git branch -D feature-login
 ```
 
-## 10. 🤔 如何连接远程仓库？
+### 7.4. 连接远程仓库
 
 ```bash
 # 查看远程仓库
@@ -210,7 +218,9 @@ git remote set-url origin https://github.com/username/new-repo.git
 git remote remove origin
 ```
 
-## 11. 🤔 如何推送和拉取代码？
+也可以直接修改 `.git/config` 配置文件。
+
+### 7.5. 推送和拉取代码
 
 ```bash
 # 推送到远程仓库
@@ -232,129 +242,41 @@ git pull --rebase origin main
 git fetch origin
 ```
 
-## 12. 💻 .gitignore 文件的作用是什么？
+## 8. 🤔 .gitignore 文件的作用是什么？
 
 `.gitignore` 用于指定 Git 应该忽略的文件和目录，避免将不必要的文件提交到仓库。
 
 React 项目典型的 `.gitignore` 配置：
 
-```gitignore
-# 依赖目录
-node_modules/
-/.pnp
-.pnp.js
+<<< ./assets/1.gitignore
 
-# 构建产物
-/build
-/dist
-.cache
-
-# 环境变量
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# 日志
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-# 编辑器
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# 操作系统
-.DS_Store
-Thumbs.db
-
-# 测试覆盖率
-/coverage
-```
-
-## 13. 💻 demos.1 - React 项目的完整 Git 工作流
+## 9. 💻 React 项目的完整 Git 工作流示例
 
 假设你正在开发一个 React 项目，以下是一个完整的工作流示例：
 
-```bash
-# 1. 创建 React 项目
-npm create vite@latest my-react-app -- --template react
-cd my-react-app
+<<< ./assets/1.bash
 
-# 2. 初始化 Git（vite 已自动初始化）
-git status
+## 10. 💻 项目开发过程中的一些常见工作场景
 
-# 3. 首次提交
-git add .
-git commit -m "chore: 初始化项目"
+::: code-group
 
-# 4. 连接远程仓库
-git remote add origin https://github.com/username/my-react-app.git
-git push -u origin main
+<<< ./assets/2.bash [1]
 
-# 5. 创建功能分支
-git checkout -b feature-user-profile
+<<< ./assets/3.bash [2]
 
-# 6. 开发功能
-# ... 编写代码 ...
+<<< ./assets/4.bash [3]
 
-# 7. 暂存并提交
-git add src/components/UserProfile.jsx
-git commit -m "feat: 添加用户资料组件"
+<<< ./assets/5.bash [4]
 
-# 8. 推送功能分支
-git push -u origin feature-user-profile
+<<< ./assets/6.bash [5]
 
-# 9. 在 GitHub 上创建 Pull Request
+<<< ./assets/7.bash [6]
 
-# 10. 代码审查通过后，合并到 main
-git checkout main
-git pull origin main
-git merge feature-user-profile
+<<< ./assets/8.bash [7]
 
-# 11. 推送合并结果
-git push origin main
+:::
 
-# 12. 删除功能分支
-git branch -d feature-user-profile
-git push origin --delete feature-user-profile
-```
-
-常见工作场景：
-
-```bash
-# 场景 1：临时保存当前工作（未完成）
-git stash
-git checkout main
-# ... 处理其他事情 ...
-git checkout feature-user-profile
-git stash pop
-
-# 场景 2：撤销最后一次提交（保留修改）
-git reset --soft HEAD~1
-
-# 场景 3：撤销最后一次提交（丢弃修改）⚠️ 危险操作
-git reset --hard HEAD~1
-
-# 场景 4：修改最后一次提交信息
-git commit --amend -m "feat: 添加用户资料组件（支持头像上传）"
-
-# 场景 5：查看某个提交的详细内容
-git show <commit-hash>
-
-# 场景 6：比较工作区和暂存区的差异
-git diff
-
-# 场景 7：比较暂存区和本地仓库的差异
-git diff --staged
-```
-
-## 14. 🔗 引用
+## 11. 🔗 引用
 
 - [Git 官方文档][1]
 - [GitHub Docs - Git 基础][2]

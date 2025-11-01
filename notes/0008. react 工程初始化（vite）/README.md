@@ -16,8 +16,7 @@
 
 ## 2. 🫧 评价
 
-- 知道如何通过 vite 来快速初始化一个 react 工程。
-- 以便后续学习 react 相关知识点的时候，能在 `1min` 内快速搭建好一个最基本的 react 项目学习环境。
+需要知道如何通过 vite 来快速初始化一个 react 工程。以便后续学习 react 相关知识点的时候，能在 `1min` 内快速搭建好一个最基本的 react 项目学习环境。
 
 ## 3. 💻 使用 pnpm 的实际操作流程
 
@@ -28,9 +27,7 @@
 5. `pnpm i`
 6. `pnpm run dev`
 
----
-
-- 其中，1+2+3 也可以用一个命令来完成，就是 `pnpm create vite@latest my-react-app --template react`。
+其中，1+2+3 也可以用一个命令来完成，就是 `pnpm create vite@latest my-react-app --template react`。
 
 ::: code-group
 
@@ -56,10 +53,9 @@ $ pnpm create vite@latest my-react-app --template react
   - `lit`
   - `svelte`
 
----
+对于这条命令 `pnpm create vite@latest my-react-app --template react` 需要能够理解各部分的含义。如果记不住的话，直接运行命令 `pnpm create vite` 然后根据命令行提示来配置即可。
 
-- 对于这条命令 `pnpm create vite@latest my-react-app --template react` 需要能够理解各部分的含义。
-- 如果记不住的话，直接运行命令 `pnpm create vite` 然后根据命令行提示来配置即可。
+你可以通过查阅 vite 官网，了解 `npm create vite` 相关详情。
 
 ## 4. 💻 demos.1 - 使用 vite 创建 react 工程并启动
 
@@ -71,10 +67,13 @@ $ yarn create vite my-react-app --template react
 $ bun create vite my-react-app --template react
 ```
 
-- 实际上拉取的是 [vite/packages/create-vite/template-react][3] 这个位置的模板。
-  - 想要学习的话，可以瞅瞅这个模板结构下的源码，主要就是安装好必要的依赖，完成简单的初始配置。
-  - ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-23-21-55-27.png)
-- 启动用 vite 创建的 react 工程：
+实际上拉取的是 [vite/packages/create-vite/template-react][3] 这个位置的模板。
+
+想要学习的话，可以瞅瞅这个模板结构下的源码，主要就是安装好必要的依赖，完成简单的初始配置。
+
+![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-23-21-55-27.png)
+
+启动用 vite 创建的 react 工程：
 
 ```bash
 # Done. Now run:
@@ -83,15 +82,15 @@ $ pnpm install
 $ pnpm run dev
 ```
 
-- 成功启动后，使用浏览器打开链接，将看到如下默认页面。
-  - ![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-23-21-56-18.png)
+成功启动后，使用浏览器打开链接，将看到如下默认页面：
+
+![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-23-21-56-18.png)
 
 ## 5. 🔗 引用
 
-- 你可以通过查阅 vite 官网，了解 npm create vite 相关详情。
-  - [vite 官方文档][1]
-  - [vite github][2]
-  - [vite/packages/create-vite/template-react][3]
+- [vite 官方文档][1]
+- [vite github][2]
+- [vite/packages/create-vite/template-react][3]
 
 [1]: https://vitejs.dev/guide/
 [2]: https://github.com/vitejs/vite
