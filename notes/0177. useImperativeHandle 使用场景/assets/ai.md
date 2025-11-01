@@ -50,7 +50,7 @@ useImperativeHandle(ref, createHandle, [deps])
 // - createHandle: 返回要暴露的对象的函数
 // - deps: 依赖数组（可选）
 
-// 基本示例：不使用 useImperativeHandle
+// 不使用 useImperativeHandle
 const Input = forwardRef<HTMLInputElement>((props, ref) => {
   // ❌ 直接暴露整个 DOM 元素
   return <input ref={ref} />
@@ -60,9 +60,7 @@ function Parent() {
   const inputRef = useRef<HTMLInputElement>(null)
 
   const handleClick = () => {
-    // 父组件可以访问所有 DOM 方法
     inputRef.current?.focus()
-    inputRef.current?.select()
     // ⚠️ 但也能访问不应该访问的内容
     inputRef.current?.remove() // 危险！
   }
@@ -152,19 +150,6 @@ const CustomComponent = forwardRef<CustomHandle, CustomProps>((props, ref) => {
 
   return <div ref={internalRef}>{/* 内容 */}</div>
 })
-
-// 使用组件
-function Parent() {
-  const ref = useRef<CustomHandle>(null)
-
-  useEffect(() => {
-    ref.current?.method1()
-    ref.current?.method2('hello')
-    const value = ref.current?.getValue()
-  }, [])
-
-  return <CustomComponent ref={ref} />
-}
 ```
 
 ## 4. 🤔 为什么需要 useImperativeHandle？
@@ -178,18 +163,13 @@ const BadInput = forwardRef<HTMLInputElement>((props, ref) => {
   return <input ref={ref} />
 })
 
+// ⚠️ 父组件可以做任何事情
 function Parent() {
   const inputRef = useRef<HTMLInputElement>(null)
 
-  // ⚠️ 父组件可以做任何事情
   useEffect(() => {
-    // 合理的操作
-    inputRef.current?.focus()
-
-    // ❌ 不合理的操作也能执行
-    inputRef.current?.remove()
-    inputRef.current?.replaceWith(document.createElement('div'))
-    inputRef.current?.addEventListener('click', () => {})
+    inputRef.current?.focus() // 合理
+    inputRef.current?.remove() // ❌ 不合理但能执行
   }, [])
 
   return <BadInput ref={inputRef} />
@@ -240,7 +220,6 @@ const Modal = forwardRef<ModalHandle>((props, ref) => {
     },
     close: () => {
       setIsOpen(false)
-      // 内部逻辑：恢复焦点等
     },
   }))
 
@@ -250,37 +229,6 @@ const Modal = forwardRef<ModalHandle>((props, ref) => {
     <div className="modal">
       <div ref={contentRef}>{props.children}</div>
       <button onClick={() => ref.current?.close()}>关闭</button>
-    </div>
-  )
-})
-
-// 问题 3：组合多个 DOM 元素
-interface SearchBoxHandle {
-  focus: () => void
-  clear: () => void
-  submit: () => void
-}
-
-const SearchBox = forwardRef<SearchBoxHandle>((props, ref) => {
-  const inputRef = useRef<HTMLInputElement>(null)
-  const buttonRef = useRef<HTMLButtonElement>(null)
-
-  // ✅ 组合多个元素的能力
-  useImperativeHandle(ref, () => ({
-    focus: () => inputRef.current?.focus(),
-    clear: () => {
-      if (inputRef.current) {
-        inputRef.current.value = ''
-        inputRef.current.focus()
-      }
-    },
-    submit: () => buttonRef.current?.click(),
-  }))
-
-  return (
-    <div>
-      <input ref={inputRef} />
-      <button ref={buttonRef}>搜索</button>
     </div>
   )
 })
@@ -352,24 +300,6 @@ const Example = forwardRef<ExampleHandle>((props, ref) => {
 
   return <input value={value} onChange={(e) => setValue(e.target.value)} />
 })
-
-// 不依赖状态的方法
-const StaticExample = forwardRef<StaticHandle>((props, ref) => {
-  const divRef = useRef<HTMLDivElement>(null)
-
-  useImperativeHandle(
-    ref,
-    () => ({
-      scrollToTop: () => {
-        divRef.current?.scrollTo({ top: 0, behavior: 'smooth' })
-      },
-      getElement: () => divRef.current,
-    }),
-    [] // ✅ 不依赖任何状态，空数组
-  )
-
-  return <div ref={divRef}>{/* 内容 */}</div>
-})
 ```
 
 ## 6. 🤔 有哪些常见使用场景？
@@ -391,34 +321,6 @@ const FocusableInput = forwardRef<FocusableHandle>((props, ref) => {
 
   return <input ref={inputRef} {...props} />
 })
-
-function FocusManager() {
-  const input1Ref = useRef<FocusableHandle>(null)
-  const input2Ref = useRef<FocusableHandle>(null)
-  const input3Ref = useRef<FocusableHandle>(null)
-
-  const focusNext = (current: number) => {
-    switch (current) {
-      case 1:
-        input2Ref.current?.focus()
-        break
-      case 2:
-        input3Ref.current?.focus()
-        break
-      case 3:
-        input1Ref.current?.focus()
-        break
-    }
-  }
-
-  return (
-    <div>
-      <FocusableInput ref={input1Ref} onBlur={() => focusNext(1)} />
-      <FocusableInput ref={input2Ref} onBlur={() => focusNext(2)} />
-      <FocusableInput ref={input3Ref} onBlur={() => focusNext(3)} />
-    </div>
-  )
-}
 
 // 场景 2：滚动控制
 interface ScrollableHandle {
@@ -506,7 +408,6 @@ interface DataGridHandle {
   getSelectedRows: () => Row[]
   selectAll: () => void
   clearSelection: () => void
-  exportData: () => void
 }
 
 const DataGrid = forwardRef<DataGridHandle, { data: Row[] }>(
@@ -524,10 +425,6 @@ const DataGrid = forwardRef<DataGridHandle, { data: Row[] }>(
         },
         clearSelection: () => {
           setSelectedIds(new Set())
-        },
-        exportData: () => {
-          const selected = data.filter((row) => selectedIds.has(row.id))
-          console.log('Exporting:', selected)
         },
       }),
       [data, selectedIds]
@@ -633,7 +530,6 @@ interface FormHandle {
   validate: () => boolean
   submit: () => void
   reset: () => void
-  getValues: () => Record<string, string>
 }
 
 const Form = forwardRef<FormHandle, { onSubmit: (data: any) => void }>(
@@ -644,19 +540,17 @@ const Form = forwardRef<FormHandle, { onSubmit: (data: any) => void }>(
 
     useImperativeHandle(ref, () => ({
       validate: () => {
-        const usernameValid = usernameRef.current?.validate() || false
-        const emailValid = emailRef.current?.validate() || false
-        const passwordValid = passwordRef.current?.validate() || false
+        const valid = [
+          usernameRef.current?.validate(),
+          emailRef.current?.validate(),
+          passwordRef.current?.validate(),
+        ].every(Boolean)
 
-        if (!usernameValid) {
+        if (!valid) {
           usernameRef.current?.focus()
-        } else if (!emailValid) {
-          emailRef.current?.focus()
-        } else if (!passwordValid) {
-          passwordRef.current?.focus()
         }
 
-        return usernameValid && emailValid && passwordValid
+        return valid
       },
       submit: () => {
         if (ref.current?.validate()) {
@@ -673,11 +567,6 @@ const Form = forwardRef<FormHandle, { onSubmit: (data: any) => void }>(
         emailRef.current?.reset()
         passwordRef.current?.reset()
       },
-      getValues: () => ({
-        username: usernameRef.current?.getValue() || '',
-        email: emailRef.current?.getValue() || '',
-        password: passwordRef.current?.getValue() || '',
-      }),
     }))
 
     return (
@@ -707,27 +596,6 @@ const Form = forwardRef<FormHandle, { onSubmit: (data: any) => void }>(
     )
   }
 )
-
-// 使用表单
-function App() {
-  const formRef = useRef<FormHandle>(null)
-
-  const handleSubmit = (data: any) => {
-    console.log('提交数据:', data)
-  }
-
-  const handleValidate = () => {
-    const isValid = formRef.current?.validate()
-    console.log('表单是否有效:', isValid)
-  }
-
-  return (
-    <div>
-      <Form ref={formRef} onSubmit={handleSubmit} />
-      <button onClick={handleValidate}>验证</button>
-    </div>
-  )
-}
 ```
 
 ## 8. 🤔 如何封装媒体组件？
@@ -744,7 +612,6 @@ interface VideoPlayerHandle {
   setVolume: (volume: number) => void
   getCurrentTime: () => number
   getDuration: () => number
-  isPlaying: () => boolean
 }
 
 const VideoPlayer = forwardRef<VideoPlayerHandle, { src: string }>(
@@ -782,7 +649,6 @@ const VideoPlayer = forwardRef<VideoPlayerHandle, { src: string }>(
         },
         getCurrentTime: () => videoRef.current?.currentTime || 0,
         getDuration: () => videoRef.current?.duration || 0,
-        isPlaying: () => playing,
       }),
       [playing]
     )
@@ -847,26 +713,6 @@ const AudioPlayer = forwardRef<AudioPlayerHandle, { src: string }>(
     return <audio ref={audioRef} src={src} />
   }
 )
-
-// 使用媒体组件
-function MediaController() {
-  const videoRef = useRef<VideoPlayerHandle>(null)
-  const audioRef = useRef<AudioPlayerHandle>(null)
-
-  return (
-    <div>
-      <VideoPlayer ref={videoRef} src="/video.mp4" />
-      <AudioPlayer ref={audioRef} src="/audio.mp3" />
-
-      <div>
-        <button onClick={() => videoRef.current?.play()}>播放视频</button>
-        <button onClick={() => videoRef.current?.pause()}>暂停视频</button>
-        <button onClick={() => videoRef.current?.seek(10)}>跳转到 10 秒</button>
-        <button onClick={() => audioRef.current?.toggle()}>切换音频</button>
-      </div>
-    </div>
-  )
-}
 ```
 
 ## 9. 🤔 有哪些最佳实践？
@@ -904,7 +750,6 @@ const MinimalExposure = forwardRef<MinimalHandle>((props, ref) => {
   // ❌ 不要暴露这些
   // inputRef (整个 DOM 元素)
   // setValue (内部状态管理)
-  // 其他内部实现细节
 
   return (
     <input
@@ -925,7 +770,6 @@ const TypedComponent = forwardRef<TypedHandle>((props, ref) => {
   useImperativeHandle(ref, () => ({
     submit: async (options = {}) => {
       const { validate = true } = options
-      // 实现
       return true
     },
     reset: (fields) => {
@@ -950,12 +794,6 @@ interface DocumentedHandle {
    * @returns 提交是否成功
    */
   submit: (silent?: boolean) => Promise<boolean>
-
-  /**
-   * 重置表单到初始状态
-   * @param fields - 要重置的字段名，不传则重置所有字段
-   */
-  reset: (fields?: string[]) => void
 }
 
 // 实践 5：处理异步操作
@@ -991,28 +829,6 @@ const AsyncComponent = forwardRef<AsyncHandle>((props, ref) => {
   }))
 
   return <div>{loading ? '加载中...' : '内容'}</div>
-})
-
-// 实践 6：组合多个 ref
-interface CombinedHandle {
-  focusInput: () => void
-  submitForm: () => void
-}
-
-const CombinedComponent = forwardRef<CombinedHandle>((props, ref) => {
-  const inputRef = useRef<HTMLInputElement>(null)
-  const formRef = useRef<HTMLFormElement>(null)
-
-  useImperativeHandle(ref, () => ({
-    focusInput: () => inputRef.current?.focus(),
-    submitForm: () => formRef.current?.requestSubmit(),
-  }))
-
-  return (
-    <form ref={formRef}>
-      <input ref={inputRef} />
-    </form>
-  )
 })
 ```
 
@@ -1090,14 +906,14 @@ const CorrectDeps = forwardRef((props, ref) => {
 })
 
 // 错误 4：在循环中使用
+// ❌ 不能在循环中直接使用 ref
 function WrongUsage() {
   const items = [1, 2, 3]
 
   return (
     <div>
       {items.map((item) => {
-        // ❌ 不能在循环中直接使用 ref
-        const ref = useRef()
+        const ref = useRef() // ❌ 错误
         return <Component key={item} ref={ref} />
       })}
     </div>
