@@ -4,8 +4,8 @@
 
 - [1. 🎯 本节内容](#1--本节内容)
 - [2. 🫧 评价](#2--评价)
-- [3. 🤔 useMemo 是什么？](#3--usememo-是什么)
-- [4. 🤔 useCallback 是什么？](#4--usecallback-是什么)
+- [3. 🤔 `useMemo` 是什么？](#3--usememo-是什么)
+- [4. 🤔 `useCallback` 是什么？](#4--usecallback-是什么)
 - [5. 🆚 useMemo vs useCallback](#5--usememo-vs-usecallback)
 - [6. 🤔 何时使用这些优化？](#6--何时使用这些优化)
 - [7. 🤔 何时不应该使用？](#7--何时不应该使用)
@@ -34,11 +34,11 @@
 - 依赖项数组是关键，遗漏或多余都会导致问题
 - 性能优化要基于实际性能分析，不要盲目优化
 
-## 3. 🤔 useMemo 是什么？
+## 3. 🤔 `useMemo` 是什么？
 
 `useMemo` 用于缓存计算结果，避免每次渲染都重新计算。
 
-```typescript
+```js
 // 基本语法
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b])
 
@@ -75,8 +75,13 @@ function Component({ items }: { items: Item[] }) {
 
 常见使用场景：
 
-```typescript
-// 场景 1：复杂的数据转换
+- 场景 1：复杂的数据转换
+- 场景 2：昂贵的数学计算
+- 场景 3：创建稳定的对象引用
+
+::: code-group
+
+```jsx [1]
 function DataTable({ data }: { data: Data[] }) {
   const processedData = useMemo(() => {
     return data
@@ -90,8 +95,9 @@ function DataTable({ data }: { data: Data[] }) {
 
   return <Table data={processedData} />
 }
+```
 
-// 场景 2：昂贵的数学计算
+```jsx [2]
 function Chart({ values }: { values: number[] }) {
   const statistics = useMemo(() => {
     const sum = values.reduce((a, b) => a + b, 0)
@@ -101,8 +107,9 @@ function Chart({ values }: { values: number[] }) {
 
   return <div>平均值：{statistics.mean}</div>
 }
+```
 
-// 场景 3：创建稳定的对象引用
+```jsx [3]
 function SearchForm() {
   const [query, setQuery] = useState('')
 
@@ -118,62 +125,136 @@ function SearchForm() {
 }
 ```
 
-## 4. 🤔 useCallback 是什么？
+:::
+
+## 4. 🤔 `useCallback` 是什么？
 
 `useCallback` 用于缓存函数引用，避免每次渲染都创建新函数。
 
-```typescript
-// 基本语法
-const memoizedCallback = useCallback(() => {
-  doSomething(a, b)
-}, [a, b])
+```js
+// 基本语法：
+// const cachedFn = useCallback(fn, dependencies)
 
-// 问题场景：函数引用变化导致子组件重新渲染
-function Parent() {
+// 示例：
+const memoizedCallback = useCallback(() => {
+  // ... 函数逻辑
+  doSomething(a, b)
+}, [a, b]) // 依赖项数组
+```
+
+1. 问题场景：函数引用变化导致子组件重新渲染
+2. 解决方案：使用 `useCallback` 缓存函数。
+
+::: code-group
+
+```jsx [1]
+import { useState } from 'react'
+
+// ParentComponent 渲染
+// ChildComponent 也会重新渲染
+function ParentComponent() {
   const [count, setCount] = useState(0)
 
-  // ❌ 每次渲染都创建新函数
+  // ❌ 函数引用不稳定
+  // ParentComponent 每次渲染都创建新函数实例 handleClick
   const handleClick = () => {
-    console.log('clicked')
+    console.log('Button clicked')
   }
 
   return (
     <div>
-      <p>{count}</p>
-      <button onClick={() => setCount(count + 1)}>+</button>
-      <Child onClick={handleClick} /> {/* ❌ handleClick 每次都是新的 */}
+      {/* ❌ handleClick 每次都是新的 */}
+      <ChildComponent onClick={handleClick} />
+      <button onClick={() => setCount(count + 1)}>Count: {count}</button>
     </div>
   )
 }
 
-const Child = React.memo(({ onClick }: { onClick: () => void }) => {
-  console.log('Child 渲染') // ❌ 每次 Parent 渲染都会执行
-  return <button onClick={onClick}>Child Button</button>
-})
+function ChildComponent({ onClick }) {
+  // 即使 onClick 逻辑相同，每次都会重新渲染
+  // 因为每次接收的都是新的函数引用
+  console.log('ChildComponent 渲染') // ❌ 每次 ParentComponent 渲染都会执行
+  return <button onClick={onClick}>Click me</button>
+}
 
-// ✅ 使用 useCallback 缓存函数
-function Parent() {
+function App() {
+  return <ParentComponent />
+}
+
+export default App
+```
+
+```jsx [2]
+import { useState, useCallback, memo } from 'react'
+
+function ParentComponent() {
   const [count, setCount] = useState(0)
 
-  // ✅ 函数引用稳定
+  // 使用 useCallback 缓存函数引用
   const handleClick = useCallback(() => {
-    console.log('clicked')
-  }, [])
+    console.log('Button clicked')
+  }, []) // 空依赖数组，永远返回同一个函数
 
   return (
     <div>
-      <p>{count}</p>
-      <button onClick={() => setCount(count + 1)}>+</button>
-      <Child onClick={handleClick} /> {/* ✅ handleClick 引用不变 */}
+      <ChildComponent onClick={handleClick} />
+      <button onClick={() => setCount(count + 1)}>Count: {count}</button>
     </div>
   )
 }
+
+// 使用 React.memo 进一步优化
+const ChildComponent = memo(({ onClick }) => {
+  console.log('ChildComponent 渲染了')
+  return <button onClick={onClick}>Click me</button>
+})
+
+function App() {
+  return <ParentComponent />
+}
+
+export default App
+
+// ----------------------------------
+// 🤔 为什么 ChildComponent 需要使用 memo 优化？
+// handleClick 不是已经使用 useCallback 缓存了吗？
+// ----------------------------------
+
+// React 默认的渲染行为：
+// React 组件在父组件重新渲染时，默认会无条件地重新渲染子组件
+// 除非子组件是纯组件或使用了 React.memo
+
+// 代码执行流程：
+// 点击 "Count: {count}" 按钮后：
+// 1. setCount(count + 1) 触发状态更新
+// 2. ParentComponent 重新渲染（因为 count 变化）
+// 3. 重新执行 ParentComponent 函数体
+// 4. useCallback 返回缓存的函数（相同引用）✓
+// 5. 但 ChildComponent 函数会被重新调用！
+//    → console.log('ChildComponent 渲染了') 执行
+
+// useCallback 只是缓存了函数引用，但它不会阻止子组件的渲染。
+// 它只确保了：
+// 传递给子组件的 onClick prop 是同一个函数引用
+// 但这不意味着 React 会跳过子组件的渲染
+
+// useCallback 单独使用：只解决了"函数引用稳定性"问题，但不会阻止子组件函数执行
+// React.memo 的作用：通过浅比较 props，决定是否跳过组件函数的执行
+// 最佳实践：useCallback + React.memo 配合使用才能达到完整的优化效果
+// 性能影响：即使子组件重新执行了函数，如果虚拟 DOM 没有变化，React 不会更新真实 DOM，但函数执行本身也有成本
 ```
+
+:::
 
 常见使用场景：
 
-```typescript
-// 场景 1：事件处理函数传递给子组件
+- 场景 1：事件处理函数传递给子组件
+- 场景 2：依赖外部变量的函数
+- 场景 3：useEffect 依赖的函数
+
+::: code-group
+
+```jsx [1]
 function TodoList() {
   const [todos, setTodos] = useState<Todo[]>([])
 
@@ -193,8 +274,9 @@ function TodoList() {
     </ul>
   )
 }
+```
 
-// 场景 2：依赖外部变量的函数
+```jsx [2]
 function SearchBox({ category }: { category: string }) {
   const [query, setQuery] = useState('')
 
@@ -211,8 +293,9 @@ function SearchBox({ category }: { category: string }) {
     </div>
   )
 }
+```
 
-// 场景 3：useEffect 依赖的函数
+```jsx [3]
 function UserProfile({ userId }: { userId: string }) {
   const [user, setUser] = useState(null)
 
@@ -230,6 +313,8 @@ function UserProfile({ userId }: { userId: string }) {
 }
 ```
 
+:::
+
 ## 5. 🆚 useMemo vs useCallback
 
 | 特性 | useMemo | useCallback |
@@ -240,7 +325,7 @@ function UserProfile({ userId }: { userId: string }) {
 | 典型用法 | `useMemo(() => value, deps)` | `useCallback(() => {}, deps)` |
 | 等价关系 | - | `useCallback(fn, deps)` = `useMemo(() => fn, deps)` |
 
-```typescript
+```js
 // 它们的关系
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b])
 const memoizedCallback = useCallback(() => doSomething(a, b), [a, b])
@@ -270,7 +355,7 @@ function Component() {
 
 根据实际性能问题决定是否使用。
 
-```typescript
+```js
 // 场景 1：昂贵的计算
 function PrimeCalculator({ max }: { max: number }) {
   // ✅ 计算质数是昂贵操作，值得优化
@@ -349,11 +434,11 @@ function UserList({ users }: { users: User[] }) {
 
 过度使用会增加复杂度且无益。
 
-```typescript
+```js
 // ❌ 不必要的优化示例
 
 // 1. 简单计算
-function Component({ a, b }: { a: number; b: number }) {
+function Component({ a, b }: { a: number, b: number }) {
   // ❌ 不需要：加法很快
   const sum = useMemo(() => a + b, [a, b])
 
@@ -409,7 +494,7 @@ function Component() {
 
 必须配合使用才能真正避免重新渲染。
 
-```typescript
+```js
 // React.memo 基础
 const Child = React.memo(function Child({ name }: { name: string }) {
   console.log('Child 渲染')
@@ -462,7 +547,7 @@ function Parent() {
 
 完整示例：
 
-```typescript
+```js
 interface User {
   id: string
   name: string
@@ -526,7 +611,7 @@ function UserList() {
 
 ## 9. 🤔 有哪些常见错误？
 
-```typescript
+```js
 // 错误 1：遗漏依赖项
 function Component({ userId }: { userId: string }) {
   const [user, setUser] = useState(null)
