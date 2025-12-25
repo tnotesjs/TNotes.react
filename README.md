@@ -172,7 +172,7 @@
 - [ ] [0175. useContext 详解](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0175.%20useContext%20%E8%AF%A6%E8%A7%A3/README.md)
 - [ ] [0094. 自定义 Hooks](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0094.%20%E8%87%AA%E5%AE%9A%E4%B9%89%20Hooks/README.md)
 - [ ] [0095. Hooks 规则与陷阱](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0095.%20Hooks%20%E8%A7%84%E5%88%99%E4%B8%8E%E9%99%B7%E9%98%B1/README.md)
-- [ ] [0096. useMemo、useCallback 性能优化](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0096.%20useMemo%E3%80%81useCallback%20%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/README.md)
+- [x] [0096. useMemo、useCallback 性能优化](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0096.%20useMemo%E3%80%81useCallback%20%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/README.md)
 - [ ] [0176. useLayoutEffect vs useEffect](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0176.%20useLayoutEffect%20vs%20useEffect/README.md)
 - [ ] [0177. useImperativeHandle 使用场景](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0177.%20useImperativeHandle%20%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/README.md)
 - [ ] [0178. useDebugValue 调试技巧](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0178.%20useDebugValue%20%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7/README.md)
