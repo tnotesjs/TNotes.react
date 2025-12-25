@@ -56,6 +56,10 @@
       {
         "text": "✅ 0008. react 工程初始化（vite）",
         "link": "/notes/0008. react 工程初始化（vite）/README"
+      },
+      {
+        "text": "⏰ 0366. 本地 Playground 环境搭建",
+        "link": "/notes/0366. 本地 Playground 环境搭建/README"
       }
     ]
   },
@@ -1658,10 +1662,6 @@
     "collapsed": true,
     "items": [
       {
-        "text": "⏰ 0366. xxx",
-        "link": "/notes/0366. xxx/README"
-      },
-      {
         "text": "⏰ 0367. xxx",
         "link": "/notes/0367. xxx/README"
       },
@@ -1814,8 +1814,8 @@
         "link": "/notes/0401. xxx/README"
       },
       {
-        "text": "✅ 0034. eslint 安装与配置",
-        "link": "/notes/0034. eslint 安装与配置/README"
+        "text": "✅ 0034. ESLint 安装与配置",
+        "link": "/notes/0034. ESLint 安装与配置/README"
       }
     ]
   }

@@ -36,93 +36,108 @@
 
 ## 3. 🤔 `useMemo` 是什么？
 
-`useMemo` 用于缓存计算结果，避免每次渲染都重新计算。
+`useMemo` 是一个 React Hook，用于缓存计算结果，避免在每次渲染时重复执行昂贵的计算。
 
-```js
-// 基本语法
-const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b])
+```jsx
+// 基本语法：
+// const cachedValue = useMemo(calculateValue, dependencies)
 
-// 问题场景：昂贵的计算每次都执行
-function Component({ items }: { items: Item[] }) {
-  // ❌ 每次渲染都重新计算
-  const sortedItems = items.slice().sort((a, b) => a.value - b.value)
-
-  return (
-    <ul>
-      {sortedItems.map((item) => (
-        <li key={item.id}>{item.name}</li>
-      ))}
-    </ul>
-  )
-}
-
-// ✅ 使用 useMemo 缓存计算结果
-function Component({ items }: { items: Item[] }) {
-  const sortedItems = useMemo(() => {
-    console.log('排序执行')
-    return items.slice().sort((a, b) => a.value - b.value)
-  }, [items]) // 只在 items 变化时重新计算
-
-  return (
-    <ul>
-      {sortedItems.map((item) => (
-        <li key={item.id}>{item.name}</li>
-      ))}
-    </ul>
-  )
-}
+// 示例：
+const memoizedValue = useMemo(
+  () => computeExpensiveValue(a, b), // 计算函数
+  [a, b] // 依赖项数组
+)
 ```
 
-常见使用场景：
-
-- 场景 1：复杂的数据转换
-- 场景 2：昂贵的数学计算
-- 场景 3：创建稳定的对象引用
+1. 问题场景：昂贵的计算每次都执行
+2. 解决方案：使用 `useMemo` 缓存计算结果
 
 ::: code-group
 
 ```jsx [1]
-function DataTable({ data }: { data: Data[] }) {
-  const processedData = useMemo(() => {
-    return data
-      .filter((item) => item.active)
-      .map((item) => ({
-        ...item,
-        displayName: `${item.firstName} ${item.lastName}`,
-      }))
-      .sort((a, b) => a.displayName.localeCompare(b.displayName))
-  }, [data])
+import { useState } from 'react'
 
-  return <Table data={processedData} />
+function Component({ items }) {
+  const [count, setCount] = useState(0)
+
+  // ⚠️ 每次渲染都重新计算
+  const sortedItems = items.slice().sort((a, b) => a.value - b.value)
+  console.log('排序执行')
+
+  return (
+    <>
+      {/* 计数器更新 - 重新渲染 */}
+      <button onClick={() => setCount(count + 1)}>Count: {count}</button>
+      {/* 渲染列表 */}
+      <ul>
+        {sortedItems.map((item) => (
+          <li key={item.id}>{item.name}</li>
+        ))}
+      </ul>
+    </>
+  )
 }
+
+function App() {
+  return (
+    <Component
+      items={[
+        { id: 1, name: 'Item 1', value: 10 },
+        { id: 2, name: 'Item 2', value: 5 },
+      ]}
+    />
+  )
+}
+
+export default App
+
+// 测试步骤：
+// 点击 count 按钮，观察控制台的“排序执行”日志
+// 可以看到每次点击按钮都会重新计算排序，即使 items 没有变化
 ```
 
 ```jsx [2]
-function Chart({ values }: { values: number[] }) {
-  const statistics = useMemo(() => {
-    const sum = values.reduce((a, b) => a + b, 0)
-    const mean = sum / values.length
-    return { sum, mean }
-  }, [values])
+import { useMemo, useState } from 'react'
 
-  return <div>平均值：{statistics.mean}</div>
-}
-```
+function Component({ items }) {
+  const [count, setCount] = useState(0)
 
-```jsx [3]
-function SearchForm() {
-  const [query, setQuery] = useState('')
+  // ✅ 使用 useMemo 缓存排序结果，避免不必要的重新计算
+  const sortedItems = useMemo(() => {
+    console.log('排序执行')
+    return items.slice().sort((a, b) => a.value - b.value)
+  }, [items])
 
-  const searchConfig = useMemo(
-    () => ({
-      query,
-      limit: 20,
-    }),
-    [query]
+  return (
+    <>
+      {/* 计数器更新 - 重新渲染 */}
+      <button onClick={() => setCount(count + 1)}>Count: {count}</button>
+      {/* 渲染列表 */}
+      <ul>
+        {sortedItems.map((item) => (
+          <li key={item.id}>{item.name}</li>
+        ))}
+      </ul>
+    </>
   )
-
-  return <SearchResults config={searchConfig} />
 }
+
+function App() {
+  return (
+    <Component
+      items={[
+        { id: 1, name: 'Item 1', value: 10 },
+        { id: 2, name: 'Item 2', value: 5 },
+      ]}
+    />
+  )
+}
+
+export default App
+
+// 测试步骤：
+// 点击 count 按钮，观察控制台的“排序执行”日志
+// 可以看到每次点击按钮时，排序函数不会被重新调用，因为依赖 items 没有变化
 ```
 
 :::
@@ -143,7 +158,7 @@ const memoizedCallback = useCallback(() => {
 ```
 
 1. 问题场景：函数引用变化导致子组件重新渲染
-2. 解决方案：使用 `useCallback` 缓存函数。
+2. 解决方案：使用 `useCallback` 缓存函数
 
 ::: code-group
 
@@ -242,75 +257,6 @@ export default App
 // React.memo 的作用：通过浅比较 props，决定是否跳过组件函数的执行
 // 最佳实践：useCallback + React.memo 配合使用才能达到完整的优化效果
 // 性能影响：即使子组件重新执行了函数，如果虚拟 DOM 没有变化，React 不会更新真实 DOM，但函数执行本身也有成本
-```
-
-:::
-
-常见使用场景：
-
-- 场景 1：事件处理函数传递给子组件
-- 场景 2：依赖外部变量的函数
-- 场景 3：useEffect 依赖的函数
-
-::: code-group
-
-```jsx [1]
-function TodoList() {
-  const [todos, setTodos] = useState<Todo[]>([])
-
-  const handleToggle = useCallback((id: number) => {
-    setTodos((prev) =>
-      prev.map((todo) =>
-        todo.id === id ? { ...todo, done: !todo.done } : todo
-      )
-    )
-  }, []) // ✅ 空依赖，函数永远不变
-
-  return (
-    <ul>
-      {todos.map((todo) => (
-        <TodoItem key={todo.id} todo={todo} onToggle={handleToggle} />
-      ))}
-    </ul>
-  )
-}
-```
-
-```jsx [2]
-function SearchBox({ category }: { category: string }) {
-  const [query, setQuery] = useState('')
-
-  const handleSearch = useCallback(() => {
-    fetch(`/api/search?q=${query}&category=${category}`)
-      .then((res) => res.json())
-      .then(console.log)
-  }, [query, category]) // ✅ 依赖这两个值
-
-  return (
-    <div>
-      <input value={query} onChange={(e) => setQuery(e.target.value)} />
-      <SearchButton onClick={handleSearch} />
-    </div>
-  )
-}
-```
-
-```jsx [3]
-function UserProfile({ userId }: { userId: string }) {
-  const [user, setUser] = useState(null)
-
-  const fetchUser = useCallback(async () => {
-    const response = await fetch(`/api/users/${userId}`)
-    const data = await response.json()
-    setUser(data)
-  }, [userId])
-
-  useEffect(() => {
-    fetchUser()
-  }, [fetchUser]) // ✅ fetchUser 稳定
-
-  return <div>{user?.name}</div>
-}
 ```
 
 :::
