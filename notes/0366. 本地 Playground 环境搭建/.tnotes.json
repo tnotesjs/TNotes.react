@@ -2,11 +2,11 @@
   "bilibili": [],
   "tnotes": [],
   "yuque": [],
-  "done": false,
+  "done": true,
   "deprecated": false,
-  "enableDiscussions": false,
-  "description": "",
+  "enableDiscussions": true,
+  "description": "在本地搭建极简版的 react、vite、js/ts 环境，以便学习 react 时快速验证相关功能。",
   "id": "671bd574-f09b-4bca-bf2f-844dc6c5e2c9",
   "created_at": 1761953518215,
-  "updated_at": 1761953518215
+  "updated_at": 1766629247744
 }
