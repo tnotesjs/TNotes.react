@@ -553,4 +553,4 @@
 - [ ] [0073. 占位笔记](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0073.%20%E5%8D%A0%E4%BD%8D%E7%AC%94%E8%AE%B0/README.md)
 - [ ] [0075. 占位笔记](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0075.%20%E5%8D%A0%E4%BD%8D%E7%AC%94%E8%AE%B0/README.md)
 - [ ] [0401. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0401.%20xxx/README.md)
-- [x] [0034. ESLint 安装与配置](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0034.%20ESLint%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README.md)
+- [x] [0034. eslint 安装与配置](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0034.%20eslint%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README.md)
