@@ -3,7 +3,6 @@
   "tnotes": [],
   "yuque": [],
   "done": true,
-  "deprecated": false,
   "enableDiscussions": true,
   "description": "React性能优化三大件——useMemo缓存计算结果、useCallback缓存函数引用、React.memo缓存组件渲染，三者配合使用才能真正避免不必要的重新渲染，但优化需基于实际性能分析，避免过度优化。",
   "id": "0313bc23-0ee1-43e6-ad71-097d55c7c327",
