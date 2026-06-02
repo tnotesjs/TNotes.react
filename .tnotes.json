@@ -32,13 +32,14 @@
       "26.01": 55,
       "26.02": 55,
       "26.03": 55,
-      "26.04": 55
+      "26.04": 55,
+      "26.06": 55
     },
     "details": "React 笔记",
     "link": "https://tnotesjs.github.io/TNotes.react/",
     "created_at": 1740305655000,
-    "updated_at": 1775000947000,
-    "days_since_birth": 9774
+    "updated_at": 1780377200000,
+    "days_since_birth": 9836
   },
   "menuItems": [
     {
