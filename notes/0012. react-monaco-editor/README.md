@@ -2,26 +2,26 @@
 
 <!-- region:toc -->
 
-- [1. 🔗 monaco-react 官方文档](#1--monaco-react-官方文档)
-- [2. 🔍 Monaco Editor API](#2--monaco-editor-api)
-- [3. 📒 monaco-react 概述](#3--monaco-react-概述)
-- [4. 💻 demos.1 - 安装并引入 Editor 组件](#4--demos1---安装并引入-editor-组件)
-- [5. 💻 demos.2 - 4 个钩子 onChange、onMount、beforeMount、onValidate](#5--demos2---4-个钩子-onchangeonmountbeforemountonvalidate)
-- [6. 💻 demos.3 - 获取编辑器的当前值](#6--demos3---获取编辑器的当前值)
-- [7. 💻 demos.4 - 只读模式](#7--demos4---只读模式)
-- [8. 💻 demos.5 - 动态设置编辑器中的内容](#8--demos5---动态设置编辑器中的内容)
-- [9. 💻 demos.6 - 实战练习 - 模仿 matatastudio 的代码预览效果封装一个代码预览组件](#9--demos6---实战练习---模仿-matatastudio-的代码预览效果封装一个代码预览组件)
-- [10. 📒 实现代码预览功能 - 业务背景 + 遇到的坑 + 解决方案](#10--实现代码预览功能---业务背景--遇到的坑--解决方案)
+- [1. monaco-react 官方文档](#1-monaco-react-官方文档)
+- [2. Monaco Editor API](#2-monaco-editor-api)
+- [3. monaco-react 概述](#3-monaco-react-概述)
+- [4. demos.1 - 安装并引入 Editor 组件](#4-demos1---安装并引入-editor-组件)
+- [5. demos.2 - 4 个钩子 onChange、onMount、beforeMount、onValidate](#5-demos2---4-个钩子-onchangeonmountbeforemountonvalidate)
+- [6. demos.3 - 获取编辑器的当前值](#6-demos3---获取编辑器的当前值)
+- [7. demos.4 - 只读模式](#7-demos4---只读模式)
+- [8. demos.5 - 动态设置编辑器中的内容](#8-demos5---动态设置编辑器中的内容)
+- [9. demos.6 - 实战练习 - 模仿 matatastudio 的代码预览效果封装一个代码预览组件](#9-demos6---实战练习---模仿-matatastudio-的代码预览效果封装一个代码预览组件)
+- [10. 实现代码预览功能 - 业务背景 + 遇到的坑 + 解决方案](#10-实现代码预览功能---业务背景--遇到的坑--解决方案)
   - [10.1. 1️⃣ 在线方案 - 使用代理](#101-1️⃣-在线方案---使用代理)
   - [10.2. 2️⃣ 在线方案 - 下载资源丢到自己的 CDN 上](#102-2️⃣-在线方案---下载资源丢到自己的-cdn-上)
   - [10.3. 3️⃣ 离线方案 - 手动下载相关模块](#103-3️⃣-离线方案---手动下载相关模块)
   - [10.4. 4️⃣ 离线方案 - use monaco-editor as an npm package](#104-4️⃣-离线方案---use-monaco-editor-as-an-npm-package)
-- [11. 🤖 monaco 名称的由来](#11--monaco-名称的由来)
-- [12. 🔗 links](#12--links)
+- [11. monaco 名称的由来](#11-monaco-名称的由来)
+- [12. links](#12-links)
 
 <!-- endregion:toc -->
 
-## 1. 🔗 monaco-react 官方文档
+## 1. monaco-react 官方文档
 
 - https://github.com/suren-atoyan/monaco-react
 - monaco-react Github
@@ -38,12 +38,12 @@
   - 这是 react-monaco-editor 的 GitHub 仓库链接。
   - ⚠️ 注：需要额外的 webpack 配置才能使用。
 
-## 2. 🔍 Monaco Editor API
+## 2. Monaco Editor API
 
 - https://microsoft.github.io/monaco-editor/docs.html
 - **开发期间需要经常查阅该文档，了解 Monaco Editor 的各种配置和功能特性。**
 
-## 3. 📒 monaco-react 概述
+## 3. monaco-react 概述
 
 - **关于在项目中集成 monaco-react 组件的事先说明**：
   - 如果是一个裸工程，只需要做一些简单的配置，就可以很轻易地引入 monaco-react 来使用，即便遇到一些由于 CDN 资源访问耗时较长的问题，也可以通过官方文档的描述来跟着配置快速解决该问题。
@@ -68,7 +68,7 @@
   - 美 `/ ˈmɑːnəkoʊ /`
   - ![](./assets/2024-09-25-10-23-31.png)
 
-## 4. 💻 demos.1 - 安装并引入 Editor 组件
+## 4. demos.1 - 安装并引入 Editor 组件
 
 ```bash{8}
 # 要开始使用 react-monaco-editor，你需要先安装它。可以通过 npm 或 yarn 来添加依赖：
@@ -99,7 +99,7 @@ createRoot(document.getElementById('root')).render(
 
 ![](./assets/2024-09-25-09-31-27.png)
 
-## 5. 💻 demos.2 - 4 个钩子 onChange、onMount、beforeMount、onValidate
+## 5. demos.2 - 4 个钩子 onChange、onMount、beforeMount、onValidate
 
 ```jsx
 import { StrictMode } from 'react'
@@ -141,7 +141,7 @@ function App() {
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
-  </StrictMode>
+  </StrictMode>,
 )
 
 // doc:
@@ -168,7 +168,7 @@ createRoot(document.getElementById('root')).render(
   - ![](./assets/2024-09-25-09-44-15.png)
   - 可以通过这些钩子触发时被注入的参数获取到 editor 编辑器实例、monaco 实例等数据。
 
-## 6. 💻 demos.3 - 获取编辑器的当前值
+## 6. demos.3 - 获取编辑器的当前值
 
 - **两种方式**：
   - 1️⃣ 通过 onChange 钩子获取，一旦编辑器的内容发生变化，就会触发 onChange 👉 handleEditorChange 函数，并将编辑器的当前值作为参数传递给 handleEditorChange 函数。如果编辑器是只读的，那么这种方式将无法使用。
@@ -225,7 +225,7 @@ createRoot(document.getElementById('root')).render(
 
 ![](./assets/2024-09-25-09-49-00.png)
 
-## 7. 💻 demos.4 - 只读模式
+## 7. demos.4 - 只读模式
 
 ```jsx
 import { StrictMode } from 'react'
@@ -257,14 +257,14 @@ createRoot(document.getElementById('root')).render(
         // domReadOnly: true, // 隐藏只读提示框
       }}
     />
-  </StrictMode>
+  </StrictMode>,
 )
 // options 配置字段 API 文档 👉 https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor.IStandaloneEditorConstructionOptions.html
 ```
 
 ![](./assets/2024-09-25-10-11-41.png)
 
-## 8. 💻 demos.5 - 动态设置编辑器中的内容
+## 8. demos.5 - 动态设置编辑器中的内容
 
 ```jsx
 import { StrictMode, useRef } from 'react'
@@ -307,7 +307,7 @@ function App() {
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
-  </StrictMode>
+  </StrictMode>,
 )
 ```
 
@@ -317,12 +317,10 @@ createRoot(document.getElementById('root')).render(
 - 最终效果：
   - ![](./assets/2024-09-25-10-17-30.png)
 - 有关 editor 实例身上的 API：
-
   - 🔍 Monaco Editor API
     - 可以查阅微软的官方文档：Monaco Editor API
     - https://microsoft.github.io/monaco-editor/docs.html
   - 🔍 类型声明文件
-
     - 可以直接在本地查阅对应的类型声明文件。
 
     ```ts{22,30}
@@ -363,7 +361,7 @@ createRoot(document.getElementById('root')).render(
 
   - `getValue/setValue` 语义化已经很明确了，对于其它不清楚含义的，再通过喜欢的方式查询对应的 API 即可。
 
-## 9. 💻 demos.6 - 实战练习 - 模仿 matatastudio 的代码预览效果封装一个代码预览组件
+## 9. demos.6 - 实战练习 - 模仿 matatastudio 的代码预览效果封装一个代码预览组件
 
 - 可以在 https://vinci.matatastudio.com/ 中查看参考的代码预览效果示例：
   - ![](./assets/2024-09-25-11-31-27.png)
@@ -382,7 +380,7 @@ import App from './components/app/app'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
-  </StrictMode>
+  </StrictMode>,
 )
 ```
 
@@ -511,7 +509,7 @@ export default MyEditor
 - 最终效果：
   - ![](./assets/2025-02-13-14-46-37.png)
 
-## 10. 📒 实现代码预览功能 - 业务背景 + 遇到的坑 + 解决方案
+## 10. 实现代码预览功能 - 业务背景 + 遇到的坑 + 解决方案
 
 - 业务背景：在 scratch 中实现生成的代码的在线预览功能。
 - 技术选型：选择了使用 monaco-react 来实现代码预览的功能。
@@ -582,7 +580,6 @@ loader.config({
 - 手动将 https://cdn.jsdelivr.net/npm/monaco-editor@0.43.0 模块下载到本地，并修改路径指向本地文件。
 - 由于模块数量比较多，除了通过在线访问 CDN 上的资源一个个下载的这种方式之外，还可以直接 `npm i monaco-editor@0.43.0` 通过 npm 将包下到本地，然后将相关模块从 node_modules 中搬运到自己需要的位置，这样会更快一些。
 - 手动下载资源的具体步骤：
-
   - 首先，使用 `npm i monaco-editor@0.43.0` 获取到源码
   - 然后将 node_modules/monaco-editor 中的相关代码给搬运到本地项目中
   - 修改项目构建配置 vite.config.js
@@ -684,7 +681,7 @@ loader.config({ monaco })
     - 需要注意的是别对已有的构建逻辑造成影响，如果你还不熟悉项目的整体架构，随意修改可能会导致一些其它各种各样的问题。
   - 目前采用的方案是手动引入的方式。 :::
 
-## 11. 🤖 monaco 名称的由来
+## 11. monaco 名称的由来
 
 Monaco Editor 的名称来源于摩纳哥（Monaco），一个位于欧洲南部的小国。这个名字的选择背后并没有公开的官方解释，但通常软件产品的命名可能会受到多种因素的影响，比如简洁性、易于记忆、与项目特点相关联等。
 
@@ -699,7 +696,7 @@ Monaco Editor 的名称来源于摩纳哥（Monaco），一个位于欧洲南部
 
 如果你想要了解更具体的命名缘由，可能需要查看微软官方的相关文档或者询问直接参与该项目的开发者。不过，这类信息往往不是技术讨论的重点，因此不一定总是对外公开。
 
-## 12. 🔗 links
+## 12. links
 
 - **Issues**
   - https://github.com/microsoft/autogen/issues/3556

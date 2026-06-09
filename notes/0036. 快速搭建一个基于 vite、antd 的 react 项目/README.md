@@ -2,17 +2,17 @@
 
 <!-- region:toc -->
 
-- [1. 🔗 antd 官方文档 - 在 vite 中使用 antd](#1--antd-官方文档---在-vite-中使用-antd)
-- [2. 📒 使用 pnpm 实现安装和初始化的流程](#2--使用-pnpm-实现安装和初始化的流程)
-- [3. 💻 demos.1 - 测试按钮组件的使用](#3--demos1---测试按钮组件的使用)
+- [1. antd 官方文档 - 在 vite 中使用 antd](#1-antd-官方文档---在-vite-中使用-antd)
+- [2. 使用 pnpm 实现安装和初始化的流程](#2-使用-pnpm-实现安装和初始化的流程)
+- [3. demos.1 - 测试按钮组件的使用](#3-demos1---测试按钮组件的使用)
 
 <!-- endregion:toc -->
 
-## 1. 🔗 antd 官方文档 - 在 vite 中使用 antd
+## 1. antd 官方文档 - 在 vite 中使用 antd
 
 - https://ant-design.antgroup.com/docs/react/use-with-vite-cn
 
-## 2. 📒 使用 pnpm 实现安装和初始化的流程
+## 2. 使用 pnpm 实现安装和初始化的流程
 
 ```bash
 # 1. 快速创建一个 vite 项目
@@ -23,7 +23,7 @@ $ pnpm create vite
 pnpm install antd --save
 ```
 
-## 3. 💻 demos.1 - 测试按钮组件的使用
+## 3. demos.1 - 测试按钮组件的使用
 
 - 可根据实际需求，删除掉一些默认的样式或者 icon，比如 `src/App.css`、`src/index.css` 等。
 - 修改 `src/App.js`，引入 antd 的按钮组件。

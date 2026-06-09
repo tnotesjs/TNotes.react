@@ -2,20 +2,20 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 🤔 useDebugValue 是什么？](#3--usedebugvalue-是什么)
-- [4. 🤔 如何使用 useDebugValue？](#4--如何使用-usedebugvalue)
-- [5. 🤔 如何格式化显示值？](#5--如何格式化显示值)
-- [6. 🤔 有哪些实际应用场景？](#6--有哪些实际应用场景)
-- [7. 🤔 如何调试复杂的自定义 Hook？](#7--如何调试复杂的自定义-hook)
-- [8. 🤔 有哪些最佳实践？](#8--有哪些最佳实践)
-- [9. 🤔 有哪些常见问题？](#9--有哪些常见问题)
-- [10. 🔗 引用](#10--引用)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. useDebugValue 是什么？](#3-usedebugvalue-是什么)
+- [4. 如何使用 useDebugValue？](#4-如何使用-usedebugvalue)
+- [5. 如何格式化显示值？](#5-如何格式化显示值)
+- [6. 有哪些实际应用场景？](#6-有哪些实际应用场景)
+- [7. 如何调试复杂的自定义 Hook？](#7-如何调试复杂的自定义-hook)
+- [8. 有哪些最佳实践？](#8-有哪些最佳实践)
+- [9. 有哪些常见问题？](#9-有哪些常见问题)
+- [10. 引用](#10-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - useDebugValue 的基本概念
 - 在自定义 Hook 中使用
@@ -25,7 +25,7 @@
 - 最佳实践
 - 常见问题和解决方案
 
-## 2. 🫧 评价
+## 2. 评价
 
 这篇笔记讲解 React 中用于在 React DevTools 中显示自定义 Hook 调试信息的 Hook：useDebugValue。
 
@@ -36,7 +36,7 @@
 - 不应该用于组件内部，只用于自定义 Hook
 - 适度使用，只为复杂的自定义 Hook 添加调试信息
 
-## 3. 🤔 useDebugValue 是什么？
+## 3. useDebugValue 是什么？
 
 `useDebugValue` 用于在 React DevTools 中为自定义 Hook 添加标签。
 
@@ -166,7 +166,7 @@ function useDebugExample() {
 }
 ```
 
-## 4. 🤔 如何使用 useDebugValue？
+## 4. 如何使用 useDebugValue？
 
 在自定义 Hook 中添加调试信息。
 
@@ -218,8 +218,8 @@ function useUser(userId: number) {
     loading
       ? 'Loading...'
       : error
-      ? `Error: ${error.message}`
-      : `User: ${user?.name || 'Unknown'}`
+        ? `Error: ${error.message}`
+        : `User: ${user?.name || 'Unknown'}`,
   )
 
   return { user, loading, error }
@@ -294,7 +294,7 @@ function useMediaQuery(query: string): boolean {
 }
 ```
 
-## 5. 🤔 如何格式化显示值？
+## 5. 如何格式化显示值？
 
 使用格式化函数延迟计算，提升性能。
 
@@ -355,7 +355,7 @@ function useUserData(userId: number) {
       name: data.name,
       roles: data.roles.join(', '),
       memberFor: `${Math.floor(
-        (Date.now() - data.createdAt.getTime()) / (1000 * 60 * 60 * 24)
+        (Date.now() - data.createdAt.getTime()) / (1000 * 60 * 60 * 24),
       )} days`,
     }
   })
@@ -408,7 +408,7 @@ function usePerformanceMonitor(key: string) {
 }
 ```
 
-## 6. 🤔 有哪些实际应用场景？
+## 6. 有哪些实际应用场景？
 
 ```typescript
 // 场景 1：状态机 Hook
@@ -536,7 +536,7 @@ interface Permission {
 function usePermissions(userPermissions: Permission[]) {
   const checkPermission = (resource: string, action: string): boolean => {
     return userPermissions.some(
-      (p) => p.resource === resource && p.action === action
+      (p) => p.resource === resource && p.action === action,
     )
   }
 
@@ -549,7 +549,7 @@ function usePermissions(userPermissions: Permission[]) {
 }
 ```
 
-## 7. 🤔 如何调试复杂的自定义 Hook？
+## 7. 如何调试复杂的自定义 Hook？
 
 ```typescript
 // 组合多个 useDebugValue
@@ -574,7 +574,7 @@ function useNestedHook() {
   // 外层 Hook 也可以有自己的 useDebugValue
   useDebugValue(
     { online, userLoaded: !!user.user },
-    (state) => `Online: ${state.online}, User: ${state.userLoaded ? '✓' : '✗'}`
+    (state) => `Online: ${state.online}, User: ${state.userLoaded ? '✓' : '✗'}`,
   )
 
   return { online, user }
@@ -635,17 +635,17 @@ function usePerformanceDebug(name: string) {
       const avg =
         data.times.length > 0
           ? (data.times.reduce((a, b) => a + b, 0) / data.times.length).toFixed(
-              2
+              2,
             )
           : '0'
 
       return `${data.name}: ${data.count} renders | Avg: ${avg}ms`
-    }
+    },
   )
 }
 ```
 
-## 8. 🤔 有哪些最佳实践？
+## 8. 有哪些最佳实践？
 
 ```typescript
 // 实践 1：只为复杂的 Hook 添加调试信息
@@ -767,7 +767,7 @@ function useConditionalDebug(items: any[]) {
 }
 ```
 
-## 9. 🤔 有哪些常见问题？
+## 9. 有哪些常见问题？
 
 ```typescript
 // 问题 1：在组件中使用
@@ -878,7 +878,7 @@ function useWithNullCheck(data: any) {
 }
 ```
 
-## 10. 🔗 引用
+## 10. 引用
 
 - [useDebugValue 官方文档][1]
 - [React DevTools 使用指南][2]

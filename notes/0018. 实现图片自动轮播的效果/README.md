@@ -2,14 +2,14 @@
 
 <!-- region:toc -->
 
-- [1. 🫧 评价](#1--评价)
-- [2. 💻 demos.1 - 图片自动轮播（）](#2--demos1---图片自动轮播)
-- [3. 💻 demos.2 - 图片自动轮播](#3--demos2---图片自动轮播)
-- [4. 🔗 引用](#4--引用)
+- [1. 评价](#1-评价)
+- [2. demos.1 - 图片自动轮播（）](#2-demos1---图片自动轮播)
+- [3. demos.2 - 图片自动轮播](#3-demos2---图片自动轮播)
+- [4. 引用](#4-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🫧 评价
+## 1. 评价
 
 - 通过一个图片轮播的简单 demo 来加深对不可变的 react 元素的理解，以及 ref 的基本使用。
 - 需求描述
@@ -19,7 +19,7 @@
     - 鼠标悬停在图片上时，停止切换
     - 鼠标离开图片时，继续切换
 
-## 2. 💻 demos.1 - 图片自动轮播（）
+## 2. demos.1 - 图片自动轮播（）
 
 - 该 demo 强调：react 元素不可变。
 
@@ -123,7 +123,7 @@ setTimeout(() => {
     - 你知道 react 中的 diff 算法吗？
     - ……
 
-## 3. 💻 demos.2 - 图片自动轮播
+## 3. demos.2 - 图片自动轮播
 
 - 【1】是一个常见的由于定时器混乱错误引发的 bug。
 
@@ -181,7 +181,7 @@ function ImageSlider() {
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ImageSlider />
-  </StrictMode>
+  </StrictMode>,
 )
 ```
 
@@ -238,7 +238,7 @@ function ImageSlider() {
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ImageSlider />
-  </StrictMode>
+  </StrictMode>,
 )
 ```
 
@@ -285,7 +285,7 @@ stop() // 无效操作
   - `useRef` 返回同一个对象引用，组件多次渲染时，timer 始终指向同一内存地址。
   - 在 React 函数组件中，所有需要跨渲染周期保持的变量都应使用 `useRef` 管理。
 
-## 4. 🔗 引用
+## 4. 引用
 
 - useRef
   - https://react.dev/reference/react/useRef

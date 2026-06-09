@@ -2,38 +2,38 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 🤔 什么是 Render Props？](#3--什么是-render-props)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. 什么是 Render Props？](#3-什么是-render-props)
   - [3.1. 基本概念](#31-基本概念)
   - [3.2. 使用 children 作为函数](#32-使用-children-作为函数)
   - [3.3. 命名的 Render Props](#33-命名的-render-props)
-- [4. 🤔 Render Props 有什么优势？](#4--render-props-有什么优势)
+- [4. Render Props 有什么优势？](#4-render-props-有什么优势)
   - [4.1. 优势 1：逻辑复用](#41-优势-1逻辑复用)
   - [4.2. 优势 2：灵活的控制](#42-优势-2灵活的控制)
   - [4.3. 优势 3：避免命名冲突](#43-优势-3避免命名冲突)
-- [5. 🤔 如何使用 Render Props？](#5--如何使用-render-props)
+- [5. 如何使用 Render Props？](#5-如何使用-render-props)
   - [5.1. 实践 1：数据获取](#51-实践-1数据获取)
   - [5.2. 实践 2：表单状态管理](#52-实践-2表单状态管理)
   - [5.3. 实践 3：列表虚拟化](#53-实践-3列表虚拟化)
   - [5.4. 实践 4：权限控制](#54-实践-4权限控制)
-- [6. 🤔 Render Props vs Hooks？](#6--render-props-vs-hooks)
+- [6. Render Props vs Hooks？](#6-render-props-vs-hooks)
   - [6.1. 对比表格](#61-对比表格)
   - [6.2. 同一逻辑的两种实现](#62-同一逻辑的两种实现)
   - [6.3. 何时仍使用 Render Props](#63-何时仍使用-render-props)
   - [6.4. 迁移到 Hooks](#64-迁移到-hooks)
-- [7. 🔗 引用](#7--引用)
+- [7. 引用](#7-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - Render Props 的定义
 - Render Props 的优势
 - 使用方法和实践
 - 与 Hooks 的对比
 
-## 2. 🫧 评价
+## 2. 评价
 
 Render Props 是 React 中实现代码复用的经典模式，通过函数 prop 来共享逻辑。
 
@@ -42,7 +42,7 @@ Render Props 是 React 中实现代码复用的经典模式，通过函数 prop 
 - 现在大多数场景可以用 Hooks 替代，但某些情况下仍有价值
 - 理解这个模式有助于理解 React 的组件设计思想
 
-## 3. 🤔 什么是 Render Props？
+## 3. 什么是 Render Props？
 
 ### 3.1. 基本概念
 
@@ -158,7 +158,7 @@ function App() {
 }
 ```
 
-## 4. 🤔 Render Props 有什么优势？
+## 4. Render Props 有什么优势？
 
 ### 4.1. 优势 1：逻辑复用
 
@@ -264,7 +264,7 @@ function App() {
 }
 ```
 
-## 5. 🤔 如何使用 Render Props？
+## 5. 如何使用 Render Props？
 
 ### 5.1. 实践 1：数据获取
 
@@ -439,7 +439,7 @@ function AdminPanel() {
 }
 ```
 
-## 6. 🤔 Render Props vs Hooks？
+## 6. Render Props vs Hooks？
 
 ### 6.1. 对比表格
 
@@ -590,7 +590,7 @@ function App() {
 
 :::
 
-## 7. 🔗 引用
+## 7. 引用
 
 - [React 官方文档 - Render Props][1]
 - [Michael Jackson - Use a Render Prop][2]

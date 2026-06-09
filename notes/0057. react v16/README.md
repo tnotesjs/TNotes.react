@@ -2,9 +2,9 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 🤖 react v16 都有哪些重大更新？（待整理）](#3--react-v16-都有哪些重大更新待整理)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. react v16 都有哪些重大更新？（待整理）](#3-react-v16-都有哪些重大更新待整理)
   - [3.1. 全新 Fiber Reconciler（核心重构）](#31-全新-fiber-reconciler核心重构)
   - [3.2. 错误边界（Error Boundaries）](#32-错误边界error-boundaries)
   - [3.3. 支持返回多个元素（Fragments 的前身）](#33-支持返回多个元素fragments-的前身)
@@ -14,19 +14,19 @@
   - [3.7. 许可证变更（临时争议）](#37-许可证变更临时争议)
   - [3.8. Breaking Changes（破坏性变更）](#38-breaking-changes破坏性变更)
   - [3.9. 其他改进](#39-其他改进)
-- [4. 🔗 引用](#4--引用)
+- [4. 引用](#4-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - react v16 的重大更新
 
-## 2. 🫧 评价
+## 2. 评价
 
 - 快速了解 react v16 的一些重大变更
 
-## 3. 🤖 react v16 都有哪些重大更新？（待整理）
+## 3. react v16 都有哪些重大更新？（待整理）
 
 - 以下是基于 [React v16.0.0 官方 Release Notes][1] 的主要变更内容总结。
 - React v16 是 React 发展史上的一个 里程碑式大版本，于 2017 年 9 月 26 日 正式发布。
@@ -121,7 +121,7 @@ import createReactClass from 'create-react-class'
 - 减小了 bundle 体积（尽管功能更多）。
 - 支持在 render 中返回 `null`、`boolean`、`string` 等类型（此前仅支持组件或元素）。
 
-## 4. 🔗 引用
+## 4. 引用
 
 - [React v16.0.0 Release Notes][1]
 - [React 16 博客文章（React Blog）][2]

@@ -2,27 +2,27 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 🤔 什么是生命周期方法？](#3--什么是生命周期方法)
-- [4. 🤔 挂载阶段有哪些生命周期方法？](#4--挂载阶段有哪些生命周期方法)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. 什么是生命周期方法？](#3-什么是生命周期方法)
+- [4. 挂载阶段有哪些生命周期方法？](#4-挂载阶段有哪些生命周期方法)
   - [4.1. constructor](#41-constructor)
   - [4.2. getDerivedStateFromProps](#42-getderivedstatefromprops)
   - [4.3. componentDidMount](#43-componentdidmount)
-- [5. 🤔 更新阶段有哪些生命周期方法？](#5--更新阶段有哪些生命周期方法)
+- [5. 更新阶段有哪些生命周期方法？](#5-更新阶段有哪些生命周期方法)
   - [5.1. shouldComponentUpdate](#51-shouldcomponentupdate)
   - [5.2. getSnapshotBeforeUpdate](#52-getsnapshotbeforeupdate)
   - [5.3. componentDidUpdate](#53-componentdidupdate)
-- [6. 🤔 卸载阶段有哪些生命周期方法？](#6--卸载阶段有哪些生命周期方法)
+- [6. 卸载阶段有哪些生命周期方法？](#6-卸载阶段有哪些生命周期方法)
   - [6.1. componentWillUnmount](#61-componentwillunmount)
-- [7. 🤔 哪些生命周期方法已经废弃？](#7--哪些生命周期方法已经废弃)
-- [8. 🤔 如何使用错误边界生命周期？](#8--如何使用错误边界生命周期)
-- [9. 🆚 常用生命周期方法对比](#9--常用生命周期方法对比)
-- [10. 🔗 引用](#10--引用)
+- [7. 哪些生命周期方法已经废弃？](#7-哪些生命周期方法已经废弃)
+- [8. 如何使用错误边界生命周期？](#8-如何使用错误边界生命周期)
+- [9. 常用生命周期方法对比](#9-常用生命周期方法对比)
+- [10. 引用](#10-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - 生命周期方法的概念与分类
 - 挂载阶段的生命周期方法
@@ -32,7 +32,7 @@
 - 错误边界生命周期的使用
 - 常用生命周期方法的对比
 
-## 2. 🫧 评价
+## 2. 评价
 
 生命周期方法是 React 类组件的核心概念，用于在组件的不同阶段执行特定的逻辑，但在函数组件中已被 Hooks 替代。
 
@@ -42,7 +42,7 @@
 - 错误边界使用 `componentDidCatch` 和 `getDerivedStateFromError` 来捕获子组件错误
 - 现代 React 开发推荐使用函数组件和 Hooks，生命周期方法主要用于维护旧代码
 
-## 3. 🤔 什么是生命周期方法？
+## 3. 什么是生命周期方法？
 
 生命周期方法是 React 类组件在不同阶段自动调用的特殊方法，允许开发者在特定时机执行代码。
 
@@ -103,7 +103,7 @@ class LifecycleDemo extends React.Component<{}, { count: number }> {
 // componentWillUnmount
 ```
 
-## 4. 🤔 挂载阶段有哪些生命周期方法？
+## 4. 挂载阶段有哪些生命周期方法？
 
 挂载阶段是组件实例被创建并插入 DOM 的过程，依次执行以下生命周期方法。
 
@@ -154,7 +154,7 @@ class EmailInput extends React.Component<
 
   static getDerivedStateFromProps(
     props: { email: string },
-    state: { email: string; prevPropsEmail: string }
+    state: { email: string; prevPropsEmail: string },
   ) {
     // 当 props.email 变化时，重置 state.email
     if (props.email !== state.prevPropsEmail) {
@@ -221,7 +221,7 @@ class UserProfile extends React.Component<{ userId: number }, { user: any }> {
 }
 ```
 
-## 5. 🤔 更新阶段有哪些生命周期方法？
+## 5. 更新阶段有哪些生命周期方法？
 
 更新阶段发生在 props 或 state 变化时，组件会重新渲染。
 
@@ -238,7 +238,7 @@ class OptimizedList extends React.Component<
 
   shouldComponentUpdate(
     nextProps: { items: string[] },
-    nextState: { filter: string }
+    nextState: { filter: string },
   ) {
     // 仅当 items 或 filter 变化时才重新渲染
     return (
@@ -250,7 +250,7 @@ class OptimizedList extends React.Component<
   render() {
     console.log('渲染') // 优化后减少渲染次数
     const filteredItems = this.props.items.filter((item) =>
-      item.includes(this.state.filter)
+      item.includes(this.state.filter),
     )
     return (
       <div>
@@ -289,7 +289,7 @@ class ScrollList extends React.Component<{ messages: string[] }, {}> {
   componentDidUpdate(
     prevProps: { messages: string[] },
     prevState: {},
-    snapshot: number | null
+    snapshot: number | null,
   ) {
     // 根据快照调整滚动位置，保持用户查看位置
     if (snapshot !== null) {
@@ -343,7 +343,7 @@ class UserDetail extends React.Component<{ userId: number }, { user: any }> {
 }
 ```
 
-## 6. 🤔 卸载阶段有哪些生命周期方法？
+## 6. 卸载阶段有哪些生命周期方法？
 
 卸载阶段只有一个生命周期方法，用于清理副作用。
 
@@ -419,7 +419,7 @@ class WebSocketComponent extends React.Component {
 }
 ```
 
-## 7. 🤔 哪些生命周期方法已经废弃？
+## 7. 哪些生命周期方法已经废弃？
 
 React 16.3 废弃了三个生命周期方法，因为它们在异步渲染中可能导致问题。
 
@@ -463,7 +463,7 @@ class OldPropsHandler extends React.Component<
   // ✅ 替代方案：使用 getDerivedStateFromProps 或 componentDidUpdate
   static getDerivedStateFromProps(
     props: { userId: number },
-    state: { loading: boolean; prevUserId?: number }
+    state: { loading: boolean; prevUserId?: number },
   ) {
     if (props.userId !== state.prevUserId) {
       return { loading: true, prevUserId: props.userId }
@@ -493,7 +493,7 @@ class OldUpdateHandler extends React.Component {
 }
 ```
 
-## 8. 🤔 如何使用错误边界生命周期？
+## 8. 如何使用错误边界生命周期？
 
 错误边界是捕获子组件错误的特殊组件，使用 `componentDidCatch` 和 `getDerivedStateFromError`。
 
@@ -596,7 +596,7 @@ class ErrorBoundaryLimitations extends React.Component {
 }
 ```
 
-## 9. 🆚 常用生命周期方法对比
+## 9. 常用生命周期方法对比
 
 | 生命周期方法 | 调用时机 | 常见用途 | 注意事项 |
 | --- | --- | --- | --- |
@@ -649,7 +649,7 @@ function FunctionComponent() {
 }
 ```
 
-## 10. 🔗 引用
+## 10. 引用
 
 - [React 文档 - 生命周期方法][1]
 - [React 生命周期图谱][2]

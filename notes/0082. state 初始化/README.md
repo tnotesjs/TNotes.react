@@ -2,40 +2,40 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 🤔 如何初始化 State？](#3--如何初始化-state)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. 如何初始化 State？](#3-如何初始化-state)
   - [3.1. 函数组件：useState](#31-函数组件usestate)
   - [3.2. 类组件：构造函数](#32-类组件构造函数)
   - [3.3. 从 Props 初始化](#33-从-props-初始化)
   - [3.4. 从 localStorage 初始化](#34-从-localstorage-初始化)
-- [4. 🤔 什么是惰性初始化？](#4--什么是惰性初始化)
+- [4. 什么是惰性初始化？](#4-什么是惰性初始化)
   - [4.1. 基本概念](#41-基本概念)
   - [4.2. 实际应用场景](#42-实际应用场景)
   - [4.3. 性能对比](#43-性能对比)
-- [5. 🤔 如何初始化复杂 State？](#5--如何初始化复杂-state)
+- [5. 如何初始化复杂 State？](#5-如何初始化复杂-state)
   - [5.1. 使用对象](#51-使用对象)
   - [5.2. 使用 useReducer](#52-使用-usereducer)
   - [5.3. 拆分多个 State](#53-拆分多个-state)
   - [5.4. 使用自定义 Hook](#54-使用自定义-hook)
-- [6. 🤔 初始化 State 的常见错误？](#6--初始化-state-的常见错误)
+- [6. 初始化 State 的常见错误？](#6-初始化-state-的常见错误)
   - [6.1. 错误 1：在渲染时执行昂贵计算](#61-错误-1在渲染时执行昂贵计算)
   - [6.2. 错误 2：使用 undefined 初始化](#62-错误-2使用-undefined-初始化)
   - [6.3. 错误 3：依赖外部变量](#63-错误-3依赖外部变量)
   - [6.4. 错误 4：在 useEffect 中初始化](#64-错误-4在-useeffect-中初始化)
   - [6.5. 错误 5：错误地使用 Props](#65-错误-5错误地使用-props)
-- [7. 🔗 引用](#7--引用)
+- [7. 引用](#7-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - State 的基本初始化方式
 - 惰性初始化的概念和用法
 - 复杂 State 的初始化策略
 - 常见错误和最佳实践
 
-## 2. 🫧 评价
+## 2. 评价
 
 State 初始化是 React 组件中的基础操作，正确的初始化方式能避免性能问题。
 
@@ -44,7 +44,7 @@ State 初始化是 React 组件中的基础操作，正确的初始化方式能�
 - 需要注意初始值的类型，避免 undefined 导致的受控/非受控切换问题
 - 合理使用初始化函数可以提高组件性能
 
-## 3. 🤔 如何初始化 State？
+## 3. 如何初始化 State？
 
 ### 3.1. 函数组件：useState
 
@@ -148,7 +148,7 @@ function ThemeToggle() {
 }
 ```
 
-## 4. 🤔 什么是惰性初始化？
+## 4. 什么是惰性初始化？
 
 ### 4.1. 基本概念
 
@@ -215,7 +215,7 @@ function DataGrid({ rows, columns }) {
       columns.reduce((acc, col) => {
         acc[col.key] = transformValue(row[col.key], col.type)
         return acc
-      }, {})
+      }, {}),
     )
   })
 
@@ -239,21 +239,21 @@ function PerformanceTest() {
   const [data1] = useState(
     Array(10000)
       .fill(0)
-      .map((_, i) => i)
+      .map((_, i) => i),
   )
 
   // ✅ 使用惰性初始化
   const [data2] = useState(() =>
     Array(10000)
       .fill(0)
-      .map((_, i) => i)
+      .map((_, i) => i),
   )
 
   // 第二种方式性能更好，因为数组只创建一次
 }
 ```
 
-## 5. 🤔 如何初始化复杂 State？
+## 5. 如何初始化复杂 State？
 
 ### 5.1. 使用对象
 
@@ -385,7 +385,7 @@ function LoginForm() {
 }
 ```
 
-## 6. 🤔 初始化 State 的常见错误？
+## 6. 初始化 State 的常见错误？
 
 ### 6.1. 错误 1：在渲染时执行昂贵计算
 
@@ -400,7 +400,7 @@ function BadComponent() {
       .map((_, i) => ({
         id: i,
         value: Math.random(),
-      }))
+      })),
   )
 
   return <div>{data.length}</div>
@@ -416,7 +416,7 @@ function GoodComponent() {
       .map((_, i) => ({
         id: i,
         value: Math.random(),
-      }))
+      })),
   )
 
   return <div>{data.length}</div>
@@ -557,7 +557,7 @@ function GoodCounter({ count, onChange }) {
 
 :::
 
-## 7. 🔗 引用
+## 7. 引用
 
 - [React 官方文档 - useState][1]
 - [React 官方文档 - useReducer][2]

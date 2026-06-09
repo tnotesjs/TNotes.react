@@ -2,34 +2,34 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 🤔 什么是派生状态？](#3--什么是派生状态)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. 什么是派生状态？](#3-什么是派生状态)
   - [3.1. 基本概念](#31-基本概念)
   - [3.2. 派生状态的特征](#32-派生状态的特征)
 - [4. � 为什么避免存储派生状态？](#4--为什么避免存储派生状态)
   - [4.1. 问题 1：数据不一致](#41-问题-1数据不一致)
   - [4.2. 问题 2：代码复杂度增加](#42-问题-2代码复杂度增加)
   - [4.3. 问题 3：容易出错](#43-问题-3容易出错)
-- [5. 🤔 如何正确使用派生状态？](#5--如何正确使用派生状态)
+- [5. 如何正确使用派生状态？](#5-如何正确使用派生状态)
   - [5.1. 方法 1：直接计算](#51-方法-1直接计算)
   - [5.2. 方法 2：使用函数封装](#52-方法-2使用函数封装)
   - [5.3. 方法 3：避免从 props 派生状态](#53-方法-3避免从-props-派生状态)
-- [6. 🤔 什么时候需要缓存派生值？](#6--什么时候需要缓存派生值)
+- [6. 什么时候需要缓存派生值？](#6-什么时候需要缓存派生值)
   - [6.1. 使用 useMemo 的时机](#61-使用-usememo-的时机)
   - [6.2. 性能对比](#62-性能对比)
   - [6.3. useMemo 的正确使用](#63-usememo-的正确使用)
-- [7. 🤔 派生状态的常见陷阱？](#7--派生状态的常见陷阱)
+- [7. 派生状态的常见陷阱？](#7-派生状态的常见陷阱)
   - [7.1. 陷阱 1：过度使用 useMemo](#71-陷阱-1过度使用-usememo)
   - [7.2. 陷阱 2：忘记依赖项](#72-陷阱-2忘记依赖项)
   - [7.3. 陷阱 3：在循环中计算](#73-陷阱-3在循环中计算)
   - [7.4. 陷阱 4：从 props 派生复杂状态](#74-陷阱-4从-props-派生复杂状态)
   - [7.5. 陷阱 5：派生状态依赖其他派生状态](#75-陷阱-5派生状态依赖其他派生状态)
-- [8. 🔗 引用](#8--引用)
+- [8. 引用](#8-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - 派生状态的概念和特点
 - 避免存储派生状态的原因
@@ -37,7 +37,7 @@
 - 使用 useMemo 缓存派生值
 - 派生状态的常见错误
 
-## 2. 🫧 评价
+## 2. 评价
 
 派生状态是可以从现有状态计算得出的值，理解它能避免状态冗余和同步问题。
 
@@ -47,7 +47,7 @@
 - 只有昂贵的计算才需要使用 useMemo 优化
 - 从 props 派生状态要特别小心，通常应该直接使用 props
 
-## 3. 🤔 什么是派生状态？
+## 3. 什么是派生状态？
 
 ### 3.1. 基本概念
 
@@ -87,7 +87,7 @@ function ShoppingCart() {
   // ✅ 这些都是派生值，不应该存储为 state
   const subtotal = items.reduce(
     (sum, item) => sum + item.price * item.quantity,
-    0
+    0,
   )
 
   const tax = subtotal * 0.1
@@ -125,7 +125,7 @@ function BadTodoList() {
 
   const toggleTodo = (index) => {
     const newTodos = todos.map((todo, i) =>
-      i === index ? { ...todo, done: !todo.done } : todo
+      i === index ? { ...todo, done: !todo.done } : todo,
     )
     setTodos(newTodos)
     // ❌ 需要手动同步
@@ -151,8 +151,8 @@ function GoodTodoList() {
   const toggleTodo = (index) => {
     setTodos(
       todos.map((todo, i) =>
-        i === index ? { ...todo, done: !todo.done } : todo
-      )
+        i === index ? { ...todo, done: !todo.done } : todo,
+      ),
     )
     // ✅ 自动同步
   }
@@ -226,13 +226,13 @@ function BadInventory() {
     const newItems = items.map((i) => (i.id === id ? { ...i, quantity } : i))
     setItems(newItems)
     setTotalPrice(
-      totalPrice - oldItem.price + newItems.find((i) => i.id === id).price
+      totalPrice - oldItem.price + newItems.find((i) => i.id === id).price,
     )
   }
 }
 ```
 
-## 5. 🤔 如何正确使用派生状态？
+## 5. 如何正确使用派生状态？
 
 ### 5.1. 方法 1：直接计算
 
@@ -244,11 +244,11 @@ function DataList() {
 
   // ✅ 每次渲染时计算
   const filteredItems = items.filter((item) =>
-    item.name.toLowerCase().includes(filter.toLowerCase())
+    item.name.toLowerCase().includes(filter.toLowerCase()),
   )
 
   const sortedItems = [...filteredItems].sort((a, b) =>
-    a[sortBy] > b[sortBy] ? 1 : -1
+    a[sortBy] > b[sortBy] ? 1 : -1,
   )
 
   return (
@@ -326,7 +326,7 @@ function EmailInputWithKey({ userId, defaultEmail }) {
 
 :::
 
-## 6. 🤔 什么时候需要缓存派生值？
+## 6. 什么时候需要缓存派生值？
 
 ### 6.1. 使用 useMemo 的时机
 
@@ -358,7 +358,7 @@ function ExpensiveCalculation() {
       items: expensiveResult,
       filter,
     }),
-    [expensiveResult, filter]
+    [expensiveResult, filter],
   )
 
   return <ExpensiveChild config={config} />
@@ -419,14 +419,14 @@ function DataVisualization() {
         maintainAspectRatio: false,
       },
     }),
-    [chartType, processedData]
+    [chartType, processedData],
   )
 
   return <Chart config={chartConfig} />
 }
 ```
 
-## 7. 🤔 派生状态的常见陷阱？
+## 7. 派生状态的常见陷阱？
 
 ### 7.1. 陷阱 1：过度使用 useMemo
 
@@ -591,13 +591,13 @@ function NestedDerived() {
   // ✅ 第一层派生
   const filteredItems = useMemo(
     () => items.filter((item) => item.name.includes(filter)),
-    [items, filter]
+    [items, filter],
   )
 
   // ✅ 第二层派生（依赖第一层）
   const sortedItems = useMemo(
     () => [...filteredItems].sort((a, b) => a.name.localeCompare(b.name)),
-    [filteredItems]
+    [filteredItems],
   )
 
   // ✅ 第三层派生（依赖第二层）
@@ -615,7 +615,7 @@ function NestedDerived() {
 }
 ```
 
-## 8. 🔗 引用
+## 8. 引用
 
 - [React 官方文档 - 避免派生状态][1]
 - [React 官方文档 - useMemo][2]

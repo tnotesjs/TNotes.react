@@ -2,26 +2,26 @@
 
 <!-- region:toc -->
 
-- [1. 🫧 评价](#1--评价)
-- [2. 🤔 回顾 React Element 是什么？](#2--回顾-react-element-是什么)
-- [3. 🤔 什么是 React Fiber？](#3--什么是-react-fiber)
-- [4. 🤔 Fiber 有什么作用？](#4--fiber-有什么作用)
-- [5. 🤔 React Element 与 Fiber 的关系是？](#5--react-element-与-fiber-的关系是)
-- [6. 🤔 Fiber Node 的结构是？（简化版）](#6--fiber-node-的结构是简化版)
-- [7. 🤔 双 Fiber 树（Current Tree / Work-In-Progress Tree）是什么？](#7--双-fiber-树current-tree--work-in-progress-tree是什么)
-- [8. 🤔 react 的渲染流程（从 Element 到 Fiber）是？](#8--react-的渲染流程从-element-到-fiber是)
-- [9. 🤔 为什么 Fiber 是“异步可中断的”？](#9--为什么-fiber-是异步可中断的)
-- [10. 📒 Element 与 Fiber 的对照总结](#10--element-与-fiber-的对照总结)
+- [1. 评价](#1-评价)
+- [2. 回顾 React Element 是什么？](#2-回顾-react-element-是什么)
+- [3. 什么是 React Fiber？](#3-什么是-react-fiber)
+- [4. Fiber 有什么作用？](#4-fiber-有什么作用)
+- [5. React Element 与 Fiber 的关系是？](#5-react-element-与-fiber-的关系是)
+- [6. Fiber Node 的结构是？（简化版）](#6-fiber-node-的结构是简化版)
+- [7. 双 Fiber 树（Current Tree / Work-In-Progress Tree）是什么？](#7-双-fiber-树current-tree--work-in-progress-tree是什么)
+- [8. react 的渲染流程（从 Element 到 Fiber）是？](#8-react-的渲染流程从-element-到-fiber是)
+- [9. 为什么 Fiber 是“异步可中断的”？](#9-为什么-fiber-是异步可中断的)
+- [10. Element 与 Fiber 的对照总结](#10-element-与-fiber-的对照总结)
 
 <!-- endregion:toc -->
 
-## 1. 🫧 评价
+## 1. 评价
 
 - 很多人理解 React 到了 “Element” 这一层就止步了，但实际上 —— React 真正的核心是 Fiber。
 - 写到 React Element 自然会想到 React Fiber，你可以先把这篇笔记当做一个扩展内容来看！即便你不知道 Fiber 也不会影响你写一些日常的业务逻辑。
 - 后边在学习 Fiber 的时候，再介绍具体细节，比如：旧版的 Stack Reconciler 和新版的 Fiber Reconciler 之间的区别、时间切片（Time Slicing）、Fiber 结构、并发模式（Concurrent Mode）、…… 等内容。
 
-## 2. 🤔 回顾 React Element 是什么？
+## 2. 回顾 React Element 是什么？
 
 - 先来看一个示例：
 
@@ -51,7 +51,7 @@ const element = React.createElement('div', { className: 'box' }, 'Hello')
 - React 内部会根据它去创建更复杂的结构，用于协调、渲染和更新；
 - 这个更复杂的结构，就是 Fiber Tree。
 
-## 3. 🤔 什么是 React Fiber？
+## 3. 什么是 React Fiber？
 
 - Fiber 是 React 16 引入的新的协调引擎（Reconciliation Engine）。
 - 它将每一个 React Element 转换成一个 可中断、可恢复的工作单元（work unit）。
@@ -59,7 +59,7 @@ const element = React.createElement('div', { className: 'box' }, 'Hello')
   - React Element = 静态描述；
   - React Fiber = 动态执行单元。
 
-## 4. 🤔 Fiber 有什么作用？
+## 4. Fiber 有什么作用？
 
 - Fiber 解决的核心问题是：React 需要在保持流畅用户体验的同时，高效地调度和更新 UI。
 - 在 React 15 及之前，渲染和更新是 同步、不可中断 的：
@@ -73,7 +73,7 @@ const element = React.createElement('div', { className: 'box' }, 'Hello')
   - 错误边界（Error Boundaries）；
   - …… 等其他新特性。
 
-## 5. 🤔 React Element 与 Fiber 的关系是？
+## 5. React Element 与 Fiber 的关系是？
 
 - 一句话总结：React Element 是 UI 的“草图”，Fiber 是“施工计划”，DOM 是“建筑成品”。
 - 用一个图可以很好地理解它们之间的关系：
@@ -92,7 +92,7 @@ Renderer（DOM/Native）
      真实 DOM 树
 ```
 
-## 6. 🤔 Fiber Node 的结构是？（简化版）
+## 6. Fiber Node 的结构是？（简化版）
 
 - React 中每一个组件、DOM 元素、文本节点，都会有一个对应的 Fiber 节点。
 - 每一个 Fiber 节点都是一个对象，包含了当前组件实例的各种运行信息：
@@ -113,7 +113,7 @@ Renderer（DOM/Native）
 }
 ```
 
-## 7. 🤔 双 Fiber 树（Current Tree / Work-In-Progress Tree）是什么？
+## 7. 双 Fiber 树（Current Tree / Work-In-Progress Tree）是什么？
 
 - React 在运行时会维护两棵 Fiber 树：
 
@@ -129,7 +129,7 @@ Renderer（DOM/Native）
   - “浏览器渲染两层画布，一层在显示，一层在绘制，绘制完后一次性切换。”
   - 它极大地提高了性能，并让渲染可以被中断与恢复。
 
-## 8. 🤔 react 的渲染流程（从 Element 到 Fiber）是？
+## 8. react 的渲染流程（从 Element 到 Fiber）是？
 
 ```jsx
 // 示例：
@@ -153,7 +153,7 @@ function App() {
   - 提交（Commit）阶段更新 DOM；
   - 双树交换；
 
-## 9. 🤔 为什么 Fiber 是“异步可中断的”？
+## 9. 为什么 Fiber 是“异步可中断的”？
 
 - Fiber 的最大创新是：将递归的 Reconciliation 改写为链表结构，使得 React 可以暂停、恢复、丢弃和重新执行任务。
 - React Scheduler 可以：
@@ -162,7 +162,7 @@ function App() {
   - 渲染完再回到上次中断的地方继续执行；
 - React Scheduler 是 React 18 引入 Concurrent Rendering（并发渲染） 的基础。
 
-## 10. 📒 Element 与 Fiber 的对照总结
+## 10. Element 与 Fiber 的对照总结
 
 | 对比项          | React Element      | React Fiber                   |
 | --------------- | ------------------ | ----------------------------- |

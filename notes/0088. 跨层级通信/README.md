@@ -2,38 +2,38 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 🤔 什么是跨层级通信？](#3--什么是跨层级通信)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. 什么是跨层级通信？](#3-什么是跨层级通信)
   - [3.1. Props Drilling 问题](#31-props-drilling-问题)
   - [3.2. 跨层级通信的场景](#32-跨层级通信的场景)
-- [4. 🤔 使用 Context 实现跨层级通信？](#4--使用-context-实现跨层级通信)
+- [4. 使用 Context 实现跨层级通信？](#4-使用-context-实现跨层级通信)
   - [4.1. 基本用法](#41-基本用法)
   - [4.2. 实战示例：主题切换](#42-实战示例主题切换)
   - [4.3. 实战示例：国际化](#43-实战示例国际化)
-- [5. 🤔 如何优化 Context 性能？](#5--如何优化-context-性能)
+- [5. 如何优化 Context 性能？](#5-如何优化-context-性能)
   - [5.1. 问题：Context 导致不必要的重渲染](#51-问题context-导致不必要的重渲染)
   - [5.2. 优化 1：拆分 Context](#52-优化-1拆分-context)
   - [5.3. 优化 2：使用 useMemo](#53-优化-2使用-usememo)
   - [5.4. 优化 3：组件组合](#54-优化-3组件组合)
-- [6. 🤔 多个 Context 如何组合使用？](#6--多个-context-如何组合使用)
+- [6. 多个 Context 如何组合使用？](#6-多个-context-如何组合使用)
   - [6.1. 方式 1：嵌套 Provider](#61-方式-1嵌套-provider)
   - [6.2. 方式 2：组合 Provider](#62-方式-2组合-provider)
   - [6.3. 方式 3：统一管理](#63-方式-3统一管理)
-- [7. 🤔 跨层级通信的常见错误？](#7--跨层级通信的常见错误)
+- [7. 跨层级通信的常见错误？](#7-跨层级通信的常见错误)
   - [7.1. 错误 1：忘记提供 Provider](#71-错误-1忘记提供-provider)
   - [7.2. 错误 2：在 Provider 中直接传递对象](#72-错误-2在-provider-中直接传递对象)
   - [7.3. 错误 3：过度使用 Context](#73-错误-3过度使用-context)
   - [7.4. 错误 4：Context 值频繁变化](#74-错误-4context-值频繁变化)
-- [8. 🆚 Context vs Props Drilling](#8--context-vs-props-drilling)
+- [8. Context vs Props Drilling](#8-context-vs-props-drilling)
   - [8.1. 对比表格](#81-对比表格)
   - [8.2. 何时使用 Context](#82-何时使用-context)
   - [8.3. 推荐实践](#83-推荐实践)
-- [9. 🔗 引用](#9--引用)
+- [9. 引用](#9-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - 跨层级通信的概念和场景
 - Context API 的使用方法
@@ -41,7 +41,7 @@
 - 多个 Context 的组合
 - 常见错误和解决方案
 
-## 2. 🫧 评价
+## 2. 评价
 
 跨层级通信解决了 props 逐层传递的问题，Context 是 React 官方提供的解决方案。
 
@@ -51,7 +51,7 @@
 - Context 配合 useMemo 可以有效避免不必要的重渲染
 - 优先考虑组件组合，避免过度使用 Context
 
-## 3. 🤔 什么是跨层级通信？
+## 3. 什么是跨层级通信？
 
 ### 3.1. Props Drilling 问题
 
@@ -103,7 +103,7 @@ const locale = 'zh-CN'
 const auth = { isAuthenticated: true, token: 'xxx' }
 ```
 
-## 4. 🤔 使用 Context 实现跨层级通信？
+## 4. 使用 Context 实现跨层级通信？
 
 ### 4.1. 基本用法
 
@@ -260,7 +260,7 @@ function LanguageSwitcher() {
 }
 ```
 
-## 5. 🤔 如何优化 Context 性能？
+## 5. 如何优化 Context 性能？
 
 ### 5.1. 问题：Context 导致不必要的重渲染
 
@@ -361,7 +361,7 @@ function App() {
 }
 ```
 
-## 6. 🤔 多个 Context 如何组合使用？
+## 6. 多个 Context 如何组合使用？
 
 ### 6.1. 方式 1：嵌套 Provider
 
@@ -393,14 +393,14 @@ function combineProviders(...providers) {
         </AccumulatedProviders>
       )
     },
-    ({ children }) => <>{children}</>
+    ({ children }) => <>{children}</>,
   )
 }
 
 const AppProviders = combineProviders(
   [ThemeProvider],
   [LocaleProvider],
-  [AuthProvider]
+  [AuthProvider],
 )
 
 function App() {
@@ -447,7 +447,7 @@ function Component() {
 }
 ```
 
-## 7. 🤔 跨层级通信的常见错误？
+## 7. 跨层级通信的常见错误？
 
 ### 7.1. 错误 1：忘记提供 Provider
 
@@ -570,7 +570,7 @@ function GoodComponent() {
 }
 ```
 
-## 8. 🆚 Context vs Props Drilling
+## 8. Context vs Props Drilling
 
 ### 8.1. 对比表格
 
@@ -643,7 +643,7 @@ const user = useSelector(state => state.user)
 <Layout header={<Header user={user} />} />
 ```
 
-## 9. 🔗 引用
+## 9. 引用
 
 - [React 官方文档 - Context][1]
 - [React 官方文档 - useContext][2]

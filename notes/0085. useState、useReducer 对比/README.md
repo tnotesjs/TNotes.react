@@ -2,43 +2,43 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 🆚 基本用法对比](#3--基本用法对比)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. 基本用法对比](#3-基本用法对比)
   - [3.1. 简单计数器](#31-简单计数器)
   - [3.2. 表单状态管理](#32-表单状态管理)
   - [3.3. 对比总结表格](#33-对比总结表格)
-- [4. 🤔 什么时候用 useState？](#4--什么时候用-usestate)
+- [4. 什么时候用 useState？](#4-什么时候用-usestate)
   - [4.1. 场景 1：简单的独立状态](#41-场景-1简单的独立状态)
   - [4.2. 场景 2：不相关的多个状态](#42-场景-2不相关的多个状态)
   - [4.3. 场景 3：简单的数组或对象](#43-场景-3简单的数组或对象)
   - [4.4. 场景 4：异步数据加载](#44-场景-4异步数据加载)
-- [5. 🤔 什么时候用 useReducer？](#5--什么时候用-usereducer)
+- [5. 什么时候用 useReducer？](#5-什么时候用-usereducer)
   - [5.1. 场景 1：复杂的状态逻辑](#51-场景-1复杂的状态逻辑)
   - [5.2. 场景 2：状态转换逻辑复杂](#52-场景-2状态转换逻辑复杂)
   - [5.3. 场景 3：需要优化性能](#53-场景-3需要优化性能)
   - [5.4. 场景 4：状态逻辑需要测试](#54-场景-4状态逻辑需要测试)
-- [6. 🤔 如何选择使用哪个？](#6--如何选择使用哪个)
+- [6. 如何选择使用哪个？](#6-如何选择使用哪个)
   - [6.1. 决策树](#61-决策树)
   - [6.2. 实际例子对比](#62-实际例子对比)
   - [6.3. 从 useState 迁移到 useReducer](#63-从-usestate-迁移到-usereducer)
-- [7. 🤔 useReducer 的优势是什么？](#7--usereducer-的优势是什么)
+- [7. useReducer 的优势是什么？](#7-usereducer-的优势是什么)
   - [7.1. 优势 1：逻辑集中](#71-优势-1逻辑集中)
   - [7.2. 优势 2：引用稳定](#72-优势-2引用稳定)
   - [7.3. 优势 3：易于测试](#73-优势-3易于测试)
   - [7.4. 优势 4：可预测性](#74-优势-4可预测性)
-- [8. 🔗 引用](#8--引用)
+- [8. 引用](#8-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - useState 和 useReducer 的基本用法
 - 两者的适用场景
 - 选择标准和最佳实践
 - useReducer 的优势分析
 
-## 2. 🫧 评价
+## 2. 评价
 
 useState 和 useReducer 是 React 中管理状态的两个核心 Hook，选对工具能让代码更清晰。
 
@@ -48,7 +48,7 @@ useState 和 useReducer 是 React 中管理状态的两个核心 Hook，选对�
 - useReducer 更适合状态转换逻辑复杂或需要优化性能的场景
 - 两者可以互相转换，根据实际需求灵活选择
 
-## 3. 🆚 基本用法对比
+## 3. 基本用法对比
 
 ### 3.1. 简单计数器
 
@@ -212,7 +212,7 @@ function LoginForm() {
 | 测试     | 需要渲染组件      | reducer 可单独测试     |
 | 性能优化 | 每次都创建新函数  | dispatch 引用稳定      |
 
-## 4. 🤔 什么时候用 useState？
+## 4. 什么时候用 useState？
 
 ### 4.1. 场景 1：简单的独立状态
 
@@ -303,7 +303,7 @@ function UserData({ userId }) {
 }
 ```
 
-## 5. 🤔 什么时候用 useReducer？
+## 5. 什么时候用 useReducer？
 
 ### 5.1. 场景 1：复杂的状态逻辑
 
@@ -352,7 +352,7 @@ function DataList() {
           type: 'FETCH_SUCCESS',
           payload: data,
           append: true,
-        })
+        }),
       )
       .catch((err) => dispatch({ type: 'FETCH_ERROR', payload: err }))
   }
@@ -446,7 +446,7 @@ function todoReducer(state, action) {
       return [...state, { id: Date.now(), text: action.text, done: false }]
     case 'TOGGLE':
       return state.map((todo) =>
-        todo.id === action.id ? { ...todo, done: !todo.done } : todo
+        todo.id === action.id ? { ...todo, done: !todo.done } : todo,
       )
     case 'DELETE':
       return state.filter((todo) => todo.id !== action.id)
@@ -472,7 +472,7 @@ describe('todoReducer', () => {
 })
 ```
 
-## 6. 🤔 如何选择使用哪个？
+## 6. 如何选择使用哪个？
 
 ### 6.1. 决策树
 
@@ -583,7 +583,7 @@ function Form3() {
 }
 ```
 
-## 7. 🤔 useReducer 的优势是什么？
+## 7. useReducer 的优势是什么？
 
 ### 7.1. 优势 1：逻辑集中
 
@@ -601,8 +601,8 @@ function TodoList() {
   const toggleTodo = (id) => {
     setTodos(
       todos.map((todo) =>
-        todo.id === id ? { ...todo, done: !todo.done } : todo
-      )
+        todo.id === id ? { ...todo, done: !todo.done } : todo,
+      ),
     )
   }
 
@@ -635,7 +635,7 @@ function todoReducer(state, action) {
       return {
         ...state,
         todos: state.todos.map((todo) =>
-          todo.id === action.id ? { ...todo, done: !todo.done } : todo
+          todo.id === action.id ? { ...todo, done: !todo.done } : todo,
         ),
       }
     case 'DELETE':
@@ -771,7 +771,7 @@ dispatch({ type: 'LOGIN_START' })
 dispatch({ type: 'LOGIN_SUCCESS', user: userData })
 ```
 
-## 8. 🔗 引用
+## 8. 引用
 
 - [React 官方文档 - useState][1]
 - [React 官方文档 - useReducer][2]

@@ -2,43 +2,43 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 🤔 useContext 是什么？](#3--usecontext-是什么)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. useContext 是什么？](#3-usecontext-是什么)
   - [3.1. 基本定义](#31-基本定义)
   - [3.2. Context 解决的问题](#32-context-解决的问题)
   - [3.3. 基本使用流程](#33-基本使用流程)
-- [4. 🤔 如何创建和使用 Context？](#4--如何创建和使用-context)
+- [4. 如何创建和使用 Context？](#4-如何创建和使用-context)
   - [4.1. 标准 Context 模式](#41-标准-context-模式)
   - [4.2. 带初始化逻辑的 Context](#42-带初始化逻辑的-context)
   - [4.3. 多值 Context 模式](#43-多值-context-模式)
-- [5. 🤔 如何优化 Context 性能？](#5--如何优化-context-性能)
+- [5. 如何优化 Context 性能？](#5-如何优化-context-性能)
   - [5.1. 问题演示](#51-问题演示)
   - [5.2. 解决方案 1：使用 useMemo](#52-解决方案-1使用-usememo)
   - [5.3. 解决方案 2：拆分 Context](#53-解决方案-2拆分-context)
   - [5.4. 解决方案 3：状态与操作分离](#54-解决方案-3状态与操作分离)
   - [5.5. 解决方案 4：使用 React.memo](#55-解决方案-4使用-reactmemo)
-- [6. 🤔 如何处理多个 Context？](#6--如何处理多个-context)
+- [6. 如何处理多个 Context？](#6-如何处理多个-context)
   - [6.1. 多个 Provider 嵌套](#61-多个-provider-嵌套)
   - [6.2. 创建组合 Provider](#62-创建组合-provider)
   - [6.3. 组合多个 Context 值](#63-组合多个-context-值)
   - [6.4. 动态 Provider 组合](#64-动态-provider-组合)
-- [7. 🤔 useContext 有哪些常见错误？](#7--usecontext-有哪些常见错误)
+- [7. useContext 有哪些常见错误？](#7-usecontext-有哪些常见错误)
   - [7.1. 错误 1：在 Provider 外使用](#71-错误-1在-provider-外使用)
   - [7.2. 错误 2：忘记 useMemo](#72-错误-2忘记-usememo)
   - [7.3. 错误 3：Context 值过大](#73-错误-3context-值过大)
   - [7.4. 错误 4：不必要的 Context](#74-错误-4不必要的-context)
-- [8. 🤔 如何实现 Context 的最佳实践？](#8--如何实现-context-的最佳实践)
+- [8. 如何实现 Context 的最佳实践？](#8-如何实现-context-的最佳实践)
   - [8.1. 模式 1：类型安全的 Context](#81-模式-1类型安全的-context)
   - [8.2. 模式 2：带持久化的 Context](#82-模式-2带持久化的-context)
   - [8.3. 模式 3：带 Reducer 的 Context](#83-模式-3带-reducer-的-context)
-- [9. 🆚 useContext vs Props vs Redux](#9--usecontext-vs-props-vs-redux)
+- [9. useContext vs Props vs Redux](#9-usecontext-vs-props-vs-redux)
   - [9.1. 选择指南](#91-选择指南)
-- [10. 🔗 引用](#10--引用)
+- [10. 引用](#10-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - useContext 的基本概念和用法
 - Context 的创建和配置
@@ -47,7 +47,7 @@
 - 常见错误和解决方案
 - Context 的最佳实践模式
 
-## 2. 🫧 评价
+## 2. 评价
 
 这篇笔记全面讲解 React Context API 的使用方法和最佳实践，帮助解决跨组件通信问题。
 
@@ -56,7 +56,7 @@
 - 必须注意性能优化，Context 值变化会导致所有消费组件重新渲染
 - 合理拆分 Context，避免一个大 Context 包含所有状态
 
-## 3. 🤔 useContext 是什么？
+## 3. useContext 是什么？
 
 `useContext` 是一个 Hook，用于在函数组件中读取 Context 的值。
 
@@ -171,7 +171,7 @@ function Toolbar() {
 }
 ```
 
-## 4. 🤔 如何创建和使用 Context？
+## 4. 如何创建和使用 Context？
 
 创建 Context 并提供自定义 Hook。
 
@@ -403,7 +403,7 @@ function Main() {
 }
 ```
 
-## 5. 🤔 如何优化 Context 性能？
+## 5. 如何优化 Context 性能？
 
 Context 值变化会导致所有消费组件重新渲染。
 
@@ -594,7 +594,7 @@ function TodoList() {
 }
 ```
 
-## 6. 🤔 如何处理多个 Context？
+## 6. 如何处理多个 Context？
 
 组合使用多个 Context。
 
@@ -704,7 +704,7 @@ function App() {
 }
 ```
 
-## 7. 🤔 useContext 有哪些常见错误？
+## 7. useContext 有哪些常见错误？
 
 避免这些常见陷阱。
 
@@ -802,7 +802,7 @@ function GoodParent() {
 }
 ```
 
-## 8. 🤔 如何实现 Context 的最佳实践？
+## 8. 如何实现 Context 的最佳实践？
 
 遵循这些模式提高代码质量。
 
@@ -967,7 +967,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
 }
 ```
 
-## 9. 🆚 useContext vs Props vs Redux
+## 9. useContext vs Props vs Redux
 
 | 特性       | Props    | useContext     | Redux          |
 | ---------- | -------- | -------------- | -------------- |
@@ -1011,7 +1011,7 @@ const store = configureStore({
 })
 ```
 
-## 10. 🔗 引用
+## 10. 引用
 
 - [useContext Hook 官方文档][1]
 - [Context API 深入指南][2]

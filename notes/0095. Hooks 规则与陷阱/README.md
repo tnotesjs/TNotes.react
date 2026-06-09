@@ -2,20 +2,20 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 🤔 Hooks 有哪些使用规则？](#3--hooks-有哪些使用规则)
-- [4. 🤔 闭包陷阱是什么？](#4--闭包陷阱是什么)
-- [5. 🤔 如何正确处理依赖项？](#5--如何正确处理依赖项)
-- [6. 🤔 useEffect 有哪些常见陷阱？](#6--useeffect-有哪些常见陷阱)
-- [7. 🤔 useState 有哪些使用注意事项？](#7--usestate-有哪些使用注意事项)
-- [8. 🤔 自定义 Hooks 有哪些最佳实践？](#8--自定义-hooks-有哪些最佳实践)
-- [9. 🤔 如何调试 Hooks 问题？](#9--如何调试-hooks-问题)
-- [10. 🔗 引用](#10--引用)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. Hooks 有哪些使用规则？](#3-hooks-有哪些使用规则)
+- [4. 闭包陷阱是什么？](#4-闭包陷阱是什么)
+- [5. 如何正确处理依赖项？](#5-如何正确处理依赖项)
+- [6. useEffect 有哪些常见陷阱？](#6-useeffect-有哪些常见陷阱)
+- [7. useState 有哪些使用注意事项？](#7-usestate-有哪些使用注意事项)
+- [8. 自定义 Hooks 有哪些最佳实践？](#8-自定义-hooks-有哪些最佳实践)
+- [9. 如何调试 Hooks 问题？](#9-如何调试-hooks-问题)
+- [10. 引用](#10-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - Hooks 的两大核心规则
 - 闭包陷阱及解决方案
@@ -25,7 +25,7 @@
 - 自定义 Hooks 最佳实践
 - Hooks 调试技巧
 
-## 2. 🫧 评价
+## 2. 评价
 
 这篇笔记详细讲解 React Hooks 的使用规则、常见陷阱及解决方案，帮助避免实际开发中的问题。
 
@@ -35,7 +35,7 @@
 - useEffect 的清理函数至关重要，避免内存泄漏和副作用残留
 - 理解 Hooks 的工作原理可以避免大部分问题
 
-## 3. 🤔 Hooks 有哪些使用规则？
+## 3. Hooks 有哪些使用规则？
 
 Hooks 有两条必须遵守的规则。
 
@@ -112,7 +112,7 @@ function Component({ showAge }: { showAge: boolean }) {
 }
 ```
 
-## 4. 🤔 闭包陷阱是什么？
+## 4. 闭包陷阱是什么？
 
 闭包陷阱是 Hooks 中最常见的问题。
 
@@ -224,7 +224,7 @@ function DataFetcher() {
 }
 ```
 
-## 5. 🤔 如何正确处理依赖项？
+## 5. 如何正确处理依赖项？
 
 依赖项规则：所有在 effect 中使用的外部值都应在依赖项中。
 
@@ -314,7 +314,7 @@ useEffect(() => {
 }, [])
 ```
 
-## 6. 🤔 useEffect 有哪些常见陷阱？
+## 6. useEffect 有哪些常见陷阱？
 
 ```typescript
 // 陷阱 1：忘记清理副作用
@@ -405,7 +405,7 @@ function Component() {
 }
 ```
 
-## 7. 🤔 useState 有哪些使用注意事项？
+## 7. useState 有哪些使用注意事项？
 
 ```typescript
 // 注意事项 1：状态更新是异步的
@@ -483,7 +483,7 @@ function TodoList() {
 }
 ```
 
-## 8. 🤔 自定义 Hooks 有哪些最佳实践？
+## 8. 自定义 Hooks 有哪些最佳实践？
 
 ```typescript
 // 最佳实践 1：命名以 use 开头
@@ -529,7 +529,7 @@ function useFetch(url: string) {
 function useEventListener(
   event: string,
   handler: (e: Event) => void,
-  element: HTMLElement | Window = window
+  element: HTMLElement | Window = window,
 ) {
   const savedHandler = useRef(handler)
 
@@ -575,7 +575,7 @@ function useFetch<T>(url: string, options: UseFetchOptions = {}) {
 }
 ```
 
-## 9. 🤔 如何调试 Hooks 问题？
+## 9. 如何调试 Hooks 问题？
 
 ```typescript
 // 技巧 1：使用 React DevTools
@@ -653,7 +653,7 @@ ExpensiveComponent.whyDidYouRender = true // ✅ 启用追踪
 export default ExpensiveComponent
 ```
 
-## 10. 🔗 引用
+## 10. 引用
 
 - [Hooks 规则官方文档][1]
 - [Hooks FAQ][2]

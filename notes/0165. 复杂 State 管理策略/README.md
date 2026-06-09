@@ -2,35 +2,35 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 🤔 如何拆分复杂 State？](#3--如何拆分复杂-state)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. 如何拆分复杂 State？](#3-如何拆分复杂-state)
   - [3.1. 按独立性拆分](#31-按独立性拆分)
   - [3.2. 按功能模块拆分](#32-按功能模块拆分)
   - [3.3. 使用自定义 Hook 拆分](#33-使用自定义-hook-拆分)
-- [4. 🤔 如何组织关联 State？](#4--如何组织关联-state)
+- [4. 如何组织关联 State？](#4-如何组织关联-state)
   - [4.1. 使用对象组合相关状态](#41-使用对象组合相关状态)
   - [4.2. 使用 useReducer 管理复杂状态](#42-使用-usereducer-管理复杂状态)
   - [4.3. 状态机模式](#43-状态机模式)
-- [5. 🤔 如何处理派生 State？](#5--如何处理派生-state)
+- [5. 如何处理派生 State？](#5-如何处理派生-state)
   - [5.1. 直接计算派生值](#51-直接计算派生值)
   - [5.2. 使用 useMemo 优化计算](#52-使用-usememo-优化计算)
   - [5.3. 避免派生状态陷阱](#53-避免派生状态陷阱)
-- [6. 🤔 如何管理表单 State？](#6--如何管理表单-state)
+- [6. 如何管理表单 State？](#6-如何管理表单-state)
   - [6.1. 单个状态对象](#61-单个状态对象)
   - [6.2. 使用 useReducer 管理表单](#62-使用-usereducer-管理表单)
   - [6.3. 使用表单库](#63-使用表单库)
-- [7. 🤔 如何优化复杂 State 性能？](#7--如何优化复杂-state-性能)
+- [7. 如何优化复杂 State 性能？](#7-如何优化复杂-state-性能)
   - [7.1. 使用 React.memo 避免重渲染](#71-使用-reactmemo-避免重渲染)
   - [7.2. 拆分状态避免级联更新](#72-拆分状态避免级联更新)
   - [7.3. 使用 Context 分层](#73-使用-context-分层)
   - [7.4. 懒加载和代码分割](#74-懒加载和代码分割)
   - [7.5. 使用虚拟化处理大列表](#75-使用虚拟化处理大列表)
-- [8. 🔗 引用](#8--引用)
+- [8. 引用](#8-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - 复杂 State 的拆分原则
 - 关联 State 的组织方式
@@ -38,7 +38,7 @@
 - 表单 State 管理策略
 - 复杂 State 的性能优化
 
-## 2. 🫧 评价
+## 2. 评价
 
 管理复杂状态是 React 开发中的常见挑战，选对策略能让代码更清晰易维护。
 
@@ -48,7 +48,7 @@
 - useReducer 适合有复杂状态转换逻辑的场景
 - 合理拆分和组织状态能显著提升代码质量和性能
 
-## 3. 🤔 如何拆分复杂 State？
+## 3. 如何拆分复杂 State？
 
 ### 3.1. 按独立性拆分
 
@@ -162,7 +162,7 @@ function useNotifications() {
 
   const markAsRead = (id) => {
     setNotifications((prev) =>
-      prev.map((n) => (n.id === id ? { ...n, read: true } : n))
+      prev.map((n) => (n.id === id ? { ...n, read: true } : n)),
     )
     setUnreadCount((prev) => Math.max(0, prev - 1))
   }
@@ -184,7 +184,7 @@ function App() {
 }
 ```
 
-## 4. 🤔 如何组织关联 State？
+## 4. 如何组织关联 State？
 
 ### 4.1. 使用对象组合相关状态
 
@@ -329,7 +329,7 @@ function StateMachine() {
 }
 ```
 
-## 5. 🤔 如何处理派生 State？
+## 5. 如何处理派生 State？
 
 ### 5.1. 直接计算派生值
 
@@ -351,7 +351,7 @@ function TodoList() {
 
   const toggleTodo = (index) => {
     const newTodos = todos.map((todo, i) =>
-      i === index ? { ...todo, done: !todo.done } : todo
+      i === index ? { ...todo, done: !todo.done } : todo,
     )
     setTodos(newTodos)
     // ❌ 需要重新计算
@@ -377,8 +377,8 @@ function TodoList() {
   const toggleTodo = (index) => {
     setTodos(
       todos.map((todo, i) =>
-        i === index ? { ...todo, done: !todo.done } : todo
-      )
+        i === index ? { ...todo, done: !todo.done } : todo,
+      ),
     )
     // ✅ 自动更新
   }
@@ -398,7 +398,7 @@ function ExpensiveCalculation() {
   const filteredItems = useMemo(() => {
     console.log('计算过滤结果')
     return items.filter((item) =>
-      item.name.toLowerCase().includes(filter.toLowerCase())
+      item.name.toLowerCase().includes(filter.toLowerCase()),
     )
   }, [items, filter])
 
@@ -425,7 +425,7 @@ function ExpensiveCalculation() {
 function BadExample({ items }) {
   // ❌ props 变化时不会更新
   const [filteredItems, setFilteredItems] = useState(
-    items.filter((item) => item.active)
+    items.filter((item) => item.active),
   )
 
   return <div>{filteredItems.length}</div>
@@ -451,7 +451,7 @@ function GoodExampleWithKey({ userId, initialData }) {
 ;<GoodExampleWithKey key={userId} userId={userId} initialData={data} />
 ```
 
-## 6. 🤔 如何管理表单 State？
+## 6. 如何管理表单 State？
 
 ### 6.1. 单个状态对象
 
@@ -614,7 +614,7 @@ function FormWithLibrary() {
 }
 ```
 
-## 7. 🤔 如何优化复杂 State 性能？
+## 7. 如何优化复杂 State 性能？
 
 ### 7.1. 使用 React.memo 避免重渲染
 
@@ -638,8 +638,8 @@ function TodoList() {
   const toggleTodo = useCallback((id) => {
     setTodos((prev) =>
       prev.map((todo) =>
-        todo.id === id ? { ...todo, done: !todo.done } : todo
-      )
+        todo.id === id ? { ...todo, done: !todo.done } : todo,
+      ),
     )
   }, [])
 
@@ -765,7 +765,7 @@ function LargeList() {
     Array.from({ length: 10000 }, (_, i) => ({
       id: i,
       text: `项目 ${i}`,
-    }))
+    })),
   )
 
   // ✅ 只渲染可见的项
@@ -784,7 +784,7 @@ function LargeList() {
 }
 ```
 
-## 8. 🔗 引用
+## 8. 引用
 
 - [React 官方文档 - 状态管理][1]
 - [React 官方文档 - 选择状态结构][2]

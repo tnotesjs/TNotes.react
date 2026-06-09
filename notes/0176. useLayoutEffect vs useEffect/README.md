@@ -2,21 +2,21 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 🤔 useEffect 是什么？](#3--useeffect-是什么)
-- [4. 🤔 useLayoutEffect 是什么？](#4--uselayouteffect-是什么)
-- [5. 🆚 useLayoutEffect vs useEffect](#5--uselayouteffect-vs-useeffect)
-- [6. 🤔 执行时机有什么区别？](#6--执行时机有什么区别)
-- [7. 🤔 何时使用 useLayoutEffect？](#7--何时使用-uselayouteffect)
-- [8. 🤔 何时使用 useEffect？](#8--何时使用-useeffect)
-- [9. 🤔 有哪些常见问题？](#9--有哪些常见问题)
-- [10. 🤔 SSR 环境下如何处理？](#10--ssr-环境下如何处理)
-- [11. 🔗 引用](#11--引用)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. useEffect 是什么？](#3-useeffect-是什么)
+- [4. useLayoutEffect 是什么？](#4-uselayouteffect-是什么)
+- [5. useLayoutEffect vs useEffect](#5-uselayouteffect-vs-useeffect)
+- [6. 执行时机有什么区别？](#6-执行时机有什么区别)
+- [7. 何时使用 useLayoutEffect？](#7-何时使用-uselayouteffect)
+- [8. 何时使用 useEffect？](#8-何时使用-useeffect)
+- [9. 有哪些常见问题？](#9-有哪些常见问题)
+- [10. SSR 环境下如何处理？](#10-ssr-环境下如何处理)
+- [11. 引用](#11-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - useEffect 的执行时机和特点
 - useLayoutEffect 的执行时机和特点
@@ -25,7 +25,7 @@
 - 常见问题和解决方案
 - SSR 环境下的处理方式
 
-## 2. 🫧 评价
+## 2. 评价
 
 这篇笔记详细对比 React 中两个副作用 Hook：useEffect 和 useLayoutEffect。
 
@@ -35,7 +35,7 @@
 - useLayoutEffect 在 SSR 环境下会报警告，需要特殊处理
 - 过度使用 useLayoutEffect 会导致性能问题，因为它会阻塞视觉更新
 
-## 3. 🤔 useEffect 是什么？
+## 3. useEffect 是什么？
 
 `useEffect` 是 React 中最常用的副作用 Hook，在浏览器绘制完成后异步执行。
 
@@ -152,7 +152,7 @@ function Timer() {
 }
 ```
 
-## 4. 🤔 useLayoutEffect 是什么？
+## 4. useLayoutEffect 是什么？
 
 `useLayoutEffect` 在 DOM 更新后但浏览器绘制前同步执行，会阻塞视觉更新。
 
@@ -286,7 +286,7 @@ function ScrollToBottom({ messages }: { messages: string[] }) {
 }
 ```
 
-## 5. 🆚 useLayoutEffect vs useEffect
+## 5. useLayoutEffect vs useEffect
 
 | 特性         | useEffect                | useLayoutEffect             |
 | ------------ | ------------------------ | --------------------------- |
@@ -348,7 +348,7 @@ function FlickerComparison() {
 }
 ```
 
-## 6. 🤔 执行时机有什么区别？
+## 6. 执行时机有什么区别？
 
 理解执行时机是选择正确 Hook 的关键。
 
@@ -427,7 +427,7 @@ function MeasurementProblem() {
 }
 ```
 
-## 7. 🤔 何时使用 useLayoutEffect？
+## 7. 何时使用 useLayoutEffect？
 
 只在特定场景下使用，避免性能问题。
 
@@ -516,7 +516,7 @@ function ScrollSync() {
 }
 ```
 
-## 8. 🤔 何时使用 useEffect？
+## 8. 何时使用 useEffect？
 
 绝大多数场景应该使用 useEffect。
 
@@ -622,7 +622,7 @@ function DocumentTitle({ title }: { title: string }) {
 }
 ```
 
-## 9. 🤔 有哪些常见问题？
+## 9. 有哪些常见问题？
 
 ```typescript
 // 问题 1：过度使用 useLayoutEffect
@@ -732,7 +732,7 @@ function ConfusedUsage() {
 }
 ```
 
-## 10. 🤔 SSR 环境下如何处理？
+## 10. SSR 环境下如何处理？
 
 useLayoutEffect 在服务端渲染时会报警告。
 
@@ -810,7 +810,7 @@ function MyApp() {
 }
 ```
 
-## 11. 🔗 引用
+## 11. 引用
 
 - [useEffect 官方文档][1]
 - [useLayoutEffect 官方文档][2]

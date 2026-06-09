@@ -2,17 +2,17 @@
 
 <!-- region:toc -->
 
-- [1. 🫧 评价](#1--评价)
-- [2. 💻 demos.1 - react element 是只读的](#2--demos1---react-element-是只读的)
-- [3. 🆚 对比 demos.1 中的两种正确做法](#3--对比-demos1-中的两种正确做法)
+- [1. 评价](#1-评价)
+- [2. demos.1 - react element 是只读的](#2-demos1---react-element-是只读的)
+- [3. 对比 demos.1 中的两种正确做法](#3-对比-demos1-中的两种正确做法)
 
 <!-- endregion:toc -->
 
-## 1. 🫧 评价
+## 1. 评价
 
 - 永远不要尝试去修改 React Element 的属性，正确的做法是通过渲染新的 React Element 或使用 React 的状态管理机制（state 或 props）来更新 UI。
 
-## 2. 💻 demos.1 - react element 是只读的
+## 2. demos.1 - react element 是只读的
 
 ::: code-group
 
@@ -69,7 +69,7 @@
   - 单次初始化：只调用一次 `createRoot` 并保存其引用，避免重复初始化。
 - 这样可以避免警告，并且代码更加符合 React 的最佳实践。
 
-## 3. 🆚 对比 demos.1 中的两种正确做法
+## 3. 对比 demos.1 中的两种正确做法
 
 - 如果你习惯命令式编程，又不熟悉 react 特性，很可能会写出类似 1 这样的程序，虽说也能跑不假，但是这么做在实际项目中是非常不推荐的。
 - 下面是从不同维度对两种写法进行的对比：

@@ -2,21 +2,21 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 🤔 useTransition 是什么？](#3--usetransition-是什么)
-- [4. 🤔 如何使用 useTransition？](#4--如何使用-usetransition)
-- [5. 🤔 startTransition 有什么特点？](#5--starttransition-有什么特点)
-- [6. 🆚 useTransition vs useDeferredValue](#6--usetransition-vs-usedeferredvalue)
-- [7. 🤔 有哪些实际应用场景？](#7--有哪些实际应用场景)
-- [8. 🤔 如何优化搜索和过滤？](#8--如何优化搜索和过滤)
-- [9. 🤔 有哪些最佳实践？](#9--有哪些最佳实践)
-- [10. 🤔 有哪些常见问题？](#10--有哪些常见问题)
-- [11. 🔗 引用](#11--引用)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. useTransition 是什么？](#3-usetransition-是什么)
+- [4. 如何使用 useTransition？](#4-如何使用-usetransition)
+- [5. startTransition 有什么特点？](#5-starttransition-有什么特点)
+- [6. useTransition vs useDeferredValue](#6-usetransition-vs-usedeferredvalue)
+- [7. 有哪些实际应用场景？](#7-有哪些实际应用场景)
+- [8. 如何优化搜索和过滤？](#8-如何优化搜索和过滤)
+- [9. 有哪些最佳实践？](#9-有哪些最佳实践)
+- [10. 有哪些常见问题？](#10-有哪些常见问题)
+- [11. 引用](#11-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - useTransition 基本概念与作用
 - startTransition 的使用方法
@@ -26,7 +26,7 @@
 - 性能优化最佳实践
 - 常见问题与解决方案
 
-## 2. 🫧 评价
+## 2. 评价
 
 这篇笔记介绍 React 18 的 useTransition Hook，用于标记非紧急更新，保持界面响应性。
 
@@ -36,7 +36,7 @@
 - 与 useDeferredValue 的主要区别是控制粒度不同
 - 正确使用可显著提升用户体验
 
-## 3. 🤔 useTransition 是什么？
+## 3. useTransition 是什么？
 
 useTransition 是 React 18 引入的 Hook，用于标记非紧急的状态更新。
 
@@ -116,7 +116,7 @@ function SlowList() {
 
     // ❌ 耗时计算阻塞输入
     const filtered = items.filter(
-      (item) => expensiveMatch(item, value) // 假设很慢
+      (item) => expensiveMatch(item, value), // 假设很慢
     )
     setItems(filtered) // 更新列表
   }
@@ -151,7 +151,7 @@ function FastList() {
 }
 ```
 
-## 4. 🤔 如何使用 useTransition？
+## 4. 如何使用 useTransition？
 
 基础用法包含两个返回值。
 
@@ -268,7 +268,7 @@ function SearchPage() {
 }
 ```
 
-## 5. 🤔 startTransition 有什么特点？
+## 5. startTransition 有什么特点？
 
 startTransition 函数具有特殊的执行特性。
 
@@ -320,7 +320,7 @@ function InteractiveList() {
     startTransition(() => {
       // ✅ 即使这里很慢，用户仍可继续输入
       const filtered = largeDataset.filter((item) =>
-        item.name.toLowerCase().includes(value.toLowerCase())
+        item.name.toLowerCase().includes(value.toLowerCase()),
       )
       setItems(filtered)
     })
@@ -372,7 +372,7 @@ function ComparisonDemo() {
 }
 ```
 
-## 6. 🆚 useTransition vs useDeferredValue
+## 6. useTransition vs useDeferredValue
 
 两者都用于处理非紧急更新，但使用场景不同。
 
@@ -454,7 +454,7 @@ const useDeferredValueCases = {
 }
 ```
 
-## 7. 🤔 有哪些实际应用场景？
+## 7. 有哪些实际应用场景？
 
 useTransition 适合多种耗时更新场景。
 
@@ -525,8 +525,8 @@ function DataTable() {
     startTransition(() => {
       const filtered = largeDataset.filter((item) =>
         Object.values(item).some((val) =>
-          String(val).toLowerCase().includes(value.toLowerCase())
-        )
+          String(val).toLowerCase().includes(value.toLowerCase()),
+        ),
       )
       setData(filtered)
     })
@@ -546,7 +546,7 @@ function DataTable() {
 }
 ```
 
-## 8. 🤔 如何优化搜索和过滤？
+## 8. 如何优化搜索和过滤？
 
 搜索是 useTransition 的典型应用场景。
 
@@ -640,7 +640,7 @@ function DebouncedSearch() {
 }
 ```
 
-## 9. 🤔 有哪些最佳实践？
+## 9. 有哪些最佳实践？
 
 正确使用 useTransition 可以显著提升用户体验。
 
@@ -734,7 +734,7 @@ function BestPractice4() {
 }
 ```
 
-## 10. 🤔 有哪些常见问题？
+## 10. 有哪些常见问题？
 
 使用 useTransition 时要注意的问题。
 
@@ -881,7 +881,7 @@ function DebugExample() {
 }
 ```
 
-## 11. 🔗 引用
+## 11. 引用
 
 - [React useTransition 官方文档][1]
 - [React 18 Concurrent Features][2]

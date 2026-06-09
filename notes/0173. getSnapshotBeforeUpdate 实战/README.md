@@ -2,34 +2,34 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 🤔 getSnapshotBeforeUpdate 是什么？](#3--getsnapshotbeforeupdate-是什么)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. getSnapshotBeforeUpdate 是什么？](#3-getsnapshotbeforeupdate-是什么)
   - [3.1. 基本定义](#31-基本定义)
   - [3.2. 执行时机](#32-执行时机)
   - [3.3. 典型使用场景](#33-典型使用场景)
-- [4. 🤔 如何实现聊天消息列表自动滚动？](#4--如何实现聊天消息列表自动滚动)
+- [4. 如何实现聊天消息列表自动滚动？](#4-如何实现聊天消息列表自动滚动)
   - [4.1. 基础实现](#41-基础实现)
   - [4.2. 完整聊天应用](#42-完整聊天应用)
-- [5. 🤔 如何保持列表滚动位置？](#5--如何保持列表滚动位置)
+- [5. 如何保持列表滚动位置？](#5-如何保持列表滚动位置)
   - [5.1. 实现方案](#51-实现方案)
   - [5.2. 社交媒体动态流示例](#52-社交媒体动态流示例)
-- [6. 🤔 如何实现无限滚动加载？](#6--如何实现无限滚动加载)
+- [6. 如何实现无限滚动加载？](#6-如何实现无限滚动加载)
   - [6.1. 双向无限滚动](#61-双向无限滚动)
-- [7. 🤔 如何测量 DOM 变化？](#7--如何测量-dom-变化)
+- [7. 如何测量 DOM 变化？](#7-如何测量-dom-变化)
   - [7.1. 测量元素尺寸](#71-测量元素尺寸)
   - [7.2. 测量多个元素](#72-测量多个元素)
-- [8. 🤔 如何在函数组件中实现类似功能？](#8--如何在函数组件中实现类似功能)
+- [8. 如何在函数组件中实现类似功能？](#8-如何在函数组件中实现类似功能)
   - [8.1. 聊天列表（函数组件版）](#81-聊天列表函数组件版)
   - [8.2. 保持滚动位置（函数组件版）](#82-保持滚动位置函数组件版)
   - [8.3. 自定义 Hook 封装](#83-自定义-hook-封装)
-- [9. 🆚 getSnapshotBeforeUpdate vs useLayoutEffect](#9--getsnapshotbeforeupdate-vs-uselayouteffect)
+- [9. getSnapshotBeforeUpdate vs useLayoutEffect](#9-getsnapshotbeforeupdate-vs-uselayouteffect)
   - [9.1. 时序对比](#91-时序对比)
-- [10. 🔗 引用](#10--引用)
+- [10. 引用](#10-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - getSnapshotBeforeUpdate 的定义和执行时机
 - 聊天消息列表的滚动控制
@@ -38,7 +38,7 @@
 - DOM 尺寸测量
 - 函数组件的等价实现
 
-## 2. 🫧 评价
+## 2. 评价
 
 这篇笔记通过实战案例展示 `getSnapshotBeforeUpdate` 的实际应用，解决 DOM 更新前后的状态同步问题。
 
@@ -47,7 +47,7 @@
 - 必须配合 `componentDidUpdate` 使用，返回值会作为第三个参数传递
 - 函数组件中使用 `useLayoutEffect` 可以实现类似功能
 
-## 3. 🤔 getSnapshotBeforeUpdate 是什么？
+## 3. getSnapshotBeforeUpdate 是什么？
 
 在 DOM 更新前捕获信息，返回值传递给 `componentDidUpdate`。
 
@@ -185,7 +185,7 @@ class SnapshotExample extends React.Component<Props, State> {
 }
 ```
 
-## 4. 🤔 如何实现聊天消息列表自动滚动？
+## 4. 如何实现聊天消息列表自动滚动？
 
 聊天列表需要在新消息到达时自动滚动到底部。
 
@@ -419,7 +419,7 @@ class ChatApp extends React.Component<ChatAppProps, ChatAppState> {
 }
 ```
 
-## 5. 🤔 如何保持列表滚动位置？
+## 5. 如何保持列表滚动位置？
 
 在列表顶部插入数据时保持用户的浏览位置。
 
@@ -612,7 +612,7 @@ class SocialFeed extends React.Component<{}, FeedState> {
 }
 ```
 
-## 6. 🤔 如何实现无限滚动加载？
+## 6. 如何实现无限滚动加载？
 
 结合滚动位置检测实现无限加载。
 
@@ -786,7 +786,7 @@ class InfiniteScrollList extends React.Component<{}, InfiniteScrollState> {
 }
 ```
 
-## 7. 🤔 如何测量 DOM 变化？
+## 7. 如何测量 DOM 变化？
 
 使用 snapshot 记录 DOM 尺寸变化。
 
@@ -924,7 +924,7 @@ class LayoutTracker extends React.Component {
 }
 ```
 
-## 8. 🤔 如何在函数组件中实现类似功能？
+## 8. 如何在函数组件中实现类似功能？
 
 使用 `useLayoutEffect` 实现等价功能。
 
@@ -1066,7 +1066,7 @@ function ChatWithHook({ messages }: { messages: Message[] }) {
 }
 ```
 
-## 9. 🆚 getSnapshotBeforeUpdate vs useLayoutEffect
+## 9. getSnapshotBeforeUpdate vs useLayoutEffect
 
 | 特性       | getSnapshotBeforeUpdate   | useLayoutEffect          |
 | ---------- | ------------------------- | ------------------------ |
@@ -1111,7 +1111,7 @@ function FunctionComponent() {
 }
 ```
 
-## 10. 🔗 引用
+## 10. 引用
 
 - [getSnapshotBeforeUpdate API 文档][1]
 - [React 生命周期图谱][2]

@@ -2,20 +2,20 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 🤔 useState 的基本用法是什么？](#3--usestate-的基本用法是什么)
-- [4. 🤔 useEffect 的基本用法是什么？](#4--useeffect-的基本用法是什么)
-- [5. 🤔 useRef 的基本用法是什么？](#5--useref-的基本用法是什么)
-- [6. 🤔 这三个 Hooks 如何配合使用？](#6--这三个-hooks-如何配合使用)
-- [7. 🤔 这些 Hooks 有哪些常见错误？](#7--这些-hooks-有哪些常见错误)
-- [8. 🤔 如何选择合适的 Hook？](#8--如何选择合适的-hook)
-- [9. 🆚 useState vs useEffect vs useRef 对比](#9--usestate-vs-useeffect-vs-useref-对比)
-- [10. 🔗 引用](#10--引用)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. useState 的基本用法是什么？](#3-usestate-的基本用法是什么)
+- [4. useEffect 的基本用法是什么？](#4-useeffect-的基本用法是什么)
+- [5. useRef 的基本用法是什么？](#5-useref-的基本用法是什么)
+- [6. 这三个 Hooks 如何配合使用？](#6-这三个-hooks-如何配合使用)
+- [7. 这些 Hooks 有哪些常见错误？](#7-这些-hooks-有哪些常见错误)
+- [8. 如何选择合适的 Hook？](#8-如何选择合适的-hook)
+- [9. useState vs useEffect vs useRef 对比](#9-usestate-vs-useeffect-vs-useref-对比)
+- [10. 引用](#10-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - useState 的基本用法与进阶技巧
 - useEffect 的基本用法与依赖控制
@@ -25,7 +25,7 @@
 - Hook 选择的决策依据
 - 三个 Hooks 的详细对比
 
-## 2. 🫧 评价
+## 2. 评价
 
 useState、useEffect、useRef 是 React Hooks 中最基础、最常用的三个，掌握它们是使用函数组件的前提。
 
@@ -37,7 +37,7 @@ useState、useEffect、useRef 是 React Hooks 中最基础、最常用的三个�
 - 常见错误包括依赖数组不完整、useState 与 useRef 混用、忘记清理副作用
 - 选择 Hook 的关键是判断数据变化是否需要触发重渲染
 
-## 3. 🤔 useState 的基本用法是什么？
+## 3. useState 的基本用法是什么？
 
 useState 用于在函数组件中添加状态，状态变化会触发组件重渲染。
 
@@ -166,7 +166,7 @@ function TodoList() {
 }
 ```
 
-## 4. 🤔 useEffect 的基本用法是什么？
+## 4. useEffect 的基本用法是什么？
 
 useEffect 用于处理副作用，通过依赖数组控制执行时机。
 
@@ -267,7 +267,7 @@ function MultipleEffects({ userId, theme }: { userId: number; theme: string }) {
 }
 ```
 
-## 5. 🤔 useRef 的基本用法是什么？
+## 5. useRef 的基本用法是什么？
 
 useRef 用于存储可变值或引用 DOM 元素，更新不触发重渲染。
 
@@ -370,7 +370,7 @@ function Timer() {
 }
 ```
 
-## 6. 🤔 这三个 Hooks 如何配合使用？
+## 6. 这三个 Hooks 如何配合使用？
 
 三个 Hooks 组合使用可以实现复杂的功能。
 
@@ -485,7 +485,7 @@ function AutoSave() {
 }
 ```
 
-## 7. 🤔 这些 Hooks 有哪些常见错误？
+## 7. 这些 Hooks 有哪些常见错误？
 
 ```tsx
 // ❌ 错误 1：useState 与 useRef 混淆
@@ -572,7 +572,7 @@ function RefSideEffect() {
 }
 ```
 
-## 8. 🤔 如何选择合适的 Hook？
+## 8. 如何选择合适的 Hook？
 
 根据需求选择合适的 Hook。
 
@@ -620,7 +620,7 @@ function HookDecision() {
 | 缓存计算结果  | useRef 或 useMemo | useRef 不触发重渲染  |
 | 上一次的值    | useRef            | 在 useEffect 中更新  |
 
-## 9. 🆚 useState vs useEffect vs useRef 对比
+## 9. useState vs useEffect vs useRef 对比
 
 | 特性 | useState | useEffect | useRef |
 | --- | --- | --- | --- |
@@ -633,7 +633,7 @@ function HookDecision() {
 | 常见用途 | 表单输入、计数器 | 数据获取、订阅 | DOM 操作、定时器 ID |
 | 清理机制 | 无 | 返回清理函数 | 手动清理 |
 
-## 10. 🔗 引用
+## 10. 引用
 
 - [React 文档 - useState][1]
 - [React 文档 - useEffect][2]

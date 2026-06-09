@@ -2,20 +2,20 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 🤔 组件的挂载流程是什么？](#3--组件的挂载流程是什么)
-- [4. 🤔 组件的更新流程是什么？](#4--组件的更新流程是什么)
-- [5. 🤔 组件的卸载流程是什么？](#5--组件的卸载流程是什么)
-- [6. 🤔 类组件和函数组件的流程有何区别？](#6--类组件和函数组件的流程有何区别)
-- [7. 🤔 如何追踪组件的生命周期？](#7--如何追踪组件的生命周期)
-- [8. 🤔 生命周期流程中常见的错误有哪些？](#8--生命周期流程中常见的错误有哪些)
-- [9. 🆚 类组件 vs 函数组件流程对比](#9--类组件-vs-函数组件流程对比)
-- [10. 🔗 引用](#10--引用)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. 组件的挂载流程是什么？](#3-组件的挂载流程是什么)
+- [4. 组件的更新流程是什么？](#4-组件的更新流程是什么)
+- [5. 组件的卸载流程是什么？](#5-组件的卸载流程是什么)
+- [6. 类组件和函数组件的流程有何区别？](#6-类组件和函数组件的流程有何区别)
+- [7. 如何追踪组件的生命周期？](#7-如何追踪组件的生命周期)
+- [8. 生命周期流程中常见的错误有哪些？](#8-生命周期流程中常见的错误有哪些)
+- [9. 类组件 vs 函数组件流程对比](#9-类组件-vs-函数组件流程对比)
+- [10. 引用](#10-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - 组件挂载的完整流程
 - 组件更新的触发条件与流程
@@ -25,7 +25,7 @@
 - 生命周期流程中的常见错误
 - 不同组件类型的流程对比
 
-## 2. 🫧 评价
+## 2. 评价
 
 理解组件的挂载、更新、卸载流程是掌握 React 运行机制的基础，有助于优化性能和避免常见错误。
 
@@ -36,7 +36,7 @@
 - 使用 React DevTools Profiler 可以直观地追踪组件渲染流程
 - 常见错误包括忘记清理副作用、在错误的生命周期阶段操作 DOM、死循环更新
 
-## 3. 🤔 组件的挂载流程是什么？
+## 3. 组件的挂载流程是什么？
 
 挂载是组件首次被创建并插入 DOM 的过程，按照特定顺序执行初始化操作。
 
@@ -156,7 +156,7 @@ function UserProfile({ userId }: { userId: number }) {
 }
 ```
 
-## 4. 🤔 组件的更新流程是什么？
+## 4. 组件的更新流程是什么？
 
 更新发生在 props 或 state 变化时，组件会重新渲染。
 
@@ -167,7 +167,7 @@ class UpdateDemo extends React.Component<{ name: string }, { count: number }> {
 
   static getDerivedStateFromProps(
     props: { name: string },
-    state: { count: number }
+    state: { count: number },
   ) {
     console.log('1️⃣ getDerivedStateFromProps - 派生 state')
     return null
@@ -175,7 +175,7 @@ class UpdateDemo extends React.Component<{ name: string }, { count: number }> {
 
   shouldComponentUpdate(
     nextProps: { name: string },
-    nextState: { count: number }
+    nextState: { count: number },
   ) {
     console.log('2️⃣ shouldComponentUpdate - 是否更新')
     // 返回 false 可阻止更新
@@ -197,7 +197,7 @@ class UpdateDemo extends React.Component<{ name: string }, { count: number }> {
 
   getSnapshotBeforeUpdate(
     prevProps: { name: string },
-    prevState: { count: number }
+    prevState: { count: number },
   ) {
     console.log('4️⃣ getSnapshotBeforeUpdate - DOM 更新前')
     return null
@@ -206,7 +206,7 @@ class UpdateDemo extends React.Component<{ name: string }, { count: number }> {
   componentDidUpdate(
     prevProps: { name: string },
     prevState: { count: number },
-    snapshot: any
+    snapshot: any,
   ) {
     console.log('5️⃣ componentDidUpdate - 更新完成')
     // 根据 props 变化执行副作用
@@ -285,7 +285,7 @@ function UpdateTriggers() {
 }
 ```
 
-## 5. 🤔 组件的卸载流程是什么？
+## 5. 组件的卸载流程是什么？
 
 卸载是组件从 DOM 中移除的过程，必须清理副作用以防止内存泄漏。
 
@@ -382,7 +382,7 @@ function CleanupDemo() {
 }
 ```
 
-## 6. 🤔 类组件和函数组件的流程有何区别？
+## 6. 类组件和函数组件的流程有何区别？
 
 类组件使用生命周期方法，函数组件使用 Hooks，但底层流程相似。
 
@@ -447,7 +447,7 @@ function FunctionLifecycle({ id }: { id: number }) {
 | this     | 需要绑定               | 无需绑定                  |
 | 代码复用 | HOC、Render Props      | 自定义 Hooks              |
 
-## 7. 🤔 如何追踪组件的生命周期？
+## 7. 如何追踪组件的生命周期？
 
 使用 React DevTools Profiler 和日志可以追踪组件的渲染流程。
 
@@ -502,7 +502,7 @@ function App() {
     actualDuration: number,
     baseDuration: number,
     startTime: number,
-    commitTime: number
+    commitTime: number,
   ) => {
     console.log(`${id} ${phase} 耗时: ${actualDuration}ms`)
   }
@@ -515,7 +515,7 @@ function App() {
 }
 ```
 
-## 8. 🤔 生命周期流程中常见的错误有哪些？
+## 8. 生命周期流程中常见的错误有哪些？
 
 ```tsx
 // ❌ 错误 1：忘记清理副作用
@@ -592,7 +592,7 @@ function MissingDependency({ userId }: { userId: number }) {
 }
 ```
 
-## 9. 🆚 类组件 vs 函数组件流程对比
+## 9. 类组件 vs 函数组件流程对比
 
 | 生命周期阶段 | 类组件 | 函数组件 |
 | --- | --- | --- |
@@ -604,7 +604,7 @@ function MissingDependency({ userId }: { userId: number }) {
 | 性能优化 | `shouldComponentUpdate` | `React.memo`、`useMemo` |
 | 错误捕获 | `componentDidCatch` | 无（需要类组件） |
 
-## 10. 🔗 引用
+## 10. 引用
 
 - [React 文档 - 组件生命周期][1]
 - [React 文档 - useEffect][2]

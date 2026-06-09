@@ -2,14 +2,15 @@
 
 <!-- region:toc -->
 
-- [1. 📒 store](#1--store)
-- [2. 📒 reducer](#2--reducer)
-- [3. 📒 action](#3--action)
+- [1. store](#1-store)
+- [2. reducer](#2-reducer)
+- [3. action](#3-action)
 
 <!-- endregion:toc -->
+
 - 了解 redux 中的 3 个核心组成部分 store、reducer、action，并清楚它们之间的关系。
 
-## 1. 📒 store
+## 1. store
 
 - craeteStore 是用来创建仓库的方法，它接收两个参数 reducer、defaultState，返回一个仓库对象 store。
   - reducer 是封装了一系列处理 action 逻辑的纯函数，它会根据传入的 action 匹配不同的分支来改变仓库状态。
@@ -22,7 +23,7 @@ flowchart TD
 	  craeteStore  	-->  store
 ```
 
-## 2. 📒 reducer
+## 2. reducer
 
 - reducer 是用来改变状态的，它需要接收两个参数 oldState、action，返回新的状态。
   - oldState 表示旧的状态值。
@@ -35,7 +36,7 @@ flowchart TD
 		reducer   -->  newState
 ```
 
-## 3. 📒 action
+## 3. action
 
 - action 用于描述需要执行什么操作的平面对象 plain-object。
 - 通过分发 action 来改变仓库的状态。

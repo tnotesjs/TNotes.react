@@ -2,19 +2,19 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 🤔 入口文件的作用是什么？](#3--入口文件的作用是什么)
-- [4. 🤔 React 18 和 React 19 的入口文件有什么区别？](#4--react-18-和-react-19-的入口文件有什么区别)
-- [5. 🤔 入口文件中都做了哪些事情？](#5--入口文件中都做了哪些事情)
-- [6. 🤔 StrictMode 有什么作用？](#6--strictmode-有什么作用)
-- [7. 🤔 如何在入口文件中添加全局配置？](#7--如何在入口文件中添加全局配置)
-- [8. 🤔 入口文件的常见错误有哪些？](#8--入口文件的常见错误有哪些)
-- [9. 🔗 引用](#9--引用)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. 入口文件的作用是什么？](#3-入口文件的作用是什么)
+- [4. React 18 和 React 19 的入口文件有什么区别？](#4-react-18-和-react-19-的入口文件有什么区别)
+- [5. 入口文件中都做了哪些事情？](#5-入口文件中都做了哪些事情)
+- [6. StrictMode 有什么作用？](#6-strictmode-有什么作用)
+- [7. 如何在入口文件中添加全局配置？](#7-如何在入口文件中添加全局配置)
+- [8. 入口文件的常见错误有哪些？](#8-入口文件的常见错误有哪些)
+- [9. 引用](#9-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - 入口文件的职责
 - React 不同版本的入口写法
@@ -23,7 +23,7 @@
 - 全局配置的添加方式
 - 常见错误与解决方案
 
-## 2. 🫧 评价
+## 2. 评价
 
 本笔记详细讲解了 React 应用入口文件的写法和最佳实践，帮助理解应用的启动流程。
 
@@ -32,7 +32,7 @@
 - StrictMode 能帮助发现潜在问题，建议在开发环境使用
 - 合理的全局配置能提升开发效率
 
-## 3. 🤔 入口文件的作用是什么？
+## 3. 入口文件的作用是什么？
 
 入口文件的核心职责：
 
@@ -57,7 +57,7 @@ graph TD
     G --> H[页面显示内容]
 ```
 
-## 4. 🤔 React 18 和 React 19 的入口文件有什么区别？
+## 4. React 18 和 React 19 的入口文件有什么区别？
 
 不同版本的入口写法对比：
 
@@ -72,7 +72,7 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 )
 ```
 
@@ -87,7 +87,7 @@ import App from './App.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
-  </StrictMode>
+  </StrictMode>,
 )
 ```
 
@@ -102,7 +102,7 @@ import App from './App.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
-  </StrictMode>
+  </StrictMode>,
 )
 ```
 
@@ -141,7 +141,7 @@ root.render(<App />)
 // 渲染可以被中断和恢复，用户体验更好
 ```
 
-## 5. 🤔 入口文件中都做了哪些事情？
+## 5. 入口文件中都做了哪些事情？
 
 标准入口文件的完整结构：
 
@@ -165,7 +165,7 @@ import './utils/dayjs' // 日期库配置
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
-  </StrictMode>
+  </StrictMode>,
 )
 
 // 6. 性能监控（可选）
@@ -194,7 +194,7 @@ createRoot(document.getElementById('root')).render(
         <App />
       </BrowserRouter>
     </Provider>
-  </StrictMode>
+  </StrictMode>,
 )
 ```
 
@@ -225,11 +225,11 @@ createRoot(document.getElementById('root')).render(
       <App />
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
-  </StrictMode>
+  </StrictMode>,
 )
 ```
 
-## 6. 🤔 StrictMode 有什么作用？
+## 6. StrictMode 有什么作用？
 
 StrictMode 的功能：
 
@@ -251,7 +251,7 @@ import App from './App.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
-  </StrictMode>
+  </StrictMode>,
 )
 
 // ✅ 也可以：只包裹特定组件
@@ -305,7 +305,7 @@ if (import.meta.env.DEV) {
   root.render(
     <StrictMode>
       <App />
-    </StrictMode>
+    </StrictMode>,
   )
 } else {
   root.render(<App />)
@@ -316,11 +316,11 @@ if (import.meta.env.DEV) {
 root.render(
   <StrictMode>
     <App />
-  </StrictMode>
+  </StrictMode>,
 )
 ```
 
-## 7. 🤔 如何在入口文件中添加全局配置？
+## 7. 如何在入口文件中添加全局配置？
 
 常见的全局配置场景：
 
@@ -362,7 +362,7 @@ if (import.meta.env.PROD) {
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
-  </StrictMode>
+  </StrictMode>,
 )
 ```
 
@@ -383,7 +383,7 @@ axios.interceptors.request.use(
   },
   (error) => {
     return Promise.reject(error)
-  }
+  },
 )
 
 // 响应拦截器
@@ -395,7 +395,7 @@ axios.interceptors.response.use(
       window.location.href = '/login'
     }
     return Promise.reject(error)
-  }
+  },
 )
 
 export default axios
@@ -425,7 +425,7 @@ i18n.use(initReactI18next).init({
 export default i18n
 ```
 
-## 8. 🤔 入口文件的常见错误有哪些？
+## 8. 入口文件的常见错误有哪些？
 
 常见错误及解决方案：
 
@@ -479,7 +479,7 @@ initAnalytics() // 可能被调用两次
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
-  </StrictMode>
+  </StrictMode>,
 )
 
 // ✅ 解决方案：使用 useEffect 或确保幂等性
@@ -524,11 +524,11 @@ if (import.meta.env.PROD) {
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
-  </StrictMode>
+  </StrictMode>,
 )
 ```
 
-## 9. 🔗 引用
+## 9. 引用
 
 - [React createRoot 文档][1]
 - [React StrictMode 文档][2]

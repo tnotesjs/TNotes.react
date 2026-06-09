@@ -2,26 +2,26 @@
 
 <!-- region:toc -->
 
-- [1. 🫧 评价](#1--评价)
-- [2. 🤔 什么是 UMD？](#2--什么是-umd)
-- [3. 🤔 为什么移除 UMD？](#3--为什么移除-umd)
-- [4. 📒 React 19 中的相关的变化及影响](#4--react-19-中的相关的变化及影响)
-- [5. 📒 替代方案：使用 ESM](#5--替代方案使用-esm)
-- [6. 🔗 引用](#6--引用)
+- [1. 评价](#1-评价)
+- [2. 什么是 UMD？](#2-什么是-umd)
+- [3. 为什么移除 UMD？](#3-为什么移除-umd)
+- [4. React 19 中的相关的变化及影响](#4-react-19-中的相关的变化及影响)
+- [5. 替代方案：使用 ESM](#5-替代方案使用-esm)
+- [6. 引用](#6-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🫧 评价
+## 1. 评价
 
 - React 19 不再支持 UMD 构建，推动开发者使用更现代的 ESM 模块加载方式。
 - 这种变化有助于减少复杂性，提高性能，并与现代 JavaScript 开发实践保持一致。如果您的项目仍在使用 UMD，需要尽快切换到 ESM。
 
-## 2. 🤔 什么是 UMD？
+## 2. 什么是 UMD？
 
 - **UMD（Universal Module Definition）** 是一种模块格式，旨在兼容多种 JavaScript 环境（如浏览器、Node.js）。
 - 过去，开发者可以通过简单的 `<script>` 标签直接在 HTML 文件中加载 UMD 格式的 React。
 
-## 3. 🤔 为什么移除 UMD？
+## 3. 为什么移除 UMD？
 
 - **UMD 的局限性**：
   - 模块管理和加载效率较低。
@@ -29,7 +29,7 @@
 - **现代替代方案**：
   - 现在的 Web 开发普遍采用 ESM（ES Modules），具有更好的性能、模块化和兼容性。
 
-## 4. 📒 React 19 中的相关的变化及影响
+## 4. React 19 中的相关的变化及影响
 
 - ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-13-58-59.png)
 - 从 **React 19** 开始，官方将 **不再提供 UMD 构建**。
@@ -40,7 +40,7 @@
 - **对于新项目**：
   - 影响较小，因为大多数项目已经使用 ESM 或现代构建工具（如 Vite、Webpack）。
 
-## 5. 📒 替代方案：使用 ESM
+## 5. 替代方案：使用 ESM
 
 - React 19 建议通过 **ESM（ES Modules）** 来加载 React，以下是示例代码：
 
@@ -58,7 +58,7 @@ https://esm.sh/
 -->
 ```
 
-## 6. 🔗 引用
+## 6. 引用
 
 - https://zh-hans.react.dev/blog/2024/04/25/react-19-upgrade-guide#umd-builds-removed
   - react blog

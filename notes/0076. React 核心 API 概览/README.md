@@ -2,18 +2,18 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 🤔 React 的核心 API 分为哪几类？](#3--react-的核心-api-分为哪几类)
-- [4. 🤔 组件相关的 API 有哪些？](#4--组件相关的-api-有哪些)
-- [5. 🤔 Hooks API 都有哪些？](#5--hooks-api-都有哪些)
-- [6. 🤔 渲染相关的 API 有哪些？](#6--渲染相关的-api-有哪些)
-- [7. 🤔 其他常用 API 有哪些？](#7--其他常用-api-有哪些)
-- [8. 🔗 引用](#8--引用)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. React 的核心 API 分为哪几类？](#3-react-的核心-api-分为哪几类)
+- [4. 组件相关的 API 有哪些？](#4-组件相关的-api-有哪些)
+- [5. Hooks API 都有哪些？](#5-hooks-api-都有哪些)
+- [6. 渲染相关的 API 有哪些？](#6-渲染相关的-api-有哪些)
+- [7. 其他常用 API 有哪些？](#7-其他常用-api-有哪些)
+- [8. 引用](#8-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - React 核心 API 分类
 - 组件相关 API
@@ -21,7 +21,7 @@
 - 渲染相关 API
 - 其他常用 API
 
-## 2. 🫧 评价
+## 2. 评价
 
 本笔记概览了 React 的核心 API，帮助开发者快速了解 React 提供的主要能力。
 
@@ -30,7 +30,7 @@
 - 掌握核心 API 是深入学习 React 的基础
 - 不需要一次性记住所有 API，在实际使用中逐步熟悉即可
 
-## 3. 🤔 React 的核心 API 分为哪几类？
+## 3. React 的核心 API 分为哪几类？
 
 React API 主要分为以下几类：
 
@@ -68,7 +68,7 @@ API 分类表：
 | 渲染相关 | 将 React 组件渲染到 DOM      | ⭐⭐⭐⭐⭐ |
 | 工具 API | 辅助开发的工具函数           | ⭐⭐⭐     |
 
-## 4. 🤔 组件相关的 API 有哪些？
+## 4. 组件相关的 API 有哪些？
 
 主要的组件 API：
 
@@ -124,7 +124,7 @@ const FancyButton = React.forwardRef((props, ref) => (
 ))
 ```
 
-## 5. 🤔 Hooks API 都有哪些？
+## 5. Hooks API 都有哪些？
 
 Hooks 分类表：
 
@@ -199,7 +199,7 @@ function ExpensiveComponent({ data }) {
 }
 ```
 
-## 6. 🤔 渲染相关的 API 有哪些？
+## 6. 渲染相关的 API 有哪些？
 
 渲染 API 对比：
 
@@ -219,7 +219,7 @@ const root = createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
 )
 
 // 服务端渲染
@@ -238,11 +238,11 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 )
 ```
 
-## 7. 🤔 其他常用 API 有哪些？
+## 7. 其他常用 API 有哪些？
 
 工具类 API：
 
@@ -262,7 +262,7 @@ ReactDOM.render(
 const element = React.createElement(
   'h1',
   { className: 'greeting' },
-  'Hello, world!'
+  'Hello, world!',
 )
 
 // isValidElement - 类型检查
@@ -293,7 +293,7 @@ function handleClick() {
 }
 ```
 
-## 8. 🔗 引用
+## 8. 引用
 
 - [React API Reference][1]
 - [Hooks API Reference][2]

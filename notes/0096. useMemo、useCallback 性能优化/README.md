@@ -2,24 +2,24 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 🤔 `useMemo` 是什么？](#3--usememo-是什么)
-- [4. 🤔 `useCallback` 是什么？](#4--usecallback-是什么)
-- [5. 🆚 `useMemo` vs `useCallback`](#5--usememo-vs-usecallback)
-- [6. 🤔 `React.memo` 是什么？](#6--reactmemo-是什么)
-- [7. 🤔 `React.memo`、`useMemo`、`useCallback` 如何配合使用？](#7--reactmemousememousecallback-如何配合使用)
-- [8. 🔗 引用](#8--引用)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. `useMemo` 是什么？](#3-usememo-是什么)
+- [4. `useCallback` 是什么？](#4-usecallback-是什么)
+- [5. `useMemo` vs `useCallback`](#5-usememo-vs-usecallback)
+- [6. `React.memo` 是什么？](#6-reactmemo-是什么)
+- [7. `React.memo`、`useMemo`、`useCallback` 如何配合使用？](#7-reactmemousememousecallback-如何配合使用)
+- [8. 引用](#8-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - `useMemo`
 - `useCallback`
 - `React.memo`
 
-## 2. 🫧 评价
+## 2. 评价
 
 这篇笔记讲解 React 中两个重要的性能优化 Hook：`useMemo` 和 `useCallback`，以及一个高阶组件 `React.memo`。
 
@@ -28,7 +28,7 @@
 - 必须与 `React.memo` 配合才能真正避免子组件重新渲染
 - 依赖项数组是关键，遗漏或多余都会导致问题
 
-## 3. 🤔 `useMemo` 是什么？
+## 3. `useMemo` 是什么？
 
 `useMemo` 是一个 React Hook，用于缓存计算结果，避免在每次渲染时重复执行昂贵的计算。
 
@@ -39,7 +39,7 @@
 // 示例：
 const memoizedValue = useMemo(
   () => computeExpensiveValue(a, b), // 计算函数
-  [a, b] // 依赖项数组
+  [a, b], // 依赖项数组
 )
 ```
 
@@ -138,7 +138,7 @@ createRoot(document.getElementById('root')).render(<App />)
 
 :::
 
-## 4. 🤔 `useCallback` 是什么？
+## 4. `useCallback` 是什么？
 
 `useCallback` 用于缓存函数引用，避免每次渲染都创建新函数。
 
@@ -273,7 +273,7 @@ createRoot(document.getElementById('root')).render(<App />)
 
 :::
 
-## 5. 🆚 `useMemo` vs `useCallback`
+## 5. `useMemo` vs `useCallback`
 
 | 对比项   | `useMemo`                    | `useCallback`                 |
 | -------- | ---------------------------- | ----------------------------- |
@@ -340,7 +340,7 @@ const handleClick = useMemo(() => {
 // )
 ```
 
-## 6. 🤔 `React.memo` 是什么？
+## 6. `React.memo` 是什么？
 
 `React.memo` 是一个高阶组件（HOC），用于记忆化函数组件。它通过浅比较 `props` 来决定是否跳过组件的重新渲染。
 
@@ -381,7 +381,7 @@ const Greeting = memo(({ name }) => {
 const GreetingWithoutMemo = ({ name }) => {
   console.log(
     'GreetingWithoutMemo was rendered at',
-    new Date().toLocaleTimeString()
+    new Date().toLocaleTimeString(),
   )
   return (
     <h3>
@@ -431,7 +431,7 @@ createRoot(document.getElementById('root')).render(<App />)
 //   无论其 name prop 是否变化
 ```
 
-## 7. 🤔 `React.memo`、`useMemo`、`useCallback` 如何配合使用？
+## 7. `React.memo`、`useMemo`、`useCallback` 如何配合使用？
 
 必须配合使用才能真正避免重新渲染。
 
@@ -551,7 +551,7 @@ createRoot(document.getElementById('root')).render(<App />)
 // 当点击 Count 按钮时，虽然父组件重新渲染，但由于 sortedItems 引用没有变化，因此 ItemList 不会重新渲染
 ```
 
-## 8. 🔗 引用
+## 8. 引用
 
 - [官方文档 - useMemo][1]
 - [官方文档 - useCallback][2]

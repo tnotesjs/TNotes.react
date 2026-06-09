@@ -2,18 +2,18 @@
 
 <!-- region:toc -->
 
-- [1. 🫧 评价](#1--评价)
-- [2. 🤔 `HTML Tag`、`JSX Element` 和 `React Element` 三者之间的关系与区别是？](#2--html-tagjsx-element-和-react-element-三者之间的关系与区别是)
-- [3. 🤔 React 中的 `HTML Tag` 是什么？](#3--react-中的-html-tag-是什么)
-- [4. 🤔 `JSX Element` 是什么？](#4--jsx-element-是什么)
-- [5. 🤔 `React Element` 是什么？](#5--react-element-是什么)
-- [6. 🤔 为什么要写这篇笔记？](#6--为什么要写这篇笔记)
-- [7. 🤔 为什么这些 `React Component`、`React Element`、`JSX Element`、`HTML Tag`、…… 经常会出现一些冲突性的描述呢？](#7--为什么这些-react-componentreact-elementjsx-elementhtml-tag-经常会出现一些冲突性的描述呢)
-- [8. 📒 小结](#8--小结)
+- [1. 评价](#1-评价)
+- [2. `HTML Tag`、`JSX Element` 和 `React Element` 三者之间的关系与区别是？](#2-html-tagjsx-element-和-react-element-三者之间的关系与区别是)
+- [3. React 中的 `HTML Tag` 是什么？](#3-react-中的-html-tag-是什么)
+- [4. `JSX Element` 是什么？](#4-jsx-element-是什么)
+- [5. `React Element` 是什么？](#5-react-element-是什么)
+- [6. 为什么要写这篇笔记？](#6-为什么要写这篇笔记)
+- [7. 为什么这些 `React Component`、`React Element`、`JSX Element`、`HTML Tag`、…… 经常会出现一些冲突性的描述呢？](#7-为什么这些-react-componentreact-elementjsx-elementhtml-tag-经常会出现一些冲突性的描述呢)
+- [8. 小结](#8-小结)
 
 <!-- endregion:toc -->
 
-## 1. 🫧 评价
+## 1. 评价
 
 - 在 react 官方文档中看到了一些冲突性的描述，因此写了这篇笔记来做一个总结。
 - 重点：
@@ -21,7 +21,7 @@
   - 理解在具体的上下文中，作者想要强调的内容，get 到即可
   - 不要死扣字眼
 
-## 2. 🤔 `HTML Tag`、`JSX Element` 和 `React Element` 三者之间的关系与区别是？
+## 2. `HTML Tag`、`JSX Element` 和 `React Element` 三者之间的关系与区别是？
 
 | 术语 | React 中的 `HTML Tag` 和 `JSX Element` | `React Element` |
 | --- | --- | --- |
@@ -33,7 +33,7 @@
 - React 中的 HTML Tag 和 JSX Element 是一种语法糖，帮助开发者更方便地编写 `React Element`，最终会被编译为 `React.createElement` 调用。
 - `React Element` 是 React 内部的数据结构，用于描述 UI 的状态和结构。
 
-## 3. 🤔 React 中的 `HTML Tag` 是什么？
+## 3. React 中的 `HTML Tag` 是什么？
 
 - 在 React 中，JSX 中的 `HTML Tag` 是一种语法糖，用于更直观地描述 UI 结构，最终会被转换为 `React Element`。
 - 这里提到的 `HTML Tag` 是指在 JSX 语句中使用的类似 HTML 的标签，比如 `<div>`、`<span>` 等，而非原生的 HTML 中的标签。
@@ -58,11 +58,11 @@ const element = <div className="container">Hello, World!</div>
 const element = React.createElement(
   'div',
   { className: 'container' },
-  'Hello, World!'
+  'Hello, World!',
 )
 ```
 
-## 4. 🤔 `JSX Element` 是什么？
+## 4. `JSX Element` 是什么？
 
 - `JSX Element` 是一种语法糖，它的作用是让开发者更容易地编写 React Element。
 - `JSX Element` 是 JSX 语法中的一部分，它最终会被编译成 `React.createElement` 调用，从而生成 React Element。
@@ -81,11 +81,11 @@ const jsxElement = <div className="container">Hello, World!</div>
 const jsxElement = React.createElement(
   'div',
   { className: 'container' },
-  'Hello, World!'
+  'Hello, World!',
 )
 ```
 
-## 5. 🤔 `React Element` 是什么？
+## 5. `React Element` 是什么？
 
 - `React Element` 是 React 内部使用的数据结构，用于描述 UI 的结构和状态。
 - `React Element` 是对 UI 的轻量级描述，是一个普通的 JavaScript 对象。
@@ -114,7 +114,7 @@ const reactElement = React.createElement(
 }
 ```
 
-## 6. 🤔 为什么要写这篇笔记？
+## 6. 为什么要写这篇笔记？
 
 - 在学习过程中，被一些概念搞得晕头转向，感觉它们好像是一个东西，但是有些时候又存在冲突，比如：
   - `React Component`
@@ -142,7 +142,7 @@ const reactElement = React.createElement(
     - 2️⃣ HTML TAG 是 React 组件。
       - 这句话想要强调的是 HTML TAG 的本质其实是 React Element 的语法糖，它跟 React 组件 一样，最终都会被转为 `React.createElement` 函数调用，生成对应的 `React Element`，从这一层面来说的话，HTML TAG 跟 React 组件 本质是一样的。
 
-## 7. 🤔 为什么这些 `React Component`、`React Element`、`JSX Element`、`HTML Tag`、…… 经常会出现一些冲突性的描述呢？
+## 7. 为什么这些 `React Component`、`React Element`、`JSX Element`、`HTML Tag`、…… 经常会出现一些冲突性的描述呢？
 
 - `React Component`、`React Element`、`JSX Element`、`HTML Tag`、…… 这些玩意儿在 React 中，其实都是用来描述 UI 的，它们最终都会被转为 `React.createElement` 调用，生成对应的 `React Element`。
 - 正是因为它们存在这一共性，所以在很多文章中，不同的笔者可能会从不同的角度出发，采用不同的代词来表述。比如
@@ -153,7 +153,7 @@ const reactElement = React.createElement(
   - 关注概念的本质，而不是纠结于具体的措辞；
 - 这种思考方式不仅适用于 React 学习，也适用于其他技术的学习。通过理解上下文和本质，能够更高效地掌握复杂的概念。
 
-## 8. 📒 小结
+## 8. 小结
 
 - 最后，再简单介绍一些开始提到的 `React Component`、`React Element`、`JSX Element`、`HTML Tag` 分别是什么。
   - React Component：通常指的是开发者定义的函数组件或类组件，用于封装 UI 的逻辑和结构。

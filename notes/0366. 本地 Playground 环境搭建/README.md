@@ -2,26 +2,26 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 💻 templates/demos](#3--templatesdemos)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. templates/demos](#3-templatesdemos)
   - [3.1. 目录 1](#31-目录-1)
   - [3.2. 目录 2](#32-目录-2)
-- [4. 💻 templates/playgrounds](#4--templatesplaygrounds)
+- [4. templates/playgrounds](#4-templatesplaygrounds)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - 本地 react Playground 环境搭建说明
 
-## 2. 🫧 评价
+## 2. 评价
 
 你可以在 `TNotes.react` 根目录下看到一个名为 `templates` 的文件夹，这个文件夹里面存放的就是最基础的模板文件。
 
 所有的临时测试案例，都可以在 `templates/playgrounds` 目录下进行测试。
 
-## 3. 💻 templates/demos
+## 3. templates/demos
 
 最简化模板：
 
@@ -60,7 +60,7 @@
 
 :::
 
-## 4. 💻 templates/playgrounds
+## 4. templates/playgrounds
 
 ![img](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-12-25-10-04-56.png)
 

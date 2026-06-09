@@ -2,17 +2,17 @@
 
 <!-- region:toc -->
 
-- [1. 🔗 links](#1--links)
-- [2. 📒 react-tooltip 概述](#2--react-tooltip-概述)
-- [3. 📒 安装 react-tooltip](#3--安装-react-tooltip)
-- [4. 📒 核心依赖的版本](#4--核心依赖的版本)
-- [5. 📒 引入 react-tooltip](#5--引入-react-tooltip)
-- [6. 📒 关于 css 引入的一些注意事项](#6--关于-css-引入的一些注意事项)
-- [7. 💻 了解 react-tooltip 的基本使用](#7--了解-react-tooltip-的基本使用)
+- [1. links](#1-links)
+- [2. react-tooltip 概述](#2-react-tooltip-概述)
+- [3. 安装 react-tooltip](#3-安装-react-tooltip)
+- [4. 核心依赖的版本](#4-核心依赖的版本)
+- [5. 引入 react-tooltip](#5-引入-react-tooltip)
+- [6. 关于 css 引入的一些注意事项](#6-关于-css-引入的一些注意事项)
+- [7. 了解 react-tooltip 的基本使用](#7-了解-react-tooltip-的基本使用)
 
 <!-- endregion:toc -->
 
-## 1. 🔗 links
+## 1. links
 
 - https://github.com/ReactTooltip/react-tooltip
   - github react-tooltip 源码仓库
@@ -20,18 +20,18 @@
   - React Tooltip 官方文档
   - 关于 React Tooltip 的具体配置和更多用法，请查阅官方文档。
 
-## 2. 📒 react-tooltip 概述
+## 2. react-tooltip 概述
 
 - `react-tooltip` 是一个基于 react 的第三方组件，用于给指定的元素添加帮助信息，当用户将鼠标悬停在元素上时，会展示我们指定的帮助信息。
 - `react-tooltip` 用于在 React 应用中轻松创建和管理工具提示（tooltip），它提供了简单的 API，允许开发者在鼠标悬停或聚焦元素时显示信息，增强用户体验并提供上下文帮助。通过自定义样式和位置设置，开发者可以灵活地控制工具提示的外观和行为。
 
-## 3. 📒 安装 react-tooltip
+## 3. 安装 react-tooltip
 
 ```bash
 pnpm i react-tooltip
 ```
 
-## 4. 📒 核心依赖的版本
+## 4. 核心依赖的版本
 
 - 可以在 package.json 中查看相关依赖的版本信息。
   - `"react": "^18.3.1"`
@@ -71,7 +71,7 @@ pnpm i react-tooltip
 }
 ```
 
-## 5. 📒 引入 react-tooltip
+## 5. 引入 react-tooltip
 
 ```jsx
 // 必须
@@ -83,12 +83,12 @@ import 'react-tooltip/dist/react-tooltip.css'
 // If you are using v5.13.0 or newer, you don't need to import the css file manually, the styles will be injected into the page by default.
 ```
 
-## 6. 📒 关于 css 引入的一些注意事项
+## 6. 关于 css 引入的一些注意事项
 
 - ![](./assets/2024-11-01-14-30-54.png)
   - from: https://react-tooltip.com/docs/getting-started#set-the-default-styling
 
-## 7. 💻 了解 react-tooltip 的基本使用
+## 7. 了解 react-tooltip 的基本使用
 
 ```jsx
 import './style.css'

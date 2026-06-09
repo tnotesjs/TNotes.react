@@ -2,23 +2,23 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 💻 使用 pnpm 的实际操作流程](#3--使用-pnpm-的实际操作流程)
-- [4. 💻 demos.1 - 使用 vite 创建 react 工程并启动](#4--demos1---使用-vite-创建-react-工程并启动)
-- [5. 🔗 引用](#5--引用)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. 使用 pnpm 的实际操作流程](#3-使用-pnpm-的实际操作流程)
+- [4. demos.1 - 使用 vite 创建 react 工程并启动](#4-demos1---使用-vite-创建-react-工程并启动)
+- [5. 引用](#5-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - 使用 vite 快速初始化一个 react 工程
 
-## 2. 🫧 评价
+## 2. 评价
 
 需要知道如何通过 vite 来快速初始化一个 react 工程。以便后续学习 react 相关知识点的时候，能在 `1min` 内快速搭建好一个最基本的 react 项目学习环境。
 
-## 3. 💻 使用 pnpm 的实际操作流程
+## 3. 使用 pnpm 的实际操作流程
 
 1. `pnpm create vite`
 2. 输入项目名称，比如 `demo`
@@ -57,7 +57,7 @@ $ pnpm create vite@latest my-react-app --template react
 
 你可以通过查阅 vite 官网，了解 `npm create vite` 相关详情。
 
-## 4. 💻 demos.1 - 使用 vite 创建 react 工程并启动
+## 4. demos.1 - 使用 vite 创建 react 工程并启动
 
 ```bash
 $ pnpm create vite my-react-app --template react
@@ -86,7 +86,7 @@ $ pnpm run dev
 
 ![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-23-21-56-18.png)
 
-## 5. 🔗 引用
+## 5. 引用
 
 - [vite 官方文档][1]
 - [vite github][2]

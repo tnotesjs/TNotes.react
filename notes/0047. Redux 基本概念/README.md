@@ -2,22 +2,22 @@
 
 <!-- region:toc -->
 
-- [1. 🫧 评价](#1--评价)
-- [2. 📒 redux 概述](#2--redux-概述)
-- [3. 📒 官方对 redux 的介绍](#3--官方对-redux-的介绍)
-- [4. 📒 redux 核心概念](#4--redux-核心概念)
-- [5. 🤔 为什么 Reducer 必须是纯函数（Pure Functions）？](#5--为什么-reducer-必须是纯函数pure-functions)
-- [6. 🤔 Action 创建函数（Action Creators）是什么？](#6--action-创建函数action-creators是什么)
-- [7. 📒 redux 常用工具及生态系统](#7--redux-常用工具及生态系统)
-- [8. 🔗 引用](#8--引用)
+- [1. 评价](#1-评价)
+- [2. redux 概述](#2-redux-概述)
+- [3. 官方对 redux 的介绍](#3-官方对-redux-的介绍)
+- [4. redux 核心概念](#4-redux-核心概念)
+- [5. 为什么 Reducer 必须是纯函数（Pure Functions）？](#5-为什么-reducer-必须是纯函数pure-functions)
+- [6. Action 创建函数（Action Creators）是什么？](#6-action-创建函数action-creators是什么)
+- [7. redux 常用工具及生态系统](#7-redux-常用工具及生态系统)
+- [8. 引用](#8-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🫧 评价
+## 1. 评价
 
 - 了解 Redux 是什么。
 
-## 2. 📒 redux 概述
+## 2. redux 概述
 
 - Redux 是一个用于 **应用程序状态管理** 的开源 JavaScript 库，尤其适用于单页应用程序（SPA）。
 - Redux 经常与 React 搭配运用，但其也 **可以独立使用**。
@@ -25,7 +25,7 @@
 - **Redux 的主要目的是提供一个可预测的状态容器，使得应用的状态管理和调试变得更加容易。**
 - **React 中的 redux 类似于 vue 中的 vuex、pinia，是 React 生态中的一个重要组成部分。**
 
-## 3. 📒 官方对 redux 的介绍
+## 3. 官方对 redux 的介绍
 
 - ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-07-10-17-14-49.png)
 - https://redux.js.org/introduction/getting-started
@@ -71,7 +71,7 @@
   - Redux works with any UI layer, and has a large ecosystem of addons to fit your needs.
   - Redux 可以与任何 UI 层配合使用，并且拥有大量的插件生态系统来满足你的需求。
 
-## 4. 📒 redux 核心概念
+## 4. redux 核心概念
 
 - **单一数据源**
   - 整个应用的状态存储在一个单一的对象树中，称为 store。
@@ -94,7 +94,7 @@
   - Middleware 是在 action 被 dispatch 到 reducer 之前或之后执行的一些函数。
   - 它们可以用来进行日志记录、错误报告、异步操作等。
 
-## 5. 🤔 为什么 Reducer 必须是纯函数（Pure Functions）？
+## 5. 为什么 Reducer 必须是纯函数（Pure Functions）？
 
 - 这玩意儿如果不是纯函数，redux 的“时间旅行”就没法实现了。
 - **🤔 纯函数是什么？**
@@ -126,7 +126,7 @@ function counterReducer(state = 0, action) {
 }
 ```
 
-## 6. 🤔 Action 创建函数（Action Creators）是什么？
+## 6. Action 创建函数（Action Creators）是什么？
 
 - action 是一个普通的对象，用于描述发生了什么。
 - action 创建函数就是返回普通对象 action 的函数。
@@ -159,7 +159,7 @@ function counterReducer(state = 0, action) {
   }
   ```
 
-## 7. 📒 redux 常用工具及生态系统
+## 7. redux 常用工具及生态系统
 
 - [React-Redux](https://github.com/reduxjs/react-redux)
   - 将 React 组件与 Redux store 连接起来的官方库。
@@ -174,7 +174,7 @@ function counterReducer(state = 0, action) {
 - [Thunk](https://github.com/reduxjs/redux-thunk) 和 [Saga](https://github.com/redux-saga/redux-saga)
   - 处理异步操作的中间件，使得处理异步逻辑更加简洁和可测试。
 
-## 8. 🔗 引用
+## 8. 引用
 
 - 🔗 redux 官方文档和 github 仓库
   - https://redux.js.org/

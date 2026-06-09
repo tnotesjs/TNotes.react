@@ -2,36 +2,36 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 🤔 componentDidCatch 是什么？](#3--componentdidcatch-是什么)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. componentDidCatch 是什么？](#3-componentdidcatch-是什么)
   - [3.1. 基本定义](#31-基本定义)
   - [3.2. 工作原理](#32-工作原理)
   - [3.3. 捕获的错误类型](#33-捕获的错误类型)
-- [4. 🤔 如何实现错误边界？](#4--如何实现错误边界)
+- [4. 如何实现错误边界？](#4-如何实现错误边界)
   - [4.1. 基础错误边界](#41-基础错误边界)
   - [4.2. 增强版错误边界](#42-增强版错误边界)
   - [4.3. 使用示例](#43-使用示例)
 - [5. � 如何上报错误日志？](#5--如何上报错误日志)
   - [5.1. 集成 Sentry](#51-集成-sentry)
   - [5.2. 自定义日志服务](#52-自定义日志服务)
-- [6. 🤔 如何设计错误边界的层级结构？](#6--如何设计错误边界的层级结构)
+- [6. 如何设计错误边界的层级结构？](#6-如何设计错误边界的层级结构)
   - [6.1. 三层错误边界架构](#61-三层错误边界架构)
   - [6.2. 关键组件的独立错误边界](#62-关键组件的独立错误边界)
   - [6.3. 路由级错误边界](#63-路由级错误边界)
-- [7. 🤔 错误边界有哪些局限性？](#7--错误边界有哪些局限性)
+- [7. 错误边界有哪些局限性？](#7-错误边界有哪些局限性)
   - [7.1. 无法捕获的错误](#71-无法捕获的错误)
   - [7.2. 解决方案](#72-解决方案)
-- [8. 🤔 如何在生产环境中使用错误边界？](#8--如何在生产环境中使用错误边界)
+- [8. 如何在生产环境中使用错误边界？](#8-如何在生产环境中使用错误边界)
   - [8.1. 环境区分](#81-环境区分)
   - [8.2. 错误恢复策略](#82-错误恢复策略)
-- [9. 🆚 componentDidCatch vs getDerivedStateFromError](#9--componentdidcatch-vs-getderivedstatefromerror)
+- [9. componentDidCatch vs getDerivedStateFromError](#9-componentdidcatch-vs-getderivedstatefromerror)
   - [9.1. 配合使用示例](#91-配合使用示例)
-- [10. 🔗 引用](#10--引用)
+- [10. 引用](#10-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - componentDidCatch 的定义和工作原理
 - 错误边界的实现方式
@@ -40,7 +40,7 @@
 - 错误边界的局限性
 - 生产环境的错误处理策略
 
-## 2. 🫧 评价
+## 2. 评价
 
 这篇笔记详细讲解 React 错误边界的实现和最佳实践，帮助构建更健壮的应用。
 
@@ -49,7 +49,7 @@
 - 必须配合 `getDerivedStateFromError` 使用，前者更新 UI，后者记录日志
 - 合理的错误边界层级设计能提供更好的用户体验和错误定位
 
-## 3. 🤔 componentDidCatch 是什么？
+## 3. componentDidCatch 是什么？
 
 `componentDidCatch` 是一个生命周期方法，用于捕获子组件树中的 JavaScript 错误。
 
@@ -214,7 +214,7 @@ class AsyncError extends React.Component {
 // ❌ 错误边界内部抛出的错误无法自己捕获
 ```
 
-## 4. 🤔 如何实现错误边界？
+## 4. 如何实现错误边界？
 
 创建一个通用的错误边界组件。
 
@@ -534,7 +534,7 @@ class LoggerService {
   static async logError(
     error: Error,
     errorInfo: React.ErrorInfo,
-    context?: Record<string, any>
+    context?: Record<string, any>,
   ) {
     const errorData = {
       // 错误基本信息
@@ -625,7 +625,7 @@ class LoggingErrorBoundary extends React.Component<Props, State> {
 }
 ```
 
-## 6. 🤔 如何设计错误边界的层级结构？
+## 6. 如何设计错误边界的层级结构？
 
 根据应用结构设置多层错误边界。
 
@@ -771,7 +771,7 @@ function RouterWithErrorBoundary() {
 }
 ```
 
-## 7. 🤔 错误边界有哪些局限性？
+## 7. 错误边界有哪些局限性？
 
 了解错误边界无法处理的场景。
 
@@ -906,7 +906,7 @@ function AsyncComponent() {
 }
 ```
 
-## 8. 🤔 如何在生产环境中使用错误边界？
+## 8. 如何在生产环境中使用错误边界？
 
 生产环境需要特殊处理。
 
@@ -1070,7 +1070,7 @@ class RecoverableErrorBoundary extends React.Component<
 }
 ```
 
-## 9. 🆚 componentDidCatch vs getDerivedStateFromError
+## 9. componentDidCatch vs getDerivedStateFromError
 
 | 特性           | componentDidCatch | getDerivedStateFromError |
 | -------------- | ----------------- | ------------------------ |
@@ -1125,7 +1125,7 @@ class ErrorBoundary extends React.Component<Props, State> {
 }
 ```
 
-## 10. 🔗 引用
+## 10. 引用
 
 - [Error Boundaries 官方文档][1]
 - [componentDidCatch API 参考][2]

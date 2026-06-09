@@ -2,20 +2,20 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 🤔 为什么需要全局状态管理？](#3--为什么需要全局状态管理)
-- [4. 🤔 Redux 的特点是什么？](#4--redux-的特点是什么)
-- [5. 🤔 Zustand 的特点是什么？](#5--zustand-的特点是什么)
-- [6. 🤔 MobX 的特点是什么？](#6--mobx-的特点是什么)
-- [7. 🤔 Context + Hooks 的特点是什么？](#7--context--hooks-的特点是什么)
-- [8. 🤔 Jotai 和 Recoil 的特点是什么？](#8--jotai-和-recoil-的特点是什么)
-- [9. 🆚 主流状态管理方案对比](#9--主流状态管理方案对比)
-- [10. 🔗 引用](#10--引用)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. 为什么需要全局状态管理？](#3-为什么需要全局状态管理)
+- [4. Redux 的特点是什么？](#4-redux-的特点是什么)
+- [5. Zustand 的特点是什么？](#5-zustand-的特点是什么)
+- [6. MobX 的特点是什么？](#6-mobx-的特点是什么)
+- [7. Context + Hooks 的特点是什么？](#7-context--hooks-的特点是什么)
+- [8. Jotai 和 Recoil 的特点是什么？](#8-jotai-和-recoil-的特点是什么)
+- [9. 主流状态管理方案对比](#9-主流状态管理方案对比)
+- [10. 引用](#10-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - 全局状态管理的必要性
 - Redux 的核心特点与使用场景
@@ -25,7 +25,7 @@
 - 原子化状态管理（Jotai、Recoil）
 - 不同方案的对比与选型建议
 
-## 2. 🫧 评价
+## 2. 评价
 
 全局状态管理是大型 React 应用的核心基础设施，不同方案各有优劣，需要根据项目规模和团队熟悉度选择。
 
@@ -36,7 +36,7 @@
 - Jotai 和 Recoil 提供原子化状态，适合复杂依赖关系，但生态相对较新
 - 小型项目推荐 Zustand 或 Context，中大型项目推荐 Redux Toolkit
 
-## 3. 🤔 为什么需要全局状态管理？
+## 3. 为什么需要全局状态管理？
 
 当组件树层级较深或多个组件需要共享状态时，Props Drilling 会导致代码难以维护。
 
@@ -110,7 +110,7 @@ function UserMenu() {
 - 通知消息
 - 多个页面共享的数据
 
-## 4. 🤔 Redux 的特点是什么？
+## 4. Redux 的特点是什么？
 
 Redux 是最流行的状态管理库，基于 Flux 架构，强调单向数据流和不可变性。
 
@@ -183,7 +183,7 @@ function App() {
 - 学习曲线陡峭
 - 对小型项目过于复杂
 
-## 5. 🤔 Zustand 的特点是什么？
+## 5. Zustand 的特点是什么？
 
 Zustand 是轻量级状态管理库，API 简洁，性能优秀，无需 Provider。
 
@@ -238,9 +238,9 @@ const useStore = create(
         login: (user: any) => set({ user }),
         logout: () => set({ user: null }),
       }),
-      { name: 'user-storage' } // localStorage key
-    )
-  )
+      { name: 'user-storage' }, // localStorage key
+    ),
+  ),
 )
 ```
 
@@ -256,7 +256,7 @@ const useStore = create(
 - 生态相对较小
 - 缺少 Redux 的严格约束
 
-## 6. 🤔 MobX 的特点是什么？
+## 6. MobX 的特点是什么？
 
 MobX 基于响应式编程，自动追踪依赖，代码简洁，但有一定魔法。
 
@@ -313,7 +313,7 @@ const Counter = observer(() => {
 - 不可变性不如 Redux 严格
 - 需要装饰器或 `makeAutoObservable`
 
-## 7. 🤔 Context + Hooks 的特点是什么？
+## 7. Context + Hooks 的特点是什么？
 
 React 原生方案，适合简单场景，无需额外依赖。
 
@@ -370,7 +370,7 @@ function CounterProvider({ children }: { children: React.ReactNode }) {
       increment: () => setCount((c) => c + 1),
       decrement: () => setCount((c) => c - 1),
     }),
-    [count]
+    [count],
   )
 
   return (
@@ -390,7 +390,7 @@ function CounterProvider({ children }: { children: React.ReactNode }) {
 - 多个 Context 嵌套会导致 Provider Hell
 - 不适合频繁更新的状态
 
-## 8. 🤔 Jotai 和 Recoil 的特点是什么？
+## 8. Jotai 和 Recoil 的特点是什么？
 
 原子化状态管理，将状态拆分为独立的原子，适合复杂依赖关系。
 
@@ -459,7 +459,7 @@ function Counter() {
 - 学习成本较高
 - 需要 Provider 包裹
 
-## 9. 🆚 主流状态管理方案对比
+## 9. 主流状态管理方案对比
 
 | 特性        | Redux      | Zustand    | MobX     | Context    | Jotai/Recoil |
 | ----------- | ---------- | ---------- | -------- | ---------- | ------------ |
@@ -494,8 +494,8 @@ const useStore = create(
     (set) => ({
       // 状态定义
     }),
-    { name: 'app-storage' }
-  )
+    { name: 'app-storage' },
+  ),
 )
 
 // 大型项目（50+ 个页面）
@@ -519,7 +519,7 @@ setupListeners(store.dispatch)
 - Redux → Zustand：中等，需要改写 reducer
 - MobX → Redux：困难，范式完全不同
 
-## 10. 🔗 引用
+## 10. 引用
 
 - [Redux 官方文档][1]
 - [Zustand GitHub][2]

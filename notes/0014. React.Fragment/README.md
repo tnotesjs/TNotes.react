@@ -2,21 +2,21 @@
 
 <!-- region:toc -->
 
-- [1. 🫧 评价](#1--评价)
-- [2. 🤔 `React.Fragment` 是什么？](#2--reactfragment-是什么)
-- [3. 🤔 `React.Fragment` 能解决什么问题？](#3--reactfragment-能解决什么问题)
+- [1. 评价](#1-评价)
+- [2. `React.Fragment` 是什么？](#2-reactfragment-是什么)
+- [3. `React.Fragment` 能解决什么问题？](#3-reactfragment-能解决什么问题)
 - [4. ⚠️ 注意事项 - 列表渲染的 `key` 值问题](#4-️-注意事项---列表渲染的-key-值问题)
-- [5. 💻 demos.1 - `React.Fragment` 并不会生成真实 DOM](#5--demos1---reactfragment-并不会生成真实-dom)
-- [6. 💻 demos.2 - `React.Fragment` 在列表渲染中的应用](#6--demos2---reactfragment-在列表渲染中的应用)
-- [7. 🔗 引用](#7--引用)
+- [5. demos.1 - `React.Fragment` 并不会生成真实 DOM](#5-demos1---reactfragment-并不会生成真实-dom)
+- [6. demos.2 - `React.Fragment` 在列表渲染中的应用](#6-demos2---reactfragment-在列表渲染中的应用)
+- [7. 引用](#7-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🫧 评价
+## 1. 评价
 
 - 理解 `React.Fragment` 的作用。
 
-## 2. 🤔 `React.Fragment` 是什么？
+## 2. `React.Fragment` 是什么？
 
 - `React.Fragment`
   - `React.Fragment` 是 React 中的一个「内置组件」，它允许你将多个子元素组合在一起，而 无需向 DOM 添加额外的节点。
@@ -30,7 +30,7 @@
 - 应用场景
   - 使用 `<></>` 将多个“根元素”包裹一层，解决 jsx 的单根问题。
 
-## 3. 🤔 `React.Fragment` 能解决什么问题？
+## 3. `React.Fragment` 能解决什么问题？
 
 - 避免额外的 DOM 节点
   - 有时候，你可能需要返回多个子元素，但不希望这些子元素被一个额外的 `<div>` 或其他标签包裹。
@@ -57,14 +57,14 @@ function Blog() {
 // 在这种情况下，你需要显式地表示为 Fragment，而不是使用简写语法 <></>。
 ```
 
-## 5. 💻 demos.1 - `React.Fragment` 并不会生成真实 DOM
+## 5. demos.1 - `React.Fragment` 并不会生成真实 DOM
 
 <<< ./demos/1/assets/1.jsx {6-9}
 
 - 最终渲染结果：
   - ![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-27-22-06-46.png)
 
-## 6. 💻 demos.2 - `React.Fragment` 在列表渲染中的应用
+## 6. demos.2 - `React.Fragment` 在列表渲染中的应用
 
 ::: code-group
 
@@ -99,7 +99,7 @@ const items = [
 - 最终渲染结果：
   - ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-27-22-06-30.png)
 
-## 7. 🔗 引用
+## 7. 引用
 
 - [Fragment][1]
   - React - Reference - Components - Fragment

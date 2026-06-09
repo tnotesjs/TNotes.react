@@ -2,20 +2,20 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 🤔 useEffect 如何模拟 componentDidMount？](#3--useeffect-如何模拟-componentdidmount)
-- [4. 🤔 useEffect 如何模拟 componentDidUpdate？](#4--useeffect-如何模拟-componentdidupdate)
-- [5. 🤔 useEffect 如何模拟 componentWillUnmount？](#5--useeffect-如何模拟-componentwillunmount)
-- [6. 🤔 useEffect 与生命周期的核心区别是什么？](#6--useeffect-与生命周期的核心区别是什么)
-- [7. 🤔 如何迁移类组件到函数组件？](#7--如何迁移类组件到函数组件)
-- [8. 🤔 useEffect 的常见陷阱有哪些？](#8--useeffect-的常见陷阱有哪些)
-- [9. 🆚 useEffect vs 生命周期方法对比](#9--useeffect-vs-生命周期方法对比)
-- [10. 🔗 引用](#10--引用)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. useEffect 如何模拟 componentDidMount？](#3-useeffect-如何模拟-componentdidmount)
+- [4. useEffect 如何模拟 componentDidUpdate？](#4-useeffect-如何模拟-componentdidupdate)
+- [5. useEffect 如何模拟 componentWillUnmount？](#5-useeffect-如何模拟-componentwillunmount)
+- [6. useEffect 与生命周期的核心区别是什么？](#6-useeffect-与生命周期的核心区别是什么)
+- [7. 如何迁移类组件到函数组件？](#7-如何迁移类组件到函数组件)
+- [8. useEffect 的常见陷阱有哪些？](#8-useeffect-的常见陷阱有哪些)
+- [9. useEffect vs 生命周期方法对比](#9-useeffect-vs-生命周期方法对比)
+- [10. 引用](#10-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - useEffect 模拟 componentDidMount
 - useEffect 模拟 componentDidUpdate
@@ -25,7 +25,7 @@
 - useEffect 的常见陷阱与解决方案
 - useEffect 与生命周期方法的详细对比
 
-## 2. 🫧 评价
+## 2. 评价
 
 useEffect 是函数组件中处理副作用的核心 Hook，通过依赖数组控制执行时机，可以模拟类组件的所有生命周期方法。
 
@@ -37,7 +37,7 @@ useEffect 是函数组件中处理副作用的核心 Hook，通过依赖数组�
 - 常见陷阱包括依赖数组不完整、闭包陷阱、无限循环等
 - 迁移时需要理解思维模式的转变，从生命周期思维转向副作用思维
 
-## 3. 🤔 useEffect 如何模拟 componentDidMount？
+## 3. useEffect 如何模拟 componentDidMount？
 
 使用空依赖数组 `[]` 让 useEffect 只在组件挂载时执行一次。
 
@@ -128,7 +128,7 @@ function MountExample() {
 }
 ```
 
-## 4. 🤔 useEffect 如何模拟 componentDidUpdate？
+## 4. useEffect 如何模拟 componentDidUpdate？
 
 不传递依赖数组或指定特定依赖可以模拟 componentDidUpdate。
 
@@ -179,7 +179,7 @@ function SearchResults({ query, filters }: { query: string; filters: any }) {
     // 当 query 或 filters 变化时重新搜索
     const fetchResults = async () => {
       const response = await fetch(
-        `/api/search?q=${query}&filters=${JSON.stringify(filters)}`
+        `/api/search?q=${query}&filters=${JSON.stringify(filters)}`,
       )
       const data = await response.json()
       setResults(data)
@@ -228,7 +228,7 @@ function OptimizedComponent({ userId }: { userId: number }) {
 }
 ```
 
-## 5. 🤔 useEffect 如何模拟 componentWillUnmount？
+## 5. useEffect 如何模拟 componentWillUnmount？
 
 useEffect 的返回函数会在组件卸载时执行，用于清理副作用。
 
@@ -327,7 +327,7 @@ function ComplexCleanup() {
 }
 ```
 
-## 6. 🤔 useEffect 与生命周期的核心区别是什么？
+## 6. useEffect 与生命周期的核心区别是什么？
 
 useEffect 基于副作用思维，而生命周期基于阶段思维，这是根本性的差异。
 
@@ -406,7 +406,7 @@ function FunctionComponent({ userId }: { userId: number }) {
 | 清理逻辑 | 与设置逻辑分离                 | 与设置逻辑相邻                 |
 | 复用性   | 通过 HOC、Render Props         | 通过自定义 Hooks               |
 
-## 7. 🤔 如何迁移类组件到函数组件？
+## 7. 如何迁移类组件到函数组件？
 
 按照生命周期方法逐步转换为 useEffect。
 
@@ -496,7 +496,7 @@ function AfterFunction({ userId, theme }: { userId: number; theme: string }) {
 4. 将 `componentWillUnmount` 转换为 `useEffect` 的返回函数
 5. 提取可复用逻辑为自定义 Hooks
 
-## 8. 🤔 useEffect 的常见陷阱有哪些？
+## 8. useEffect 的常见陷阱有哪些？
 
 ```tsx
 // ❌ 陷阱 1：依赖数组不完整
@@ -592,7 +592,7 @@ function StaleClosureBad({ id }: { id: number }) {
 }
 ```
 
-## 9. 🆚 useEffect vs 生命周期方法对比
+## 9. useEffect vs 生命周期方法对比
 
 | 场景 | 类组件 | 函数组件（useEffect） |
 | --- | --- | --- |
@@ -605,7 +605,7 @@ function StaleClosureBad({ id }: { id: number }) {
 | 学习曲线 | 容易理解 | 需要理解依赖和闭包 |
 | 灵活性 | 固定时机 | 精确控制 |
 
-## 10. 🔗 引用
+## 10. 引用
 
 - [React 文档 - useEffect][1]
 - [React 文档 - 从类迁移到 Hooks][2]

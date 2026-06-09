@@ -2,17 +2,17 @@
 
 <!-- region:toc -->
 
-- [1. 🫧 评价](#1--评价)
+- [1. 评价](#1-评价)
 - [2. ⚠️ 兼容性问题 - 从 v18 开始，不再支持 ReactDOM.render 这个 API](#2-️-兼容性问题---从-v18-开始不再支持-reactdomrender-这个-api)
 - [3. ⚙️ `ReactDOM.render`](#3-️-reactdomrender)
-- [4. 💻 demos.1 - `ReactDOM.render` 的基本使用示例](#4--demos1---reactdomrender-的基本使用示例)
+- [4. demos.1 - `ReactDOM.render` 的基本使用示例](#4-demos1---reactdomrender-的基本使用示例)
 - [5. ⚙️ `ReactDOM.createRoot`](#5-️-reactdomcreateroot)
-- [6. 💻 demos.2 - `ReactDOM.createRoot` 的基本使用示例](#6--demos2---reactdomcreateroot-的基本使用示例)
-- [7. 🤔 为什么弃用 `ReactDOM.render`？](#7--为什么弃用-reactdomrender)
+- [6. demos.2 - `ReactDOM.createRoot` 的基本使用示例](#6-demos2---reactdomcreateroot-的基本使用示例)
+- [7. 为什么弃用 `ReactDOM.render`？](#7-为什么弃用-reactdomrender)
 
 <!-- endregion:toc -->
 
-## 1. 🫧 评价
+## 1. 评价
 
 - `ReactDOM.render` 是 React 17 及之前版本的核心 API，用于将 React 元素渲染到 DOM 中。
 - 在 React 18 中，它被废弃，推荐使用 `ReactDOM.createRoot`，以支持更现代化的并发渲染特性。
@@ -66,7 +66,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 // 将 App 组件渲染到 id 为 "root" 的 DOM 容器中。
 ```
 
-## 4. 💻 demos.1 - `ReactDOM.render` 的基本使用示例
+## 4. demos.1 - `ReactDOM.render` 的基本使用示例
 
 <<< ./demos/1/1.html {10-33}
 
@@ -90,14 +90,14 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(<App />)
 ```
 
-## 6. 💻 demos.2 - `ReactDOM.createRoot` 的基本使用示例
+## 6. demos.2 - `ReactDOM.createRoot` 的基本使用示例
 
 <<< ./demos/2/1.html {10-24}
 
 - 最终渲染结果和 demos.1 是完全一样的。
   - ![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-13-19-27.png)
 
-## 7. 🤔 为什么弃用 `ReactDOM.render`？
+## 7. 为什么弃用 `ReactDOM.render`？
 
 - 支持并发渲染（Concurrent Rendering）
   - React 18 引入了并发模式，提高了渲染性能和响应性。

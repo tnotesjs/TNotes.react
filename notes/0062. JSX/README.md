@@ -2,12 +2,12 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本章内容](#1--本章内容)
-- [2. 🫧 评价](#2--评价)
+- [1. 本章内容](#1-本章内容)
+- [2. 评价](#2-评价)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本章内容
+## 1. 本章内容
 
 - JSX 是什么
 - JSX 有什么用
@@ -22,7 +22,7 @@
 - JSX 中使用 dangerouslySetInnerHTML 插入 HTML 内容
 - DOMPurify 和 XSS 攻击
 
-## 2. 🫧 评价
+## 2. 评价
 
 - 本章的核心其实是在学习 `React Element` 的相关知识，包括语法层面和原理层面的一些内容。
 - 一个 React 应用就是由一个个 `React Element` React 元素组成的，掌握好 `React Element` 的相关知识是非常重要的。

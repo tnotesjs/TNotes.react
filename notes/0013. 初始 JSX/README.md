@@ -2,20 +2,20 @@
 
 <!-- region:toc -->
 
-- [1. 🫧 评价](#1--评价)
-- [2. 🤔 JSX 是什么？](#2--jsx-是什么)
-- [3. 🤔 JSX 必须单根吗？](#3--jsx-必须单根吗)
-- [4. 🤔 为什么 jsx 必须单根？](#4--为什么-jsx-必须单根)
-- [5. 🤔 JSX 如何描述模板？（语法层面）](#5--jsx-如何描述模板语法层面)
-- [6. 💻 demos.1 - 一个简单的 React 组件示例](#6--demos1---一个简单的-react-组件示例)
+- [1. 评价](#1-评价)
+- [2. JSX 是什么？](#2-jsx-是什么)
+- [3. JSX 必须单根吗？](#3-jsx-必须单根吗)
+- [4. 为什么 jsx 必须单根？](#4-为什么-jsx-必须单根)
+- [5. JSX 如何描述模板？（语法层面）](#5-jsx-如何描述模板语法层面)
+- [6. demos.1 - 一个简单的 React 组件示例](#6-demos1---一个简单的-react-组件示例)
 
 <!-- endregion:toc -->
 
-## 1. 🫧 评价
+## 1. 评价
 
 - 这篇笔记简单介绍了 JSX 的一些基础知识点，先对 JSX 是什么有个初步认识即可，有关 JSX 的更多细节，会在其他笔记中介绍。
 
-## 2. 🤔 JSX 是什么？
+## 2. JSX 是什么？
 
 - JSX 是 JavaScript XML 的缩写，它是 React 中用于描述用户界面的一种语法扩展。
 - JSX 是由 Facebook 起草的 JS 扩展语法，是一种将 HTML 和 JavaScript 混合使用的扩展语法。
@@ -25,19 +25,19 @@
   - 从数据类型层面来看，JSX 本质上是一个 JS 对象。
   - JSX 会被 babel 编译，最终会被转换为 `React.createElement` 函数调用，是一个 React Element 对象。
 
-## 3. 🤔 JSX 必须单根吗？
+## 3. JSX 必须单根吗？
 
 - 每个 JSX 表达式，有且仅有一个根节点。
 - 如果有多个根，可以使用 `<React.Fragment></React.Fragment>` 来包裹这些根节点。
 - `<React.Fragment></React.Fragment>` 可以简写为 `<></>`。
 
-## 4. 🤔 为什么 jsx 必须单根？
+## 4. 为什么 jsx 必须单根？
 
 - jsx 表达式 -> 等效的 `React.createElement` 函数调用。
 - 调用 `React.createElement` 必须有一个根，如果有多个根，没法调，都不知道咋传参。
 - jsx 表达式会被 babel 编译，转为等效的 `React.createElement` 写法。如果 jsx 有多个根节点，那显然是没法转的，因为 `React.createElement` 这个 API 创建的是一棵树，在创建这棵树的时候传入的第一个参数 type 表示的是根节点的类型。
 
-## 5. 🤔 JSX 如何描述模板？（语法层面）
+## 5. JSX 如何描述模板？（语法层面）
 
 - 声明式
   - JSX 是声明式的，这意味着你可以描述你的应用应该显示什么，而不是如何进行 DOM 操作来改变应用的状态。
@@ -56,7 +56,7 @@
 - 注释
   - 在 JSX 中添加注释需要使用花括号 `{/* ... */}`。
 
-## 6. 💻 demos.1 - 一个简单的 React 组件示例
+## 6. demos.1 - 一个简单的 React 组件示例
 
 ::: code-group
 
@@ -72,7 +72,7 @@ function Welcome(props) {
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Welcome name="Tdahuyou" />
-  </StrictMode>
+  </StrictMode>,
 )
 ```
 

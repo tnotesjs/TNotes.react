@@ -2,19 +2,19 @@
 
 <!-- region:toc -->
 
-- [1. 🫧 评价](#1--评价)
-- [2. 🔍 transform - html 转 jsx 在线转换器](#2--transform---html-转-jsx-在线转换器)
-- [3. 💻 一个简单的 html to jsx 转换示例](#3--一个简单的-html-to-jsx-转换示例)
-- [4. 🔗 引用](#4--引用)
+- [1. 评价](#1-评价)
+- [2. transform - html 转 jsx 在线转换器](#2-transform---html-转-jsx-在线转换器)
+- [3. 一个简单的 html to jsx 转换示例](#3-一个简单的-html-to-jsx-转换示例)
+- [4. 引用](#4-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🫧 评价
+## 1. 评价
 
 - 这篇笔记介绍了一个在线转换工具 `transform`，你可以使用它将 html 转换成 jsx。
 - 了解有这么一个工具即可，实际开发时若真有类似的转换需求，直接丢给 AI 应该会更方便一些。
 
-## 2. 🔍 transform - html 转 jsx 在线转换器
+## 2. transform - html 转 jsx 在线转换器
 
 - 需求场景
   - 如果你 有大量的 HTML 需要移植到 JSX 中，你可以使用 [transform 在线转换器](https://transform.tools/html-to-jsx) 来实现快速转换。
@@ -24,7 +24,7 @@
   - html 转 jsx 在线转换器。
   - ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-14-15-48.png)
 
-## 3. 💻 一个简单的 html to jsx 转换示例
+## 3. 一个简单的 html to jsx 转换示例
 
 ::: code-group
 
@@ -50,7 +50,7 @@
 
 :::
 
-## 4. 🔗 引用
+## 4. 引用
 
 - [transform][1]
 - [transform GitHub 仓库][2]

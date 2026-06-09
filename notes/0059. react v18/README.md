@@ -2,9 +2,9 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 🤖 react v18 都有哪些重大更新？（待整理）](#3--react-v18-都有哪些重大更新待整理)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. react v18 都有哪些重大更新？（待整理）](#3-react-v18-都有哪些重大更新待整理)
   - [3.1. 🚀 核心主题：并发渲染（Concurrent Rendering）正式落地](#31--核心主题并发渲染concurrent-rendering正式落地)
   - [3.2. 新的 Root API：`createRoot`（强制升级点）](#32-新的-root-apicreateroot强制升级点)
   - [3.3. 自动批处理（Automatic Batching）](#33-自动批处理automatic-batching)
@@ -16,19 +16,19 @@
   - [3.9. Breaking Changes & 注意事项](#39-breaking-changes--注意事项)
   - [3.10. 其他改进](#310-其他改进)
   - [3.11. 总结](#311-总结)
-- [4. 🔗 引用](#4--引用)
+- [4. 引用](#4-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - react v18 的重大更新
 
-## 2. 🫧 评价
+## 2. 评价
 
 - 快速了解 react v18 的一些重大变更
 
-## 3. 🤖 react v18 都有哪些重大更新？（待整理）
+## 3. react v18 都有哪些重大更新？（待整理）
 
 - 以下是基于 [React v18.0.0 官方 Release Notes][1] 的核心变更总结。
 - React v18 于 2022 年 3 月 29 日正式发布，是继 React 16（Fiber）之后又一个重大里程碑版本。
@@ -178,7 +178,7 @@ return (
 > - 借助流式 SSR + Suspense 提升首屏性能。
 > - 所有新项目应直接使用 React 18+，旧项目建议尽快迁移 `createRoot`。
 
-## 4. 🔗 引用
+## 4. 引用
 
 - [React v18.0.0 Release Notes][1]
 - [React 18 Upgrade Guide][2]

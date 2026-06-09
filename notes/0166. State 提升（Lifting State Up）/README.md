@@ -2,12 +2,12 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 🤔 什么是 State 提升？](#3--什么是-state-提升)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. 什么是 State 提升？](#3-什么是-state-提升)
   - [3.1. 基本概念](#31-基本概念)
   - [3.2. 数据流向](#32-数据流向)
-- [4. 🤔 为什么需要提升 State？](#4--为什么需要提升-state)
+- [4. 为什么需要提升 State？](#4-为什么需要提升-state)
   - [4.1. 原因 1：数据同步](#41-原因-1数据同步)
   - [4.2. 原因 2：单一数据源](#42-原因-2单一数据源)
   - [4.3. 原因 3：协调更新](#43-原因-3协调更新)
@@ -16,21 +16,21 @@
   - [5.2. 步骤 2：移动到共同父组件](#52-步骤-2移动到共同父组件)
   - [5.3. 步骤 3：通过 Props 传递](#53-步骤-3通过-props-传递)
   - [5.4. 完整示例](#54-完整示例)
-- [6. 🤔 State 提升的常见场景？](#6--state-提升的常见场景)
+- [6. State 提升的常见场景？](#6-state-提升的常见场景)
   - [6.1. 场景 1：表单输入同步](#61-场景-1表单输入同步)
   - [6.2. 场景 2：列表过滤和排序](#62-场景-2列表过滤和排序)
   - [6.3. 场景 3：多步骤表单](#63-场景-3多步骤表单)
   - [6.4. 场景 4：主从联动](#64-场景-4主从联动)
-- [7. 🤔 State 应该提升到哪里？](#7--state-应该提升到哪里)
+- [7. State 应该提升到哪里？](#7-state-应该提升到哪里)
   - [7.1. 原则：最近共同祖先](#71-原则最近共同祖先)
   - [7.2. 避免过度提升](#72-避免过度提升)
   - [7.3. 使用 Context 避免深层传递](#73-使用-context-避免深层传递)
   - [7.4. 状态位置决策流程](#74-状态位置决策流程)
-- [8. 🔗 引用](#8--引用)
+- [8. 引用](#8-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - State 提升的概念
 - 提升 State 的原因和时机
@@ -38,7 +38,7 @@
 - 常见应用场景
 - 提升位置的选择原则
 
-## 2. 🫧 评价
+## 2. 评价
 
 State 提升是 React 中实现组件间数据共享的基本模式，理解它是掌握组件通信的关键。
 
@@ -48,7 +48,7 @@ State 提升是 React 中实现组件间数据共享的基本模式，理解它�
 - 状态提升后组件变为受控组件，数据流更清晰
 - 过度提升会导致 props drilling 问题，需要配合 Context 或状态管理库
 
-## 3. 🤔 什么是 State 提升？
+## 3. 什么是 State 提升？
 
 ### 3.1. 基本概念
 
@@ -146,7 +146,7 @@ function ChildB({ data, onUpdate }) {
 }
 ```
 
-## 4. 🤔 为什么需要提升 State？
+## 4. 为什么需要提升 State？
 
 ### 4.1. 原因 1：数据同步
 
@@ -190,7 +190,7 @@ function FilterInput({ value, onChange }) {
 function ItemList({ items, filter }) {
   // ✅ 可以获取 filter 的值
   const filtered = items.filter((item) =>
-    item.toLowerCase().includes(filter.toLowerCase())
+    item.toLowerCase().includes(filter.toLowerCase()),
   )
 
   return (
@@ -374,12 +374,12 @@ function Calculator() {
         operation === '+'
           ? memory + value
           : operation === '-'
-          ? memory - value
-          : operation === '*'
-          ? memory * value
-          : operation === '/'
-          ? memory / value
-          : value
+            ? memory - value
+            : operation === '*'
+              ? memory * value
+              : operation === '/'
+                ? memory / value
+                : value
       setValue(result)
       setMemory(0)
       setOperation(null)
@@ -428,7 +428,7 @@ function OperatorPad({ onOperatorClick }) {
 }
 ```
 
-## 6. 🤔 State 提升的常见场景？
+## 6. State 提升的常见场景？
 
 ### 6.1. 场景 1：表单输入同步
 
@@ -593,7 +593,7 @@ function DetailPanel({ item }) {
 }
 ```
 
-## 7. 🤔 State 应该提升到哪里？
+## 7. State 应该提升到哪里？
 
 ### 7.1. 原则：最近共同祖先
 
@@ -738,7 +738,7 @@ function decideStateLocation() {
 }
 ```
 
-## 8. 🔗 引用
+## 8. 引用
 
 - [React 官方文档 - State 提升][1]
 - [React 官方文档 - 组件间共享状态][2]

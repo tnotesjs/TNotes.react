@@ -2,25 +2,25 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 🤔 什么是自定义 Hooks？](#3--什么是自定义-hooks)
-- [4. 🤔 如何创建自定义 Hooks？](#4--如何创建自定义-hooks)
-- [5. 🤔 常见的自定义 Hooks 有哪些？](#5--常见的自定义-hooks-有哪些)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. 什么是自定义 Hooks？](#3-什么是自定义-hooks)
+- [4. 如何创建自定义 Hooks？](#4-如何创建自定义-hooks)
+- [5. 常见的自定义 Hooks 有哪些？](#5-常见的自定义-hooks-有哪些)
   - [5.1. useLocalStorage](#51-uselocalstorage)
   - [5.2. useWindowSize](#52-usewindowsize)
   - [5.3. useToggle](#53-usetoggle)
   - [5.4. usePrevious](#54-useprevious)
   - [5.5. useInterval](#55-useinterval)
-- [6. 🤔 自定义 Hooks 的最佳实践是什么？](#6--自定义-hooks-的最佳实践是什么)
-- [7. 🤔 自定义 Hooks 的常见错误有哪些？](#7--自定义-hooks-的常见错误有哪些)
-- [8. 🤔 如何测试自定义 Hooks？](#8--如何测试自定义-hooks)
-- [9. 🆚 自定义 Hooks vs HOC vs Render Props](#9--自定义-hooks-vs-hoc-vs-render-props)
-- [10. 🔗 引用](#10--引用)
+- [6. 自定义 Hooks 的最佳实践是什么？](#6-自定义-hooks-的最佳实践是什么)
+- [7. 自定义 Hooks 的常见错误有哪些？](#7-自定义-hooks-的常见错误有哪些)
+- [8. 如何测试自定义 Hooks？](#8-如何测试自定义-hooks)
+- [9. 自定义 Hooks vs HOC vs Render Props](#9-自定义-hooks-vs-hoc-vs-render-props)
+- [10. 引用](#10-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - 自定义 Hooks 的概念与优势
 - 创建自定义 Hooks 的方法
@@ -30,7 +30,7 @@
 - 自定义 Hooks 的测试方法
 - 与其他代码复用方式的对比
 
-## 2. 🫧 评价
+## 2. 评价
 
 自定义 Hooks 是 React 最强大的代码复用机制，可以提取组件逻辑为可复用的函数，比 HOC 和 Render Props 更简洁直观。
 
@@ -42,7 +42,7 @@
 - 避免过早抽象，只在逻辑真正需要复用时才创建自定义 Hook
 - 使用 TypeScript 提供类型安全，使用 `@testing-library/react-hooks` 进行测试
 
-## 3. 🤔 什么是自定义 Hooks？
+## 3. 什么是自定义 Hooks？
 
 自定义 Hooks 是以 `use` 开头的函数，内部可以调用其他 Hooks，用于提取和复用组件逻辑。
 
@@ -86,7 +86,7 @@ function AnotherCounter() {
 - 便于测试和维护
 - 比 HOC 和 Render Props 更直观
 
-## 4. 🤔 如何创建自定义 Hooks？
+## 4. 如何创建自定义 Hooks？
 
 创建自定义 Hooks 的步骤：识别可复用逻辑、提取为函数、以 `use` 开头命名、返回需要的值。
 
@@ -188,7 +188,7 @@ function SearchInput() {
 }
 ```
 
-## 5. 🤔 常见的自定义 Hooks 有哪些？
+## 5. 常见的自定义 Hooks 有哪些？
 
 以下是一些实用的自定义 Hooks。
 
@@ -347,7 +347,7 @@ function Clock() {
 }
 ```
 
-## 6. 🤔 自定义 Hooks 的最佳实践是什么？
+## 6. 自定义 Hooks 的最佳实践是什么？
 
 ```tsx
 // ✅ 实践 1：命名以 use 开头
@@ -422,7 +422,7 @@ interface UseFetchResult<T> {
 
 function useFetch<T>(
   url: string,
-  options?: UseFetchOptions
+  options?: UseFetchOptions,
 ): UseFetchResult<T> {
   const [data, setData] = useState<T | null>(null)
   const [loading, setLoading] = useState(true)
@@ -450,7 +450,7 @@ function useFetch<T>(
 }
 ```
 
-## 7. 🤔 自定义 Hooks 的常见错误有哪些？
+## 7. 自定义 Hooks 的常见错误有哪些？
 
 ```tsx
 // ❌ 错误 1：不以 use 开头
@@ -529,12 +529,12 @@ function useData() {
       data,
       setData,
     }),
-    [data]
+    [data],
   )
 }
 ```
 
-## 8. 🤔 如何测试自定义 Hooks？
+## 8. 如何测试自定义 Hooks？
 
 使用 `@testing-library/react-hooks` 进行测试。
 
@@ -583,7 +583,7 @@ describe('useCounter', () => {
 })
 ```
 
-## 9. 🆚 自定义 Hooks vs HOC vs Render Props
+## 9. 自定义 Hooks vs HOC vs Render Props
 
 | 特性       | 自定义 Hooks    | HOC             | Render Props     |
 | ---------- | --------------- | --------------- | ---------------- |
@@ -654,7 +654,7 @@ function Component() {
 }
 ```
 
-## 10. 🔗 引用
+## 10. 引用
 
 - [React 文档 - 自定义 Hooks][1]
 - [React 文档 - Hooks 规则][2]

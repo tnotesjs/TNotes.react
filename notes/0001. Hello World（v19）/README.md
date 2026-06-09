@@ -2,16 +2,16 @@
 
 <!-- region:toc -->
 
-- [1. 🫧 评价](#1--评价)
-- [2. 💻 demos.1 - Hello World](#2--demos1---hello-world)
+- [1. 评价](#1-评价)
+- [2. demos.1 - Hello World](#2-demos1---hello-world)
 
 <!-- endregion:toc -->
 
-## 1. 🫧 评价
+## 1. 评价
 
 - 内容概述：通过 esm 的方式引入 react、react-dom，并使用 `ReactDOM.createRoot()` 方法将 react 元素渲染到页面上。
 
-## 2. 💻 demos.1 - Hello World
+## 2. demos.1 - Hello World
 
 ::: code-group
 

@@ -2,14 +2,14 @@
 
 <!-- region:toc -->
 
-- [1. 🫧 评价](#1--评价)
-- [2. 📒 before v18 - `ReactDOM.render` 的局限性](#2--before-v18---reactdomrender-的局限性)
-- [3. 📒 after v18 - `ReactDOM.createRoot` 的优势](#3--after-v18---reactdomcreateroot-的优势)
-- [4. 🔗 引用](#4--引用)
+- [1. 评价](#1-评价)
+- [2. before v18 - `ReactDOM.render` 的局限性](#2-before-v18---reactdomrender-的局限性)
+- [3. after v18 - `ReactDOM.createRoot` 的优势](#3-after-v18---reactdomcreateroot-的优势)
+- [4. 引用](#4-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🫧 评价
+## 1. 评价
 
 - 并发渲染（**Concurrent Rendering**）是 React 18 引入的一项核心特性，它的目标是提升应用的 **响应性和性能**，特别是在处理复杂 UI 或长任务时。
 - 如果你正在使用 React 18 或以上版本，建议全面迁移到 `createRoot` 以启用并发模式带来的优化和新特性。
@@ -35,7 +35,7 @@ const root = createRoot(document.getElementById('root'))
 root.render(<App />)
 ```
 
-## 2. 📒 before v18 - `ReactDOM.render` 的局限性
+## 2. before v18 - `ReactDOM.render` 的局限性
 
 - 旧版 `ReactDOM.render` 是同步、阻塞式的渲染方式，一旦开始渲染，就必须等它完成才能执行其他操作。
 - 这在并发场景下显得不够灵活，也无法支持上述特性。
@@ -43,7 +43,7 @@ root.render(<App />)
   - 在 React 18 之前，渲染是单一、不可中断的同步事务，一旦开始便无法中止。
   - ![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-13-46-02.png)
 
-## 3. 📒 after v18 - `ReactDOM.createRoot` 的优势
+## 3. after v18 - `ReactDOM.createRoot` 的优势
 
 - 使用 `createRoot` 创建的根节点，默认就启用了并发模式，可以利用以下能力：
   - 支持 **Suspense**（异步加载组件）
@@ -53,7 +53,7 @@ root.render(<App />)
   - 并发机制是对 React 渲染架构的基础性升级，它使渲染过程具备可中断能力。
   - ![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-24-13-47-17.png)
 
-## 4. 🔗 引用
+## 4. 引用
 
 - https://react.dev/blog/2022/03/08/react-18-upgrade-guide#updates-to-client-rendering-apis
 - https://react.dev/reference/react/Suspense

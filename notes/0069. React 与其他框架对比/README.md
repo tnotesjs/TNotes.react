@@ -2,24 +2,24 @@
 
 <!-- region:toc -->
 
-- [1. 🎯 本节内容](#1--本节内容)
-- [2. 🫧 评价](#2--评价)
-- [3. 🆚 React vs Vue](#3--react-vs-vue)
-- [4. 🆚 React vs Angular](#4--react-vs-angular)
-- [5. 🆚 React vs Svelte](#5--react-vs-svelte)
-- [6. 🤔 如何选择合适的框架？](#6--如何选择合适的框架)
-- [7. 🔗 引用](#7--引用)
+- [1. 本节内容](#1-本节内容)
+- [2. 评价](#2-评价)
+- [3. React vs Vue](#3-react-vs-vue)
+- [4. React vs Angular](#4-react-vs-angular)
+- [5. React vs Svelte](#5-react-vs-svelte)
+- [6. 如何选择合适的框架？](#6-如何选择合适的框架)
+- [7. 引用](#7-引用)
 
 <!-- endregion:toc -->
 
-## 1. 🎯 本节内容
+## 1. 本节内容
 
 - React 与 Vue 对比
 - React 与 Angular 对比
 - React 与 Svelte 对比
 - 框架选型建议
 
-## 2. 🫧 评价
+## 2. 评价
 
 本笔记对比了主流前端框架的特点，帮助开发者更好地理解 React 的定位和优势。
 
@@ -28,7 +28,7 @@
 - Vue 更易上手，Angular 更适合大型企业级应用，Svelte 追求极致性能
 - 选择框架时，应综合考虑团队技术栈、项目规模、性能要求等因素
 
-## 3. 🆚 React vs Vue
+## 3. React vs Vue
 
 核心差异对比：
 
@@ -95,7 +95,7 @@ Vue 的优势：
 - 双向绑定在表单处理时更方便
 - 性能优化更自动化
 
-## 4. 🆚 React vs Angular
+## 4. React vs Angular
 
 核心差异对比：
 
@@ -168,7 +168,7 @@ Angular 的优势：
 - 依赖注入系统利于测试
 - 官方工具链完善
 
-## 5. 🆚 React vs Svelte
+## 5. React vs Svelte
 
 核心差异对比：
 
@@ -235,7 +235,7 @@ Svelte 的优势：
 - 更简洁的代码
 - 更直观的响应式语法
 
-## 6. 🤔 如何选择合适的框架？
+## 6. 如何选择合适的框架？
 
 选型考虑因素：
 
@@ -275,7 +275,7 @@ Svelte 的优势：
 
 最重要的是：选择团队熟悉且能长期维护的框架，而不是盲目追求新技术。
 
-## 7. 🔗 引用
+## 7. 引用
 
 - [React 官网][1]
 - [Vue 官网][2]

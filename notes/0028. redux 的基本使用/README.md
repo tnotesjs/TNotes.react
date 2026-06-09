@@ -2,21 +2,21 @@
 
 <!-- region:toc -->
 
-- [1. 📒 本节会用到的一些依赖](#1--本节会用到的一些依赖)
-- [2. 💻 demos.1 - 脱离 react 单独使用 redux 来管理状态数据](#2--demos1---脱离-react-单独使用-redux-来管理状态数据)
-- [3. 💻 demos.2 - redux 的基本使用 - createStore 版](#3--demos2---redux-的基本使用---createstore-版)
-- [4. 💻 demos.2 - redux 的基本使用 - @reduxjs/toolkit 版](#4--demos2---redux-的基本使用---reduxjstoolkit-版)
-- [5. 💻 demos.2 - redux 的基本使用 - @reduxjs/toolkit 版（模块化）](#5--demos2---redux-的基本使用---reduxjstoolkit-版模块化)
+- [1. 本节会用到的一些依赖](#1-本节会用到的一些依赖)
+- [2. demos.1 - 脱离 react 单独使用 redux 来管理状态数据](#2-demos1---脱离-react-单独使用-redux-来管理状态数据)
+- [3. demos.2 - redux 的基本使用 - createStore 版](#3-demos2---redux-的基本使用---createstore-版)
+- [4. demos.2 - redux 的基本使用 - @reduxjs/toolkit 版](#4-demos2---redux-的基本使用---reduxjstoolkit-版)
+- [5. demos.2 - redux 的基本使用 - @reduxjs/toolkit 版（模块化）](#5-demos2---redux-的基本使用---reduxjstoolkit-版模块化)
 
 <!-- endregion:toc -->
 
-## 1. 📒 本节会用到的一些依赖
+## 1. 本节会用到的一些依赖
 
 ```bash
 npm install redux react-redux @reduxjs/toolkit
 ```
 
-## 2. 💻 demos.1 - 脱离 react 单独使用 redux 来管理状态数据
+## 2. demos.1 - 脱离 react 单独使用 redux 来管理状态数据
 
 ```js
 /**
@@ -49,24 +49,24 @@ const action = {
 
 console.log(
   '打印 window.store.getState() 获取仓库当前状态 =>',
-  window.store.getState()
+  window.store.getState(),
 )
 
 console.log(
-  '执行 window.store.dispatch({ type: "increase" }) => 向仓库分发 action，改变仓库状态。'
+  '执行 window.store.dispatch({ type: "increase" }) => 向仓库分发 action，改变仓库状态。',
 )
 window.store.dispatch(action)
 
 console.log(
   '打印 window.store.getState() 获取仓库当前状态 =>',
-  window.store.getState()
+  window.store.getState(),
 )
 ```
 
 - 最终输出结果：
   - ![](./assets/2024-10-28-22-30-43.png)
 
-## 3. 💻 demos.2 - redux 的基本使用 - createStore 版
+## 3. demos.2 - redux 的基本使用 - createStore 版
 
 ```javascript
 /**
@@ -171,7 +171,7 @@ function App() {
 export default App
 ```
 
-## 4. 💻 demos.2 - redux 的基本使用 - @reduxjs/toolkit 版
+## 4. demos.2 - redux 的基本使用 - @reduxjs/toolkit 版
 
 - 当你在程序中引入 createStore 的时候，会提示这玩意儿已经被废弃了。
   - ![](./assets/2024-10-27-18-14-35.png)
@@ -238,7 +238,7 @@ function App() {
 export default App
 ```
 
-## 5. 💻 demos.2 - redux 的基本使用 - @reduxjs/toolkit 版（模块化）
+## 5. demos.2 - redux 的基本使用 - @reduxjs/toolkit 版（模块化）
 
 - 这个示例介绍在实际开发中，常见的规划模块（也就是 store、reducer 这些逻辑一般封装在啥位置）的一种做法。
 - 最终效果
@@ -259,7 +259,7 @@ createRoot(document.getElementById('root')).render(
     <Provider store={store}>
       <App />
     </Provider>
-  </StrictMode>
+  </StrictMode>,
 )
 ```
 
