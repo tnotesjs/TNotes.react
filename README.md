@@ -4,8 +4,8 @@
 
 - [1. 学习资料](#1-学习资料)
 - [2. 学习资料](#2-学习资料)
-- [3. 环境准备](#3-环境准备)
-- [4. 初识 React](#4-初识-react)
+- [3. 初识 React](#3-初识-react)
+- [4. 环境准备](#4-环境准备)
 - [5. 第一个 React 应用](#5-第一个-react-应用)
 - [6. JSX](#6-jsx)
 - [7. 组件基础](#7-组件基础)
@@ -56,7 +56,20 @@
 - [x] [0040. React 官方文档](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0040.%20React%20%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3/README.md)
 - [x] [0144. React 中文社区与论坛](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0144.%20React%20%E4%B8%AD%E6%96%87%E7%A4%BE%E5%8C%BA%E4%B8%8E%E8%AE%BA%E5%9D%9B/README.md)
 
-## 3. 环境准备
+## 3. 初识 React
+
+- [ ] [0369. 初始 React](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0369.%20%E5%88%9D%E5%A7%8B%20React/README.md)
+- [x] [0032. React 简介](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0032.%20React%20%E7%AE%80%E4%BB%8B/README.md)
+- [x] [0067. React 发展历史](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0067.%20React%20%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2/README.md)
+- [ ] [0068. React 设计理念](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0068.%20React%20%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5/README.md)
+- [ ] [0069. React 与其他框架对比](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0069.%20React%20%E4%B8%8E%E5%85%B6%E4%BB%96%E6%A1%86%E6%9E%B6%E5%AF%B9%E6%AF%94/README.md)
+- [ ] [0076. React 核心 API 概览](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0076.%20React%20%E6%A0%B8%E5%BF%83%20API%20%E6%A6%82%E8%A7%88/README.md)
+- [ ] [0077. React 生态系统介绍](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0077.%20React%20%E7%94%9F%E6%80%81%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/README.md)
+- [x] [0055. 为什么说 React 更加原生【AI】](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0055.%20%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%B4%20React%20%E6%9B%B4%E5%8A%A0%E5%8E%9F%E7%94%9F%E3%80%90AI%E3%80%91/README.md)
+- [ ] [0147. 声明式 vs 命令式编程](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0147.%20%E5%A3%B0%E6%98%8E%E5%BC%8F%20vs%20%E5%91%BD%E4%BB%A4%E5%BC%8F%E7%BC%96%E7%A8%8B/README.md)
+- [ ] [0148. 虚拟 DOM 概念与优势](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0148.%20%E8%99%9A%E6%8B%9F%20DOM%20%E6%A6%82%E5%BF%B5%E4%B8%8E%E4%BC%98%E5%8A%BF/README.md)
+
+## 4. 环境准备
 
 - [x] [0064. 环境准备](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0064.%20%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/README.md)
 - [x] [0070. Node.js 安装与配置](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0070.%20Node.js%20%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/README.md)
@@ -67,18 +80,6 @@
 - [x] [0146. Git 版本控制基础](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0146.%20Git%20%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%9F%BA%E7%A1%80/README.md)
 - [x] [0008. react 工程初始化（vite）](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0008.%20react%20%E5%B7%A5%E7%A8%8B%E5%88%9D%E5%A7%8B%E5%8C%96%EF%BC%88vite%EF%BC%89/README.md)
 - [x] [0366. 本地 Playground 环境搭建](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0366.%20%E6%9C%AC%E5%9C%B0%20Playground%20%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/README.md)
-
-## 4. 初识 React
-
-- [x] [0032. React 简介](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0032.%20React%20%E7%AE%80%E4%BB%8B/README.md)
-- [x] [0067. React 发展历史](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0067.%20React%20%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2/README.md)
-- [ ] [0068. React 设计理念](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0068.%20React%20%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5/README.md)
-- [ ] [0069. React 与其他框架对比](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0069.%20React%20%E4%B8%8E%E5%85%B6%E4%BB%96%E6%A1%86%E6%9E%B6%E5%AF%B9%E6%AF%94/README.md)
-- [ ] [0076. React 核心 API 概览](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0076.%20React%20%E6%A0%B8%E5%BF%83%20API%20%E6%A6%82%E8%A7%88/README.md)
-- [ ] [0077. React 生态系统介绍](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0077.%20React%20%E7%94%9F%E6%80%81%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/README.md)
-- [x] [0055. 为什么说 React 更加原生【AI】](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0055.%20%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%B4%20React%20%E6%9B%B4%E5%8A%A0%E5%8E%9F%E7%94%9F%E3%80%90AI%E3%80%91/README.md)
-- [ ] [0147. 声明式 vs 命令式编程](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0147.%20%E5%A3%B0%E6%98%8E%E5%BC%8F%20vs%20%E5%91%BD%E4%BB%A4%E5%BC%8F%E7%BC%96%E7%A8%8B/README.md)
-- [ ] [0148. 虚拟 DOM 概念与优势](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0148.%20%E8%99%9A%E6%8B%9F%20DOM%20%E6%A6%82%E5%BF%B5%E4%B8%8E%E4%BC%98%E5%8A%BF/README.md)
 
 ## 5. 第一个 React 应用
 
@@ -521,7 +522,6 @@
 
 ## 39. ⏰ pending
 
-- [ ] [0369. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0369.%20xxx/README.md)
 - [ ] [0370. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0370.%20xxx/README.md)
 - [ ] [0371. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0371.%20xxx/README.md)
 - [ ] [0372. xxx](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0372.%20xxx/README.md)

@@ -36,7 +36,53 @@
     ]
   },
   {
-    "text": "3. 环境准备",
+    "text": "3. 初识 React",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "⏰ 0369. 初始 React",
+        "link": "/notes/0369. 初始 React/README"
+      },
+      {
+        "text": "✅ 0032. React 简介",
+        "link": "/notes/0032. React 简介/README"
+      },
+      {
+        "text": "✅ 0067. React 发展历史",
+        "link": "/notes/0067. React 发展历史/README"
+      },
+      {
+        "text": "⏰ 0068. React 设计理念",
+        "link": "/notes/0068. React 设计理念/README"
+      },
+      {
+        "text": "⏰ 0069. React 与其他框架对比",
+        "link": "/notes/0069. React 与其他框架对比/README"
+      },
+      {
+        "text": "⏰ 0076. React 核心 API 概览",
+        "link": "/notes/0076. React 核心 API 概览/README"
+      },
+      {
+        "text": "⏰ 0077. React 生态系统介绍",
+        "link": "/notes/0077. React 生态系统介绍/README"
+      },
+      {
+        "text": "✅ 0055. 为什么说 React 更加原生【AI】",
+        "link": "/notes/0055. 为什么说 React 更加原生【AI】/README"
+      },
+      {
+        "text": "⏰ 0147. 声明式 vs 命令式编程",
+        "link": "/notes/0147. 声明式 vs 命令式编程/README"
+      },
+      {
+        "text": "⏰ 0148. 虚拟 DOM 概念与优势",
+        "link": "/notes/0148. 虚拟 DOM 概念与优势/README"
+      }
+    ]
+  },
+  {
+    "text": "4. 环境准备",
     "collapsed": true,
     "items": [
       {
@@ -74,48 +120,6 @@
       {
         "text": "✅ 0366. 本地 Playground 环境搭建",
         "link": "/notes/0366. 本地 Playground 环境搭建/README"
-      }
-    ]
-  },
-  {
-    "text": "4. 初识 React",
-    "collapsed": true,
-    "items": [
-      {
-        "text": "✅ 0032. React 简介",
-        "link": "/notes/0032. React 简介/README"
-      },
-      {
-        "text": "✅ 0067. React 发展历史",
-        "link": "/notes/0067. React 发展历史/README"
-      },
-      {
-        "text": "⏰ 0068. React 设计理念",
-        "link": "/notes/0068. React 设计理念/README"
-      },
-      {
-        "text": "⏰ 0069. React 与其他框架对比",
-        "link": "/notes/0069. React 与其他框架对比/README"
-      },
-      {
-        "text": "⏰ 0076. React 核心 API 概览",
-        "link": "/notes/0076. React 核心 API 概览/README"
-      },
-      {
-        "text": "⏰ 0077. React 生态系统介绍",
-        "link": "/notes/0077. React 生态系统介绍/README"
-      },
-      {
-        "text": "✅ 0055. 为什么说 React 更加原生【AI】",
-        "link": "/notes/0055. 为什么说 React 更加原生【AI】/README"
-      },
-      {
-        "text": "⏰ 0147. 声明式 vs 命令式编程",
-        "link": "/notes/0147. 声明式 vs 命令式编程/README"
-      },
-      {
-        "text": "⏰ 0148. 虚拟 DOM 概念与优势",
-        "link": "/notes/0148. 虚拟 DOM 概念与优势/README"
       }
     ]
   },
@@ -1675,10 +1679,6 @@
     "text": "39. ⏰ pending",
     "collapsed": true,
     "items": [
-      {
-        "text": "⏰ 0369. xxx",
-        "link": "/notes/0369. xxx/README"
-      },
       {
         "text": "⏰ 0370. xxx",
         "link": "/notes/0370. xxx/README"

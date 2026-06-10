@@ -34,13 +34,67 @@
 
 ::: code-group
 
-<<< ./demos/1/src/main.jsx
+```jsx [src/main.jsx]
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
 
-<<< ./demos/1/index.html
+function App() {
+  return <h1>Hello World</h1>
+}
 
-<<< ./demos/1/package.json
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+```
 
-<<< ./demos/1/vite.config.js
+```html [index.html]
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>demo</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+```
+
+```json [package.json]
+{
+  "name": "demo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.1",
+    "vite": "^7.2.4"
+  }
+}
+```
+
+```js [vite.config.js]
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+})
+```
 
 :::
 
@@ -48,15 +102,90 @@
 
 ::: code-group
 
-<<< ./demos/2/src/main.tsx
+```tsx [src/main.tsx]
+import { createRoot } from 'react-dom/client'
 
-<<< ./demos/2/index.html
+function App() {
+  return <h1>Hello World</h1>
+}
 
-<<< ./demos/2/package.json
+const root = document.getElementById('root')
 
-<<< ./demos/2/tsconfig.json
+if (!root) {
+  throw new Error('Root container missing in index.html')
+}
 
-<<< ./demos/2/vite.config.ts
+createRoot(root).render(<App />)
+```
+
+```html [index.html]
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>demo-ts</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+```
+
+```json [package.json]
+{
+  "name": "demo-ts",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "typescript": "^5.7.3",
+    "vite": "^7.2.4"
+  }
+}
+```
+
+```json [tsconfig.json]
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "jsx": "react-jsx",
+    "moduleResolution": "Bundler",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src"]
+}
+```
+
+```ts [vite.config.ts]
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  plugins: [react()],
+})
+```
 
 :::
 
