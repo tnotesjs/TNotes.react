@@ -4,8 +4,8 @@
   "yuque": [],
   "done": true,
   "enableDiscussions": true,
-  "description": "",
+  "description": "介绍了 React 的基本概念、核心特点（如轻量、原生、灵活、单向数据流），并从软件工程的“控制反转（IoC）”和“侵入性”角度深入解析了为什么 React 定位为“库”而非“框架”。",
   "id": "991720ff-a379-47aa-970e-5dfa1298f8d6",
   "created_at": 1760694003000,
-  "updated_at": 1762042923211
+  "updated_at": 1781100157514
 }
