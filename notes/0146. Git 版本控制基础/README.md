@@ -39,7 +39,11 @@
 - 养成频繁提交、编写清晰提交信息的习惯，能够帮助团队追踪问题和代码变更
 - 对于 React 项目，务必正确配置 `.gitignore`，避免将 `node_modules` 等目录提交到仓库
 
-在 tnotesjs 组织中有一个 TNotes.git-notes 知识库，这里边儿会纪录有关 Git 的更多详细说明。
+::: tip
+
+在 tnotesjs 组织中有一个 [TNotes.git-notes][6] 知识库，这里边儿会纪录有关 Git 的更多详细说明。
+
+:::
 
 ## 3. 为什么 React 项目需要版本控制？
 
@@ -283,9 +287,11 @@ React 项目典型的 `.gitignore` 配置：
 - [Pro Git 电子书（中文版）][3]
 - [Git 可视化学习工具][4]
 - [常用 Git 命令清单][5]
+- [TNotes.git-notes][6]
 
 [1]: https://git-scm.com/doc
 [2]: https://docs.github.com/zh/get-started/using-git/about-git
 [3]: https://git-scm.com/book/zh/v2
 [4]: https://learngitbranching.js.org/?locale=zh_CN
 [5]: https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html
+[6]: https://tnotesjs.github.io/TNotes.git-notes/

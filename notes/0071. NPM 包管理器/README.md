@@ -24,7 +24,11 @@
 
 只需要对 NPM 有个初步了解即可，知道它是我们接下来学习 React 必备的一个工具，用来管理第三方依赖。
 
-如果想要了解包管理器的更多信息，可以参考 tnotesjs 组织下的 TNotes.nodejs 知识库。
+::: tip
+
+如果想要了解包管理器的更多信息，可以参考 tnotesjs 组织下的 [TNotes.nodejs][2] 知识库。
+
+:::
 
 ## 3. NPM 是什么？
 
@@ -50,7 +54,7 @@
 NPM 是 Node.js 的默认包管理工具，但是也有其他包管理器，比如：
 
 - Yarn：由 Facebook 开发的包管理器，速度更快，依赖管理更稳定
-- PNPM：采用硬链接和符号链接节省磁盘空间，安装速度也很快
+- PNPM：采用硬链接和符号链接节省磁盘空间，安装速度也很快（写这个 TNotes.react 知识库时，主要用的包管理器是 PNPM）
 - Bun：新兴的 JavaScript 运行时，自带包管理功能
 
 ### 6.2. 选择建议
@@ -106,5 +110,9 @@ nrm use taobao
 ## 8. 引用
 
 - [npm 官方文档][1]
+- [TNotes.nodejs][2]
+- [NodeJS 下载][3]
 
 [1]: https://www.npmjs.com/
+[2]: https://tnotesjs.github.io/TNotes.nodejs/
+[3]: https://nodejs.org/zh-cn/download

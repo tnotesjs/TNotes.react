@@ -69,8 +69,8 @@
 
 ## 8. VSCode 中格式化的快捷方式是？
 
-- Windows/Linux: `Shift + Alt + F`
-- Mac: `Shift + Option + F`
+- Windows/Linux：`Shift + Alt + F`
+- Mac：`Shift + Option + F`
 
 ## 9. prettier 和 eslint 之间的区别是？
 
@@ -125,8 +125,7 @@ module.exports = {
 
 ## 13. 如何配置保存时自动格式化?
 
-- 在 VSCode 设置中启用 "Format On Save"
-- 或在 `.vscode/settings.json` 中添加配置:
+在 VSCode 设置中启用“Format On Save”，或在 `.vscode/settings.json` 中添加配置:
 
 ```json
 {

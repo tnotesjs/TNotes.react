@@ -4,8 +4,8 @@
   "yuque": [],
   "done": true,
   "enableDiscussions": true,
-  "description": "",
+  "description": "Emmet 是代码快速编写工具，VSCode 内置支持。配置 jsx 文件类型关联，让 Emmet 在编写 JSX 时生效，提高开发效率。",
   "id": "b0720c08-5fa5-48f4-a3b2-0e2c58521416",
   "created_at": 1760373021000,
-  "updated_at": 1762007470788
+  "updated_at": 1781060730114
 }
