@@ -74,7 +74,7 @@ React 官方提供了一个非常现代且功能强大的官方 Playground，但
 
 ![img](https://cdn.jsdelivr.net/gh/tnotesjs/imgs-2026@main/2026-06-10-11-34-42.png)
 
-如果要恢复原始示例，点击“Clear”。
+如果要恢复原始示例，点击“Clear”即可。
 
 ## 4. 引用
 

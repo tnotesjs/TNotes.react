@@ -17,6 +17,13 @@
 - [8. .gitignore 文件的作用是什么？](#8-gitignore-文件的作用是什么)
 - [9. React 项目的完整 Git 工作流示例](#9-react-项目的完整-git-工作流示例)
 - [10. 项目开发过程中的一些常见工作场景](#10-项目开发过程中的一些常见工作场景)
+  - [10.1. 功能模块开发过程中插入其它任务](#101-功能模块开发过程中插入其它任务)
+  - [10.2. 撤销最后一次提交（保留修改）](#102-撤销最后一次提交保留修改)
+  - [10.3. 撤销最后一次提交（丢弃修改）⚠️ 危险操作](#103-撤销最后一次提交丢弃修改️-危险操作)
+  - [10.4. 修改最后一次提交信息](#104-修改最后一次提交信息)
+  - [10.5. 查看某个提交的详细内容](#105-查看某个提交的详细内容)
+  - [10.6. 比较工作区和暂存区的差异](#106-比较工作区和暂存区的差异)
+  - [10.7. 比较暂存区和本地仓库的差异](#107-比较暂存区和本地仓库的差异)
 - [11. 引用](#11-引用)
 
 <!-- endregion:toc -->
@@ -252,33 +259,144 @@ git fetch origin
 
 React 项目典型的 `.gitignore` 配置：
 
-<<< ./assets/1.gitignore
+```bash
+# 依赖目录
+node_modules/
+/.pnp
+.pnp.js
+
+# 构建产物
+/build
+/dist
+.cache
+
+# 环境变量
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 日志
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 操作系统
+.DS_Store
+Thumbs.db
+
+# 测试覆盖率
+/coverage
+```
 
 ## 9. React 项目的完整 Git 工作流示例
 
 假设你正在开发一个 React 项目，以下是一个完整的工作流示例：
 
-<<< ./assets/1.bash
+```bash
+# 1. 创建 React 项目
+npm create vite@latest my-react-app -- --template react
+cd my-react-app
+
+# 2. 初始化 Git（vite 已自动初始化）
+git status
+
+# 3. 首次提交
+git add .
+git commit -m "chore: 初始化项目"
+
+# 4. 连接远程仓库
+git remote add origin https://github.com/username/my-react-app.git
+git push -u origin main
+
+# 5. 创建功能分支
+git checkout -b feature-user-profile
+
+# 6. 开发功能
+# ... 编写代码 ...
+
+# 7. 暂存并提交
+git add src/components/UserProfile.jsx
+# git add . # 或者一次性提交本次的所有修改
+git commit -m "feat: 添加用户资料组件"
+
+# 8. 推送功能分支
+git push -u origin feature-user-profile
+
+# 9. 在 GitHub 上创建 Pull Request
+
+# 10. 代码审查通过后，合并到 main
+git checkout main
+git pull origin main
+git merge feature-user-profile
+
+# 11. 推送合并结果
+git push origin main
+
+# 12. 删除功能分支
+git branch -d feature-user-profile
+git push origin --delete feature-user-profile
+```
 
 ## 10. 项目开发过程中的一些常见工作场景
 
-::: code-group
+### 10.1. 功能模块开发过程中插入其它任务
 
-<<< ./assets/2.bash [1]
+```bash
+git stash # 临时保存当前工作（未完成）
+git checkout main # 切换到主分支
+# ... 处理其他事情 ...
 
-<<< ./assets/3.bash [2]
+# 处理完毕后，切换回 feature-user-profile 分支
+git checkout feature-user-profile
+# 恢复临时保存的工作，继续处理
+git stash pop
+```
 
-<<< ./assets/4.bash [3]
+### 10.2. 撤销最后一次提交（保留修改）
 
-<<< ./assets/5.bash [4]
+```bash
+git reset --soft HEAD~1
+```
 
-<<< ./assets/6.bash [5]
+### 10.3. 撤销最后一次提交（丢弃修改）⚠️ 危险操作
 
-<<< ./assets/7.bash [6]
+```bash
+git reset --hard HEAD~1
+```
 
-<<< ./assets/8.bash [7]
+### 10.4. 修改最后一次提交信息
 
-:::
+```bash
+git commit --amend -m "feat: 添加用户资料组件（支持头像上传）"
+```
+
+### 10.5. 查看某个提交的详细内容
+
+```bash
+git show <commit-hash>
+```
+
+### 10.6. 比较工作区和暂存区的差异
+
+```bash
+git diff
+```
+
+### 10.7. 比较暂存区和本地仓库的差异
+
+```bash
+git diff --staged
+```
 
 ## 11. 引用
 

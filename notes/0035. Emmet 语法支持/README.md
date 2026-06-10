@@ -18,8 +18,13 @@
 
 ## 2. 评价
 
-- 介绍如何配置 VSCode，让 Emmet 语法支持 JSX。
-- JSX 是在 React 中用于描述页面结构的 JS 扩展语法。
+这一篇笔记主要介绍如何配置 VSCode，让 Emmet 语法支持 JSX。
+
+::: tip JAX 简介
+
+JSX 是在 React 中用于描述页面结构的 JS 扩展语法。
+
+:::
 
 ## 3. 如何在 VSCode 中配置 Emmet 语法支持？
 
@@ -47,17 +52,19 @@
 
 效果展示：
 
-![示例](./assets/1.gif)
+![gif](./assets/1.gif)
 
 测试输入：`div>span`
 
-- ![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-23-21-52-57.png)
-- 按下回车，将会快速生成：`<div><span></span></div>`
-- ![图 2](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-23-21-53-18.png)
+![img](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-23-21-52-57.png)
+
+按下回车，将会快速生成：`<div><span></span></div>`
+
+![img](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-23-21-53-18.png)
 
 测试输入：`.foo`
 
-- 按下回车，将会快速生成：`<div className="foo"></div>`
+按下回车，将会快速生成：`<div className="foo"></div>`
 
 ## 5. 引用
 
