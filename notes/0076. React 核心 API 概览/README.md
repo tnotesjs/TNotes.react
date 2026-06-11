@@ -4,12 +4,13 @@
 
 - [1. 本节内容](#1-本节内容)
 - [2. 评价](#2-评价)
-- [3. React 的核心 API 分为哪几类？](#3-react-的核心-api-分为哪几类)
-- [4. 组件相关的 API 有哪些？](#4-组件相关的-api-有哪些)
-- [5. Hooks API 都有哪些？](#5-hooks-api-都有哪些)
-- [6. 渲染相关的 API 有哪些？](#6-渲染相关的-api-有哪些)
-- [7. 其他常用 API 有哪些？](#7-其他常用-api-有哪些)
-- [8. 引用](#8-引用)
+- [3. React 的核心 API【AI】](#3-react-的核心-apiai)
+  - [3.1. 组件相关的 API](#31-组件相关的-api)
+  - [3.2. Hooks API](#32-hooks-api)
+  - [3.3. 渲染相关的 API](#33-渲染相关的-api)
+  - [3.4. 工具 API](#34-工具-api)
+- [4. 总结](#4-总结)
+- [5. 引用](#5-引用)
 
 <!-- endregion:toc -->
 
@@ -23,52 +24,71 @@
 
 ## 2. 评价
 
-本笔记概览了 React 的核心 API，帮助开发者快速了解 React 提供的主要能力。
+本笔记介绍了 React 的核心 API 大概都有哪些，不对 API 的细节做介绍，更多是起到一个“导航”的作用，目的是帮你快速了解 React 都提供了哪些主要能力，在需要的时候可以快速搜索到你想要的 API。
 
-- React 的 API 设计简洁，核心 API 数量不多，但功能强大
-- Hooks 是 React 16.8 引入的重要特性，极大地简化了组件开发
-- 掌握核心 API 是深入学习 React 的基础
-- 不需要一次性记住所有 API，在实际使用中逐步熟悉即可
-
-## 3. React 的核心 API 分为哪几类？
+## 3. React 的核心 API【AI】
 
 React API 主要分为以下几类：
 
+| 分类     | 用途                         | 使用频率 |
+| -------- | ---------------------------- | -------- |
+| 组件相关 | 定义和优化组件               | 高       |
+| Hooks    | 在函数组件中使用状态和副作用 | 高       |
+| 渲染相关 | 将 React 组件渲染到 DOM      | 低       |
+| 工具 API | 辅助开发的工具函数           | 低       |
+
 ```mermaid
 graph LR
-    A[React 核心 API] --> B[组件相关]
-    A --> C[Hooks]
-    A --> D[渲染相关]
-    A --> E[工具 API]
+    A[React 核心 API] --> B["组件相关<br/>(用途: 定义和优化<br/>频率: 高)"]
+    A --> C["Hooks<br/>(用途: 状态与副作用<br/>频率: 高)"]
+    A --> D["渲染相关<br/>(用途: 挂载到 DOM<br/>频率: 低)"]
+    A --> E["工具 API<br/>(用途: 辅助开发<br/>频率: 低)"]
 
-    B --> B1[React.Component]
-    B --> B2[React.memo]
-    B --> B3[React.Fragment]
+    %% 组件相关扩充
+    B --> B1[基础组件: React.Component / PureComponent]
+    B --> B2[性能优化: React.memo]
+    B --> B3[代码组织: React.Fragment / &lt;&gt;&lt;/&gt;]
+    B --> B4[引用转发: React.forwardRef]
+    B --> B5[异步加载: React.lazy & Suspense]
+    B --> B6[严格模式: React.StrictMode]
 
+    %% Hooks 分类扩充
     C --> C1[状态 Hooks]
+    C1 --> C1a[useState]
+    C1 --> C1b[useReducer]
+
     C --> C2[副作用 Hooks]
-    C --> C3[性能优化 Hooks]
-    C --> C4[其他 Hooks]
+    C2 --> C2a[useEffect]
+    C2 --> C2b[useLayoutEffect]
 
-    D --> D1[createRoot]
-    D --> D2[hydrateRoot]
-    D --> D3[render 旧]
+    C --> C3[性能与并发 Hooks]
+    C3 --> C3a[useMemo / useCallback]
+    C3 --> C3b[useTransition]
+    C3 --> C3c[useDeferredValue]
 
-    E --> E1[createElement]
-    E --> E2[isValidElement]
-    E --> E3[Children]
+    C --> C4[引用与上下文 Hooks]
+    C4 --> C4a[useRef]
+    C4 --> C4b[useContext]
+
+    C --> C5[其他 Hooks]
+    C5 --> C5a[useId]
+    C5 --> C5b[useSyncExternalStore]
+
+    %% 渲染相关明确
+    D --> D1[createRoot 现代 React 入口]
+    D --> D2[hydrateRoot SSR 注水]
+    D --> D3[render 遗留 API]
+    D --> D4[unmount 卸载组件]
+
+    %% 工具 API 补充
+    E --> E1[createElement / jsx]
+    E --> E2[cloneElement]
+    E --> E3[isValidElement]
+    E --> E4[React.Children 工具库]
+    E --> E5[createContext]
 ```
 
-API 分类表：
-
-| 分类     | 用途                         | 常用程度   |
-| -------- | ---------------------------- | ---------- |
-| 组件相关 | 定义和优化组件               | ⭐⭐⭐⭐⭐ |
-| Hooks    | 在函数组件中使用状态和副作用 | ⭐⭐⭐⭐⭐ |
-| 渲染相关 | 将 React 组件渲染到 DOM      | ⭐⭐⭐⭐⭐ |
-| 工具 API | 辅助开发的工具函数           | ⭐⭐⭐     |
-
-## 4. 组件相关的 API 有哪些？
+### 3.1. 组件相关的 API
 
 主要的组件 API：
 
@@ -124,7 +144,7 @@ const FancyButton = React.forwardRef((props, ref) => (
 ))
 ```
 
-## 5. Hooks API 都有哪些？
+### 3.2. Hooks API
 
 Hooks 分类表：
 
@@ -199,7 +219,7 @@ function ExpensiveComponent({ data }) {
 }
 ```
 
-## 6. 渲染相关的 API 有哪些？
+### 3.3. 渲染相关的 API
 
 渲染 API 对比：
 
@@ -242,7 +262,7 @@ ReactDOM.render(
 )
 ```
 
-## 7. 其他常用 API 有哪些？
+### 3.4. 工具 API
 
 工具类 API：
 
@@ -293,7 +313,16 @@ function handleClick() {
 }
 ```
 
-## 8. 引用
+## 4. 总结
+
+本笔记概览了 React 的核心 API，帮助开发者快速了解 React 提供的主要能力。
+
+- React 的 API 设计简洁，核心 API 数量不多，但功能强大
+- Hooks 是 React 16.8 引入的重要特性，极大地简化了组件开发
+- 掌握核心 API 是深入学习 React 的基础
+- 不需要一次性记住所有 API，在实际使用中逐步熟悉即可
+
+## 5. 引用
 
 - [React API Reference][1]
 - [Hooks API Reference][2]

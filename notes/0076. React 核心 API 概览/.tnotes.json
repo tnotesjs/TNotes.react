@@ -2,10 +2,10 @@
   "bilibili": [],
   "tnotes": [],
   "yuque": [],
-  "done": false,
-  "enableDiscussions": false,
-  "description": "",
+  "done": true,
+  "enableDiscussions": true,
+  "description": "本笔记介绍了 React 的核心 API 大概都有哪些，不对 API 的细节做介绍，更多是起到一个“导航”的作用，目的是帮你快速了解 React 都提供了哪些主要能力，在需要的时候可以快速搜索到你想要的 API。",
   "id": "7e400b81-5f15-4fea-b798-faa6272abf7f",
   "created_at": 1760681795000,
-  "updated_at": 1762004182314
+  "updated_at": 1781167926169
 }
