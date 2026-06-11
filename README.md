@@ -61,7 +61,7 @@
 - [ ] [0369. 初始 React](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0369.%20%E5%88%9D%E5%A7%8B%20React/README.md)
 - [x] [0032. React 简介](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0032.%20React%20%E7%AE%80%E4%BB%8B/README.md)
 - [x] [0067. React 发展历史](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0067.%20React%20%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2/README.md)
-- [ ] [0068. React 设计理念](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0068.%20React%20%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5/README.md)
+- [x] [0068. React 设计理念](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0068.%20React%20%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5/README.md)
 - [ ] [0069. React 与其他框架对比](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0069.%20React%20%E4%B8%8E%E5%85%B6%E4%BB%96%E6%A1%86%E6%9E%B6%E5%AF%B9%E6%AF%94/README.md)
 - [ ] [0076. React 核心 API 概览](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0076.%20React%20%E6%A0%B8%E5%BF%83%20API%20%E6%A6%82%E8%A7%88/README.md)
 - [ ] [0077. React 生态系统介绍](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0077.%20React%20%E7%94%9F%E6%80%81%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/README.md)

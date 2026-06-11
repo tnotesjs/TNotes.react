@@ -2,10 +2,10 @@
   "bilibili": [],
   "tnotes": [],
   "yuque": [],
-  "done": false,
-  "enableDiscussions": false,
-  "description": "",
+  "done": true,
+  "enableDiscussions": true,
+  "description": "主要介绍 React 的一些核心设计理念，而设计理念这玩意儿本身就具备一定的通用性，好的设计规范，在很多主流框架中都是有体现的，算是一通百通的知识点。",
   "id": "d2fc2dbf-be61-496a-885a-526e482f6fad",
   "created_at": 1760681795000,
-  "updated_at": 1762004182265
+  "updated_at": 1781166127973
 }
