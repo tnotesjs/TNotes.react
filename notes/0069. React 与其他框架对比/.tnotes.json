@@ -2,10 +2,10 @@
   "bilibili": [],
   "tnotes": [],
   "yuque": [],
-  "done": false,
-  "enableDiscussions": false,
-  "description": "",
+  "done": true,
+  "enableDiscussions": true,
+  "description": "主要记录了 AI 生成的一些内容。",
   "id": "c3dbc553-3370-48d8-a132-96234ff2fa3b",
   "created_at": 1760681795000,
-  "updated_at": 1762004182291
+  "updated_at": 1781166826560
 }
