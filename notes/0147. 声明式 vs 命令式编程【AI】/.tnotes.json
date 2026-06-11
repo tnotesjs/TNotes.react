@@ -4,7 +4,7 @@
   "yuque": [],
   "done": true,
   "enableDiscussions": true,
-  "description": "",
+  "description": "“声明式”也是其它主流框架的通用做法，比如在 Vue 中也是一样的，Vue 也是采用声明式的方式来描述 UI。",
   "id": "f951b124-558f-4052-8ac2-20ec3f2257c1",
   "created_at": 1761955229000,
   "updated_at": 1781169632117
