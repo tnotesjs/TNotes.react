@@ -95,7 +95,6 @@
 - [x] [0048. React Element 的多种叫法](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0048.%20React%20Element%20%E7%9A%84%E5%A4%9A%E7%A7%8D%E5%8F%AB%E6%B3%95/README.md)
 - [x] [0061. React Element 与 React Fiber 的关系【扩展】](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0061.%20React%20Element%20%E4%B8%8E%20React%20Fiber%20%E7%9A%84%E5%85%B3%E7%B3%BB%E3%80%90%E6%89%A9%E5%B1%95%E3%80%91/README.md)
 - [x] [0044. react element 是只读的](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0044.%20react%20element%20%E6%98%AF%E5%8F%AA%E8%AF%BB%E7%9A%84/README.md)
-- [x] [0045. jsx 必须单根](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0045.%20jsx%20%E5%BF%85%E9%A1%BB%E5%8D%95%E6%A0%B9/README.md)
 - [x] [0014. React.Fragment](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0014.%20React.Fragment/README.md)
 - [x] [0003. html to jsx 在线转换](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0003.%20html%20to%20jsx%20%E5%9C%A8%E7%BA%BF%E8%BD%AC%E6%8D%A2/README.md)
 - [x] [0015. 在 JSX 中使用注释](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0015.%20%E5%9C%A8%20JSX%20%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%B3%A8%E9%87%8A/README.md)
