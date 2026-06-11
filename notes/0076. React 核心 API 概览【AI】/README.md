@@ -1,10 +1,10 @@
-# [0076. React 核心 API 概览](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0076.%20React%20%E6%A0%B8%E5%BF%83%20API%20%E6%A6%82%E8%A7%88)
+# [0076. React 核心 API 概览【AI】](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0076.%20React%20%E6%A0%B8%E5%BF%83%20API%20%E6%A6%82%E8%A7%88%E3%80%90AI%E3%80%91)
 
 <!-- region:toc -->
 
 - [1. 本节内容](#1-本节内容)
 - [2. 评价](#2-评价)
-- [3. React 的核心 API【AI】](#3-react-的核心-apiai)
+- [3. React 的核心 API](#3-react-的核心-api)
   - [3.1. 组件相关的 API](#31-组件相关的-api)
   - [3.2. Hooks API](#32-hooks-api)
   - [3.3. 渲染相关的 API](#33-渲染相关的-api)
@@ -26,7 +26,7 @@
 
 本笔记介绍了 React 的核心 API 大概都有哪些，不对 API 的细节做介绍，更多是起到一个“导航”的作用，目的是帮你快速了解 React 都提供了哪些主要能力，在需要的时候可以快速搜索到你想要的 API。
 
-## 3. React 的核心 API【AI】
+## 3. React 的核心 API
 
 React API 主要分为以下几类：
 
