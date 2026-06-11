@@ -54,11 +54,11 @@
 - [x] [0101. react roadmap](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0101.%20react%20roadmap/README.md)
 - [x] [0007. 菜鸟教程](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0007.%20%E8%8F%9C%E9%B8%9F%E6%95%99%E7%A8%8B/README.md)
 - [x] [0040. React 官方文档](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0040.%20React%20%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3/README.md)
-- [x] [0144. React 中文社区与论坛](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0144.%20React%20%E4%B8%AD%E6%96%87%E7%A4%BE%E5%8C%BA%E4%B8%8E%E8%AE%BA%E5%9D%9B/README.md)
+- [x] [0144. React 中文社区与论坛【AI】](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0144.%20React%20%E4%B8%AD%E6%96%87%E7%A4%BE%E5%8C%BA%E4%B8%8E%E8%AE%BA%E5%9D%9B%E3%80%90AI%E3%80%91/README.md)
 
 ## 3. 初识 React
 
-- [ ] [0369. 初始 React](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0369.%20%E5%88%9D%E5%A7%8B%20React/README.md)
+- [x] [0369. 初始 React](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0369.%20%E5%88%9D%E5%A7%8B%20React/README.md)
 - [x] [0032. React 简介](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0032.%20React%20%E7%AE%80%E4%BB%8B/README.md)
 - [x] [0067. React 发展历史](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0067.%20React%20%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2/README.md)
 - [x] [0068. React 设计理念](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0068.%20React%20%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5/README.md)
@@ -92,8 +92,6 @@
 
 - [x] [0062. JSX](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0062.%20JSX/README.md)
 - [x] [0013. 初始 JSX](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0013.%20%E5%88%9D%E5%A7%8B%20JSX/README.md)
-- [ ] [0151. JSX 是什么（语法糖与编译原理）](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0151.%20JSX%20%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%88%E8%AF%AD%E6%B3%95%E7%B3%96%E4%B8%8E%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%EF%BC%89/README.md)
-- [ ] [0152. JSX 转换过程（Babel 编译）](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0152.%20JSX%20%E8%BD%AC%E6%8D%A2%E8%BF%87%E7%A8%8B%EF%BC%88Babel%20%E7%BC%96%E8%AF%91%EF%BC%89/README.md)
 - [x] [0048. React Element 的多种叫法](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0048.%20React%20Element%20%E7%9A%84%E5%A4%9A%E7%A7%8D%E5%8F%AB%E6%B3%95/README.md)
 - [x] [0061. React Element 与 React Fiber 的关系【扩展】](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0061.%20React%20Element%20%E4%B8%8E%20React%20Fiber%20%E7%9A%84%E5%85%B3%E7%B3%BB%E3%80%90%E6%89%A9%E5%B1%95%E3%80%91/README.md)
 - [x] [0044. react element 是只读的](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0044.%20react%20element%20%E6%98%AF%E5%8F%AA%E8%AF%BB%E7%9A%84/README.md)
@@ -112,6 +110,8 @@
 - [ ] [0155. key 属性的重要性与最佳实践](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0155.%20key%20%E5%B1%9E%E6%80%A7%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7%E4%B8%8E%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/README.md)
 - [x] [0016. dangerouslySetInnerHTML](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0016.%20dangerouslySetInnerHTML/README.md)
 - [x] [0054. DOMPurify](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0054.%20DOMPurify/README.md)
+- [x] [0151. JSX 是什么（语法糖与编译原理）【AI】](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0151.%20JSX%20%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%88%E8%AF%AD%E6%B3%95%E7%B3%96%E4%B8%8E%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%EF%BC%89%E3%80%90AI%E3%80%91/README.md)
+- [x] [0152. JSX 转换过程（Babel 编译）【AI】](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0152.%20JSX%20%E8%BD%AC%E6%8D%A2%E8%BF%87%E7%A8%8B%EF%BC%88Babel%20%E7%BC%96%E8%AF%91%EF%BC%89%E3%80%90AI%E3%80%91/README.md)
 
 ## 7. 组件基础
 

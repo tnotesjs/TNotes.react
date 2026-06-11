@@ -30,8 +30,8 @@
         "link": "/notes/0040. React 官方文档/README"
       },
       {
-        "text": "✅ 0144. React 中文社区与论坛",
-        "link": "/notes/0144. React 中文社区与论坛/README"
+        "text": "✅ 0144. React 中文社区与论坛【AI】",
+        "link": "/notes/0144. React 中文社区与论坛【AI】/README"
       }
     ]
   },
@@ -40,7 +40,7 @@
     "collapsed": true,
     "items": [
       {
-        "text": "⏰ 0369. 初始 React",
+        "text": "✅ 0369. 初始 React",
         "link": "/notes/0369. 初始 React/README"
       },
       {
@@ -158,14 +158,6 @@
         "link": "/notes/0013. 初始 JSX/README"
       },
       {
-        "text": "⏰ 0151. JSX 是什么（语法糖与编译原理）",
-        "link": "/notes/0151. JSX 是什么（语法糖与编译原理）/README"
-      },
-      {
-        "text": "⏰ 0152. JSX 转换过程（Babel 编译）",
-        "link": "/notes/0152. JSX 转换过程（Babel 编译）/README"
-      },
-      {
         "text": "✅ 0048. React Element 的多种叫法",
         "link": "/notes/0048. React Element 的多种叫法/README"
       },
@@ -236,6 +228,14 @@
       {
         "text": "✅ 0054. DOMPurify",
         "link": "/notes/0054. DOMPurify/README"
+      },
+      {
+        "text": "✅ 0151. JSX 是什么（语法糖与编译原理）【AI】",
+        "link": "/notes/0151. JSX 是什么（语法糖与编译原理）【AI】/README"
+      },
+      {
+        "text": "✅ 0152. JSX 转换过程（Babel 编译）【AI】",
+        "link": "/notes/0152. JSX 转换过程（Babel 编译）【AI】/README"
       }
     ]
   },

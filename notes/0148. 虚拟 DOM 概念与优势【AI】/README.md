@@ -11,7 +11,19 @@
 - [7. 虚拟 DOM 的性能真的更好吗？](#7-虚拟-dom-的性能真的更好吗)
 - [8. 由 JSX 生成的虚拟 DOM 结构长什么样？](#8-由-jsx-生成的虚拟-dom-结构长什么样)
 - [9. Diff 算法是如何工作的？（极简版）](#9-diff-算法是如何工作的极简版)
-- [10. 引用](#10-引用)
+- [10. 虚拟 DOM 一定能提高性能吗？Svelte 框架没有使用虚拟 DOM，但是它的效率好像还更高嘞，这是为什么呢？](#10-虚拟-dom-一定能提高性能吗svelte-框架没有使用虚拟-dom但是它的效率好像还更高嘞这是为什么呢)
+  - [10.1. 虚拟 DOM 一定能提高性能吗？](#101-虚拟-dom-一定能提高性能吗)
+  - [10.2. Svelte 为什么效率更高？（从响应式粒度的角度分析）](#102-svelte-为什么效率更高从响应式粒度的角度分析)
+    - [React / Vue（组件级粒度 + 虚拟 DOM）](#react--vue组件级粒度--虚拟-dom)
+    - [Svelte（节点级细粒度 + 编译时映射）](#svelte节点级细粒度--编译时映射)
+- [11. 常见“错误”描述：虚拟 DOM 提高了性能](#11-常见错误描述虚拟-dom-提高了性能)
+- [12. “React 对于更新的监听是组件级别而非组件内部的节点级别，因此当监听到组件变更时需要虚拟 DOM diff 来定位变更的真实 DOM”，这句话有源码层面的证据吗？](#12-react-对于更新的监听是组件级别而非组件内部的节点级别因此当监听到组件变更时需要虚拟-dom-diff-来定位变更的真实-dom这句话有源码层面的证据吗)
+  - [12.1. 更新调度以 Fiber（组件）为单位，而非 DOM 节点](#121-更新调度以-fiber组件为单位而非-dom-节点)
+  - [12.2. `beginWork` 中的 bailout：组件粒度的“是否需要更新”判断](#122-beginwork-中的-bailout组件粒度的是否需要更新判断)
+  - [12.3. 组件重新渲染后，必须通过 reconcile（Diff 算法）定位变更](#123-组件重新渲染后必须通过-reconcilediff-算法定位变更)
+  - [12.4. 总结：完整的执行链路](#124-总结完整的执行链路)
+- [13. 总结](#13-总结)
+- [14. 引用](#14-引用)
 
 <!-- endregion:toc -->
 
@@ -26,12 +38,7 @@
 
 ## 2. 评价
 
-本笔记深入讲解了虚拟 DOM 的概念和工作原理，帮助理解 React 的核心机制。
-
-- 虚拟 DOM 不是为了性能而生，而是为了在保持声明式编程的同时提供可接受的性能
-- 理解虚拟 DOM 有助于写出更高效的 React 代码
-- 虚拟 DOM 的核心价值在于抽象和跨平台能力，而不仅仅是性能优化
-- 在实际开发中，不要过度担心虚拟 DOM 的性能，React 的优化已经足够好
+DOM 这个玩意儿真实存在，但它在我们实际开发中几乎是无感的，它是框架内部实现“states 变更 -> 真实 DOM 变更”的一个中间产物。
 
 ## 3. 虚拟 DOM 是什么？
 
@@ -371,7 +378,183 @@ const newVDOM = [
 // React 可以准确追踪每个元素，只更新变化的部分
 ```
 
-## 10. 引用
+## 10. 虚拟 DOM 一定能提高性能吗？Svelte 框架没有使用虚拟 DOM，但是它的效率好像还更高嘞，这是为什么呢？
+
+### 10.1. 虚拟 DOM 一定能提高性能吗？
+
+答案是：不一定。
+
+Svelte 作者 Rich Harris 曾提出过著名的观点："Virtual DOM is pure overhead" => 虚拟 DOM 纯粹是性能开销。
+
+虚拟 DOM 永远比不上经过极致优化的原生原生 DOM 操作。因为无论如何，生成虚拟对象和 Diff 对比都需要消耗 CPU 和内存。
+
+### 10.2. Svelte 为什么效率更高？（从响应式粒度的角度分析）
+
+这本质上是框架“响应式更新粒度”设计的差异：
+
+#### React / Vue（组件级粒度 + 虚拟 DOM）
+
+当状态发生改变时，React 只能粗略地知道“是组件树中的哪一个组件的状态更新了”，但它并不知道这个组件内部的哪一个具体的 DOM 节点需要更新。
+
+为了找出这个具体的节点，框架不得不引入虚拟 DOM 树。通过生成新的虚拟 DOM 并与旧虚拟 DOM 进行 Diff 对比，框架才能“盲人摸象”般地找出真正发生变化的节点，最后再去操作真实 DOM。在这里，虚拟 DOM 是一种为了弥补粗粒度响应式而不得不采用的“找茬”工具。
+
+#### Svelte（节点级细粒度 + 编译时映射）
+
+Svelte 在设计时采用了更细的粒度。作为一个编译器，它在编译阶段静态分析了代码，建立起了精确的 `State -> DOM` 的映射关系。当数据变化时，Svelte 确切地知道是哪一个具体的 DOM 节点依赖了这个数据。因此，它可以直接生成一段精准修改该 DOM 节点的原生 JavaScript 代码（例如直接 `p.textContent = newData`），直接完成更新。
+
+既然框架已经精确知道该更新谁了，自然就完全不需要创建虚拟 DOM 和执行 Diff 算法了，省去了大量的运行时开销，性能自然更高。
+
+## 11. 常见“错误”描述：虚拟 DOM 提高了性能
+
+我们在一些文档中经常会看到说“虚拟 DOM”提高了性能，这句话实际上是有前提的。
+
+在 Vue、React 这类框架的设计层面来看，虚拟 DOM 确实优化了性能，通过简化后的轻量 JS 对象描述真实 DOM，做 diff 时也直接使用虚拟 DOM 来完成，最终定位到需要更新的真实 DOM 完成视图的更新。
+
+Vue、React 框架设计的时候，对于更新粒度只精确到了组件级别，当有内容发生变更时，框架只能定位到是组件树上的哪个组件有更新，但是不知道这个组件内的哪个具体的节点更新了，所以才需要虚拟 DOM。
+
+如果某个框架能够明确知道当 states 更新后，具体需要更新哪个元素，那其实就没有必要走创建虚拟 DOM 和后续 diff 流程了。比如 Svelte 在设计时，粒度更细，它能够精确实现 states -> DOM 的映射，数据变化之后，它知道需要更新哪个节点，就直接操作 DOM 完成了更新，省去了创建虚拟 DOM 和 diff 的流程，性能更好。
+
+## 12. “React 对于更新的监听是组件级别而非组件内部的节点级别，因此当监听到组件变更时需要虚拟 DOM diff 来定位变更的真实 DOM”，这句话有源码层面的证据吗？
+
+::: tip 💡 FROM
+
+deepwiki：https://deepwiki.com/react/react
+
+:::
+
+这句话的核心有两个断言，React 源码（主要在 `react-reconciler` 包中）提供了完整的链路证据：
+
+### 12.1. 更新调度以 Fiber（组件）为单位，而非 DOM 节点
+
+无论是 Class 组件的 `setState` 还是函数组件的 `useState` dispatch，更新任务都会被挂载到触发更新的那个 fiber 节点的 `updateQueue` 上，然后调用 `scheduleUpdateOnFiber(root, fiber, lane)`。
+
+`scheduleUpdateOnFiber` 接收的是 `fiber`（代表一个组件），而不是具体的 DOM 节点。它的作用只是在 root 上标记有待处理的更新，然后调度整棵树的重新渲染。
+
+::: details 🔍 查看源码证据
+
+Class 组件 `setState` 触发更新（ReactFiberClassComponent.js）：
+
+```javascript
+enqueueSetState(inst: any, payload: any, callback) {
+  const fiber = getInstance(inst);
+  const lane = requestUpdateLane(fiber);
+  // ...创建 update 并入队
+  const root = enqueueUpdate(fiber, update, lane);
+  if (root !== null) {
+    scheduleUpdateOnFiber(root, fiber, lane); // 核心调度方法
+  }
+}
+```
+
+函数组件 `useState` dispatch 触发更新（ReactFiberHooks.js）：
+
+```javascript
+const root = enqueueConcurrentHookUpdate(fiber, queue, update, lane)
+if (root !== null) {
+  scheduleUpdateOnFiber(root, fiber, lane) // 核心调度方法
+}
+```
+
+:::
+
+### 12.2. `beginWork` 中的 bailout：组件粒度的“是否需要更新”判断
+
+在协调阶段的入口 `beginWork` 中，React 会检查当前 fiber（组件）的 props、context、以及是否有被调度的 update。如果没有任何变化，会直接调用 `bailoutOnAlreadyFinishedWork` 跳过当前组件及子树，不会执行 render，也不会进行 diff。
+
+这说明 React 的“监听”粒度确实是 Fiber（组件）级别——它只知道“这个组件有更新任务（pending update）”，但根本不知道“组件内部具体的哪个 DOM 节点会变”。
+
+::: details 🔍 查看源码证据
+
+执行 bailout 判断逻辑（ReactFiberBeginWork.js）：
+
+```javascript
+if (current !== null) {
+  const oldProps = current.memoizedProps;
+  const newProps = workInProgress.pendingProps;
+
+  if (oldProps !== newProps || hasLegacyContextChanged() || ...) {
+    didReceiveUpdate = true; // 标记组件有更新
+  } else {
+    // 检查是否有 pending update，如果没有，直接 bailout 跳过
+    const hasScheduledUpdateOrContext = checkScheduledUpdateOrContext(current, renderLanes);
+    if (!hasScheduledUpdateOrContext && ...) {
+      didReceiveUpdate = false;
+      return attemptEarlyBailoutIfNoScheduledUpdate(current, workInProgress, renderLanes);
+    }
+  }
+}
+```
+
+:::
+
+### 12.3. 组件重新渲染后，必须通过 reconcile（Diff 算法）定位变更
+
+当组件被判定确实需要更新时（`didReceiveUpdate = true`），React 会重新执行整个组件的 render 函数得到新的虚拟 DOM 树（`nextChildren`），然后调用 `reconcileChildren` 对新旧子 Fiber 树进行 Diff 对比。
+
+对比完成后，React 会给发生实质变化的节点打上 Flags（如 `Placement` 插入、`Update` 更新属性、`ChildDeletion` 删除）。最终在 Commit 阶段的 `commitMutationEffects` 方法中，才会遍历这些带有 Flags 的 Fiber 节点去操作真实的 DOM。
+
+::: details 🔍 查看源码证据
+
+重新执行 Render 并生成子节点（ReactFiberBeginWork.js）：
+
+```javascript
+// 函数组件重新执行
+nextChildren = renderWithHooks(
+  current,
+  workInProgress,
+  Component,
+  nextProps,
+  context,
+  renderLanes,
+)
+// 或者 Class 组件重新执行
+nextChildren = instance.render()
+
+// 将新生成的子树送入 reconcile (Diff 过程)
+reconcileChildren(current, workInProgress, nextChildren, renderLanes)
+```
+
+Diff 并打上 Flags（ReactFiberBeginWork.js）：
+
+```javascript
+workInProgress.child = reconcileChildFibers(
+  workInProgress,
+  current.child,
+  nextChildren, // 新的 Virtual DOM 树
+  renderLanes,
+)
+```
+
+:::
+
+### 12.4. 总结：完整的执行链路
+
+通过源码链路可以看出，React 从未监听具体的 DOM 变化，而是强依赖组件重渲染加上 Virtual DOM 的 Diff 机制来寻找差异：
+
+```text
+setState / dispatch
+      ↓
+scheduleUpdateOnFiber(root, fiber, lane)   ← 以 Fiber（组件）为调度单位
+      ↓
+beginWork → 检查该 Fiber 组件是否有变化
+      ↓ (有变化，即 didReceiveUpdate = true)
+renderWithHooks / instance.render()        ← 重新执行整个组件的代码
+      ↓
+reconcileChildren (Virtual DOM Diff 核心)  ← 对比新旧虚拟子树，标记 Flags（Placement/Update/Deletion）
+      ↓
+commitMutationEffects                      ← 按计算出的 Flags 最终去操作真实 DOM
+```
+
+## 13. 总结
+
+本笔记深入讲解了虚拟 DOM 的概念和工作原理，帮助理解 React 的核心机制。
+
+- 虚拟 DOM 不是为了性能而生，而是为了在保持声明式编程的同时提供可接受的性能
+- 理解虚拟 DOM 有助于写出更高效的 React 代码
+- 虚拟 DOM 的核心价值在于抽象和跨平台能力，而不仅仅是性能优化
+- 在实际开发中，不要过度担心虚拟 DOM 的性能，React 的优化已经足够好
+
+## 14. 引用
 
 - [React 虚拟 DOM 官方文档][1]
 - [虚拟 DOM 深入解析][2]
