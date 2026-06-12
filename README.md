@@ -2,7 +2,7 @@
 
 <!-- region:toc -->
 
-- [1. 学习资料](#1-学习资料)
+- [1. TNotes.react](#1-tnotesreact)
 - [2. 学习资料](#2-学习资料)
 - [3. 初识 React](#3-初识-react)
 - [4. 环境准备](#4-环境准备)
@@ -44,7 +44,7 @@
 
 <!-- endregion:toc -->
 
-## 1. 学习资料
+## 1. TNotes.react
 
 - [x] [0367. TNotes.react](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0367.%20TNotes.react/README.md)
 
