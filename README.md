@@ -85,8 +85,8 @@
 - [x] [0063. 第一个 react 应用](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0063.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%20react%20%E5%BA%94%E7%94%A8/README.md)
 - [x] [0042. Hello World（v16）](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0042.%20Hello%20World%EF%BC%88v16%EF%BC%89/README.md)
 - [x] [0001. Hello World（v19）](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0001.%20Hello%20World%EF%BC%88v19%EF%BC%89/README.md)
-- [x] [0149. 项目目录结构解析【AI】](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0149.%20%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E8%A7%A3%E6%9E%90%E3%80%90AI%E3%80%91/README.md)
-- [ ] [0150. main.jsx 或 index.js 入口文件详解](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0150.%20main.jsx%20%E6%88%96%20index.js%20%E5%85%A5%E5%8F%A3%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3/README.md)
+- [x] [0149. 常见的基础项目目录结构解析【AI】](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0149.%20%E5%B8%B8%E8%A7%81%E7%9A%84%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E8%A7%A3%E6%9E%90%E3%80%90AI%E3%80%91/README.md)
+- [ ] [0150. React v17-v19 入口文件的变化【AI】](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0150.%20React%20v17-v19%20%E5%85%A5%E5%8F%A3%E6%96%87%E4%BB%B6%E7%9A%84%E5%8F%98%E5%8C%96%E3%80%90AI%E3%80%91/README.md)
 
 ## 6. JSX
 

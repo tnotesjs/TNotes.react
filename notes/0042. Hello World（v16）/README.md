@@ -39,11 +39,15 @@
 
 ## 2. 评价
 
-内容概述：本节不使用任何脚手架工具，通过 CDN 引入 react、react-dom，直接在（.html）页面上使用 react，实现一个 demo => “在页面上渲染出 Hello World”。
+本节不使用任何脚手架工具，通过 CDN 引入 `react`、`react-dom`，直接在（.html）页面上使用 react，实现一个 demo，这个 demo 的效果也非常简单，就是在页面上渲染出 Hello World 即可。
 
-借助 demo 来熟悉 `React.createElement` 和 `ReactDOM.render` 的基本用法，并引出一些 react 的核心概念。
+核心目的是借助这个简单的 Hello World 的 demo 来熟悉 `React.createElement` 和 `ReactDOM.render` 的基本用法，并引出一些 react 的核心概念。
+
+::: warning ⚠️ WARNING
 
 本节介绍的两个核心 API 是早期 react 的 API，在当前 `25.10` 的最新版 React v19 中，这些 API 都已经过时了。因此，API 的具体使用不重要，但是跟 react 相关的核心概念比较重要。
+
+:::
 
 ## 3. 通过 CDN 的方式引入相关依赖
 

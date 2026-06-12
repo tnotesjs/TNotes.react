@@ -3,9 +3,9 @@
   "tnotes": [],
   "yuque": [],
   "done": true,
-  "enableDiscussions": false,
-  "description": "",
+  "enableDiscussions": true,
+  "description": "通过 ESM 的方式引入 react、react-dom，并使用 ReactDOM.createRoot() 方法将 react 元素渲染到页面上。",
   "id": "fb92059d-dac6-49ca-9e9e-546425c67aee",
   "created_at": 1750759571000,
-  "updated_at": 1760254242143
+  "updated_at": 1781233543621
 }
