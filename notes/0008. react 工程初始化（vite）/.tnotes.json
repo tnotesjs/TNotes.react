@@ -5,7 +5,5 @@
   "done": true,
   "enableDiscussions": true,
   "description": "使用 Vite 快速创建 React 项目，执行 npm create vite@latest 命令，选择 React 模板。了解项目目录结构和启动命令。",
-  "id": "c1541cc9-fbfa-4b47-b66f-7a862fd8cd73",
-  "created_at": 1760373021000,
-  "updated_at": 1781060764233
+  "id": "c1541cc9-fbfa-4b47-b66f-7a862fd8cd73"
 }

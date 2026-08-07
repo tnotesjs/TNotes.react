@@ -5,7 +5,5 @@
   "done": true,
   "enableDiscussions": true,
   "description": "Git 是分布式版本控制系统，用于代码版本管理和团队协作。了解基本命令如 git init、git commit、git push，以及 .gitignore 配置。",
-  "id": "3a8c3874-51f5-488f-a9aa-147e67195c38",
-  "created_at": 1761955229000,
-  "updated_at": 1781060752150
+  "id": "3a8c3874-51f5-488f-a9aa-147e67195c38"
 }

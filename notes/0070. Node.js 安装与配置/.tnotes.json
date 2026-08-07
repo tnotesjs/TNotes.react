@@ -5,7 +5,5 @@
   "done": true,
   "enableDiscussions": true,
   "description": "Node.js 是 JavaScript 运行时环境，到官网下载对应系统的安装包，推荐使用 LTS 版本。安装完成后配置淘宝镜像源加速包下载。",
-  "id": "0f2ed17f-2b66-4136-8562-0e4c72d0a88e",
-  "created_at": 1760681795000,
-  "updated_at": 1781060674994
+  "id": "0f2ed17f-2b66-4136-8562-0e4c72d0a88e"
 }

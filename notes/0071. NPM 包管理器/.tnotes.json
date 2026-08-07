@@ -5,7 +5,5 @@
   "done": true,
   "enableDiscussions": true,
   "description": "npm 是 Node.js 的包管理工具，随 Node.js 一起安装。了解常用命令如 npm install、npm run，以及 package.json 配置文件的作用。",
-  "id": "068c3af0-2ee2-4d8d-99c8-fb2a5af07254",
-  "created_at": 1761962167000,
-  "updated_at": 1781060684978
+  "id": "068c3af0-2ee2-4d8d-99c8-fb2a5af07254"
 }

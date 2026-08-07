@@ -5,7 +5,5 @@
   "done": true,
   "enableDiscussions": true,
   "description": "可以根据 roadmap.sh 上记录的 React 学习路线来学习 React，也可以根据自己的学习路线绘制 roadmap。",
-  "id": "49c6f32e-3d80-4b9f-a9b1-e85542374dbb",
-  "created_at": 1750689681000,
-  "updated_at": 1781014976000
+  "id": "49c6f32e-3d80-4b9f-a9b1-e85542374dbb"
 }

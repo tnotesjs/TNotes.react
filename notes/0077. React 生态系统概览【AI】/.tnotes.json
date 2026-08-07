@@ -5,7 +5,5 @@
   "done": true,
   "enableDiscussions": true,
   "description": "本笔记介绍 React 的生态，简单搂一眼即可，笔记没有对具体库的使用细节做介绍，更多是起到一个“导航”的作用，让你对 React 生态有个大概的认知，知道都有哪些类型的问题是可以使用第三方库来解决的即可。",
-  "id": "c69dccde-3c82-4ee3-9794-76361f5a5be9",
-  "created_at": 1760681795000,
-  "updated_at": 1781168963988
+  "id": "c69dccde-3c82-4ee3-9794-76361f5a5be9"
 }

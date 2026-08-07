@@ -5,7 +5,5 @@
   "done": true,
   "enableDiscussions": true,
   "description": "Prettier 是代码格式化工具，保持代码风格统一。通过 VSCode 插件安装，配置保存时自动格式化，支持自定义规则。",
-  "id": "a54e3fd0-24e5-4e75-b84f-88cb396214eb",
-  "created_at": 1760690129000,
-  "updated_at": 1781060710047
+  "id": "a54e3fd0-24e5-4e75-b84f-88cb396214eb"
 }
