@@ -13,7 +13,7 @@
     "demos",
     "assets"
   ],
-  "port": 9372,
+  "port": 10103,
   "rootSidebarDir": "../TNotes/sidebars",
   "root_item": {
     "icon": {
