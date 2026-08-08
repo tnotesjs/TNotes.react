@@ -3,7 +3,6 @@
 <!-- region:toc -->
 
 - [1. 本章内容](#1-本章内容)
-- [2. 评价](#2-评价)
 
 <!-- endregion:toc -->
 
@@ -21,8 +20,6 @@
 - JSX 的列表渲染
 - JSX 中使用 dangerouslySetInnerHTML 插入 HTML 内容
 - DOMPurify 和 XSS 攻击
-
-## 2. 评价
 
 本章的核心其实是在学习 `React Element` 的相关知识，包括语法层面和原理层面的一些内容。
 

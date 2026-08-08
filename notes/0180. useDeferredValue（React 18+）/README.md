@@ -3,16 +3,15 @@
 <!-- region:toc -->
 
 - [1. 本节内容](#1-本节内容)
-- [2. 评价](#2-评价)
-- [3. useDeferredValue 是什么？](#3-usedeferredvalue-是什么)
-- [4. 为什么需要 useDeferredValue？](#4-为什么需要-usedeferredvalue)
-- [5. 如何使用 useDeferredValue？](#5-如何使用-usedeferredvalue)
-- [6. useDeferredValue vs useTransition](#6-usedeferredvalue-vs-usetransition)
-- [7. 有哪些实际应用场景？](#7-有哪些实际应用场景)
-- [8. 如何优化搜索和过滤？](#8-如何优化搜索和过滤)
-- [9. 有哪些最佳实践？](#9-有哪些最佳实践)
-- [10. 有哪些常见问题？](#10-有哪些常见问题)
-- [11. 引用](#11-引用)
+- [2. useDeferredValue 是什么？](#2-usedeferredvalue-是什么)
+- [3. 为什么需要 useDeferredValue？](#3-为什么需要-usedeferredvalue)
+- [4. 如何使用 useDeferredValue？](#4-如何使用-usedeferredvalue)
+- [5. useDeferredValue vs useTransition](#5-usedeferredvalue-vs-usetransition)
+- [6. 有哪些实际应用场景？](#6-有哪些实际应用场景)
+- [7. 如何优化搜索和过滤？](#7-如何优化搜索和过滤)
+- [8. 有哪些最佳实践？](#8-有哪些最佳实践)
+- [9. 有哪些常见问题？](#9-有哪些常见问题)
+- [10. 引用](#10-引用)
 
 <!-- endregion:toc -->
 
@@ -26,8 +25,6 @@
 - 最佳实践和注意事项
 - 常见问题和解决方案
 
-## 2. 评价
-
 这篇笔记讲解 React 18 中新增的用于延迟更新值的 Hook：useDeferredValue。
 
 - useDeferredValue 是 React 18 新增的并发特性，用于延迟更新非关键的 UI 部分
@@ -37,7 +34,7 @@
 - 延迟更新是可中断的，当新值到来时会放弃旧的延迟更新
 - 需要配合 React.memo 或 useMemo 使用才能真正提升性能
 
-## 3. useDeferredValue 是什么？
+## 2. useDeferredValue 是什么？
 
 `useDeferredValue` 用于延迟更新部分 UI，让高优先级的更新先完成。
 
@@ -173,7 +170,7 @@ function AutoBatching() {
 }
 ```
 
-## 4. 为什么需要 useDeferredValue？
+## 3. 为什么需要 useDeferredValue？
 
 解决高频更新导致的性能问题。
 
@@ -267,7 +264,7 @@ function DeferredSearch() {
 }
 ```
 
-## 5. 如何使用 useDeferredValue？
+## 4. 如何使用 useDeferredValue？
 
 基本使用模式。
 
@@ -404,7 +401,7 @@ function ConditionalDeferred({ enableDefer }: { enableDefer: boolean }) {
 }
 ```
 
-## 6. useDeferredValue vs useTransition
+## 5. useDeferredValue vs useTransition
 
 两者的区别和选择。
 
@@ -524,7 +521,7 @@ function WhenToUse() {
 }
 ```
 
-## 7. 有哪些实际应用场景？
+## 6. 有哪些实际应用场景？
 
 ```typescript
 // 场景 1：自动完成搜索框
@@ -687,7 +684,7 @@ function MarkdownEditor() {
 }
 ```
 
-## 8. 如何优化搜索和过滤？
+## 7. 如何优化搜索和过滤？
 
 完整的搜索优化方案。
 
@@ -798,7 +795,7 @@ function VirtualizedSearch() {
 }
 ```
 
-## 9. 有哪些最佳实践？
+## 8. 有哪些最佳实践？
 
 ```typescript
 // 实践 1：总是配合 memo 或 useMemo
@@ -918,7 +915,7 @@ function TypeSafeSearch<T extends { id: string }>({
 }
 ```
 
-## 10. 有哪些常见问题？
+## 9. 有哪些常见问题？
 
 ```typescript
 // 问题 1：忘记使用 memo
@@ -1037,7 +1034,7 @@ function MisunderstandDelay() {
 }
 ```
 
-## 11. 引用
+## 10. 引用
 
 - [useDeferredValue 官方文档][1]
 - [React 18 并发特性][2]

@@ -3,31 +3,30 @@
 <!-- region:toc -->
 
 - [1. 本节内容](#1-本节内容)
-- [2. 评价](#2-评价)
-- [3. componentDidCatch 是什么？](#3-componentdidcatch-是什么)
-  - [3.1. 基本定义](#31-基本定义)
-  - [3.2. 工作原理](#32-工作原理)
-  - [3.3. 捕获的错误类型](#33-捕获的错误类型)
-- [4. 如何实现错误边界？](#4-如何实现错误边界)
-  - [4.1. 基础错误边界](#41-基础错误边界)
-  - [4.2. 增强版错误边界](#42-增强版错误边界)
-  - [4.3. 使用示例](#43-使用示例)
-- [5. � 如何上报错误日志？](#5--如何上报错误日志)
-  - [5.1. 集成 Sentry](#51-集成-sentry)
-  - [5.2. 自定义日志服务](#52-自定义日志服务)
-- [6. 如何设计错误边界的层级结构？](#6-如何设计错误边界的层级结构)
-  - [6.1. 三层错误边界架构](#61-三层错误边界架构)
-  - [6.2. 关键组件的独立错误边界](#62-关键组件的独立错误边界)
-  - [6.3. 路由级错误边界](#63-路由级错误边界)
-- [7. 错误边界有哪些局限性？](#7-错误边界有哪些局限性)
-  - [7.1. 无法捕获的错误](#71-无法捕获的错误)
-  - [7.2. 解决方案](#72-解决方案)
-- [8. 如何在生产环境中使用错误边界？](#8-如何在生产环境中使用错误边界)
-  - [8.1. 环境区分](#81-环境区分)
-  - [8.2. 错误恢复策略](#82-错误恢复策略)
-- [9. componentDidCatch vs getDerivedStateFromError](#9-componentdidcatch-vs-getderivedstatefromerror)
-  - [9.1. 配合使用示例](#91-配合使用示例)
-- [10. 引用](#10-引用)
+- [2. componentDidCatch 是什么？](#2-componentdidcatch-是什么)
+  - [2.1. 基本定义](#21-基本定义)
+  - [2.2. 工作原理](#22-工作原理)
+  - [2.3. 捕获的错误类型](#23-捕获的错误类型)
+- [3. 如何实现错误边界？](#3-如何实现错误边界)
+  - [3.1. 基础错误边界](#31-基础错误边界)
+  - [3.2. 增强版错误边界](#32-增强版错误边界)
+  - [3.3. 使用示例](#33-使用示例)
+- [4. � 如何上报错误日志？](#4--如何上报错误日志)
+  - [4.1. 集成 Sentry](#41-集成-sentry)
+  - [4.2. 自定义日志服务](#42-自定义日志服务)
+- [5. 如何设计错误边界的层级结构？](#5-如何设计错误边界的层级结构)
+  - [5.1. 三层错误边界架构](#51-三层错误边界架构)
+  - [5.2. 关键组件的独立错误边界](#52-关键组件的独立错误边界)
+  - [5.3. 路由级错误边界](#53-路由级错误边界)
+- [6. 错误边界有哪些局限性？](#6-错误边界有哪些局限性)
+  - [6.1. 无法捕获的错误](#61-无法捕获的错误)
+  - [6.2. 解决方案](#62-解决方案)
+- [7. 如何在生产环境中使用错误边界？](#7-如何在生产环境中使用错误边界)
+  - [7.1. 环境区分](#71-环境区分)
+  - [7.2. 错误恢复策略](#72-错误恢复策略)
+- [8. componentDidCatch vs getDerivedStateFromError](#8-componentdidcatch-vs-getderivedstatefromerror)
+  - [8.1. 配合使用示例](#81-配合使用示例)
+- [9. 引用](#9-引用)
 
 <!-- endregion:toc -->
 
@@ -40,8 +39,6 @@
 - 错误边界的局限性
 - 生产环境的错误处理策略
 
-## 2. 评价
-
 这篇笔记详细讲解 React 错误边界的实现和最佳实践，帮助构建更健壮的应用。
 
 - 错误边界是 React 16 引入的重要特性，防止局部错误导致整个应用崩溃
@@ -49,15 +46,15 @@
 - 必须配合 `getDerivedStateFromError` 使用，前者更新 UI，后者记录日志
 - 合理的错误边界层级设计能提供更好的用户体验和错误定位
 
-## 3. componentDidCatch 是什么？
+## 2. componentDidCatch 是什么？
 
 `componentDidCatch` 是一个生命周期方法，用于捕获子组件树中的 JavaScript 错误。
 
-### 3.1. 基本定义
+### 2.1. 基本定义
 
 ```typescript
 interface ErrorInfo {
-  componentStack: string
+  componentStack: string;
 }
 
 class ErrorBoundary extends React.Component<Props, State> {
@@ -65,21 +62,21 @@ class ErrorBoundary extends React.Component<Props, State> {
     // 参数 1：抛出的错误对象
     // 参数 2：包含组件调用栈的信息对象
 
-    console.log('捕获到错误:', error)
-    console.log('错误堆栈:', error.stack)
-    console.log('组件堆栈:', errorInfo.componentStack)
+    console.log("捕获到错误:", error);
+    console.log("错误堆栈:", error.stack);
+    console.log("组件堆栈:", errorInfo.componentStack);
 
     // ✅ 在这里记录错误日志
     // ✅ 上报到错误监控服务
   }
 
   render() {
-    return this.props.children
+    return this.props.children;
   }
 }
 ```
 
-### 3.2. 工作原理
+### 2.2. 工作原理
 
 ```typescript
 interface State {
@@ -143,7 +140,7 @@ function App() {
 }
 ```
 
-### 3.3. 捕获的错误类型
+### 2.3. 捕获的错误类型
 
 ```typescript
 // ✅ 可以捕获的错误
@@ -214,11 +211,11 @@ class AsyncError extends React.Component {
 // ❌ 错误边界内部抛出的错误无法自己捕获
 ```
 
-## 4. 如何实现错误边界？
+## 3. 如何实现错误边界？
 
 创建一个通用的错误边界组件。
 
-### 4.1. 基础错误边界
+### 3.1. 基础错误边界
 
 ```typescript
 interface ErrorBoundaryProps {
@@ -291,7 +288,7 @@ class ErrorBoundary extends React.Component<
 }
 ```
 
-### 4.2. 增强版错误边界
+### 3.2. 增强版错误边界
 
 ```typescript
 interface EnhancedErrorBoundaryProps {
@@ -413,7 +410,7 @@ class EnhancedErrorBoundary extends React.Component<
 }
 ```
 
-### 4.3. 使用示例
+### 3.3. 使用示例
 
 ```typescript
 function App() {
@@ -442,11 +439,11 @@ function App() {
 }
 ```
 
-## 5. � 如何上报错误日志？
+## 4. � 如何上报错误日志？
 
 集成第三方错误监控服务。
 
-### 5.1. 集成 Sentry
+### 4.1. 集成 Sentry
 
 ```typescript
 interface SentryErrorBoundaryProps {
@@ -525,11 +522,11 @@ Sentry.init({
 })
 ```
 
-### 5.2. 自定义日志服务
+### 4.2. 自定义日志服务
 
 ```typescript
 class LoggerService {
-  private static endpoint = '/api/logs'
+  private static endpoint = "/api/logs";
 
   static async logError(
     error: Error,
@@ -557,55 +554,55 @@ class LoggerService {
 
       // 自定义上下文
       context: context || {},
-    }
+    };
 
     try {
       const response = await fetch(this.endpoint, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(errorData),
-      })
+      });
 
       if (!response.ok) {
-        throw new Error(`日志上报失败: ${response.status}`)
+        throw new Error(`日志上报失败: ${response.status}`);
       }
 
-      console.log('错误日志已上报')
+      console.log("错误日志已上报");
     } catch (err) {
       // ✅ 上报失败时的降级处理
-      console.error('日志上报失败:', err)
-      this.fallbackLog(errorData)
+      console.error("日志上报失败:", err);
+      this.fallbackLog(errorData);
     }
   }
 
   private static fallbackLog(errorData: any) {
     // ✅ 保存到 localStorage 作为降级方案
     try {
-      const logs = JSON.parse(localStorage.getItem('error_logs') || '[]')
-      logs.push(errorData)
+      const logs = JSON.parse(localStorage.getItem("error_logs") || "[]");
+      logs.push(errorData);
 
       // 只保留最近 10 条
-      const recentLogs = logs.slice(-10)
-      localStorage.setItem('error_logs', JSON.stringify(recentLogs))
+      const recentLogs = logs.slice(-10);
+      localStorage.setItem("error_logs", JSON.stringify(recentLogs));
     } catch (err) {
-      console.error('降级日志存储失败:', err)
+      console.error("降级日志存储失败:", err);
     }
   }
 
   private static getUserId(): string | null {
     // 从认证系统获取用户 ID
-    return localStorage.getItem('userId')
+    return localStorage.getItem("userId");
   }
 
   private static getSessionId(): string {
-    let sessionId = sessionStorage.getItem('sessionId')
+    let sessionId = sessionStorage.getItem("sessionId");
     if (!sessionId) {
-      sessionId = `session_${Date.now()}_${Math.random()}`
-      sessionStorage.setItem('sessionId', sessionId)
+      sessionId = `session_${Date.now()}_${Math.random()}`;
+      sessionStorage.setItem("sessionId", sessionId);
     }
-    return sessionId
+    return sessionId;
   }
 }
 
@@ -614,9 +611,9 @@ class LoggingErrorBoundary extends React.Component<Props, State> {
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     // ✅ 调用日志服务
     LoggerService.logError(error, errorInfo, {
-      component: 'LoggingErrorBoundary',
+      component: "LoggingErrorBoundary",
       props: this.props,
-    })
+    });
   }
 
   render() {
@@ -625,11 +622,11 @@ class LoggingErrorBoundary extends React.Component<Props, State> {
 }
 ```
 
-## 6. 如何设计错误边界的层级结构？
+## 5. 如何设计错误边界的层级结构？
 
 根据应用结构设置多层错误边界。
 
-### 6.1. 三层错误边界架构
+### 5.1. 三层错误边界架构
 
 ```typescript
 // 第一层：应用级错误边界
@@ -698,7 +695,7 @@ function HomePage() {
 }
 ```
 
-### 6.2. 关键组件的独立错误边界
+### 5.2. 关键组件的独立错误边界
 
 ```typescript
 function Dashboard() {
@@ -734,7 +731,7 @@ function Dashboard() {
 }
 ```
 
-### 6.3. 路由级错误边界
+### 5.3. 路由级错误边界
 
 ```typescript
 function RouterWithErrorBoundary() {
@@ -771,11 +768,11 @@ function RouterWithErrorBoundary() {
 }
 ```
 
-## 7. 错误边界有哪些局限性？
+## 6. 错误边界有哪些局限性？
 
 了解错误边界无法处理的场景。
 
-### 7.1. 无法捕获的错误
+### 6.1. 无法捕获的错误
 
 ```typescript
 class LimitationsDemo extends React.Component {
@@ -825,7 +822,7 @@ class LimitationsDemo extends React.Component {
 }
 ```
 
-### 7.2. 解决方案
+### 6.2. 解决方案
 
 ```typescript
 // 方案 1：全局错误处理
@@ -906,11 +903,11 @@ function AsyncComponent() {
 }
 ```
 
-## 8. 如何在生产环境中使用错误边界？
+## 7. 如何在生产环境中使用错误边界？
 
 生产环境需要特殊处理。
 
-### 8.1. 环境区分
+### 7.1. 环境区分
 
 ```typescript
 interface ProductionErrorBoundaryState {
@@ -999,7 +996,7 @@ class ProductionErrorBoundary extends React.Component<
 }
 ```
 
-### 8.2. 错误恢复策略
+### 7.2. 错误恢复策略
 
 ```typescript
 interface RecoverableErrorBoundaryState {
@@ -1070,7 +1067,7 @@ class RecoverableErrorBoundary extends React.Component<
 }
 ```
 
-## 9. componentDidCatch vs getDerivedStateFromError
+## 8. componentDidCatch vs getDerivedStateFromError
 
 | 特性           | componentDidCatch | getDerivedStateFromError |
 | -------------- | ----------------- | ------------------------ |
@@ -1083,7 +1080,7 @@ class RecoverableErrorBoundary extends React.Component<
 | 是否必须       | ❌ 可选           | ✅ 必须（配合使用）      |
 | 参数           | error, errorInfo  | error                    |
 
-### 9.1. 配合使用示例
+### 8.1. 配合使用示例
 
 ```typescript
 class ErrorBoundary extends React.Component<Props, State> {
@@ -1125,7 +1122,7 @@ class ErrorBoundary extends React.Component<Props, State> {
 }
 ```
 
-## 10. 引用
+## 9. 引用
 
 - [Error Boundaries 官方文档][1]
 - [componentDidCatch API 参考][2]

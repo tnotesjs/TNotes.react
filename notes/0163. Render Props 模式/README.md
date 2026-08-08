@@ -3,26 +3,25 @@
 <!-- region:toc -->
 
 - [1. 本节内容](#1-本节内容)
-- [2. 评价](#2-评价)
-- [3. 什么是 Render Props？](#3-什么是-render-props)
-  - [3.1. 基本概念](#31-基本概念)
-  - [3.2. 使用 children 作为函数](#32-使用-children-作为函数)
-  - [3.3. 命名的 Render Props](#33-命名的-render-props)
-- [4. Render Props 有什么优势？](#4-render-props-有什么优势)
-  - [4.1. 优势 1：逻辑复用](#41-优势-1逻辑复用)
-  - [4.2. 优势 2：灵活的控制](#42-优势-2灵活的控制)
-  - [4.3. 优势 3：避免命名冲突](#43-优势-3避免命名冲突)
-- [5. 如何使用 Render Props？](#5-如何使用-render-props)
-  - [5.1. 实践 1：数据获取](#51-实践-1数据获取)
-  - [5.2. 实践 2：表单状态管理](#52-实践-2表单状态管理)
-  - [5.3. 实践 3：列表虚拟化](#53-实践-3列表虚拟化)
-  - [5.4. 实践 4：权限控制](#54-实践-4权限控制)
-- [6. Render Props vs Hooks？](#6-render-props-vs-hooks)
-  - [6.1. 对比表格](#61-对比表格)
-  - [6.2. 同一逻辑的两种实现](#62-同一逻辑的两种实现)
-  - [6.3. 何时仍使用 Render Props](#63-何时仍使用-render-props)
-  - [6.4. 迁移到 Hooks](#64-迁移到-hooks)
-- [7. 引用](#7-引用)
+- [2. 什么是 Render Props？](#2-什么是-render-props)
+  - [2.1. 基本概念](#21-基本概念)
+  - [2.2. 使用 children 作为函数](#22-使用-children-作为函数)
+  - [2.3. 命名的 Render Props](#23-命名的-render-props)
+- [3. Render Props 有什么优势？](#3-render-props-有什么优势)
+  - [3.1. 优势 1：逻辑复用](#31-优势-1逻辑复用)
+  - [3.2. 优势 2：灵活的控制](#32-优势-2灵活的控制)
+  - [3.3. 优势 3：避免命名冲突](#33-优势-3避免命名冲突)
+- [4. 如何使用 Render Props？](#4-如何使用-render-props)
+  - [4.1. 实践 1：数据获取](#41-实践-1数据获取)
+  - [4.2. 实践 2：表单状态管理](#42-实践-2表单状态管理)
+  - [4.3. 实践 3：列表虚拟化](#43-实践-3列表虚拟化)
+  - [4.4. 实践 4：权限控制](#44-实践-4权限控制)
+- [5. Render Props vs Hooks？](#5-render-props-vs-hooks)
+  - [5.1. 对比表格](#51-对比表格)
+  - [5.2. 同一逻辑的两种实现](#52-同一逻辑的两种实现)
+  - [5.3. 何时仍使用 Render Props](#53-何时仍使用-render-props)
+  - [5.4. 迁移到 Hooks](#54-迁移到-hooks)
+- [6. 引用](#6-引用)
 
 <!-- endregion:toc -->
 
@@ -33,8 +32,6 @@
 - 使用方法和实践
 - 与 Hooks 的对比
 
-## 2. 评价
-
 Render Props 是 React 中实现代码复用的经典模式，通过函数 prop 来共享逻辑。
 
 - Render Props 可以灵活地控制渲染内容，实现逻辑与 UI 的分离
@@ -42,28 +39,28 @@ Render Props 是 React 中实现代码复用的经典模式，通过函数 prop 
 - 现在大多数场景可以用 Hooks 替代，但某些情况下仍有价值
 - 理解这个模式有助于理解 React 的组件设计思想
 
-## 3. 什么是 Render Props？
+## 2. 什么是 Render Props？
 
-### 3.1. 基本概念
+### 2.1. 基本概念
 
 Render Props 是指使用值为函数的 prop 来控制组件渲染内容的技术。
 
 ```jsx
 // ✅ 基本的 Render Props 模式
 function Mouse({ render }) {
-  const [position, setPosition] = useState({ x: 0, y: 0 })
+  const [position, setPosition] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e) => {
-    setPosition({ x: e.clientX, y: e.clientY })
-  }
+    setPosition({ x: e.clientX, y: e.clientY });
+  };
 
   useEffect(() => {
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [])
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
 
   // ✅ 调用 render 函数，传入 position
-  return render(position)
+  return render(position);
 }
 
 // 使用
@@ -76,26 +73,26 @@ function App() {
         </div>
       )}
     />
-  )
+  );
 }
 ```
 
-### 3.2. 使用 children 作为函数
+### 2.2. 使用 children 作为函数
 
 ```jsx
 // ✅ children 也可以是 Render Props
 function Mouse({ children }) {
-  const [position, setPosition] = useState({ x: 0, y: 0 })
+  const [position, setPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleMove = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY })
-    }
-    window.addEventListener('mousemove', handleMove)
-    return () => window.removeEventListener('mousemove', handleMove)
-  }, [])
+      setPosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", handleMove);
+    return () => window.removeEventListener("mousemove", handleMove);
+  }, []);
 
-  return children(position)
+  return children(position);
 }
 
 // 使用
@@ -108,35 +105,35 @@ function App() {
         </div>
       )}
     </Mouse>
-  )
+  );
 }
 ```
 
-### 3.3. 命名的 Render Props
+### 2.3. 命名的 Render Props
 
 ```jsx
 // ✅ 使用明确的命名
 function DataFetcher({ url, renderLoading, renderError, renderData }) {
-  const [data, setData] = useState(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        setData(data)
-        setLoading(false)
+        setData(data);
+        setLoading(false);
       })
       .catch((err) => {
-        setError(err)
-        setLoading(false)
-      })
-  }, [url])
+        setError(err);
+        setLoading(false);
+      });
+  }, [url]);
 
-  if (loading) return renderLoading()
-  if (error) return renderError(error)
-  return renderData(data)
+  if (loading) return renderLoading();
+  if (error) return renderError(error);
+  return renderData(data);
 }
 
 // 使用
@@ -154,13 +151,13 @@ function App() {
         </ul>
       )}
     />
-  )
+  );
 }
 ```
 
-## 4. Render Props 有什么优势？
+## 3. Render Props 有什么优势？
 
-### 4.1. 优势 1：逻辑复用
+### 3.1. 优势 1：逻辑复用
 
 ```jsx
 // ✅ 同一个逻辑，不同的 UI
@@ -168,20 +165,20 @@ function WindowSize({ children }) {
   const [size, setSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
-  })
+  });
 
   useEffect(() => {
     const handleResize = () => {
       setSize({
         width: window.innerWidth,
         height: window.innerHeight,
-      })
-    }
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
+      });
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-  return children(size)
+  return children(size);
 }
 
 // 不同的使用方式
@@ -200,29 +197,29 @@ function App() {
       {/* UI 2 */}
       <WindowSize>
         {(size) => (
-          <div className={size.width < 768 ? 'mobile' : 'desktop'}>
+          <div className={size.width < 768 ? "mobile" : "desktop"}>
             响应式内容
           </div>
         )}
       </WindowSize>
     </>
-  )
+  );
 }
 ```
 
-### 4.2. 优势 2：灵活的控制
+### 3.2. 优势 2：灵活的控制
 
 ```jsx
 // ✅ 完全控制渲染逻辑
 function Toggle({ children }) {
-  const [on, setOn] = useState(false)
+  const [on, setOn] = useState(false);
 
   return children({
     on,
     toggle: () => setOn(!on),
     setOn,
     setOff: () => setOn(false),
-  })
+  });
 }
 
 // 使用：可以自由决定如何使用这些状态和方法
@@ -231,17 +228,17 @@ function App() {
     <Toggle>
       {({ on, toggle, setOff }) => (
         <div>
-          <p>开关状态：{on ? '开' : '关'}</p>
+          <p>开关状态：{on ? "开" : "关"}</p>
           <button onClick={toggle}>切换</button>
           <button onClick={setOff}>关闭</button>
         </div>
       )}
     </Toggle>
-  )
+  );
 }
 ```
 
-### 4.3. 优势 3：避免命名冲突
+### 3.3. 优势 3：避免命名冲突
 
 ```jsx
 // ✅ 不需要固定的 prop 名称
@@ -260,13 +257,13 @@ function App() {
         </DataFetcher>
       )}
     </DataFetcher>
-  )
+  );
 }
 ```
 
-## 5. 如何使用 Render Props？
+## 4. 如何使用 Render Props？
 
-### 5.1. 实践 1：数据获取
+### 4.1. 实践 1：数据获取
 
 ```jsx
 // ✅ 封装数据获取逻辑
@@ -275,18 +272,18 @@ function Fetch({ url, children }) {
     data: null,
     loading: true,
     error: null,
-  })
+  });
 
   useEffect(() => {
-    setState({ data: null, loading: true, error: null })
+    setState({ data: null, loading: true, error: null });
 
     fetch(url)
       .then((res) => res.json())
       .then((data) => setState({ data, loading: false, error: null }))
-      .catch((error) => setState({ data: null, loading: false, error }))
-  }, [url])
+      .catch((error) => setState({ data: null, loading: false, error }));
+  }, [url]);
 
-  return children(state)
+  return children(state);
 }
 
 // 使用
@@ -294,108 +291,108 @@ function UserList() {
   return (
     <Fetch url="/api/users">
       {({ data, loading, error }) => {
-        if (loading) return <div>加载中...</div>
-        if (error) return <div>错误：{error.message}</div>
+        if (loading) return <div>加载中...</div>;
+        if (error) return <div>错误：{error.message}</div>;
         return (
           <ul>
             {data.map((user) => (
               <li key={user.id}>{user.name}</li>
             ))}
           </ul>
-        )
+        );
       }}
     </Fetch>
-  )
+  );
 }
 ```
 
-### 5.2. 实践 2：表单状态管理
+### 4.2. 实践 2：表单状态管理
 
 ```jsx
 // ✅ 封装表单逻辑
 function Form({ initialValues = {}, onSubmit, children }) {
-  const [values, setValues] = useState(initialValues)
-  const [errors, setErrors] = useState({})
+  const [values, setValues] = useState(initialValues);
+  const [errors, setErrors] = useState({});
 
   const handleChange = (name, value) => {
-    setValues((prev) => ({ ...prev, [name]: value }))
+    setValues((prev) => ({ ...prev, [name]: value }));
     // 清除错误
     if (errors[name]) {
       setErrors((prev) => {
-        const next = { ...prev }
-        delete next[name]
-        return next
-      })
+        const next = { ...prev };
+        delete next[name];
+        return next;
+      });
     }
-  }
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    onSubmit(values)
-  }
+    e.preventDefault();
+    onSubmit(values);
+  };
 
   return children({
     values,
     errors,
     handleChange,
     handleSubmit,
-  })
+  });
 }
 
 // 使用
 function LoginForm() {
   return (
     <Form
-      initialValues={{ username: '', password: '' }}
+      initialValues={{ username: "", password: "" }}
       onSubmit={(values) => console.log(values)}
     >
       {({ values, handleChange, handleSubmit }) => (
         <form onSubmit={handleSubmit}>
           <input
             value={values.username}
-            onChange={(e) => handleChange('username', e.target.value)}
+            onChange={(e) => handleChange("username", e.target.value)}
           />
           <input
             type="password"
             value={values.password}
-            onChange={(e) => handleChange('password', e.target.value)}
+            onChange={(e) => handleChange("password", e.target.value)}
           />
           <button type="submit">登录</button>
         </form>
       )}
     </Form>
-  )
+  );
 }
 ```
 
-### 5.3. 实践 3：列表虚拟化
+### 4.3. 实践 3：列表虚拟化
 
 ```jsx
 // ✅ 封装虚拟滚动逻辑
 function VirtualList({ items, itemHeight, children }) {
-  const [scrollTop, setScrollTop] = useState(0)
-  const containerHeight = 400
+  const [scrollTop, setScrollTop] = useState(0);
+  const containerHeight = 400;
 
-  const startIndex = Math.floor(scrollTop / itemHeight)
-  const endIndex = Math.ceil((scrollTop + containerHeight) / itemHeight)
-  const visibleItems = items.slice(startIndex, endIndex)
+  const startIndex = Math.floor(scrollTop / itemHeight);
+  const endIndex = Math.ceil((scrollTop + containerHeight) / itemHeight);
+  const visibleItems = items.slice(startIndex, endIndex);
 
   return children({
     visibleItems,
     totalHeight: items.length * itemHeight,
     offsetY: startIndex * itemHeight,
     onScroll: (e) => setScrollTop(e.target.scrollTop),
-  })
+  });
 }
 
 // 使用
 function App() {
-  const items = Array.from({ length: 10000 }, (_, i) => `项目 ${i}`)
+  const items = Array.from({ length: 10000 }, (_, i) => `项目 ${i}`);
 
   return (
     <VirtualList items={items} itemHeight={40}>
       {({ visibleItems, totalHeight, offsetY, onScroll }) => (
-        <div style={{ height: 400, overflow: 'auto' }} onScroll={onScroll}>
+        <div style={{ height: 400, overflow: "auto" }} onScroll={onScroll}>
           <div style={{ height: totalHeight }}>
             <div style={{ transform: `translateY(${offsetY}px)` }}>
               {visibleItems.map((item, index) => (
@@ -408,23 +405,23 @@ function App() {
         </div>
       )}
     </VirtualList>
-  )
+  );
 }
 ```
 
-### 5.4. 实践 4：权限控制
+### 4.4. 实践 4：权限控制
 
 ```jsx
 // ✅ 封装权限检查逻辑
 function Permission({ require, children }) {
-  const user = useUser()
+  const user = useUser();
 
-  const hasPermission = user?.permissions?.includes(require)
+  const hasPermission = user?.permissions?.includes(require);
 
   return children({
     hasPermission,
     user,
-  })
+  });
 }
 
 // 使用
@@ -435,13 +432,13 @@ function AdminPanel() {
         hasPermission ? <div>管理员面板</div> : <div>无权限访问</div>
       }
     </Permission>
-  )
+  );
 }
 ```
 
-## 6. Render Props vs Hooks？
+## 5. Render Props vs Hooks？
 
-### 6.1. 对比表格
+### 5.1. 对比表格
 
 | 特性       | Render Props       | Hooks       |
 | ---------- | ------------------ | ----------- |
@@ -452,7 +449,7 @@ function AdminPanel() {
 | 组合       | 嵌套地狱           | 平铺调用    |
 | 当前推荐   | 少用               | ✅ 优先使用 |
 
-### 6.2. 同一逻辑的两种实现
+### 5.2. 同一逻辑的两种实现
 
 ::: code-group
 
@@ -466,32 +463,32 @@ function App() {
           {(size) => (
             <DataFetcher url="/api/user">
               {({ data, loading }) => {
-                if (loading) return <div>加载中...</div>
+                if (loading) return <div>加载中...</div>;
                 return (
                   <div>
                     鼠标：{mouse.x}, {mouse.y}
                     窗口：{size.width}x{size.height}
                     用户：{data.name}
                   </div>
-                )
+                );
               }}
             </DataFetcher>
           )}
         </WindowSize>
       )}
     </Mouse>
-  )
+  );
 }
 ```
 
 ```jsx [✅ Hooks]
 // ✅ 更清晰
 function App() {
-  const mouse = useMouse()
-  const size = useWindowSize()
-  const { data, loading } = useFetch('/api/user')
+  const mouse = useMouse();
+  const size = useWindowSize();
+  const { data, loading } = useFetch("/api/user");
 
-  if (loading) return <div>加载中...</div>
+  if (loading) return <div>加载中...</div>;
 
   return (
     <div>
@@ -499,19 +496,19 @@ function App() {
       窗口：{size.width}x{size.height}
       用户：{data.name}
     </div>
-  )
+  );
 }
 ```
 
 :::
 
-### 6.3. 何时仍使用 Render Props
+### 5.3. 何时仍使用 Render Props
 
 ```jsx
 // ✅ 需要在 JSX 中决定渲染内容时
 function List({ items, renderItem, renderEmpty }) {
   if (items.length === 0) {
-    return renderEmpty()
+    return renderEmpty();
   }
 
   return (
@@ -520,34 +517,34 @@ function List({ items, renderItem, renderEmpty }) {
         <li key={index}>{renderItem(item, index)}</li>
       ))}
     </ul>
-  )
+  );
 }
 
 // 使用
-;<List
+<List
   items={users}
   renderItem={(user) => <UserCard user={user} />}
   renderEmpty={() => <div>暂无数据</div>}
-/>
+/>;
 ```
 
-### 6.4. 迁移到 Hooks
+### 5.4. 迁移到 Hooks
 
 ::: code-group
 
 ```jsx [Render Props 版本]
 function Mouse({ children }) {
-  const [position, setPosition] = useState({ x: 0, y: 0 })
+  const [position, setPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleMove = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY })
-    }
-    window.addEventListener('mousemove', handleMove)
-    return () => window.removeEventListener('mousemove', handleMove)
-  }, [])
+      setPosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", handleMove);
+    return () => window.removeEventListener("mousemove", handleMove);
+  }, []);
 
-  return children(position)
+  return children(position);
 }
 
 function App() {
@@ -559,38 +556,38 @@ function App() {
         </div>
       )}
     </Mouse>
-  )
+  );
 }
 ```
 
 ```jsx [✅ Hooks 版本]
 function useMouse() {
-  const [position, setPosition] = useState({ x: 0, y: 0 })
+  const [position, setPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleMove = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY })
-    }
-    window.addEventListener('mousemove', handleMove)
-    return () => window.removeEventListener('mousemove', handleMove)
-  }, [])
+      setPosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", handleMove);
+    return () => window.removeEventListener("mousemove", handleMove);
+  }, []);
 
-  return position
+  return position;
 }
 
 function App() {
-  const pos = useMouse()
+  const pos = useMouse();
   return (
     <div>
       位置：{pos.x}, {pos.y}
     </div>
-  )
+  );
 }
 ```
 
 :::
 
-## 7. 引用
+## 6. 引用
 
 - [React 官方文档 - Render Props][1]
 - [Michael Jackson - Use a Render Prop][2]

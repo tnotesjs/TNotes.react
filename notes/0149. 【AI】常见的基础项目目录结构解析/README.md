@@ -3,15 +3,14 @@
 <!-- region:toc -->
 
 - [1. 本节内容](#1-本节内容)
-- [2. 评价](#2-评价)
-- [3. 提示词](#3-提示词)
-- [4. 使用 Vite 创建的 React 项目目录结构是怎样的？](#4-使用-vite-创建的-react-项目目录结构是怎样的)
-- [5. 各个目录和文件的作用是什么？](#5-各个目录和文件的作用是什么)
-- [6. 如何组织大型项目的目录结构？](#6-如何组织大型项目的目录结构)
-- [7. 常见的目录命名规范有哪些？](#7-常见的目录命名规范有哪些)
-- [8. 如何处理静态资源文件？](#8-如何处理静态资源文件)
-- [9. 总结](#9-总结)
-- [10. 引用](#10-引用)
+- [2. 提示词](#2-提示词)
+- [3. 使用 Vite 创建的 React 项目目录结构是怎样的？](#3-使用-vite-创建的-react-项目目录结构是怎样的)
+- [4. 各个目录和文件的作用是什么？](#4-各个目录和文件的作用是什么)
+- [5. 如何组织大型项目的目录结构？](#5-如何组织大型项目的目录结构)
+- [6. 常见的目录命名规范有哪些？](#6-常见的目录命名规范有哪些)
+- [7. 如何处理静态资源文件？](#7-如何处理静态资源文件)
+- [8. 总结](#8-总结)
+- [9. 引用](#9-引用)
 
 <!-- endregion:toc -->
 
@@ -23,13 +22,11 @@
 - 目录命名规范
 - 静态资源的管理
 
-## 2. 评价
-
 我们在实际开发 React 项目时，往往不会直接通过一个简单的 `.html` 文件去创建一个项目，而是借助一些构建工具来搭建一个真实的工程文件夹，这个文件夹的具体内容涉及到的知识点不仅限于 React。
 
 这篇笔记记录了 AI 的回复，目的是让你先大概知道实际的项目结构大概是长什么样的，知道真实开发往往不是一个 `.html` 去实现的。
 
-## 3. 提示词
+## 2. 提示词
 
 ```
 我正在学习 React
@@ -41,7 +38,7 @@
 真实的项目目录结构是什么样的呢？
 ```
 
-## 4. 使用 Vite 创建的 React 项目目录结构是怎样的？
+## 3. 使用 Vite 创建的 React 项目目录结构是怎样的？
 
 使用 `npm create vite@latest` 创建的基础项目结构：
 
@@ -73,7 +70,7 @@ my-react-app/
 - `public` 目录存放不需要编译的静态资源
 - 配置文件都在根目录
 
-## 5. 各个目录和文件的作用是什么？
+## 4. 各个目录和文件的作用是什么？
 
 详细说明：
 
@@ -96,16 +93,16 @@ my-react-app/
 
 ```jsx [src/main.jsx]
 // 应用入口
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.jsx";
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
     <App />
   </StrictMode>,
-)
+);
 ```
 
 ```html [index.html]
@@ -127,17 +124,17 @@ createRoot(document.getElementById('root')).render(
 
 ```javascript [vite.config.js]
 // Vite 配置
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-})
+});
 ```
 
 :::
 
-## 6. 如何组织大型项目的目录结构？
+## 5. 如何组织大型项目的目录结构？
 
 推荐的大型项目目录结构：
 
@@ -242,7 +239,7 @@ features/
 │   └── index.js               # 统一导出
 ```
 
-## 7. 常见的目录命名规范有哪些？
+## 6. 常见的目录命名规范有哪些？
 
 目录命名规范：
 
@@ -271,16 +268,16 @@ features/
 // components/Button/index.js
 // 用于简化导入路径
 
-export { default } from './Button'
-export * from './Button'
+export { default } from "./Button";
+export * from "./Button";
 
 // 使用时
-import Button from '@/components/Button' // ✅ 简洁
+import Button from "@/components/Button"; // ✅ 简洁
 // 而不是
-import Button from '@/components/Button/Button' // ❌ 冗余
+import Button from "@/components/Button/Button"; // ❌ 冗余
 ```
 
-## 8. 如何处理静态资源文件？
+## 7. 如何处理静态资源文件？
 
 静态资源的两种存放方式：
 
@@ -307,23 +304,23 @@ import Button from '@/components/Button/Button' // ❌ 冗余
 ```jsx
 // src/assets/images/logo.png
 // 方式 1：直接导入
-import logo from '@/assets/images/logo.png'
+import logo from "@/assets/images/logo.png";
 
 function App() {
-  return <img src={logo} alt="Logo" />
+  return <img src={logo} alt="Logo" />;
 }
 
 // 方式 2：动态导入
 function App() {
-  const [image, setImage] = useState(null)
+  const [image, setImage] = useState(null);
 
   useEffect(() => {
-    import('@/assets/images/logo.png').then((module) => {
-      setImage(module.default)
-    })
-  }, [])
+    import("@/assets/images/logo.png").then((module) => {
+      setImage(module.default);
+    });
+  }, []);
 
-  return image && <img src={image} alt="Logo" />
+  return image && <img src={image} alt="Logo" />;
 }
 
 // 特点：
@@ -358,19 +355,19 @@ SVG 的两种使用方式：
 ::: code-group
 
 ```jsx [作为图片]
-import logo from '@/assets/icons/logo.svg'
+import logo from "@/assets/icons/logo.svg";
 
 function App() {
-  return <img src={logo} alt="Logo" />
+  return <img src={logo} alt="Logo" />;
 }
 ```
 
 ```jsx [作为组件]
 // 需要 vite-plugin-svgr
-import { ReactComponent as Logo } from '@/assets/icons/logo.svg'
+import { ReactComponent as Logo } from "@/assets/icons/logo.svg";
 
 function App() {
-  return <Logo className="logo-icon" />
+  return <Logo className="logo-icon" />;
 }
 ```
 
@@ -380,29 +377,29 @@ function App() {
 
 ```javascript
 // vite.config.js
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import path from 'path'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import path from "path";
 
 export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
-      '@components': path.resolve(__dirname, './src/components'),
-      '@assets': path.resolve(__dirname, './src/assets'),
-      '@utils': path.resolve(__dirname, './src/utils'),
+      "@": path.resolve(__dirname, "./src"),
+      "@components": path.resolve(__dirname, "./src/components"),
+      "@assets": path.resolve(__dirname, "./src/assets"),
+      "@utils": path.resolve(__dirname, "./src/utils"),
     },
   },
-})
+});
 
 // 使用别名
-import Button from '@components/Button'
-import logo from '@assets/images/logo.png'
-import { formatDate } from '@utils/format'
+import Button from "@components/Button";
+import logo from "@assets/images/logo.png";
+import { formatDate } from "@utils/format";
 ```
 
-## 9. 总结
+## 8. 总结
 
 本笔记详细讲解了 React 项目的目录结构和组织方式，帮助开发者建立良好的项目架构。
 
@@ -411,7 +408,7 @@ import { formatDate } from '@utils/format'
 - 遵循统一的命名规范可以提高团队协作效率
 - 静态资源的合理管理能提升项目性能
 
-## 10. 引用
+## 9. 引用
 
 - [Vite 静态资源处理][1]
 - [React 项目结构最佳实践][2]

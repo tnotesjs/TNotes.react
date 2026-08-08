@@ -3,38 +3,37 @@
 <!-- region:toc -->
 
 - [1. 本节内容](#1-本节内容)
-- [2. 评价](#2-评价)
-- [3. useContext 是什么？](#3-usecontext-是什么)
-  - [3.1. 基本定义](#31-基本定义)
-  - [3.2. Context 解决的问题](#32-context-解决的问题)
-  - [3.3. 基本使用流程](#33-基本使用流程)
-- [4. 如何创建和使用 Context？](#4-如何创建和使用-context)
-  - [4.1. 标准 Context 模式](#41-标准-context-模式)
-  - [4.2. 带初始化逻辑的 Context](#42-带初始化逻辑的-context)
-  - [4.3. 多值 Context 模式](#43-多值-context-模式)
-- [5. 如何优化 Context 性能？](#5-如何优化-context-性能)
-  - [5.1. 问题演示](#51-问题演示)
-  - [5.2. 解决方案 1：使用 useMemo](#52-解决方案-1使用-usememo)
-  - [5.3. 解决方案 2：拆分 Context](#53-解决方案-2拆分-context)
-  - [5.4. 解决方案 3：状态与操作分离](#54-解决方案-3状态与操作分离)
-  - [5.5. 解决方案 4：使用 React.memo](#55-解决方案-4使用-reactmemo)
-- [6. 如何处理多个 Context？](#6-如何处理多个-context)
-  - [6.1. 多个 Provider 嵌套](#61-多个-provider-嵌套)
-  - [6.2. 创建组合 Provider](#62-创建组合-provider)
-  - [6.3. 组合多个 Context 值](#63-组合多个-context-值)
-  - [6.4. 动态 Provider 组合](#64-动态-provider-组合)
-- [7. useContext 有哪些常见错误？](#7-usecontext-有哪些常见错误)
-  - [7.1. 错误 1：在 Provider 外使用](#71-错误-1在-provider-外使用)
-  - [7.2. 错误 2：忘记 useMemo](#72-错误-2忘记-usememo)
-  - [7.3. 错误 3：Context 值过大](#73-错误-3context-值过大)
-  - [7.4. 错误 4：不必要的 Context](#74-错误-4不必要的-context)
-- [8. 如何实现 Context 的最佳实践？](#8-如何实现-context-的最佳实践)
-  - [8.1. 模式 1：类型安全的 Context](#81-模式-1类型安全的-context)
-  - [8.2. 模式 2：带持久化的 Context](#82-模式-2带持久化的-context)
-  - [8.3. 模式 3：带 Reducer 的 Context](#83-模式-3带-reducer-的-context)
-- [9. useContext vs Props vs Redux](#9-usecontext-vs-props-vs-redux)
-  - [9.1. 选择指南](#91-选择指南)
-- [10. 引用](#10-引用)
+- [2. useContext 是什么？](#2-usecontext-是什么)
+  - [2.1. 基本定义](#21-基本定义)
+  - [2.2. Context 解决的问题](#22-context-解决的问题)
+  - [2.3. 基本使用流程](#23-基本使用流程)
+- [3. 如何创建和使用 Context？](#3-如何创建和使用-context)
+  - [3.1. 标准 Context 模式](#31-标准-context-模式)
+  - [3.2. 带初始化逻辑的 Context](#32-带初始化逻辑的-context)
+  - [3.3. 多值 Context 模式](#33-多值-context-模式)
+- [4. 如何优化 Context 性能？](#4-如何优化-context-性能)
+  - [4.1. 问题演示](#41-问题演示)
+  - [4.2. 解决方案 1：使用 useMemo](#42-解决方案-1使用-usememo)
+  - [4.3. 解决方案 2：拆分 Context](#43-解决方案-2拆分-context)
+  - [4.4. 解决方案 3：状态与操作分离](#44-解决方案-3状态与操作分离)
+  - [4.5. 解决方案 4：使用 React.memo](#45-解决方案-4使用-reactmemo)
+- [5. 如何处理多个 Context？](#5-如何处理多个-context)
+  - [5.1. 多个 Provider 嵌套](#51-多个-provider-嵌套)
+  - [5.2. 创建组合 Provider](#52-创建组合-provider)
+  - [5.3. 组合多个 Context 值](#53-组合多个-context-值)
+  - [5.4. 动态 Provider 组合](#54-动态-provider-组合)
+- [6. useContext 有哪些常见错误？](#6-usecontext-有哪些常见错误)
+  - [6.1. 错误 1：在 Provider 外使用](#61-错误-1在-provider-外使用)
+  - [6.2. 错误 2：忘记 useMemo](#62-错误-2忘记-usememo)
+  - [6.3. 错误 3：Context 值过大](#63-错误-3context-值过大)
+  - [6.4. 错误 4：不必要的 Context](#64-错误-4不必要的-context)
+- [7. 如何实现 Context 的最佳实践？](#7-如何实现-context-的最佳实践)
+  - [7.1. 模式 1：类型安全的 Context](#71-模式-1类型安全的-context)
+  - [7.2. 模式 2：带持久化的 Context](#72-模式-2带持久化的-context)
+  - [7.3. 模式 3：带 Reducer 的 Context](#73-模式-3带-reducer-的-context)
+- [8. useContext vs Props vs Redux](#8-usecontext-vs-props-vs-redux)
+  - [8.1. 选择指南](#81-选择指南)
+- [9. 引用](#9-引用)
 
 <!-- endregion:toc -->
 
@@ -47,8 +46,6 @@
 - 常见错误和解决方案
 - Context 的最佳实践模式
 
-## 2. 评价
-
 这篇笔记全面讲解 React Context API 的使用方法和最佳实践，帮助解决跨组件通信问题。
 
 - useContext 是解决 props drilling 问题的官方方案，避免层层传递 props
@@ -56,11 +53,11 @@
 - 必须注意性能优化，Context 值变化会导致所有消费组件重新渲染
 - 合理拆分 Context，避免一个大 Context 包含所有状态
 
-## 3. useContext 是什么？
+## 2. useContext 是什么？
 
 `useContext` 是一个 Hook，用于在函数组件中读取 Context 的值。
 
-### 3.1. 基本定义
+### 2.1. 基本定义
 
 ```typescript
 // 创建 Context
@@ -74,7 +71,7 @@ function MyComponent() {
 }
 ```
 
-### 3.2. Context 解决的问题
+### 2.2. Context 解决的问题
 
 ```typescript
 // ❌ 问题：Props Drilling（属性钻取）
@@ -123,7 +120,7 @@ function UserProfile() {
 }
 ```
 
-### 3.3. 基本使用流程
+### 2.3. 基本使用流程
 
 ```typescript
 // 步骤 1：创建 Context
@@ -171,11 +168,11 @@ function Toolbar() {
 }
 ```
 
-## 4. 如何创建和使用 Context？
+## 3. 如何创建和使用 Context？
 
 创建 Context 并提供自定义 Hook。
 
-### 4.1. 标准 Context 模式
+### 3.1. 标准 Context 模式
 
 ```typescript
 // 定义类型
@@ -237,7 +234,7 @@ function Dashboard() {
 }
 ```
 
-### 4.2. 带初始化逻辑的 Context
+### 3.2. 带初始化逻辑的 Context
 
 ```typescript
 interface AuthContextType {
@@ -321,7 +318,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 }
 ```
 
-### 4.3. 多值 Context 模式
+### 3.3. 多值 Context 模式
 
 ```typescript
 // Context 1：主题
@@ -403,11 +400,11 @@ function Main() {
 }
 ```
 
-## 5. 如何优化 Context 性能？
+## 4. 如何优化 Context 性能？
 
 Context 值变化会导致所有消费组件重新渲染。
 
-### 5.1. 问题演示
+### 4.1. 问题演示
 
 ```typescript
 // ❌ 性能问题：每次渲染都创建新对象
@@ -434,7 +431,7 @@ function ExpensiveComponent() {
 }
 ```
 
-### 5.2. 解决方案 1：使用 useMemo
+### 4.2. 解决方案 1：使用 useMemo
 
 ```typescript
 // ✅ 使用 useMemo 缓存 Context 值
@@ -454,7 +451,7 @@ function GoodProvider({ children }: { children: React.ReactNode }) {
 }
 ```
 
-### 5.3. 解决方案 2：拆分 Context
+### 4.3. 解决方案 2：拆分 Context
 
 ```typescript
 // ❌ 一个大 Context
@@ -485,7 +482,7 @@ function ThemeToggle() {
 }
 ```
 
-### 5.4. 解决方案 3：状态与操作分离
+### 4.4. 解决方案 3：状态与操作分离
 
 ```typescript
 // 状态 Context
@@ -544,7 +541,7 @@ function CountButtons() {
 }
 ```
 
-### 5.5. 解决方案 4：使用 React.memo
+### 4.5. 解决方案 4：使用 React.memo
 
 ```typescript
 interface TodoContextType {
@@ -594,11 +591,11 @@ function TodoList() {
 }
 ```
 
-## 6. 如何处理多个 Context？
+## 5. 如何处理多个 Context？
 
 组合使用多个 Context。
 
-### 6.1. 多个 Provider 嵌套
+### 5.1. 多个 Provider 嵌套
 
 ```typescript
 function App() {
@@ -616,7 +613,7 @@ function App() {
 }
 ```
 
-### 6.2. 创建组合 Provider
+### 5.2. 创建组合 Provider
 
 ```typescript
 interface ProviderProps {
@@ -644,7 +641,7 @@ function App() {
 }
 ```
 
-### 6.3. 组合多个 Context 值
+### 5.3. 组合多个 Context 值
 
 ```typescript
 // 组合多个 Context 的 Hook
@@ -673,7 +670,7 @@ function Dashboard() {
 }
 ```
 
-### 6.4. 动态 Provider 组合
+### 5.4. 动态 Provider 组合
 
 ```typescript
 type ProviderComponent = React.ComponentType<{ children: React.ReactNode }>
@@ -704,11 +701,11 @@ function App() {
 }
 ```
 
-## 7. useContext 有哪些常见错误？
+## 6. useContext 有哪些常见错误？
 
 避免这些常见陷阱。
 
-### 7.1. 错误 1：在 Provider 外使用
+### 6.1. 错误 1：在 Provider 外使用
 
 ```typescript
 // ❌ 错误：在 Provider 外使用
@@ -731,7 +728,7 @@ function App() {
 }
 ```
 
-### 7.2. 错误 2：忘记 useMemo
+### 6.2. 错误 2：忘记 useMemo
 
 ```typescript
 // ❌ 错误：每次渲染创建新对象
@@ -758,29 +755,29 @@ function GoodProvider({ children }: { children: React.ReactNode }) {
 }
 ```
 
-### 7.3. 错误 3：Context 值过大
+### 6.3. 错误 3：Context 值过大
 
 ```typescript
 // ❌ 错误：一个大对象包含所有状态
 interface BadContextType {
-  user: User
-  posts: Post[]
-  comments: Comment[]
-  notifications: Notification[]
-  settings: Settings
+  user: User;
+  posts: Post[];
+  comments: Comment[];
+  notifications: Notification[];
+  settings: Settings;
   // ... 更多状态
 }
 
 // 任何一个属性变化，所有消费组件都会重新渲染
 
 // ✅ 正确：拆分成多个小 Context
-const UserContext = React.createContext<User | null>(null)
-const PostsContext = React.createContext<Post[]>([])
-const CommentsContext = React.createContext<Comment[]>([])
+const UserContext = React.createContext<User | null>(null);
+const PostsContext = React.createContext<Post[]>([]);
+const CommentsContext = React.createContext<Comment[]>([]);
 // ...
 ```
 
-### 7.4. 错误 4：不必要的 Context
+### 6.4. 错误 4：不必要的 Context
 
 ```typescript
 // ❌ 错误：本地状态用 Context
@@ -802,11 +799,11 @@ function GoodParent() {
 }
 ```
 
-## 8. 如何实现 Context 的最佳实践？
+## 7. 如何实现 Context 的最佳实践？
 
 遵循这些模式提高代码质量。
 
-### 8.1. 模式 1：类型安全的 Context
+### 7.1. 模式 1：类型安全的 Context
 
 ```typescript
 import { createContext, useContext, useState, useMemo } from 'react'
@@ -860,7 +857,7 @@ export function SettingsProvider({ children }: { children: React.ReactNode }) {
 }
 ```
 
-### 8.2. 模式 2：带持久化的 Context
+### 7.2. 模式 2：带持久化的 Context
 
 ```typescript
 function useLocalStorage<T>(key: string, initialValue: T) {
@@ -902,7 +899,7 @@ function ThemeProvider({ children }: { children: React.ReactNode }) {
 }
 ```
 
-### 8.3. 模式 3：带 Reducer 的 Context
+### 7.3. 模式 3：带 Reducer 的 Context
 
 ```typescript
 interface State {
@@ -967,7 +964,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
 }
 ```
 
-## 9. useContext vs Props vs Redux
+## 8. useContext vs Props vs Redux
 
 | 特性       | Props    | useContext     | Redux          |
 | ---------- | -------- | -------------- | -------------- |
@@ -981,7 +978,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
 | 时间旅行   | ❌ 无    | ❌ 无          | ✅ 有          |
 | 学习成本   | 低       | 低             | 高             |
 
-### 9.1. 选择指南
+### 8.1. 选择指南
 
 ```typescript
 // 1. 使用 Props：父子组件或层级较浅
@@ -1011,7 +1008,7 @@ const store = configureStore({
 })
 ```
 
-## 10. 引用
+## 9. 引用
 
 - [useContext Hook 官方文档][1]
 - [Context API 深入指南][2]

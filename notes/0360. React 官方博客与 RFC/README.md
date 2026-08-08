@@ -3,15 +3,14 @@
 <!-- region:toc -->
 
 - [1. 本节内容](#1-本节内容)
-- [2. 评价](#2-评价)
-- [3. React 官方博客在哪里？](#3-react-官方博客在哪里)
-- [4. 如何追踪 React 最新动态?](#4-如何追踪-react-最新动态)
-- [5. 什么是 RFC？](#5-什么是-rfc)
-- [6. 如何阅读和参与 RFC？](#6-如何阅读和参与-rfc)
-- [7. 有哪些重要的历史 RFC？](#7-有哪些重要的历史-rfc)
-- [8. 如何提交自己的 RFC？](#8-如何提交自己的-rfc)
-- [9. 还有哪些官方信息渠道？](#9-还有哪些官方信息渠道)
-- [10. 引用](#10-引用)
+- [2. React 官方博客在哪里？](#2-react-官方博客在哪里)
+- [3. 如何追踪 React 最新动态?](#3-如何追踪-react-最新动态)
+- [4. 什么是 RFC？](#4-什么是-rfc)
+- [5. 如何阅读和参与 RFC？](#5-如何阅读和参与-rfc)
+- [6. 有哪些重要的历史 RFC？](#6-有哪些重要的历史-rfc)
+- [7. 如何提交自己的 RFC？](#7-如何提交自己的-rfc)
+- [8. 还有哪些官方信息渠道？](#8-还有哪些官方信息渠道)
+- [9. 引用](#9-引用)
 
 <!-- endregion:toc -->
 
@@ -24,8 +23,6 @@
 - 参与社区讨论的途径
 - 其他官方信息渠道
 
-## 2. 评价
-
 这篇笔记介绍 React 官方信息渠道，帮助开发者追踪最新动态、理解技术决策过程，并参与社区讨论。
 
 - React 官方博客是了解新版本、重大更新的第一手资料来源
@@ -34,7 +31,7 @@
 - 参与 RFC 讨论可以影响 React 未来发展方向
 - 官方资源比第三方文章更准确、更权威
 
-## 3. React 官方博客在哪里？
+## 2. React 官方博客在哪里？
 
 React 官方博客是获取最新动态的核心渠道。
 
@@ -58,33 +55,33 @@ interface BlogCategories {
 // ✅ 必读博客文章
 const mustReadPosts = [
   {
-    title: 'React 18.0 发布公告',
-    date: '2022-03-29',
-    url: 'https://react.dev/blog/2022/03/29/react-v18',
-    highlights: ['并发渲染', 'Suspense', 'useTransition'],
+    title: "React 18.0 发布公告",
+    date: "2022-03-29",
+    url: "https://react.dev/blog/2022/03/29/react-v18",
+    highlights: ["并发渲染", "Suspense", "useTransition"],
   },
   {
-    title: 'Introducing React Hooks',
-    date: '2019-02-06',
-    url: 'https://react.dev/blog/2019/02/06/react-v16.8.0',
-    highlights: ['useState', 'useEffect', '函数组件革命'],
+    title: "Introducing React Hooks",
+    date: "2019-02-06",
+    url: "https://react.dev/blog/2019/02/06/react-v16.8.0",
+    highlights: ["useState", "useEffect", "函数组件革命"],
   },
   {
-    title: 'React v17.0 发布：无新特性',
-    date: '2020-10-20',
-    url: 'https://react.dev/blog/2020/10/20/react-v17',
-    highlights: ['渐进式升级', '事件委托变更', '新 JSX 转换'],
+    title: "React v17.0 发布：无新特性",
+    date: "2020-10-20",
+    url: "https://react.dev/blog/2020/10/20/react-v17",
+    highlights: ["渐进式升级", "事件委托变更", "新 JSX 转换"],
   },
   {
-    title: 'React Labs：我们正在做什么',
-    date: '2023-03-22',
-    url: 'https://react.dev/blog/2023/03/22/react-labs-what-we-have-been-working-on-march-2023',
-    highlights: ['Server Components', 'React Compiler', '未来规划'],
+    title: "React Labs：我们正在做什么",
+    date: "2023-03-22",
+    url: "https://react.dev/blog/2023/03/22/react-labs-what-we-have-been-working-on-march-2023",
+    highlights: ["Server Components", "React Compiler", "未来规划"],
   },
-]
+];
 ```
 
-## 4. 如何追踪 React 最新动态?
+## 3. 如何追踪 React 最新动态?
 
 多渠道追踪确保不错过重要更新。
 
@@ -92,32 +89,32 @@ const mustReadPosts = [
 // 官方信息源
 const officialSources = {
   blog: {
-    url: 'https://react.dev/blog',
-    rss: 'https://react.dev/blog/rss.xml',
-    frequency: '不定期，重大更新时发布',
+    url: "https://react.dev/blog",
+    rss: "https://react.dev/blog/rss.xml",
+    frequency: "不定期，重大更新时发布",
   },
 
   twitter: {
-    reactjs: '@reactjs', // React 官方账号
-    reactnative: '@reactnative', // React Native 官方
-    danAbramov: '@dan_abramov', // React 核心团队成员
-    sophiebits: '@sophiebits', // React 核心团队成员
-    sebmarkbage: '@sebmarkbage', // React 核心团队成员
+    reactjs: "@reactjs", // React 官方账号
+    reactnative: "@reactnative", // React Native 官方
+    danAbramov: "@dan_abramov", // React 核心团队成员
+    sophiebits: "@sophiebits", // React 核心团队成员
+    sebmarkbage: "@sebmarkbage", // React 核心团队成员
   },
 
   github: {
-    repo: 'https://github.com/facebook/react',
-    releases: 'https://github.com/facebook/react/releases',
-    discussions: 'https://github.com/facebook/react/discussions',
-    changelog: 'https://github.com/facebook/react/blob/main/CHANGELOG.md',
+    repo: "https://github.com/facebook/react",
+    releases: "https://github.com/facebook/react/releases",
+    discussions: "https://github.com/facebook/react/discussions",
+    changelog: "https://github.com/facebook/react/blob/main/CHANGELOG.md",
   },
 
   newsletter: {
-    name: 'React Newsletter',
-    url: 'https://react.newsletter.com',
-    description: '每周精选 React 相关文章',
+    name: "React Newsletter",
+    url: "https://react.newsletter.com",
+    description: "每周精选 React 相关文章",
   },
-}
+};
 ```
 
 订阅方式：
@@ -127,31 +124,31 @@ const officialSources = {
 const subscriptionMethods = {
   // 1. RSS 订阅（最直接）
   rss: {
-    tool: 'Feedly, Inoreader',
-    url: 'https://react.dev/blog/rss.xml',
+    tool: "Feedly, Inoreader",
+    url: "https://react.dev/blog/rss.xml",
   },
 
   // 2. GitHub Watch
   github: {
-    action: 'Watch → Custom → Releases',
-    benefit: '第一时间收到版本发布通知',
+    action: "Watch → Custom → Releases",
+    benefit: "第一时间收到版本发布通知",
   },
 
   // 3. Twitter 关注
   twitter: {
-    accounts: ['@reactjs', '@dan_abramov'],
-    tip: '开启通知，不错过重要推文',
+    accounts: ["@reactjs", "@dan_abramov"],
+    tip: "开启通知，不错过重要推文",
   },
 
   // 4. Discord 社区
   discord: {
-    url: 'https://discord.gg/react',
-    channels: ['#announcements', '#react-core'],
+    url: "https://discord.gg/react",
+    channels: ["#announcements", "#react-core"],
   },
-}
+};
 ```
 
-## 5. 什么是 RFC？
+## 4. 什么是 RFC？
 
 RFC（Request for Comments）是 React 团队与社区讨论新特性的公开流程。
 
@@ -204,38 +201,38 @@ const rfcFilters = {
 }
 ```
 
-## 6. 如何阅读和参与 RFC？
+## 5. 如何阅读和参与 RFC？
 
 参与 RFC 讨论可以影响 React 未来发展。
 
 ```js
 // 阅读 RFC 的步骤
 const readingSteps = [
-  '1. 浏览 Summary，快速了解提案目标',
-  '2. 阅读 Motivation，理解为什么需要',
-  '3. 查看 Detailed Design，了解技术细节',
-  '4. 思考 Drawbacks，评估潜在问题',
-  '5. 查看评论区，了解社区观点',
-]
+  "1. 浏览 Summary，快速了解提案目标",
+  "2. 阅读 Motivation，理解为什么需要",
+  "3. 查看 Detailed Design，了解技术细节",
+  "4. 思考 Drawbacks，评估潜在问题",
+  "5. 查看评论区，了解社区观点",
+];
 
 // ✅ 有效参与讨论
 const participationTips = {
   // 好的评论示例
   good: [
-    '提出具体的使用场景',
-    '指出设计中的潜在问题',
-    '提供替代方案',
-    '分享实践经验',
+    "提出具体的使用场景",
+    "指出设计中的潜在问题",
+    "提供替代方案",
+    "分享实践经验",
   ],
 
   // ❌ 避免的行为
   avoid: [
-    '简单的 +1 评论（用 👍 表情代替）',
-    '偏离主题的讨论',
-    '人身攻击或情绪化表达',
-    '重复已有的观点',
+    "简单的 +1 评论（用 👍 表情代替）",
+    "偏离主题的讨论",
+    "人身攻击或情绪化表达",
+    "重复已有的观点",
   ],
-}
+};
 ```
 
 实际参与示例：
@@ -266,15 +263,15 @@ const { data, loading, error } = use(fetchData())
 \`\`\`
 
 但我担心错误处理的灵活性会降低。建议考虑添加 retry 机制。
-`
+`;
 
 // ❌ 不好的评论
 const badComment = `
 +1 这个特性太棒了！赶紧实现吧！
-`
+`;
 ```
 
-## 7. 有哪些重要的历史 RFC？
+## 6. 有哪些重要的历史 RFC？
 
 了解历史 RFC 可以理解 React 的演进思路。
 
@@ -282,50 +279,50 @@ const badComment = `
 // 重要的已实现 RFC
 const landmarkRFCs = [
   {
-    title: 'Hooks',
+    title: "Hooks",
     number: 68,
-    url: 'https://github.com/reactjs/rfcs/blob/main/text/0068-react-hooks.md',
+    url: "https://github.com/reactjs/rfcs/blob/main/text/0068-react-hooks.md",
     year: 2018,
-    impact: '彻底改变了 React 组件的编写方式',
-    status: 'Implemented in React 16.8',
+    impact: "彻底改变了 React 组件的编写方式",
+    status: "Implemented in React 16.8",
   },
 
   {
-    title: 'Concurrent Mode',
+    title: "Concurrent Mode",
     number: 94,
-    url: 'https://github.com/reactjs/rfcs/blob/main/text/0094-concurrent-mode.md',
+    url: "https://github.com/reactjs/rfcs/blob/main/text/0094-concurrent-mode.md",
     year: 2019,
-    impact: '引入可中断渲染、优先级调度',
-    status: 'Implemented in React 18',
+    impact: "引入可中断渲染、优先级调度",
+    status: "Implemented in React 18",
   },
 
   {
-    title: 'Server Components',
+    title: "Server Components",
     number: 188,
-    url: 'https://github.com/reactjs/rfcs/blob/main/text/0188-server-components.md',
+    url: "https://github.com/reactjs/rfcs/blob/main/text/0188-server-components.md",
     year: 2020,
-    impact: '服务端组件，零客户端 JS',
-    status: 'Implemented in Next.js 13+',
+    impact: "服务端组件，零客户端 JS",
+    status: "Implemented in Next.js 13+",
   },
 
   {
-    title: 'React Context 改进',
+    title: "React Context 改进",
     number: 2,
-    url: 'https://github.com/reactjs/rfcs/blob/main/text/0002-new-version-of-context.md',
+    url: "https://github.com/reactjs/rfcs/blob/main/text/0002-new-version-of-context.md",
     year: 2017,
-    impact: '新的 Context API，替代 Legacy Context',
-    status: 'Implemented in React 16.3',
+    impact: "新的 Context API，替代 Legacy Context",
+    status: "Implemented in React 16.3",
   },
 
   {
-    title: 'Suspense for Data Fetching',
+    title: "Suspense for Data Fetching",
     number: 213,
-    url: 'https://github.com/reactjs/rfcs/pull/213',
+    url: "https://github.com/reactjs/rfcs/pull/213",
     year: 2021,
-    impact: '声明式数据加载',
-    status: 'Partially implemented',
+    impact: "声明式数据加载",
+    status: "Partially implemented",
   },
-]
+];
 ```
 
 RFC 演进时间线：
@@ -333,18 +330,18 @@ RFC 演进时间线：
 ```js
 // React 重大特性的 RFC 时间线
 const rfcTimeline = {
-  2017: ['新 Context API'],
-  2018: ['Hooks', 'Lazy 组件'],
-  2019: ['Concurrent Mode', 'Suspense'],
-  2020: ['Server Components', 'JSX Transform'],
-  2021: ['useTransition', 'useDeferredValue'],
-  2022: ['useId', 'useSyncExternalStore'],
-  2023: ['Server Actions', 'React Compiler'],
-  2024: ['React 19 新特性'],
-}
+  2017: ["新 Context API"],
+  2018: ["Hooks", "Lazy 组件"],
+  2019: ["Concurrent Mode", "Suspense"],
+  2020: ["Server Components", "JSX Transform"],
+  2021: ["useTransition", "useDeferredValue"],
+  2022: ["useId", "useSyncExternalStore"],
+  2023: ["Server Actions", "React Compiler"],
+  2024: ["React 19 新特性"],
+};
 ```
 
-## 8. 如何提交自己的 RFC？
+## 7. 如何提交自己的 RFC？
 
 任何人都可以提交 RFC，但需要遵循流程。
 
@@ -355,24 +352,24 @@ const rfcTimeline = {
 ```js
 // ✅ 成功 RFC 的特征
 const successfulRFCTraits = {
-  clearProblem: '清晰定义要解决的问题',
-  realWorldUseCase: '有实际的使用场景',
-  thoroughDesign: '设计考虑周全',
-  communitySupport: '获得社区支持',
-  teamAlignment: '与 React 团队理念一致',
+  clearProblem: "清晰定义要解决的问题",
+  realWorldUseCase: "有实际的使用场景",
+  thoroughDesign: "设计考虑周全",
+  communitySupport: "获得社区支持",
+  teamAlignment: "与 React 团队理念一致",
 
   // ⚠️ 常见被拒原因
   rejectionReasons: [
-    '问题可以用现有 API 解决',
-    '与 React 设计哲学冲突',
-    '实现成本过高',
-    '缺乏充分的使用场景',
-    '时机不成熟',
+    "问题可以用现有 API 解决",
+    "与 React 设计哲学冲突",
+    "实现成本过高",
+    "缺乏充分的使用场景",
+    "时机不成熟",
   ],
-}
+};
 ```
 
-## 9. 还有哪些官方信息渠道？
+## 8. 还有哪些官方信息渠道？
 
 除了博客和 RFC，还有其他重要渠道。
 
@@ -381,51 +378,51 @@ const successfulRFCTraits = {
 const otherChannels = {
   // 1. React 官方文档
   docs: {
-    url: 'https://react.dev',
+    url: "https://react.dev",
     sections: {
-      learn: '学习教程',
-      reference: 'API 参考',
-      blog: '博客',
+      learn: "学习教程",
+      reference: "API 参考",
+      blog: "博客",
     },
   },
 
   // 2. GitHub Discussions
   discussions: {
-    url: 'https://github.com/facebook/react/discussions',
+    url: "https://github.com/facebook/react/discussions",
     categories: [
-      'Q&A：问答',
-      'Show and Tell：分享项目',
-      'Ideas：功能建议',
-      'Polls：投票调查',
+      "Q&A：问答",
+      "Show and Tell：分享项目",
+      "Ideas：功能建议",
+      "Polls：投票调查",
     ],
   },
 
   // 3. Discord 社区
   discord: {
-    url: 'https://discord.gg/react',
+    url: "https://discord.gg/react",
     channels: [
-      '#announcements：公告',
-      '#react-core：核心讨论',
-      '#help：求助',
-      '#showcase：作品展示',
+      "#announcements：公告",
+      "#react-core：核心讨论",
+      "#help：求助",
+      "#showcase：作品展示",
     ],
   },
 
   // 4. React Conf
   conference: {
-    name: 'React Conf',
-    frequency: '每年或隔年举办',
-    videos: 'https://www.youtube.com/c/ReactConf',
-    content: '新特性发布、技术分享、工作坊',
+    name: "React Conf",
+    frequency: "每年或隔年举办",
+    videos: "https://www.youtube.com/c/ReactConf",
+    content: "新特性发布、技术分享、工作坊",
   },
 
   // 5. React Native 相关
   reactNative: {
-    blog: 'https://reactnative.dev/blog',
-    twitter: '@reactnative',
-    discussions: 'https://github.com/facebook/react-native/discussions',
+    blog: "https://reactnative.dev/blog",
+    twitter: "@reactnative",
+    discussions: "https://github.com/facebook/react-native/discussions",
   },
-}
+};
 ```
 
 信息优先级：
@@ -434,24 +431,24 @@ const otherChannels = {
 // 按重要性排序的信息源
 const informationPriority = [
   {
-    level: 'Critical 🔴',
-    sources: ['官方博客版本发布', 'GitHub Releases'],
-    action: '必须阅读并评估影响',
+    level: "Critical 🔴",
+    sources: ["官方博客版本发布", "GitHub Releases"],
+    action: "必须阅读并评估影响",
   },
   {
-    level: 'Important 🟡',
-    sources: ['RFC 提案', 'React Labs 更新', 'Breaking Changes'],
-    action: '仔细阅读，关注项目相关内容',
+    level: "Important 🟡",
+    sources: ["RFC 提案", "React Labs 更新", "Breaking Changes"],
+    action: "仔细阅读，关注项目相关内容",
   },
   {
-    level: 'Nice to Know 🟢',
-    sources: ['技术博客', 'Discussions', 'Discord 讨论'],
-    action: '有时间时浏览，拓展视野',
+    level: "Nice to Know 🟢",
+    sources: ["技术博客", "Discussions", "Discord 讨论"],
+    action: "有时间时浏览，拓展视野",
   },
-]
+];
 ```
 
-## 10. 引用
+## 9. 引用
 
 - [React 官方博客][1]
 - [React RFC 仓库][2]

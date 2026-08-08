@@ -3,13 +3,12 @@
 <!-- region:toc -->
 
 - [1. 本节内容](#1-本节内容)
-- [2. 评价](#2-评价)
-- [3. JSX 是什么？](#3-jsx-是什么)
-- [4. 为什么 JSX 被称为语法糖？](#4-为什么-jsx-被称为语法糖)
-- [5. JSX 的编译原理是什么？](#5-jsx-的编译原理是什么)
-- [6. React 17 之前和之后的 JSX 编译有什么区别？](#6-react-17-之前和之后的-jsx-编译有什么区别)
-- [7. 为什么不直接写 JavaScript 而要用 JSX？](#7-为什么不直接写-javascript-而要用-jsx)
-- [8. 引用](#8-引用)
+- [2. JSX 是什么？](#2-jsx-是什么)
+- [3. 为什么 JSX 被称为语法糖？](#3-为什么-jsx-被称为语法糖)
+- [4. JSX 的编译原理是什么？](#4-jsx-的编译原理是什么)
+- [5. React 17 之前和之后的 JSX 编译有什么区别？](#5-react-17-之前和之后的-jsx-编译有什么区别)
+- [6. 为什么不直接写 JavaScript 而要用 JSX？](#6-为什么不直接写-javascript-而要用-jsx)
+- [7. 引用](#7-引用)
 
 <!-- endregion:toc -->
 
@@ -21,8 +20,6 @@
 - 不同 React 版本的 JSX 转换差异
 - JSX 的优势与必要性
 
-## 2. 评价
-
 本笔记深入讲解了 JSX 的本质、编译原理和版本演进，帮助理解 React 开发的基础机制。
 
 - JSX 不是模板语言，而是 JavaScript 的语法扩展
@@ -30,7 +27,7 @@
 - React 17 的新 JSX 转换简化了代码，无需手动导入 React
 - 掌握 JSX 背后的机制能帮助排查问题和优化性能
 
-## 3. JSX 是什么？
+## 2. JSX 是什么？
 
 JSX 的定义：
 
@@ -59,18 +56,18 @@ function Welcome({ name }) {
       <h1>Hello, {name}!</h1>
       <p>Welcome to React</p>
     </div>
-  )
+  );
 }
 ```
 
 ```javascript [等价的 JavaScript]
 function Welcome({ name }) {
   return React.createElement(
-    'div',
-    { className: 'greeting' },
-    React.createElement('h1', null, 'Hello, ', name, '!'),
-    React.createElement('p', null, 'Welcome to React'),
-  )
+    "div",
+    { className: "greeting" },
+    React.createElement("h1", null, "Hello, ", name, "!"),
+    React.createElement("p", null, "Welcome to React"),
+  );
 }
 ```
 
@@ -83,7 +80,7 @@ JSX 不是：
 - ❌ 不是 HTML（虽然看起来像）
 - ❌ 不是必须的（可以直接用 `React.createElement`）
 
-## 4. 为什么 JSX 被称为语法糖？
+## 3. 为什么 JSX 被称为语法糖？
 
 语法糖的概念：
 
@@ -111,19 +108,19 @@ const element = (
   <button onClick={handleClick} className="btn">
     Click me
   </button>
-)
+);
 ```
 
 ```javascript [等价代码（无语法糖）]
 // 冗长、不直观
 const element = React.createElement(
-  'button',
+  "button",
   {
     onClick: handleClick,
-    className: 'btn',
+    className: "btn",
   },
-  'Click me',
-)
+  "Click me",
+);
 ```
 
 :::
@@ -142,22 +139,22 @@ const app = (
     </main>
     <Footer />
   </div>
-)
+);
 ```
 
 ```javascript [无 JSX]
 const app = React.createElement(
-  'div',
+  "div",
   null,
   React.createElement(Header, null),
   React.createElement(
-    'main',
+    "main",
     null,
-    React.createElement(Article, { title: 'Hello' }),
+    React.createElement(Article, { title: "Hello" }),
     React.createElement(Sidebar, null),
   ),
   React.createElement(Footer, null),
-)
+);
 ```
 
 :::
@@ -170,7 +167,7 @@ const app = React.createElement(
 - 更接近 UI 的视觉结构
 - 更容易发现错误
 
-## 5. JSX 的编译原理是什么？
+## 4. JSX 的编译原理是什么？
 
 编译流程：
 
@@ -194,7 +191,7 @@ Babel 的作用：
 
 ```jsx
 // 1. 原始 JSX
-const element = <h1 className="title">Hello</h1>
+const element = <h1 className="title">Hello</h1>;
 
 // 2. Babel 解析成 AST（抽象语法树）
 // {
@@ -214,7 +211,7 @@ const element = <h1 className="title">Hello</h1>
 // }
 
 // 3. 转换成 JavaScript 调用
-const element = React.createElement('h1', { className: 'title' }, 'Hello')
+const element = React.createElement("h1", { className: "title" }, "Hello");
 
 // 4. 执行后生成 React Element（普通对象）
 // {
@@ -235,7 +232,7 @@ React.createElement(
   type, // 标签名或组件
   props, // 属性对象
   ...children, // 子元素
-)
+);
 ```
 
 不同类型的编译：
@@ -243,32 +240,32 @@ React.createElement(
 ::: code-group
 
 ```jsx [HTML 标签]
-;<div id="app">Content</div>
+<div id="app">Content</div>;
 
 // 编译为
-React.createElement('div', { id: 'app' }, 'Content')
+React.createElement("div", { id: "app" }, "Content");
 ```
 
 ```jsx [组件]
-;<MyComponent prop="value" />
+<MyComponent prop="value" />;
 
 // 编译为
-React.createElement(MyComponent, { prop: 'value' })
+React.createElement(MyComponent, { prop: "value" });
 ```
 
 ```jsx [Fragment]
-;<>
+<>
   <div>A</div>
   <div>B</div>
-</>
+</>;
 
 // 编译为
 React.createElement(
   React.Fragment,
   null,
-  React.createElement('div', null, 'A'),
-  React.createElement('div', null, 'B'),
-)
+  React.createElement("div", null, "A"),
+  React.createElement("div", null, "B"),
+);
 ```
 
 :::
@@ -277,22 +274,22 @@ React.createElement(
 
 ```javascript
 // vite.config.js
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [
     react({
       // 使用新的 JSX 转换
-      jsxRuntime: 'automatic', // React 17+
+      jsxRuntime: "automatic", // React 17+
       // 或使用经典转换
       // jsxRuntime: 'classic' // React 16
     }),
   ],
-})
+});
 ```
 
-## 6. React 17 之前和之后的 JSX 编译有什么区别？
+## 5. React 17 之前和之后的 JSX 编译有什么区别？
 
 版本对比：
 
@@ -308,17 +305,17 @@ React 16 的经典转换：
 
 ```jsx
 // ❌ React 16 - 必须导入 React
-import React from 'react' // 必须！
+import React from "react"; // 必须！
 
 function App() {
-  return <div>Hello</div>
+  return <div>Hello</div>;
 }
 
 // 编译为
-import React from 'react'
+import React from "react";
 
 function App() {
-  return React.createElement('div', null, 'Hello')
+  return React.createElement("div", null, "Hello");
 }
 ```
 
@@ -327,14 +324,14 @@ React 17+ 的自动转换：
 ```jsx
 // ✅ React 17+ - 无需导入 React
 function App() {
-  return <div>Hello</div>
+  return <div>Hello</div>;
 }
 
 // 编译为（自动注入）
-import { jsx as _jsx } from 'react/jsx-runtime'
+import { jsx as _jsx } from "react/jsx-runtime";
 
 function App() {
-  return _jsx('div', { children: 'Hello' })
+  return _jsx("div", { children: "Hello" });
 }
 ```
 
@@ -343,10 +340,10 @@ function App() {
 ::: code-group
 
 ```jsx [React 16]
-import React from 'react' // 必须手动导入
+import React from "react"; // 必须手动导入
 
 function Button({ onClick, children }) {
-  return <button onClick={onClick}>{children}</button>
+  return <button onClick={onClick}>{children}</button>;
 }
 ```
 
@@ -354,7 +351,7 @@ function Button({ onClick, children }) {
 // 无需导入 React
 
 function Button({ onClick, children }) {
-  return <button onClick={onClick}>{children}</button>
+  return <button onClick={onClick}>{children}</button>;
 }
 ```
 
@@ -388,7 +385,7 @@ npm install react@^17.0.0 react-dom@^17.0.0
 # vite.config.js 中 react 插件会自动处理
 ```
 
-## 7. 为什么不直接写 JavaScript 而要用 JSX？
+## 6. 为什么不直接写 JavaScript 而要用 JSX？
 
 直接使用 `React.createElement` 的问题：
 
@@ -396,28 +393,28 @@ npm install react@^17.0.0 react-dom@^17.0.0
 // ❌ 冗长、难以阅读
 function TodoList({ todos }) {
   return React.createElement(
-    'ul',
-    { className: 'todo-list' },
+    "ul",
+    { className: "todo-list" },
     todos.map((todo) =>
       React.createElement(
-        'li',
-        { key: todo.id, className: todo.done ? 'done' : '' },
-        React.createElement('input', {
-          type: 'checkbox',
+        "li",
+        { key: todo.id, className: todo.done ? "done" : "" },
+        React.createElement("input", {
+          type: "checkbox",
           checked: todo.done,
           onChange: () => handleToggle(todo.id),
         }),
-        React.createElement('span', null, todo.text),
+        React.createElement("span", null, todo.text),
         React.createElement(
-          'button',
+          "button",
           {
             onClick: () => handleDelete(todo.id),
           },
-          'Delete',
+          "Delete",
         ),
       ),
     ),
-  )
+  );
 }
 ```
 
@@ -429,7 +426,7 @@ function TodoList({ todos }) {
   return (
     <ul className="todo-list">
       {todos.map((todo) => (
-        <li key={todo.id} className={todo.done ? 'done' : ''}>
+        <li key={todo.id} className={todo.done ? "done" : ""}>
           <input
             type="checkbox"
             checked={todo.done}
@@ -440,7 +437,7 @@ function TodoList({ todos }) {
         </li>
       ))}
     </ul>
-  )
+  );
 }
 ```
 
@@ -461,15 +458,15 @@ JSX 的优势总结：
 // 某些特殊场景可能不用 JSX
 // 1. 动态创建大量相同元素
 const items = Array.from({ length: 1000 }, (_, i) =>
-  React.createElement('div', { key: i }, `Item ${i}`),
-)
+  React.createElement("div", { key: i }, `Item ${i}`),
+);
 
 // 2. 条件非常复杂时
 function ComplexRender() {
   if (condition1) {
-    return createElement(ComponentA, props1)
+    return createElement(ComponentA, props1);
   } else if (condition2) {
-    return createElement(ComponentB, props2)
+    return createElement(ComponentB, props2);
   }
   // ...更多条件
 }
@@ -477,7 +474,7 @@ function ComplexRender() {
 // 但大多数情况下，JSX 仍然是更好的选择
 ```
 
-## 8. 引用
+## 7. 引用
 
 - [React 官方文档 - JSX 简介][1]
 - [Babel - JSX 转换][2]

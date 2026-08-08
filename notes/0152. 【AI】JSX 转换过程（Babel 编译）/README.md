@@ -3,13 +3,12 @@
 <!-- region:toc -->
 
 - [1. 本节内容](#1-本节内容)
-- [2. 评价](#2-评价)
-- [3. Babel 是如何转换 JSX 的？](#3-babel-是如何转换-jsx-的)
-- [4. Babel 的 AST 抽象语法树是什么？](#4-babel-的-ast-抽象语法树是什么)
-- [5. 如何配置 Babel 来转换 JSX？](#5-如何配置-babel-来转换-jsx)
-- [6. 如何在线查看 JSX 的编译结果？](#6-如何在线查看-jsx-的编译结果)
-- [7. 不同构建工具如何处理 JSX？](#7-不同构建工具如何处理-jsx)
-- [8. 引用](#8-引用)
+- [2. Babel 是如何转换 JSX 的？](#2-babel-是如何转换-jsx-的)
+- [3. Babel 的 AST 抽象语法树是什么？](#3-babel-的-ast-抽象语法树是什么)
+- [4. 如何配置 Babel 来转换 JSX？](#4-如何配置-babel-来转换-jsx)
+- [5. 如何在线查看 JSX 的编译结果？](#5-如何在线查看-jsx-的编译结果)
+- [6. 不同构建工具如何处理 JSX？](#6-不同构建工具如何处理-jsx)
+- [7. 引用](#7-引用)
 
 <!-- endregion:toc -->
 
@@ -21,8 +20,6 @@
 - 在线编译工具
 - 不同构建工具的 JSX 处理
 
-## 2. 评价
-
 本笔记详细讲解了 Babel 转换 JSX 的底层机制，帮助理解构建工具的工作原理。
 
 - 理解 Babel 转换过程有助于排查编译问题
@@ -30,7 +27,7 @@
 - 不同构建工具都依赖类似的转换机制
 - 在线工具可以快速验证 JSX 的编译结果
 
-## 3. Babel 是如何转换 JSX 的？
+## 2. Babel 是如何转换 JSX 的？
 
 Babel 转换的三个阶段：
 
@@ -55,7 +52,7 @@ graph LR
 
 ```jsx
 // 1️⃣ 原始 JSX 代码
-const element = <div className="box">Hello</div>
+const element = <div className="box">Hello</div>;
 
 // 2️⃣ 解析阶段 - 生成 AST
 // {
@@ -110,7 +107,7 @@ const element = <div className="box">Hello</div>
 // }
 
 // 4️⃣ 生成阶段 - 输出代码
-const element = React.createElement('div', { className: 'box' }, 'Hello')
+const element = React.createElement("div", { className: "box" }, "Hello");
 ```
 
 Babel 插件的作用：
@@ -120,38 +117,38 @@ Babel 插件的作用：
 // @babel/plugin-transform-react-jsx
 
 module.exports = function (babel) {
-  const { types: t } = babel
+  const { types: t } = babel;
 
   return {
     visitor: {
       // 访问 JSX 元素节点
       JSXElement(path) {
         // 将 JSX 转换为 createElement 调用
-        const openingElement = path.node.openingElement
-        const tagName = openingElement.name.name
-        const attributes = openingElement.attributes
-        const children = path.node.children
+        const openingElement = path.node.openingElement;
+        const tagName = openingElement.name.name;
+        const attributes = openingElement.attributes;
+        const children = path.node.children;
 
         // 构建 React.createElement 调用
         path.replaceWith(
           t.callExpression(
             t.memberExpression(
-              t.identifier('React'),
-              t.identifier('createElement'),
+              t.identifier("React"),
+              t.identifier("createElement"),
             ),
             [
               t.stringLiteral(tagName),
               // ... 处理 props 和 children
             ],
           ),
-        )
+        );
       },
     },
-  }
-}
+  };
+};
 ```
 
-## 4. Babel 的 AST 抽象语法树是什么？
+## 3. Babel 的 AST 抽象语法树是什么？
 
 AST 的概念：
 
@@ -235,30 +232,30 @@ AST 结构示例：
 
 ```javascript
 // 使用 @babel/parser 和 @babel/traverse
-const parser = require('@babel/parser')
-const traverse = require('@babel/traverse').default
+const parser = require("@babel/parser");
+const traverse = require("@babel/traverse").default;
 
-const code = '<div className="box">Hello</div>'
+const code = '<div className="box">Hello</div>';
 
 // 1. 解析成 AST
 const ast = parser.parse(code, {
-  sourceType: 'module',
-  plugins: ['jsx'],
-})
+  sourceType: "module",
+  plugins: ["jsx"],
+});
 
 // 2. 遍历 AST
 traverse(ast, {
   JSXElement(path) {
-    console.log('找到 JSX 元素')
-    console.log('标签名', path.node.openingElement.name.name)
+    console.log("找到 JSX 元素");
+    console.log("标签名", path.node.openingElement.name.name);
   },
   JSXAttribute(path) {
-    console.log('找到属性', path.node.name.name)
+    console.log("找到属性", path.node.name.name);
   },
-})
+});
 ```
 
-## 5. 如何配置 Babel 来转换 JSX？
+## 4. 如何配置 Babel 来转换 JSX？
 
 基础配置：
 
@@ -283,16 +280,16 @@ traverse(ast, {
 module.exports = {
   presets: [
     [
-      '@babel/preset-react',
+      "@babel/preset-react",
       {
         // JSX 转换模式
-        runtime: 'automatic', // 或 'classic'
+        runtime: "automatic", // 或 'classic'
 
         // 开发模式
-        development: process.env.NODE_ENV === 'development',
+        development: process.env.NODE_ENV === "development",
 
         // 导入来源
-        importSource: 'react', // 默认值
+        importSource: "react", // 默认值
 
         // 是否抛出错误
         throwIfNamespace: true,
@@ -305,7 +302,7 @@ module.exports = {
       },
     ],
   ],
-}
+};
 ```
 
 不同运行时的配置：
@@ -347,24 +344,24 @@ React.createElement('div', null, 'Hello')
 ```javascript
 // babel.config.js
 module.exports = function (api) {
-  const isDevelopment = api.env('development')
+  const isDevelopment = api.env("development");
 
   return {
     presets: [
       [
-        '@babel/preset-react',
+        "@babel/preset-react",
         {
-          runtime: 'automatic',
+          runtime: "automatic",
           development: isDevelopment,
           // 开发时添加调试信息
           importSource: isDevelopment
-            ? '@welldone-software/why-did-you-render'
-            : 'react',
+            ? "@welldone-software/why-did-you-render"
+            : "react",
         },
       ],
     ],
-  }
-}
+  };
+};
 ```
 
 与 TypeScript 结合：
@@ -390,29 +387,29 @@ module.exports = function (api) {
 {
   presets: [
     [
-      '@babel/preset-react',
+      "@babel/preset-react",
       {
-        pragma: 'h', // 使用 h 替代 React.createElement
-        pragmaFrag: 'Fragment',
+        pragma: "h", // 使用 h 替代 React.createElement
+        pragmaFrag: "Fragment",
       },
     ],
-  ]
+  ];
 }
 
 // 或在代码中使用注释
 /** @jsx h */
 /** @jsxFrag Fragment */
-import { h, Fragment } from 'preact'
+import { h, Fragment } from "preact";
 
 function App() {
-  return <div>Hello</div>
+  return <div>Hello</div>;
 }
 
 // 编译为
-h('div', null, 'Hello')
+h("div", null, "Hello");
 ```
 
-## 6. 如何在线查看 JSX 的编译结果？
+## 5. 如何在线查看 JSX 的编译结果？
 
 常用在线工具：
 
@@ -437,35 +434,35 @@ Babel REPL 使用方法：
 ```jsx
 // 在 Babel REPL 左侧输入
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div className="app">
       <h1>Count: {count}</h1>
       <button onClick={() => setCount(count + 1)}>Increment</button>
     </div>
-  )
+  );
 }
 
 // 右侧自动显示编译结果
-import { jsx as _jsx } from 'react/jsx-runtime'
-import { jsxs as _jsxs } from 'react/jsx-runtime'
+import { jsx as _jsx } from "react/jsx-runtime";
+import { jsxs as _jsxs } from "react/jsx-runtime";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
-  return _jsxs('div', {
-    className: 'app',
+  return _jsxs("div", {
+    className: "app",
     children: [
-      _jsx('h1', {
-        children: ['Count: ', count],
+      _jsx("h1", {
+        children: ["Count: ", count],
       }),
-      _jsx('button', {
+      _jsx("button", {
         onClick: () => setCount(count + 1),
-        children: 'Increment',
+        children: "Increment",
       }),
     ],
-  })
+  });
 }
 ```
 
@@ -496,7 +493,7 @@ npx babel src --out-dir build
 npx babel src/App.jsx
 ```
 
-## 7. 不同构建工具如何处理 JSX？
+## 6. 不同构建工具如何处理 JSX？
 
 主流构建工具对比：
 
@@ -519,13 +516,13 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
             presets: [
               [
-                '@babel/preset-react',
+                "@babel/preset-react",
                 {
-                  runtime: 'automatic',
+                  runtime: "automatic",
                 },
               ],
             ],
@@ -535,23 +532,23 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: [".js", ".jsx"],
   },
-}
+};
 ```
 
 Vite 配置：
 
 ```javascript
 // vite.config.js
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [
     react({
       // 使用 esbuild 转换 JSX
-      jsxRuntime: 'automatic',
+      jsxRuntime: "automatic",
 
       // 或使用 Babel
       babel: {
@@ -563,10 +560,10 @@ export default defineConfig({
   ],
   esbuild: {
     // esbuild 配置
-    jsxFactory: 'React.createElement',
-    jsxFragment: 'React.Fragment',
+    jsxFactory: "React.createElement",
+    jsxFragment: "React.Fragment",
   },
-})
+});
 ```
 
 Next.js 配置：
@@ -581,7 +578,7 @@ module.exports = {
 
     // 移除 console
     removeConsole: {
-      exclude: ['error', 'warn'],
+      exclude: ["error", "warn"],
     },
   },
 
@@ -589,16 +586,16 @@ module.exports = {
   babel: {
     presets: [
       [
-        'next/babel',
+        "next/babel",
         {
-          'preset-react': {
-            runtime: 'automatic',
+          "preset-react": {
+            runtime: "automatic",
           },
         },
       ],
     ],
   },
-}
+};
 ```
 
 不同工具的性能对比：
@@ -624,7 +621,7 @@ CRA               ⚡️⚡️⚡️       ~400ms
 - 遗留项目维持 Webpack（兼容性好）
 - 快速原型使用 CRA（配置简单）
 
-## 8. 引用
+## 7. 引用
 
 - [Babel 官方文档][1]
 - [Babel REPL 在线工具][2]

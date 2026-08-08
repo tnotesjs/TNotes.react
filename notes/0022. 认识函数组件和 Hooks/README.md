@@ -3,9 +3,8 @@
 <!-- region:toc -->
 
 - [1. 本节内容](#1-本节内容)
-- [2. 评价](#2-评价)
-- [3. “函数组件”是什么？](#3-函数组件是什么)
-- [4. “Hooks”是什么？](#4-hooks是什么)
+- [2. “函数组件”是什么？](#2-函数组件是什么)
+- [3. “Hooks”是什么？](#3-hooks是什么)
 
 <!-- endregion:toc -->
 
@@ -15,12 +14,10 @@
 - Hooks 简介
 - 函数组件基本写法
 
-## 2. 评价
-
 - 现代 react 项目 -> 用函数组件
 - 早期 react 项目 -> 用类组件
 
-## 3. “函数组件”是什么？
+## 2. “函数组件”是什么？
 
 - 函数组件
   - 函数组件是 React 中定义组件的一种方式，它 使用 JavaScript 函数来创建。
@@ -33,17 +30,17 @@
 
 ```jsx
 function Welcome(props) {
-  return <h1>Hello, {props.name}</h1>
+  return <h1>Hello, {props.name}</h1>;
 }
 // 在这个例子中，Welcome 是一个函数组件，它接收一个 props 对象，
 // 并通过插值 {props.name} 将 name 属性插入到 <h1> 标签中。
 
 // 更简洁的写法：
 // 也可以使用 ES6 的箭头函数来定义函数组件
-const Welcome = (props) => <h1>Hello, {props.name}</h1>
+const Welcome = (props) => <h1>Hello, {props.name}</h1>;
 ```
 
-## 4. “Hooks”是什么？
+## 3. “Hooks”是什么？
 
 - Hooks 是一组内置的 React 函数，允许你在函数组件中使用 state 和其他 React 特性。
 - 以下是一些常用的 Hooks：
@@ -59,28 +56,28 @@ const Welcome = (props) => <h1>Hello, {props.name}</h1>
 - 以下是一个使用 `useState` 和 `useEffect` 的示例：
 
 ```jsx
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 
 function Example() {
   // 声明一个新的 state 变量，我们称之为 "count"
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   // 类似于类组件中的生命周期钩子 componentDidMount 和 componentDidUpdate:
   useEffect(() => {
     // 更新文档标题，显示点击次数
-    document.title = `You clicked ${count} times`
+    document.title = `You clicked ${count} times`;
 
     // 清理函数
     return () => {
-      document.title = 'React App'
-    }
-  })
+      document.title = "React App";
+    };
+  });
 
   return (
     <div>
       <p>You clicked {count} times</p>
       <button onClick={() => setCount(count + 1)}>Click me</button>
     </div>
-  )
+  );
 }
 ```

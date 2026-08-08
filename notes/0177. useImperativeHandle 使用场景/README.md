@@ -3,16 +3,15 @@
 <!-- region:toc -->
 
 - [1. 本节内容](#1-本节内容)
-- [2. 评价](#2-评价)
-- [3. useImperativeHandle 是什么？](#3-useimperativehandle-是什么)
-- [4. 为什么需要 useImperativeHandle？](#4-为什么需要-useimperativehandle)
-- [5. 如何使用 useImperativeHandle？](#5-如何使用-useimperativehandle)
-- [6. 有哪些常见使用场景？](#6-有哪些常见使用场景)
-- [7. 如何封装表单组件？](#7-如何封装表单组件)
-- [8. 如何封装媒体组件？](#8-如何封装媒体组件)
-- [9. 有哪些最佳实践？](#9-有哪些最佳实践)
-- [10. 有哪些常见错误？](#10-有哪些常见错误)
-- [11. 引用](#11-引用)
+- [2. useImperativeHandle 是什么？](#2-useimperativehandle-是什么)
+- [3. 为什么需要 useImperativeHandle？](#3-为什么需要-useimperativehandle)
+- [4. 如何使用 useImperativeHandle？](#4-如何使用-useimperativehandle)
+- [5. 有哪些常见使用场景？](#5-有哪些常见使用场景)
+- [6. 如何封装表单组件？](#6-如何封装表单组件)
+- [7. 如何封装媒体组件？](#7-如何封装媒体组件)
+- [8. 有哪些最佳实践？](#8-有哪些最佳实践)
+- [9. 有哪些常见错误？](#9-有哪些常见错误)
+- [10. 引用](#10-引用)
 
 <!-- endregion:toc -->
 
@@ -26,8 +25,6 @@
 - 最佳实践和注意事项
 - 常见错误和解决方案
 
-## 2. 评价
-
 这篇笔记讲解 React 中用于自定义暴露给父组件的实例方法的 Hook：useImperativeHandle。
 
 - useImperativeHandle 必须与 forwardRef 配合使用，用于控制暴露给父组件的内容
@@ -37,7 +34,7 @@
 - 优先使用声明式方式，只在必要时使用命令式 API
 - 过度使用会导致组件耦合，违背 React 的声明式理念
 
-## 3. useImperativeHandle 是什么？
+## 2. useImperativeHandle 是什么？
 
 `useImperativeHandle` 用于自定义通过 ref 暴露给父组件的实例值。
 
@@ -167,7 +164,7 @@ function Parent() {
 }
 ```
 
-## 4. 为什么需要 useImperativeHandle？
+## 3. 为什么需要 useImperativeHandle？
 
 解决直接暴露 DOM 元素的问题。
 
@@ -286,7 +283,7 @@ const SearchBox = forwardRef<SearchBoxHandle>((props, ref) => {
 })
 ```
 
-## 5. 如何使用 useImperativeHandle？
+## 4. 如何使用 useImperativeHandle？
 
 必须与 forwardRef 配合使用。
 
@@ -372,7 +369,7 @@ const StaticExample = forwardRef<StaticHandle>((props, ref) => {
 })
 ```
 
-## 6. 有哪些常见使用场景？
+## 5. 有哪些常见使用场景？
 
 ```typescript
 // 场景 1：焦点管理
@@ -561,7 +558,7 @@ const DataGrid = forwardRef<DataGridHandle, { data: Row[] }>(
 )
 ```
 
-## 7. 如何封装表单组件？
+## 6. 如何封装表单组件？
 
 表单验证是 useImperativeHandle 的经典应用场景。
 
@@ -730,7 +727,7 @@ function App() {
 }
 ```
 
-## 8. 如何封装媒体组件？
+## 7. 如何封装媒体组件？
 
 视频和音频控制是另一个常见场景。
 
@@ -869,7 +866,7 @@ function MediaController() {
 }
 ```
 
-## 9. 有哪些最佳实践？
+## 8. 有哪些最佳实践？
 
 ```typescript
 // 实践 1：定义清晰的接口
@@ -1016,7 +1013,7 @@ const CombinedComponent = forwardRef<CombinedHandle>((props, ref) => {
 })
 ```
 
-## 10. 有哪些常见错误？
+## 9. 有哪些常见错误？
 
 ```typescript
 // 错误 1：忘记 forwardRef
@@ -1143,7 +1140,7 @@ function Declarative() {
 }
 ```
 
-## 11. 引用
+## 10. 引用
 
 - [useImperativeHandle 官方文档][1]
 - [forwardRef 官方文档][2]

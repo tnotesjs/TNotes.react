@@ -3,31 +3,30 @@
 <!-- region:toc -->
 
 - [1. 本节内容](#1-本节内容)
-- [2. 评价](#2-评价)
-- [3. 基本概念对比](#3-基本概念对比)
-  - [3.1. 核心差异](#31-核心差异)
-  - [3.2. 组合定义](#32-组合定义)
-  - [3.3. 继承定义](#33-继承定义)
-- [4. 实现方式对比](#4-实现方式对比)
-  - [4.1. 场景：实现不同类型的对话框](#41-场景实现不同类型的对话框)
-  - [4.2. 场景：实现专门化组件](#42-场景实现专门化组件)
-- [5. 为什么 React 推荐组合而非继承？](#5-为什么-react-推荐组合而非继承)
-  - [5.1. 原因 1：组合更灵活](#51-原因-1组合更灵活)
-  - [5.2. 原因 2：避免深层继承链](#52-原因-2避免深层继承链)
-  - [5.3. 原因 3：组合更符合 React 理念](#53-原因-3组合更符合-react-理念)
-  - [5.4. 原因 4：更容易测试和维护](#54-原因-4更容易测试和维护)
-- [6. 如何使用组合模式？](#6-如何使用组合模式)
-  - [6.1. 方式 1：使用 children 属性](#61-方式-1使用-children-属性)
-  - [6.2. 方式 2：使用具名插槽](#62-方式-2使用具名插槽)
-  - [6.3. 方式 3：使用 Render Props](#63-方式-3使用-render-props)
-  - [6.4. 方式 4：使用高阶组件（HOC）](#64-方式-4使用高阶组件hoc)
-  - [6.5. 方式 5：使用自定义 Hooks](#65-方式-5使用自定义-hooks)
-  - [6.6. 实战示例：可配置的表格组件](#66-实战示例可配置的表格组件)
-- [7. � 什么时候可以考虑继承？](#7--什么时候可以考虑继承)
-  - [7.1. 场景 1：扩展第三方类组件](#71-场景-1扩展第三方类组件)
-  - [7.2. 场景 2：抽象基类（很少使用）](#72-场景-2抽象基类很少使用)
-  - [7.3. 推荐：用组合替代继承](#73-推荐用组合替代继承)
-- [8. 引用](#8-引用)
+- [2. 基本概念对比](#2-基本概念对比)
+  - [2.1. 核心差异](#21-核心差异)
+  - [2.2. 组合定义](#22-组合定义)
+  - [2.3. 继承定义](#23-继承定义)
+- [3. 实现方式对比](#3-实现方式对比)
+  - [3.1. 场景：实现不同类型的对话框](#31-场景实现不同类型的对话框)
+  - [3.2. 场景：实现专门化组件](#32-场景实现专门化组件)
+- [4. 为什么 React 推荐组合而非继承？](#4-为什么-react-推荐组合而非继承)
+  - [4.1. 原因 1：组合更灵活](#41-原因-1组合更灵活)
+  - [4.2. 原因 2：避免深层继承链](#42-原因-2避免深层继承链)
+  - [4.3. 原因 3：组合更符合 React 理念](#43-原因-3组合更符合-react-理念)
+  - [4.4. 原因 4：更容易测试和维护](#44-原因-4更容易测试和维护)
+- [5. 如何使用组合模式？](#5-如何使用组合模式)
+  - [5.1. 方式 1：使用 children 属性](#51-方式-1使用-children-属性)
+  - [5.2. 方式 2：使用具名插槽](#52-方式-2使用具名插槽)
+  - [5.3. 方式 3：使用 Render Props](#53-方式-3使用-render-props)
+  - [5.4. 方式 4：使用高阶组件（HOC）](#54-方式-4使用高阶组件hoc)
+  - [5.5. 方式 5：使用自定义 Hooks](#55-方式-5使用自定义-hooks)
+  - [5.6. 实战示例：可配置的表格组件](#56-实战示例可配置的表格组件)
+- [6. � 什么时候可以考虑继承？](#6--什么时候可以考虑继承)
+  - [6.1. 场景 1：扩展第三方类组件](#61-场景-1扩展第三方类组件)
+  - [6.2. 场景 2：抽象基类（很少使用）](#62-场景-2抽象基类很少使用)
+  - [6.3. 推荐：用组合替代继承](#63-推荐用组合替代继承)
+- [7. 引用](#7-引用)
 
 <!-- endregion:toc -->
 
@@ -39,8 +38,6 @@
 - 组合模式的实践方法
 - 继承的适用场景
 
-## 2. 评价
-
 React 官方明确推荐使用组合而非继承来实现组件间的代码复用。
 
 - 组合模式更符合 React 的设计理念，提供更好的灵活性
@@ -48,9 +45,9 @@ React 官方明确推荐使用组合而非继承来实现组件间的代码复�
 - 继承会带来紧耦合，降低组件的可维护性
 - 在 React 生态中，很少看到使用继承的实践案例
 
-## 3. 基本概念对比
+## 2. 基本概念对比
 
-### 3.1. 核心差异
+### 2.1. 核心差异
 
 | 特性       | 组合           | 继承           |
 | ---------- | -------------- | -------------- |
@@ -60,7 +57,7 @@ React 官方明确推荐使用组合而非继承来实现组件间的代码复�
 | 代码复用   | 通过组件嵌套   | 通过类继承     |
 | React 推荐 | ✅ 推荐        | ❌ 不推荐      |
 
-### 3.2. 组合定义
+### 2.2. 组合定义
 
 组合是通过将小组件组装成大组件来实现代码复用。
 
@@ -72,7 +69,7 @@ function Dialog({ children }) {
       {children}
       <Button>关闭</Button>
     </div>
-  )
+  );
 }
 
 function App() {
@@ -81,11 +78,11 @@ function App() {
       <h1>标题</h1>
       <p>内容</p>
     </Dialog>
-  )
+  );
 }
 ```
 
-### 3.3. 继承定义
+### 2.3. 继承定义
 
 继承是通过创建基类的子类来实现代码复用。
 
@@ -93,7 +90,7 @@ function App() {
 // ❌ 继承：WelcomeDialog 继承自 Dialog
 class Dialog extends React.Component {
   render() {
-    return <div className="dialog">{this.props.children}</div>
+    return <div className="dialog">{this.props.children}</div>;
   }
 }
 
@@ -104,14 +101,14 @@ class WelcomeDialog extends Dialog {
         <h1>欢迎</h1>
         {super.render()}
       </div>
-    )
+    );
   }
 }
 ```
 
-## 4. 实现方式对比
+## 3. 实现方式对比
 
-### 4.1. 场景：实现不同类型的对话框
+### 3.1. 场景：实现不同类型的对话框
 
 ::: code-group
 
@@ -126,12 +123,12 @@ class BaseDialog extends React.Component {
           <button onClick={this.props.onClose}>关闭</button>
         </div>
       </div>
-    )
+    );
   }
 
   renderContent() {
     // ❌ 子类必须实现
-    throw new Error('必须实现 renderContent 方法')
+    throw new Error("必须实现 renderContent 方法");
   }
 }
 
@@ -142,7 +139,7 @@ class WelcomeDialog extends BaseDialog {
         <h1>欢迎</h1>
         <p>欢迎使用我们的应用</p>
       </>
-    )
+    );
   }
 }
 
@@ -153,7 +150,7 @@ class ConfirmDialog extends BaseDialog {
         <h1>确认</h1>
         <p>确定要删除吗？</p>
       </>
-    )
+    );
   }
 }
 ```
@@ -171,7 +168,7 @@ function Dialog({ title, content, onClose, footer }) {
         {footer || <button onClick={onClose}>关闭</button>}
       </div>
     </div>
-  )
+  );
 }
 
 // ✅ 通过 props 定制不同对话框
@@ -182,7 +179,7 @@ function WelcomeDialog({ onClose }) {
       content={<p>欢迎使用我们的应用</p>}
       onClose={onClose}
     />
-  )
+  );
 }
 
 function ConfirmDialog({ onClose, onConfirm }) {
@@ -198,13 +195,13 @@ function ConfirmDialog({ onClose, onConfirm }) {
         </>
       }
     />
-  )
+  );
 }
 ```
 
 :::
 
-### 4.2. 场景：实现专门化组件
+### 3.2. 场景：实现专门化组件
 
 ::: code-group
 
@@ -216,37 +213,37 @@ class Button extends React.Component {
       <button className={this.getClassName()} onClick={this.props.onClick}>
         {this.props.children}
       </button>
-    )
+    );
   }
 
   getClassName() {
-    return 'button'
+    return "button";
   }
 }
 
 class PrimaryButton extends Button {
   getClassName() {
-    return 'button button-primary'
+    return "button button-primary";
   }
 }
 
 class DangerButton extends Button {
   getClassName() {
-    return 'button button-danger'
+    return "button button-danger";
   }
 }
 ```
 
 ```jsx [✅ 组合方式]
 // ✅ 使用组合，易于扩展
-function Button({ variant = 'default', children, ...props }) {
-  const className = `button button-${variant}`
+function Button({ variant = "default", children, ...props }) {
+  const className = `button button-${variant}`;
 
   return (
     <button className={className} {...props}>
       {children}
     </button>
-  )
+  );
 }
 
 // ✅ 使用时更简洁
@@ -257,28 +254,28 @@ function App() {
       <Button variant="danger">危险按钮</Button>
       <Button>默认按钮</Button>
     </>
-  )
+  );
 }
 ```
 
 :::
 
-## 5. 为什么 React 推荐组合而非继承？
+## 4. 为什么 React 推荐组合而非继承？
 
-### 5.1. 原因 1：组合更灵活
+### 4.1. 原因 1：组合更灵活
 
 ```jsx
 // ✅ 组合可以动态改变行为
 function Panel({ variant, children }) {
   // 可以根据 props 动态决定渲染逻辑
-  const Icon = variant === 'success' ? SuccessIcon : ErrorIcon
+  const Icon = variant === "success" ? SuccessIcon : ErrorIcon;
 
   return (
     <div className={`panel panel-${variant}`}>
       <Icon />
       {children}
     </div>
-  )
+  );
 }
 
 // ❌ 继承在编译时就固定了
@@ -287,7 +284,7 @@ class Panel extends React.Component {
 }
 ```
 
-### 5.2. 原因 2：避免深层继承链
+### 4.2. 原因 2：避免深层继承链
 
 ```jsx
 // ❌ 继承容易形成复杂的继承链
@@ -304,11 +301,11 @@ function PrimaryIconButton({ icon, children, ...props }) {
       <Icon name={icon} />
       {children}
     </Button>
-  )
+  );
 }
 ```
 
-### 5.3. 原因 3：组合更符合 React 理念
+### 4.3. 原因 3：组合更符合 React 理念
 
 ```jsx
 // ✅ 组合利用 props 和 children，符合 React 数据流
@@ -319,7 +316,7 @@ function Card({ header, footer, children }) {
       <div className="card-body">{children}</div>
       {footer && <div className="card-footer">{footer}</div>}
     </div>
-  )
+  );
 }
 
 // 使用时非常直观
@@ -328,16 +325,16 @@ function App() {
     <Card header={<h2>标题</h2>} footer={<Button>操作</Button>}>
       <p>内容区域</p>
     </Card>
-  )
+  );
 }
 ```
 
-### 5.4. 原因 4：更容易测试和维护
+### 4.4. 原因 4：更容易测试和维护
 
 ```jsx
 // ✅ 组合的组件职责单一，易于测试
-function Avatar({ src, size = 'medium' }) {
-  return <img src={src} className={`avatar-${size}`} />
+function Avatar({ src, size = "medium" }) {
+  return <img src={src} className={`avatar-${size}`} />;
 }
 
 function UserInfo({ user }) {
@@ -346,7 +343,7 @@ function UserInfo({ user }) {
       <Avatar src={user.avatar} size="large" />
       <span>{user.name}</span>
     </div>
-  )
+  );
 }
 
 // ❌ 继承的组件耦合度高，难以测试
@@ -355,14 +352,14 @@ class UserInfo extends BaseUserInfo {
 }
 ```
 
-## 6. 如何使用组合模式？
+## 5. 如何使用组合模式？
 
-### 6.1. 方式 1：使用 children 属性
+### 5.1. 方式 1：使用 children 属性
 
 ```jsx
 // ✅ 最基本的组合方式
 function Container({ children }) {
-  return <div className="container">{children}</div>
+  return <div className="container">{children}</div>;
 }
 
 function App() {
@@ -371,11 +368,11 @@ function App() {
       <h1>标题</h1>
       <p>内容</p>
     </Container>
-  )
+  );
 }
 ```
 
-### 6.2. 方式 2：使用具名插槽
+### 5.2. 方式 2：使用具名插槽
 
 ```jsx
 // ✅ 通过 props 传递多个组件
@@ -389,7 +386,7 @@ function Layout({ header, sidebar, content, footer }) {
       </div>
       <footer>{footer}</footer>
     </div>
-  )
+  );
 }
 
 function App() {
@@ -400,28 +397,28 @@ function App() {
       content={<Content />}
       footer={<Footer />}
     />
-  )
+  );
 }
 ```
 
-### 6.3. 方式 3：使用 Render Props
+### 5.3. 方式 3：使用 Render Props
 
 ```jsx
 // ✅ 通过函数 props 实现灵活组合
 function DataFetcher({ url, render }) {
-  const [data, setData] = useState(null)
-  const [loading, setLoading] = useState(true)
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        setData(data)
-        setLoading(false)
-      })
-  }, [url])
+        setData(data);
+        setLoading(false);
+      });
+  }, [url]);
 
-  return render({ data, loading })
+  return render({ data, loading });
 }
 
 function App() {
@@ -432,57 +429,57 @@ function App() {
         loading ? <Loading /> : <UserList users={data} />
       }
     />
-  )
+  );
 }
 ```
 
-### 6.4. 方式 4：使用高阶组件（HOC）
+### 5.4. 方式 4：使用高阶组件（HOC）
 
 ```jsx
 // ✅ HOC 也是组合的一种形式
 function withLoading(Component) {
   return function WithLoadingComponent({ isLoading, ...props }) {
-    if (isLoading) return <Loading />
-    return <Component {...props} />
-  }
+    if (isLoading) return <Loading />;
+    return <Component {...props} />;
+  };
 }
 
-const UserListWithLoading = withLoading(UserList)
+const UserListWithLoading = withLoading(UserList);
 
 function App() {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
-  return <UserListWithLoading isLoading={loading} users={users} />
+  return <UserListWithLoading isLoading={loading} users={users} />;
 }
 ```
 
-### 6.5. 方式 5：使用自定义 Hooks
+### 5.5. 方式 5：使用自定义 Hooks
 
 ```jsx
 // ✅ Hooks 是最现代的组合方式
 function useUser(userId) {
-  const [user, setUser] = useState(null)
-  const [loading, setLoading] = useState(true)
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchUser(userId).then((data) => {
-      setUser(data)
-      setLoading(false)
-    })
-  }, [userId])
+      setUser(data);
+      setLoading(false);
+    });
+  }, [userId]);
 
-  return { user, loading }
+  return { user, loading };
 }
 
 function UserProfile({ userId }) {
-  const { user, loading } = useUser(userId)
+  const { user, loading } = useUser(userId);
 
-  if (loading) return <Loading />
-  return <div>{user.name}</div>
+  if (loading) return <Loading />;
+  return <div>{user.name}</div>;
 }
 ```
 
-### 6.6. 实战示例：可配置的表格组件
+### 5.6. 实战示例：可配置的表格组件
 
 ```jsx
 // ✅ 通过组合实现高度可配置的表格
@@ -510,7 +507,7 @@ function Table({ columns, data, renderRow }) {
         )}
       </tbody>
     </table>
-  )
+  );
 }
 
 // 使用：自定义行渲染
@@ -518,12 +515,12 @@ function UserTable({ users }) {
   return (
     <Table
       columns={[
-        { key: 'name', title: '姓名' },
-        { key: 'email', title: '邮箱' },
+        { key: "name", title: "姓名" },
+        { key: "email", title: "邮箱" },
       ]}
       data={users}
       renderRow={(user) => (
-        <tr key={user.id} className={user.active ? 'active' : ''}>
+        <tr key={user.id} className={user.active ? "active" : ""}>
           <td>
             <Avatar src={user.avatar} />
             {user.name}
@@ -532,88 +529,88 @@ function UserTable({ users }) {
         </tr>
       )}
     />
-  )
+  );
 }
 ```
 
-## 7. � 什么时候可以考虑继承？
+## 6. � 什么时候可以考虑继承？
 
-### 7.1. 场景 1：扩展第三方类组件
+### 6.1. 场景 1：扩展第三方类组件
 
 ```jsx
 // ✅ 扩展第三方库的类组件时可以使用继承
-import { PureComponent } from 'react'
+import { PureComponent } from "react";
 
 class OptimizedComponent extends PureComponent {
   // 添加额外的优化逻辑
   componentDidUpdate(prevProps) {
     if (this.props.data !== prevProps.data) {
-      this.updateChart()
+      this.updateChart();
     }
   }
 
   render() {
-    return <div>{this.props.children}</div>
+    return <div>{this.props.children}</div>;
   }
 }
 ```
 
-### 7.2. 场景 2：抽象基类（很少使用）
+### 6.2. 场景 2：抽象基类（很少使用）
 
 ```jsx
 // ⚠️ 极少使用：需要强制子类实现某些方法时
 class BaseForm extends React.Component {
   handleSubmit = (e) => {
-    e.preventDefault()
-    const isValid = this.validate()
+    e.preventDefault();
+    const isValid = this.validate();
     if (isValid) {
-      this.submit()
+      this.submit();
     }
-  }
+  };
 
   validate() {
     // 子类必须实现
-    throw new Error('必须实现 validate 方法')
+    throw new Error("必须实现 validate 方法");
   }
 
   submit() {
     // 子类必须实现
-    throw new Error('必须实现 submit 方法')
+    throw new Error("必须实现 submit 方法");
   }
 }
 
 class LoginForm extends BaseForm {
   validate() {
-    return this.state.username && this.state.password
+    return this.state.username && this.state.password;
   }
 
   submit() {
-    api.login(this.state.username, this.state.password)
+    api.login(this.state.username, this.state.password);
   }
 }
 ```
 
-### 7.3. 推荐：用组合替代继承
+### 6.3. 推荐：用组合替代继承
 
 ```jsx
 // ✅ 更好的方案：使用组合
 function Form({ validate, onSubmit, children }) {
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (validate()) {
-      onSubmit()
+      onSubmit();
     }
-  }
+  };
 
-  return <form onSubmit={handleSubmit}>{children}</form>
+  return <form onSubmit={handleSubmit}>{children}</form>;
 }
 
 function LoginForm() {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-  const validate = () => username && password
-  const handleSubmit = () => api.login(username, password)
+  const validate = () => username && password;
+  const handleSubmit = () => api.login(username, password);
 
   return (
     <Form validate={validate} onSubmit={handleSubmit}>
@@ -625,11 +622,11 @@ function LoginForm() {
       />
       <button type="submit">登录</button>
     </Form>
-  )
+  );
 }
 ```
 
-## 8. 引用
+## 7. 引用
 
 - [React 官方文档 - 组合 vs 继承][1]
 - [React 官方文档 - 组件组合][2]

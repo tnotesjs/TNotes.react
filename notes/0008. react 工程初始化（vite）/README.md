@@ -3,14 +3,13 @@
 <!-- region:toc -->
 
 - [1. 本节内容](#1-本节内容)
-- [2. 评价](#2-评价)
-- [3. 使用 pnpm 的实际操作流程](#3-使用-pnpm-的实际操作流程)
-- [4. 使用 vite 创建 react 工程并启动](#4-使用-vite-创建-react-工程并启动)
-- [5. `pnpm create vite@latest` 的工作原理简介](#5-pnpm-create-vitelatest-的工作原理简介)
-  - [5.1. 命令转换与临时下载](#51-命令转换与临时下载)
-  - [5.2. 为什么不用 `git clone`？](#52-为什么不用-git-clone)
-  - [5.3. 脚手架的本地执行与释放](#53-脚手架的本地执行与释放)
-- [6. 引用](#6-引用)
+- [2. 使用 pnpm 的实际操作流程](#2-使用-pnpm-的实际操作流程)
+- [3. 使用 vite 创建 react 工程并启动](#3-使用-vite-创建-react-工程并启动)
+- [4. `pnpm create vite@latest` 的工作原理简介](#4-pnpm-create-vitelatest-的工作原理简介)
+  - [4.1. 命令转换与临时下载](#41-命令转换与临时下载)
+  - [4.2. 为什么不用 `git clone`？](#42-为什么不用-git-clone)
+  - [4.3. 脚手架的本地执行与释放](#43-脚手架的本地执行与释放)
+- [5. 引用](#5-引用)
 
 <!-- endregion:toc -->
 
@@ -19,11 +18,9 @@
 - 使用 vite 快速初始化一个 react 工程
 - 了解 `pnpm create vite@latest` 的工作原理
 
-## 2. 评价
-
 需要知道如何通过 vite 来快速初始化一个 react 工程。以便后续学习 react 相关知识点的时候，能在 `1min` 内快速搭建好一个最基本的 react 项目学习环境。
 
-## 3. 使用 pnpm 的实际操作流程
+## 2. 使用 pnpm 的实际操作流程
 
 1. `pnpm create vite`
 2. 输入项目名称，比如 `demo`
@@ -62,7 +59,7 @@ pnpm create vite@latest my-react-app --template react
 
 你可以通过查阅 vite 官网，了解 `npm create vite` 相关详情。
 
-## 4. 使用 vite 创建 react 工程并启动
+## 3. 使用 vite 创建 react 工程并启动
 
 ```bash
 pnpm create vite my-react-app --template react
@@ -91,7 +88,7 @@ pnpm run dev
 
 ![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-23-21-56-18.png)
 
-## 5. `pnpm create vite@latest` 的工作原理简介
+## 4. `pnpm create vite@latest` 的工作原理简介
 
 ::: tip
 
@@ -104,7 +101,7 @@ pnpm run dev
 
 其底层核心流程可以拆解为以下几个步骤：
 
-### 5.1. 命令转换与临时下载
+### 4.1. 命令转换与临时下载
 
 当你运行 `pnpm create vite` 时，`pnpm` 会在底层将其翻译为：
 
@@ -115,14 +112,14 @@ pnpm dlx create-vite@latest
 
 `dlx`（或 `npx`）的作用是去 npm 官方镜像源上，把名为 `create-vite` 的 npm 包临时下载到本地的缓存目录中，并直接运行该包内指定的脚手架可执行脚本。
 
-### 5.2. 为什么不用 `git clone`？
+### 4.2. 为什么不用 `git clone`？
 
 Vite 团队不采用系统 Git 命令去远程拉取，主要基于以下考量：
 
 - 免环境依赖：用户电脑无需安装或配置 `git` 客户端及环境变量。
 - 网络性能优化：`vitejs/vite` 是一个庞大的 Monorepo 仓库，包含大量无关的历史记录和核心源码。如果使用 Git 克隆，在国内网络环境下极易超时或失败。
 
-### 5.3. 脚手架的本地执行与释放
+### 4.3. 脚手架的本地执行与释放
 
 `create-vite` 脚本在本地启动后，实际执行的是本地文件复制与字符串替换：
 
@@ -135,7 +132,7 @@ Vite 团队不采用系统 Git 命令去远程拉取，主要基于以下考量�
 
 整个过程完全不依赖 Git 软件，只要能正常连接 npm 镜像源，即可在几秒钟内瞬间完成项目骨架的搭建。
 
-## 6. 引用
+## 5. 引用
 
 - [vite 官方文档][1]
 - [vite github][2]

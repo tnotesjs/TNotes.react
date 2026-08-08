@@ -3,34 +3,33 @@
 <!-- region:toc -->
 
 - [1. 本节内容](#1-本节内容)
-- [2. 评价](#2-评价)
-- [3. 类组件生命周期有哪些阶段？](#3-类组件生命周期有哪些阶段)
-  - [3.1. 完整生命周期图谱](#31-完整生命周期图谱)
-  - [3.2. 四个主要阶段](#32-四个主要阶段)
-  - [3.3. 阶段特征对比](#33-阶段特征对比)
-- [4. 挂载阶段的完整流程是什么？](#4-挂载阶段的完整流程是什么)
-  - [4.1. 执行顺序详解](#41-执行顺序详解)
-  - [4.2. 挂载阶段注意事项](#42-挂载阶段注意事项)
-- [5. 更新阶段的完整流程是什么？](#5-更新阶段的完整流程是什么)
-  - [5.1. 更新触发条件](#51-更新触发条件)
-  - [5.2. 完整更新流程](#52-完整更新流程)
-  - [5.3. 性能优化实践](#53-性能优化实践)
-- [6. 卸载阶段包含哪些操作？](#6-卸载阶段包含哪些操作)
-  - [6.1. componentWillUnmount 用法](#61-componentwillunmount-用法)
-  - [6.2. 常见内存泄漏场景](#62-常见内存泄漏场景)
-- [7. 错误处理阶段如何工作？](#7-错误处理阶段如何工作)
-  - [7.1. 错误边界实现](#71-错误边界实现)
-  - [7.2. 错误边界使用](#72-错误边界使用)
-  - [7.3. 错误边界的局限性](#73-错误边界的局限性)
-- [8. � 如何在实际项目中应用生命周期？](#8--如何在实际项目中应用生命周期)
-  - [8.1. 数据获取场景](#81-数据获取场景)
-  - [8.2. DOM 操作场景](#82-dom-操作场景)
-  - [8.3. 性能优化场景](#83-性能优化场景)
-- [9. 不同 React 版本的生命周期对比](#9-不同-react-版本的生命周期对比)
-  - [9.1. 生命周期方法对比表](#91-生命周期方法对比表)
-  - [9.2. 迁移指南](#92-迁移指南)
-  - [9.3. 函数组件对比](#93-函数组件对比)
-- [10. 引用](#10-引用)
+- [2. 类组件生命周期有哪些阶段？](#2-类组件生命周期有哪些阶段)
+  - [2.1. 完整生命周期图谱](#21-完整生命周期图谱)
+  - [2.2. 四个主要阶段](#22-四个主要阶段)
+  - [2.3. 阶段特征对比](#23-阶段特征对比)
+- [3. 挂载阶段的完整流程是什么？](#3-挂载阶段的完整流程是什么)
+  - [3.1. 执行顺序详解](#31-执行顺序详解)
+  - [3.2. 挂载阶段注意事项](#32-挂载阶段注意事项)
+- [4. 更新阶段的完整流程是什么？](#4-更新阶段的完整流程是什么)
+  - [4.1. 更新触发条件](#41-更新触发条件)
+  - [4.2. 完整更新流程](#42-完整更新流程)
+  - [4.3. 性能优化实践](#43-性能优化实践)
+- [5. 卸载阶段包含哪些操作？](#5-卸载阶段包含哪些操作)
+  - [5.1. componentWillUnmount 用法](#51-componentwillunmount-用法)
+  - [5.2. 常见内存泄漏场景](#52-常见内存泄漏场景)
+- [6. 错误处理阶段如何工作？](#6-错误处理阶段如何工作)
+  - [6.1. 错误边界实现](#61-错误边界实现)
+  - [6.2. 错误边界使用](#62-错误边界使用)
+  - [6.3. 错误边界的局限性](#63-错误边界的局限性)
+- [7. � 如何在实际项目中应用生命周期？](#7--如何在实际项目中应用生命周期)
+  - [7.1. 数据获取场景](#71-数据获取场景)
+  - [7.2. DOM 操作场景](#72-dom-操作场景)
+  - [7.3. 性能优化场景](#73-性能优化场景)
+- [8. 不同 React 版本的生命周期对比](#8-不同-react-版本的生命周期对比)
+  - [8.1. 生命周期方法对比表](#81-生命周期方法对比表)
+  - [8.2. 迁移指南](#82-迁移指南)
+  - [8.3. 函数组件对比](#83-函数组件对比)
+- [9. 引用](#9-引用)
 
 <!-- endregion:toc -->
 
@@ -44,8 +43,6 @@
 - 生命周期的实际应用场景
 - 不同版本的生命周期变化
 
-## 2. 评价
-
 这篇笔记系统梳理了 React 类组件生命周期的完整图谱，通过清晰的流程图和代码示例展示每个阶段的执行顺序。
 
 - 虽然函数组件和 Hooks 已成为主流，但理解类组件生命周期仍是 React 开发的基础
@@ -53,11 +50,11 @@
 - 生命周期的概念帮助理解 React 的更新机制和性能优化原理
 - 错误边界目前只能在类组件中实现，必须掌握相关生命周期方法
 
-## 3. 类组件生命周期有哪些阶段？
+## 2. 类组件生命周期有哪些阶段？
 
 React 类组件的生命周期分为四个主要阶段，每个阶段包含不同的生命周期方法。
 
-### 3.1. 完整生命周期图谱
+### 2.1. 完整生命周期图谱
 
 ```mermaid
 graph TD
@@ -85,7 +82,7 @@ graph TD
     E1 --> E2[componentDidCatch]
 ```
 
-### 3.2. 四个主要阶段
+### 2.2. 四个主要阶段
 
 ```typescript
 class LifecycleDemo extends React.Component {
@@ -141,7 +138,7 @@ class LifecycleDemo extends React.Component {
 }
 ```
 
-### 3.3. 阶段特征对比
+### 2.3. 阶段特征对比
 
 | 阶段 | 触发时机                | 可用方法数量 | 主要用途           |
 | ---- | ----------------------- | ------------ | ------------------ |
@@ -150,11 +147,11 @@ class LifecycleDemo extends React.Component {
 | 卸载 | 组件移除                | 1 个         | 清理资源           |
 | 错误 | 子组件抛出错误          | 2 个         | 错误捕获与处理     |
 
-## 4. 挂载阶段的完整流程是什么？
+## 3. 挂载阶段的完整流程是什么？
 
 挂载阶段是组件从创建到插入 DOM 的过程，执行顺序固定。
 
-### 4.1. 执行顺序详解
+### 3.1. 执行顺序详解
 
 ```typescript
 interface User {
@@ -263,7 +260,7 @@ class UserProfile extends React.Component<Props, State> {
 }
 ```
 
-### 4.2. 挂载阶段注意事项
+### 3.2. 挂载阶段注意事项
 
 ::: code-group
 
@@ -342,11 +339,11 @@ class GoodExample extends React.Component {
 
 :::
 
-## 5. 更新阶段的完整流程是什么？
+## 4. 更新阶段的完整流程是什么？
 
 更新阶段在 props、state 变化或调用 `forceUpdate` 时触发。
 
-### 5.1. 更新触发条件
+### 4.1. 更新触发条件
 
 ```typescript
 interface Props {
@@ -392,7 +389,7 @@ class UpdateDemo extends React.Component<Props, State> {
 }
 ```
 
-### 5.2. 完整更新流程
+### 4.2. 完整更新流程
 
 ```typescript
 class UpdateFlow extends React.Component<Props, State> {
@@ -486,7 +483,7 @@ class UpdateFlow extends React.Component<Props, State> {
 }
 ```
 
-### 5.3. 性能优化实践
+### 4.3. 性能优化实践
 
 ```typescript
 // 使用 PureComponent 自动进行浅比较
@@ -515,11 +512,11 @@ class CustomOptimized extends React.Component<Props, State> {
 }
 ```
 
-## 6. 卸载阶段包含哪些操作？
+## 5. 卸载阶段包含哪些操作？
 
 卸载阶段只有一个生命周期方法，用于清理资源。
 
-### 6.1. componentWillUnmount 用法
+### 5.1. componentWillUnmount 用法
 
 ```typescript
 class CleanupDemo extends React.Component {
@@ -597,7 +594,7 @@ class CleanupDemo extends React.Component {
 }
 ```
 
-### 6.2. 常见内存泄漏场景
+### 5.2. 常见内存泄漏场景
 
 ::: code-group
 
@@ -680,11 +677,11 @@ class NoMemoryLeak extends React.Component {
 
 :::
 
-## 7. 错误处理阶段如何工作？
+## 6. 错误处理阶段如何工作？
 
 错误边界可以捕获子组件树中的 JavaScript 错误。
 
-### 7.1. 错误边界实现
+### 6.1. 错误边界实现
 
 ```typescript
 interface ErrorBoundaryProps {
@@ -778,7 +775,7 @@ class ErrorBoundary extends React.Component<
 }
 ```
 
-### 7.2. 错误边界使用
+### 6.2. 错误边界使用
 
 ```typescript
 // 使用错误边界包裹可能出错的组件
@@ -824,7 +821,7 @@ class BuggyComponent extends React.Component {
 }
 ```
 
-### 7.3. 错误边界的局限性
+### 6.3. 错误边界的局限性
 
 ```typescript
 // ❌ 错误边界无法捕获以下错误：
@@ -862,11 +859,11 @@ class AsyncError extends React.Component {
 // ❌ 错误边界内部抛出的错误不会被自己捕获
 ```
 
-## 8. � 如何在实际项目中应用生命周期？
+## 7. � 如何在实际项目中应用生命周期？
 
 根据不同场景选择合适的生命周期方法。
 
-### 8.1. 数据获取场景
+### 7.1. 数据获取场景
 
 ```typescript
 interface Article {
@@ -933,7 +930,7 @@ class ArticleDetail extends React.Component<Props, State> {
 }
 ```
 
-### 8.2. DOM 操作场景
+### 7.2. DOM 操作场景
 
 ```typescript
 class AutoFocusInput extends React.Component {
@@ -990,7 +987,7 @@ class ChatList extends React.Component {
 }
 ```
 
-### 8.3. 性能优化场景
+### 7.3. 性能优化场景
 
 ```typescript
 class ExpensiveList extends React.Component<Props, State> {
@@ -1029,11 +1026,11 @@ class OptimizedList extends React.PureComponent<Props, State> {
 }
 ```
 
-## 9. 不同 React 版本的生命周期对比
+## 8. 不同 React 版本的生命周期对比
 
 React 版本升级带来了生命周期方法的变化。
 
-### 9.1. 生命周期方法对比表
+### 8.1. 生命周期方法对比表
 
 | 生命周期方法 | React 16.3- | React 16.3+ | React 17+ | React 18+ | 状态 |
 | --- | --- | --- | --- | --- | --- |
@@ -1051,7 +1048,7 @@ React 版本升级带来了生命周期方法的变化。
 | getDerivedStateFromError | ❌ | ✅ | ✅ | ✅ | 新增 |
 | componentDidCatch | ❌ | ✅ | ✅ | ✅ | 新增 |
 
-### 9.2. 迁移指南
+### 8.2. 迁移指南
 
 ::: code-group
 
@@ -1123,7 +1120,7 @@ class NewComponent extends React.Component {
 
 :::
 
-### 9.3. 函数组件对比
+### 8.3. 函数组件对比
 
 | 类组件生命周期           | 函数组件 Hooks 等价     | 说明                  |
 | ------------------------ | ----------------------- | --------------------- |
@@ -1136,7 +1133,7 @@ class NewComponent extends React.Component {
 | getSnapshotBeforeUpdate  | useLayoutEffect         | DOM 更新前获取信息    |
 | componentDidCatch        | 无直接等价              | 只能用类组件          |
 
-## 10. 引用
+## 9. 引用
 
 - [React Lifecycle Methods Diagram][1]
 - [React Component API Reference][2]

@@ -3,11 +3,10 @@
 <!-- region:toc -->
 
 - [1. 本节内容](#1-本节内容)
-- [2. 评价](#2-评价)
-- [3. templates/demos](#3-templatesdemos)
-  - [3.1. 目录 1 中的内容](#31-目录-1-中的内容)
-  - [3.2. 目录 2 中的内容](#32-目录-2-中的内容)
-- [4. templates/playgrounds](#4-templatesplaygrounds)
+- [2. templates/demos](#2-templatesdemos)
+  - [2.1. 目录 1 中的内容](#21-目录-1-中的内容)
+  - [2.2. 目录 2 中的内容](#22-目录-2-中的内容)
+- [3. templates/playgrounds](#3-templatesplaygrounds)
 
 <!-- endregion:toc -->
 
@@ -15,13 +14,11 @@
 
 - 本地 react Playground 环境搭建说明
 
-## 2. 评价
-
 你可以在 `TNotes.react` 根目录下看到一个名为 `templates` 的文件夹，这个文件夹里面存放的就是最基础的模板文件。
 
 所有的临时测试案例，都可以在 `templates/playgrounds` 目录下进行测试。
 
-## 3. templates/demos
+## 2. templates/demos
 
 最简化模板：
 
@@ -30,23 +27,23 @@
 
 ![img](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-12-25-10-15-18.png)
 
-### 3.1. 目录 1 中的内容
+### 2.1. 目录 1 中的内容
 
 ::: code-group
 
 ```jsx [src/main.jsx]
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 
 function App() {
-  return <h1>Hello World</h1>
+  return <h1>Hello World</h1>;
 }
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
     <App />
   </StrictMode>,
-)
+);
 ```
 
 ```html [index.html]
@@ -87,35 +84,35 @@ createRoot(document.getElementById('root')).render(
 ```
 
 ```js [vite.config.js]
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-})
+});
 ```
 
 :::
 
-### 3.2. 目录 2 中的内容
+### 2.2. 目录 2 中的内容
 
 ::: code-group
 
 ```tsx [src/main.tsx]
-import { createRoot } from 'react-dom/client'
+import { createRoot } from "react-dom/client";
 
 function App() {
-  return <h1>Hello World</h1>
+  return <h1>Hello World</h1>;
 }
 
-const root = document.getElementById('root')
+const root = document.getElementById("root");
 
 if (!root) {
-  throw new Error('Root container missing in index.html')
+  throw new Error("Root container missing in index.html");
 }
 
-createRoot(root).render(<App />)
+createRoot(root).render(<App />);
 ```
 
 ```html [index.html]
@@ -179,17 +176,17 @@ createRoot(root).render(<App />)
 ```
 
 ```ts [vite.config.ts]
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-})
+});
 ```
 
 :::
 
-## 4. templates/playgrounds
+## 3. templates/playgrounds
 
 ![img](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-12-25-10-04-56.png)
 

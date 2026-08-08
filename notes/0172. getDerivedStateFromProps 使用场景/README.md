@@ -3,33 +3,32 @@
 <!-- region:toc -->
 
 - [1. 本节内容](#1-本节内容)
-- [2. 评价](#2-评价)
-- [3. getDerivedStateFromProps 是什么？](#3-getderivedstatefromprops-是什么)
-  - [3.1. 基本定义](#31-基本定义)
-  - [3.2. 关键特点](#32-关键特点)
-  - [3.3. 调用时机](#33-调用时机)
-- [4. 什么时候需要使用它？](#4-什么时候需要使用它)
-  - [4.1. 场景 1：根据 props 变化重置部分 state](#41-场景-1根据-props-变化重置部分-state)
-  - [4.2. 场景 2：props 变化时执行动画](#42-场景-2props-变化时执行动画)
-  - [4.3. 场景 3：记录 props 的历史值](#43-场景-3记录-props-的历史值)
-- [5. 如何正确使用这个方法？](#5-如何正确使用这个方法)
-  - [5.1. 最佳实践 1：保存 props 的副本](#51-最佳实践-1保存-props-的副本)
-  - [5.2. 最佳实践 2：只在必要时更新](#52-最佳实践-2只在必要时更新)
-  - [5.3. 最佳实践 3：配合 componentDidUpdate 使用](#53-最佳实践-3配合-componentdidupdate-使用)
-- [6. 有哪些常见错误用法？](#6-有哪些常见错误用法)
-  - [6.1. 错误 1：无条件复制 props 到 state](#61-错误-1无条件复制-props-到-state)
-  - [6.2. 错误 2：在派生状态中执行副作用](#62-错误-2在派生状态中执行副作用)
-  - [6.3. 错误 3：修改 state 对象](#63-错误-3修改-state-对象)
-- [7. 如何避免不必要的派生状态？](#7-如何避免不必要的派生状态)
-  - [7.1. 替代方案 1：完全受控组件](#71-替代方案-1完全受控组件)
-  - [7.2. 替代方案 2：使用 key 重置组件](#72-替代方案-2使用-key-重置组件)
-  - [7.3. 替代方案 3：render 中计算派生值](#73-替代方案-3render-中计算派生值)
-- [8. 如何迁移到函数组件？](#8-如何迁移到函数组件)
-  - [8.1. 迁移示例 1：props 变化时重置 state](#81-迁移示例-1props-变化时重置-state)
-  - [8.2. 迁移示例 2：记录 props 的前一个值](#82-迁移示例-2记录-props-的前一个值)
-- [9. 派生状态的不同实现方式对比](#9-派生状态的不同实现方式对比)
-  - [9.1. 选择指南](#91-选择指南)
-- [10. 引用](#10-引用)
+- [2. getDerivedStateFromProps 是什么？](#2-getderivedstatefromprops-是什么)
+  - [2.1. 基本定义](#21-基本定义)
+  - [2.2. 关键特点](#22-关键特点)
+  - [2.3. 调用时机](#23-调用时机)
+- [3. 什么时候需要使用它？](#3-什么时候需要使用它)
+  - [3.1. 场景 1：根据 props 变化重置部分 state](#31-场景-1根据-props-变化重置部分-state)
+  - [3.2. 场景 2：props 变化时执行动画](#32-场景-2props-变化时执行动画)
+  - [3.3. 场景 3：记录 props 的历史值](#33-场景-3记录-props-的历史值)
+- [4. 如何正确使用这个方法？](#4-如何正确使用这个方法)
+  - [4.1. 最佳实践 1：保存 props 的副本](#41-最佳实践-1保存-props-的副本)
+  - [4.2. 最佳实践 2：只在必要时更新](#42-最佳实践-2只在必要时更新)
+  - [4.3. 最佳实践 3：配合 componentDidUpdate 使用](#43-最佳实践-3配合-componentdidupdate-使用)
+- [5. 有哪些常见错误用法？](#5-有哪些常见错误用法)
+  - [5.1. 错误 1：无条件复制 props 到 state](#51-错误-1无条件复制-props-到-state)
+  - [5.2. 错误 2：在派生状态中执行副作用](#52-错误-2在派生状态中执行副作用)
+  - [5.3. 错误 3：修改 state 对象](#53-错误-3修改-state-对象)
+- [6. 如何避免不必要的派生状态？](#6-如何避免不必要的派生状态)
+  - [6.1. 替代方案 1：完全受控组件](#61-替代方案-1完全受控组件)
+  - [6.2. 替代方案 2：使用 key 重置组件](#62-替代方案-2使用-key-重置组件)
+  - [6.3. 替代方案 3：render 中计算派生值](#63-替代方案-3render-中计算派生值)
+- [7. 如何迁移到函数组件？](#7-如何迁移到函数组件)
+  - [7.1. 迁移示例 1：props 变化时重置 state](#71-迁移示例-1props-变化时重置-state)
+  - [7.2. 迁移示例 2：记录 props 的前一个值](#72-迁移示例-2记录-props-的前一个值)
+- [8. 派生状态的不同实现方式对比](#8-派生状态的不同实现方式对比)
+  - [8.1. 选择指南](#81-选择指南)
+- [9. 引用](#9-引用)
 
 <!-- endregion:toc -->
 
@@ -42,8 +41,6 @@
 - 替代方案和优化技巧
 - 函数组件的等价实现
 
-## 2. 评价
-
 这篇笔记深入讲解 React 中最容易被误用的生命周期方法 `getDerivedStateFromProps`，通过实际案例展示正确用法。
 
 - 这个方法在 React 16.3 引入，用于替代 `componentWillReceiveProps`
@@ -51,11 +48,11 @@
 - 优先考虑完全受控组件或带 key 的完全不受控组件
 - 函数组件中通常用普通计算或 useEffect 替代
 
-## 3. getDerivedStateFromProps 是什么？
+## 2. getDerivedStateFromProps 是什么？
 
 `getDerivedStateFromProps` 是一个静态方法，用于根据 props 的变化来更新 state。
 
-### 3.1. 基本定义
+### 2.1. 基本定义
 
 ```typescript
 class MyComponent extends React.Component<Props, State> {
@@ -75,7 +72,7 @@ class MyComponent extends React.Component<Props, State> {
 }
 ```
 
-### 3.2. 关键特点
+### 2.2. 关键特点
 
 ```typescript
 interface Props {
@@ -127,7 +124,7 @@ class Calculator extends React.Component<Props, State> {
 }
 ```
 
-### 3.3. 调用时机
+### 2.3. 调用时机
 
 ```typescript
 class TimingDemo extends React.Component<Props, State> {
@@ -171,11 +168,11 @@ class TimingDemo extends React.Component<Props, State> {
 // 6. componentDidUpdate
 ```
 
-## 4. 什么时候需要使用它？
+## 3. 什么时候需要使用它？
 
 只在极少数场景下需要使用派生状态。
 
-### 4.1. 场景 1：根据 props 变化重置部分 state
+### 3.1. 场景 1：根据 props 变化重置部分 state
 
 ```typescript
 interface Props {
@@ -227,7 +224,7 @@ class UserEmail extends React.Component<Props, State> {
 }
 ```
 
-### 4.2. 场景 2：props 变化时执行动画
+### 3.2. 场景 2：props 变化时执行动画
 
 ```typescript
 interface Props {
@@ -272,7 +269,7 @@ class AnimatedPanel extends React.Component<Props, State> {
 }
 ```
 
-### 4.3. 场景 3：记录 props 的历史值
+### 3.3. 场景 3：记录 props 的历史值
 
 ```typescript
 interface Props {
@@ -314,11 +311,11 @@ class PageTracker extends React.Component<Props, State> {
 }
 ```
 
-## 5. 如何正确使用这个方法？
+## 4. 如何正确使用这个方法？
 
 遵循最佳实践避免常见问题。
 
-### 5.1. 最佳实践 1：保存 props 的副本
+### 4.1. 最佳实践 1：保存 props 的副本
 
 ```typescript
 interface Props {
@@ -364,7 +361,7 @@ class ControlledInput extends React.Component<Props, State> {
 }
 ```
 
-### 5.2. 最佳实践 2：只在必要时更新
+### 4.2. 最佳实践 2：只在必要时更新
 
 ```typescript
 interface Props {
@@ -426,7 +423,7 @@ class FilteredList extends React.Component<Props, State> {
 }
 ```
 
-### 5.3. 最佳实践 3：配合 componentDidUpdate 使用
+### 4.3. 最佳实践 3：配合 componentDidUpdate 使用
 
 ```typescript
 interface Props {
@@ -485,11 +482,11 @@ class SearchResults extends React.Component<Props, State> {
 }
 ```
 
-## 6. 有哪些常见错误用法？
+## 5. 有哪些常见错误用法？
 
 避免这些反模式。
 
-### 6.1. 错误 1：无条件复制 props 到 state
+### 5.1. 错误 1：无条件复制 props 到 state
 
 ::: code-group
 
@@ -544,7 +541,7 @@ class GoodExample extends React.Component<Props, State> {
 
 :::
 
-### 6.2. 错误 2：在派生状态中执行副作用
+### 5.2. 错误 2：在派生状态中执行副作用
 
 ::: code-group
 
@@ -600,7 +597,7 @@ class GoodSideEffect extends React.Component<Props, State> {
 
 :::
 
-### 6.3. 错误 3：修改 state 对象
+### 5.3. 错误 3：修改 state 对象
 
 ```typescript
 class MutationError extends React.Component<Props, State> {
@@ -633,11 +630,11 @@ class NoMutation extends React.Component<Props, State> {
 }
 ```
 
-## 7. 如何避免不必要的派生状态？
+## 6. 如何避免不必要的派生状态？
 
 大多数情况下不需要派生状态。
 
-### 7.1. 替代方案 1：完全受控组件
+### 6.1. 替代方案 1：完全受控组件
 
 ```typescript
 // ❌ 不推荐：使用派生状态
@@ -664,7 +661,7 @@ function ControlledInput({ value, onChange }: Props) {
 }
 ```
 
-### 7.2. 替代方案 2：使用 key 重置组件
+### 6.2. 替代方案 2：使用 key 重置组件
 
 ```typescript
 // ❌ 不推荐：使用派生状态重置
@@ -701,7 +698,7 @@ function EmailForm({ initialEmail }: { initialEmail: string }) {
 }
 ```
 
-### 7.3. 替代方案 3：render 中计算派生值
+### 6.3. 替代方案 3：render 中计算派生值
 
 ```typescript
 // ❌ 不推荐：保存派生状态
@@ -760,11 +757,11 @@ function MemoizedSortedList({ items }: Props) {
 }
 ```
 
-## 8. 如何迁移到函数组件？
+## 7. 如何迁移到函数组件？
 
 函数组件中很少需要派生状态。
 
-### 8.1. 迁移示例 1：props 变化时重置 state
+### 7.1. 迁移示例 1：props 变化时重置 state
 
 ::: code-group
 
@@ -819,7 +816,7 @@ function EmailInput({ initialEmail }: { initialEmail: string }) {
 
 :::
 
-### 8.2. 迁移示例 2：记录 props 的前一个值
+### 7.2. 迁移示例 2：记录 props 的前一个值
 
 ::: code-group
 
@@ -897,7 +894,7 @@ function CounterWithHook({ count }: Props) {
 
 :::
 
-## 9. 派生状态的不同实现方式对比
+## 8. 派生状态的不同实现方式对比
 
 | 方式 | 适用场景 | 优点 | 缺点 |
 | --- | --- | --- | --- |
@@ -908,7 +905,7 @@ function CounterWithHook({ count }: Props) {
 | useMemo | 计算成本高的派生值 | 避免重复计算 | 增加内存占用 |
 | useEffect | props 变化时更新 state | 灵活，符合函数组件思维 | 会多一次渲染 |
 
-### 9.1. 选择指南
+### 8.1. 选择指南
 
 ```typescript
 // 1. 优先使用完全受控组件
@@ -946,7 +943,7 @@ class LastResort extends React.Component<Props, State> {
 }
 ```
 
-## 10. 引用
+## 9. 引用
 
 - [You Probably Don't Need Derived State][1]
 - [getDerivedStateFromProps API 文档][2]

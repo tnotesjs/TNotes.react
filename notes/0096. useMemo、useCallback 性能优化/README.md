@@ -3,13 +3,12 @@
 <!-- region:toc -->
 
 - [1. 本节内容](#1-本节内容)
-- [2. 评价](#2-评价)
-- [3. `useMemo` 是什么？](#3-usememo-是什么)
-- [4. `useCallback` 是什么？](#4-usecallback-是什么)
-- [5. `useMemo` vs `useCallback`](#5-usememo-vs-usecallback)
-- [6. `React.memo` 是什么？](#6-reactmemo-是什么)
-- [7. `React.memo`、`useMemo`、`useCallback` 如何配合使用？](#7-reactmemousememousecallback-如何配合使用)
-- [8. 引用](#8-引用)
+- [2. `useMemo` 是什么？](#2-usememo-是什么)
+- [3. `useCallback` 是什么？](#3-usecallback-是什么)
+- [4. `useMemo` vs `useCallback`](#4-usememo-vs-usecallback)
+- [5. `React.memo` 是什么？](#5-reactmemo-是什么)
+- [6. `React.memo`、`useMemo`、`useCallback` 如何配合使用？](#6-reactmemousememousecallback-如何配合使用)
+- [7. 引用](#7-引用)
 
 <!-- endregion:toc -->
 
@@ -19,8 +18,6 @@
 - `useCallback`
 - `React.memo`
 
-## 2. 评价
-
 这篇笔记讲解 React 中两个重要的性能优化 Hook：`useMemo` 和 `useCallback`，以及一个高阶组件 `React.memo`。
 
 - `useMemo` 用于缓存计算结果，`useCallback` 用于缓存函数引用
@@ -28,7 +25,7 @@
 - 必须与 `React.memo` 配合才能真正避免子组件重新渲染
 - 依赖项数组是关键，遗漏或多余都会导致问题
 
-## 3. `useMemo` 是什么？
+## 2. `useMemo` 是什么？
 
 `useMemo` 是一个 React Hook，用于缓存计算结果，避免在每次渲染时重复执行昂贵的计算。
 
@@ -40,7 +37,7 @@
 const memoizedValue = useMemo(
   () => computeExpensiveValue(a, b), // 计算函数
   [a, b], // 依赖项数组
-)
+);
 ```
 
 1. 问题场景：昂贵的计算每次都执行
@@ -49,15 +46,15 @@ const memoizedValue = useMemo(
 ::: code-group
 
 ```jsx [1]
-import { useState } from 'react'
-import { createRoot } from 'react-dom/client'
+import { useState } from "react";
+import { createRoot } from "react-dom/client";
 
 function Component({ items }) {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   // ⚠️ 每次渲染都重新计算
-  console.log('排序执行')
-  const sortedItems = items.slice().sort((a, b) => a.value - b.value)
+  console.log("排序执行");
+  const sortedItems = items.slice().sort((a, b) => a.value - b.value);
 
   return (
     <>
@@ -70,21 +67,21 @@ function Component({ items }) {
         ))}
       </ul>
     </>
-  )
+  );
 }
 
 function App() {
   return (
     <Component
       items={[
-        { id: 1, name: 'Item 1', value: 10 },
-        { id: 2, name: 'Item 2', value: 5 },
+        { id: 1, name: "Item 1", value: 10 },
+        { id: 2, name: "Item 2", value: 5 },
       ]}
     />
-  )
+  );
 }
 
-createRoot(document.getElementById('root')).render(<App />)
+createRoot(document.getElementById("root")).render(<App />);
 
 // 测试步骤：
 // 点击 count 按钮，观察控制台的“排序执行”日志
@@ -92,17 +89,17 @@ createRoot(document.getElementById('root')).render(<App />)
 ```
 
 ```jsx [2]
-import { useMemo, useState } from 'react'
-import { createRoot } from 'react-dom/client'
+import { useMemo, useState } from "react";
+import { createRoot } from "react-dom/client";
 
 function Component({ items }) {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   // ✅ 使用 useMemo 缓存排序结果，避免不必要的重新计算
   const sortedItems = useMemo(() => {
-    console.log('排序执行')
-    return items.slice().sort((a, b) => a.value - b.value)
-  }, [items])
+    console.log("排序执行");
+    return items.slice().sort((a, b) => a.value - b.value);
+  }, [items]);
 
   return (
     <>
@@ -115,21 +112,21 @@ function Component({ items }) {
         ))}
       </ul>
     </>
-  )
+  );
 }
 
 function App() {
   return (
     <Component
       items={[
-        { id: 1, name: 'Item 1', value: 10 },
-        { id: 2, name: 'Item 2', value: 5 },
+        { id: 1, name: "Item 1", value: 10 },
+        { id: 2, name: "Item 2", value: 5 },
       ]}
     />
-  )
+  );
 }
 
-createRoot(document.getElementById('root')).render(<App />)
+createRoot(document.getElementById("root")).render(<App />);
 
 // 测试步骤：
 // 点击 count 按钮，观察控制台的“排序执行”日志
@@ -138,7 +135,7 @@ createRoot(document.getElementById('root')).render(<App />)
 
 :::
 
-## 4. `useCallback` 是什么？
+## 3. `useCallback` 是什么？
 
 `useCallback` 用于缓存函数引用，避免每次渲染都创建新函数。
 
@@ -149,8 +146,8 @@ createRoot(document.getElementById('root')).render(<App />)
 // 示例：
 const memoizedCallback = useCallback(() => {
   // ... 函数逻辑
-  doSomething(a, b)
-}, [a, b]) // 依赖项数组
+  doSomething(a, b);
+}, [a, b]); // 依赖项数组
 ```
 
 1. 问题场景：函数引用变化导致子组件重新渲染
@@ -159,19 +156,19 @@ const memoizedCallback = useCallback(() => {
 ::: code-group
 
 ```jsx [1]
-import { useState } from 'react'
-import { createRoot } from 'react-dom/client'
+import { useState } from "react";
+import { createRoot } from "react-dom/client";
 
 // ParentComponent 渲染
 // ChildComponent 也会重新渲染
 function ParentComponent() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   // ❌ 函数引用不稳定
   // ParentComponent 每次渲染都创建新函数实例 handleClick
   const handleClick = () => {
-    console.log('Button clicked')
-  }
+    console.log("Button clicked");
+  };
 
   return (
     <div>
@@ -179,21 +176,21 @@ function ParentComponent() {
       <ChildComponent onClick={handleClick} />
       <button onClick={() => setCount(count + 1)}>Count: {count}</button>
     </div>
-  )
+  );
 }
 
 function ChildComponent({ onClick }) {
   // 即使 onClick 逻辑相同，每次都会重新渲染
   // 因为每次接收的都是新的函数引用
-  console.log('ChildComponent 渲染') // ❌ 每次 ParentComponent 渲染都会执行
-  return <button onClick={onClick}>Click me</button>
+  console.log("ChildComponent 渲染"); // ❌ 每次 ParentComponent 渲染都会执行
+  return <button onClick={onClick}>Click me</button>;
 }
 
 function App() {
-  return <ParentComponent />
+  return <ParentComponent />;
 }
 
-createRoot(document.getElementById('root')).render(<App />)
+createRoot(document.getElementById("root")).render(<App />);
 
 // 测试步骤：
 // 点击 count 按钮
@@ -203,36 +200,36 @@ createRoot(document.getElementById('root')).render(<App />)
 ```
 
 ```jsx [2]
-import { memo, useCallback, useState } from 'react'
-import { createRoot } from 'react-dom/client'
+import { memo, useCallback, useState } from "react";
+import { createRoot } from "react-dom/client";
 
 function ParentComponent() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   // 使用 useCallback 缓存函数引用
   const handleClick = useCallback(() => {
-    console.log('Button clicked')
-  }, []) // 空依赖数组，永远返回同一个函数
+    console.log("Button clicked");
+  }, []); // 空依赖数组，永远返回同一个函数
 
   return (
     <div>
       <ChildComponent onClick={handleClick} />
       <button onClick={() => setCount(count + 1)}>Count: {count}</button>
     </div>
-  )
+  );
 }
 
 // 使用 React.memo 进一步优化
 const ChildComponent = memo(({ onClick }) => {
-  console.log('ChildComponent 渲染了')
-  return <button onClick={onClick}>Click me</button>
-})
+  console.log("ChildComponent 渲染了");
+  return <button onClick={onClick}>Click me</button>;
+});
 
 function App() {
-  return <ParentComponent />
+  return <ParentComponent />;
 }
 
-createRoot(document.getElementById('root')).render(<App />)
+createRoot(document.getElementById("root")).render(<App />);
 
 // 测试步骤：
 // 点击 count 按钮
@@ -273,7 +270,7 @@ createRoot(document.getElementById('root')).render(<App />)
 
 :::
 
-## 5. `useMemo` vs `useCallback`
+## 4. `useMemo` vs `useCallback`
 
 | 对比项   | `useMemo`                    | `useCallback`                 |
 | -------- | ---------------------------- | ----------------------------- |
@@ -287,49 +284,49 @@ createRoot(document.getElementById('root')).render(<App />)
 ```jsx
 // React 内部的简化实现：
 export function useCallback(callback, deps) {
-  return useMemo(() => callback, deps)
+  return useMemo(() => callback, deps);
 }
 
 // 更详细的实现：
 export function useCallback(callback, deps) {
-  const memoizedState = useRef(null)
+  const memoizedState = useRef(null);
 
   if (!areDepsEqual(deps, memoizedState.current?.deps)) {
     memoizedState.current = {
       value: callback, // 直接保存函数本身
       deps: deps,
-    }
+    };
   }
 
-  return memoizedState.current.value
+  return memoizedState.current.value;
 }
 
 export function useMemo(factory, deps) {
-  const memoizedState = useRef(null)
+  const memoizedState = useRef(null);
 
   if (!areDepsEqual(deps, memoizedState.current?.deps)) {
     memoizedState.current = {
       value: factory(), // 执行工厂函数获取值
       deps: deps,
-    }
+    };
   }
 
-  return memoizedState.current.value
+  return memoizedState.current.value;
 }
 
 // 以下两种写法是完全等价的：
 
 // 写法1：使用 useCallback
 const handleClick = useCallback(() => {
-  console.log('Clicked')
-}, [deps])
+  console.log("Clicked");
+}, [deps]);
 
 // 写法2：使用 useMemo 实现 useCallback
 const handleClick = useMemo(() => {
   return () => {
-    console.log('Clicked')
-  }
-}, [deps])
+    console.log("Clicked");
+  };
+}, [deps]);
 
 // 或更简洁的 useMemo 写法
 // const handleClick = useMemo(
@@ -340,7 +337,7 @@ const handleClick = useMemo(() => {
 // )
 ```
 
-## 6. `React.memo` 是什么？
+## 5. `React.memo` 是什么？
 
 `React.memo` 是一个高阶组件（HOC），用于记忆化函数组件。它通过浅比较 `props` 来决定是否跳过组件的重新渲染。
 
@@ -365,43 +362,43 @@ const handleClick = useMemo(() => {
 示例：
 
 ```jsx
-import { memo, useState } from 'react'
-import { createRoot } from 'react-dom/client'
+import { memo, useState } from "react";
+import { createRoot } from "react-dom/client";
 
 const Greeting = memo(({ name }) => {
-  console.log('Greeting was rendered at', new Date().toLocaleTimeString())
+  console.log("Greeting was rendered at", new Date().toLocaleTimeString());
   return (
     <h3>
-      Hello{name && ', '}
+      Hello{name && ", "}
       {name}!
     </h3>
-  )
-})
+  );
+});
 
 const GreetingWithoutMemo = ({ name }) => {
   console.log(
-    'GreetingWithoutMemo was rendered at',
+    "GreetingWithoutMemo was rendered at",
     new Date().toLocaleTimeString(),
-  )
+  );
   return (
     <h3>
-      Hello{name && ', '}
+      Hello{name && ", "}
       {name}!
     </h3>
-  )
-}
+  );
+};
 
 function App() {
-  const [name, setName] = useState('')
-  const [address, setAddress] = useState('')
+  const [name, setName] = useState("");
+  const [address, setAddress] = useState("");
   return (
     <>
       <label>
-        Name{': '}
+        Name{": "}
         <input value={name} onChange={(e) => setName(e.target.value)} />
       </label>
       <label>
-        Address{': '}
+        Address{": "}
         <input value={address} onChange={(e) => setAddress(e.target.value)} />
       </label>
       <h2>Greeting</h2>
@@ -409,10 +406,10 @@ function App() {
       <h2>Greeting Without Memo</h2>
       <GreetingWithoutMemo name={name} />
     </>
-  )
+  );
 }
 
-createRoot(document.getElementById('root')).render(<App />)
+createRoot(document.getElementById("root")).render(<App />);
 
 // 测试步骤：
 // 1. 在“Name”输入框中输入内容，观察控制台输出
@@ -431,30 +428,30 @@ createRoot(document.getElementById('root')).render(<App />)
 //   无论其 name prop 是否变化
 ```
 
-## 7. `React.memo`、`useMemo`、`useCallback` 如何配合使用？
+## 6. `React.memo`、`useMemo`、`useCallback` 如何配合使用？
 
 必须配合使用才能真正避免重新渲染。
 
 ```jsx
-import { memo, useCallback, useMemo, useState } from 'react'
-import { createRoot } from 'react-dom/client'
+import { memo, useCallback, useMemo, useState } from "react";
+import { createRoot } from "react-dom/client";
 
 // 子组件使用 React.memo
 const UserCard = memo(({ user, onUpdate, onDelete }) => {
-  console.log('UserCard 渲染:', user.id)
+  console.log("UserCard 渲染:", user.id);
 
   return (
     <div>
       <h3>{user.name}</h3>
-      <button onClick={() => onUpdate(user.id, 'New Name')}>Update</button>
+      <button onClick={() => onUpdate(user.id, "New Name")}>Update</button>
       <button onClick={() => onDelete(user.id)}>Delete</button>
     </div>
-  )
-})
+  );
+});
 
 // 子组件使用 React.memo
 const ItemList = memo(({ items }) => {
-  console.log('ItemList 渲染')
+  console.log("ItemList 渲染");
 
   return (
     <ul>
@@ -462,31 +459,31 @@ const ItemList = memo(({ items }) => {
         <li key={item.id}>{item.name}</li>
       ))}
     </ul>
-  )
-})
+  );
+});
 
 // 父组件使用 useCallback 和 useMemo
 function UserList({ items }) {
   const [users, setUsers] = useState([
-    { id: '1', name: 'Alice' },
-    { id: '2', name: 'Bob' },
-  ])
-  const [count, setCount] = useState(0)
+    { id: "1", name: "Alice" },
+    { id: "2", name: "Bob" },
+  ]);
+  const [count, setCount] = useState(0);
 
   // ✅ 使用 useCallback 缓存函数引用，避免子组件不必要的重新渲染
   const handleUpdate = useCallback((id, name) => {
-    setUsers((prev) => prev.map((u) => (u.id === id ? { ...u, name } : u)))
-  }, [])
+    setUsers((prev) => prev.map((u) => (u.id === id ? { ...u, name } : u)));
+  }, []);
 
   const handleDelete = useCallback((id) => {
-    setUsers((prev) => prev.filter((u) => u.id !== id))
-  }, [])
+    setUsers((prev) => prev.filter((u) => u.id !== id));
+  }, []);
 
   // ✅ 使用 useMemo 缓存排序结果，避免不必要的重新计算
   const sortedItems = useMemo(() => {
-    console.log('排序执行')
-    return items.slice().sort((a, b) => a.value - b.value)
-  }, [items])
+    console.log("排序执行");
+    return items.slice().sort((a, b) => a.value - b.value);
+  }, [items]);
   // 只要 items 不变，sortedItems 引用就不变
 
   return (
@@ -504,21 +501,21 @@ function UserList({ items }) {
       {/* ✅ count 变化时，ItemList 不会重新渲染 */}
       <ItemList items={sortedItems} />
     </div>
-  )
+  );
 }
 
 function App() {
   return (
     <UserList
       items={[
-        { id: 1, name: 'Item 1', value: 10 },
-        { id: 2, name: 'Item 2', value: 5 },
+        { id: 1, name: "Item 1", value: 10 },
+        { id: 2, name: "Item 2", value: 5 },
       ]}
     />
-  )
+  );
 }
 
-createRoot(document.getElementById('root')).render(<App />)
+createRoot(document.getElementById("root")).render(<App />);
 
 // 默认输出结果：
 // 排序执行
@@ -551,7 +548,7 @@ createRoot(document.getElementById('root')).render(<App />)
 // 当点击 Count 按钮时，虽然父组件重新渲染，但由于 sortedItems 引用没有变化，因此 ItemList 不会重新渲染
 ```
 
-## 8. 引用
+## 7. 引用
 
 - [官方文档 - useMemo][1]
 - [官方文档 - useCallback][2]

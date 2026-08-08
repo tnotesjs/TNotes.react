@@ -3,32 +3,31 @@
 <!-- region:toc -->
 
 - [1. 本节内容](#1-本节内容)
-- [2. 评价](#2-评价)
-- [3. 为什么要拆分组件？](#3-为什么要拆分组件)
-  - [3.1. 提高代码可维护性](#31-提高代码可维护性)
-  - [3.2. 提高代码复用性](#32-提高代码复用性)
-  - [3.3. 便于测试和调试](#33-便于测试和调试)
-  - [3.4. 优化性能](#34-优化性能)
-- [4. 何时应该拆分组件？](#4-何时应该拆分组件)
-  - [4.1. 拆分信号](#41-拆分信号)
-  - [4.2. 实际案例：判断是否需要拆分](#42-实际案例判断是否需要拆分)
-- [5. 如何拆分组件？](#5-如何拆分组件)
-  - [5.1. 按职责拆分](#51-按职责拆分)
-  - [5.2. 按功能模块拆分](#52-按功能模块拆分)
-  - [5.3. 提取可复用的 UI 组件](#53-提取可复用的-ui-组件)
-  - [5.4. 提取自定义 Hooks](#54-提取自定义-hooks)
-- [6. 常见的拆分模式有哪些？](#6-常见的拆分模式有哪些)
-  - [6.1. 容器组件与展示组件](#61-容器组件与展示组件)
-  - [6.2. 组合组件模式](#62-组合组件模式)
-  - [6.3. 布局组件与内容组件](#63-布局组件与内容组件)
-  - [6.4. 高阶组件与 Hooks](#64-高阶组件与-hooks)
-- [7. 组件拆分的常见误区是什么？](#7-组件拆分的常见误区是什么)
-  - [7.1. 误区 1：过度拆分](#71-误区-1过度拆分)
-  - [7.2. 误区 2：按 UI 结构拆分](#72-误区-2按-ui-结构拆分)
-  - [7.3. 误区 3：提前优化](#73-误区-3提前优化)
-  - [7.4. 误区 4：忽略性能影响](#74-误区-4忽略性能影响)
-  - [7.5. 拆分原则总结](#75-拆分原则总结)
-- [8. 引用](#8-引用)
+- [2. 为什么要拆分组件？](#2-为什么要拆分组件)
+  - [2.1. 提高代码可维护性](#21-提高代码可维护性)
+  - [2.2. 提高代码复用性](#22-提高代码复用性)
+  - [2.3. 便于测试和调试](#23-便于测试和调试)
+  - [2.4. 优化性能](#24-优化性能)
+- [3. 何时应该拆分组件？](#3-何时应该拆分组件)
+  - [3.1. 拆分信号](#31-拆分信号)
+  - [3.2. 实际案例：判断是否需要拆分](#32-实际案例判断是否需要拆分)
+- [4. 如何拆分组件？](#4-如何拆分组件)
+  - [4.1. 按职责拆分](#41-按职责拆分)
+  - [4.2. 按功能模块拆分](#42-按功能模块拆分)
+  - [4.3. 提取可复用的 UI 组件](#43-提取可复用的-ui-组件)
+  - [4.4. 提取自定义 Hooks](#44-提取自定义-hooks)
+- [5. 常见的拆分模式有哪些？](#5-常见的拆分模式有哪些)
+  - [5.1. 容器组件与展示组件](#51-容器组件与展示组件)
+  - [5.2. 组合组件模式](#52-组合组件模式)
+  - [5.3. 布局组件与内容组件](#53-布局组件与内容组件)
+  - [5.4. 高阶组件与 Hooks](#54-高阶组件与-hooks)
+- [6. 组件拆分的常见误区是什么？](#6-组件拆分的常见误区是什么)
+  - [6.1. 误区 1：过度拆分](#61-误区-1过度拆分)
+  - [6.2. 误区 2：按 UI 结构拆分](#62-误区-2按-ui-结构拆分)
+  - [6.3. 误区 3：提前优化](#63-误区-3提前优化)
+  - [6.4. 误区 4：忽略性能影响](#64-误区-4忽略性能影响)
+  - [6.5. 拆分原则总结](#65-拆分原则总结)
+- [7. 引用](#7-引用)
 
 <!-- endregion:toc -->
 
@@ -41,8 +40,6 @@
 - 拆分误区避免
 - 实战案例分析
 
-## 2. 评价
-
 本笔记系统讲解了 React 组件拆分的原则和最佳实践，帮助开发者写出更易维护的代码。
 
 - 组件拆分是提高代码可维护性的关键手段，但不是越细越好
@@ -50,29 +47,29 @@
 - 合理的组件大小应该是一个函数能在一屏内看完主要逻辑
 - 过度拆分会增加理解成本和性能开销，需要在复用性和简洁性之间权衡
 
-## 3. 为什么要拆分组件？
+## 2. 为什么要拆分组件？
 
-### 3.1. 提高代码可维护性
+### 2.1. 提高代码可维护性
 
 ::: code-group
 
 ```jsx [❌ 未拆分的大组件]
 function UserDashboard() {
-  const [user, setUser] = useState(null)
-  const [posts, setPosts] = useState([])
-  const [comments, setComments] = useState([])
-  const [followers, setFollowers] = useState([])
-  const [following, setFollowing] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [activeTab, setActiveTab] = useState('posts')
+  const [user, setUser] = useState(null);
+  const [posts, setPosts] = useState([]);
+  const [comments, setComments] = useState([]);
+  const [followers, setFollowers] = useState([]);
+  const [following, setFollowing] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState("posts");
 
   useEffect(() => {
-    fetchUserData()
-    fetchPosts()
-    fetchComments()
-    fetchFollowers()
-    fetchFollowing()
-  }, [])
+    fetchUserData();
+    fetchPosts();
+    fetchComments();
+    fetchFollowers();
+    fetchFollowing();
+  }, []);
 
   // 数百行代码...
 
@@ -94,14 +91,14 @@ function UserDashboard() {
 
       {/* 标签页 - 30 行 */}
       <div className="tabs">
-        <button onClick={() => setActiveTab('posts')}>帖子</button>
-        <button onClick={() => setActiveTab('comments')}>评论</button>
-        <button onClick={() => setActiveTab('followers')}>关注者</button>
+        <button onClick={() => setActiveTab("posts")}>帖子</button>
+        <button onClick={() => setActiveTab("comments")}>评论</button>
+        <button onClick={() => setActiveTab("followers")}>关注者</button>
       </div>
 
       {/* 内容区 - 100+ 行 */}
       <div className="content">
-        {activeTab === 'posts' && (
+        {activeTab === "posts" && (
           <div>
             {posts.map((post) => (
               <div key={post.id}>
@@ -119,17 +116,17 @@ function UserDashboard() {
         {/* 更多内容... */}
       </div>
     </div>
-  )
+  );
 }
 ```
 
 ```jsx [✅ 拆分后的组件]
 // 主组件 - 只负责数据获取和组合
 function UserDashboard() {
-  const { user, loading } = useUser()
-  const [activeTab, setActiveTab] = useState('posts')
+  const { user, loading } = useUser();
+  const [activeTab, setActiveTab] = useState("posts");
 
-  if (loading) return <Loading />
+  if (loading) return <Loading />;
 
   return (
     <div className="dashboard">
@@ -137,12 +134,12 @@ function UserDashboard() {
       <TabNavigation activeTab={activeTab} onChange={setActiveTab} />
       <TabContent tab={activeTab} userId={user.id} />
     </div>
-  )
+  );
 }
 
 // 用户信息组件
 function UserInfo({ user }) {
-  const { handleFollow, handleMessage } = useUserActions()
+  const { handleFollow, handleMessage } = useUserActions();
 
   return (
     <div className="user-info">
@@ -151,7 +148,7 @@ function UserInfo({ user }) {
       <UserStats user={user} />
       <UserActions onFollow={handleFollow} onMessage={handleMessage} />
     </div>
-  )
+  );
 }
 
 // 其他子组件...
@@ -159,7 +156,7 @@ function UserInfo({ user }) {
 
 :::
 
-### 3.2. 提高代码复用性
+### 2.2. 提高代码复用性
 
 ```jsx
 // ✅ 可复用的小组件
@@ -188,45 +185,45 @@ function Avatar({ src, size = 'medium', alt }) {
 <Avatar src={author.avatar} size="large" />
 ```
 
-### 3.3. 便于测试和调试
+### 2.3. 便于测试和调试
 
 ```jsx
 // ✅ 拆分后的组件更容易测试
-describe('UserCard', () => {
-  it('应该显示用户名', () => {
-    render(<UserCard user={{ name: '张三' }} />)
-    expect(screen.getByText('张三')).toBeInTheDocument()
-  })
+describe("UserCard", () => {
+  it("应该显示用户名", () => {
+    render(<UserCard user={{ name: "张三" }} />);
+    expect(screen.getByText("张三")).toBeInTheDocument();
+  });
 
-  it('点击关注按钮应该触发回调', () => {
-    const onFollow = jest.fn()
-    render(<UserCard user={user} onFollow={onFollow} />)
-    fireEvent.click(screen.getByText('关注'))
-    expect(onFollow).toHaveBeenCalled()
-  })
-})
+  it("点击关注按钮应该触发回调", () => {
+    const onFollow = jest.fn();
+    render(<UserCard user={user} onFollow={onFollow} />);
+    fireEvent.click(screen.getByText("关注"));
+    expect(onFollow).toHaveBeenCalled();
+  });
+});
 ```
 
-### 3.4. 优化性能
+### 2.4. 优化性能
 
 ```jsx
 // ✅ 小组件可以单独优化
 const UserCard = memo(function UserCard({ user }) {
-  console.log('UserCard 渲染')
+  console.log("UserCard 渲染");
   return (
     <div>
       <h2>{user.name}</h2>
       <p>{user.bio}</p>
     </div>
-  )
-})
+  );
+});
 
 // 当父组件重新渲染时，UserCard 不会重新渲染（如果 user 没变）
 ```
 
-## 4. 何时应该拆分组件？
+## 3. 何时应该拆分组件？
 
-### 4.1. 拆分信号
+### 3.1. 拆分信号
 
 | 信号                    | 说明                                 | 拆分建议 |
 | ----------------------- | ------------------------------------ | -------- |
@@ -237,7 +234,7 @@ const UserCard = memo(function UserCard({ user }) {
 | 难以命名                | 组件做的事情太多，难以用简短名称描述 | 强烈建议 |
 | 难以测试                | 需要 mock 很多东西才能测试           | 建议     |
 
-### 4.2. 实际案例：判断是否需要拆分
+### 3.2. 实际案例：判断是否需要拆分
 
 ::: code-group
 
@@ -245,32 +242,32 @@ const UserCard = memo(function UserCard({ user }) {
 // ❌ 300+ 行的组件
 function ProductPage() {
   // 100 行状态和副作用
-  const [product, setProduct] = useState(null)
-  const [reviews, setReviews] = useState([])
-  const [recommendations, setRecommendations] = useState([])
+  const [product, setProduct] = useState(null);
+  const [reviews, setReviews] = useState([]);
+  const [recommendations, setRecommendations] = useState([]);
   // ...更多状态
 
   // 100 行事件处理函数
   const handleAddToCart = () => {
     /* ... */
-  }
+  };
   const handleBuyNow = () => {
     /* ... */
-  }
+  };
   const handleReview = () => {
     /* ... */
-  }
+  };
   // ...更多函数
 
   // 100+ 行 JSX
-  return <div>...</div>
+  return <div>...</div>;
 }
 
 // ✅ 拆分后
 function ProductPage() {
-  const { product, loading } = useProduct()
+  const { product, loading } = useProduct();
 
-  if (loading) return <Loading />
+  if (loading) return <Loading />;
 
   return (
     <>
@@ -280,7 +277,7 @@ function ProductPage() {
       <ProductReviews productId={product.id} />
       <ProductRecommendations productId={product.id} />
     </>
-  )
+  );
 }
 ```
 
@@ -307,7 +304,7 @@ function Dashboard() {
         <span className="trend down">-3%</span>
       </div>
     </div>
-  )
+  );
 }
 
 // ✅ 提取公共组件
@@ -318,27 +315,27 @@ function StatCard({ title, value, trend }) {
       <p className="number">{value}</p>
       <span className={`trend ${trend.direction}`}>{trend.value}</span>
     </div>
-  )
+  );
 }
 
 function Dashboard() {
   const stats = [
     {
-      title: '今日访问',
-      value: '1,234',
-      trend: { direction: 'up', value: '+12%' },
+      title: "今日访问",
+      value: "1,234",
+      trend: { direction: "up", value: "+12%" },
     },
     {
-      title: '总用户数',
-      value: '5,678',
-      trend: { direction: 'up', value: '+5%' },
+      title: "总用户数",
+      value: "5,678",
+      trend: { direction: "up", value: "+5%" },
     },
     {
-      title: '销售额',
-      value: '¥12,345',
-      trend: { direction: 'down', value: '-3%' },
+      title: "销售额",
+      value: "¥12,345",
+      trend: { direction: "down", value: "-3%" },
     },
-  ]
+  ];
 
   return (
     <div>
@@ -346,7 +343,7 @@ function Dashboard() {
         <StatCard key={index} {...stat} />
       ))}
     </div>
-  )
+  );
 }
 ```
 
@@ -378,7 +375,7 @@ function CommentList() {
         </div>
       ))}
     </div>
-  )
+  );
 }
 
 // ✅ 拆分减少嵌套
@@ -389,7 +386,7 @@ function CommentList({ comments }) {
         <Comment key={comment.id} comment={comment} />
       ))}
     </div>
-  )
+  );
 }
 
 function Comment({ comment }) {
@@ -398,7 +395,7 @@ function Comment({ comment }) {
       <CommentHeader user={comment.user} date={comment.date} />
       <CommentBody text={comment.text} />
     </div>
-  )
+  );
 }
 
 function CommentHeader({ user, date }) {
@@ -407,42 +404,42 @@ function CommentHeader({ user, date }) {
       <UserInfo user={user} date={date} />
       <CommentActions />
     </div>
-  )
+  );
 }
 ```
 
 :::
 
-## 5. 如何拆分组件？
+## 4. 如何拆分组件？
 
-### 5.1. 按职责拆分
+### 4.1. 按职责拆分
 
 ```jsx
 // ✅ 按职责拆分：容器组件 vs 展示组件
 // 容器组件：负责数据和逻辑
 function UserListContainer() {
-  const [users, setUsers] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchUsers().then((data) => {
-      setUsers(data)
-      setLoading(false)
-    })
-  }, [])
+      setUsers(data);
+      setLoading(false);
+    });
+  }, []);
 
   const handleDelete = (id) => {
     deleteUser(id).then(() => {
-      setUsers(users.filter((u) => u.id !== id))
-    })
-  }
+      setUsers(users.filter((u) => u.id !== id));
+    });
+  };
 
-  return <UserList users={users} loading={loading} onDelete={handleDelete} />
+  return <UserList users={users} loading={loading} onDelete={handleDelete} />;
 }
 
 // 展示组件：只负责 UI 渲染
 function UserList({ users, loading, onDelete }) {
-  if (loading) return <Loading />
+  if (loading) return <Loading />;
 
   return (
     <ul>
@@ -450,11 +447,11 @@ function UserList({ users, loading, onDelete }) {
         <UserListItem key={user.id} user={user} onDelete={onDelete} />
       ))}
     </ul>
-  )
+  );
 }
 ```
 
-### 5.2. 按功能模块拆分
+### 4.2. 按功能模块拆分
 
 ```jsx
 // ✅ 按功能模块拆分
@@ -466,7 +463,7 @@ function ShoppingCart() {
       <CartSummary />
       <CartActions />
     </div>
-  )
+  );
 }
 
 function CartHeader() {
@@ -475,11 +472,11 @@ function CartHeader() {
       <h2>购物车</h2>
       <CartItemCount />
     </div>
-  )
+  );
 }
 
 function CartItemList() {
-  const { items } = useCart()
+  const { items } = useCart();
 
   return (
     <div className="cart-items">
@@ -487,11 +484,11 @@ function CartItemList() {
         <CartItem key={item.id} item={item} />
       ))}
     </div>
-  )
+  );
 }
 
 function CartSummary() {
-  const { total, discount } = useCart()
+  const { total, discount } = useCart();
 
   return (
     <div className="cart-summary">
@@ -499,11 +496,11 @@ function CartSummary() {
       <div>优惠：-¥{discount}</div>
       <div>总计：¥{total - discount}</div>
     </div>
-  )
+  );
 }
 ```
 
-### 5.3. 提取可复用的 UI 组件
+### 4.3. 提取可复用的 UI 组件
 
 ```jsx
 // ✅ 提取通用的 UI 组件
@@ -531,90 +528,90 @@ function Button({
 <Button variant="danger" disabled>删除</Button>
 ```
 
-### 5.4. 提取自定义 Hooks
+### 4.4. 提取自定义 Hooks
 
 ```jsx
 // ✅ 提取逻辑到自定义 Hook
 function useForm(initialValues) {
-  const [values, setValues] = useState(initialValues)
-  const [errors, setErrors] = useState({})
+  const [values, setValues] = useState(initialValues);
+  const [errors, setErrors] = useState({});
 
   const handleChange = (name, value) => {
-    setValues((prev) => ({ ...prev, [name]: value }))
-  }
+    setValues((prev) => ({ ...prev, [name]: value }));
+  };
 
   const validate = () => {
-    const newErrors = {}
+    const newErrors = {};
     // 验证逻辑
-    setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
-  }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
-  return { values, errors, handleChange, validate }
+  return { values, errors, handleChange, validate };
 }
 
 // 在组件中使用
 function LoginForm() {
   const { values, errors, handleChange, validate } = useForm({
-    username: '',
-    password: '',
-  })
+    username: "",
+    password: "",
+  });
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (validate()) {
-      login(values)
+      login(values);
     }
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit}>
       <input
         value={values.username}
-        onChange={(e) => handleChange('username', e.target.value)}
+        onChange={(e) => handleChange("username", e.target.value)}
       />
       {errors.username && <span>{errors.username}</span>}
       {/* 更多字段 */}
     </form>
-  )
+  );
 }
 ```
 
-## 6. 常见的拆分模式有哪些？
+## 5. 常见的拆分模式有哪些？
 
-### 6.1. 容器组件与展示组件
+### 5.1. 容器组件与展示组件
 
 ```jsx
 // 容器组件 - 处理数据和逻辑
 function TodoListContainer() {
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState([]);
 
   const addTodo = (text) => {
-    setTodos([...todos, { id: Date.now(), text, done: false }])
-  }
+    setTodos([...todos, { id: Date.now(), text, done: false }]);
+  };
 
   const toggleTodo = (id) => {
     setTodos(
       todos.map((todo) =>
         todo.id === id ? { ...todo, done: !todo.done } : todo,
       ),
-    )
-  }
+    );
+  };
 
-  return <TodoList todos={todos} onAdd={addTodo} onToggle={toggleTodo} />
+  return <TodoList todos={todos} onAdd={addTodo} onToggle={toggleTodo} />;
 }
 
 // 展示组件 - 纯粹的 UI
 function TodoList({ todos, onAdd, onToggle }) {
-  const [input, setInput] = useState('')
+  const [input, setInput] = useState("");
 
   return (
     <div>
       <input value={input} onChange={(e) => setInput(e.target.value)} />
       <button
         onClick={() => {
-          onAdd(input)
-          setInput('')
+          onAdd(input);
+          setInput("");
         }}
       >
         添加
@@ -626,29 +623,29 @@ function TodoList({ todos, onAdd, onToggle }) {
         ))}
       </ul>
     </div>
-  )
+  );
 }
 ```
 
-### 6.2. 组合组件模式
+### 5.2. 组合组件模式
 
 ```jsx
 // ✅ 组合组件：提供灵活性
 function Card({ children }) {
-  return <div className="card">{children}</div>
+  return <div className="card">{children}</div>;
 }
 
 Card.Header = function CardHeader({ children }) {
-  return <div className="card-header">{children}</div>
-}
+  return <div className="card-header">{children}</div>;
+};
 
 Card.Body = function CardBody({ children }) {
-  return <div className="card-body">{children}</div>
-}
+  return <div className="card-body">{children}</div>;
+};
 
 Card.Footer = function CardFooter({ children }) {
-  return <div className="card-footer">{children}</div>
-}
+  return <div className="card-footer">{children}</div>;
+};
 
 // 使用时非常灵活
 function UserProfile() {
@@ -665,11 +662,11 @@ function UserProfile() {
         <button>编辑</button>
       </Card.Footer>
     </Card>
-  )
+  );
 }
 ```
 
-### 6.3. 布局组件与内容组件
+### 5.3. 布局组件与内容组件
 
 ```jsx
 // ✅ 布局组件：处理布局
@@ -681,7 +678,7 @@ function PageLayout({ children }) {
       <main className="content">{children}</main>
       <Footer />
     </div>
-  )
+  );
 }
 
 // 内容组件：关注业务逻辑
@@ -691,7 +688,7 @@ function UserPage() {
       <UserProfile />
       <UserPosts />
     </PageLayout>
-  )
+  );
 }
 
 function ProductPage() {
@@ -700,42 +697,42 @@ function ProductPage() {
       <ProductDetails />
       <ProductReviews />
     </PageLayout>
-  )
+  );
 }
 ```
 
-### 6.4. 高阶组件与 Hooks
+### 5.4. 高阶组件与 Hooks
 
 ```jsx
 // ✅ 使用自定义 Hook 代替 HOC
 function useAuth() {
-  const [user, setUser] = useState(null)
-  const [loading, setLoading] = useState(true)
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     checkAuth().then((userData) => {
-      setUser(userData)
-      setLoading(false)
-    })
-  }, [])
+      setUser(userData);
+      setLoading(false);
+    });
+  }, []);
 
-  return { user, loading }
+  return { user, loading };
 }
 
 // 在组件中使用
 function ProtectedPage() {
-  const { user, loading } = useAuth()
+  const { user, loading } = useAuth();
 
-  if (loading) return <Loading />
-  if (!user) return <Redirect to="/login" />
+  if (loading) return <Loading />;
+  if (!user) return <Redirect to="/login" />;
 
-  return <div>受保护的内容</div>
+  return <div>受保护的内容</div>;
 }
 ```
 
-## 7. 组件拆分的常见误区是什么？
+## 6. 组件拆分的常见误区是什么？
 
-### 7.1. 误区 1：过度拆分
+### 6.1. 误区 1：过度拆分
 
 ::: code-group
 
@@ -749,20 +746,20 @@ function UserCard({ user }) {
       <UserCardEmail email={user.email} />
       <UserCardPhone phone={user.phone} />
     </div>
-  )
+  );
 }
 
 // 这些组件太简单，没有复用价值
 function UserCardName({ name }) {
-  return <h3>{name}</h3>
+  return <h3>{name}</h3>;
 }
 
 function UserCardEmail({ email }) {
-  return <p>{email}</p>
+  return <p>{email}</p>;
 }
 
 function UserCardPhone({ phone }) {
-  return <p>{phone}</p>
+  return <p>{phone}</p>;
 }
 ```
 
@@ -778,18 +775,18 @@ function UserCard({ user }) {
         <p>{user.phone}</p>
       </div>
     </div>
-  )
+  );
 }
 
 // 只拆分有复用价值的组件
-function Avatar({ src, size = 'medium' }) {
-  return <img src={src} className={`avatar avatar-${size}`} />
+function Avatar({ src, size = "medium" }) {
+  return <img src={src} className={`avatar avatar-${size}`} />;
 }
 ```
 
 :::
 
-### 7.2. 误区 2：按 UI 结构拆分
+### 6.2. 误区 2：按 UI 结构拆分
 
 ```jsx
 // ❌ 机械地按 UI 结构拆分
@@ -800,7 +797,7 @@ function Page() {
       <MiddleSection />
       <BottomSection />
     </div>
-  )
+  );
 }
 
 // ✅ 按功能和职责拆分
@@ -813,11 +810,11 @@ function ProductPage() {
       <ProductReviews />
       <RelatedProducts />
     </div>
-  )
+  );
 }
 ```
 
-### 7.3. 误区 3：提前优化
+### 6.3. 误区 3：提前优化
 
 ```jsx
 // ❌ 还没开始写就想着拆分
@@ -827,7 +824,7 @@ function ProductPage() {
 // 1. 写出可工作的组件
 function TodoList() {
   // 实现功能...
-  return <div>...</div>
+  return <div>...</div>;
 }
 
 // 2. 发现问题后再拆分
@@ -836,7 +833,7 @@ function TodoList() {
 // - 难以测试？拆分！
 ```
 
-### 7.4. 误区 4：忽略性能影响
+### 6.4. 误区 4：忽略性能影响
 
 ```jsx
 // ⚠️ 过度拆分可能影响性能
@@ -848,13 +845,13 @@ function ExpensiveList({ items }) {
         <ExpensiveItem key={item.id} item={item} />
       ))}
     </div>
-  )
+  );
 }
 
 // ✅ 使用 memo 优化
 const ExpensiveItem = memo(function ExpensiveItem({ item }) {
-  return <div>{item.name}</div>
-})
+  return <div>{item.name}</div>;
+});
 
 // 或者在合适的情况下不拆分
 function SimpleList({ items }) {
@@ -864,11 +861,11 @@ function SimpleList({ items }) {
         <li key={item.id}>{item.name}</li>
       ))}
     </ul>
-  )
+  );
 }
 ```
 
-### 7.5. 拆分原则总结
+### 6.5. 拆分原则总结
 
 | 原则       | 说明                               |
 | ---------- | ---------------------------------- |
@@ -881,7 +878,7 @@ function SimpleList({ items }) {
 | 命名清晰   | 组件名应该清楚地表达其功能         |
 | 保持一致性 | 团队内保持统一的拆分风格           |
 
-## 8. 引用
+## 7. 引用
 
 - [React 官方文档 - 组件与组合][1]
 - [React 官方文档 - 提取组件][2]
