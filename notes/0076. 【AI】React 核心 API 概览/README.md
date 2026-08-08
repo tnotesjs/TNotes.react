@@ -3,14 +3,13 @@
 <!-- region:toc -->
 
 - [1. 本节内容](#1-本节内容)
-- [2. 评价](#2-评价)
-- [3. React 的核心 API](#3-react-的核心-api)
-  - [3.1. 组件相关的 API](#31-组件相关的-api)
-  - [3.2. Hooks API](#32-hooks-api)
-  - [3.3. 渲染相关的 API](#33-渲染相关的-api)
-  - [3.4. 工具 API](#34-工具-api)
-- [4. 总结](#4-总结)
-- [5. 引用](#5-引用)
+- [2. React 的核心 API](#2-react-的核心-api)
+  - [2.1. 组件相关的 API](#21-组件相关的-api)
+  - [2.2. Hooks API](#22-hooks-api)
+  - [2.3. 渲染相关的 API](#23-渲染相关的-api)
+  - [2.4. 工具 API](#24-工具-api)
+- [3. 总结](#3-总结)
+- [4. 引用](#4-引用)
 
 <!-- endregion:toc -->
 
@@ -22,11 +21,9 @@
 - 渲染相关 API
 - 其他常用 API
 
-## 2. 评价
-
 本笔记介绍了 React 的核心 API 大概都有哪些，不对 API 的细节做介绍，更多是起到一个“导航”的作用，目的是帮你快速了解 React 都提供了哪些主要能力，在需要的时候可以快速搜索到你想要的 API。
 
-## 3. React 的核心 API
+## 2. React 的核心 API
 
 React API 主要分为以下几类：
 
@@ -88,7 +85,7 @@ graph LR
     E --> E5[createContext]
 ```
 
-### 3.1. 组件相关的 API
+### 2.1. 组件相关的 API
 
 主要的组件 API：
 
@@ -107,8 +104,8 @@ graph LR
 ```jsx
 // React.memo - 性能优化
 const MyComponent = React.memo(function MyComponent({ name }) {
-  return <div>{name}</div>
-})
+  return <div>{name}</div>;
+});
 
 // React.Fragment - 包裹多个元素
 function App() {
@@ -122,18 +119,18 @@ function App() {
     //   <h1>标题</h1>
     //   <p>内容</p>
     // </>
-  )
+  );
 }
 
 // React.lazy + Suspense - 懒加载
-const LazyComponent = React.lazy(() => import('./HeavyComponent'))
+const LazyComponent = React.lazy(() => import("./HeavyComponent"));
 
 function App() {
   return (
     <React.Suspense fallback={<div>加载中...</div>}>
       <LazyComponent />
     </React.Suspense>
-  )
+  );
 }
 
 // React.forwardRef - 转发 ref
@@ -141,10 +138,10 @@ const FancyButton = React.forwardRef((props, ref) => (
   <button ref={ref} className="fancy-button">
     {props.children}
   </button>
-))
+));
 ```
 
-### 3.2. Hooks API
+### 2.2. Hooks API
 
 Hooks 分类表：
 
@@ -169,25 +166,25 @@ Hooks 分类表：
 基础 Hooks 示例：
 
 ```jsx
-import { useState, useEffect, useRef, useContext } from 'react'
+import { useState, useEffect, useRef, useContext } from "react";
 
 function Example() {
   // useState - 状态管理
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   // useEffect - 副作用
   useEffect(() => {
-    document.title = `点击了 ${count} 次`
+    document.title = `点击了 ${count} 次`;
     return () => {
       // 清理函数
-    }
-  }, [count])
+    };
+  }, [count]);
 
   // useRef - 引用 DOM
-  const inputRef = useRef(null)
+  const inputRef = useRef(null);
 
   // useContext - 读取上下文
-  const theme = useContext(ThemeContext)
+  const theme = useContext(ThemeContext);
 
   return (
     <div>
@@ -195,31 +192,31 @@ function Example() {
       <p>Count: {count}</p>
       <button onClick={() => setCount(count + 1)}>+1</button>
     </div>
-  )
+  );
 }
 ```
 
 性能优化 Hooks 示例：
 
 ```jsx
-import { useMemo, useCallback } from 'react'
+import { useMemo, useCallback } from "react";
 
 function ExpensiveComponent({ data }) {
   // useMemo - 缓存计算结果
   const processedData = useMemo(() => {
-    return data.map((item) => item * 2)
-  }, [data])
+    return data.map((item) => item * 2);
+  }, [data]);
 
   // useCallback - 缓存回调函数
   const handleClick = useCallback(() => {
-    console.log('clicked')
-  }, [])
+    console.log("clicked");
+  }, []);
 
-  return <div onClick={handleClick}>{processedData}</div>
+  return <div onClick={handleClick}>{processedData}</div>;
 }
 ```
 
-### 3.3. 渲染相关的 API
+### 2.3. 渲染相关的 API
 
 渲染 API 对比：
 
@@ -233,36 +230,36 @@ React 18 新渲染 API：
 
 ```jsx
 // React 18+ 推荐写法
-import { createRoot } from 'react-dom/client'
+import { createRoot } from "react-dom/client";
 
-const root = createRoot(document.getElementById('root'))
+const root = createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-)
+);
 
 // 服务端渲染
-import { hydrateRoot } from 'react-dom/client'
+import { hydrateRoot } from "react-dom/client";
 
-hydrateRoot(document.getElementById('root'), <App />)
+hydrateRoot(document.getElementById("root"), <App />);
 ```
 
 React 17 及以前的写法：
 
 ```jsx
 // React 17 及以前的写法（不推荐）
-import ReactDOM from 'react-dom'
+import ReactDOM from "react-dom";
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root'),
-)
+  document.getElementById("root"),
+);
 ```
 
-### 3.4. 工具 API
+### 2.4. 工具 API
 
 工具类 API：
 
@@ -280,40 +277,40 @@ ReactDOM.render(
 ```jsx
 // createElement - 不使用 JSX
 const element = React.createElement(
-  'h1',
-  { className: 'greeting' },
-  'Hello, world!',
-)
+  "h1",
+  { className: "greeting" },
+  "Hello, world!",
+);
 
 // isValidElement - 类型检查
 if (React.isValidElement(element)) {
-  console.log('这是一个有效的 React 元素')
+  console.log("这是一个有效的 React 元素");
 }
 
 // cloneElement - 克隆并修改
-const cloned = React.cloneElement(element, { className: 'new-class' })
+const cloned = React.cloneElement(element, { className: "new-class" });
 
 // Children - 操作 children
 function Parent({ children }) {
   return React.Children.map(children, (child, index) => {
-    return React.cloneElement(child, { key: index })
-  })
+    return React.cloneElement(child, { key: index });
+  });
 }
 
 // createContext - 创建上下文
-const ThemeContext = React.createContext('light')
+const ThemeContext = React.createContext("light");
 
 // startTransition - 标记非紧急更新
-import { startTransition } from 'react'
+import { startTransition } from "react";
 
 function handleClick() {
   startTransition(() => {
-    setQuery(input) // 非紧急更新
-  })
+    setQuery(input); // 非紧急更新
+  });
 }
 ```
 
-## 4. 总结
+## 3. 总结
 
 本笔记概览了 React 的核心 API，帮助开发者快速了解 React 提供的主要能力。
 
@@ -322,7 +319,7 @@ function handleClick() {
 - 掌握核心 API 是深入学习 React 的基础
 - 不需要一次性记住所有 API，在实际使用中逐步熟悉即可
 
-## 5. 引用
+## 4. 引用
 
 - [React API Reference][1]
 - [Hooks API Reference][2]

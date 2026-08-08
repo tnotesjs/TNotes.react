@@ -3,18 +3,17 @@
 <!-- region:toc -->
 
 - [1. 本节内容](#1-本节内容)
-- [2. 评价](#2-评价)
-- [3. React 生态系统包含哪些部分？](#3-react-生态系统包含哪些部分)
-  - [3.1. 状态管理库](#31-状态管理库)
-  - [3.2. 路由库](#32-路由库)
-  - [3.3. UI 组件库](#33-ui-组件库)
-  - [3.4. 构建工具](#34-构建工具)
-  - [3.5. 数据获取库](#35-数据获取库)
-  - [3.6. 表单处理库](#36-表单处理库)
-  - [3.7. 测试工具](#37-测试工具)
-  - [3.8. 其他常用工具](#38-其他常用工具)
-- [4. 总结](#4-总结)
-- [5. 引用](#5-引用)
+- [2. React 生态系统包含哪些部分？](#2-react-生态系统包含哪些部分)
+  - [2.1. 状态管理库](#21-状态管理库)
+  - [2.2. 路由库](#22-路由库)
+  - [2.3. UI 组件库](#23-ui-组件库)
+  - [2.4. 构建工具](#24-构建工具)
+  - [2.5. 数据获取库](#25-数据获取库)
+  - [2.6. 表单处理库](#26-表单处理库)
+  - [2.7. 测试工具](#27-测试工具)
+  - [2.8. 其他常用工具](#28-其他常用工具)
+- [3. 总结](#3-总结)
+- [4. 引用](#4-引用)
 
 <!-- endregion:toc -->
 
@@ -30,8 +29,6 @@
 - 测试工具
 - 其他常用工具
 
-## 2. 评价
-
 本笔记介绍 React 的生态，简单搂一眼即可，笔记没有对具体库的使用细节做介绍，更多是起到一个“导航”的作用。目的是帮你快速了解 React 生态中都有哪些主流库，当你在开发项目的某些功能模块时，可以优先尝试找找第三方库，而不是直接徒手造轮子。
 
 ::: tip 💡 实战建议
@@ -42,7 +39,7 @@
 
 :::
 
-## 3. React 生态系统包含哪些部分？
+## 2. React 生态系统包含哪些部分？
 
 React 生态系统全景图：
 
@@ -88,7 +85,7 @@ graph LR
 | 表单处理  | 简化表单开发     | 可选，复杂表单推荐 |
 | 测试工具  | 保证代码质量     | 推荐               |
 
-### 3.1. 状态管理库
+### 2.1. 状态管理库
 
 主流状态管理库对比：
 
@@ -106,46 +103,46 @@ graph LR
 ::: code-group
 
 ```jsx [Context API]
-const ThemeContext = React.createContext('light')
+const ThemeContext = React.createContext("light");
 
 function App() {
   return (
     <ThemeContext.Provider value="dark">
       <Toolbar />
     </ThemeContext.Provider>
-  )
+  );
 }
 ```
 
 ```jsx [Redux Toolkit]
-import { configureStore, createSlice } from '@reduxjs/toolkit'
+import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 const counterSlice = createSlice({
-  name: 'counter',
+  name: "counter",
   initialState: { value: 0 },
   reducers: {
     increment: (state) => {
-      state.value += 1
+      state.value += 1;
     },
   },
-})
+});
 
 const store = configureStore({
   reducer: { counter: counterSlice.reducer },
-})
+});
 ```
 
 ```jsx [Zustand]
-import create from 'zustand'
+import create from "zustand";
 
 const useStore = create((set) => ({
   count: 0,
   increment: () => set((state) => ({ count: state.count + 1 })),
-}))
+}));
 
 function Counter() {
-  const { count, increment } = useStore()
-  return <button onClick={increment}>{count}</button>
+  const { count, increment } = useStore();
+  return <button onClick={increment}>{count}</button>;
 }
 ```
 
@@ -159,7 +156,7 @@ function Counter() {
 - 原子化需求：Jotai
 - 响应式偏好：MobX
 
-### 3.2. 路由库
+### 2.2. 路由库
 
 主流路由库对比：
 
@@ -173,7 +170,7 @@ function Counter() {
 React Router 示例：
 
 ```jsx
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   return (
@@ -189,7 +186,7 @@ function App() {
         <Route path="/users/:id" element={<User />} />
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 ```
 
@@ -200,7 +197,7 @@ function App() {
 - 轻量需求：Wouter
 - Next.js 项目：使用内置路由
 
-### 3.3. UI 组件库
+### 2.3. UI 组件库
 
 主流 UI 组件库对比：
 
@@ -217,7 +214,7 @@ function App() {
 
 ```jsx
 // Ant Design
-import { Button, Table, Form } from 'antd'
+import { Button, Table, Form } from "antd";
 
 function App() {
   return (
@@ -225,11 +222,11 @@ function App() {
       <Button type="primary">提交</Button>
       <Table dataSource={data} columns={columns} />
     </div>
-  )
+  );
 }
 
 // Chakra UI
-import { Button, Box, Text } from '@chakra-ui/react'
+import { Button, Box, Text } from "@chakra-ui/react";
 
 function App() {
   return (
@@ -237,7 +234,7 @@ function App() {
       <Text fontSize="xl">Hello</Text>
       <Button colorScheme="blue">Click me</Button>
     </Box>
-  )
+  );
 }
 ```
 
@@ -248,7 +245,7 @@ function App() {
 - 现代设计：Chakra UI 或 Mantine
 - 高度定制：shadcn/ui 或 Radix UI
 
-### 3.4. 构建工具
+### 2.4. 构建工具
 
 主流构建工具对比：
 
@@ -280,7 +277,7 @@ npx create-next-app@latest my-app
 - 简单项目：Create React App
 - 复杂配置：Webpack
 
-### 3.5. 数据获取库
+### 2.5. 数据获取库
 
 主流数据获取库对比：
 
@@ -295,33 +292,33 @@ npx create-next-app@latest my-app
 TanStack Query 示例：
 
 ```jsx
-import { useQuery } from '@tanstack/react-query'
+import { useQuery } from "@tanstack/react-query";
 
 function UserProfile() {
   const { data, isLoading, error } = useQuery({
-    queryKey: ['user'],
-    queryFn: () => fetch('/api/user').then((res) => res.json()),
-  })
+    queryKey: ["user"],
+    queryFn: () => fetch("/api/user").then((res) => res.json()),
+  });
 
-  if (isLoading) return <div>加载中...</div>
-  if (error) return <div>错误：{error.message}</div>
+  if (isLoading) return <div>加载中...</div>;
+  if (error) return <div>错误：{error.message}</div>;
 
-  return <div>用户名：{data.name}</div>
+  return <div>用户名：{data.name}</div>;
 }
 ```
 
 SWR 示例：
 
 ```jsx
-import useSWR from 'swr'
+import useSWR from "swr";
 
 function Profile() {
-  const { data, error } = useSWR('/api/user', fetcher)
+  const { data, error } = useSWR("/api/user", fetcher);
 
-  if (error) return <div>加载失败</div>
-  if (!data) return <div>加载中...</div>
+  if (error) return <div>加载失败</div>;
+  if (!data) return <div>加载中...</div>;
 
-  return <div>你好，{data.name}！</div>
+  return <div>你好，{data.name}！</div>;
 }
 ```
 
@@ -332,7 +329,7 @@ function Profile() {
 - Redux 项目：RTK Query
 - 简单需求：Axios 或 Fetch
 
-### 3.6. 表单处理库
+### 2.6. 表单处理库
 
 主流表单库对比：
 
@@ -345,33 +342,33 @@ function Profile() {
 React Hook Form 示例：
 
 ```jsx
-import { useForm } from 'react-hook-form'
+import { useForm } from "react-hook-form";
 
 function MyForm() {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm()
+  } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data)
-  }
+    console.log(data);
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input {...register('name', { required: true })} />
+      <input {...register("name", { required: true })} />
       {errors.name && <span>此字段必填</span>}
 
       <input
-        {...register('email', {
+        {...register("email", {
           pattern: /^\S+@\S+$/i,
         })}
       />
 
       <button type="submit">提交</button>
     </form>
-  )
+  );
 }
 ```
 
@@ -381,7 +378,7 @@ function MyForm() {
 - 复杂表单：Formik
 - 轻量需求：Final Form
 
-### 3.7. 测试工具
+### 2.7. 测试工具
 
 测试工具链：
 
@@ -396,19 +393,19 @@ function MyForm() {
 React Testing Library 示例：
 
 ```jsx
-import { render, screen, fireEvent } from '@testing-library/react'
-import Counter from './Counter'
+import { render, screen, fireEvent } from "@testing-library/react";
+import Counter from "./Counter";
 
-test('计数器功能测试', () => {
-  render(<Counter />)
+test("计数器功能测试", () => {
+  render(<Counter />);
 
-  const button = screen.getByText('+1')
-  const count = screen.getByText(/count:/i)
+  const button = screen.getByText("+1");
+  const count = screen.getByText(/count:/i);
 
-  fireEvent.click(button)
+  fireEvent.click(button);
 
-  expect(count).toHaveTextContent('Count: 1')
-})
+  expect(count).toHaveTextContent("Count: 1");
+});
 ```
 
 选择建议：
@@ -417,7 +414,7 @@ test('计数器功能测试', () => {
 - Vite 项目：Vitest + React Testing Library
 - E2E 测试：Playwright（推荐）或 Cypress
 
-### 3.8. 其他常用工具
+### 2.8. 其他常用工具
 
 其他重要工具：
 
@@ -437,7 +434,7 @@ test('计数器功能测试', () => {
 | 国际化   | react-i18next     | i18n 解决方案    |
 |          | react-intl        | Format.js 生态   |
 
-## 4. 总结
+## 3. 总结
 
 本笔记介绍了 React 生态系统中的主要工具和库，帮助开发者快速了解可用的解决方案。
 
@@ -446,7 +443,7 @@ test('计数器功能测试', () => {
 - 不要盲目追求新工具，选择成熟稳定的方案更重要
 - 建议从官方推荐的工具开始，遇到问题再寻找替代方案
 
-## 5. 引用
+## 4. 引用
 
 - [React 生态系统导航][1]
 - [Awesome React][2]

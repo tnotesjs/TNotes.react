@@ -3,19 +3,18 @@
 <!-- region:toc -->
 
 - [1. 本节内容](#1-本节内容)
-- [2. 评价](#2-评价)
-- [3. React vs Vue](#3-react-vs-vue)
-- [4. 为什么说 React 比 Vue 更加“原生”？](#4-为什么说-react-比-vue-更加原生)
-  - [4.1. 核心对比：React 与 Vue 的解耦演进](#41-核心对比react-与-vue-的解耦演进)
-  - [4.2. 真正的纯逻辑核心](#42-真正的纯逻辑核心)
-  - [4.3. 宿主无关性（及其边界）](#43-宿主无关性及其边界)
-  - [4.4. Vue 的跨端演进之路](#44-vue-的跨端演进之路)
-  - [4.5. 如何验证这种解耦？](#45-如何验证这种解耦)
-- [5. React vs Angular](#5-react-vs-angular)
-- [6. React vs Svelte](#6-react-vs-svelte)
-- [7. 如何选择合适的框架？](#7-如何选择合适的框架)
-- [8. 总结](#8-总结)
-- [9. 引用](#9-引用)
+- [2. React vs Vue](#2-react-vs-vue)
+- [3. 为什么说 React 比 Vue 更加“原生”？](#3-为什么说-react-比-vue-更加原生)
+  - [3.1. 核心对比：React 与 Vue 的解耦演进](#31-核心对比react-与-vue-的解耦演进)
+  - [3.2. 真正的纯逻辑核心](#32-真正的纯逻辑核心)
+  - [3.3. 宿主无关性（及其边界）](#33-宿主无关性及其边界)
+  - [3.4. Vue 的跨端演进之路](#34-vue-的跨端演进之路)
+  - [3.5. 如何验证这种解耦？](#35-如何验证这种解耦)
+- [4. React vs Angular](#4-react-vs-angular)
+- [5. React vs Svelte](#5-react-vs-svelte)
+- [6. 如何选择合适的框架？](#6-如何选择合适的框架)
+- [7. 总结](#7-总结)
+- [8. 引用](#8-引用)
 
 <!-- endregion:toc -->
 
@@ -26,13 +25,11 @@
 - React 与 Svelte 对比
 - 框架选型建议
 
-## 2. 评价
-
 这篇笔记主要是记录 AI 返回的一些内容，如果有其它框架如果想要和 React 对比，也可以自行询问 AI。
 
 个人主要在使用的是 Vue、React 这两个框架，其它的基本都没咋用。并且从国内的就业环境来看，React 和 Vue 的岗位更多，Angular 和 Svelte 的岗位比较少见。
 
-## 3. React vs Vue
+## 2. React vs Vue
 
 核心差异对比：
 
@@ -54,25 +51,25 @@
 ::: code-group
 
 ```jsx [React]
-import { useState } from 'react'
+import { useState } from "react";
 
 function Counter() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div>
       <p>Count: {count}</p>
       <button onClick={() => setCount(count + 1)}>Increment</button>
     </div>
-  )
+  );
 }
 ```
 
 ```vue [Vue 3]
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
-const count = ref(0)
+const count = ref(0);
 </script>
 
 <template>
@@ -99,13 +96,13 @@ Vue 的优势：
 - 双向绑定在表单处理时更方便
 - 性能优化更自动化
 
-## 4. 为什么说 React 比 Vue 更加“原生”？
+## 3. 为什么说 React 比 Vue 更加“原生”？
 
 这里的“原生”并不是指运行在 Native 环境，而是指 React 的核心逻辑是用原生 JavaScript 纯粹实现的，与具体的宿主环境（如浏览器 DOM）高度解耦。
 
 我们可以通过对比 Vue 的架构演进，来更好地理解这种“平台无关”的设计思路。
 
-### 4.1. 核心对比：React 与 Vue 的解耦演进
+### 3.1. 核心对比：React 与 Vue 的解耦演进
 
 | 框架 | 核心是否直接操作宿主 API | 关键解耦节点 | 核心架构拆分 | 核心要点说明 |
 | --- | --- | --- | --- | --- |
@@ -116,17 +113,17 @@ Vue 的优势：
 
 所谓“更原生”，本质上是指其核心抽象（组件模型、调度算法、状态管理）可以完全迁移，而平台差异则通过不同的渲染器（Renderer）来抹平。React 在这方面起步更早并形成了繁荣的多端生态，而 Vue 在 3.0 版本后也全面补齐并强化了这一特性。
 
-### 4.2. 真正的纯逻辑核心
+### 3.2. 真正的纯逻辑核心
 
 - 最小依赖面：React 的核心本质上只是组件模型和协调（Reconciliation）算法，全由纯原生 JavaScript 实现，不涉及任何具体的 UI 渲染 API。
 - 物理拆分：React 早期（v0.13 及之前）也将 DOM 逻辑写在核心中，但从 v0.14（2015年）开始，React 实现了物理和逻辑的双重拆分，将 DOM 渲染彻底剥离到了独立的 `react-dom` 包中。
 
-### 4.3. 宿主无关性（及其边界）
+### 3.3. 宿主无关性（及其边界）
 
 - 多端运行：如今的 `react` 包内没有对 `window` 或 `document` 的直接访问。你在浏览器里用 `react-dom`，在移动端用 `react-native`，甚至可以编写自定义 Renderer 渲染到 Canvas（如 React Three Fiber）或终端命令行（如 Ink）。
 - 边界说明：说“完全不依赖环境”其实不够严谨。为了驱动其内部的异步调度（Fiber 架构），React 的 `scheduler` 包依然需要宿主环境提供基本的异步原语（如 `setTimeout`、`MessageChannel` 或 `requestAnimationFrame`），但这种依赖停留在底层 JS 运行时层面，而不是 UI 层面。
 
-### 4.4. Vue 的跨端演进之路
+### 3.4. Vue 的跨端演进之路
 
 Vue 在拥抱“平台无关性”的演进上，经历了三个阶段：
 
@@ -134,14 +131,14 @@ Vue 在拥抱“平台无关性”的演进上，经历了三个阶段：
 2. Vue 2.0（源码解耦）：引入虚拟 DOM 并在源码上将 `core/` 和 `platforms/web/` 分离。核心逻辑减少了对浏览器的直接依赖，但这一能力更多用在内部重构和跨端方案（如 Weex）上，没有完全释放给普通开发者。
 3. Vue 3.0（架构彻底解耦）：实现了彻底的包级别的模块化拆分（`runtime-core` 与 `runtime-dom` 分离）。通过暴露出强悍的 `createRenderer` 接口，Vue 真正实现了和 React 类似的多宿主渲染体系。
 
-### 4.5. 如何验证这种解耦？
+### 3.5. 如何验证这种解耦？
 
 如果你想亲眼验证 Vue 架构的变化，可以通过 NPM 和源码观察：
 
 - 验证 Vue 1.x vs 2.x：分别下载 Vue v1.0.28 和 v2.0.0 的源码或分析其 NPM 包。在 1.x 的核心文件中，你能轻易搜到对 `document` 的直接引用；而在 2.x 源码的 `src/core` 目录中，DOM API 基本绝迹，全被移至 `src/platforms` 中。
 - 验证 Vue 3.x：直接查看本地的 `node_modules`，会发现 Vue 变成了 `@vue/reactivity`、`@vue/runtime-core`、`@vue/runtime-dom` 等多个子包。如果你在 `@vue/runtime-core` 的源码里搜索 `document`，会发现零匹配——这是因为它完全不感知具体环境，彻底剥离了宿主 API。
 
-## 5. React vs Angular
+## 4. React vs Angular
 
 核心差异对比：
 
@@ -163,25 +160,25 @@ Vue 在拥抱“平台无关性”的演进上，经历了三个阶段：
 ::: code-group
 
 ```jsx [React]
-import { useState } from 'react'
+import { useState } from "react";
 
 function UserProfile() {
-  const [user, setUser] = useState({ name: 'John' })
+  const [user, setUser] = useState({ name: "John" });
 
   return (
     <div>
       <h1>{user.name}</h1>
-      <button onClick={() => setUser({ name: 'Jane' })}>Change Name</button>
+      <button onClick={() => setUser({ name: "Jane" })}>Change Name</button>
     </div>
-  )
+  );
 }
 ```
 
 ```typescript [Angular]
-import { Component } from '@angular/core'
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-user-profile',
+  selector: "app-user-profile",
   template: `
     <div>
       <h1>{{ user.name }}</h1>
@@ -190,10 +187,10 @@ import { Component } from '@angular/core'
   `,
 })
 export class UserProfileComponent {
-  user = { name: 'John' }
+  user = { name: "John" };
 
   changeName() {
-    this.user.name = 'Jane'
+    this.user.name = "Jane";
   }
 }
 ```
@@ -214,7 +211,7 @@ Angular 的优势：
 - 依赖注入系统利于测试
 - 官方工具链完善
 
-## 6. React vs Svelte
+## 5. React vs Svelte
 
 核心差异对比：
 
@@ -234,11 +231,11 @@ Angular 的优势：
 ::: code-group
 
 ```jsx [React]
-import { useState } from 'react'
+import { useState } from "react";
 
 function Counter() {
-  const [count, setCount] = useState(0)
-  const doubled = count * 2
+  const [count, setCount] = useState(0);
+  const doubled = count * 2;
 
   return (
     <div>
@@ -246,7 +243,7 @@ function Counter() {
       <p>Doubled: {doubled}</p>
       <button onClick={() => setCount(count + 1)}>Increment</button>
     </div>
-  )
+  );
 }
 ```
 
@@ -281,7 +278,7 @@ Svelte 的优势：
 - 更简洁的代码
 - 更直观的响应式语法
 
-## 7. 如何选择合适的框架？
+## 6. 如何选择合适的框架？
 
 选型考虑因素：
 
@@ -321,7 +318,7 @@ Svelte 的优势：
 
 最重要的是：选择团队熟悉且能长期维护的框架，而不是盲目追求新技术。
 
-## 8. 总结
+## 7. 总结
 
 本笔记对比了主流前端框架的特点，帮助开发者更好地理解 React 的定位和优势。
 
@@ -330,7 +327,7 @@ Svelte 的优势：
 - Vue 更易上手，Angular 更适合大型企业级应用，Svelte 追求极致性能
 - 选择框架时，应综合考虑团队技术栈、项目规模、性能要求等因素
 
-## 9. 引用
+## 8. 引用
 
 - [React 官网][1]
 - [Vue 官网][2]
