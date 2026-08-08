@@ -1,4 +1,4 @@
-# [0144. React 中文社区与论坛【AI】](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0144.%20React%20%E4%B8%AD%E6%96%87%E7%A4%BE%E5%8C%BA%E4%B8%8E%E8%AE%BA%E5%9D%9B%E3%80%90AI%E3%80%91)
+# [0144. 【AI】React 中文社区与论坛](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0144.%20%E3%80%90AI%E3%80%91React%20%E4%B8%AD%E6%96%87%E7%A4%BE%E5%8C%BA%E4%B8%8E%E8%AE%BA%E5%9D%9B)
 
 <!-- region:toc -->
 

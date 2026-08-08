@@ -1,4 +1,4 @@
-# [0150. React v17-v19 入口文件的变化【AI】](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0150.%20React%20v17-v19%20%E5%85%A5%E5%8F%A3%E6%96%87%E4%BB%B6%E7%9A%84%E5%8F%98%E5%8C%96%E3%80%90AI%E3%80%91)
+# [0150. 【AI】React v17-v19 入口文件的变化](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0150.%20%E3%80%90AI%E3%80%91React%20v17-v19%20%E5%85%A5%E5%8F%A3%E6%96%87%E4%BB%B6%E7%9A%84%E5%8F%98%E5%8C%96)
 
 <!-- region:toc -->
 

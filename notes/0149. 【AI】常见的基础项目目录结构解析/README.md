@@ -1,4 +1,4 @@
-# [0149. 常见的基础项目目录结构解析【AI】](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0149.%20%E5%B8%B8%E8%A7%81%E7%9A%84%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E8%A7%A3%E6%9E%90%E3%80%90AI%E3%80%91)
+# [0149. 【AI】常见的基础项目目录结构解析](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0149.%20%E3%80%90AI%E3%80%91%E5%B8%B8%E8%A7%81%E7%9A%84%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E8%A7%A3%E6%9E%90)
 
 <!-- region:toc -->
 

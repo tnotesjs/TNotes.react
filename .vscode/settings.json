@@ -140,7 +140,15 @@
   // Markdown 文件的编辑器配置
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "prettier.proseWrap": "never"
+    "prettier.proseWrap": "never",
+    // Cursor 下 :::tip 这类前缀需要 : 不作为单词分隔符，完整输入才能弹出建议
+    "editor.quickSuggestions": {
+      "other": "on",
+      "comments": "on",
+      "strings": "on"
+    },
+    "editor.snippetSuggestions": "top",
+    "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;'\",.<>/?"
   },
   // JSONC 文件的编辑器配置
   "[jsonc]": {
