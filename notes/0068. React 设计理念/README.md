@@ -3,43 +3,42 @@
 <!-- region:toc -->
 
 - [1. 本节内容](#1-本节内容)
-- [2. 评价](#2-评价)
-- [3. “设计理念”是啥？](#3-设计理念是啥)
-  - [3.1. 概念](#31-概念)
-  - [3.2. 重要性](#32-重要性)
-- [4. 为什么 React 是“声明式”的，而不是“命令式”的？](#4-为什么-react-是声明式的而不是命令式的)
-  - [4.1. 声明式与命令式的核心区别](#41-声明式与命令式的核心区别)
+- [2. 设计理念](#2-设计理念)
+  - [2.1. 概念](#21-概念)
+  - [2.2. 重要性](#22-重要性)
+- [3. 声明式](#3-声明式)
+  - [3.1. 声明式与命令式的核心区别](#31-声明式与命令式的核心区别)
     - [类比：用一个生活化的例子来理解，假设你要让一个灯泡亮起来](#类比用一个生活化的例子来理解假设你要让一个灯泡亮起来)
     - [小结](#小结)
-  - [4.2. 在 React 中的实际应用](#42-在-react-中的实际应用)
-  - [4.3. React 选择“声明式”的原因](#43-react-选择声明式的原因)
-  - [4.4. 关于“体验”和“性能”的思考](#44-关于体验和性能的思考)
-- [5. 为什么 React 要“组件化”？](#5-为什么-react-要组件化)
-  - [5.1. 组件化的核心思想](#51-组件化的核心思想)
-  - [5.2. 示例：电商页面的组件化拆分](#52-示例电商页面的组件化拆分)
-  - [5.3. 组件化的优势](#53-组件化的优势)
-  - [5.4. 组件化的实践原则](#54-组件化的实践原则)
-- [6. 为什么 React 要坚持“单向数据流”？](#6-为什么-react-要坚持单向数据流)
-  - [6.1. 先给答案](#61-先给答案)
-  - [6.2. 单向数据流的定义](#62-单向数据流的定义)
-  - [6.3. 数据流向示意图](#63-数据流向示意图)
-  - [6.4. 代码示例](#64-代码示例)
-  - [6.5. 单向数据流的优势](#65-单向数据流的优势)
-- [7. 为什么说“UI 是状态的函数”？](#7-为什么说ui-是状态的函数)
-- [8. 为什么 React 要强调“纯函数”？](#8-为什么-react-要强调纯函数)
-  - [8.1. 纯函数的定义](#81-纯函数的定义)
-  - [8.2. 副作用应该放在哪里？](#82-副作用应该放在哪里)
-  - [8.3. React 为什么需要纯函数？](#83-react-为什么需要纯函数)
-  - [8.4. 实践建议](#84-实践建议)
-- [9. 为什么 React 需要“虚拟 DOM”？](#9-为什么-react-需要虚拟-dom)
-  - [9.1. 虚拟 DOM 解决的核心问题](#91-虚拟-dom-解决的核心问题)
-  - [9.2. 虚拟 DOM 的工作流程](#92-虚拟-dom-的工作流程)
-  - [9.3. 为什么需要虚拟 DOM？](#93-为什么需要虚拟-dom)
-- [10. 极易踩坑点：“单向数据流”和“纯函数”](#10-极易踩坑点单向数据流和纯函数)
-- [11. 总结](#11-总结)
-  - [11.1. React 的设计哲学可以用一句话总结吗？](#111-react-的设计哲学可以用一句话总结吗)
-  - [11.2. 开发时的检查清单](#112-开发时的检查清单)
-- [12. 引用](#12-引用)
+  - [3.2. 在 React 中的实际应用](#32-在-react-中的实际应用)
+  - [3.3. React 选择“声明式”的原因](#33-react-选择声明式的原因)
+  - [3.4. 关于“体验”和“性能”的思考](#34-关于体验和性能的思考)
+- [4. 组件化](#4-组件化)
+  - [4.1. 组件化的核心思想](#41-组件化的核心思想)
+  - [4.2. 示例：电商页面的组件化拆分](#42-示例电商页面的组件化拆分)
+  - [4.3. 组件化的优势](#43-组件化的优势)
+  - [4.4. 组件化的实践原则](#44-组件化的实践原则)
+- [5. 单向数据流](#5-单向数据流)
+  - [5.1. 先给答案](#51-先给答案)
+  - [5.2. 单向数据流的定义](#52-单向数据流的定义)
+  - [5.3. 数据流向示意图](#53-数据流向示意图)
+  - [5.4. 代码示例](#54-代码示例)
+  - [5.5. 单向数据流的优势](#55-单向数据流的优势)
+- [6. 理解 UI](#6-理解-ui)
+- [7. 纯函数](#7-纯函数)
+  - [7.1. 纯函数的定义](#71-纯函数的定义)
+  - [7.2. 副作用应该放在哪里？](#72-副作用应该放在哪里)
+  - [7.3. React 为什么需要纯函数？](#73-react-为什么需要纯函数)
+  - [7.4. 实践建议](#74-实践建议)
+- [8. 虚拟 DOM](#8-虚拟-dom)
+  - [8.1. 虚拟 DOM 解决的核心问题](#81-虚拟-dom-解决的核心问题)
+  - [8.2. 虚拟 DOM 的工作流程](#82-虚拟-dom-的工作流程)
+  - [8.3. 为什么需要虚拟 DOM？](#83-为什么需要虚拟-dom)
+- [9. 极易踩坑点：“单向数据流”和“纯函数”](#9-极易踩坑点单向数据流和纯函数)
+- [10. 总结](#10-总结)
+  - [10.1. React 的设计哲学可以用一句话总结吗？](#101-react-的设计哲学可以用一句话总结吗)
+  - [10.2. 开发时的检查清单](#102-开发时的检查清单)
+- [11. 引用](#11-引用)
 
 <!-- endregion:toc -->
 
@@ -51,8 +50,6 @@
 - 状态驱动
 - 纯函数
 - 虚拟DOM
-
-## 2. 评价
 
 本笔记深入探讨了 React 的核心设计理念，帮助理解 React 为什么这样工作。
 
@@ -67,9 +64,9 @@
 
 :::
 
-## 3. “设计理念”是啥？
+## 2. 设计理念
 
-### 3.1. 概念
+### 2.1. 概念
 
 这里提到的“设计理念”是指 React 项目遵循的核心原则：
 
@@ -77,7 +74,7 @@
 - 从 React 初版到现在，核心理念几乎没有变化
 - 所有功能和 API 的设计都围绕这些理念展开
 
-### 3.2. 重要性
+### 2.2. 重要性
 
 理解“设计理念”的重要性：
 
@@ -86,7 +83,13 @@
 - 避免写出“反模式”的代码
 - 让你真正“懂” React，而不是机械地使用
 
-## 4. 为什么 React 是“声明式”的，而不是“命令式”的？
+## 3. 声明式
+
+思考题：
+
+- 什么是“声明式”？
+- 为什么 React 是“声明式”的，而不是“命令式”的？
+- “命令式”和“声明式”具体有啥区别？
 
 ::: tip 💡 通用做法
 
@@ -94,7 +97,7 @@
 
 :::
 
-### 4.1. 声明式与命令式的核心区别
+### 3.1. 声明式与命令式的核心区别
 
 - 命令式（How）：告诉计算机“怎么做”，关注实现步骤
 - 声明式（What）：告诉计算机“要什么”，关注最终状态
@@ -122,13 +125,13 @@
 | 出错概率 | 更低         | 更高           |
 | 性能控制 | 由框架优化   | 开发者手动优化 |
 
-### 4.2. 在 React 中的实际应用
+### 3.2. 在 React 中的实际应用
 
 ::: code-group
 
 ```jsx [声明式（React）]
 function Greeting({ isLoggedIn }) {
-  return isLoggedIn ? <h1>欢迎回来</h1> : <h1>请登录</h1>
+  return isLoggedIn ? <h1>欢迎回来</h1> : <h1>请登录</h1>;
 }
 
 // 你只需要描述 UI 应该是什么样子
@@ -137,14 +140,14 @@ function Greeting({ isLoggedIn }) {
 
 ```js [命令式（原生 JS）]
 // 需要手动操作 DOM
-const greeting = document.getElementById('greeting')
+const greeting = document.getElementById("greeting");
 
 if (isLoggedIn) {
-  greeting.textContent = '欢迎回来'
-  greeting.className = 'logged-in'
+  greeting.textContent = "欢迎回来";
+  greeting.className = "logged-in";
 } else {
-  greeting.textContent = '请登录'
-  greeting.className = 'logged-out'
+  greeting.textContent = "请登录";
+  greeting.className = "logged-out";
 }
 
 // 还需要考虑：
@@ -156,14 +159,14 @@ if (isLoggedIn) {
 
 :::
 
-### 4.3. React 选择“声明式”的原因
+### 3.3. React 选择“声明式”的原因
 
 - 让开发者站在更高的抽象层思考问题
 - 底层依旧是命令式执行，只是开发者不需要关心细节
 - React 作为“助手”，帮你处理复杂的 DOM 操作
 - 开发者体验更好，代码更易维护
 
-### 4.4. 关于“体验”和“性能”的思考
+### 3.4. 关于“体验”和“性能”的思考
 
 理论上，精心优化的命令式代码可以达到最优性能，但实际开发中：
 
@@ -172,7 +175,12 @@ if (isLoggedIn) {
 - React 团队持续优化性能，让声明式代码越来越接近最优解
 - 对于绝大多数应用，React 的性能已经足够好
 
-## 5. 为什么 React 要“组件化”？
+## 4. 组件化
+
+思考题：
+
+- 什么是“组件化”？
+- 为什么 React 要“组件化”？
 
 ::: tip 💡 通用规范
 
@@ -180,13 +188,13 @@ if (isLoggedIn) {
 
 :::
 
-### 5.1. 组件化的核心思想
+### 4.1. 组件化的核心思想
 
 - 将复杂的 UI 拆分成独立、可复用的小单元
 - 每个组件都是一个独立的功能单元
 - 组件可以组合成更复杂的界面
 
-### 5.2. 示例：电商页面的组件化拆分
+### 4.2. 示例：电商页面的组件化拆分
 
 核心理念：UI = 组件树 = 组件的组合
 
@@ -215,7 +223,7 @@ function App() {
       </Main>
       <Footer />
     </div>
-  )
+  );
 }
 
 function ProductList({ products }) {
@@ -225,7 +233,7 @@ function ProductList({ products }) {
         <ProductCard key={product.id} product={product} />
       ))}
     </div>
-  )
+  );
 }
 
 function ProductCard({ product }) {
@@ -235,11 +243,14 @@ function ProductCard({ product }) {
       <h4>{product.name}</h4>
       <p>¥{product.price}</p>
     </div>
-  )
+  );
 }
 
 function ShoppingCart({ items }) {
-  const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0)
+  const total = items.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0,
+  );
 
   return (
     <div className="shopping-cart">
@@ -253,11 +264,11 @@ function ShoppingCart({ items }) {
       </ul>
       <p>总计：¥{total}</p>
     </div>
-  )
+  );
 }
 ```
 
-### 5.3. 组件化的优势
+### 4.3. 组件化的优势
 
 | 优势 | 说明 | 实际应用 |
 | --- | --- | --- |
@@ -268,7 +279,7 @@ function ShoppingCart({ items }) {
 | 易于维护 | 修改某个组件不影响其他部分 | 修改 `<Footer>` 不会影响 `<Header>` |
 | 关注点分离 | UI、逻辑、样式可以分离 | 组件内部管理自己的状态和样式 |
 
-### 5.4. 组件化的实践原则
+### 4.4. 组件化的实践原则
 
 - 单一职责原则
   - 每个组件只做一件事
@@ -280,7 +291,12 @@ function ShoppingCart({ items }) {
   - 通过 props 传递数据
   - 通过回调传递行为
 
-## 6. 为什么 React 要坚持“单向数据流”？
+## 5. 单向数据流
+
+思考题：
+
+- 什么是“单向数据流”？
+- 为什么 React 要坚持“单向数据流”？
 
 ::: tip 💡 通用规范
 
@@ -288,18 +304,18 @@ function ShoppingCart({ items }) {
 
 :::
 
-### 6.1. 先给答案
+### 5.1. 先给答案
 
 坚持单向数据流是为了保证应用状态的可预测性和单一数据源，避免复杂交互下数据流向混乱，从而让代码更易于追踪、理解和调试。
 
-### 6.2. 单向数据流的定义
+### 5.2. 单向数据流的定义
 
 - 数据只能从父组件流向子组件
 - 通过 props 向下传递数据
 - 子组件不能直接修改 props
 - 如需修改，需通过回调函数通知父组件
 
-### 6.3. 数据流向示意图
+### 5.3. 数据流向示意图
 
 ```mermaid
 graph TD
@@ -309,12 +325,12 @@ graph TD
     C -.->|通过回调通知| A
 ```
 
-### 6.4. 代码示例
+### 5.4. 代码示例
 
 ```jsx
 // 父组件
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div>
@@ -324,12 +340,12 @@ function App() {
         onDecrement={() => setCount(count - 1)}
       />
     </div>
-  )
+  );
 }
 
 // 子组件 1：只展示数据
 function Display({ count }) {
-  return <h2>当前计数：{count}</h2>
+  return <h2>当前计数：{count}</h2>;
 }
 
 // 子组件 2：通过回调修改数据
@@ -339,11 +355,11 @@ function Controls({ onIncrement, onDecrement }) {
       <button onClick={onIncrement}>+1</button>
       <button onClick={onDecrement}>-1</button>
     </div>
-  )
+  );
 }
 ```
 
-### 6.5. 单向数据流的优势
+### 5.5. 单向数据流的优势
 
 | 优势         | 说明                             |
 | ------------ | -------------------------------- |
@@ -357,7 +373,12 @@ function Controls({ onIncrement, onDecrement }) {
 - 便于添加验证逻辑
 - 更容易实现复杂的交互逻辑
 
-## 7. 为什么说“UI 是状态的函数”？
+## 6. 理解 UI
+
+思考题：
+
+- 在 React 中如何描述页面 UI？
+- 为什么说“UI 是状态的函数”？
 
 ::: tip 💡 数据驱动模式
 
@@ -377,7 +398,7 @@ React 的核心数学公式：$UI = f(state)$
 
 ```jsx
 function Counter() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   // UI 完全由 count 决定
   return (
@@ -385,7 +406,7 @@ function Counter() {
       <p>你点击了 {count} 次</p>
       <button onClick={() => setCount(count + 1)}>+1</button>
     </div>
-  )
+  );
 }
 ```
 
@@ -404,17 +425,17 @@ function Counter() {
 
 ```jsx
 // ❌ 命令式思维（手动更新 DOM）
-button.addEventListener('click', () => {
-  count++
-  document.getElementById('count').textContent = count
+button.addEventListener("click", () => {
+  count++;
+  document.getElementById("count").textContent = count;
   if (count > 10) {
-    button.disabled = true
+    button.disabled = true;
   }
-})
+});
 
 // ✅ 声明式思维（通过 state 描述 UI 应该是什么样子，DOM 的更新交给 React）
 function Counter() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div>
@@ -423,13 +444,18 @@ function Counter() {
         +1
       </button>
     </div>
-  )
+  );
 }
 ```
 
-## 8. 为什么 React 要强调“纯函数”？
+## 7. 纯函数
 
-### 8.1. 纯函数的定义
+思考题：
+
+- “纯函数”是什么？
+- 为什么 React 要强调“纯函数”？
+
+### 7.1. 纯函数的定义
 
 - 相同的输入，总是得到相同的输出
 - 不产生副作用（不修改外部变量、不发送请求等）
@@ -444,37 +470,37 @@ function Counter() {
 ```jsx [✅ 纯函数组件（推荐）]
 function Greeting({ name }) {
   // 输入固定，输出固定
-  return <h1>你好，{name}</h1>
+  return <h1>你好，{name}</h1>;
 }
 
 function Product({ price }) {
   // 计算派生值，不修改原数据
-  const discountPrice = price * 0.8
+  const discountPrice = price * 0.8;
   return (
     <div>
       原价：{price}，折扣价：{discountPrice}
     </div>
-  )
+  );
 }
 ```
 
 ```jsx [❌ 非纯函数（不推荐）]
-let renderCount = 0
+let renderCount = 0;
 
 function BadComponent({ name }) {
   // ❌ 修改外部变量
-  renderCount++
+  renderCount++;
 
   // ❌ 在渲染期间产生副作用
-  console.log('组件渲染了')
+  console.log("组件渲染了");
 
   // ❌ 直接操作 DOM
-  document.title = `你好，${name}`
+  document.title = `你好，${name}`;
 
   // ❌ 发送网络请求
-  fetch('/api/log')
+  fetch("/api/log");
 
-  return <h1>你好，{name}</h1>
+  return <h1>你好，{name}</h1>;
 }
 ```
 
@@ -490,28 +516,28 @@ function BadComponent({ name }) {
 | 并发安全 | React 可以安全地多次调用、暂停、恢复渲染   |
 | 优化潜力 | React 可以跳过纯组件的重复渲染             |
 
-### 8.2. 副作用应该放在哪里？
+### 7.2. 副作用应该放在哪里？
 
 ```jsx
 function UserProfile({ userId }) {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(null);
 
   // ✅ 副作用放在 useEffect 中
   useEffect(() => {
     fetch(`/api/users/${userId}`)
       .then((res) => res.json())
-      .then((data) => setUser(data))
-  }, [userId])
+      .then((data) => setUser(data));
+  }, [userId]);
 
   // ❌ 不要在这里发送请求
   // fetch(`/api/users/${userId}`)
 
-  if (!user) return <div>加载中...</div>
-  return <div>{user.name}</div>
+  if (!user) return <div>加载中...</div>;
+  return <div>{user.name}</div>;
 }
 ```
 
-### 8.3. React 为什么需要纯函数？
+### 7.3. React 为什么需要纯函数？
 
 - React 18 引入的并发渲染
   - React 可能会多次调用组件函数
@@ -524,14 +550,19 @@ function UserProfile({ userId }) {
   - 纯函数可以在服务端安全地执行
   - 不会产生浏览器特有的副作用
 
-### 8.4. 实践建议
+### 7.4. 实践建议
 
 - 组件函数体内只做计算和返回 JSX
 - 副作用统一放在 `useEffect` 中
 - 不要在渲染期间修改 props 或 state
 - 避免在组件内部访问全局可变变量
 
-## 9. 为什么 React 需要“虚拟 DOM”？
+## 8. 虚拟 DOM
+
+思考题：
+
+- “虚拟 DOM”是什么？
+- 为什么 React 需要“虚拟 DOM”？
 
 ::: tip 💡 虚拟 DOM
 
@@ -539,7 +570,7 @@ function UserProfile({ userId }) {
 
 :::
 
-### 9.1. 虚拟 DOM 解决的核心问题
+### 8.1. 虚拟 DOM 解决的核心问题
 
 核心问题：如何在保持声明式编程的同时，提供高性能的 DOM 更新？
 
@@ -548,7 +579,7 @@ function UserProfile({ userId }) {
 - “写起来简单”：让开发者享受声明式开发
 - “跑得快”：React 借助虚拟 DOM 机制负责性能优化工作，实现高效的 DOM 更新
 
-### 9.2. 虚拟 DOM 的工作流程
+### 8.2. 虚拟 DOM 的工作流程
 
 ```mermaid
 graph TB
@@ -565,7 +596,7 @@ graph TB
 3. React 比较新旧树的差异（Diffing 算法）
 4. 只把真正变化的部分更新到真实 DOM
 
-### 9.3. 为什么需要虚拟 DOM？
+### 8.3. 为什么需要虚拟 DOM？
 
 | 原因         | 说明                                      |
 | ------------ | ----------------------------------------- |
@@ -590,14 +621,14 @@ graph TD
 // 假设有这样的状态变化
 function TodoList() {
   const [todos, setTodos] = useState([
-    { id: 1, text: '学习 React' },
-    { id: 2, text: '学习 Vue' },
-  ])
+    { id: 1, text: "学习 React" },
+    { id: 2, text: "学习 Vue" },
+  ]);
 
   // 添加一个新任务
   const addTodo = () => {
-    setTodos([...todos, { id: 3, text: '学习 Angular' }])
-  }
+    setTodos([...todos, { id: 3, text: "学习 Angular" }]);
+  };
 
   return (
     <div>
@@ -606,7 +637,7 @@ function TodoList() {
       ))}
       <button onClick={addTodo}>添加</button>
     </div>
-  )
+  );
 }
 ```
 
@@ -627,7 +658,7 @@ function TodoList() {
 - 对于少量精确的 DOM 操作，原生可能更快
 - React 的优势在于开发体验和可维护性的平衡
 
-## 10. 极易踩坑点：“单向数据流”和“纯函数”
+## 9. 极易踩坑点：“单向数据流”和“纯函数”
 
 初学者最爱犯两个错：
 
@@ -636,9 +667,9 @@ function TodoList() {
 
 记住：数据谁产出谁维护，所有的副作用老老实实丢到 `useEffect` 或者事件处理函数里，不然各种“幽灵 Bug”查到你怀疑人生！
 
-## 11. 总结
+## 10. 总结
 
-### 11.1. React 的设计哲学可以用一句话总结吗？
+### 10.1. React 的设计哲学可以用一句话总结吗？
 
 React 的核心哲学：用声明式、组件化的方式，通过状态驱动 UI，实现可预测、可维护、高性能的用户界面。
 
@@ -651,7 +682,7 @@ React 的核心哲学：用声明式、组件化的方式，通过状态驱动 U
 - 可维护：清晰的数据流和组件边界
 - 高性能：虚拟 DOM 优化更新
 
-### 11.2. 开发时的检查清单
+### 10.2. 开发时的检查清单
 
 当你写 React 代码时，问自己这些问题：
 
@@ -663,7 +694,7 @@ React 的核心哲学：用声明式、组件化的方式，通过状态驱动 U
 
 当这些问题都能清晰回答时，你就真正理解了 React 的设计哲学。
 
-## 12. 引用
+## 11. 引用
 
 - [React 官方文档 - 核心概念][1]
 - [React 设计原则][2]
