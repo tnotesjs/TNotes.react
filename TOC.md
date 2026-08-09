@@ -26,7 +26,7 @@
   - [x] 0042. Hello World（v16）
   - [x] 0001. Hello World（v19）
   - [x] 0149. 【AI】常见的基础项目目录结构解析
-  - [ ] 0150. 【AI】React v17-v19 入口文件的变化
+  - [x] 0150. 【AI】React v17-v19 入口文件的变化
 - [x] 0062. JSX
   - [x] 0013. 初始 JSX
   - [x] 0048. React Element 的多种叫法

@@ -4,6 +4,6 @@
   "yuque": [],
   "done": true,
   "enableDiscussions": true,
-  "description": "讲解了 React 项目的基础目录结构和模块组织方式，对真实项目的结构建立一个初步的基本认识。",
+  "description": "讲解了 React 项目的基础目录结构和模块组织方式，对真实项目的结构建立一个初步的基本认识，当我们在开发一个企业级的 React 项目时，基本结构也就类似这样。",
   "id": "4dc04d8f-817c-418f-bae4-ef775304e643"
 }

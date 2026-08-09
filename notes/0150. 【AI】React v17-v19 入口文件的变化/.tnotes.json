@@ -2,8 +2,8 @@
   "bilibili": [],
   "tnotes": [],
   "yuque": [],
-  "done": false,
-  "enableDiscussions": false,
-  "description": "",
+  "done": true,
+  "enableDiscussions": true,
+  "description": "这篇文章介绍了几个不同版本 React 应用挂载点的差异。",
   "id": "19847847-98e2-49e3-a047-a563ee1a71d0"
 }
