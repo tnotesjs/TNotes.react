@@ -29,9 +29,7 @@
   - [x] 0150. 【AI】React v17-v19 入口文件的变化
 - [x] 0062. JSX
   - [x] 0013. 初始 JSX
-  - [x] 0048. React Element 的多种叫法
-  - [x] 0061. React Element 与 React Fiber 的关系【扩展】
-  - [x] 0044. react element 是只读的
+  - [x] 0044. React Element 是只读的
   - [x] 0014. React.Fragment
   - [x] 0003. html to jsx 在线转换
   - [x] 0015. 在 JSX 中使用注释
@@ -48,6 +46,7 @@
   - [x] 0054. DOMPurify
   - [x] 0151. 【AI】JSX 是什么（语法糖与编译原理）
   - [x] 0152. 【AI】JSX 转换过程（Babel 编译）
+  - [x] 0061. 【AI】React Element 与 React Fiber 的关系
 - 组件基础
   - [x] 0065. 组件
   - [x] 0021. 组件的基本组成及核心概念

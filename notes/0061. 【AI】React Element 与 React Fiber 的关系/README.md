@@ -1,8 +1,8 @@
-# [0061. React Element 与 React Fiber 的关系【扩展】](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0061.%20React%20Element%20%E4%B8%8E%20React%20Fiber%20%E7%9A%84%E5%85%B3%E7%B3%BB%E3%80%90%E6%89%A9%E5%B1%95%E3%80%91)
+# [0061. 【AI】React Element 与 React Fiber 的关系](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0061.%20%E3%80%90AI%E3%80%91React%20Element%20%E4%B8%8E%20React%20Fiber%20%E7%9A%84%E5%85%B3%E7%B3%BB)
 
 <!-- region:toc -->
 
-- [1. 评价](#1-评价)
+- [1. 本节内容](#1-本节内容)
 - [2. 回顾 React Element 是什么？](#2-回顾-react-element-是什么)
 - [3. 什么是 React Fiber？](#3-什么是-react-fiber)
 - [4. Fiber 有什么作用？](#4-fiber-有什么作用)
@@ -15,7 +15,7 @@
 
 <!-- endregion:toc -->
 
-## 1. 评价
+## 1. 本节内容
 
 - 很多人理解 React 到了 “Element” 这一层就止步了，但实际上 —— React 真正的核心是 Fiber。
 - 写到 React Element 自然会想到 React Fiber，你可以先把这篇笔记当做一个扩展内容来看！即便你不知道 Fiber 也不会影响你写一些日常的业务逻辑。

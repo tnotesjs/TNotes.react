@@ -1,16 +1,18 @@
-# [0044. react element 是只读的](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0044.%20react%20element%20%E6%98%AF%E5%8F%AA%E8%AF%BB%E7%9A%84)
+# [0044. React Element 是只读的](https://github.com/tnotesjs/TNotes.react/tree/main/notes/0044.%20React%20Element%20%E6%98%AF%E5%8F%AA%E8%AF%BB%E7%9A%84)
 
 <!-- region:toc -->
 
-- [1. 评价](#1-评价)
+- [1. 本节内容](#1-本节内容)
 - [2. demos.1 - react element 是只读的](#2-demos1---react-element-是只读的)
 - [3. 对比 demos.1 中的两种正确做法](#3-对比-demos1-中的两种正确做法)
 
 <!-- endregion:toc -->
 
-## 1. 评价
+## 1. 本节内容
 
-- 永远不要尝试去修改 React Element 的属性，正确的做法是通过渲染新的 React Element 或使用 React 的状态管理机制（state 或 props）来更新 UI。
+通过一个实验示例来认识只读的 React Element。
+
+永远不要尝试去修改 React Element 的属性，正确的做法是通过渲染新的 React Element 或使用 React 的状态管理机制（state 或 props）来更新 UI。
 
 ## 2. demos.1 - react element 是只读的
 
@@ -74,14 +76,14 @@
 - 如果你习惯命令式编程，又不熟悉 react 特性，很可能会写出类似 1 这样的程序，虽说也能跑不假，但是这么做在实际项目中是非常不推荐的。
 - 下面是从不同维度对两种写法进行的对比：
 
-| 维度 | 1 | 2 |
-| --- | --- | --- |
-| 写法类型 | 纯 JS + React API 手动渲染 | React 组件式写法 |
-| 范式 | 命令式（反模式） | 声明式（更符合 React 思想） |
-| 是否使用 React 状态机制 | ❌ 否 | ✅ 是 |
-| 是否触发 React diff | ❌ 否 | ✅ 是 |
-| 状态存储 | 由外部变量 `num` 保存 | 使用 React 状态 `useState` 保存 |
-| 渲染机制 | 每次 `setInterval` 都重新创建 root 并强制渲染整个 DOM 树 | React 根据状态变化触发内部 diff 和更新 |
-| 是否复用 React Fiber 树 | ❌ 否，每次重建 Fiber 树 | ✅ 是，React 内部会 diff、复用节点 |
-| 性能 | 很差，每秒销毁并重建 DOM | 高效，仅更新变化部分 |
-| 是否有副作用清理机制 | ❌ 无清理，会不断叠加 root | ✅ 有 `useEffect` 清理逻辑 |
+| 维度                    | 1                                                        | 2                                      |
+| ----------------------- | -------------------------------------------------------- | -------------------------------------- |
+| 写法类型                | 纯 JS + React API 手动渲染                               | React 组件式写法                       |
+| 范式                    | 命令式（反模式）                                         | 声明式（更符合 React 思想）            |
+| 是否使用 React 状态机制 | ❌ 否                                                    | ✅ 是                                  |
+| 是否触发 React diff     | ❌ 否                                                    | ✅ 是                                  |
+| 状态存储                | 由外部变量 `num` 保存                                    | 使用 React 状态 `useState` 保存        |
+| 渲染机制                | 每次 `setInterval` 都重新创建 root 并强制渲染整个 DOM 树 | React 根据状态变化触发内部 diff 和更新 |
+| 是否复用 React Fiber 树 | ❌ 否，每次重建 Fiber 树                                 | ✅ 是，React 内部会 diff、复用节点     |
+| 性能                    | 很差，每秒销毁并重建 DOM                                 | 高效，仅更新变化部分                   |
+| 是否有副作用清理机制    | ❌ 无清理，会不断叠加 root                               | ✅ 有 `useEffect` 清理逻辑             |
