@@ -6,18 +6,16 @@
 - [2. 如何在 VSCode 中配置 Emmet 语法支持？](#2-如何在-vscode-中配置-emmet-语法支持)
   - [2.1. 做法 1：通过设置面板来配置](#21-做法-1通过设置面板来配置)
   - [2.2. 做法 2：通过配置文件 `.vscode/settings.json` 来配置](#22-做法-2通过配置文件-vscodesettingsjson-来配置)
-- [3. demos.1 - 在 vscode 中，让 Emmet 语法支持 JSX](#3-demos1---在-vscode-中让-emmet-语法支持-jsx)
+- [3. 实验：在 vscode 中，让 Emmet 语法支持 JSX](#3-实验在-vscode-中让-emmet-语法支持-jsx)
 - [4. 引用](#4-引用)
 
 <!-- endregion:toc -->
 
 ## 1. 本节内容
 
-- Emmet 语法支持
-
 这一篇笔记主要介绍如何配置 VSCode，让 Emmet 语法支持 JSX。
 
-::: tip JAX 简介
+::: tip 💡 JAX 简介
 
 JSX 是在 React 中用于描述页面结构的 JS 扩展语法。
 
@@ -45,7 +43,9 @@ JSX 是在 React 中用于描述页面结构的 JS 扩展语法。
 }
 ```
 
-## 3. demos.1 - 在 vscode 中，让 Emmet 语法支持 JSX
+## 3. 实验：在 vscode 中，让 Emmet 语法支持 JSX
+
+实验源码：`demos/1`
 
 效果展示：
 

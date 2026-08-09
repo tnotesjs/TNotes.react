@@ -43,7 +43,7 @@
 - 养成频繁提交、编写清晰提交信息的习惯，能够帮助团队追踪问题和代码变更
 - 对于 React 项目，务必正确配置 `.gitignore`，避免将 `node_modules` 等目录提交到仓库
 
-::: tip
+::: tip 💡 了解 Git 更多内容
 
 在 tnotesjs 组织中有一个 [TNotes.git-notes][6] 知识库，这里边儿会纪录有关 Git 的更多详细说明。
 
