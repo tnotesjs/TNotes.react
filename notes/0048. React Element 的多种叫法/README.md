@@ -2,8 +2,8 @@
 
 <!-- region:toc -->
 
-- [1. 评价](#1-评价)
-- [2. `HTML Tag`、`JSX Element` 和 `React Element` 三者之间的关系与区别是？](#2-html-tagjsx-element-和-react-element-三者之间的关系与区别是)
+- [1. 本节内容](#1-本节内容)
+- [2. `HTML Tag`、`JSX Element` 和 `React Element`](#2-html-tagjsx-element-和-react-element)
 - [3. React 中的 `HTML Tag` 是什么？](#3-react-中的-html-tag-是什么)
 - [4. `JSX Element` 是什么？](#4-jsx-element-是什么)
 - [5. `React Element` 是什么？](#5-react-element-是什么)
@@ -13,22 +13,24 @@
 
 <!-- endregion:toc -->
 
-## 1. 评价
+## 1. 本节内容
 
-- 在 react 官方文档中看到了一些冲突性的描述，因此写了这篇笔记来做一个总结。
-- 重点：
-  - 理解不同的“代词”指代的本质
-  - 理解在具体的上下文中，作者想要强调的内容，get 到即可
-  - 不要死扣字眼
+这一节内容主要是在聊“React Element”的多种不同叫法，由于在 react 官方文档中看到了一些冲突性的描述，因此写了这篇笔记来做一个总结。
 
-## 2. `HTML Tag`、`JSX Element` 和 `React Element` 三者之间的关系与区别是？
+重点：
 
-| 术语 | React 中的 `HTML Tag` 和 `JSX Element` | `React Element` |
-| --- | --- | --- |
-| 本质 | `React Element` 语法糖 | 描述 UI 的 JavaScript 对象 |
-| 用途 | 降低 `React Element` 的书写成本 | React 内部使用，描述 UI 的结构 |
-| 需要编译 | ✅ | ❌ |
-| 示例 | `<div className="container">Hello</div>` | `{ type: 'div', props: { className: 'container', children: 'Hello' } }` |
+- 理解不同的“代词”指代的本质
+- 理解在具体的上下文中，作者想要强调的内容，能够 get 到要点即可
+- 不要死扣字眼
+
+## 2. `HTML Tag`、`JSX Element` 和 `React Element`
+
+| 术语     | React 中的 `HTML Tag` 和 `JSX Element`   | `React Element`                                                         |
+| -------- | ---------------------------------------- | ----------------------------------------------------------------------- |
+| 本质     | `React Element` 语法糖                   | 描述 UI 的 JavaScript 对象                                              |
+| 用途     | 降低 `React Element` 的书写成本          | React 内部使用，描述 UI 的结构                                          |
+| 需要编译 | ✅                                       | ❌                                                                      |
+| 示例     | `<div className="container">Hello</div>` | `{ type: 'div', props: { className: 'container', children: 'Hello' } }` |
 
 - React 中的 HTML Tag 和 JSX Element 是一种语法糖，帮助开发者更方便地编写 `React Element`，最终会被编译为 `React.createElement` 调用。
 - `React Element` 是 React 内部的数据结构，用于描述 UI 的状态和结构。

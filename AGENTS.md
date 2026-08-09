@@ -22,6 +22,7 @@
 - 分工：Agent 负责写（搭示例、补说明、落目录、更新导航）；用户负责读、微调并本地跑通
 - 命名：`0001`–`9999` + 语义化英文名（如 `0001. esm-cdn-hello-world`）
 - 工程模板：需要 Vite + React（JS/TS）时，优先从 `templates/demos/1`（js）或 `templates/demos/2`（ts）拷贝到 `playgrounds/` 对应目录再改；单文件 CDN 类实验除外
+- 安装依赖：Vite 类实验在子目录内必须用 `pnpm install --ignore-workspace`（普通 `pnpm i` 会冒泡到仓库根目录，装不上本地 `node_modules`），再 `pnpm dev`
 - 导航：在 `playgrounds/README.md` 用三列表格追加一行：实验示例｜相关笔记（无则 `-`）｜一句话简介
 
 ## 约束
