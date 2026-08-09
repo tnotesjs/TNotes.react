@@ -3,13 +3,15 @@
 <!-- region:toc -->
 
 - [1. 本节内容](#1-本节内容)
-- [2. 使用 pnpm 的实际操作流程](#2-使用-pnpm-的实际操作流程)
-- [3. 使用 vite 创建 react 工程并启动](#3-使用-vite-创建-react-工程并启动)
-- [4. `pnpm create vite@latest` 的工作原理简介](#4-pnpm-create-vitelatest-的工作原理简介)
-  - [4.1. 命令转换与临时下载](#41-命令转换与临时下载)
-  - [4.2. 为什么不用 `git clone`？](#42-为什么不用-git-clone)
-  - [4.3. 脚手架的本地执行与释放](#43-脚手架的本地执行与释放)
-- [5. 引用](#5-引用)
+- [2. 示例：使用 pnpm 初始化一个 React 实验环境](#2-示例使用-pnpm-初始化一个-react-实验环境)
+  - [2.1. 初始化流程](#21-初始化流程)
+  - [2.2. 最终产物](#22-最终产物)
+  - [2.3. vite 内置模板 `template-react`](#23-vite-内置模板-template-react)
+- [3. `pnpm create vite@latest` 的工作原理简介](#3-pnpm-create-vitelatest-的工作原理简介)
+  - [3.1. 命令转换与临时下载](#31-命令转换与临时下载)
+  - [3.2. 为什么不用 `git clone`？](#32-为什么不用-git-clone)
+  - [3.3. 脚手架的本地执行与释放](#33-脚手架的本地执行与释放)
+- [4. 引用](#4-引用)
 
 <!-- endregion:toc -->
 
@@ -18,9 +20,16 @@
 - 使用 vite 快速初始化一个 react 工程
 - 了解 `pnpm create vite@latest` 的工作原理
 
-需要知道如何通过 vite 来快速初始化一个 react 工程。以便后续学习 react 相关知识点的时候，能在 `1min` 内快速搭建好一个最基本的 react 项目学习环境。
+需要知道如何通过 vite 来快速初始化一个 react 工程。以便后续学习 react 相关知识点的时候，能在快速（比如 `1min` 内）搭建好一个最基础的本地 react 实验环境。
 
-## 2. 使用 pnpm 的实际操作流程
+## 2. 示例：使用 pnpm 初始化一个 React 实验环境
+
+这一小节的核心命令：
+
+- `pnpm create vite`
+- `pnpm create vite@latest my-react-app --template react`
+
+### 2.1. 初始化流程
 
 1. `pnpm create vite`
 2. 输入项目名称，比如 `demo`
@@ -59,7 +68,35 @@ pnpm create vite@latest my-react-app --template react
 
 你可以通过查阅 vite 官网，了解 `npm create vite` 相关详情。
 
-## 3. 使用 vite 创建 react 工程并启动
+### 2.2. 最终产物
+
+这一小节的最终产物记录在了 `demos/1` 目录下：
+
+![img](https://cdn.jsdelivr.net/gh/tnotesjs/imgs-2026@main/2026-08-09-11-10-55.png)
+
+目录结构简介：
+
+```bash
+$ tree
+# my-react-app                # 自定义的项目名称
+# ├── eslint.config.js        # ESLint 配置，用于代码规范检查
+# ├── index.html              # 入口 HTML，Vite 以此为页面入口挂载应用
+# ├── package.json            # 项目元信息、脚本与依赖声明
+# ├── pnpm-lock.yaml          # pnpm 锁文件，锁定依赖精确版本
+# ├── public                  # 静态资源目录，构建时原样拷贝到输出目录
+# │   └── vite.svg            # 示例静态图标（可通过 /vite.svg 直接访问）
+# ├── README.md               # 项目说明文档
+# ├── src                     # 业务源码目录
+# │   ├── App.css             # App 组件样式
+# │   ├── App.jsx             # 根组件
+# │   ├── assets              # 会被打包处理的资源（如图片、字体）
+# │   │   └── react.svg       # 示例 React logo
+# │   ├── index.css           # 全局样式
+# │   └── main.jsx            # JS 入口，负责把 App 挂载到 DOM
+# └── vite.config.js          # Vite 构建与开发服务器配置
+```
+
+### 2.3. vite 内置模板 `template-react`
 
 ```bash
 pnpm create vite my-react-app --template react
@@ -73,7 +110,7 @@ pnpm create vite my-react-app --template react
 
 想要学习的话，可以瞅瞅这个模板结构下的源码，主要就是安装好必要的依赖，完成简单的初始配置。
 
-![图 0](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-23-21-55-27.png)
+![img](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-23-21-55-27.png)
 
 启动用 vite 创建的 react 工程：
 
@@ -86,14 +123,14 @@ pnpm run dev
 
 成功启动后，使用浏览器打开链接，将看到如下默认页面：
 
-![图 1](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-23-21-56-18.png)
+![img](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-23-21-56-18.png)
 
-## 4. `pnpm create vite@latest` 的工作原理简介
+## 3. `pnpm create vite@latest` 的工作原理简介
 
-::: tip
+::: tip 💡 错误理解 vs 正确理解
 
-- 错误：通过 `git clone` 去仓库中拉取模板。
-- 正确：`create-vite` 这个 npm 包里面本身就内置了所有框架的模板文件，执行命令只是把包里的模板文件复制到你的项目目录下而已。
+- 错误：实际上是通过 `git clone` 命令去仓库中拉取模板。
+- 正确：`create-vite` 这个 `npm` 包里面本身就内置了所有框架的模板文件，执行命令只是把包里的模板文件复制到你的项目目录下而已。
 
 :::
 
@@ -101,7 +138,7 @@ pnpm run dev
 
 其底层核心流程可以拆解为以下几个步骤：
 
-### 4.1. 命令转换与临时下载
+### 3.1. 命令转换与临时下载
 
 当你运行 `pnpm create vite` 时，`pnpm` 会在底层将其翻译为：
 
@@ -112,14 +149,14 @@ pnpm dlx create-vite@latest
 
 `dlx`（或 `npx`）的作用是去 npm 官方镜像源上，把名为 `create-vite` 的 npm 包临时下载到本地的缓存目录中，并直接运行该包内指定的脚手架可执行脚本。
 
-### 4.2. 为什么不用 `git clone`？
+### 3.2. 为什么不用 `git clone`？
 
 Vite 团队不采用系统 Git 命令去远程拉取，主要基于以下考量：
 
 - 免环境依赖：用户电脑无需安装或配置 `git` 客户端及环境变量。
 - 网络性能优化：`vitejs/vite` 是一个庞大的 Monorepo 仓库，包含大量无关的历史记录和核心源码。如果使用 Git 克隆，在国内网络环境下极易超时或失败。
 
-### 4.3. 脚手架的本地执行与释放
+### 3.3. 脚手架的本地执行与释放
 
 `create-vite` 脚本在本地启动后，实际执行的是本地文件复制与字符串替换：
 
@@ -132,7 +169,7 @@ Vite 团队不采用系统 Git 命令去远程拉取，主要基于以下考量�
 
 整个过程完全不依赖 Git 软件，只要能正常连接 npm 镜像源，即可在几秒钟内瞬间完成项目骨架的搭建。
 
-## 5. 引用
+## 4. 引用
 
 - [vite 官方文档][1]
 - [vite github][2]
