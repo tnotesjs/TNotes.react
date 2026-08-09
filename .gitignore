@@ -95,4 +95,4 @@ tmp/
 results
 
 # 忽略本地的 Playground 环境
-/templates/playgrounds
+playgrounds/

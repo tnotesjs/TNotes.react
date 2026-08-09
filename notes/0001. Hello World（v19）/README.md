@@ -2,13 +2,16 @@
 
 <!-- region:toc -->
 
-- [1. 示例：Hello World](#1-示例hello-world)
+- [1. 本节内容](#1-本节内容)
+- [2. 实验：渲染 Hello World](#2-实验渲染-hello-world)
 
 <!-- endregion:toc -->
 
-## 1. 示例：Hello World
+## 1. 本节内容
 
 通过 ESM 的方式引入 react、react-dom，并使用 `ReactDOM.createRoot()` 方法将 react 元素渲染到页面上。
+
+## 2. 实验：渲染 Hello World
 
 ```html
 <!DOCTYPE html>

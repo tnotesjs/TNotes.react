@@ -32,18 +32,18 @@
 ::: code-group
 
 ```jsx [src/main.jsx]
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
 
 function App() {
-  return <h1>Hello World</h1>;
+  return <h1>Hello World</h1>
 }
 
-createRoot(document.getElementById("root")).render(
+createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
   </StrictMode>,
-);
+)
 ```
 
 ```html [index.html]
@@ -84,13 +84,13 @@ createRoot(document.getElementById("root")).render(
 ```
 
 ```js [vite.config.js]
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-});
+})
 ```
 
 :::
@@ -100,19 +100,19 @@ export default defineConfig({
 ::: code-group
 
 ```tsx [src/main.tsx]
-import { createRoot } from "react-dom/client";
+import { createRoot } from 'react-dom/client'
 
 function App() {
-  return <h1>Hello World</h1>;
+  return <h1>Hello World</h1>
 }
 
-const root = document.getElementById("root");
+const root = document.getElementById('root')
 
 if (!root) {
-  throw new Error("Root container missing in index.html");
+  throw new Error('Root container missing in index.html')
 }
 
-createRoot(root).render(<App />);
+createRoot(root).render(<App />)
 ```
 
 ```html [index.html]
@@ -176,12 +176,12 @@ createRoot(root).render(<App />);
 ```
 
 ```ts [vite.config.ts]
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-});
+})
 ```
 
 :::
@@ -205,4 +205,7 @@ playgrounds 目录中的内容是直接从 demos 目录中复制过来的：
 # .gitignore
 # 忽略本地的 Playground 环境
 /templates/playgrounds
+
+# 如果不想要将实验示例套在 templates 目录下，也可以丢到根目录，然后加上忽略规则：
+playgrounds
 ```

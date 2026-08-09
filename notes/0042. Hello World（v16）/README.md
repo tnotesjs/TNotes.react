@@ -4,10 +4,13 @@
 
 - [1. 本节内容](#1-本节内容)
 - [2. 通过 CDN 的方式引入相关依赖](#2-通过-cdn-的方式引入相关依赖)
-- [3. `React.createElement`（过时的 API）](#3-reactcreateelement过时的-api)
-- [4. `React.render`（Deprecated）](#4-reactrenderdeprecated)
-- [5. 示例：在页面上渲染出 Hello World](#5-示例在页面上渲染出-hello-world)
-- [6. 初步认识 `React.createElement` 和 JSX](#6-初步认识-reactcreateelement-和-jsx)
+- [3. `React.createElement` ❌ Deprecated](#3-reactcreateelement--deprecated)
+  - [3.1. 参数说明](#31-参数说明)
+  - [3.2. 返回值说明](#32-返回值说明)
+  - [3.3. 牢记“元素”不可变](#33-牢记元素不可变)
+- [4. `React.render` ❌ Deprecated](#4-reactrender--deprecated)
+- [5. 实验：在页面上渲染出 Hello World](#5-实验在页面上渲染出-hello-world)
+- [6. 实验：初步认识 `React.createElement` 和 JSX](#6-实验初步认识-reactcreateelement-和-jsx)
   - [6.1. `React.createElement` 式写法](#61-reactcreateelement-式写法)
   - [6.2. JSX 式写法](#62-jsx-式写法)
   - [6.3. 小结](#63-小结)
@@ -15,32 +18,32 @@
 - [8. `react` 核心库和 `react-dom` 库之间的关系是？](#8-react-核心库和-react-dom-库之间的关系是)
   - [8.1. `react` 核心库](#81-react-核心库)
   - [8.2. `react-dom` 库](#82-react-dom-库)
-  - [8.3. 评价](#83-评价)
+  - [8.3. 小结](#83-小结)
 - [9. 为什么一旦使用了 `JSX` 语法，就必须要引入 `react` 核心库？](#9-为什么一旦使用了-jsx-语法就必须要引入-react-核心库)
   - [9.1. 比较官方的答复](#91-比较官方的答复)
   - [9.2. 关于 JSX 的一些补充说明](#92-关于-jsx-的一些补充说明)
   - [9.3. 注意：React v17+ 的变化](#93-注意react-v17-的变化)
     - [React 17+ 的变化](#react-17-的变化)
     - [新旧写法对比](#新旧写法对比)
-- [10. “通过脚手架（比如 vite、umi、create-react-app）来搭建工程”和“通过 CDN 的方式来直接引入 react 相关的库”两种做法的区别是？](#10-通过脚手架比如-viteumicreate-react-app来搭建工程和通过-cdn-的方式来直接引入-react-相关的库两种做法的区别是)
+- [10. 如何选择：“通过脚手架（比如 vite、umi、create-react-app）来搭建工程”、“通过 CDN 的方式来直接引入 react 相关的库”](#10-如何选择通过脚手架比如-viteumicreate-react-app来搭建工程通过-cdn-的方式来直接引入-react-相关的库)
 - [11. 引用](#11-引用)
 
 <!-- endregion:toc -->
 
 ## 1. 本节内容
 
-- `React.createElement` 的基本使用（不重要 - API 已过时）
-- `ReactDOM.render` 的基本使用（不重要 - API 已过时）
-- 理解 `React.createElement` 跟 `JSX` 之间的关系（重要）
-- 理解 `React.createElement` 跟 `document.createElement` 之间的区别（重要）
-- 理解 `react` 和 `react-dom` 这两个库之间的关系（重要）
-- 简单了解使用脚手架和不使用脚手架来初始化工程，存在什么区别（重要）
+- `React.createElement` 的基本使用【不重要 - API 已过时】
+- `ReactDOM.render` 的基本使用【不重要 - API 已过时】
+- 理解 `React.createElement` 跟 `JSX` 之间的关系【重要】
+- 理解 `React.createElement` 跟 `document.createElement` 之间的区别【重要】
+- 理解 `react` 和 `react-dom` 这两个库之间的关系【重要】
+- 简单了解使用脚手架和不使用脚手架来初始化工程，存在什么区别【重要】
 
-本节不使用任何脚手架工具，通过 CDN 引入 `react`、`react-dom`，直接在（.html）页面上使用 react，实现一个 demo，这个 demo 的效果也非常简单，就是在页面上渲染出 Hello World 即可。
+本节不使用任何脚手架工具，通过 CDN 引入 `react`、`react-dom`，直接在 `.html` 页面上使用 react，实现一个 demo，这个 demo 的效果也非常简单，就是在页面上渲染出 Hello World 即可。
 
 核心目的是借助这个简单的 Hello World 的 demo 来熟悉 `React.createElement` 和 `ReactDOM.render` 的基本用法，并引出一些 react 的核心概念。
 
-::: warning ⚠️ WARNING
+::: warning ⚠️ 注意
 
 本节介绍的两个核心 API 是早期 react 的 API，在当前 `25.10` 的最新版 React v19 中，这些 API 都已经过时了。因此，API 的具体使用不重要，但是跟 react 相关的核心概念比较重要。
 
@@ -63,39 +66,43 @@
 
 注意版本：开始写笔记的时间比较早，笔记中引入的 react 包都是 `v16` 版。
 
-::: tip 💡 TIP
+::: tip 💡 备注
 
 这是早期写的 react 笔记，从现在这个时间点 `25.10` 来看，最新的 react 版本已经是 v19 了，没记错的话 v16 应该是两年前左右（22 年初那会儿吧，当时大学还没毕业呢）发布的。
 
 :::
 
-## 3. `React.createElement`（过时的 API）
+## 3. `React.createElement` ❌ Deprecated
 
 ```js
 // doc: https://zh-hans.react.dev/reference/react/createElement#createelement
 // 调用 createElement 来创建一个 React 元素
 // 它有 type、props 和 children 三个参数
-const element = createElement(type, props, ...children);
+const element = createElement(type, props, ...children)
 ```
 
-参数说明：
+### 3.1. 参数说明
 
 - 参数 1：需要创建的 html 元素的名称，比如 h1 表示 h1 标签
 - 参数 2：元素属性，比如 id、class、style、onClick 等等，可以以一个对象的形式传入
 - 参数 3 ~ 参数 n：子元素列表，比如 h1 标签中的文本内容，可以以一个字符串的形式传入，也可以传入由 `React.createElement` 创建的 React 元素
 
-返回值说明：返回值是一个 React 元素，这个元素可以作为 `ReactDOM.render` 的第一个参数，表示要渲染的内容。
+### 3.2. 返回值说明
 
-牢记由 `React.createElement` 创建的 react 元素是不可变的：
+返回值是一个 React 元素，这个元素可以作为 `ReactDOM.render` 的第一个参数，表示要渲染的内容。
 
-- “不可变”
-  - 虽然 JSX 元素是一个对象，但是该对象中的所有属性都是不可更改的。
-  - 如果确实需要更改元素的属性，需要重新创建 JSX 元素。
-- “react 元素”
-  - 记住一个等价关系：$react 元素 = JSX = React.createElement 创建的元素$，它们只是叫法不同罢了。
-  - 当我们在口语表述 “react 元素”、“JSX”、“React.createElement 创建的元素”…… 这些内容的时候，大多时候想要表达的都是一个意思。
+### 3.3. 牢记“元素”不可变
 
-## 4. `React.render`（Deprecated）
+牢记由 `React.createElement` 创建的“react 元素”是“不可变”的。这句话中有俩处需要注意：
+
+1. “react 元素”：
+   - 记住一个等价关系：$react 元素 = JSX = React.createElement 创建的元素$
+   - 当我们在口语表述 “react 元素”、“JSX”、“React.createElement 创建的元素”…… 这些内容的时候，大多时候想要表达的都是一个意思。
+2. “不可变”：
+   - 虽然 JSX 元素是一个对象，但是该对象中的所有属性都是不可更改的。
+   - 如果确实需要更改元素的属性，需要重新创建 JSX 元素。
+
+## 4. `React.render` ❌ Deprecated
 
 ![img](https://cdn.jsdelivr.net/gh/tnotesjs/imgs-2026@main/2026-06-11-21-38-58.png)
 
@@ -114,7 +121,7 @@ render(reactNode, domNode, callback?)
 - 参数 1：要渲染的内容，可以是 React 元素，也可以是字符串，也可以是数字，也可以是布尔值，也可以是 null，也可以是 undefined。
 - 参数 2：要渲染到哪个容器中，可以是一个 DOM 元素。
 
-## 5. 示例：在页面上渲染出 Hello World
+## 5. 实验：在页面上渲染出 Hello World
 
 ```html
 <!DOCTYPE html>
@@ -139,9 +146,9 @@ render(reactNode, domNode, callback?)
     ></script>
     <script>
       // 创建一个 H1 元素
-      const h1 = React.createElement("h1", {}, "Hello World");
+      const h1 = React.createElement('h1', {}, 'Hello World')
       // 将 H1 元素渲染到 root 容器中
-      ReactDOM.render(h1, document.getElementById("root"));
+      ReactDOM.render(h1, document.getElementById('root'))
     </script>
   </body>
 </html>
@@ -151,7 +158,7 @@ render(reactNode, domNode, callback?)
 
 ![img](https://cdn.jsdelivr.net/gh/tnotesjs/imgs@main/2025-06-23-22-23-15.png)
 
-## 6. 初步认识 `React.createElement` 和 JSX
+## 6. 实验：初步认识 `React.createElement` 和 JSX
 
 ### 6.1. `React.createElement` 式写法
 
@@ -176,25 +183,25 @@ render(reactNode, domNode, callback?)
     <script>
       // 创建一个 span 元素
       const span = React.createElement(
-        "span",
+        'span',
         {
-          title: "这是一个 span 元素",
+          title: '这是一个 span 元素',
         },
-        "this is a span element",
-      );
+        'this is a span element',
+      )
 
       // 创建一个 img 元素
-      const img = React.createElement("img", {
+      const img = React.createElement('img', {
         // 素材：github 头像
-        src: "https://avatars.githubusercontent.com/u/125541114?v=4",
-        width: "100px",
-      });
+        src: 'https://avatars.githubusercontent.com/u/125541114?v=4',
+        width: '100px',
+      })
 
       // 创建一个 div 元素
-      const div = React.createElement("div", {}, "123", img, span);
+      const div = React.createElement('div', {}, '123', img, span)
       // 123、img、span 这些都会成为该 div 的子元素
 
-      ReactDOM.render(div, document.getElementById("root"));
+      ReactDOM.render(div, document.getElementById('root'))
     </script>
   </body>
 </html>
@@ -245,9 +252,9 @@ render(reactNode, domNode, callback?)
           />
           <span title="这是一个 span 元素">this is a span element</span>
         </div>
-      );
+      )
 
-      ReactDOM.render(div, document.getElementById("root"));
+      ReactDOM.render(div, document.getElementById('root'))
     </script>
   </body>
 </html>
@@ -286,7 +293,7 @@ react 核心库是很纯粹的，里边是不包含任何跟宿主环境（比�
 - ReactDOM 则专注于将由 React 库创建的 react 元素（虚拟 DOM）渲染到浏览器环境中。
 - `react-dom` 这个中间的 `-` 符号，可以将其理解为“连接”，就是将 react 和 dom 相互连接起来的意思。
 
-### 8.3. 评价
+### 8.3. 小结
 
 React 的这种设计，很好地实现了核心逻辑和宿主环境的解耦。
 
@@ -326,13 +333,13 @@ React 17+ 支持新的 JSX Transform，使“使用 JSX 时不必手动 `import 
 关于下面这段 JSX 的编译：
 
 ```jsx
-const el = <h1>Hello</h1>;
+const el = <h1>Hello</h1>
 ```
 
 旧版 JSX 编译会变成类似下面这样的写法：
 
 ```jsx
-const el = React.createElement("h1", null, "Hello");
+const el = React.createElement('h1', null, 'Hello')
 ```
 
 这段代码里用到了 React.createElement，所以当前文件必须有：`import React from 'react'`，否则 React 是未定义的。
@@ -340,18 +347,22 @@ const el = React.createElement("h1", null, "Hello");
 新版 JSX 编译会变成类似下面这样的写法：
 
 ```jsx
-import { jsx } from "react/jsx-runtime";
+import { jsx } from 'react/jsx-runtime'
 
-const el = jsx("h1", {
-  children: "Hello",
-});
+const el = jsx('h1', {
+  children: 'Hello',
+})
 ```
 
 这里不再使用 `React.createElement`，也不需要 React 这个变量存在。jsx 函数由编译器自动从 `react/jsx-runtime `引入。
 
 所以在新版 JSX Transform 下，就不需要手写：`import React from 'react'` 了。
 
-## 10. “通过脚手架（比如 vite、umi、create-react-app）来搭建工程”和“通过 CDN 的方式来直接引入 react 相关的库”两种做法的区别是？
+## 10. 如何选择：“通过脚手架（比如 vite、umi、create-react-app）来搭建工程”、“通过 CDN 的方式来直接引入 react 相关的库”
+
+对于一些简单的 demo，只需要通过 CDN 的方式将必要的库引入测试即可。
+
+---
 
 如果想要快速搭建一个 react 项目，推荐使用脚手架，因为脚手架会帮我们做更多的工程配置，比如 babel 的配置，vite/webpack 的配置，eslint 的配置等，这些配置都帮我们做了，我们只需要关注业务代码就可以了。
 
@@ -360,8 +371,6 @@ const el = jsx("h1", {
 最终运行的打包产物，依旧是这种传统的 html+css+js 页面形式，本质是没变的。
 
 在初学阶段，跳过脚手架，手动搭建 react 工程所需的基本结构，有助于加深对项目整体结构的理解。
-
-对于一些简单的 demo，只需要通过 CDN 的方式将必要的库引入测试即可。
 
 ## 11. 引用
 
