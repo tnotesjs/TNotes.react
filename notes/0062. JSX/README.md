@@ -28,7 +28,7 @@
 - React 用 `React Element` 描述界面
 - JSX 是官方推荐的写法，本质仍是在创建 `React Element`
 
-<N :ids="[
+<NotesTable :ids="[
   '0013',
   '0044',
   '0014',
